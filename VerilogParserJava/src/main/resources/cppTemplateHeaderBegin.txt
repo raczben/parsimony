@@ -1,0 +1,8 @@
+/******************************************************************************
+ * Generated Cpp template for simulation primitives.
+ * Author: Benedek Racz
+ ******************************************************************************/
+
+#include "NetFlow.h"
+#include "sim_types.h"
+
