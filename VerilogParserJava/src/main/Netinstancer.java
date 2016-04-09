@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,6 +38,8 @@ public class Netinstancer extends Verilog2001BaseListener {
 	//FileOutputStream generatedNetInstancerFile;
 	FileWriter netInstancerHeader;
 	FileWriter netInstancerSource;
+	PrintStream primitiveInstancerHeader;
+	PrintStream primitiveInstancerSource;
 	
 	Map<String, PrimitiveDescriptor> primitiveInfos;
 	
@@ -85,6 +88,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 		br.close();
 		
 		netInstancerSource = new FileWriter(new File("netinstatiation.cpp"));
+		
 
 		path = "resources/netinstancerSourceBegin.txt";
 		is = Netinstancer.class.getResourceAsStream(path);
@@ -98,6 +102,10 @@ public class Netinstancer extends Verilog2001BaseListener {
 		}
 		
 		br.close();
+		
+		
+		primitiveInstancerSource = new PrintStream("primitiveInstation.cpp");
+		CppTemplateGenerator.appendSource("resources/netinstancerSourceBegin.txt", primitiveInstancerSource);
 		
 		
 	}
@@ -118,7 +126,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 		if(child instanceof Net_typeContext){
 	    	String type = ctx.net_type().getText();
 	    	if(! type.equals("wire")){
-	        	System.out.println("Warning: Unsupported net type: " + type);
+	        	Logger.writeWarning("Unsupported net type: " + type);
 	        	return;
 	    	}
 	    	continue;
@@ -128,17 +136,17 @@ public class Netinstancer extends Verilog2001BaseListener {
 	    		ParseTree childchild = child.getChild(j);
 	    		if(childchild instanceof Net_identifierContext){
 	    			String name =  childchild.getText();
-	    	    	System.out.println("Net identifier: " + name);
-	    	    	System.out.println("Generating...");
+	    			Logger.writeInfo("Net identifier: " + name);
+	    			Logger.writeInfo("Generating...");
 	    	    	for(int index = lsb; index <=msb; index++){
 	    	    		String name2 = name + "[" + String.valueOf(index) + "]";
-		    	    	System.out.println("  Net identifier: " + name2);
+	    	    		Logger.writeInfo("  Net identifier: " + name2);
 		    	    	nets.add(name2);
 		    	    	//defines.put(name2, value);
 	    	    	}
 	    		}
 	    		else{
-	    	    	System.out.println("Type is unknown: " + childchild.getText());
+	    			Logger.writeError("Type is unknown: " + childchild.getText());
 	    			
 	    		}
 			}
@@ -151,7 +159,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 	        continue;
 		}
 		
-		System.out.println("ERROR: Net identifier: unexpected: " + child.getText() + " Type is: " + child.getClass());
+		Logger.writeError("Net identifier: unexpected: " + child.getText() + " Type is: " + child.getClass());
     	}
     	//System.out.println("enterList_of_net_identifiers: " + txt);
     	
@@ -162,7 +170,7 @@ public class Netinstancer extends Verilog2001BaseListener {
     		return Integer.valueOf(constExpr.getText());
     	}
     	catch(NumberFormatException ex){
-    		System.out.println("ERROR: Unsupproted number format: " + ex.getMessage());
+    		Logger.writeError("Unsupproted number format: " + ex.getMessage());
     		return 0;
     	}
     }
@@ -200,7 +208,7 @@ public class Netinstancer extends Verilog2001BaseListener {
     	if (parameters != null){
     		List_of_parameter_assignmentsContext parameterlist = parameters.list_of_parameter_assignments();
     		if(parameterlist.ordered_parameter_assignment().size()>0){
-        		System.out.println("ERROR: Ordered parameter assignment is unsupproted.");    		
+    			Logger.writeError("Ordered parameter assignment is unsupproted.");    		
         		return;
     		}
     		for(Named_parameter_assignmentContext param : parameterlist.named_parameter_assignment()){
@@ -213,27 +221,27 @@ public class Netinstancer extends Verilog2001BaseListener {
     	
     	List<Module_instanceContext> instances = ctx.module_instance();
     	if(instances.size()!= 1){
-    		System.out.println("ERROR: Unsupproted to instantiate multiple instance.");    		
+    		Logger.writeError("Unsupproted to instantiate multiple instance.");    		
     		return;
     	}
     	
     	Module_instanceContext instance = instances.get(0);
     	if (instance.name_of_instance().range() != null){
-    		System.out.println("ERROR: Unsupproted to instantiate multiple instance in range.");    		
+    		Logger.writeError("Unsupproted to instantiate multiple instance in range.");    		
     		return;
     	}
     	
     	String instanceName = instance.name_of_instance().module_instance_identifier().getText();
     	List_of_port_connectionsContext portConnections = instance.list_of_port_connections();
     	if(portConnections.ordered_port_connection().size()>0){
-    		System.out.println("ERROR: The ordered port connection is unsupproted.");    		
+    		Logger.writeError("The ordered port connection is unsupproted.");    		
     		return;
     	}
     	
     	List<Named_port_connectionContext> namedPortConnections = portConnections.named_port_connection();
     	for(Named_port_connectionContext portConnection : namedPortConnections){
     		if(portConnection.attribute_instance().size()>0){
-        		System.out.println("ERROR: The attribute instance is unsupproted in port connections.");    		
+    			Logger.writeError("The attribute instance is unsupproted in port connections.");    		
         		return;
     		}
     		String nameOfPrimitivePort = portConnection.port_identifier().getText();
@@ -281,21 +289,31 @@ public class Netinstancer extends Verilog2001BaseListener {
     		}
     	}
     	
-    	String instantiation = "engine.register_primitive(new " + primitiveCType + "(\"" + instanceName + "\", \n";
-    	instantiation += "//Module parameters:\n";
+    	SourceCodeGenerator srcGen0 = new SourceCodeGenerator();
+    	
+    	srcGen0.add("engine.register_primitive(");
+    	
+
+    	SourceCodeGenerator srcGen1 = new SourceCodeGenerator();
+    	
+    	srcGen1.add("new " + primitiveCType + "(\"" + instanceName + "\",");
+    	srcGen1.add("//Module parameters:");
     	for(String param : orderedParameters){
-    		instantiation += "\"" + param +  "\", ";
+    		srcGen1.add("\"" + param +  "\", ");
     	}
-    	instantiation += "\n";
-    	instantiation += "//Module port assignments:\n";
+    	srcGen1.add("");
+    	srcGen1.add("//Module port assignments:");
     	for(String port : orderedPorts){
-    		instantiation += "engine.get_net(" + netId2CdefineId(port) +  "), ";
+    		srcGen1.add("engine.get_net(" + netId2CdefineId(port) +  "), ");
     	}
     	
+
+    	srcGen0.add(srcGen1);
+    	srcGen0.add(")");
     	
-    	instantiation += ")";
+    	primitiveInstancerSource.println(srcGen0);
+//    	System.out.println(srcGen0);
     	
-    	System.out.println(instantiation);
     	
     }
     			
@@ -375,6 +393,11 @@ public class Netinstancer extends Verilog2001BaseListener {
     	
     	netInstancerSource.write("\n");
     	netInstancerSource.close();
+    	
+    	
+    	CppTemplateGenerator.appendSource("resources/netinstancerSourceEnd.txt", primitiveInstancerSource);
+    	primitiveInstancerSource.close();
+    	
     }
 	
 }

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -156,8 +155,8 @@ public class Main {
 	 * @throws IOException
 	 */
 	private static void generateCTemplate() throws IOException {
-		CppTemplateGenerator.init(new PrintStream(new File("cppTemplate.cpp")));
-		CppTemplateGenerator.generateCTemplate();
+		CppTemplateGenerator cppTemplateGen = new CppTemplateGenerator("./generatedCppTemplates");
+		cppTemplateGen.generateCTemplate();
 	}
 	
 	/**
@@ -174,11 +173,12 @@ public class Main {
 		Logger.init("error.log");
 		
 //		primitiveMapper("C:\\Users\\ebenera\\bme\\2015_16_tavasz\\onlab2\\xilinxPrimitives\\simprims");
-//		net_instancer();
-		generateCTemplate();
-		
+		net_instancer();
+//		generateCTemplate();
+	
 		
 		Logger.close();
+		System.out.println("Exit");
 	}
 
 	

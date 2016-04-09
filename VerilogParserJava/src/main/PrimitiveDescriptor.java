@@ -46,7 +46,16 @@ public class PrimitiveDescriptor implements Serializable {
 	}
 	
 	public String getPrimitiveClassType(){
-		return "prim_class_" + primitiveIdentifier;
+		return primitiveIdentifier;
+	}
+	
+
+	public String getPrimitiveHeaderFilename(){
+		return primitiveIdentifier + ".h";
+	}
+
+	public String getPrimitiveSourceFilename(){
+		return primitiveIdentifier + ".cpp";
 	}
 
 }

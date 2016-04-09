@@ -6,3 +6,4 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 
+namespace CPrimitives {

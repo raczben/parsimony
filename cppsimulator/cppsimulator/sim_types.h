@@ -14,6 +14,6 @@ class SimulatorEngine;
 typedef char* parameter_string_t;
 typedef char* parameter_int_t;
 
-typedef enum { TRUE, FALSE} parameter_enumt_t;
+typedef enum { TRUE, FALSE} parameter_enum_t;
 
 #endif //SIMULATOR_TYPES_H
