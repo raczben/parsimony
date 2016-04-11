@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 
+import verilog.ParameterDescriptior;
+import verilog.PortDescriptior;
+import verilog.PrimitiveDescriptor;
+
 public class CppTemplateGenerator {
 	PrintStream printStream = null;
 	File directory = null;
@@ -88,12 +92,12 @@ public class CppTemplateGenerator {
 		 * Define fields
 		 */
 		cTemplate.add("\t//Verilog Parameters:");
-		for(Entry<String, ParameterInfo> parameter : primitive.parameters.entrySet()){
-			parameterType = String.valueOf(parameter.getValue().type).toLowerCase();
+		for(Entry<String, ParameterDescriptior> parameter : primitive.getParameters().entrySet()){
+			parameterType = String.valueOf(parameter.getValue().getType()).toLowerCase();
 			cTemplate.add("\t" + parameterType + " " + parameter.getKey() + ";");				 
 		}
 		cTemplate.add("\t//Verilog Ports in definition order:");
-		for(Entry<String, Direction> port : primitive.ports.entrySet()){
+		for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
 			cTemplate.add("\tNetFlow* " + port.getKey() + "; // " + port.getValue());				 
 		}
 		
@@ -150,15 +154,15 @@ public class CppTemplateGenerator {
 		 */
 		cTemplate.add("\t" + primitive.getPrimitiveClassType() + "(");
 		cTemplate.add("\t\t//Verilog Parameters:");
-		for(Entry<String, ParameterInfo> parameter : primitive.parameters.entrySet()){
-			parameterType = String.valueOf(parameter.getValue().type).toLowerCase();
-			cTemplate.add("\t\t" + parameterType + " " + parameter.getKey() + ", // Default: " + parameter.getValue().defaultValue);				 
+		for(Entry<String, ParameterDescriptior> parameter : primitive.getParameters().entrySet()){
+			parameterType = String.valueOf(parameter.getValue().getType()).toLowerCase();
+			cTemplate.add("\t\t" + parameterType + " " + parameter.getKey() + ", // Default: " + parameter.getValue().getDefaultValue());				 
 		}
 		cTemplate.add("\t\t//Verilog Ports in definition order:");
 		int i = 0;
-		for(Entry<String, Direction> port : primitive.ports.entrySet()){
+		for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
 			 i++;
-			 if(i < primitive.ports.size()){
+			 if(i < primitive.getPorts().size()){
 				 cTemplate.add("\t\tNetFlow* " + port.getKey() + ", // " + port.getValue());
 			 }
 			 else{
@@ -174,11 +178,11 @@ public class CppTemplateGenerator {
 		 cTemplate.add("\t\t// Assign parameters and ports: ");
 		 
 		 cTemplate.add("\t\t//Verilog Parameters:");
-		 for(Entry<String, ParameterInfo> parameter : primitive.parameters.entrySet()){
-			 cTemplate.add("\t\tthis->" + parameter.getKey() + " = " + parameter.getKey() + "; // Default: " + parameter.getValue().defaultValue);				 
+		 for(Entry<String, ParameterDescriptior> parameter : primitive.getParameters().entrySet()){
+			 cTemplate.add("\t\tthis->" + parameter.getKey() + " = " + parameter.getKey() + "; // Default: " + parameter.getValue().getDefaultValue());				 
 		 }
 		 cTemplate.add("\t\t//Verilog Ports in definition order:");
-		 for(Entry<String, Direction> port : primitive.ports.entrySet()){
+		 for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
 			 cTemplate.add("\t\tthis->" + port.getKey() + " = " + port.getKey() + "; // " + port.getValue());				 
 		 }
 

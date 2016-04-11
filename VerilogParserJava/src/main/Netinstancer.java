@@ -11,13 +11,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNodeImpl;
 
+import sourceGenerator.SourceGenerator;
+import verilog.Expression;
+import verilog.NetContainer;
+import verilog.NetDescriptor;
+import verilog.ParameterDescriptior;
+import verilog.PortConnection;
+import verilog.PrimitiveDescriptor;
 import antlr.Verilog2001BaseListener;
 import antlr.Verilog2001Parser;
-import antlr.Verilog2001Parser.Constant_expressionContext;
 import antlr.Verilog2001Parser.List_of_net_identifiersContext;
 import antlr.Verilog2001Parser.List_of_parameter_assignmentsContext;
 import antlr.Verilog2001Parser.List_of_port_connectionsContext;
@@ -30,26 +37,58 @@ import antlr.Verilog2001Parser.Parameter_identifierContext;
 import antlr.Verilog2001Parser.Parameter_value_assignmentContext;
 import antlr.Verilog2001Parser.RangeContext;
 
-
+/**
+ * Netinstancer parse the post-xxx simulation model's code and instantiate the
+ * nets and the primitices in the generated c code.
+ * 
+ * @author ebenera
+ *
+ */
 public class Netinstancer extends Verilog2001BaseListener {
-	Map<PrimitiveClass, Histogram <String> > sub_module_histogram;
-	List<String> nets;
-	Map<String, Integer > defines;
-	//FileOutputStream generatedNetInstancerFile;
-	FileWriter netInstancerHeader;
-	FileWriter netInstancerSource;
-	PrintStream primitiveInstancerHeader;
-	PrintStream primitiveInstancerSource;
+	/**
+	 * 
+	 */
+	//Map<PrimitiveClass, Histogram <String> > sub_module_histogram;
 	
-	Map<String, PrimitiveDescriptor> primitiveInfos;
+	/**
+	 * nets contains the parsed net names. 
+	 */
+//	private List<String> nets;
+	private NetContainer nets;
 	
-	//int dimension = 1;
+	/**
+	 * Each net has an id, aka. a serial number (based on the instantiation order)
+	 * to help find them in an array in the generated source code.
+	 * defines contains a list of the c defines and the values of them.
+	 */
+//	private Map<String, Integer > defines;
 
+	/**
+	 * Generated files pointer.
+	 */
+	private FileWriter netInstancerHeader;
+	private FileWriter netInstancerSource;
+//	private PrintStream primitiveInstancerHeader;
+	private PrintStream primitiveInstancerSource;
+	
+	/**
+	 * Complex structure which contains all information of a primitive. The
+	 * index is the name of the primitive. It contains the in/out/inout ports,
+	 * and the parameters (aka. generics) of the primitive.  
+	 */
+	private Map<String, PrimitiveDescriptor> primitiveInfos;
+
+	/**
+	 * Constructor. Initialize file pointers, and data structures.
+	 * @throws IOException
+	 */
 	Netinstancer() throws IOException{
 		
     	System.out.println("Netinstancer ");
     	
-    	nets = new ArrayList<String>();
+    	nets = new NetContainer();
+    	nets.add(new NetDescriptor("CONST_ZERO"));
+    	nets.add(new NetDescriptor("CONST_ONE"));
     	
     	initFiles();
 		
@@ -57,17 +96,26 @@ public class Netinstancer extends Verilog2001BaseListener {
     	
 	}
 	
+	/**
+	 * Loads data of primitives and store it in primitiveInfos
+	 */
 	void fillPrimitiveInfos(){
 		PrimitiveMapper.loadData();
 		
 		primitiveInfos = new HashMap<String, PrimitiveDescriptor>();
 		
 		for(PrimitiveDescriptor primitive: PrimitiveMapper.primitiveDEclarationList){
-			primitiveInfos.put(primitive.primitiveIdentifier, primitive);
+			primitiveInfos.put(primitive.getPrimitiveIdentifier(), primitive);
 		} 
 		
 	}
 	
+	/**
+	 * Initialize files. Open it and insert common parts at the beginning of
+	 * each files.
+	 * 
+	 * @throws IOException
+	 */
 	void initFiles() throws IOException{
 		InputStream is;
 		BufferedReader br;
@@ -107,15 +155,18 @@ public class Netinstancer extends Verilog2001BaseListener {
 		primitiveInstancerSource = new PrintStream("primitiveInstation.cpp");
 		CppTemplateGenerator.appendSource("resources/netinstancerSourceBegin.txt", primitiveInstancerSource);
 		
-		
 	}
 	
 
+	/**
+	 * enterNet_declaration() is the enter point of the parser. The parser call
+	 * this function if it reach a declaration of a net. Ex.: "wire my_wire"
+	 */
     @Override
     public void enterNet_declaration(Verilog2001Parser.Net_declarationContext ctx) {
-    	int msb = 0;
-    	int lsb = 0;
-    	
+//    	int msb = 0;
+//    	int lsb = 0;
+    	RangeContext range = null;
 
     	for(int i = 0; i< ctx.getChildCount(); i++){
     		ParseTree child = ctx.getChild(i);
@@ -138,12 +189,12 @@ public class Netinstancer extends Verilog2001BaseListener {
 	    			String name =  childchild.getText();
 	    			Logger.writeInfo("Net identifier: " + name);
 	    			Logger.writeInfo("Generating...");
-	    	    	for(int index = lsb; index <=msb; index++){
-	    	    		String name2 = name + "[" + String.valueOf(index) + "]";
-	    	    		Logger.writeInfo("  Net identifier: " + name2);
-		    	    	nets.add(name2);
+//	    	    	for(int index = lsb; index <=msb; index++){
+//	    	    		String name2 = name + "[" + String.valueOf(index) + "]";
+//	    	    		Logger.writeInfo("  Net identifier: " + name2);
+		    	    	nets.add(new NetDescriptor(name, range));
 		    	    	//defines.put(name2, value);
-	    	    	}
+//	    	    	}
 	    		}
 	    		else{
 	    			Logger.writeError("Type is unknown: " + childchild.getText());
@@ -153,9 +204,9 @@ public class Netinstancer extends Verilog2001BaseListener {
 			continue;
 		}
 		if(child instanceof RangeContext){
-	        RangeContext range = ((RangeContext)child);
-	        msb = toInteger(range.msb_constant_expression().constant_expression());
-	        lsb = toInteger(range.lsb_constant_expression().constant_expression());
+	        range = ((RangeContext)child);
+//	        msb = BasicConverters.toInteger(range.msb_constant_expression().constant_expression());
+//	        lsb = BasicConverters.toInteger(range.lsb_constant_expression().constant_expression());
 	        continue;
 		}
 		
@@ -165,43 +216,25 @@ public class Netinstancer extends Verilog2001BaseListener {
     	
     }
     
-    static int toInteger(Constant_expressionContext constExpr){
-    	try{
-    		return Integer.valueOf(constExpr.getText());
-    	}
-    	catch(NumberFormatException ex){
-    		Logger.writeError("Unsupproted number format: " + ex.getMessage());
-    		return 0;
-    	}
-    }
-    
-    static String netId2CdefineId(String netId){
-		String ret = toCIdentifier(netId, true);
-		ret =  "NET_INDEX_" + ret;
-		return ret;
-    }
-	
-    static String toCIdentifier(String str, Boolean uppercase){
-    	String ret;
-    	ret = str.replace("_", "__"); 	// underscore
-    	ret = ret.replace("/", "_s"); 	// slash
-    	ret = ret.replace("\\", "_b");	// backslash
-    	ret = ret.replace("<", "_l");	// less than
-    	ret = ret.replace(">", "_g");	// greater than
-    	ret = ret.replace("[", "_a");	// 
-    	ret = ret.replace("]", "_b");	// 
-    	ret = ret.replace(".", "_d");	// dot 
-    	
-    	return ret;
-    }
-    
+
+	/**
+	 * enterModule_instantiation() is the enter point of the parser. The parser
+	 * call this function if it reach a primitive instantiation.
+	 * Ex.:
+	 * "
+ 	 * X_ZERO #(
+ 	 *     .LOC ( "SLICE_X6Y2" ))
+ 	 *   \ProtoComp1.CYINITGND  (
+ 	 *     .O(\ProtoComp1.CYINITGND.0 )
+ 	 *   );"
+	 */
     @Override
     public void enterModule_instantiation(Verilog2001Parser.Module_instantiationContext ctx) {
     	String primType = ctx.module_identifier().getText();
     	
     	System.out.println(primType);
-    	Map<String, String> parameterAssignments = new HashMap<String, String>();
-    	Map<String, String> portAssignments = new HashMap<String, String>();
+    	Map<String, ParameterDescriptior> parameterAssignments = new HashMap<String, ParameterDescriptior>();
+    	Map<String, PortConnection> portAssignments = new HashMap<String, PortConnection>();
     	
     	
     	Parameter_value_assignmentContext parameters = ctx.parameter_value_assignment();
@@ -215,7 +248,22 @@ public class Netinstancer extends Verilog2001BaseListener {
     			Parameter_identifierContext primitiveParameterName = param.parameter_identifier();
     			//int parameterValue = toInteger(param.expression());
     			
-    			parameterAssignments.put(primitiveParameterName.getText(), param.expression().getText());
+    			ParameterDescriptior instanceParameter  = new ParameterDescriptior(primitiveInfos.get(primType).getParameters().get(primitiveParameterName.getText()));
+    			
+    			Expression exp = ParseExpression.parseExpression(param.expression());
+
+    			if(null != exp){
+	    			if(null != exp.getInteger2()){
+	    				instanceParameter.setValue(exp.getInteger2());
+	    			}
+    			}
+    			else{
+    				instanceParameter.setValue(param.expression().getText());
+    			}
+    			
+    			parameterAssignments.put(primitiveParameterName.getText(),
+    					instanceParameter
+    					);
     		}
     	}
     	
@@ -241,13 +289,87 @@ public class Netinstancer extends Verilog2001BaseListener {
     	List<Named_port_connectionContext> namedPortConnections = portConnections.named_port_connection();
     	for(Named_port_connectionContext portConnection : namedPortConnections){
     		if(portConnection.attribute_instance().size()>0){
-    			Logger.writeError("The attribute instance is unsupproted in port connections.");    		
+    			Logger.writeError("The attribute instance is unsupproted in port connections.");
         		return;
     		}
     		String nameOfPrimitivePort = portConnection.port_identifier().getText();
-    		String nameOfNet = portConnection.expression().getText();
+    		//String errorCheck = portConnection.expression().getText();
+
+    		PortConnection connection;
+
+//    		ExpressionContext expr = portConnection.expression();
     		
-    		portAssignments.put(nameOfPrimitivePort, nameOfNet);
+    		Expression expression = ParseExpression.parseExpression(portConnection.expression());
+    		/*
+    		List<TermContext> termList = expr.term();
+    		if(termList.size()>0){
+    			if(termList.size()>1){
+        			Logger.writeError("Supported term size mazimum is 1");
+            		return;
+    			}
+    			
+    			if (null == termList.get(0).primary()){
+        			Logger.writeError("primary should not be null");
+            		return;
+    			}
+
+    			if (null == termList.get(0).primary().number()){
+    				connection = new PortConnection(termList.get(0).primary().getText());
+    				if(! errorCheck.equals(termList.get(0).primary().getText())){
+            			Logger.writeError("ErrorCheckError1");
+                		return;
+    				}
+    			}else{
+	
+	    			if (termList.get(0).primary().number().getChildCount() != 1){
+	        			Logger.writeError("Supported number size is exactly 1");
+	            		return;
+	    			}
+	    			
+	    			NumberContext number = termList.get(0).primary().number();
+	    			TerminalNode num = number.Hex_number();
+	    			if (null != num){
+	    				connection = new PortConnection(number.getText(), 16);
+	    			}
+	    			num = number.Decimal_number();
+	    			if (null != num){
+	    				connection = new PortConnection(number.getText(), 10);
+	    			}
+	    			num = number.Binary_number();
+	    			if (null != num){
+	    				connection = new PortConnection(num.getText(), 2);
+	    			}
+	    			num = number.Octal_number();
+	    			if (null != num){
+	    				connection = new PortConnection(number.getText(), 8);
+	    			}
+	    			
+	    		}
+    		}*/
+
+    		/*List<Attribute_instanceContext> attributeList = expr.attribute_instance();
+    		if(attributeList.size()>0){
+    			if(attributeList.size()>1){
+        			Logger.writeError("Supported attributeList size mazimum is 1");    		
+            		return;
+    			}
+    			attributeList.get(0).getText();
+    		}*/
+    		
+    		
+    		
+    		String nameOfNet = portConnection.expression().getText();
+
+        	PrimitiveDescriptor primitive = primitiveInfos.get(primType);
+        	
+    		connection = new PortConnection(primitive.getPorts().get(nameOfPrimitivePort), expression);
+    		
+    		portAssignments.put(nameOfPrimitivePort, connection);
+    		
+    		
+//    		if (nameOfNet.equals("1'b1")){
+//    			System.out.println("itt a baj");
+//    		}
     		
     	}
 
@@ -256,30 +378,61 @@ public class Netinstancer extends Verilog2001BaseListener {
     	
     }
     
-    void generatePrimitiveInstantiation(String type, String instanceName, Map<String, String> parameterAssignments, Map<String, String> portAssignments ){
+    /**
+     * generatePrimitiveInstantiation() generates a primitive instantiation file.
+     * based on parsed results.
+     * 
+     * @param type
+     * @param instanceName
+     * @param parameterAssignments
+     * @param portAssignments
+     */
+    void generatePrimitiveInstantiation(String type,
+    		String instanceName,
+    		Map<String,	ParameterDescriptior> parameterAssignments,
+    		Map<String, PortConnection> portAssignments
+    		){
+    	/**
+    	 * primitiveCType: is the c identifier of the c++ class of the to be instantiated primitive.
+    	 */
     	String primitiveCType;
-    	List<String> orderedParameters = new ArrayList<String>();
-    	List<String> orderedPorts = new ArrayList<String>();
     	
-    	PrimitiveDescriptor primitive = primitiveInfos.get(type);		// Null pointer ex means the type does not exist in the primitives.
+    	/**
+    	 * In c there is no way of calling function with giving parameters by
+    	 * their name. orderedParameters and orderedPorts are contains values of
+    	 * ports/parameters in the definition order.
+    	 */
+    	List<ParameterDescriptior> orderedParameters = new ArrayList<ParameterDescriptior>();
+    	List<PortConnection> orderedPorts = new ArrayList<PortConnection>();
+    	
+    	// The descriptor of the to be instantiated primitive.
+    	// Null pointer ex means the type does not exist in the primitives.
+    	PrimitiveDescriptor primitive = primitiveInfos.get(type);
+    	
+    	if(null == primitiveInfos){
+    		Logger.writeError("Primitive: " + type + " cannot be found in the list.");
+    		return;
+    	}
     	
     	primitiveCType = primitive.getPrimitiveClassType();
     	
-    	for(String param : primitive.parameters.keySet()){
-    		try{
-    			String parameterValue = parameterAssignments.get(param);
-    			orderedParameters.add(parameterValue);
+    	// Find values of all parameters.
+    	for(String param : primitive.getParameters().keySet()){
+    		if(parameterAssignments.containsKey(param)){
+    			ParameterDescriptior parameterValue = parameterAssignments.get(param);
+    			orderedParameters.add(parameterValue);    			
     		}
-    		// If the key does not exist in the parameter assignments, then we
-    		// put the default value into the list. 
-    		catch (NullPointerException ex){	
-    			orderedParameters.add(primitive.parameters.get(param).defaultValue);
+    		else{
+	    		// If the key does not exist in the parameter assignments, then we
+	    		// put the default value into the list. 
+    			orderedParameters.add(primitive.getParameters().get(param));
     		}
     	}
-    	
-    	for(String port : primitive.ports.keySet()){
+
+    	// Find values of all ports.
+    	for(String port : primitive.getPorts().keySet()){
     		try{
-    			String portNet = portAssignments.get(port);
+    			PortConnection portNet = portAssignments.get(port);
     			orderedPorts.add(portNet);
     		}
     		// If the key does not exist in the parameter assignments, then we
@@ -289,45 +442,53 @@ public class Netinstancer extends Verilog2001BaseListener {
     		}
     	}
     	
-    	SourceCodeGenerator srcGen0 = new SourceCodeGenerator();
+    	/**
+    	 * Generate source code based on previously calculated values.
+    	 */
+    	SourceGenerator srcGen0 = new SourceGenerator();
     	
     	srcGen0.add("engine.register_primitive(");
     	
 
-    	SourceCodeGenerator srcGen1 = new SourceCodeGenerator();
+    	SourceGenerator srcGen1 = new SourceGenerator();
     	
     	srcGen1.add("new " + primitiveCType + "(\"" + instanceName + "\",");
     	srcGen1.add("//Module parameters:");
-    	for(String param : orderedParameters){
-    		srcGen1.add("\"" + param +  "\", ");
+    	for(ParameterDescriptior param : orderedParameters){
+    		srcGen1.add("" + param.getDefaultValueCformat() +  ", // " + param.getParameterIdentifier() );
     	}
     	srcGen1.add("");
     	srcGen1.add("//Module port assignments:");
-    	for(String port : orderedPorts){
-    		srcGen1.add("engine.get_net(" + netId2CdefineId(port) +  "), ");
+		for(PortConnection portConnection : orderedPorts){
+			int portLsb = portConnection.getPortIdentifier().getLsb();
+			int portMsb = portConnection.getPortIdentifier().getMsb();
+			for(int i = portLsb; i <= portMsb; i++){
+	    		if(portConnection.getExpression().isNet(i)){
+	    			NetDescriptor netDesc = portConnection.getExpression().getNet(i);
+	    			srcGen1.add("engine.get_net(" + netDesc.getCdefineIdentifierBit(netDesc.getLsb()) +  "), // " + portConnection.getPortIdentifier().getNetIdentifier() );
+	    		}else{
+	        		Logger.writeError("Primitiveinstantiation : portConnection: " + portConnection + " .");
+	        		return;
+	    		}
+			}
     	}
-    	
+
+    	srcGen1.add(")");
 
     	srcGen0.add(srcGen1);
     	srcGen0.add(")");
     	
-    	primitiveInstancerSource.println(srcGen0);
+    	SourceGenerator srcGen00 = new SourceGenerator(srcGen0);
+    	
+    	primitiveInstancerSource.println(srcGen00);
 //    	System.out.println(srcGen0);
     	
-    	
     }
-    			
-    
-/*    private int toInteger(ExpressionContext expression) {
-    	try{
-    		return Integer.valueOf(expression.getText());
-    	}
-    	catch(NumberFormatException ex){
-    		System.out.println("ERROR: Unsupproted number format: " + ex.getMessage());
-    		return 0;
-    	}
-	}*/
 
+    /**
+     * Prints the result of the parser in a formatted way.
+     * @throws IOException
+     */
 	void printResults() throws IOException{
 		System.out.println("");
 		System.out.println("----------------------------------------------------------------------------");
@@ -336,11 +497,16 @@ public class Netinstancer extends Verilog2001BaseListener {
 		List<String> defines = new ArrayList<String>();
 		List<String> netinst = new ArrayList<String>();
 		
-    	for(String net : nets) {
+    	for(Entry<String, NetDescriptor> net : nets.entrySet()) {
     		netinst.add("\tengine.register_net(new NetFlow(\"" + net + "\"));");
 //    		String cid = toCIdentifier(net, true);
-    		defines.add("#define " + netId2CdefineId(net) + " " + String.valueOf(i));
-    		i++;
+    		for(String cid : net.getValue().getCdefineIdentifierList() ){
+        		defines.add("#define " + cid + " " + String.valueOf(i));
+        		i++;
+    		}
+//    		defines.add("#define " + net.getValue().getCdefineIdentifierList() + " " + String.valueOf(i));
+//    		defines.add("#define " + net.getValue().getCdefineIdentifierList() + " " + String.valueOf(i));
+//    		i++;
     	}
 
     	for(String def : defines) {
@@ -354,11 +520,15 @@ public class Netinstancer extends Verilog2001BaseListener {
     		netInstancerSource.write(net + "\n");
     	}
     	
+    	// TODO 
     	finishFiles();
-
 
     }
     
+	/**
+	 * Append common end of each files and close them.
+	 * @throws IOException
+	 */
     void finishFiles() throws IOException{
         
     	String path;

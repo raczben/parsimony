@@ -13,6 +13,10 @@ import java.util.List;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNodeImpl;
 
+import verilog.Direction;
+import verilog.ParameterDescriptior;
+import verilog.PrimitiveDescriptor;
+import verilog.Type;
 import antlr.Verilog2001BaseListener;
 import antlr.Verilog2001Parser;
 import antlr.Verilog2001Parser.Module_itemContext;
@@ -24,6 +28,7 @@ import antlr.Verilog2001Parser.PortContext;
 import antlr.Verilog2001Parser.Port_declarationContext;
 import antlr.Verilog2001Parser.Port_identifierContext;
 import antlr.Verilog2001Parser.PrimaryContext;
+import antlr.Verilog2001Parser.RangeContext;
 import antlr.Verilog2001Parser.TermContext;
 
 /**
@@ -32,12 +37,6 @@ import antlr.Verilog2001Parser.TermContext;
  * @author Benedek Racz
  *
  */
-enum Direction{
-	INPUT,
-	OUTPUT,
-	INOUT,
-	UNDEFINED
-}
 
 /**
  * PrimitiveMapper is a class to parsing verilog simulation primitives.
@@ -75,7 +74,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
     		Logger.writeError("at line: " + ctx.start.getLine() + " " + ctx.getStart().getInputStream().getSourceName() + " " + Thread.currentThread().getName());
     		return;
     	}
-    	primitiveDeclaration.primitiveIdentifier = moduleId;
+    	primitiveDeclaration.setPrimitiveIdentifier(moduleId);
     	
     	/**
     	 * Handle the module parameters aka. generics
@@ -87,7 +86,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
     			String parameterName = parameterAssignments.parameter_identifier().getText();
     			String parameterValue = parameterAssignments.constant_expression().getText();
     			
-    			primitiveDeclaration.parameters.put(parameterName, new ParameterInfo(Type.UNDEFINED, parameterValue));
+    			primitiveDeclaration.addParameter(parameterName, Type.UNDEFINED, parameterValue);
     		}
     	}
     	}catch(NullPointerException ex){
@@ -113,7 +112,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 	//        		System.out.println("type: " + child.getClass() + "  Text: " + child.getText());
 	//    		}
 	    		
-	    		primitiveDeclaration.ports.put(port.getText(), Direction.UNDEFINED);
+	    		primitiveDeclaration.addPort(port.getText());
 	    	}
     	} catch(NullPointerException ex){
     		Logger.writeWarning("Null pointer exeption while parsing module: " + moduleId + " at line: " + ctx.start.getLine());
@@ -160,7 +159,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 	    			
 	    			if (termContextChild instanceof TerminalNodeImpl){
 	    				parameterType = Type.PARAMETER_STRING_T;
-	    				if(ParameterInfo.isEnum(parameterValue)){
+	    				if(ParameterDescriptior.isEnum(parameterValue)){
 		    				parameterType = Type.PARAMETER_ENUM_T;
 	    				}
 	    			}
@@ -170,7 +169,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 	    			}
 	    			
 	    			
-	    			primitiveDeclaration.parameters.put(parameterName, new ParameterInfo(parameterType, parameterValue));
+	    			primitiveDeclaration.addParameter(parameterName, parameterType, parameterValue);
 	    		}
 	    		continue;
     		}
@@ -182,27 +181,44 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
     		Port_declarationContext portDeclaration = moduleItem.port_declaration();
     		if(null != portDeclaration){
     			List<Port_identifierContext> portIdList;
+    			RangeContext range = null;
     			
     			try{
-    			portIdList = portDeclaration.input_declaration().list_of_port_identifiers().port_identifier();
+    				portIdList = portDeclaration.input_declaration().list_of_port_identifiers().port_identifier();
+    				range = portDeclaration.input_declaration().range();
+//    				
+//    		        msb = BasicConverters.toInteger(range.msb_constant_expression().constant_expression());
+//    		        lsb = BasicConverters.toInteger(range.lsb_constant_expression().constant_expression());
+//    		        	
+    						
 		    		for(Port_identifierContext portId : portIdList){
-		    			primitiveDeclaration.ports.replace(portId.getText(), Direction.INPUT);
+
+//	    		        for(int index = lsb; index <=msb; index++){
+//		    	    		String name2 = portId.getText() + "[" + String.valueOf(index) + "]";
+//		    	    		Logger.writeInfo("  Net identifier: " + name2);
+//			    	    	nets.add(name2);
+//			    	    	primitiveDeclaration.updatePort(portId.getText(), Direction.INPUT, msb, lsb);
+//			    	    	//defines.put(name2, value);
+//		    	    	}	
+		    			
+		    			
+		    			primitiveDeclaration.updatePort(portId.getText(), Direction.INPUT, range);
 			    		continue;
 		    		}
     			}catch(NullPointerException ex){}
 
     			try{
-    			portIdList = portDeclaration.output_declaration().list_of_port_identifiers().port_identifier();
+    				portIdList = portDeclaration.output_declaration().list_of_port_identifiers().port_identifier();
 		    		for(Port_identifierContext portId : portIdList){
-		    			primitiveDeclaration.ports.replace(portId.getText(), Direction.OUTPUT);
+		    			primitiveDeclaration.updatePort(portId.getText(), Direction.OUTPUT, range);
 			    		continue;
 	    			}
     			}catch(NullPointerException ex){}
 
     			try{
-    			portIdList = portDeclaration.inout_declaration().list_of_port_identifiers().port_identifier();
+    				portIdList = portDeclaration.inout_declaration().list_of_port_identifiers().port_identifier();
 		    		for(Port_identifierContext portId : portDeclaration.inout_declaration().list_of_port_identifiers().port_identifier()){
-		    			primitiveDeclaration.ports.replace(portId.getText(), Direction.INOUT);
+		    			primitiveDeclaration.updatePort(portId.getText(), Direction.INOUT, range);
 			    		continue;
 	    			}
     			}catch(NullPointerException ex){}
@@ -250,24 +266,59 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 	 * It loads data of primitives (aka. primitiveDEclarationList) from file.
 	 * It use the serialization Java interface.
 	 */
-	public static void loadData(){
+	public static boolean loadData(){
+		primitiveDEclarationList = new ArrayList<PrimitiveDescriptor>();
 		try {
 			String saveFileName = "primitives.ser";
 	        FileInputStream fileIn = new FileInputStream(saveFileName);
 	        ObjectInputStream in = new ObjectInputStream(fileIn);
-	        primitiveDEclarationList = (List<PrimitiveDescriptor>) in.readObject();
+	        Object readedObj = in.readObject();
+	        //primitiveDEclarationList = (List<PrimitiveDescriptor>) in.readObject();
+	        
+	        // Check it's an ArrayList
+	        if (readedObj instanceof ArrayList<?>) {
+	        	// Get the List.
+	        	ArrayList<?> al = (ArrayList<?>) readedObj;
+	        	if (al.size() > 0) {
+	        		// Iterate.
+	        		for (int i = 0; i < al.size(); i++) {
+	        			// Still not enough for a type.
+	        			Object o = al.get(i);
+	        			if (o instanceof PrimitiveDescriptor) {
+	        				// Here we go!
+	        				PrimitiveDescriptor v = (PrimitiveDescriptor) o;
+	        				// use v.
+	        				
+	        				primitiveDEclarationList.add(v);
+	        			}
+	        			else{
+	        				Logger.writeError("o is not instanceof PrimitiveDescriptor");
+	        			}
+	        		}
+	        	}
+	        }
+    		else{
+    			Logger.writeError("o is not instanceof array");
+    		}
+	        
+	        
+	       /* if(readedObj instanceof List<?>){
+	        	primitiveDEclarationList = (List<PrimitiveDescriptor>) readedObj;
+	        }*/
 	        in.close();
 	        fileIn.close();
 	      }catch(IOException i)
 	      {
 	         i.printStackTrace();
-	         return;
+	         return false;
 	      }catch(ClassNotFoundException c)
 	      {
 	    	 Logger.writeError("Class not found");
 	         c.printStackTrace();
-	         return;
+	         return false;
 	      }
+		Logger.writeInfo("Load Success?");
+		return true;
 	}
 
 }

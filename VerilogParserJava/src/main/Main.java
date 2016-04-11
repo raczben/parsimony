@@ -12,6 +12,7 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import verilog.PrimitiveDescriptor;
 import antlr.Verilog2001Lexer;
 import antlr.Verilog2001Parser;
 import antlr.Verilog2001Parser.Module_declarationContext;
@@ -60,7 +61,10 @@ public class Main {
 	static void net_instancer() throws FileNotFoundException, IOException{
 
 //	    PrimitiveMapper primitiveMapper = new PrimitiveMapper();
-	    PrimitiveMapper.loadData();
+	    if(! PrimitiveMapper.loadData()){
+	    	Logger.writeError("Failure");
+	    	return;
+	    }
 	    PrimitiveMapper.printResults();
 		
 		
@@ -124,7 +128,7 @@ public class Main {
 	        }
 	        
 //	        i++;
-//	        if(i>20)
+//	        if(i>10)
 //	        	break;
 	    }
 	    
@@ -144,7 +148,20 @@ public class Main {
 	    }		
 
 	    PrimitiveMapper.printResults();
+	    
+	    List<PrimitiveDescriptor> list = PrimitiveMapper.primitiveDEclarationList;
+	    
 	    PrimitiveMapper.saveData();
+	    
+	    
+	    PrimitiveMapper.loadData();
+	    PrimitiveMapper.printResults();
+	    
+	    if(list.equals( PrimitiveMapper.primitiveDEclarationList)){
+	    	System.out.println("Save success");
+	    }
+	    
+	    
 	}
 	
 	/**
