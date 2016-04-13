@@ -26,7 +26,8 @@ public:
 
 	void register_net(NetFlow * net);
 
-	//void register_net(NetFlow& net);
+	void register_primitive(Primitive *);
+
 };
 
 #endif //SIMULATOR_ENGINE_H

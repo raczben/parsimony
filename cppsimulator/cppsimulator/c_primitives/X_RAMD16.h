@@ -5,68 +5,69 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_RAMD16{
+	
+	class X_RAMD16: public Primitive{
 
 		//Verilog Parameters:
-		parameter_int_t INIT;
+		parameter_string_t INIT;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // OUTPUT
-		NetFlow* CLK; // INPUT
-		NetFlow* I; // INPUT
-		NetFlow* RADR0; // INPUT
-		NetFlow* RADR1; // INPUT
-		NetFlow* RADR2; // INPUT
-		NetFlow* RADR3; // INPUT
-		NetFlow* WADR0; // INPUT
-		NetFlow* WADR1; // INPUT
-		NetFlow* WADR2; // INPUT
-		NetFlow* WADR3; // INPUT
-		NetFlow* WE; // INPUT
+		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* RADR0; // net ID: RADR0 lsb: 0  msb: 0 INPUT
+		NetFlow* RADR1; // net ID: RADR1 lsb: 0  msb: 0 INPUT
+		NetFlow* RADR2; // net ID: RADR2 lsb: 0  msb: 0 INPUT
+		NetFlow* RADR3; // net ID: RADR3 lsb: 0  msb: 0 INPUT
+		NetFlow* WADR0; // net ID: WADR0 lsb: 0  msb: 0 INPUT
+		NetFlow* WADR1; // net ID: WADR1 lsb: 0  msb: 0 INPUT
+		NetFlow* WADR2; // net ID: WADR2 lsb: 0  msb: 0 INPUT
+		NetFlow* WADR3; // net ID: WADR3 lsb: 0  msb: 0 INPUT
+		NetFlow* WE; // net ID: WE lsb: 0  msb: 0 INPUT
 		
-	
 		X_RAMD16(
+			const char * name,
 			//Verilog Parameters:
-			parameter_int_t INIT, // Default: 16'h0000
+			parameter_string_t INIT, // Default: 16'h0000
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // OUTPUT
-			NetFlow* CLK, // INPUT
-			NetFlow* I, // INPUT
-			NetFlow* RADR0, // INPUT
-			NetFlow* RADR1, // INPUT
-			NetFlow* RADR2, // INPUT
-			NetFlow* RADR3, // INPUT
-			NetFlow* WADR0, // INPUT
-			NetFlow* WADR1, // INPUT
-			NetFlow* WADR2, // INPUT
-			NetFlow* WADR3, // INPUT
-			NetFlow* WE // INPUT
-			){
-		
+			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* I, // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* RADR0, // net ID: RADR0 lsb: 0  msb: 0 INPUT
+			NetFlow* RADR1, // net ID: RADR1 lsb: 0  msb: 0 INPUT
+			NetFlow* RADR2, // net ID: RADR2 lsb: 0  msb: 0 INPUT
+			NetFlow* RADR3, // net ID: RADR3 lsb: 0  msb: 0 INPUT
+			NetFlow* WADR0, // net ID: WADR0 lsb: 0  msb: 0 INPUT
+			NetFlow* WADR1, // net ID: WADR1 lsb: 0  msb: 0 INPUT
+			NetFlow* WADR2, // net ID: WADR2 lsb: 0  msb: 0 INPUT
+			NetFlow* WADR3, // net ID: WADR3 lsb: 0  msb: 0 INPUT
+			NetFlow* WE // net ID: WE lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->INIT = INIT; // Default: 16'h0000
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // OUTPUT
-			this->CLK = CLK; // INPUT
-			this->I = I; // INPUT
-			this->RADR0 = RADR0; // INPUT
-			this->RADR1 = RADR1; // INPUT
-			this->RADR2 = RADR2; // INPUT
-			this->RADR3 = RADR3; // INPUT
-			this->WADR0 = WADR0; // INPUT
-			this->WADR1 = WADR1; // INPUT
-			this->WADR2 = WADR2; // INPUT
-			this->WADR3 = WADR3; // INPUT
-			this->WE = WE; // INPUT
-		
+			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			this->RADR0 = RADR0; // net ID: RADR0 lsb: 0  msb: 0 INPUT
+			this->RADR1 = RADR1; // net ID: RADR1 lsb: 0  msb: 0 INPUT
+			this->RADR2 = RADR2; // net ID: RADR2 lsb: 0  msb: 0 INPUT
+			this->RADR3 = RADR3; // net ID: RADR3 lsb: 0  msb: 0 INPUT
+			this->WADR0 = WADR0; // net ID: WADR0 lsb: 0  msb: 0 INPUT
+			this->WADR1 = WADR1; // net ID: WADR1 lsb: 0  msb: 0 INPUT
+			this->WADR2 = WADR2; // net ID: WADR2 lsb: 0  msb: 0 INPUT
+			this->WADR3 = WADR3; // net ID: WADR3 lsb: 0  msb: 0 INPUT
+			this->WE = WE; // net ID: WE lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -75,7 +76,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

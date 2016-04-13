@@ -5,10 +5,11 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_IBUFDS{
+	
+	class X_IBUFDS: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t LOC;
@@ -19,12 +20,12 @@ namespace CPrimitives {
 		parameter_string_t IFD_DELAY_VALUE;
 		parameter_string_t IOSTANDARD;
 		//Verilog Ports in definition order:
-		NetFlow* O; // OUTPUT
-		NetFlow* I; // INPUT
-		NetFlow* IB; // INPUT
+		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* IB; // net ID: IB lsb: 0  msb: 0 INPUT
 		
-	
 		X_IBUFDS(
+			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_string_t CAPACITANCE, // Default: "DONT_CARE"
@@ -34,11 +35,11 @@ namespace CPrimitives {
 			parameter_string_t IFD_DELAY_VALUE, // Default: "AUTO"
 			parameter_string_t IOSTANDARD, // Default: "DEFAULT"
 			//Verilog Ports in definition order:
-			NetFlow* O, // OUTPUT
-			NetFlow* I, // INPUT
-			NetFlow* IB // INPUT
-			){
-		
+			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* I, // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* IB // net ID: IB lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
@@ -49,12 +50,12 @@ namespace CPrimitives {
 			this->IFD_DELAY_VALUE = IFD_DELAY_VALUE; // Default: "AUTO"
 			this->IOSTANDARD = IOSTANDARD; // Default: "DEFAULT"
 			//Verilog Ports in definition order:
-			this->O = O; // OUTPUT
-			this->I = I; // INPUT
-			this->IB = IB; // INPUT
-		
+			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			this->IB = IB; // net ID: IB lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -63,7 +64,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

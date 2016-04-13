@@ -85,8 +85,12 @@ public class SourceGenerator {
 	 * Append an indented block at the end of the source code. 
 	 * @param identedLine
 	 */
-	public void add(final SourceGenerator identedLine){
-		nodes.add(new SourceCodeNode(identedLine));
+	public void add(final SourceGenerator identedBlock){
+		try {
+			add(identedBlock, 1);
+		} catch (Exception e) {
+			// Cannoot be error
+		}
 	}
 	
 	/**
@@ -103,12 +107,32 @@ public class SourceGenerator {
 	 * @param deepth
 	 * @return
 	 */
-	String toString(final int deepth){
+	public String toString(final int deepth){
 		String ret = "";
 		for(SourceCodeNode node : nodes){
 			ret += node.toString(deepth);
 		}
 		return ret;	
+	}
+
+	public void add(SourceGenerator indentedBlock, final int indent) throws Exception {
+		if(indent<0)
+			throw new Exception("indent is not positive.");
+		if(0 == indent){
+			for(SourceCodeNode node : indentedBlock.nodes){
+				if(node.isSimpleLine()){
+					add(node.singleCodeLine);
+				}
+				else{
+					add(node.indentedBlock);
+				}
+			}
+		}
+		if(1 == indent){
+			nodes.add(new SourceCodeNode(indentedBlock));
+			return;
+		}
+		throw new Exception("Unsupported indent");
 	}
 	
 }

@@ -3,21 +3,41 @@ package main;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import sourceGenerator.SourceGenerator;
 import verilog.PrimitiveDescriptor;
 import antlr.Verilog2001Lexer;
 import antlr.Verilog2001Parser;
 import antlr.Verilog2001Parser.Module_declarationContext;
 
+
 public class Main {
+	
+	static final Map<FileNamesEnum, String> simulationFilenames = new HashMap<FileNamesEnum, String>(){/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+	{
+		put(FileNamesEnum.NET_INST_HEADER, "netinstatiation.h");
+		put(FileNamesEnum.NET_INST_SRC, "netinstatiation.cpp");
+//		put(FileNamesEnum.PRIM_INST_HEADER, "primitiveInstation.h");
+		put(FileNamesEnum.PRIM_INST_SRC, "primitiveInstatiation.cpp");
+	}
+	};
 	
 	/**
 	 * This was the first ANTLR example function. It collects and orders the
@@ -145,7 +165,9 @@ public class Main {
 	    
 	    for(Thread thread : threads){
 	    	thread.join();
-	    }		
+	    }
+	    
+	    generatePrimitiveIncludeHeader();
 
 	    PrimitiveMapper.printResults();
 	    
@@ -177,6 +199,53 @@ public class Main {
 	}
 	
 	/**
+	 * @throws IOException 
+	 * 
+	 */
+	private static void copyResultsToCppProject() throws IOException {
+		for(String filename : simulationFilenames.values()){
+			File source = new File(filename);
+			File target = new File("..\\cppsimulator\\cppsimulator", filename);
+			Logger.writeInfo("Copy from: " + source.toPath() + "  to " + target.toPath());
+			Files.copy(source.toPath(), target.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		}
+		
+	}
+	
+
+	/**
+	 * @throws IOException 
+	 * 
+	 */
+	private static void generatePrimitiveIncludeHeader() throws IOException {
+		SourceGenerator srcgen = new SourceGenerator("");
+		
+		
+		File folder = new File("generatedCppTemplates");
+	    for (final File fileEntry : folder.listFiles()) {
+	        System.out.flush();
+	        System.err.flush();
+	        if (fileEntry.isFile()) {
+	        	String fileName = fileEntry.getName();
+	            if(fileName.endsWith(".h")) {
+	            	srcgen.add("#include \"" + fileName + "\"");
+	            }
+	            else {
+	            	System.out.println("Skipping file: " + fileName);
+	            }
+	        }
+	    }
+	    
+    	srcgen.add("");
+	    
+	    FileWriter outFile = new FileWriter(new File("generatedCppTemplates\\PrimitiveInclude.h"));
+	    outFile.write(srcgen.toString());
+	    outFile.close();
+		
+		
+	}
+	
+	/**
 	 * The main function. Choose (uncomment) functions below. First you should
 	 * run the primitiveMapper() then the others. See above the description of
 	 * the functions.
@@ -189,14 +258,18 @@ public class Main {
 	public static void main(String[] arg) throws FileNotFoundException, IOException, InterruptedException{
 		Logger.init("error.log");
 		
+		
 //		primitiveMapper("C:\\Users\\ebenera\\bme\\2015_16_tavasz\\onlab2\\xilinxPrimitives\\simprims");
-		net_instancer();
-//		generateCTemplate();
+//		net_instancer();
+		generateCTemplate();
+//		generatePrimitiveIncludeHeader();
+//		copyResultsToCppProject();
 	
 		
 		Logger.close();
 		System.out.println("Exit");
 	}
+
 
 	
 }

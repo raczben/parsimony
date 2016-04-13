@@ -5,59 +5,60 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_RAMS32{
+	
+	class X_RAMS32: public Primitive{
 
 		//Verilog Parameters:
-		parameter_int_t INIT;
+		parameter_string_t INIT;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // OUTPUT
-		NetFlow* ADR0; // INPUT
-		NetFlow* ADR1; // INPUT
-		NetFlow* ADR2; // INPUT
-		NetFlow* ADR3; // INPUT
-		NetFlow* ADR4; // INPUT
-		NetFlow* CLK; // INPUT
-		NetFlow* I; // INPUT
-		NetFlow* WE; // INPUT
+		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* ADR0; // net ID: ADR0 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR1; // net ID: ADR1 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR2; // net ID: ADR2 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR3; // net ID: ADR3 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR4; // net ID: ADR4 lsb: 0  msb: 0 INPUT
+		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* WE; // net ID: WE lsb: 0  msb: 0 INPUT
 		
-	
 		X_RAMS32(
+			const char * name,
 			//Verilog Parameters:
-			parameter_int_t INIT, // Default: 32'h00000000
+			parameter_string_t INIT, // Default: 32'h00000000
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // OUTPUT
-			NetFlow* ADR0, // INPUT
-			NetFlow* ADR1, // INPUT
-			NetFlow* ADR2, // INPUT
-			NetFlow* ADR3, // INPUT
-			NetFlow* ADR4, // INPUT
-			NetFlow* CLK, // INPUT
-			NetFlow* I, // INPUT
-			NetFlow* WE // INPUT
-			){
-		
+			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* ADR0, // net ID: ADR0 lsb: 0  msb: 0 INPUT
+			NetFlow* ADR1, // net ID: ADR1 lsb: 0  msb: 0 INPUT
+			NetFlow* ADR2, // net ID: ADR2 lsb: 0  msb: 0 INPUT
+			NetFlow* ADR3, // net ID: ADR3 lsb: 0  msb: 0 INPUT
+			NetFlow* ADR4, // net ID: ADR4 lsb: 0  msb: 0 INPUT
+			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* I, // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* WE // net ID: WE lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->INIT = INIT; // Default: 32'h00000000
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // OUTPUT
-			this->ADR0 = ADR0; // INPUT
-			this->ADR1 = ADR1; // INPUT
-			this->ADR2 = ADR2; // INPUT
-			this->ADR3 = ADR3; // INPUT
-			this->ADR4 = ADR4; // INPUT
-			this->CLK = CLK; // INPUT
-			this->I = I; // INPUT
-			this->WE = WE; // INPUT
-		
+			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->ADR0 = ADR0; // net ID: ADR0 lsb: 0  msb: 0 INPUT
+			this->ADR1 = ADR1; // net ID: ADR1 lsb: 0  msb: 0 INPUT
+			this->ADR2 = ADR2; // net ID: ADR2 lsb: 0  msb: 0 INPUT
+			this->ADR3 = ADR3; // net ID: ADR3 lsb: 0  msb: 0 INPUT
+			this->ADR4 = ADR4; // net ID: ADR4 lsb: 0  msb: 0 INPUT
+			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			this->WE = WE; // net ID: WE lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -66,7 +67,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

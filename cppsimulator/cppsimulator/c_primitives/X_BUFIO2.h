@@ -5,38 +5,39 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_BUFIO2{
+	
+	class X_BUFIO2: public Primitive{
 
 		//Verilog Parameters:
 		parameter_enum_t DIVIDE_BYPASS;
-		parameter_int_t DIVIDE;
+		parameter_string_t DIVIDE;
 		parameter_enum_t I_INVERT;
 		parameter_enum_t USE_DOUBLER;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* DIVCLK; // OUTPUT
-		NetFlow* IOCLK; // OUTPUT
-		NetFlow* SERDESSTROBE; // OUTPUT
-		NetFlow* I; // INPUT
+		NetFlow* DIVCLK; // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
+		NetFlow* IOCLK; // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
+		NetFlow* SERDESSTROBE; // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
+		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
 		
-	
 		X_BUFIO2(
+			const char * name,
 			//Verilog Parameters:
 			parameter_enum_t DIVIDE_BYPASS, // Default: "TRUE"
-			parameter_int_t DIVIDE, // Default: 1
+			parameter_string_t DIVIDE, // Default: 1
 			parameter_enum_t I_INVERT, // Default: "FALSE"
 			parameter_enum_t USE_DOUBLER, // Default: "FALSE"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* DIVCLK, // OUTPUT
-			NetFlow* IOCLK, // OUTPUT
-			NetFlow* SERDESSTROBE, // OUTPUT
-			NetFlow* I // INPUT
-			){
-		
+			NetFlow* DIVCLK, // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
+			NetFlow* IOCLK, // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
+			NetFlow* SERDESSTROBE, // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
+			NetFlow* I // net ID: I lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->DIVIDE_BYPASS = DIVIDE_BYPASS; // Default: "TRUE"
@@ -45,13 +46,13 @@ namespace CPrimitives {
 			this->USE_DOUBLER = USE_DOUBLER; // Default: "FALSE"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->DIVCLK = DIVCLK; // OUTPUT
-			this->IOCLK = IOCLK; // OUTPUT
-			this->SERDESSTROBE = SERDESSTROBE; // OUTPUT
-			this->I = I; // INPUT
-		
+			this->DIVCLK = DIVCLK; // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
+			this->IOCLK = IOCLK; // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
+			this->SERDESSTROBE = SERDESSTROBE; // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
+			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -60,7 +61,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

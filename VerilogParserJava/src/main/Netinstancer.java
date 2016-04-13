@@ -39,21 +39,15 @@ import antlr.Verilog2001Parser.RangeContext;
 
 /**
  * Netinstancer parse the post-xxx simulation model's code and instantiate the
- * nets and the primitices in the generated c code.
+ * nets and the primitives in the generated c code.
  * 
- * @author ebenera
+ * @author Benedek Racz
  *
  */
 public class Netinstancer extends Verilog2001BaseListener {
 	/**
-	 * 
-	 */
-	//Map<PrimitiveClass, Histogram <String> > sub_module_histogram;
-	
-	/**
 	 * nets contains the parsed net names. 
 	 */
-//	private List<String> nets;
 	private NetContainer nets;
 	
 	/**
@@ -125,7 +119,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 		is = Netinstancer.class.getResourceAsStream(path);
 		br = new BufferedReader(new InputStreamReader(is));
 		
-		netInstancerHeader = new FileWriter(new File("netinstatiation.h"));
+		netInstancerHeader = new FileWriter(new File(Main.simulationFilenames.get(FileNamesEnum.NET_INST_HEADER)));
 		while(true){
 			String line = br.readLine();
 			if (line == null)
@@ -135,7 +129,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 		
 		br.close();
 		
-		netInstancerSource = new FileWriter(new File("netinstatiation.cpp"));
+		netInstancerSource = new FileWriter(new File(Main.simulationFilenames.get(FileNamesEnum.NET_INST_SRC)));
 		
 
 		path = "resources/netinstancerSourceBegin.txt";
@@ -152,8 +146,8 @@ public class Netinstancer extends Verilog2001BaseListener {
 		br.close();
 		
 		
-		primitiveInstancerSource = new PrintStream("primitiveInstation.cpp");
-		CppTemplateGenerator.appendSource("resources/netinstancerSourceBegin.txt", primitiveInstancerSource);
+		primitiveInstancerSource = new PrintStream(Main.simulationFilenames.get(FileNamesEnum.PRIM_INST_SRC));
+		CppTemplateGenerator.appendSource("resources/priminstancerSourceBegin.txt", primitiveInstancerSource);
 		
 	}
 	
@@ -300,76 +294,14 @@ public class Netinstancer extends Verilog2001BaseListener {
 //    		ExpressionContext expr = portConnection.expression();
     		
     		Expression expression = ParseExpression.parseExpression(portConnection.expression());
-    		/*
-    		List<TermContext> termList = expr.term();
-    		if(termList.size()>0){
-    			if(termList.size()>1){
-        			Logger.writeError("Supported term size mazimum is 1");
-            		return;
-    			}
-    			
-    			if (null == termList.get(0).primary()){
-        			Logger.writeError("primary should not be null");
-            		return;
-    			}
-
-    			if (null == termList.get(0).primary().number()){
-    				connection = new PortConnection(termList.get(0).primary().getText());
-    				if(! errorCheck.equals(termList.get(0).primary().getText())){
-            			Logger.writeError("ErrorCheckError1");
-                		return;
-    				}
-    			}else{
-	
-	    			if (termList.get(0).primary().number().getChildCount() != 1){
-	        			Logger.writeError("Supported number size is exactly 1");
-	            		return;
-	    			}
-	    			
-	    			NumberContext number = termList.get(0).primary().number();
-	    			TerminalNode num = number.Hex_number();
-	    			if (null != num){
-	    				connection = new PortConnection(number.getText(), 16);
-	    			}
-	    			num = number.Decimal_number();
-	    			if (null != num){
-	    				connection = new PortConnection(number.getText(), 10);
-	    			}
-	    			num = number.Binary_number();
-	    			if (null != num){
-	    				connection = new PortConnection(num.getText(), 2);
-	    			}
-	    			num = number.Octal_number();
-	    			if (null != num){
-	    				connection = new PortConnection(number.getText(), 8);
-	    			}
-	    			
-	    		}
-    		}*/
-
-    		/*List<Attribute_instanceContext> attributeList = expr.attribute_instance();
-    		if(attributeList.size()>0){
-    			if(attributeList.size()>1){
-        			Logger.writeError("Supported attributeList size mazimum is 1");    		
-            		return;
-    			}
-    			attributeList.get(0).getText();
-    		}*/
     		
-    		
-    		
-    		String nameOfNet = portConnection.expression().getText();
+    		//String nameOfNet = portConnection.expression().getText();
 
         	PrimitiveDescriptor primitive = primitiveInfos.get(primType);
         	
     		connection = new PortConnection(primitive.getPorts().get(nameOfPrimitivePort), expression);
     		
     		portAssignments.put(nameOfPrimitivePort, connection);
-    		
-    		
-//    		if (nameOfNet.equals("1'b1")){
-//    			System.out.println("itt a baj");
-//    		}
     		
     	}
 
@@ -459,13 +391,27 @@ public class Netinstancer extends Verilog2001BaseListener {
     	}
     	srcGen1.add("");
     	srcGen1.add("//Module port assignments:");
+    	PortConnection lastPort = orderedPorts.get(orderedPorts.size() - 1);
+    	boolean lastIterate = false;
 		for(PortConnection portConnection : orderedPorts){
+			if(lastPort == portConnection){
+				lastIterate = true;
+			}
 			int portLsb = portConnection.getPortIdentifier().getLsb();
 			int portMsb = portConnection.getPortIdentifier().getMsb();
+			
 			for(int i = portLsb; i <= portMsb; i++){
+				if(lastPort == portConnection & (portMsb == i)){
+					lastIterate = true;
+				}
 	    		if(portConnection.getExpression().isNet(i)){
 	    			NetDescriptor netDesc = portConnection.getExpression().getNet(i);
-	    			srcGen1.add("engine.get_net(" + netDesc.getCdefineIdentifierBit(netDesc.getLsb()) +  "), // " + portConnection.getPortIdentifier().getNetIdentifier() );
+	    			String comment = portConnection.getPortIdentifier().getNetIdentifier();
+	    			String comma = ", "; //coma
+	    			if(lastIterate){
+	    				comma = " ";
+	    			}
+	    			srcGen1.add("engine.get_net(" + netDesc.getCdefineIdentifierBit(netDesc.getLsb()) +  ")" + comma + " // " + comment );
 	    		}else{
 	        		Logger.writeError("Primitiveinstantiation : portConnection: " + portConnection + " .");
 	        		return;

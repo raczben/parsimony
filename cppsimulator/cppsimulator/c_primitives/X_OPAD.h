@@ -5,32 +5,33 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_OPAD{
+	
+	class X_OPAD: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* PAD; // OUTPUT
+		NetFlow* PAD; // net ID: PAD lsb: 0  msb: 0 OUTPUT
 		
-	
 		X_OPAD(
+			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* PAD // OUTPUT
-			){
-		
+			NetFlow* PAD // net ID: PAD lsb: 0  msb: 0 OUTPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->PAD = PAD; // OUTPUT
-		
+			this->PAD = PAD; // net ID: PAD lsb: 0  msb: 0 OUTPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -39,7 +40,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

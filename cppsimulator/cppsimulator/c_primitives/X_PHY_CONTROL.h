@@ -5,136 +5,137 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_PHY_CONTROL{
+	
+	class X_PHY_CONTROL: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t LOC;
-		parameter_int_t AO_TOGGLE;
-		parameter_int_t AO_WRLVL_EN;
+		parameter_string_t AO_TOGGLE;
+		parameter_string_t AO_WRLVL_EN;
 		parameter_enum_t BURST_MODE;
-		parameter_int_t CLK_RATIO;
-		parameter_int_t CMD_OFFSET;
-		parameter_int_t CO_DURATION;
+		parameter_string_t CLK_RATIO;
+		parameter_string_t CMD_OFFSET;
+		parameter_string_t CO_DURATION;
 		parameter_enum_t DATA_CTL_A_N;
 		parameter_enum_t DATA_CTL_B_N;
 		parameter_enum_t DATA_CTL_C_N;
 		parameter_enum_t DATA_CTL_D_N;
 		parameter_enum_t DISABLE_SEQ_MATCH;
-		parameter_int_t DI_DURATION;
-		parameter_int_t DO_DURATION;
-		parameter_int_t EVENTS_DELAY;
-		parameter_int_t FOUR_WINDOW_CLOCKS;
+		parameter_string_t DI_DURATION;
+		parameter_string_t DO_DURATION;
+		parameter_string_t EVENTS_DELAY;
+		parameter_string_t FOUR_WINDOW_CLOCKS;
 		parameter_enum_t MULTI_REGION;
 		parameter_enum_t PHY_COUNT_ENABLE;
-		parameter_int_t RD_CMD_OFFSET_0;
-		parameter_int_t RD_CMD_OFFSET_1;
-		parameter_int_t RD_CMD_OFFSET_2;
-		parameter_int_t RD_CMD_OFFSET_3;
-		parameter_int_t RD_DURATION_0;
-		parameter_int_t RD_DURATION_1;
-		parameter_int_t RD_DURATION_2;
-		parameter_int_t RD_DURATION_3;
+		parameter_string_t RD_CMD_OFFSET_0;
+		parameter_string_t RD_CMD_OFFSET_1;
+		parameter_string_t RD_CMD_OFFSET_2;
+		parameter_string_t RD_CMD_OFFSET_3;
+		parameter_string_t RD_DURATION_0;
+		parameter_string_t RD_DURATION_1;
+		parameter_string_t RD_DURATION_2;
+		parameter_string_t RD_DURATION_3;
 		parameter_enum_t SYNC_MODE;
-		parameter_int_t WR_CMD_OFFSET_0;
-		parameter_int_t WR_CMD_OFFSET_1;
-		parameter_int_t WR_CMD_OFFSET_2;
-		parameter_int_t WR_CMD_OFFSET_3;
-		parameter_int_t WR_DURATION_0;
-		parameter_int_t WR_DURATION_1;
-		parameter_int_t WR_DURATION_2;
-		parameter_int_t WR_DURATION_3;
+		parameter_string_t WR_CMD_OFFSET_0;
+		parameter_string_t WR_CMD_OFFSET_1;
+		parameter_string_t WR_CMD_OFFSET_2;
+		parameter_string_t WR_CMD_OFFSET_3;
+		parameter_string_t WR_DURATION_0;
+		parameter_string_t WR_DURATION_1;
+		parameter_string_t WR_DURATION_2;
+		parameter_string_t WR_DURATION_3;
 		//Verilog Ports in definition order:
-		NetFlow* AUXOUTPUT; // OUTPUT
-		NetFlow* INBURSTPENDING; // OUTPUT
-		NetFlow* INRANKA; // OUTPUT
-		NetFlow* INRANKB; // OUTPUT
-		NetFlow* INRANKC; // OUTPUT
-		NetFlow* INRANKD; // OUTPUT
-		NetFlow* OUTBURSTPENDING; // OUTPUT
-		NetFlow* PCENABLECALIB; // OUTPUT
-		NetFlow* PHYCTLALMOSTFULL; // OUTPUT
-		NetFlow* PHYCTLEMPTY; // OUTPUT
-		NetFlow* PHYCTLFULL; // OUTPUT
-		NetFlow* PHYCTLREADY; // OUTPUT
-		NetFlow* MEMREFCLK; // INPUT
-		NetFlow* PHYCLK; // INPUT
-		NetFlow* PHYCTLMSTREMPTY; // INPUT
-		NetFlow* PHYCTLWD; // INPUT
-		NetFlow* PHYCTLWRENABLE; // INPUT
-		NetFlow* PLLLOCK; // INPUT
-		NetFlow* READCALIBENABLE; // INPUT
-		NetFlow* REFDLLLOCK; // INPUT
-		NetFlow* RESET; // INPUT
-		NetFlow* SYNCIN; // INPUT
-		NetFlow* WRITECALIBENABLE; // INPUT
+		NetFlow* AUXOUTPUT; // net ID: AUXOUTPUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* INBURSTPENDING; // net ID: INBURSTPENDING lsb: 0  msb: 0 OUTPUT
+		NetFlow* INRANKA; // net ID: INRANKA lsb: 0  msb: 0 OUTPUT
+		NetFlow* INRANKB; // net ID: INRANKB lsb: 0  msb: 0 OUTPUT
+		NetFlow* INRANKC; // net ID: INRANKC lsb: 0  msb: 0 OUTPUT
+		NetFlow* INRANKD; // net ID: INRANKD lsb: 0  msb: 0 OUTPUT
+		NetFlow* OUTBURSTPENDING; // net ID: OUTBURSTPENDING lsb: 0  msb: 0 OUTPUT
+		NetFlow* PCENABLECALIB; // net ID: PCENABLECALIB lsb: 0  msb: 0 OUTPUT
+		NetFlow* PHYCTLALMOSTFULL; // net ID: PHYCTLALMOSTFULL lsb: 0  msb: 0 OUTPUT
+		NetFlow* PHYCTLEMPTY; // net ID: PHYCTLEMPTY lsb: 0  msb: 0 OUTPUT
+		NetFlow* PHYCTLFULL; // net ID: PHYCTLFULL lsb: 0  msb: 0 OUTPUT
+		NetFlow* PHYCTLREADY; // net ID: PHYCTLREADY lsb: 0  msb: 0 OUTPUT
+		NetFlow* MEMREFCLK; // net ID: MEMREFCLK lsb: 0  msb: 0 INPUT
+		NetFlow* PHYCLK; // net ID: PHYCLK lsb: 0  msb: 0 INPUT
+		NetFlow* PHYCTLMSTREMPTY; // net ID: PHYCTLMSTREMPTY lsb: 0  msb: 0 INPUT
+		NetFlow* PHYCTLWD; // net ID: PHYCTLWD lsb: 0  msb: 31 INPUT
+		NetFlow* PHYCTLWRENABLE; // net ID: PHYCTLWRENABLE lsb: 0  msb: 0 INPUT
+		NetFlow* PLLLOCK; // net ID: PLLLOCK lsb: 0  msb: 0 INPUT
+		NetFlow* READCALIBENABLE; // net ID: READCALIBENABLE lsb: 0  msb: 0 INPUT
+		NetFlow* REFDLLLOCK; // net ID: REFDLLLOCK lsb: 0  msb: 0 INPUT
+		NetFlow* RESET; // net ID: RESET lsb: 0  msb: 0 INPUT
+		NetFlow* SYNCIN; // net ID: SYNCIN lsb: 0  msb: 0 INPUT
+		NetFlow* WRITECALIBENABLE; // net ID: WRITECALIBENABLE lsb: 0  msb: 0 INPUT
 		
-	
 		X_PHY_CONTROL(
+			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
-			parameter_int_t AO_TOGGLE, // Default: 0
-			parameter_int_t AO_WRLVL_EN, // Default: 4'b0000
+			parameter_string_t AO_TOGGLE, // Default: 0
+			parameter_string_t AO_WRLVL_EN, // Default: 4'b0000
 			parameter_enum_t BURST_MODE, // Default: "FALSE"
-			parameter_int_t CLK_RATIO, // Default: 1
-			parameter_int_t CMD_OFFSET, // Default: 0
-			parameter_int_t CO_DURATION, // Default: 0
+			parameter_string_t CLK_RATIO, // Default: 1
+			parameter_string_t CMD_OFFSET, // Default: 0
+			parameter_string_t CO_DURATION, // Default: 0
 			parameter_enum_t DATA_CTL_A_N, // Default: "FALSE"
 			parameter_enum_t DATA_CTL_B_N, // Default: "FALSE"
 			parameter_enum_t DATA_CTL_C_N, // Default: "FALSE"
 			parameter_enum_t DATA_CTL_D_N, // Default: "FALSE"
 			parameter_enum_t DISABLE_SEQ_MATCH, // Default: "TRUE"
-			parameter_int_t DI_DURATION, // Default: 0
-			parameter_int_t DO_DURATION, // Default: 0
-			parameter_int_t EVENTS_DELAY, // Default: 63
-			parameter_int_t FOUR_WINDOW_CLOCKS, // Default: 63
+			parameter_string_t DI_DURATION, // Default: 0
+			parameter_string_t DO_DURATION, // Default: 0
+			parameter_string_t EVENTS_DELAY, // Default: 63
+			parameter_string_t FOUR_WINDOW_CLOCKS, // Default: 63
 			parameter_enum_t MULTI_REGION, // Default: "FALSE"
 			parameter_enum_t PHY_COUNT_ENABLE, // Default: "FALSE"
-			parameter_int_t RD_CMD_OFFSET_0, // Default: 0
-			parameter_int_t RD_CMD_OFFSET_1, // Default: 00
-			parameter_int_t RD_CMD_OFFSET_2, // Default: 0
-			parameter_int_t RD_CMD_OFFSET_3, // Default: 0
-			parameter_int_t RD_DURATION_0, // Default: 0
-			parameter_int_t RD_DURATION_1, // Default: 0
-			parameter_int_t RD_DURATION_2, // Default: 0
-			parameter_int_t RD_DURATION_3, // Default: 0
+			parameter_string_t RD_CMD_OFFSET_0, // Default: 0
+			parameter_string_t RD_CMD_OFFSET_1, // Default: 00
+			parameter_string_t RD_CMD_OFFSET_2, // Default: 0
+			parameter_string_t RD_CMD_OFFSET_3, // Default: 0
+			parameter_string_t RD_DURATION_0, // Default: 0
+			parameter_string_t RD_DURATION_1, // Default: 0
+			parameter_string_t RD_DURATION_2, // Default: 0
+			parameter_string_t RD_DURATION_3, // Default: 0
 			parameter_enum_t SYNC_MODE, // Default: "FALSE"
-			parameter_int_t WR_CMD_OFFSET_0, // Default: 0
-			parameter_int_t WR_CMD_OFFSET_1, // Default: 0
-			parameter_int_t WR_CMD_OFFSET_2, // Default: 0
-			parameter_int_t WR_CMD_OFFSET_3, // Default: 0
-			parameter_int_t WR_DURATION_0, // Default: 0
-			parameter_int_t WR_DURATION_1, // Default: 0
-			parameter_int_t WR_DURATION_2, // Default: 0
-			parameter_int_t WR_DURATION_3, // Default: 0
+			parameter_string_t WR_CMD_OFFSET_0, // Default: 0
+			parameter_string_t WR_CMD_OFFSET_1, // Default: 0
+			parameter_string_t WR_CMD_OFFSET_2, // Default: 0
+			parameter_string_t WR_CMD_OFFSET_3, // Default: 0
+			parameter_string_t WR_DURATION_0, // Default: 0
+			parameter_string_t WR_DURATION_1, // Default: 0
+			parameter_string_t WR_DURATION_2, // Default: 0
+			parameter_string_t WR_DURATION_3, // Default: 0
 			//Verilog Ports in definition order:
-			NetFlow* AUXOUTPUT, // OUTPUT
-			NetFlow* INBURSTPENDING, // OUTPUT
-			NetFlow* INRANKA, // OUTPUT
-			NetFlow* INRANKB, // OUTPUT
-			NetFlow* INRANKC, // OUTPUT
-			NetFlow* INRANKD, // OUTPUT
-			NetFlow* OUTBURSTPENDING, // OUTPUT
-			NetFlow* PCENABLECALIB, // OUTPUT
-			NetFlow* PHYCTLALMOSTFULL, // OUTPUT
-			NetFlow* PHYCTLEMPTY, // OUTPUT
-			NetFlow* PHYCTLFULL, // OUTPUT
-			NetFlow* PHYCTLREADY, // OUTPUT
-			NetFlow* MEMREFCLK, // INPUT
-			NetFlow* PHYCLK, // INPUT
-			NetFlow* PHYCTLMSTREMPTY, // INPUT
-			NetFlow* PHYCTLWD, // INPUT
-			NetFlow* PHYCTLWRENABLE, // INPUT
-			NetFlow* PLLLOCK, // INPUT
-			NetFlow* READCALIBENABLE, // INPUT
-			NetFlow* REFDLLLOCK, // INPUT
-			NetFlow* RESET, // INPUT
-			NetFlow* SYNCIN, // INPUT
-			NetFlow* WRITECALIBENABLE // INPUT
-			){
-		
+			NetFlow* AUXOUTPUT, // net ID: AUXOUTPUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* INBURSTPENDING, // net ID: INBURSTPENDING lsb: 0  msb: 0 OUTPUT
+			NetFlow* INRANKA, // net ID: INRANKA lsb: 0  msb: 0 OUTPUT
+			NetFlow* INRANKB, // net ID: INRANKB lsb: 0  msb: 0 OUTPUT
+			NetFlow* INRANKC, // net ID: INRANKC lsb: 0  msb: 0 OUTPUT
+			NetFlow* INRANKD, // net ID: INRANKD lsb: 0  msb: 0 OUTPUT
+			NetFlow* OUTBURSTPENDING, // net ID: OUTBURSTPENDING lsb: 0  msb: 0 OUTPUT
+			NetFlow* PCENABLECALIB, // net ID: PCENABLECALIB lsb: 0  msb: 0 OUTPUT
+			NetFlow* PHYCTLALMOSTFULL, // net ID: PHYCTLALMOSTFULL lsb: 0  msb: 0 OUTPUT
+			NetFlow* PHYCTLEMPTY, // net ID: PHYCTLEMPTY lsb: 0  msb: 0 OUTPUT
+			NetFlow* PHYCTLFULL, // net ID: PHYCTLFULL lsb: 0  msb: 0 OUTPUT
+			NetFlow* PHYCTLREADY, // net ID: PHYCTLREADY lsb: 0  msb: 0 OUTPUT
+			NetFlow* MEMREFCLK, // net ID: MEMREFCLK lsb: 0  msb: 0 INPUT
+			NetFlow* PHYCLK, // net ID: PHYCLK lsb: 0  msb: 0 INPUT
+			NetFlow* PHYCTLMSTREMPTY, // net ID: PHYCTLMSTREMPTY lsb: 0  msb: 0 INPUT
+			NetFlow* PHYCTLWD, // net ID: PHYCTLWD lsb: 0  msb: 31 INPUT
+			NetFlow* PHYCTLWRENABLE, // net ID: PHYCTLWRENABLE lsb: 0  msb: 0 INPUT
+			NetFlow* PLLLOCK, // net ID: PLLLOCK lsb: 0  msb: 0 INPUT
+			NetFlow* READCALIBENABLE, // net ID: READCALIBENABLE lsb: 0  msb: 0 INPUT
+			NetFlow* REFDLLLOCK, // net ID: REFDLLLOCK lsb: 0  msb: 0 INPUT
+			NetFlow* RESET, // net ID: RESET lsb: 0  msb: 0 INPUT
+			NetFlow* SYNCIN, // net ID: SYNCIN lsb: 0  msb: 0 INPUT
+			NetFlow* WRITECALIBENABLE // net ID: WRITECALIBENABLE lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
@@ -173,32 +174,32 @@ namespace CPrimitives {
 			this->WR_DURATION_2 = WR_DURATION_2; // Default: 0
 			this->WR_DURATION_3 = WR_DURATION_3; // Default: 0
 			//Verilog Ports in definition order:
-			this->AUXOUTPUT = AUXOUTPUT; // OUTPUT
-			this->INBURSTPENDING = INBURSTPENDING; // OUTPUT
-			this->INRANKA = INRANKA; // OUTPUT
-			this->INRANKB = INRANKB; // OUTPUT
-			this->INRANKC = INRANKC; // OUTPUT
-			this->INRANKD = INRANKD; // OUTPUT
-			this->OUTBURSTPENDING = OUTBURSTPENDING; // OUTPUT
-			this->PCENABLECALIB = PCENABLECALIB; // OUTPUT
-			this->PHYCTLALMOSTFULL = PHYCTLALMOSTFULL; // OUTPUT
-			this->PHYCTLEMPTY = PHYCTLEMPTY; // OUTPUT
-			this->PHYCTLFULL = PHYCTLFULL; // OUTPUT
-			this->PHYCTLREADY = PHYCTLREADY; // OUTPUT
-			this->MEMREFCLK = MEMREFCLK; // INPUT
-			this->PHYCLK = PHYCLK; // INPUT
-			this->PHYCTLMSTREMPTY = PHYCTLMSTREMPTY; // INPUT
-			this->PHYCTLWD = PHYCTLWD; // INPUT
-			this->PHYCTLWRENABLE = PHYCTLWRENABLE; // INPUT
-			this->PLLLOCK = PLLLOCK; // INPUT
-			this->READCALIBENABLE = READCALIBENABLE; // INPUT
-			this->REFDLLLOCK = REFDLLLOCK; // INPUT
-			this->RESET = RESET; // INPUT
-			this->SYNCIN = SYNCIN; // INPUT
-			this->WRITECALIBENABLE = WRITECALIBENABLE; // INPUT
-		
+			this->AUXOUTPUT = AUXOUTPUT; // net ID: AUXOUTPUT lsb: 0  msb: 0 OUTPUT
+			this->INBURSTPENDING = INBURSTPENDING; // net ID: INBURSTPENDING lsb: 0  msb: 0 OUTPUT
+			this->INRANKA = INRANKA; // net ID: INRANKA lsb: 0  msb: 0 OUTPUT
+			this->INRANKB = INRANKB; // net ID: INRANKB lsb: 0  msb: 0 OUTPUT
+			this->INRANKC = INRANKC; // net ID: INRANKC lsb: 0  msb: 0 OUTPUT
+			this->INRANKD = INRANKD; // net ID: INRANKD lsb: 0  msb: 0 OUTPUT
+			this->OUTBURSTPENDING = OUTBURSTPENDING; // net ID: OUTBURSTPENDING lsb: 0  msb: 0 OUTPUT
+			this->PCENABLECALIB = PCENABLECALIB; // net ID: PCENABLECALIB lsb: 0  msb: 0 OUTPUT
+			this->PHYCTLALMOSTFULL = PHYCTLALMOSTFULL; // net ID: PHYCTLALMOSTFULL lsb: 0  msb: 0 OUTPUT
+			this->PHYCTLEMPTY = PHYCTLEMPTY; // net ID: PHYCTLEMPTY lsb: 0  msb: 0 OUTPUT
+			this->PHYCTLFULL = PHYCTLFULL; // net ID: PHYCTLFULL lsb: 0  msb: 0 OUTPUT
+			this->PHYCTLREADY = PHYCTLREADY; // net ID: PHYCTLREADY lsb: 0  msb: 0 OUTPUT
+			this->MEMREFCLK = MEMREFCLK; // net ID: MEMREFCLK lsb: 0  msb: 0 INPUT
+			this->PHYCLK = PHYCLK; // net ID: PHYCLK lsb: 0  msb: 0 INPUT
+			this->PHYCTLMSTREMPTY = PHYCTLMSTREMPTY; // net ID: PHYCTLMSTREMPTY lsb: 0  msb: 0 INPUT
+			this->PHYCTLWD = PHYCTLWD; // net ID: PHYCTLWD lsb: 0  msb: 31 INPUT
+			this->PHYCTLWRENABLE = PHYCTLWRENABLE; // net ID: PHYCTLWRENABLE lsb: 0  msb: 0 INPUT
+			this->PLLLOCK = PLLLOCK; // net ID: PLLLOCK lsb: 0  msb: 0 INPUT
+			this->READCALIBENABLE = READCALIBENABLE; // net ID: READCALIBENABLE lsb: 0  msb: 0 INPUT
+			this->REFDLLLOCK = REFDLLLOCK; // net ID: REFDLLLOCK lsb: 0  msb: 0 INPUT
+			this->RESET = RESET; // net ID: RESET lsb: 0  msb: 0 INPUT
+			this->SYNCIN = SYNCIN; // net ID: SYNCIN lsb: 0  msb: 0 INPUT
+			this->WRITECALIBENABLE = WRITECALIBENABLE; // net ID: WRITECALIBENABLE lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -207,7 +208,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

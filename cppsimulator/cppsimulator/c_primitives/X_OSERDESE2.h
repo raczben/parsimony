@@ -5,98 +5,99 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_OSERDESE2{
+	
+	class X_OSERDESE2: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t DATA_RATE_OQ;
 		parameter_string_t DATA_RATE_TQ;
-		parameter_int_t DATA_WIDTH;
-		parameter_int_t INIT_OQ;
-		parameter_int_t INIT_TQ;
+		parameter_string_t DATA_WIDTH;
+		parameter_string_t INIT_OQ;
+		parameter_string_t INIT_TQ;
 		parameter_string_t LOC;
 		parameter_string_t SERDES_MODE;
-		parameter_int_t SRVAL_OQ;
-		parameter_int_t SRVAL_TQ;
+		parameter_string_t SRVAL_OQ;
+		parameter_string_t SRVAL_TQ;
 		parameter_enum_t TBYTE_CTL;
 		parameter_enum_t TBYTE_SRC;
-		parameter_int_t TRISTATE_WIDTH;
+		parameter_string_t TRISTATE_WIDTH;
 		//Verilog Ports in definition order:
-		NetFlow* OFB; // OUTPUT
-		NetFlow* OQ; // OUTPUT
-		NetFlow* SHIFTOUT1; // OUTPUT
-		NetFlow* SHIFTOUT2; // OUTPUT
-		NetFlow* TBYTEOUT; // OUTPUT
-		NetFlow* TFB; // OUTPUT
-		NetFlow* TQ; // OUTPUT
-		NetFlow* CLK; // INPUT
-		NetFlow* CLKDIV; // INPUT
-		NetFlow* D1; // INPUT
-		NetFlow* D2; // INPUT
-		NetFlow* D3; // INPUT
-		NetFlow* D4; // INPUT
-		NetFlow* D5; // INPUT
-		NetFlow* D6; // INPUT
-		NetFlow* D7; // INPUT
-		NetFlow* D8; // INPUT
-		NetFlow* OCE; // INPUT
-		NetFlow* RST; // INPUT
-		NetFlow* SHIFTIN1; // INPUT
-		NetFlow* SHIFTIN2; // INPUT
-		NetFlow* T1; // INPUT
-		NetFlow* T2; // INPUT
-		NetFlow* T3; // INPUT
-		NetFlow* T4; // INPUT
-		NetFlow* TBYTEIN; // INPUT
-		NetFlow* TCE; // INPUT
+		NetFlow* OFB; // net ID: OFB lsb: 0  msb: 0 OUTPUT
+		NetFlow* OQ; // net ID: OQ lsb: 0  msb: 0 OUTPUT
+		NetFlow* SHIFTOUT1; // net ID: SHIFTOUT1 lsb: 0  msb: 0 OUTPUT
+		NetFlow* SHIFTOUT2; // net ID: SHIFTOUT2 lsb: 0  msb: 0 OUTPUT
+		NetFlow* TBYTEOUT; // net ID: TBYTEOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* TFB; // net ID: TFB lsb: 0  msb: 0 OUTPUT
+		NetFlow* TQ; // net ID: TQ lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* CLKDIV; // net ID: CLKDIV lsb: 0  msb: 0 INPUT
+		NetFlow* D1; // net ID: D1 lsb: 0  msb: 0 INPUT
+		NetFlow* D2; // net ID: D2 lsb: 0  msb: 0 INPUT
+		NetFlow* D3; // net ID: D3 lsb: 0  msb: 0 INPUT
+		NetFlow* D4; // net ID: D4 lsb: 0  msb: 0 INPUT
+		NetFlow* D5; // net ID: D5 lsb: 0  msb: 0 INPUT
+		NetFlow* D6; // net ID: D6 lsb: 0  msb: 0 INPUT
+		NetFlow* D7; // net ID: D7 lsb: 0  msb: 0 INPUT
+		NetFlow* D8; // net ID: D8 lsb: 0  msb: 0 INPUT
+		NetFlow* OCE; // net ID: OCE lsb: 0  msb: 0 INPUT
+		NetFlow* RST; // net ID: RST lsb: 0  msb: 0 INPUT
+		NetFlow* SHIFTIN1; // net ID: SHIFTIN1 lsb: 0  msb: 0 INPUT
+		NetFlow* SHIFTIN2; // net ID: SHIFTIN2 lsb: 0  msb: 0 INPUT
+		NetFlow* T1; // net ID: T1 lsb: 0  msb: 0 INPUT
+		NetFlow* T2; // net ID: T2 lsb: 0  msb: 0 INPUT
+		NetFlow* T3; // net ID: T3 lsb: 0  msb: 0 INPUT
+		NetFlow* T4; // net ID: T4 lsb: 0  msb: 0 INPUT
+		NetFlow* TBYTEIN; // net ID: TBYTEIN lsb: 0  msb: 0 INPUT
+		NetFlow* TCE; // net ID: TCE lsb: 0  msb: 0 INPUT
 		
-	
 		X_OSERDESE2(
+			const char * name,
 			//Verilog Parameters:
 			parameter_string_t DATA_RATE_OQ, // Default: "DDR"
 			parameter_string_t DATA_RATE_TQ, // Default: "DDR"
-			parameter_int_t DATA_WIDTH, // Default: 4
-			parameter_int_t INIT_OQ, // Default: 1'b0
-			parameter_int_t INIT_TQ, // Default: 1'b0
+			parameter_string_t DATA_WIDTH, // Default: 4
+			parameter_string_t INIT_OQ, // Default: 1'b0
+			parameter_string_t INIT_TQ, // Default: 1'b0
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_string_t SERDES_MODE, // Default: "MASTER"
-			parameter_int_t SRVAL_OQ, // Default: 1'b0
-			parameter_int_t SRVAL_TQ, // Default: 1'b0
+			parameter_string_t SRVAL_OQ, // Default: 1'b0
+			parameter_string_t SRVAL_TQ, // Default: 1'b0
 			parameter_enum_t TBYTE_CTL, // Default: "FALSE"
 			parameter_enum_t TBYTE_SRC, // Default: "FALSE"
-			parameter_int_t TRISTATE_WIDTH, // Default: 4
+			parameter_string_t TRISTATE_WIDTH, // Default: 4
 			//Verilog Ports in definition order:
-			NetFlow* OFB, // OUTPUT
-			NetFlow* OQ, // OUTPUT
-			NetFlow* SHIFTOUT1, // OUTPUT
-			NetFlow* SHIFTOUT2, // OUTPUT
-			NetFlow* TBYTEOUT, // OUTPUT
-			NetFlow* TFB, // OUTPUT
-			NetFlow* TQ, // OUTPUT
-			NetFlow* CLK, // INPUT
-			NetFlow* CLKDIV, // INPUT
-			NetFlow* D1, // INPUT
-			NetFlow* D2, // INPUT
-			NetFlow* D3, // INPUT
-			NetFlow* D4, // INPUT
-			NetFlow* D5, // INPUT
-			NetFlow* D6, // INPUT
-			NetFlow* D7, // INPUT
-			NetFlow* D8, // INPUT
-			NetFlow* OCE, // INPUT
-			NetFlow* RST, // INPUT
-			NetFlow* SHIFTIN1, // INPUT
-			NetFlow* SHIFTIN2, // INPUT
-			NetFlow* T1, // INPUT
-			NetFlow* T2, // INPUT
-			NetFlow* T3, // INPUT
-			NetFlow* T4, // INPUT
-			NetFlow* TBYTEIN, // INPUT
-			NetFlow* TCE // INPUT
-			){
-		
+			NetFlow* OFB, // net ID: OFB lsb: 0  msb: 0 OUTPUT
+			NetFlow* OQ, // net ID: OQ lsb: 0  msb: 0 OUTPUT
+			NetFlow* SHIFTOUT1, // net ID: SHIFTOUT1 lsb: 0  msb: 0 OUTPUT
+			NetFlow* SHIFTOUT2, // net ID: SHIFTOUT2 lsb: 0  msb: 0 OUTPUT
+			NetFlow* TBYTEOUT, // net ID: TBYTEOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* TFB, // net ID: TFB lsb: 0  msb: 0 OUTPUT
+			NetFlow* TQ, // net ID: TQ lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* CLKDIV, // net ID: CLKDIV lsb: 0  msb: 0 INPUT
+			NetFlow* D1, // net ID: D1 lsb: 0  msb: 0 INPUT
+			NetFlow* D2, // net ID: D2 lsb: 0  msb: 0 INPUT
+			NetFlow* D3, // net ID: D3 lsb: 0  msb: 0 INPUT
+			NetFlow* D4, // net ID: D4 lsb: 0  msb: 0 INPUT
+			NetFlow* D5, // net ID: D5 lsb: 0  msb: 0 INPUT
+			NetFlow* D6, // net ID: D6 lsb: 0  msb: 0 INPUT
+			NetFlow* D7, // net ID: D7 lsb: 0  msb: 0 INPUT
+			NetFlow* D8, // net ID: D8 lsb: 0  msb: 0 INPUT
+			NetFlow* OCE, // net ID: OCE lsb: 0  msb: 0 INPUT
+			NetFlow* RST, // net ID: RST lsb: 0  msb: 0 INPUT
+			NetFlow* SHIFTIN1, // net ID: SHIFTIN1 lsb: 0  msb: 0 INPUT
+			NetFlow* SHIFTIN2, // net ID: SHIFTIN2 lsb: 0  msb: 0 INPUT
+			NetFlow* T1, // net ID: T1 lsb: 0  msb: 0 INPUT
+			NetFlow* T2, // net ID: T2 lsb: 0  msb: 0 INPUT
+			NetFlow* T3, // net ID: T3 lsb: 0  msb: 0 INPUT
+			NetFlow* T4, // net ID: T4 lsb: 0  msb: 0 INPUT
+			NetFlow* TBYTEIN, // net ID: TBYTEIN lsb: 0  msb: 0 INPUT
+			NetFlow* TCE // net ID: TCE lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->DATA_RATE_OQ = DATA_RATE_OQ; // Default: "DDR"
@@ -112,36 +113,36 @@ namespace CPrimitives {
 			this->TBYTE_SRC = TBYTE_SRC; // Default: "FALSE"
 			this->TRISTATE_WIDTH = TRISTATE_WIDTH; // Default: 4
 			//Verilog Ports in definition order:
-			this->OFB = OFB; // OUTPUT
-			this->OQ = OQ; // OUTPUT
-			this->SHIFTOUT1 = SHIFTOUT1; // OUTPUT
-			this->SHIFTOUT2 = SHIFTOUT2; // OUTPUT
-			this->TBYTEOUT = TBYTEOUT; // OUTPUT
-			this->TFB = TFB; // OUTPUT
-			this->TQ = TQ; // OUTPUT
-			this->CLK = CLK; // INPUT
-			this->CLKDIV = CLKDIV; // INPUT
-			this->D1 = D1; // INPUT
-			this->D2 = D2; // INPUT
-			this->D3 = D3; // INPUT
-			this->D4 = D4; // INPUT
-			this->D5 = D5; // INPUT
-			this->D6 = D6; // INPUT
-			this->D7 = D7; // INPUT
-			this->D8 = D8; // INPUT
-			this->OCE = OCE; // INPUT
-			this->RST = RST; // INPUT
-			this->SHIFTIN1 = SHIFTIN1; // INPUT
-			this->SHIFTIN2 = SHIFTIN2; // INPUT
-			this->T1 = T1; // INPUT
-			this->T2 = T2; // INPUT
-			this->T3 = T3; // INPUT
-			this->T4 = T4; // INPUT
-			this->TBYTEIN = TBYTEIN; // INPUT
-			this->TCE = TCE; // INPUT
-		
+			this->OFB = OFB; // net ID: OFB lsb: 0  msb: 0 OUTPUT
+			this->OQ = OQ; // net ID: OQ lsb: 0  msb: 0 OUTPUT
+			this->SHIFTOUT1 = SHIFTOUT1; // net ID: SHIFTOUT1 lsb: 0  msb: 0 OUTPUT
+			this->SHIFTOUT2 = SHIFTOUT2; // net ID: SHIFTOUT2 lsb: 0  msb: 0 OUTPUT
+			this->TBYTEOUT = TBYTEOUT; // net ID: TBYTEOUT lsb: 0  msb: 0 OUTPUT
+			this->TFB = TFB; // net ID: TFB lsb: 0  msb: 0 OUTPUT
+			this->TQ = TQ; // net ID: TQ lsb: 0  msb: 0 OUTPUT
+			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->CLKDIV = CLKDIV; // net ID: CLKDIV lsb: 0  msb: 0 INPUT
+			this->D1 = D1; // net ID: D1 lsb: 0  msb: 0 INPUT
+			this->D2 = D2; // net ID: D2 lsb: 0  msb: 0 INPUT
+			this->D3 = D3; // net ID: D3 lsb: 0  msb: 0 INPUT
+			this->D4 = D4; // net ID: D4 lsb: 0  msb: 0 INPUT
+			this->D5 = D5; // net ID: D5 lsb: 0  msb: 0 INPUT
+			this->D6 = D6; // net ID: D6 lsb: 0  msb: 0 INPUT
+			this->D7 = D7; // net ID: D7 lsb: 0  msb: 0 INPUT
+			this->D8 = D8; // net ID: D8 lsb: 0  msb: 0 INPUT
+			this->OCE = OCE; // net ID: OCE lsb: 0  msb: 0 INPUT
+			this->RST = RST; // net ID: RST lsb: 0  msb: 0 INPUT
+			this->SHIFTIN1 = SHIFTIN1; // net ID: SHIFTIN1 lsb: 0  msb: 0 INPUT
+			this->SHIFTIN2 = SHIFTIN2; // net ID: SHIFTIN2 lsb: 0  msb: 0 INPUT
+			this->T1 = T1; // net ID: T1 lsb: 0  msb: 0 INPUT
+			this->T2 = T2; // net ID: T2 lsb: 0  msb: 0 INPUT
+			this->T3 = T3; // net ID: T3 lsb: 0  msb: 0 INPUT
+			this->T4 = T4; // net ID: T4 lsb: 0  msb: 0 INPUT
+			this->TBYTEIN = TBYTEIN; // net ID: TBYTEIN lsb: 0  msb: 0 INPUT
+			this->TCE = TCE; // net ID: TCE lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -150,7 +151,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

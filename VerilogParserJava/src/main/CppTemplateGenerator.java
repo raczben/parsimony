@@ -6,10 +6,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map.Entry;
 
+import sourceGenerator.SourceGenerator;
 import verilog.ParameterDescriptior;
 import verilog.PortDescriptior;
 import verilog.PrimitiveDescriptor;
@@ -61,7 +60,7 @@ public class CppTemplateGenerator {
 				insertSourceBegin();				
 			}
 				
-			String oneCTemplate = String.join(ln + "\t", generateOneTemplate(primitive));
+			String oneCTemplate = generateOneTemplate(primitive).toString(1);
 			
 //			oneCTemplate.replaceAll(regex, replacement)ln, ln+"\t");
 			
@@ -78,61 +77,70 @@ public class CppTemplateGenerator {
 	}
 
 
-	List<String>  generateOneTemplate(PrimitiveDescriptor primitive){
+	SourceGenerator  generateOneTemplate(PrimitiveDescriptor primitive){
 		String parameterType = "int";
-		List<String> cTemplate = new ArrayList<String>();
-		cTemplate.add("");
+//		List<String> cTemplate = new ArrayList<String>();
+		
+		SourceGenerator srcGen0 = new SourceGenerator("");
+		
+//		cTemplate.add("");
 		
 		/**
 		 * Define The class
 		 */
-		cTemplate.add("class " + primitive.getPrimitiveClassType() + "{" + ln);
+		srcGen0.add("class " + primitive.getPrimitiveClassType() + ": public Primitive{" + ln);
 		
 		/**
 		 * Define fields
 		 */
-		cTemplate.add("\t//Verilog Parameters:");
+
+		SourceGenerator memberGen = new SourceGenerator("//Verilog Parameters:");
 		for(Entry<String, ParameterDescriptior> parameter : primitive.getParameters().entrySet()){
 			parameterType = String.valueOf(parameter.getValue().getType()).toLowerCase();
-			cTemplate.add("\t" + parameterType + " " + parameter.getKey() + ";");				 
+			memberGen.add(parameterType + " " + parameter.getKey() + ";");				 
 		}
-		cTemplate.add("\t//Verilog Ports in definition order:");
+		memberGen.add("//Verilog Ports in definition order:");
 		for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
-			cTemplate.add("\tNetFlow* " + port.getKey() + "; // " + port.getValue());				 
+			memberGen.add("NetFlow* " + port.getKey() + "; // " + port.getValue());				 
 		}
 		
-		cTemplate.add("\t");
+		memberGen.add("");
 		
 
 		/**
 		 * Define the constructor
 		 */
-		cTemplate.addAll(generateConstructor(primitive));
+		try {
+			memberGen.add(generateConstructor(primitive), 0);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 
-		 /**
-		  * Wait on event register function template 
-		  */
-		 cTemplate.add("\tvoid register_wait_on_event_nets(){");
-		 cTemplate.add("\t// TODO");
-		 cTemplate.add("\t}");
+		/**
+		 * Wait on event register function template 
+		 */
+		memberGen.add("void register_wait_on_event_nets(){");
+		memberGen.add("// TODO");
+		memberGen.add("}");
 
 		 /**
 		  * Wait on event register function template 
 		  */
-		 cTemplate.add("\tvoid calculate(int time){");
-		 cTemplate.add("\t// TODO");
-		 cTemplate.add("\t}");
+		memberGen.add("void calculate(int time){");
+		memberGen.add("// TODO");
+		memberGen.add("}");
 		 
 		 
 		 /**
 		  * End class:
 		  */
-		 cTemplate.add("};");
-		 cTemplate.add("");
-		 
-
-		 
-		 return cTemplate;
+		memberGen.add("};");
+		memberGen.add("");
+		
+		srcGen0.add(memberGen);
+		
+		return srcGen0;
 	}
 	
 //	private Collection<? extends String> indent(Arra<String> codeList) {
@@ -143,57 +151,63 @@ public class CppTemplateGenerator {
 //	}
 
 
-	List<String>  generateConstructor(PrimitiveDescriptor primitive){
-		List<String> cTemplate = new ArrayList<String>();
-		cTemplate.add("");
+	SourceGenerator  generateConstructor(PrimitiveDescriptor primitive){
+//		List<String> cTemplate = new ArrayList<String>();
+//		cTemplate.add("");
+		
+		SourceGenerator constrGen = new SourceGenerator();
+		SourceGenerator constrParamGen = new SourceGenerator();
+		
 		String parameterType = "int";
 		
 		
 		/**
 		 * Define the constructor
 		 */
-		cTemplate.add("\t" + primitive.getPrimitiveClassType() + "(");
-		cTemplate.add("\t\t//Verilog Parameters:");
+		constrGen.add("" + primitive.getPrimitiveClassType() + "(");
+		constrGen.add(constrParamGen);
+		constrParamGen.add("const char * name,");
+		constrParamGen.add("//Verilog Parameters:");
 		for(Entry<String, ParameterDescriptior> parameter : primitive.getParameters().entrySet()){
 			parameterType = String.valueOf(parameter.getValue().getType()).toLowerCase();
-			cTemplate.add("\t\t" + parameterType + " " + parameter.getKey() + ", // Default: " + parameter.getValue().getDefaultValue());				 
+			constrParamGen.add("" + parameterType + " " + parameter.getKey() + ", // Default: " + parameter.getValue().getDefaultValue());				 
 		}
-		cTemplate.add("\t\t//Verilog Ports in definition order:");
+		constrParamGen.add("//Verilog Ports in definition order:");
 		int i = 0;
 		for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
 			 i++;
 			 if(i < primitive.getPorts().size()){
-				 cTemplate.add("\t\tNetFlow* " + port.getKey() + ", // " + port.getValue());
+				 constrParamGen.add("NetFlow* " + port.getKey() + ", // " + port.getValue());
 			 }
 			 else{
-				 cTemplate.add("\t\tNetFlow* " + port.getKey() + " // " + port.getValue());
+				 constrParamGen.add("NetFlow* " + port.getKey() + " // " + port.getValue());
 			 }
 		 }
-		 cTemplate.add("\t\t){");
+		constrParamGen.add("):Primitive(name){");
 		 
 		 /**
 		  * Assign default arguments:
 		  */
-		 cTemplate.add("\t");
-		 cTemplate.add("\t\t// Assign parameters and ports: ");
+		constrParamGen.add("");
+		constrParamGen.add("// Assign parameters and ports: ");
 		 
-		 cTemplate.add("\t\t//Verilog Parameters:");
+		constrParamGen.add("//Verilog Parameters:");
 		 for(Entry<String, ParameterDescriptior> parameter : primitive.getParameters().entrySet()){
-			 cTemplate.add("\t\tthis->" + parameter.getKey() + " = " + parameter.getKey() + "; // Default: " + parameter.getValue().getDefaultValue());				 
+			 constrParamGen.add("this->" + parameter.getKey() + " = " + parameter.getKey() + "; // Default: " + parameter.getValue().getDefaultValue());				 
 		 }
-		 cTemplate.add("\t\t//Verilog Ports in definition order:");
+		 constrParamGen.add("//Verilog Ports in definition order:");
 		 for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
-			 cTemplate.add("\t\tthis->" + port.getKey() + " = " + port.getKey() + "; // " + port.getValue());				 
+			 constrParamGen.add("this->" + port.getKey() + " = " + port.getKey() + "; // " + port.getValue());				 
 		 }
 
-		 cTemplate.add("\t");
-		 cTemplate.add("\t\tregister_wait_on_event_nets();");
-		 cTemplate.add("\t");
+		 constrParamGen.add("");
+		 constrParamGen.add("register_wait_on_event_nets();");
+		 constrParamGen.add("");
 		 
-		 cTemplate.add("\t}");
-		 cTemplate.add("\t");
+		 constrGen.add("}");
+		 constrGen.add("");
 		 
-		 return cTemplate;
+		 return constrGen;
 	}
 	
 	void insertSourceBegin() throws IOException{

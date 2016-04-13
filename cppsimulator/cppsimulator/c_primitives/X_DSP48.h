@@ -5,100 +5,101 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_DSP48{
+	
+	class X_DSP48: public Primitive{
 
 		//Verilog Parameters:
-		parameter_int_t AREG;
-		parameter_int_t BREG;
+		parameter_string_t AREG;
+		parameter_string_t BREG;
 		parameter_string_t B_INPUT;
-		parameter_int_t CARRYINREG;
-		parameter_int_t CARRYINSELREG;
-		parameter_int_t CREG;
+		parameter_string_t CARRYINREG;
+		parameter_string_t CARRYINSELREG;
+		parameter_string_t CREG;
 		parameter_string_t LEGACY_MODE;
 		parameter_string_t LOC;
-		parameter_int_t MREG;
-		parameter_int_t OPMODEREG;
-		parameter_int_t PREG;
-		parameter_int_t SUBTRACTREG;
+		parameter_string_t MREG;
+		parameter_string_t OPMODEREG;
+		parameter_string_t PREG;
+		parameter_string_t SUBTRACTREG;
 		//Verilog Ports in definition order:
-		NetFlow* BCOUT; // OUTPUT
-		NetFlow* P; // OUTPUT
-		NetFlow* PCOUT; // OUTPUT
-		NetFlow* A; // INPUT
-		NetFlow* B; // INPUT
-		NetFlow* BCIN; // INPUT
-		NetFlow* C; // INPUT
-		NetFlow* CARRYIN; // INPUT
-		NetFlow* CARRYINSEL; // INPUT
-		NetFlow* CEA; // INPUT
-		NetFlow* CEB; // INPUT
-		NetFlow* CEC; // INPUT
-		NetFlow* CECARRYIN; // INPUT
-		NetFlow* CECINSUB; // INPUT
-		NetFlow* CECTRL; // INPUT
-		NetFlow* CEM; // INPUT
-		NetFlow* CEP; // INPUT
-		NetFlow* CLK; // INPUT
-		NetFlow* OPMODE; // INPUT
-		NetFlow* PCIN; // INPUT
-		NetFlow* RSTA; // INPUT
-		NetFlow* RSTB; // INPUT
-		NetFlow* RSTC; // INPUT
-		NetFlow* RSTCARRYIN; // INPUT
-		NetFlow* RSTCTRL; // INPUT
-		NetFlow* RSTM; // INPUT
-		NetFlow* RSTP; // INPUT
-		NetFlow* SUBTRACT; // INPUT
+		NetFlow* BCOUT; // net ID: BCOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* P; // net ID: P lsb: 0  msb: 0 OUTPUT
+		NetFlow* PCOUT; // net ID: PCOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* A; // net ID: A lsb: 0  msb: 17 INPUT
+		NetFlow* B; // net ID: B lsb: 0  msb: 17 INPUT
+		NetFlow* BCIN; // net ID: BCIN lsb: 0  msb: 17 INPUT
+		NetFlow* C; // net ID: C lsb: 0  msb: 47 INPUT
+		NetFlow* CARRYIN; // net ID: CARRYIN lsb: 0  msb: 0 INPUT
+		NetFlow* CARRYINSEL; // net ID: CARRYINSEL lsb: 0  msb: 1 INPUT
+		NetFlow* CEA; // net ID: CEA lsb: 0  msb: 0 INPUT
+		NetFlow* CEB; // net ID: CEB lsb: 0  msb: 0 INPUT
+		NetFlow* CEC; // net ID: CEC lsb: 0  msb: 0 INPUT
+		NetFlow* CECARRYIN; // net ID: CECARRYIN lsb: 0  msb: 0 INPUT
+		NetFlow* CECINSUB; // net ID: CECINSUB lsb: 0  msb: 0 INPUT
+		NetFlow* CECTRL; // net ID: CECTRL lsb: 0  msb: 0 INPUT
+		NetFlow* CEM; // net ID: CEM lsb: 0  msb: 0 INPUT
+		NetFlow* CEP; // net ID: CEP lsb: 0  msb: 0 INPUT
+		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* OPMODE; // net ID: OPMODE lsb: 0  msb: 6 INPUT
+		NetFlow* PCIN; // net ID: PCIN lsb: 0  msb: 47 INPUT
+		NetFlow* RSTA; // net ID: RSTA lsb: 0  msb: 0 INPUT
+		NetFlow* RSTB; // net ID: RSTB lsb: 0  msb: 0 INPUT
+		NetFlow* RSTC; // net ID: RSTC lsb: 0  msb: 0 INPUT
+		NetFlow* RSTCARRYIN; // net ID: RSTCARRYIN lsb: 0  msb: 0 INPUT
+		NetFlow* RSTCTRL; // net ID: RSTCTRL lsb: 0  msb: 0 INPUT
+		NetFlow* RSTM; // net ID: RSTM lsb: 0  msb: 0 INPUT
+		NetFlow* RSTP; // net ID: RSTP lsb: 0  msb: 0 INPUT
+		NetFlow* SUBTRACT; // net ID: SUBTRACT lsb: 0  msb: 0 INPUT
 		
-	
 		X_DSP48(
+			const char * name,
 			//Verilog Parameters:
-			parameter_int_t AREG, // Default: 1
-			parameter_int_t BREG, // Default: 1
+			parameter_string_t AREG, // Default: 1
+			parameter_string_t BREG, // Default: 1
 			parameter_string_t B_INPUT, // Default: "DIRECT"
-			parameter_int_t CARRYINREG, // Default: 1
-			parameter_int_t CARRYINSELREG, // Default: 1
-			parameter_int_t CREG, // Default: 1
+			parameter_string_t CARRYINREG, // Default: 1
+			parameter_string_t CARRYINSELREG, // Default: 1
+			parameter_string_t CREG, // Default: 1
 			parameter_string_t LEGACY_MODE, // Default: "MULT18X18S"
 			parameter_string_t LOC, // Default: "UNPLACED"
-			parameter_int_t MREG, // Default: 1
-			parameter_int_t OPMODEREG, // Default: 1
-			parameter_int_t PREG, // Default: 1
-			parameter_int_t SUBTRACTREG, // Default: 1
+			parameter_string_t MREG, // Default: 1
+			parameter_string_t OPMODEREG, // Default: 1
+			parameter_string_t PREG, // Default: 1
+			parameter_string_t SUBTRACTREG, // Default: 1
 			//Verilog Ports in definition order:
-			NetFlow* BCOUT, // OUTPUT
-			NetFlow* P, // OUTPUT
-			NetFlow* PCOUT, // OUTPUT
-			NetFlow* A, // INPUT
-			NetFlow* B, // INPUT
-			NetFlow* BCIN, // INPUT
-			NetFlow* C, // INPUT
-			NetFlow* CARRYIN, // INPUT
-			NetFlow* CARRYINSEL, // INPUT
-			NetFlow* CEA, // INPUT
-			NetFlow* CEB, // INPUT
-			NetFlow* CEC, // INPUT
-			NetFlow* CECARRYIN, // INPUT
-			NetFlow* CECINSUB, // INPUT
-			NetFlow* CECTRL, // INPUT
-			NetFlow* CEM, // INPUT
-			NetFlow* CEP, // INPUT
-			NetFlow* CLK, // INPUT
-			NetFlow* OPMODE, // INPUT
-			NetFlow* PCIN, // INPUT
-			NetFlow* RSTA, // INPUT
-			NetFlow* RSTB, // INPUT
-			NetFlow* RSTC, // INPUT
-			NetFlow* RSTCARRYIN, // INPUT
-			NetFlow* RSTCTRL, // INPUT
-			NetFlow* RSTM, // INPUT
-			NetFlow* RSTP, // INPUT
-			NetFlow* SUBTRACT // INPUT
-			){
-		
+			NetFlow* BCOUT, // net ID: BCOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* P, // net ID: P lsb: 0  msb: 0 OUTPUT
+			NetFlow* PCOUT, // net ID: PCOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* A, // net ID: A lsb: 0  msb: 17 INPUT
+			NetFlow* B, // net ID: B lsb: 0  msb: 17 INPUT
+			NetFlow* BCIN, // net ID: BCIN lsb: 0  msb: 17 INPUT
+			NetFlow* C, // net ID: C lsb: 0  msb: 47 INPUT
+			NetFlow* CARRYIN, // net ID: CARRYIN lsb: 0  msb: 0 INPUT
+			NetFlow* CARRYINSEL, // net ID: CARRYINSEL lsb: 0  msb: 1 INPUT
+			NetFlow* CEA, // net ID: CEA lsb: 0  msb: 0 INPUT
+			NetFlow* CEB, // net ID: CEB lsb: 0  msb: 0 INPUT
+			NetFlow* CEC, // net ID: CEC lsb: 0  msb: 0 INPUT
+			NetFlow* CECARRYIN, // net ID: CECARRYIN lsb: 0  msb: 0 INPUT
+			NetFlow* CECINSUB, // net ID: CECINSUB lsb: 0  msb: 0 INPUT
+			NetFlow* CECTRL, // net ID: CECTRL lsb: 0  msb: 0 INPUT
+			NetFlow* CEM, // net ID: CEM lsb: 0  msb: 0 INPUT
+			NetFlow* CEP, // net ID: CEP lsb: 0  msb: 0 INPUT
+			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* OPMODE, // net ID: OPMODE lsb: 0  msb: 6 INPUT
+			NetFlow* PCIN, // net ID: PCIN lsb: 0  msb: 47 INPUT
+			NetFlow* RSTA, // net ID: RSTA lsb: 0  msb: 0 INPUT
+			NetFlow* RSTB, // net ID: RSTB lsb: 0  msb: 0 INPUT
+			NetFlow* RSTC, // net ID: RSTC lsb: 0  msb: 0 INPUT
+			NetFlow* RSTCARRYIN, // net ID: RSTCARRYIN lsb: 0  msb: 0 INPUT
+			NetFlow* RSTCTRL, // net ID: RSTCTRL lsb: 0  msb: 0 INPUT
+			NetFlow* RSTM, // net ID: RSTM lsb: 0  msb: 0 INPUT
+			NetFlow* RSTP, // net ID: RSTP lsb: 0  msb: 0 INPUT
+			NetFlow* SUBTRACT // net ID: SUBTRACT lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->AREG = AREG; // Default: 1
@@ -114,37 +115,37 @@ namespace CPrimitives {
 			this->PREG = PREG; // Default: 1
 			this->SUBTRACTREG = SUBTRACTREG; // Default: 1
 			//Verilog Ports in definition order:
-			this->BCOUT = BCOUT; // OUTPUT
-			this->P = P; // OUTPUT
-			this->PCOUT = PCOUT; // OUTPUT
-			this->A = A; // INPUT
-			this->B = B; // INPUT
-			this->BCIN = BCIN; // INPUT
-			this->C = C; // INPUT
-			this->CARRYIN = CARRYIN; // INPUT
-			this->CARRYINSEL = CARRYINSEL; // INPUT
-			this->CEA = CEA; // INPUT
-			this->CEB = CEB; // INPUT
-			this->CEC = CEC; // INPUT
-			this->CECARRYIN = CECARRYIN; // INPUT
-			this->CECINSUB = CECINSUB; // INPUT
-			this->CECTRL = CECTRL; // INPUT
-			this->CEM = CEM; // INPUT
-			this->CEP = CEP; // INPUT
-			this->CLK = CLK; // INPUT
-			this->OPMODE = OPMODE; // INPUT
-			this->PCIN = PCIN; // INPUT
-			this->RSTA = RSTA; // INPUT
-			this->RSTB = RSTB; // INPUT
-			this->RSTC = RSTC; // INPUT
-			this->RSTCARRYIN = RSTCARRYIN; // INPUT
-			this->RSTCTRL = RSTCTRL; // INPUT
-			this->RSTM = RSTM; // INPUT
-			this->RSTP = RSTP; // INPUT
-			this->SUBTRACT = SUBTRACT; // INPUT
-		
+			this->BCOUT = BCOUT; // net ID: BCOUT lsb: 0  msb: 0 OUTPUT
+			this->P = P; // net ID: P lsb: 0  msb: 0 OUTPUT
+			this->PCOUT = PCOUT; // net ID: PCOUT lsb: 0  msb: 0 OUTPUT
+			this->A = A; // net ID: A lsb: 0  msb: 17 INPUT
+			this->B = B; // net ID: B lsb: 0  msb: 17 INPUT
+			this->BCIN = BCIN; // net ID: BCIN lsb: 0  msb: 17 INPUT
+			this->C = C; // net ID: C lsb: 0  msb: 47 INPUT
+			this->CARRYIN = CARRYIN; // net ID: CARRYIN lsb: 0  msb: 0 INPUT
+			this->CARRYINSEL = CARRYINSEL; // net ID: CARRYINSEL lsb: 0  msb: 1 INPUT
+			this->CEA = CEA; // net ID: CEA lsb: 0  msb: 0 INPUT
+			this->CEB = CEB; // net ID: CEB lsb: 0  msb: 0 INPUT
+			this->CEC = CEC; // net ID: CEC lsb: 0  msb: 0 INPUT
+			this->CECARRYIN = CECARRYIN; // net ID: CECARRYIN lsb: 0  msb: 0 INPUT
+			this->CECINSUB = CECINSUB; // net ID: CECINSUB lsb: 0  msb: 0 INPUT
+			this->CECTRL = CECTRL; // net ID: CECTRL lsb: 0  msb: 0 INPUT
+			this->CEM = CEM; // net ID: CEM lsb: 0  msb: 0 INPUT
+			this->CEP = CEP; // net ID: CEP lsb: 0  msb: 0 INPUT
+			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->OPMODE = OPMODE; // net ID: OPMODE lsb: 0  msb: 6 INPUT
+			this->PCIN = PCIN; // net ID: PCIN lsb: 0  msb: 47 INPUT
+			this->RSTA = RSTA; // net ID: RSTA lsb: 0  msb: 0 INPUT
+			this->RSTB = RSTB; // net ID: RSTB lsb: 0  msb: 0 INPUT
+			this->RSTC = RSTC; // net ID: RSTC lsb: 0  msb: 0 INPUT
+			this->RSTCARRYIN = RSTCARRYIN; // net ID: RSTCARRYIN lsb: 0  msb: 0 INPUT
+			this->RSTCTRL = RSTCTRL; // net ID: RSTCTRL lsb: 0  msb: 0 INPUT
+			this->RSTM = RSTM; // net ID: RSTM lsb: 0  msb: 0 INPUT
+			this->RSTP = RSTP; // net ID: RSTP lsb: 0  msb: 0 INPUT
+			this->SUBTRACT = SUBTRACT; // net ID: SUBTRACT lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -153,7 +154,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

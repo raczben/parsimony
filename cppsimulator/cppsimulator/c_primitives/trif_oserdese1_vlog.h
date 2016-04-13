@@ -5,77 +5,78 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class trif_oserdese1_vlog{
+	
+	class trif_oserdese1_vlog: public Primitive{
 
 		//Verilog Parameters:
-		parameter_int_t ffd;
-		parameter_int_t mxd;
+		parameter_string_t ffd;
+		parameter_string_t mxd;
 		//Verilog Ports in definition order:
-		NetFlow* T1; // INPUT
-		NetFlow* T2; // INPUT
-		NetFlow* T3; // INPUT
-		NetFlow* T4; // INPUT
-		NetFlow* load; // INPUT
-		NetFlow* C; // INPUT
-		NetFlow* CLKDIV; // INPUT
-		NetFlow* SR; // INPUT
-		NetFlow* TCE; // INPUT
-		NetFlow* DATA_RATE_TQ; // INPUT
-		NetFlow* TRISTATE_WIDTH; // INPUT
-		NetFlow* INIT_TQ; // INPUT
-		NetFlow* SRVAL_TQ; // INPUT
-		NetFlow* data1; // OUTPUT
-		NetFlow* data2; // OUTPUT
+		NetFlow* T1; // net ID: T1 lsb: 0  msb: 0 INPUT
+		NetFlow* T2; // net ID: T2 lsb: 0  msb: 0 INPUT
+		NetFlow* T3; // net ID: T3 lsb: 0  msb: 0 INPUT
+		NetFlow* T4; // net ID: T4 lsb: 0  msb: 0 INPUT
+		NetFlow* load; // net ID: load lsb: 0  msb: 0 INPUT
+		NetFlow* C; // net ID: C lsb: 0  msb: 0 INPUT
+		NetFlow* CLKDIV; // net ID: CLKDIV lsb: 0  msb: 0 INPUT
+		NetFlow* SR; // net ID: SR lsb: 0  msb: 0 INPUT
+		NetFlow* TCE; // net ID: TCE lsb: 0  msb: 0 INPUT
+		NetFlow* DATA_RATE_TQ; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
+		NetFlow* TRISTATE_WIDTH; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+		NetFlow* INIT_TQ; // net ID: INIT_TQ lsb: 0  msb: 0 INPUT
+		NetFlow* SRVAL_TQ; // net ID: SRVAL_TQ lsb: 0  msb: 0 INPUT
+		NetFlow* data1; // net ID: data1 lsb: 0  msb: 0 OUTPUT
+		NetFlow* data2; // net ID: data2 lsb: 0  msb: 0 OUTPUT
 		
-	
 		trif_oserdese1_vlog(
+			const char * name,
 			//Verilog Parameters:
-			parameter_int_t ffd, // Default: 1
-			parameter_int_t mxd, // Default: 1
+			parameter_string_t ffd, // Default: 1
+			parameter_string_t mxd, // Default: 1
 			//Verilog Ports in definition order:
-			NetFlow* T1, // INPUT
-			NetFlow* T2, // INPUT
-			NetFlow* T3, // INPUT
-			NetFlow* T4, // INPUT
-			NetFlow* load, // INPUT
-			NetFlow* C, // INPUT
-			NetFlow* CLKDIV, // INPUT
-			NetFlow* SR, // INPUT
-			NetFlow* TCE, // INPUT
-			NetFlow* DATA_RATE_TQ, // INPUT
-			NetFlow* TRISTATE_WIDTH, // INPUT
-			NetFlow* INIT_TQ, // INPUT
-			NetFlow* SRVAL_TQ, // INPUT
-			NetFlow* data1, // OUTPUT
-			NetFlow* data2 // OUTPUT
-			){
-		
+			NetFlow* T1, // net ID: T1 lsb: 0  msb: 0 INPUT
+			NetFlow* T2, // net ID: T2 lsb: 0  msb: 0 INPUT
+			NetFlow* T3, // net ID: T3 lsb: 0  msb: 0 INPUT
+			NetFlow* T4, // net ID: T4 lsb: 0  msb: 0 INPUT
+			NetFlow* load, // net ID: load lsb: 0  msb: 0 INPUT
+			NetFlow* C, // net ID: C lsb: 0  msb: 0 INPUT
+			NetFlow* CLKDIV, // net ID: CLKDIV lsb: 0  msb: 0 INPUT
+			NetFlow* SR, // net ID: SR lsb: 0  msb: 0 INPUT
+			NetFlow* TCE, // net ID: TCE lsb: 0  msb: 0 INPUT
+			NetFlow* DATA_RATE_TQ, // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
+			NetFlow* TRISTATE_WIDTH, // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+			NetFlow* INIT_TQ, // net ID: INIT_TQ lsb: 0  msb: 0 INPUT
+			NetFlow* SRVAL_TQ, // net ID: SRVAL_TQ lsb: 0  msb: 0 INPUT
+			NetFlow* data1, // net ID: data1 lsb: 0  msb: 0 OUTPUT
+			NetFlow* data2 // net ID: data2 lsb: 0  msb: 0 OUTPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->ffd = ffd; // Default: 1
 			this->mxd = mxd; // Default: 1
 			//Verilog Ports in definition order:
-			this->T1 = T1; // INPUT
-			this->T2 = T2; // INPUT
-			this->T3 = T3; // INPUT
-			this->T4 = T4; // INPUT
-			this->load = load; // INPUT
-			this->C = C; // INPUT
-			this->CLKDIV = CLKDIV; // INPUT
-			this->SR = SR; // INPUT
-			this->TCE = TCE; // INPUT
-			this->DATA_RATE_TQ = DATA_RATE_TQ; // INPUT
-			this->TRISTATE_WIDTH = TRISTATE_WIDTH; // INPUT
-			this->INIT_TQ = INIT_TQ; // INPUT
-			this->SRVAL_TQ = SRVAL_TQ; // INPUT
-			this->data1 = data1; // OUTPUT
-			this->data2 = data2; // OUTPUT
-		
+			this->T1 = T1; // net ID: T1 lsb: 0  msb: 0 INPUT
+			this->T2 = T2; // net ID: T2 lsb: 0  msb: 0 INPUT
+			this->T3 = T3; // net ID: T3 lsb: 0  msb: 0 INPUT
+			this->T4 = T4; // net ID: T4 lsb: 0  msb: 0 INPUT
+			this->load = load; // net ID: load lsb: 0  msb: 0 INPUT
+			this->C = C; // net ID: C lsb: 0  msb: 0 INPUT
+			this->CLKDIV = CLKDIV; // net ID: CLKDIV lsb: 0  msb: 0 INPUT
+			this->SR = SR; // net ID: SR lsb: 0  msb: 0 INPUT
+			this->TCE = TCE; // net ID: TCE lsb: 0  msb: 0 INPUT
+			this->DATA_RATE_TQ = DATA_RATE_TQ; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
+			this->TRISTATE_WIDTH = TRISTATE_WIDTH; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+			this->INIT_TQ = INIT_TQ; // net ID: INIT_TQ lsb: 0  msb: 0 INPUT
+			this->SRVAL_TQ = SRVAL_TQ; // net ID: SRVAL_TQ lsb: 0  msb: 0 INPUT
+			this->data1 = data1; // net ID: data1 lsb: 0  msb: 0 OUTPUT
+			this->data2 = data2; // net ID: data2 lsb: 0  msb: 0 OUTPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -84,7 +85,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

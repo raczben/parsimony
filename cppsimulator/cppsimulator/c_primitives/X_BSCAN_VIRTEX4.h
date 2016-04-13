@@ -5,56 +5,57 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_BSCAN_VIRTEX4{
+	
+	class X_BSCAN_VIRTEX4: public Primitive{
 
 		//Verilog Parameters:
-		parameter_int_t JTAG_CHAIN;
+		parameter_string_t JTAG_CHAIN;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* CAPTURE; // OUTPUT
-		NetFlow* DRCK; // OUTPUT
-		NetFlow* RESET; // OUTPUT
-		NetFlow* SEL; // OUTPUT
-		NetFlow* SHIFT; // OUTPUT
-		NetFlow* TDI; // OUTPUT
-		NetFlow* UPDATE; // OUTPUT
-		NetFlow* TDO; // INPUT
+		NetFlow* CAPTURE; // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
+		NetFlow* DRCK; // net ID: DRCK lsb: 0  msb: 0 OUTPUT
+		NetFlow* RESET; // net ID: RESET lsb: 0  msb: 0 OUTPUT
+		NetFlow* SEL; // net ID: SEL lsb: 0  msb: 0 OUTPUT
+		NetFlow* SHIFT; // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
+		NetFlow* TDI; // net ID: TDI lsb: 0  msb: 0 OUTPUT
+		NetFlow* UPDATE; // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
+		NetFlow* TDO; // net ID: TDO lsb: 0  msb: 0 INPUT
 		
-	
 		X_BSCAN_VIRTEX4(
+			const char * name,
 			//Verilog Parameters:
-			parameter_int_t JTAG_CHAIN, // Default: 1
+			parameter_string_t JTAG_CHAIN, // Default: 1
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* CAPTURE, // OUTPUT
-			NetFlow* DRCK, // OUTPUT
-			NetFlow* RESET, // OUTPUT
-			NetFlow* SEL, // OUTPUT
-			NetFlow* SHIFT, // OUTPUT
-			NetFlow* TDI, // OUTPUT
-			NetFlow* UPDATE, // OUTPUT
-			NetFlow* TDO // INPUT
-			){
-		
+			NetFlow* CAPTURE, // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
+			NetFlow* DRCK, // net ID: DRCK lsb: 0  msb: 0 OUTPUT
+			NetFlow* RESET, // net ID: RESET lsb: 0  msb: 0 OUTPUT
+			NetFlow* SEL, // net ID: SEL lsb: 0  msb: 0 OUTPUT
+			NetFlow* SHIFT, // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
+			NetFlow* TDI, // net ID: TDI lsb: 0  msb: 0 OUTPUT
+			NetFlow* UPDATE, // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
+			NetFlow* TDO // net ID: TDO lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->JTAG_CHAIN = JTAG_CHAIN; // Default: 1
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->CAPTURE = CAPTURE; // OUTPUT
-			this->DRCK = DRCK; // OUTPUT
-			this->RESET = RESET; // OUTPUT
-			this->SEL = SEL; // OUTPUT
-			this->SHIFT = SHIFT; // OUTPUT
-			this->TDI = TDI; // OUTPUT
-			this->UPDATE = UPDATE; // OUTPUT
-			this->TDO = TDO; // INPUT
-		
+			this->CAPTURE = CAPTURE; // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
+			this->DRCK = DRCK; // net ID: DRCK lsb: 0  msb: 0 OUTPUT
+			this->RESET = RESET; // net ID: RESET lsb: 0  msb: 0 OUTPUT
+			this->SEL = SEL; // net ID: SEL lsb: 0  msb: 0 OUTPUT
+			this->SHIFT = SHIFT; // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
+			this->TDI = TDI; // net ID: TDI lsb: 0  msb: 0 OUTPUT
+			this->UPDATE = UPDATE; // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
+			this->TDO = TDO; // net ID: TDO lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -63,7 +64,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

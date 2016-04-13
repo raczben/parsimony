@@ -5,53 +5,54 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_ICAP_SPARTAN6{
+	
+	class X_ICAP_SPARTAN6: public Primitive{
 
 		//Verilog Parameters:
-		parameter_int_t DEVICE_ID;
+		parameter_string_t DEVICE_ID;
 		parameter_string_t LOC;
 		parameter_string_t SIM_CFG_FILE_NAME;
 		//Verilog Ports in definition order:
-		NetFlow* BUSY; // OUTPUT
-		NetFlow* O; // OUTPUT
-		NetFlow* CE; // INPUT
-		NetFlow* CLK; // INPUT
-		NetFlow* I; // INPUT
-		NetFlow* WRITE; // INPUT
+		NetFlow* BUSY; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* CE; // net ID: CE lsb: 0  msb: 0 INPUT
+		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* I; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* WRITE; // net ID: WRITE lsb: 0  msb: 0 INPUT
 		
-	
 		X_ICAP_SPARTAN6(
+			const char * name,
 			//Verilog Parameters:
-			parameter_int_t DEVICE_ID, // Default: 32'h04000093
+			parameter_string_t DEVICE_ID, // Default: 32'h04000093
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_string_t SIM_CFG_FILE_NAME, // Default: "NONE"
 			//Verilog Ports in definition order:
-			NetFlow* BUSY, // OUTPUT
-			NetFlow* O, // OUTPUT
-			NetFlow* CE, // INPUT
-			NetFlow* CLK, // INPUT
-			NetFlow* I, // INPUT
-			NetFlow* WRITE // INPUT
-			){
-		
+			NetFlow* BUSY, // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* CE, // net ID: CE lsb: 0  msb: 0 INPUT
+			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* I, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* WRITE // net ID: WRITE lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->DEVICE_ID = DEVICE_ID; // Default: 32'h04000093
 			this->LOC = LOC; // Default: "UNPLACED"
 			this->SIM_CFG_FILE_NAME = SIM_CFG_FILE_NAME; // Default: "NONE"
 			//Verilog Ports in definition order:
-			this->BUSY = BUSY; // OUTPUT
-			this->O = O; // OUTPUT
-			this->CE = CE; // INPUT
-			this->CLK = CLK; // INPUT
-			this->I = I; // INPUT
-			this->WRITE = WRITE; // INPUT
-		
+			this->BUSY = BUSY; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->CE = CE; // net ID: CE lsb: 0  msb: 0 INPUT
+			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->I = I; // net ID: I lsb: 0  msb: 15 INPUT
+			this->WRITE = WRITE; // net ID: WRITE lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -60,7 +61,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

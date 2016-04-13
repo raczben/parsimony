@@ -21,8 +21,8 @@ class SourceCodeNode {
 	 * indentedBlock: contains multiple SourceCodeNode-s which can contain lines.
 	 * 	this block should be indented.
 	 */
-	private String singleCodeLine;
-	private SourceGenerator indentedBlock;
+	protected String singleCodeLine;
+	SourceGenerator indentedBlock;
 	
 	/**
 	 * Constructor: If you call this constructor this node will contain a single
@@ -83,6 +83,14 @@ class SourceCodeNode {
 			indents+=identString;
 		}
 		return indents;
+	}
+	
+	boolean isSimpleLine(){
+		return null != singleCodeLine;
+	}
+	
+	boolean isBlock(){
+		return null != indentedBlock;
 	}
 	
 }

@@ -5,62 +5,63 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class fifo_reset_oserdese1_vlog{
+	
+	class fifo_reset_oserdese1_vlog: public Primitive{
 
 		//Verilog Parameters:
 		//Verilog Ports in definition order:
-		NetFlow* rst_bufo_p; // OUTPUT
-		NetFlow* rst_bufo_rc; // OUTPUT
-		NetFlow* rst_bufg_p; // OUTPUT
-		NetFlow* rst_bufg_wc; // OUTPUT
-		NetFlow* rst_cntr; // INPUT
-		NetFlow* bufg_clk; // INPUT
-		NetFlow* bufo_clk; // INPUT
-		NetFlow* clkdiv; // INPUT
-		NetFlow* rst; // INPUT
-		NetFlow* divide_2; // INPUT
-		NetFlow* bufop_clk; // INPUT
-		NetFlow* rst_bufop_rc; // OUTPUT
+		NetFlow* rst_bufo_p; // net ID: rst_bufo_p lsb: 0  msb: 0 OUTPUT
+		NetFlow* rst_bufo_rc; // net ID: rst_bufo_rc lsb: 0  msb: 0 OUTPUT
+		NetFlow* rst_bufg_p; // net ID: rst_bufg_p lsb: 0  msb: 0 OUTPUT
+		NetFlow* rst_bufg_wc; // net ID: rst_bufg_wc lsb: 0  msb: 0 OUTPUT
+		NetFlow* rst_cntr; // net ID: rst_cntr lsb: 0  msb: 0 INPUT
+		NetFlow* bufg_clk; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
+		NetFlow* bufo_clk; // net ID: bufo_clk lsb: 0  msb: 0 INPUT
+		NetFlow* clkdiv; // net ID: clkdiv lsb: 0  msb: 0 INPUT
+		NetFlow* rst; // net ID: rst lsb: 0  msb: 0 INPUT
+		NetFlow* divide_2; // net ID: divide_2 lsb: 0  msb: 0 INPUT
+		NetFlow* bufop_clk; // net ID: bufop_clk lsb: 0  msb: 0 INPUT
+		NetFlow* rst_bufop_rc; // net ID: rst_bufop_rc lsb: 0  msb: 0 OUTPUT
 		
-	
 		fifo_reset_oserdese1_vlog(
+			const char * name,
 			//Verilog Parameters:
 			//Verilog Ports in definition order:
-			NetFlow* rst_bufo_p, // OUTPUT
-			NetFlow* rst_bufo_rc, // OUTPUT
-			NetFlow* rst_bufg_p, // OUTPUT
-			NetFlow* rst_bufg_wc, // OUTPUT
-			NetFlow* rst_cntr, // INPUT
-			NetFlow* bufg_clk, // INPUT
-			NetFlow* bufo_clk, // INPUT
-			NetFlow* clkdiv, // INPUT
-			NetFlow* rst, // INPUT
-			NetFlow* divide_2, // INPUT
-			NetFlow* bufop_clk, // INPUT
-			NetFlow* rst_bufop_rc // OUTPUT
-			){
-		
+			NetFlow* rst_bufo_p, // net ID: rst_bufo_p lsb: 0  msb: 0 OUTPUT
+			NetFlow* rst_bufo_rc, // net ID: rst_bufo_rc lsb: 0  msb: 0 OUTPUT
+			NetFlow* rst_bufg_p, // net ID: rst_bufg_p lsb: 0  msb: 0 OUTPUT
+			NetFlow* rst_bufg_wc, // net ID: rst_bufg_wc lsb: 0  msb: 0 OUTPUT
+			NetFlow* rst_cntr, // net ID: rst_cntr lsb: 0  msb: 0 INPUT
+			NetFlow* bufg_clk, // net ID: bufg_clk lsb: 0  msb: 0 INPUT
+			NetFlow* bufo_clk, // net ID: bufo_clk lsb: 0  msb: 0 INPUT
+			NetFlow* clkdiv, // net ID: clkdiv lsb: 0  msb: 0 INPUT
+			NetFlow* rst, // net ID: rst lsb: 0  msb: 0 INPUT
+			NetFlow* divide_2, // net ID: divide_2 lsb: 0  msb: 0 INPUT
+			NetFlow* bufop_clk, // net ID: bufop_clk lsb: 0  msb: 0 INPUT
+			NetFlow* rst_bufop_rc // net ID: rst_bufop_rc lsb: 0  msb: 0 OUTPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			//Verilog Ports in definition order:
-			this->rst_bufo_p = rst_bufo_p; // OUTPUT
-			this->rst_bufo_rc = rst_bufo_rc; // OUTPUT
-			this->rst_bufg_p = rst_bufg_p; // OUTPUT
-			this->rst_bufg_wc = rst_bufg_wc; // OUTPUT
-			this->rst_cntr = rst_cntr; // INPUT
-			this->bufg_clk = bufg_clk; // INPUT
-			this->bufo_clk = bufo_clk; // INPUT
-			this->clkdiv = clkdiv; // INPUT
-			this->rst = rst; // INPUT
-			this->divide_2 = divide_2; // INPUT
-			this->bufop_clk = bufop_clk; // INPUT
-			this->rst_bufop_rc = rst_bufop_rc; // OUTPUT
-		
+			this->rst_bufo_p = rst_bufo_p; // net ID: rst_bufo_p lsb: 0  msb: 0 OUTPUT
+			this->rst_bufo_rc = rst_bufo_rc; // net ID: rst_bufo_rc lsb: 0  msb: 0 OUTPUT
+			this->rst_bufg_p = rst_bufg_p; // net ID: rst_bufg_p lsb: 0  msb: 0 OUTPUT
+			this->rst_bufg_wc = rst_bufg_wc; // net ID: rst_bufg_wc lsb: 0  msb: 0 OUTPUT
+			this->rst_cntr = rst_cntr; // net ID: rst_cntr lsb: 0  msb: 0 INPUT
+			this->bufg_clk = bufg_clk; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
+			this->bufo_clk = bufo_clk; // net ID: bufo_clk lsb: 0  msb: 0 INPUT
+			this->clkdiv = clkdiv; // net ID: clkdiv lsb: 0  msb: 0 INPUT
+			this->rst = rst; // net ID: rst lsb: 0  msb: 0 INPUT
+			this->divide_2 = divide_2; // net ID: divide_2 lsb: 0  msb: 0 INPUT
+			this->bufop_clk = bufop_clk; // net ID: bufop_clk lsb: 0  msb: 0 INPUT
+			this->rst_bufop_rc = rst_bufop_rc; // net ID: rst_bufop_rc lsb: 0  msb: 0 OUTPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -69,7 +70,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

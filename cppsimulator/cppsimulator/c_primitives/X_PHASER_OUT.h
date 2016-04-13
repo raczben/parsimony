@@ -5,94 +5,95 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_PHASER_OUT{
+	
+	class X_PHASER_OUT: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t LOC;
-		parameter_int_t CLKOUT_DIV;
+		parameter_string_t CLKOUT_DIV;
 		parameter_enum_t COARSE_BYPASS;
-		parameter_int_t COARSE_DELAY;
+		parameter_string_t COARSE_DELAY;
 		parameter_enum_t EN_OSERDES_RST;
-		parameter_int_t FINE_DELAY;
-		parameter_int_t MEMREFCLK_PERIOD;
+		parameter_string_t FINE_DELAY;
+		parameter_string_t MEMREFCLK_PERIOD;
 		parameter_enum_t OCLKDELAY_INV;
-		parameter_int_t OCLK_DELAY;
+		parameter_string_t OCLK_DELAY;
 		parameter_string_t OUTPUT_CLK_SRC;
-		parameter_int_t PHASEREFCLK_PERIOD;
-		parameter_int_t PO;
-		parameter_int_t REFCLK_PERIOD;
+		parameter_string_t PHASEREFCLK_PERIOD;
+		parameter_string_t PO;
+		parameter_string_t REFCLK_PERIOD;
 		parameter_enum_t SYNC_IN_DIV_RST;
 		//Verilog Ports in definition order:
-		NetFlow* COARSEOVERFLOW; // OUTPUT
-		NetFlow* COUNTERREADVAL; // OUTPUT
-		NetFlow* FINEOVERFLOW; // OUTPUT
-		NetFlow* OCLK; // OUTPUT
-		NetFlow* OCLKDELAYED; // OUTPUT
-		NetFlow* OCLKDIV; // OUTPUT
-		NetFlow* OSERDESRST; // OUTPUT
-		NetFlow* COARSEENABLE; // INPUT
-		NetFlow* COARSEINC; // INPUT
-		NetFlow* COUNTERLOADEN; // INPUT
-		NetFlow* COUNTERLOADVAL; // INPUT
-		NetFlow* COUNTERREADEN; // INPUT
-		NetFlow* DIVIDERST; // INPUT
-		NetFlow* EDGEADV; // INPUT
-		NetFlow* FINEENABLE; // INPUT
-		NetFlow* FINEINC; // INPUT
-		NetFlow* FREQREFCLK; // INPUT
-		NetFlow* MEMREFCLK; // INPUT
-		NetFlow* PHASEREFCLK; // INPUT
-		NetFlow* RST; // INPUT
-		NetFlow* SELFINEOCLKDELAY; // INPUT
-		NetFlow* SYNCIN; // INPUT
-		NetFlow* SYSCLK; // INPUT
+		NetFlow* COARSEOVERFLOW; // net ID: COARSEOVERFLOW lsb: 0  msb: 0 OUTPUT
+		NetFlow* COUNTERREADVAL; // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
+		NetFlow* FINEOVERFLOW; // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
+		NetFlow* OCLK; // net ID: OCLK lsb: 0  msb: 0 OUTPUT
+		NetFlow* OCLKDELAYED; // net ID: OCLKDELAYED lsb: 0  msb: 0 OUTPUT
+		NetFlow* OCLKDIV; // net ID: OCLKDIV lsb: 0  msb: 0 OUTPUT
+		NetFlow* OSERDESRST; // net ID: OSERDESRST lsb: 0  msb: 0 OUTPUT
+		NetFlow* COARSEENABLE; // net ID: COARSEENABLE lsb: 0  msb: 0 INPUT
+		NetFlow* COARSEINC; // net ID: COARSEINC lsb: 0  msb: 0 INPUT
+		NetFlow* COUNTERLOADEN; // net ID: COUNTERLOADEN lsb: 0  msb: 0 INPUT
+		NetFlow* COUNTERLOADVAL; // net ID: COUNTERLOADVAL lsb: 0  msb: 8 INPUT
+		NetFlow* COUNTERREADEN; // net ID: COUNTERREADEN lsb: 0  msb: 0 INPUT
+		NetFlow* DIVIDERST; // net ID: DIVIDERST lsb: 0  msb: 0 INPUT
+		NetFlow* EDGEADV; // net ID: EDGEADV lsb: 0  msb: 0 INPUT
+		NetFlow* FINEENABLE; // net ID: FINEENABLE lsb: 0  msb: 0 INPUT
+		NetFlow* FINEINC; // net ID: FINEINC lsb: 0  msb: 0 INPUT
+		NetFlow* FREQREFCLK; // net ID: FREQREFCLK lsb: 0  msb: 0 INPUT
+		NetFlow* MEMREFCLK; // net ID: MEMREFCLK lsb: 0  msb: 0 INPUT
+		NetFlow* PHASEREFCLK; // net ID: PHASEREFCLK lsb: 0  msb: 0 INPUT
+		NetFlow* RST; // net ID: RST lsb: 0  msb: 0 INPUT
+		NetFlow* SELFINEOCLKDELAY; // net ID: SELFINEOCLKDELAY lsb: 0  msb: 0 INPUT
+		NetFlow* SYNCIN; // net ID: SYNCIN lsb: 0  msb: 0 INPUT
+		NetFlow* SYSCLK; // net ID: SYSCLK lsb: 0  msb: 0 INPUT
 		
-	
 		X_PHASER_OUT(
+			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
-			parameter_int_t CLKOUT_DIV, // Default: 4
+			parameter_string_t CLKOUT_DIV, // Default: 4
 			parameter_enum_t COARSE_BYPASS, // Default: "FALSE"
-			parameter_int_t COARSE_DELAY, // Default: 0
+			parameter_string_t COARSE_DELAY, // Default: 0
 			parameter_enum_t EN_OSERDES_RST, // Default: "FALSE"
-			parameter_int_t FINE_DELAY, // Default: 0
-			parameter_int_t MEMREFCLK_PERIOD, // Default: 0.000
+			parameter_string_t FINE_DELAY, // Default: 0
+			parameter_string_t MEMREFCLK_PERIOD, // Default: 0.000
 			parameter_enum_t OCLKDELAY_INV, // Default: "FALSE"
-			parameter_int_t OCLK_DELAY, // Default: 0
+			parameter_string_t OCLK_DELAY, // Default: 0
 			parameter_string_t OUTPUT_CLK_SRC, // Default: "PHASE_REF"
-			parameter_int_t PHASEREFCLK_PERIOD, // Default: 0.000
-			parameter_int_t PO, // Default: 3'b000
-			parameter_int_t REFCLK_PERIOD, // Default: 0.000
+			parameter_string_t PHASEREFCLK_PERIOD, // Default: 0.000
+			parameter_string_t PO, // Default: 3'b000
+			parameter_string_t REFCLK_PERIOD, // Default: 0.000
 			parameter_enum_t SYNC_IN_DIV_RST, // Default: "FALSE"
 			//Verilog Ports in definition order:
-			NetFlow* COARSEOVERFLOW, // OUTPUT
-			NetFlow* COUNTERREADVAL, // OUTPUT
-			NetFlow* FINEOVERFLOW, // OUTPUT
-			NetFlow* OCLK, // OUTPUT
-			NetFlow* OCLKDELAYED, // OUTPUT
-			NetFlow* OCLKDIV, // OUTPUT
-			NetFlow* OSERDESRST, // OUTPUT
-			NetFlow* COARSEENABLE, // INPUT
-			NetFlow* COARSEINC, // INPUT
-			NetFlow* COUNTERLOADEN, // INPUT
-			NetFlow* COUNTERLOADVAL, // INPUT
-			NetFlow* COUNTERREADEN, // INPUT
-			NetFlow* DIVIDERST, // INPUT
-			NetFlow* EDGEADV, // INPUT
-			NetFlow* FINEENABLE, // INPUT
-			NetFlow* FINEINC, // INPUT
-			NetFlow* FREQREFCLK, // INPUT
-			NetFlow* MEMREFCLK, // INPUT
-			NetFlow* PHASEREFCLK, // INPUT
-			NetFlow* RST, // INPUT
-			NetFlow* SELFINEOCLKDELAY, // INPUT
-			NetFlow* SYNCIN, // INPUT
-			NetFlow* SYSCLK // INPUT
-			){
-		
+			NetFlow* COARSEOVERFLOW, // net ID: COARSEOVERFLOW lsb: 0  msb: 0 OUTPUT
+			NetFlow* COUNTERREADVAL, // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
+			NetFlow* FINEOVERFLOW, // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
+			NetFlow* OCLK, // net ID: OCLK lsb: 0  msb: 0 OUTPUT
+			NetFlow* OCLKDELAYED, // net ID: OCLKDELAYED lsb: 0  msb: 0 OUTPUT
+			NetFlow* OCLKDIV, // net ID: OCLKDIV lsb: 0  msb: 0 OUTPUT
+			NetFlow* OSERDESRST, // net ID: OSERDESRST lsb: 0  msb: 0 OUTPUT
+			NetFlow* COARSEENABLE, // net ID: COARSEENABLE lsb: 0  msb: 0 INPUT
+			NetFlow* COARSEINC, // net ID: COARSEINC lsb: 0  msb: 0 INPUT
+			NetFlow* COUNTERLOADEN, // net ID: COUNTERLOADEN lsb: 0  msb: 0 INPUT
+			NetFlow* COUNTERLOADVAL, // net ID: COUNTERLOADVAL lsb: 0  msb: 8 INPUT
+			NetFlow* COUNTERREADEN, // net ID: COUNTERREADEN lsb: 0  msb: 0 INPUT
+			NetFlow* DIVIDERST, // net ID: DIVIDERST lsb: 0  msb: 0 INPUT
+			NetFlow* EDGEADV, // net ID: EDGEADV lsb: 0  msb: 0 INPUT
+			NetFlow* FINEENABLE, // net ID: FINEENABLE lsb: 0  msb: 0 INPUT
+			NetFlow* FINEINC, // net ID: FINEINC lsb: 0  msb: 0 INPUT
+			NetFlow* FREQREFCLK, // net ID: FREQREFCLK lsb: 0  msb: 0 INPUT
+			NetFlow* MEMREFCLK, // net ID: MEMREFCLK lsb: 0  msb: 0 INPUT
+			NetFlow* PHASEREFCLK, // net ID: PHASEREFCLK lsb: 0  msb: 0 INPUT
+			NetFlow* RST, // net ID: RST lsb: 0  msb: 0 INPUT
+			NetFlow* SELFINEOCLKDELAY, // net ID: SELFINEOCLKDELAY lsb: 0  msb: 0 INPUT
+			NetFlow* SYNCIN, // net ID: SYNCIN lsb: 0  msb: 0 INPUT
+			NetFlow* SYSCLK // net ID: SYSCLK lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
@@ -110,32 +111,32 @@ namespace CPrimitives {
 			this->REFCLK_PERIOD = REFCLK_PERIOD; // Default: 0.000
 			this->SYNC_IN_DIV_RST = SYNC_IN_DIV_RST; // Default: "FALSE"
 			//Verilog Ports in definition order:
-			this->COARSEOVERFLOW = COARSEOVERFLOW; // OUTPUT
-			this->COUNTERREADVAL = COUNTERREADVAL; // OUTPUT
-			this->FINEOVERFLOW = FINEOVERFLOW; // OUTPUT
-			this->OCLK = OCLK; // OUTPUT
-			this->OCLKDELAYED = OCLKDELAYED; // OUTPUT
-			this->OCLKDIV = OCLKDIV; // OUTPUT
-			this->OSERDESRST = OSERDESRST; // OUTPUT
-			this->COARSEENABLE = COARSEENABLE; // INPUT
-			this->COARSEINC = COARSEINC; // INPUT
-			this->COUNTERLOADEN = COUNTERLOADEN; // INPUT
-			this->COUNTERLOADVAL = COUNTERLOADVAL; // INPUT
-			this->COUNTERREADEN = COUNTERREADEN; // INPUT
-			this->DIVIDERST = DIVIDERST; // INPUT
-			this->EDGEADV = EDGEADV; // INPUT
-			this->FINEENABLE = FINEENABLE; // INPUT
-			this->FINEINC = FINEINC; // INPUT
-			this->FREQREFCLK = FREQREFCLK; // INPUT
-			this->MEMREFCLK = MEMREFCLK; // INPUT
-			this->PHASEREFCLK = PHASEREFCLK; // INPUT
-			this->RST = RST; // INPUT
-			this->SELFINEOCLKDELAY = SELFINEOCLKDELAY; // INPUT
-			this->SYNCIN = SYNCIN; // INPUT
-			this->SYSCLK = SYSCLK; // INPUT
-		
+			this->COARSEOVERFLOW = COARSEOVERFLOW; // net ID: COARSEOVERFLOW lsb: 0  msb: 0 OUTPUT
+			this->COUNTERREADVAL = COUNTERREADVAL; // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
+			this->FINEOVERFLOW = FINEOVERFLOW; // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
+			this->OCLK = OCLK; // net ID: OCLK lsb: 0  msb: 0 OUTPUT
+			this->OCLKDELAYED = OCLKDELAYED; // net ID: OCLKDELAYED lsb: 0  msb: 0 OUTPUT
+			this->OCLKDIV = OCLKDIV; // net ID: OCLKDIV lsb: 0  msb: 0 OUTPUT
+			this->OSERDESRST = OSERDESRST; // net ID: OSERDESRST lsb: 0  msb: 0 OUTPUT
+			this->COARSEENABLE = COARSEENABLE; // net ID: COARSEENABLE lsb: 0  msb: 0 INPUT
+			this->COARSEINC = COARSEINC; // net ID: COARSEINC lsb: 0  msb: 0 INPUT
+			this->COUNTERLOADEN = COUNTERLOADEN; // net ID: COUNTERLOADEN lsb: 0  msb: 0 INPUT
+			this->COUNTERLOADVAL = COUNTERLOADVAL; // net ID: COUNTERLOADVAL lsb: 0  msb: 8 INPUT
+			this->COUNTERREADEN = COUNTERREADEN; // net ID: COUNTERREADEN lsb: 0  msb: 0 INPUT
+			this->DIVIDERST = DIVIDERST; // net ID: DIVIDERST lsb: 0  msb: 0 INPUT
+			this->EDGEADV = EDGEADV; // net ID: EDGEADV lsb: 0  msb: 0 INPUT
+			this->FINEENABLE = FINEENABLE; // net ID: FINEENABLE lsb: 0  msb: 0 INPUT
+			this->FINEINC = FINEINC; // net ID: FINEINC lsb: 0  msb: 0 INPUT
+			this->FREQREFCLK = FREQREFCLK; // net ID: FREQREFCLK lsb: 0  msb: 0 INPUT
+			this->MEMREFCLK = MEMREFCLK; // net ID: MEMREFCLK lsb: 0  msb: 0 INPUT
+			this->PHASEREFCLK = PHASEREFCLK; // net ID: PHASEREFCLK lsb: 0  msb: 0 INPUT
+			this->RST = RST; // net ID: RST lsb: 0  msb: 0 INPUT
+			this->SELFINEOCLKDELAY = SELFINEOCLKDELAY; // net ID: SELFINEOCLKDELAY lsb: 0  msb: 0 INPUT
+			this->SYNCIN = SYNCIN; // net ID: SYNCIN lsb: 0  msb: 0 INPUT
+			this->SYSCLK = SYSCLK; // net ID: SYSCLK lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -144,7 +145,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

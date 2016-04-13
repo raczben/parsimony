@@ -5,10 +5,11 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_IOBUFDS_DCIEN{
+	
+	class X_IOBUFDS_DCIEN: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t LOC;
@@ -19,16 +20,16 @@ namespace CPrimitives {
 		parameter_string_t SLEW;
 		parameter_enum_t USE_IBUFDISABLE;
 		//Verilog Ports in definition order:
-		NetFlow* O; // OUTPUT
-		NetFlow* IO; // INOUT
-		NetFlow* IOB; // INOUT
-		NetFlow* DCITERMDISABLE; // INPUT
-		NetFlow* I; // INPUT
-		NetFlow* IBUFDISABLE; // INPUT
-		NetFlow* T; // INPUT
+		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* IO; // net ID: IO lsb: 0  msb: 0 INOUT
+		NetFlow* IOB; // net ID: IOB lsb: 0  msb: 0 INOUT
+		NetFlow* DCITERMDISABLE; // net ID: DCITERMDISABLE lsb: 0  msb: 0 INPUT
+		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* IBUFDISABLE; // net ID: IBUFDISABLE lsb: 0  msb: 0 INPUT
+		NetFlow* T; // net ID: T lsb: 0  msb: 0 INPUT
 		
-	
 		X_IOBUFDS_DCIEN(
+			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_enum_t DIFF_TERM, // Default: "FALSE"
@@ -38,15 +39,15 @@ namespace CPrimitives {
 			parameter_string_t SLEW, // Default: "SLOW"
 			parameter_enum_t USE_IBUFDISABLE, // Default: "TRUE"
 			//Verilog Ports in definition order:
-			NetFlow* O, // OUTPUT
-			NetFlow* IO, // INOUT
-			NetFlow* IOB, // INOUT
-			NetFlow* DCITERMDISABLE, // INPUT
-			NetFlow* I, // INPUT
-			NetFlow* IBUFDISABLE, // INPUT
-			NetFlow* T // INPUT
-			){
-		
+			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* IO, // net ID: IO lsb: 0  msb: 0 INOUT
+			NetFlow* IOB, // net ID: IOB lsb: 0  msb: 0 INOUT
+			NetFlow* DCITERMDISABLE, // net ID: DCITERMDISABLE lsb: 0  msb: 0 INPUT
+			NetFlow* I, // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* IBUFDISABLE, // net ID: IBUFDISABLE lsb: 0  msb: 0 INPUT
+			NetFlow* T // net ID: T lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
@@ -57,16 +58,16 @@ namespace CPrimitives {
 			this->SLEW = SLEW; // Default: "SLOW"
 			this->USE_IBUFDISABLE = USE_IBUFDISABLE; // Default: "TRUE"
 			//Verilog Ports in definition order:
-			this->O = O; // OUTPUT
-			this->IO = IO; // INOUT
-			this->IOB = IOB; // INOUT
-			this->DCITERMDISABLE = DCITERMDISABLE; // INPUT
-			this->I = I; // INPUT
-			this->IBUFDISABLE = IBUFDISABLE; // INPUT
-			this->T = T; // INPUT
-		
+			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->IO = IO; // net ID: IO lsb: 0  msb: 0 INOUT
+			this->IOB = IOB; // net ID: IOB lsb: 0  msb: 0 INOUT
+			this->DCITERMDISABLE = DCITERMDISABLE; // net ID: DCITERMDISABLE lsb: 0  msb: 0 INPUT
+			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			this->IBUFDISABLE = IBUFDISABLE; // net ID: IBUFDISABLE lsb: 0  msb: 0 INPUT
+			this->T = T; // net ID: T lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -75,7 +76,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }

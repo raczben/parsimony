@@ -5,76 +5,77 @@
 
 #include "NetFlow.h"
 #include "sim_types.h"
+#include "Primitive.h"
 
 namespace CPrimitives {
-
-	class X_FIFO36_EXP{
+	
+	class X_FIFO36_EXP: public Primitive{
 
 		//Verilog Parameters:
-		parameter_int_t ALMOST_EMPTY_OFFSET;
-		parameter_int_t ALMOST_FULL_OFFSET;
-		parameter_int_t DATA_WIDTH;
-		parameter_int_t DO_REG;
+		parameter_string_t ALMOST_EMPTY_OFFSET;
+		parameter_string_t ALMOST_FULL_OFFSET;
+		parameter_string_t DATA_WIDTH;
+		parameter_string_t DO_REG;
 		parameter_enum_t EN_SYN;
 		parameter_enum_t FIRST_WORD_FALL_THROUGH;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* ALMOSTEMPTY; // OUTPUT
-		NetFlow* ALMOSTFULL; // OUTPUT
-		NetFlow* DO; // OUTPUT
-		NetFlow* DOP; // OUTPUT
-		NetFlow* EMPTY; // OUTPUT
-		NetFlow* FULL; // OUTPUT
-		NetFlow* RDCOUNT; // OUTPUT
-		NetFlow* RDERR; // OUTPUT
-		NetFlow* WRCOUNT; // OUTPUT
-		NetFlow* WRERR; // OUTPUT
-		NetFlow* DI; // INPUT
-		NetFlow* DIP; // INPUT
-		NetFlow* RDCLKL; // INPUT
-		NetFlow* RDCLKU; // INPUT
-		NetFlow* RDEN; // INPUT
-		NetFlow* RDRCLKL; // INPUT
-		NetFlow* RDRCLKU; // INPUT
-		NetFlow* RST; // INPUT
-		NetFlow* WRCLKL; // INPUT
-		NetFlow* WRCLKU; // INPUT
-		NetFlow* WREN; // INPUT
+		NetFlow* ALMOSTEMPTY; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
+		NetFlow* ALMOSTFULL; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
+		NetFlow* DO; // net ID: DO lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOP; // net ID: DOP lsb: 0  msb: 0 OUTPUT
+		NetFlow* EMPTY; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
+		NetFlow* FULL; // net ID: FULL lsb: 0  msb: 0 OUTPUT
+		NetFlow* RDCOUNT; // net ID: RDCOUNT lsb: 0  msb: 0 OUTPUT
+		NetFlow* RDERR; // net ID: RDERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* WRCOUNT; // net ID: WRCOUNT lsb: 0  msb: 0 OUTPUT
+		NetFlow* WRERR; // net ID: WRERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* DI; // net ID: DI lsb: 0  msb: 31 INPUT
+		NetFlow* DIP; // net ID: DIP lsb: 0  msb: 3 INPUT
+		NetFlow* RDCLKL; // net ID: RDCLKL lsb: 0  msb: 0 INPUT
+		NetFlow* RDCLKU; // net ID: RDCLKU lsb: 0  msb: 0 INPUT
+		NetFlow* RDEN; // net ID: RDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RDRCLKL; // net ID: RDRCLKL lsb: 0  msb: 0 INPUT
+		NetFlow* RDRCLKU; // net ID: RDRCLKU lsb: 0  msb: 0 INPUT
+		NetFlow* RST; // net ID: RST lsb: 0  msb: 0 INPUT
+		NetFlow* WRCLKL; // net ID: WRCLKL lsb: 0  msb: 0 INPUT
+		NetFlow* WRCLKU; // net ID: WRCLKU lsb: 0  msb: 0 INPUT
+		NetFlow* WREN; // net ID: WREN lsb: 0  msb: 0 INPUT
 		
-	
 		X_FIFO36_EXP(
+			const char * name,
 			//Verilog Parameters:
-			parameter_int_t ALMOST_EMPTY_OFFSET, // Default: 13'h0080
-			parameter_int_t ALMOST_FULL_OFFSET, // Default: 13'h0080
-			parameter_int_t DATA_WIDTH, // Default: 4
-			parameter_int_t DO_REG, // Default: 1
+			parameter_string_t ALMOST_EMPTY_OFFSET, // Default: 13'h0080
+			parameter_string_t ALMOST_FULL_OFFSET, // Default: 13'h0080
+			parameter_string_t DATA_WIDTH, // Default: 4
+			parameter_string_t DO_REG, // Default: 1
 			parameter_enum_t EN_SYN, // Default: "FALSE"
 			parameter_enum_t FIRST_WORD_FALL_THROUGH, // Default: "FALSE"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* ALMOSTEMPTY, // OUTPUT
-			NetFlow* ALMOSTFULL, // OUTPUT
-			NetFlow* DO, // OUTPUT
-			NetFlow* DOP, // OUTPUT
-			NetFlow* EMPTY, // OUTPUT
-			NetFlow* FULL, // OUTPUT
-			NetFlow* RDCOUNT, // OUTPUT
-			NetFlow* RDERR, // OUTPUT
-			NetFlow* WRCOUNT, // OUTPUT
-			NetFlow* WRERR, // OUTPUT
-			NetFlow* DI, // INPUT
-			NetFlow* DIP, // INPUT
-			NetFlow* RDCLKL, // INPUT
-			NetFlow* RDCLKU, // INPUT
-			NetFlow* RDEN, // INPUT
-			NetFlow* RDRCLKL, // INPUT
-			NetFlow* RDRCLKU, // INPUT
-			NetFlow* RST, // INPUT
-			NetFlow* WRCLKL, // INPUT
-			NetFlow* WRCLKU, // INPUT
-			NetFlow* WREN // INPUT
-			){
-		
+			NetFlow* ALMOSTEMPTY, // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
+			NetFlow* ALMOSTFULL, // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
+			NetFlow* DO, // net ID: DO lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOP, // net ID: DOP lsb: 0  msb: 0 OUTPUT
+			NetFlow* EMPTY, // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
+			NetFlow* FULL, // net ID: FULL lsb: 0  msb: 0 OUTPUT
+			NetFlow* RDCOUNT, // net ID: RDCOUNT lsb: 0  msb: 0 OUTPUT
+			NetFlow* RDERR, // net ID: RDERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* WRCOUNT, // net ID: WRCOUNT lsb: 0  msb: 0 OUTPUT
+			NetFlow* WRERR, // net ID: WRERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* DI, // net ID: DI lsb: 0  msb: 31 INPUT
+			NetFlow* DIP, // net ID: DIP lsb: 0  msb: 3 INPUT
+			NetFlow* RDCLKL, // net ID: RDCLKL lsb: 0  msb: 0 INPUT
+			NetFlow* RDCLKU, // net ID: RDCLKU lsb: 0  msb: 0 INPUT
+			NetFlow* RDEN, // net ID: RDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RDRCLKL, // net ID: RDRCLKL lsb: 0  msb: 0 INPUT
+			NetFlow* RDRCLKU, // net ID: RDRCLKU lsb: 0  msb: 0 INPUT
+			NetFlow* RST, // net ID: RST lsb: 0  msb: 0 INPUT
+			NetFlow* WRCLKL, // net ID: WRCLKL lsb: 0  msb: 0 INPUT
+			NetFlow* WRCLKU, // net ID: WRCLKU lsb: 0  msb: 0 INPUT
+			NetFlow* WREN // net ID: WREN lsb: 0  msb: 0 INPUT
+			):Primitive(name){
+			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->ALMOST_EMPTY_OFFSET = ALMOST_EMPTY_OFFSET; // Default: 13'h0080
@@ -85,30 +86,30 @@ namespace CPrimitives {
 			this->FIRST_WORD_FALL_THROUGH = FIRST_WORD_FALL_THROUGH; // Default: "FALSE"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->ALMOSTEMPTY = ALMOSTEMPTY; // OUTPUT
-			this->ALMOSTFULL = ALMOSTFULL; // OUTPUT
-			this->DO = DO; // OUTPUT
-			this->DOP = DOP; // OUTPUT
-			this->EMPTY = EMPTY; // OUTPUT
-			this->FULL = FULL; // OUTPUT
-			this->RDCOUNT = RDCOUNT; // OUTPUT
-			this->RDERR = RDERR; // OUTPUT
-			this->WRCOUNT = WRCOUNT; // OUTPUT
-			this->WRERR = WRERR; // OUTPUT
-			this->DI = DI; // INPUT
-			this->DIP = DIP; // INPUT
-			this->RDCLKL = RDCLKL; // INPUT
-			this->RDCLKU = RDCLKU; // INPUT
-			this->RDEN = RDEN; // INPUT
-			this->RDRCLKL = RDRCLKL; // INPUT
-			this->RDRCLKU = RDRCLKU; // INPUT
-			this->RST = RST; // INPUT
-			this->WRCLKL = WRCLKL; // INPUT
-			this->WRCLKU = WRCLKU; // INPUT
-			this->WREN = WREN; // INPUT
-		
+			this->ALMOSTEMPTY = ALMOSTEMPTY; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
+			this->ALMOSTFULL = ALMOSTFULL; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
+			this->DO = DO; // net ID: DO lsb: 0  msb: 0 OUTPUT
+			this->DOP = DOP; // net ID: DOP lsb: 0  msb: 0 OUTPUT
+			this->EMPTY = EMPTY; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
+			this->FULL = FULL; // net ID: FULL lsb: 0  msb: 0 OUTPUT
+			this->RDCOUNT = RDCOUNT; // net ID: RDCOUNT lsb: 0  msb: 0 OUTPUT
+			this->RDERR = RDERR; // net ID: RDERR lsb: 0  msb: 0 OUTPUT
+			this->WRCOUNT = WRCOUNT; // net ID: WRCOUNT lsb: 0  msb: 0 OUTPUT
+			this->WRERR = WRERR; // net ID: WRERR lsb: 0  msb: 0 OUTPUT
+			this->DI = DI; // net ID: DI lsb: 0  msb: 31 INPUT
+			this->DIP = DIP; // net ID: DIP lsb: 0  msb: 3 INPUT
+			this->RDCLKL = RDCLKL; // net ID: RDCLKL lsb: 0  msb: 0 INPUT
+			this->RDCLKU = RDCLKU; // net ID: RDCLKU lsb: 0  msb: 0 INPUT
+			this->RDEN = RDEN; // net ID: RDEN lsb: 0  msb: 0 INPUT
+			this->RDRCLKL = RDRCLKL; // net ID: RDRCLKL lsb: 0  msb: 0 INPUT
+			this->RDRCLKU = RDRCLKU; // net ID: RDRCLKU lsb: 0  msb: 0 INPUT
+			this->RST = RST; // net ID: RST lsb: 0  msb: 0 INPUT
+			this->WRCLKL = WRCLKL; // net ID: WRCLKL lsb: 0  msb: 0 INPUT
+			this->WRCLKU = WRCLKU; // net ID: WRCLKU lsb: 0  msb: 0 INPUT
+			this->WREN = WREN; // net ID: WREN lsb: 0  msb: 0 INPUT
+			
 			register_wait_on_event_nets();
-		
+			
 		}
 		
 		void register_wait_on_event_nets(){
@@ -117,7 +118,8 @@ namespace CPrimitives {
 		void calculate(int time){
 		// TODO
 		}
-	};
-	
+		};
+		
+
 
 }
