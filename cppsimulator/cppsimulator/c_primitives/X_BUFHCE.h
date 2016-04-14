@@ -3,33 +3,35 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_BUFHCE_H
+#define X_BUFHCE_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_BUFHCE: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t CE_TYPE;
-		parameter_string_t INIT_OUT;
+		parameter_int_t INIT_OUT;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* CE; // net ID: CE lsb: 0  msb: 0 INPUT
-		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 		
-		X_BUFHCE(
+		public: X_BUFHCE(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t CE_TYPE, // Default: "SYNC"
-			parameter_string_t INIT_OUT, // Default: 0
+			parameter_int_t INIT_OUT, // Default: 0
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* CE, // net ID: CE lsb: 0  msb: 0 INPUT
-			NetFlow* I // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* CE_A0_B, // net ID: CE lsb: 0  msb: 0 INPUT
+			NetFlow* I_A0_B // net ID: I lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -38,9 +40,9 @@ namespace CPrimitives {
 			this->INIT_OUT = INIT_OUT; // Default: 0
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->CE = CE; // net ID: CE lsb: 0  msb: 0 INPUT
-			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->CE_A0_B = CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -54,6 +56,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_BUFHCE_H

@@ -3,427 +3,789 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_RB36_INTERNAL_VLOG_H
+#define X_RB36_INTERNAL_VLOG_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_RB36_INTERNAL_VLOG: public Primitive{
 
 		//Verilog Parameters:
-		parameter_string_t DOA_REG;
-		parameter_string_t DOB_REG;
+		parameter_int_t DOA_REG;
+		parameter_int_t DOB_REG;
 		parameter_enum_t EN_ECC_READ;
 		parameter_enum_t EN_ECC_WRITE;
-		parameter_string_t INIT_A;
-		parameter_string_t INIT_B;
+		parameter_int_t INIT_A;
+		parameter_int_t INIT_B;
 		parameter_string_t RAM_EXTENSION_A;
 		parameter_string_t RAM_EXTENSION_B;
 		parameter_string_t RAM_MODE;
 		parameter_string_t RDADDR_COLLISION_HWCONFIG;
-		parameter_string_t READ_WIDTH_A;
-		parameter_string_t READ_WIDTH_B;
+		parameter_int_t READ_WIDTH_A;
+		parameter_int_t READ_WIDTH_B;
 		parameter_string_t RSTREG_PRIORITY_A;
 		parameter_string_t RSTREG_PRIORITY_B;
-		parameter_string_t SETUP_ALL;
-		parameter_string_t SETUP_READ_FIRST;
+		parameter_int_t SETUP_ALL;
+		parameter_int_t SETUP_READ_FIRST;
 		parameter_string_t SIM_COLLISION_CHECK;
 		parameter_string_t SIM_DEVICE;
-		parameter_string_t SRVAL_A;
-		parameter_string_t SRVAL_B;
+		parameter_int_t SRVAL_A;
+		parameter_int_t SRVAL_B;
 		parameter_string_t WRITE_MODE_A;
 		parameter_string_t WRITE_MODE_B;
-		parameter_string_t WRITE_WIDTH_A;
-		parameter_string_t WRITE_WIDTH_B;
+		parameter_int_t WRITE_WIDTH_A;
+		parameter_int_t WRITE_WIDTH_B;
 		parameter_string_t INIT_FILE;
-		parameter_string_t INIT_00;
-		parameter_string_t INIT_01;
-		parameter_string_t INIT_02;
-		parameter_string_t INIT_03;
-		parameter_string_t INIT_04;
-		parameter_string_t INIT_05;
-		parameter_string_t INIT_06;
-		parameter_string_t INIT_07;
-		parameter_string_t INIT_08;
-		parameter_string_t INIT_09;
-		parameter_string_t INIT_0A;
-		parameter_string_t INIT_0B;
-		parameter_string_t INIT_0C;
-		parameter_string_t INIT_0D;
-		parameter_string_t INIT_0E;
-		parameter_string_t INIT_0F;
-		parameter_string_t INIT_10;
-		parameter_string_t INIT_11;
-		parameter_string_t INIT_12;
-		parameter_string_t INIT_13;
-		parameter_string_t INIT_14;
-		parameter_string_t INIT_15;
-		parameter_string_t INIT_16;
-		parameter_string_t INIT_17;
-		parameter_string_t INIT_18;
-		parameter_string_t INIT_19;
-		parameter_string_t INIT_1A;
-		parameter_string_t INIT_1B;
-		parameter_string_t INIT_1C;
-		parameter_string_t INIT_1D;
-		parameter_string_t INIT_1E;
-		parameter_string_t INIT_1F;
-		parameter_string_t INIT_20;
-		parameter_string_t INIT_21;
-		parameter_string_t INIT_22;
-		parameter_string_t INIT_23;
-		parameter_string_t INIT_24;
-		parameter_string_t INIT_25;
-		parameter_string_t INIT_26;
-		parameter_string_t INIT_27;
-		parameter_string_t INIT_28;
-		parameter_string_t INIT_29;
-		parameter_string_t INIT_2A;
-		parameter_string_t INIT_2B;
-		parameter_string_t INIT_2C;
-		parameter_string_t INIT_2D;
-		parameter_string_t INIT_2E;
-		parameter_string_t INIT_2F;
-		parameter_string_t INIT_30;
-		parameter_string_t INIT_31;
-		parameter_string_t INIT_32;
-		parameter_string_t INIT_33;
-		parameter_string_t INIT_34;
-		parameter_string_t INIT_35;
-		parameter_string_t INIT_36;
-		parameter_string_t INIT_37;
-		parameter_string_t INIT_38;
-		parameter_string_t INIT_39;
-		parameter_string_t INIT_3A;
-		parameter_string_t INIT_3B;
-		parameter_string_t INIT_3C;
-		parameter_string_t INIT_3D;
-		parameter_string_t INIT_3E;
-		parameter_string_t INIT_3F;
-		parameter_string_t INIT_40;
-		parameter_string_t INIT_41;
-		parameter_string_t INIT_42;
-		parameter_string_t INIT_43;
-		parameter_string_t INIT_44;
-		parameter_string_t INIT_45;
-		parameter_string_t INIT_46;
-		parameter_string_t INIT_47;
-		parameter_string_t INIT_48;
-		parameter_string_t INIT_49;
-		parameter_string_t INIT_4A;
-		parameter_string_t INIT_4B;
-		parameter_string_t INIT_4C;
-		parameter_string_t INIT_4D;
-		parameter_string_t INIT_4E;
-		parameter_string_t INIT_4F;
-		parameter_string_t INIT_50;
-		parameter_string_t INIT_51;
-		parameter_string_t INIT_52;
-		parameter_string_t INIT_53;
-		parameter_string_t INIT_54;
-		parameter_string_t INIT_55;
-		parameter_string_t INIT_56;
-		parameter_string_t INIT_57;
-		parameter_string_t INIT_58;
-		parameter_string_t INIT_59;
-		parameter_string_t INIT_5A;
-		parameter_string_t INIT_5B;
-		parameter_string_t INIT_5C;
-		parameter_string_t INIT_5D;
-		parameter_string_t INIT_5E;
-		parameter_string_t INIT_5F;
-		parameter_string_t INIT_60;
-		parameter_string_t INIT_61;
-		parameter_string_t INIT_62;
-		parameter_string_t INIT_63;
-		parameter_string_t INIT_64;
-		parameter_string_t INIT_65;
-		parameter_string_t INIT_66;
-		parameter_string_t INIT_67;
-		parameter_string_t INIT_68;
-		parameter_string_t INIT_69;
-		parameter_string_t INIT_6A;
-		parameter_string_t INIT_6B;
-		parameter_string_t INIT_6C;
-		parameter_string_t INIT_6D;
-		parameter_string_t INIT_6E;
-		parameter_string_t INIT_6F;
-		parameter_string_t INIT_70;
-		parameter_string_t INIT_71;
-		parameter_string_t INIT_72;
-		parameter_string_t INIT_73;
-		parameter_string_t INIT_74;
-		parameter_string_t INIT_75;
-		parameter_string_t INIT_76;
-		parameter_string_t INIT_77;
-		parameter_string_t INIT_78;
-		parameter_string_t INIT_79;
-		parameter_string_t INIT_7A;
-		parameter_string_t INIT_7B;
-		parameter_string_t INIT_7C;
-		parameter_string_t INIT_7D;
-		parameter_string_t INIT_7E;
-		parameter_string_t INIT_7F;
-		parameter_string_t INITP_00;
-		parameter_string_t INITP_01;
-		parameter_string_t INITP_02;
-		parameter_string_t INITP_03;
-		parameter_string_t INITP_04;
-		parameter_string_t INITP_05;
-		parameter_string_t INITP_06;
-		parameter_string_t INITP_07;
-		parameter_string_t INITP_08;
-		parameter_string_t INITP_09;
-		parameter_string_t INITP_0A;
-		parameter_string_t INITP_0B;
-		parameter_string_t INITP_0C;
-		parameter_string_t INITP_0D;
-		parameter_string_t INITP_0E;
-		parameter_string_t INITP_0F;
-		parameter_string_t BRAM_SIZE;
+		parameter_int_t INIT_00;
+		parameter_int_t INIT_01;
+		parameter_int_t INIT_02;
+		parameter_int_t INIT_03;
+		parameter_int_t INIT_04;
+		parameter_int_t INIT_05;
+		parameter_int_t INIT_06;
+		parameter_int_t INIT_07;
+		parameter_int_t INIT_08;
+		parameter_int_t INIT_09;
+		parameter_int_t INIT_0A;
+		parameter_int_t INIT_0B;
+		parameter_int_t INIT_0C;
+		parameter_int_t INIT_0D;
+		parameter_int_t INIT_0E;
+		parameter_int_t INIT_0F;
+		parameter_int_t INIT_10;
+		parameter_int_t INIT_11;
+		parameter_int_t INIT_12;
+		parameter_int_t INIT_13;
+		parameter_int_t INIT_14;
+		parameter_int_t INIT_15;
+		parameter_int_t INIT_16;
+		parameter_int_t INIT_17;
+		parameter_int_t INIT_18;
+		parameter_int_t INIT_19;
+		parameter_int_t INIT_1A;
+		parameter_int_t INIT_1B;
+		parameter_int_t INIT_1C;
+		parameter_int_t INIT_1D;
+		parameter_int_t INIT_1E;
+		parameter_int_t INIT_1F;
+		parameter_int_t INIT_20;
+		parameter_int_t INIT_21;
+		parameter_int_t INIT_22;
+		parameter_int_t INIT_23;
+		parameter_int_t INIT_24;
+		parameter_int_t INIT_25;
+		parameter_int_t INIT_26;
+		parameter_int_t INIT_27;
+		parameter_int_t INIT_28;
+		parameter_int_t INIT_29;
+		parameter_int_t INIT_2A;
+		parameter_int_t INIT_2B;
+		parameter_int_t INIT_2C;
+		parameter_int_t INIT_2D;
+		parameter_int_t INIT_2E;
+		parameter_int_t INIT_2F;
+		parameter_int_t INIT_30;
+		parameter_int_t INIT_31;
+		parameter_int_t INIT_32;
+		parameter_int_t INIT_33;
+		parameter_int_t INIT_34;
+		parameter_int_t INIT_35;
+		parameter_int_t INIT_36;
+		parameter_int_t INIT_37;
+		parameter_int_t INIT_38;
+		parameter_int_t INIT_39;
+		parameter_int_t INIT_3A;
+		parameter_int_t INIT_3B;
+		parameter_int_t INIT_3C;
+		parameter_int_t INIT_3D;
+		parameter_int_t INIT_3E;
+		parameter_int_t INIT_3F;
+		parameter_int_t INIT_40;
+		parameter_int_t INIT_41;
+		parameter_int_t INIT_42;
+		parameter_int_t INIT_43;
+		parameter_int_t INIT_44;
+		parameter_int_t INIT_45;
+		parameter_int_t INIT_46;
+		parameter_int_t INIT_47;
+		parameter_int_t INIT_48;
+		parameter_int_t INIT_49;
+		parameter_int_t INIT_4A;
+		parameter_int_t INIT_4B;
+		parameter_int_t INIT_4C;
+		parameter_int_t INIT_4D;
+		parameter_int_t INIT_4E;
+		parameter_int_t INIT_4F;
+		parameter_int_t INIT_50;
+		parameter_int_t INIT_51;
+		parameter_int_t INIT_52;
+		parameter_int_t INIT_53;
+		parameter_int_t INIT_54;
+		parameter_int_t INIT_55;
+		parameter_int_t INIT_56;
+		parameter_int_t INIT_57;
+		parameter_int_t INIT_58;
+		parameter_int_t INIT_59;
+		parameter_int_t INIT_5A;
+		parameter_int_t INIT_5B;
+		parameter_int_t INIT_5C;
+		parameter_int_t INIT_5D;
+		parameter_int_t INIT_5E;
+		parameter_int_t INIT_5F;
+		parameter_int_t INIT_60;
+		parameter_int_t INIT_61;
+		parameter_int_t INIT_62;
+		parameter_int_t INIT_63;
+		parameter_int_t INIT_64;
+		parameter_int_t INIT_65;
+		parameter_int_t INIT_66;
+		parameter_int_t INIT_67;
+		parameter_int_t INIT_68;
+		parameter_int_t INIT_69;
+		parameter_int_t INIT_6A;
+		parameter_int_t INIT_6B;
+		parameter_int_t INIT_6C;
+		parameter_int_t INIT_6D;
+		parameter_int_t INIT_6E;
+		parameter_int_t INIT_6F;
+		parameter_int_t INIT_70;
+		parameter_int_t INIT_71;
+		parameter_int_t INIT_72;
+		parameter_int_t INIT_73;
+		parameter_int_t INIT_74;
+		parameter_int_t INIT_75;
+		parameter_int_t INIT_76;
+		parameter_int_t INIT_77;
+		parameter_int_t INIT_78;
+		parameter_int_t INIT_79;
+		parameter_int_t INIT_7A;
+		parameter_int_t INIT_7B;
+		parameter_int_t INIT_7C;
+		parameter_int_t INIT_7D;
+		parameter_int_t INIT_7E;
+		parameter_int_t INIT_7F;
+		parameter_int_t INITP_00;
+		parameter_int_t INITP_01;
+		parameter_int_t INITP_02;
+		parameter_int_t INITP_03;
+		parameter_int_t INITP_04;
+		parameter_int_t INITP_05;
+		parameter_int_t INITP_06;
+		parameter_int_t INITP_07;
+		parameter_int_t INITP_08;
+		parameter_int_t INITP_09;
+		parameter_int_t INITP_0A;
+		parameter_int_t INITP_0B;
+		parameter_int_t INITP_0C;
+		parameter_int_t INITP_0D;
+		parameter_int_t INITP_0E;
+		parameter_int_t INITP_0F;
+		parameter_int_t BRAM_SIZE;
 		//Verilog Ports in definition order:
-		NetFlow* CASCADEOUTA; // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
-		NetFlow* CASCADEOUTB; // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
-		NetFlow* DBITERR; // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOA; // net ID: DOA lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOB; // net ID: DOB lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOPA; // net ID: DOPA lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOPB; // net ID: DOPB lsb: 0  msb: 0 OUTPUT
-		NetFlow* ECCPARITY; // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
-		NetFlow* RDADDRECC; // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
-		NetFlow* SBITERR; // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
-		NetFlow* ADDRA; // net ID: ADDRA lsb: 0  msb: 15 INPUT
-		NetFlow* ADDRB; // net ID: ADDRB lsb: 0  msb: 15 INPUT
-		NetFlow* CASCADEINA; // net ID: CASCADEINA lsb: 0  msb: 0 INPUT
-		NetFlow* CASCADEINB; // net ID: CASCADEINB lsb: 0  msb: 0 INPUT
-		NetFlow* CLKA; // net ID: CLKA lsb: 0  msb: 0 INPUT
-		NetFlow* CLKB; // net ID: CLKB lsb: 0  msb: 0 INPUT
-		NetFlow* DIA; // net ID: DIA lsb: 0  msb: 63 INPUT
-		NetFlow* DIB; // net ID: DIB lsb: 0  msb: 63 INPUT
-		NetFlow* DIPA; // net ID: DIPA lsb: 0  msb: 3 INPUT
-		NetFlow* DIPB; // net ID: DIPB lsb: 0  msb: 7 INPUT
-		NetFlow* ENA; // net ID: ENA lsb: 0  msb: 0 INPUT
-		NetFlow* ENB; // net ID: ENB lsb: 0  msb: 0 INPUT
-		NetFlow* GSR; // net ID: GSR lsb: 0  msb: 0 INPUT
-		NetFlow* INJECTDBITERR; // net ID: INJECTDBITERR lsb: 0  msb: 0 INPUT
-		NetFlow* INJECTSBITERR; // net ID: INJECTSBITERR lsb: 0  msb: 0 INPUT
-		NetFlow* REGCEA; // net ID: REGCEA lsb: 0  msb: 0 INPUT
-		NetFlow* REGCEB; // net ID: REGCEB lsb: 0  msb: 0 INPUT
-		NetFlow* RSTRAMA; // net ID: RSTRAMA lsb: 0  msb: 0 INPUT
-		NetFlow* RSTRAMB; // net ID: RSTRAMB lsb: 0  msb: 0 INPUT
-		NetFlow* RSTREGA; // net ID: RSTREGA lsb: 0  msb: 0 INPUT
-		NetFlow* RSTREGB; // net ID: RSTREGB lsb: 0  msb: 0 INPUT
-		NetFlow* WEA; // net ID: WEA lsb: 0  msb: 7 INPUT
-		NetFlow* WEB; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* CASCADEOUTA_A0_B; // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
+		NetFlow* CASCADEOUTB_A0_B; // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
+		NetFlow* DBITERR_A0_B; // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOA_A0_B; // net ID: DOA lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOB_A0_B; // net ID: DOB lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOPA_A0_B; // net ID: DOPA lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOPB_A0_B; // net ID: DOPB lsb: 0  msb: 0 OUTPUT
+		NetFlow* ECCPARITY_A0_B; // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
+		NetFlow* RDADDRECC_A0_B; // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
+		NetFlow* SBITERR_A0_B; // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* ADDRA_A0_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A1_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A2_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A3_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A4_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A5_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A6_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A7_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A8_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A9_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A10_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A11_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A12_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A13_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A14_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRA_A15_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A0_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A1_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A2_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A3_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A4_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A5_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A6_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A7_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A8_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A9_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A10_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A11_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A12_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A13_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A14_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* ADDRB_A15_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+		NetFlow* CASCADEINA_A0_B; // net ID: CASCADEINA lsb: 0  msb: 0 INPUT
+		NetFlow* CASCADEINB_A0_B; // net ID: CASCADEINB lsb: 0  msb: 0 INPUT
+		NetFlow* CLKA_A0_B; // net ID: CLKA lsb: 0  msb: 0 INPUT
+		NetFlow* CLKB_A0_B; // net ID: CLKB lsb: 0  msb: 0 INPUT
+		NetFlow* DIA_A0_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A1_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A2_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A3_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A4_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A5_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A6_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A7_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A8_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A9_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A10_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A11_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A12_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A13_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A14_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A15_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A16_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A17_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A18_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A19_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A20_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A21_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A22_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A23_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A24_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A25_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A26_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A27_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A28_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A29_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A30_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A31_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A32_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A33_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A34_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A35_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A36_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A37_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A38_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A39_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A40_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A41_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A42_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A43_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A44_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A45_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A46_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A47_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A48_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A49_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A50_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A51_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A52_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A53_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A54_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A55_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A56_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A57_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A58_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A59_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A60_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A61_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A62_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIA_A63_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A0_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A1_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A2_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A3_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A4_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A5_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A6_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A7_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A8_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A9_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A10_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A11_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A12_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A13_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A14_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A15_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A16_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A17_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A18_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A19_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A20_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A21_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A22_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A23_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A24_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A25_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A26_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A27_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A28_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A29_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A30_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A31_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A32_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A33_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A34_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A35_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A36_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A37_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A38_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A39_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A40_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A41_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A42_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A43_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A44_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A45_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A46_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A47_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A48_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A49_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A50_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A51_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A52_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A53_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A54_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A55_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A56_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A57_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A58_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A59_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A60_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A61_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A62_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIB_A63_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+		NetFlow* DIPA_A0_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+		NetFlow* DIPA_A1_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+		NetFlow* DIPA_A2_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+		NetFlow* DIPA_A3_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+		NetFlow* DIPB_A0_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* DIPB_A1_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* DIPB_A2_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* DIPB_A3_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* DIPB_A4_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* DIPB_A5_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* DIPB_A6_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* DIPB_A7_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+		NetFlow* ENA_A0_B; // net ID: ENA lsb: 0  msb: 0 INPUT
+		NetFlow* ENB_A0_B; // net ID: ENB lsb: 0  msb: 0 INPUT
+		NetFlow* GSR_A0_B; // net ID: GSR lsb: 0  msb: 0 INPUT
+		NetFlow* INJECTDBITERR_A0_B; // net ID: INJECTDBITERR lsb: 0  msb: 0 INPUT
+		NetFlow* INJECTSBITERR_A0_B; // net ID: INJECTSBITERR lsb: 0  msb: 0 INPUT
+		NetFlow* REGCEA_A0_B; // net ID: REGCEA lsb: 0  msb: 0 INPUT
+		NetFlow* REGCEB_A0_B; // net ID: REGCEB lsb: 0  msb: 0 INPUT
+		NetFlow* RSTRAMA_A0_B; // net ID: RSTRAMA lsb: 0  msb: 0 INPUT
+		NetFlow* RSTRAMB_A0_B; // net ID: RSTRAMB lsb: 0  msb: 0 INPUT
+		NetFlow* RSTREGA_A0_B; // net ID: RSTREGA lsb: 0  msb: 0 INPUT
+		NetFlow* RSTREGB_A0_B; // net ID: RSTREGB lsb: 0  msb: 0 INPUT
+		NetFlow* WEA_A0_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEA_A1_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEA_A2_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEA_A3_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEA_A4_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEA_A5_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEA_A6_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEA_A7_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A0_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A1_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A2_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A3_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A4_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A5_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A6_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+		NetFlow* WEB_A7_B; // net ID: WEB lsb: 0  msb: 7 INPUT
 		
-		X_RB36_INTERNAL_VLOG(
+		public: X_RB36_INTERNAL_VLOG(
 			const char * name,
 			//Verilog Parameters:
-			parameter_string_t DOA_REG, // Default: 0
-			parameter_string_t DOB_REG, // Default: 0
+			parameter_int_t DOA_REG, // Default: 0
+			parameter_int_t DOB_REG, // Default: 0
 			parameter_enum_t EN_ECC_READ, // Default: "FALSE"
 			parameter_enum_t EN_ECC_WRITE, // Default: "FALSE"
-			parameter_string_t INIT_A, // Default: 72'h0
-			parameter_string_t INIT_B, // Default: 72'h0
+			parameter_int_t INIT_A, // Default: 72'h0
+			parameter_int_t INIT_B, // Default: 72'h0
 			parameter_string_t RAM_EXTENSION_A, // Default: "NONE"
 			parameter_string_t RAM_EXTENSION_B, // Default: "NONE"
 			parameter_string_t RAM_MODE, // Default: "TDP"
 			parameter_string_t RDADDR_COLLISION_HWCONFIG, // Default: "DELAYED_WRITE"
-			parameter_string_t READ_WIDTH_A, // Default: 0
-			parameter_string_t READ_WIDTH_B, // Default: 0
+			parameter_int_t READ_WIDTH_A, // Default: 0
+			parameter_int_t READ_WIDTH_B, // Default: 0
 			parameter_string_t RSTREG_PRIORITY_A, // Default: "RSTREG"
 			parameter_string_t RSTREG_PRIORITY_B, // Default: "RSTREG"
-			parameter_string_t SETUP_ALL, // Default: 1000
-			parameter_string_t SETUP_READ_FIRST, // Default: 3000
+			parameter_int_t SETUP_ALL, // Default: 1000
+			parameter_int_t SETUP_READ_FIRST, // Default: 3000
 			parameter_string_t SIM_COLLISION_CHECK, // Default: "ALL"
 			parameter_string_t SIM_DEVICE, // Default: "VIRTEX6"
-			parameter_string_t SRVAL_A, // Default: 72'h0
-			parameter_string_t SRVAL_B, // Default: 72'h0
+			parameter_int_t SRVAL_A, // Default: 72'h0
+			parameter_int_t SRVAL_B, // Default: 72'h0
 			parameter_string_t WRITE_MODE_A, // Default: "WRITE_FIRST"
 			parameter_string_t WRITE_MODE_B, // Default: "WRITE_FIRST"
-			parameter_string_t WRITE_WIDTH_A, // Default: 0
-			parameter_string_t WRITE_WIDTH_B, // Default: 0
+			parameter_int_t WRITE_WIDTH_A, // Default: 0
+			parameter_int_t WRITE_WIDTH_B, // Default: 0
 			parameter_string_t INIT_FILE, // Default: "NONE"
-			parameter_string_t INIT_00, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_01, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_02, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_03, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_04, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_05, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_06, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_07, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_08, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_09, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_0A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_0B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_0C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_0D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_0E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_0F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_10, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_11, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_12, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_13, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_14, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_15, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_16, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_17, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_18, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_19, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_1A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_1B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_1C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_1D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_1E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_1F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_20, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_21, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_22, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_23, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_24, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_25, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_26, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_27, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_28, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_29, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_2A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_2B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_2C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_2D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_2E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_2F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_30, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_31, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_32, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_33, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_34, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_35, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_36, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_37, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_38, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_39, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_3A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_3B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_3C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_3D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_3E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_3F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_40, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_41, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_42, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_43, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_44, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_45, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_46, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_47, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_48, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_49, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_4A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_4B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_4C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_4D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_4E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_4F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_50, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_51, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_52, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_53, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_54, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_55, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_56, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_57, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_58, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_59, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_5A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_5B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_5C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_5D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_5E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_5F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_60, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_61, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_62, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_63, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_64, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_65, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_66, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_67, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_68, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_69, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_6A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_6B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_6C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_6D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_6E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_6F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_70, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_71, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_72, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_73, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_74, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_75, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_76, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_77, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_78, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_79, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_7A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_7B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_7C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_7D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_7E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INIT_7F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_00, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_01, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_02, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_03, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_04, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_05, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_06, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_07, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_08, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_09, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_0A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_0B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_0C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_0D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_0E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t INITP_0F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
-			parameter_string_t BRAM_SIZE, // Default: 36
+			parameter_int_t INIT_00, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_01, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_02, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_03, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_04, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_05, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_06, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_07, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_08, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_09, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_0A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_0B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_0C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_0D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_0E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_0F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_10, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_11, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_12, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_13, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_14, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_15, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_16, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_17, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_18, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_19, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_1A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_1B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_1C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_1D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_1E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_1F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_20, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_21, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_22, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_23, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_24, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_25, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_26, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_27, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_28, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_29, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_2A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_2B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_2C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_2D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_2E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_2F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_30, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_31, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_32, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_33, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_34, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_35, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_36, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_37, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_38, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_39, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_3A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_3B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_3C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_3D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_3E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_3F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_40, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_41, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_42, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_43, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_44, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_45, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_46, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_47, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_48, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_49, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_4A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_4B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_4C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_4D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_4E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_4F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_50, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_51, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_52, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_53, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_54, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_55, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_56, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_57, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_58, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_59, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_5A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_5B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_5C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_5D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_5E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_5F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_60, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_61, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_62, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_63, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_64, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_65, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_66, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_67, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_68, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_69, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_6A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_6B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_6C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_6D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_6E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_6F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_70, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_71, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_72, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_73, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_74, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_75, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_76, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_77, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_78, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_79, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_7A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_7B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_7C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_7D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_7E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INIT_7F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_00, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_01, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_02, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_03, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_04, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_05, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_06, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_07, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_08, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_09, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_0A, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_0B, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_0C, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_0D, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_0E, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t INITP_0F, // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
+			parameter_int_t BRAM_SIZE, // Default: 36
 			//Verilog Ports in definition order:
-			NetFlow* CASCADEOUTA, // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
-			NetFlow* CASCADEOUTB, // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
-			NetFlow* DBITERR, // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOA, // net ID: DOA lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOB, // net ID: DOB lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOPA, // net ID: DOPA lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOPB, // net ID: DOPB lsb: 0  msb: 0 OUTPUT
-			NetFlow* ECCPARITY, // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
-			NetFlow* RDADDRECC, // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
-			NetFlow* SBITERR, // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
-			NetFlow* ADDRA, // net ID: ADDRA lsb: 0  msb: 15 INPUT
-			NetFlow* ADDRB, // net ID: ADDRB lsb: 0  msb: 15 INPUT
-			NetFlow* CASCADEINA, // net ID: CASCADEINA lsb: 0  msb: 0 INPUT
-			NetFlow* CASCADEINB, // net ID: CASCADEINB lsb: 0  msb: 0 INPUT
-			NetFlow* CLKA, // net ID: CLKA lsb: 0  msb: 0 INPUT
-			NetFlow* CLKB, // net ID: CLKB lsb: 0  msb: 0 INPUT
-			NetFlow* DIA, // net ID: DIA lsb: 0  msb: 63 INPUT
-			NetFlow* DIB, // net ID: DIB lsb: 0  msb: 63 INPUT
-			NetFlow* DIPA, // net ID: DIPA lsb: 0  msb: 3 INPUT
-			NetFlow* DIPB, // net ID: DIPB lsb: 0  msb: 7 INPUT
-			NetFlow* ENA, // net ID: ENA lsb: 0  msb: 0 INPUT
-			NetFlow* ENB, // net ID: ENB lsb: 0  msb: 0 INPUT
-			NetFlow* GSR, // net ID: GSR lsb: 0  msb: 0 INPUT
-			NetFlow* INJECTDBITERR, // net ID: INJECTDBITERR lsb: 0  msb: 0 INPUT
-			NetFlow* INJECTSBITERR, // net ID: INJECTSBITERR lsb: 0  msb: 0 INPUT
-			NetFlow* REGCEA, // net ID: REGCEA lsb: 0  msb: 0 INPUT
-			NetFlow* REGCEB, // net ID: REGCEB lsb: 0  msb: 0 INPUT
-			NetFlow* RSTRAMA, // net ID: RSTRAMA lsb: 0  msb: 0 INPUT
-			NetFlow* RSTRAMB, // net ID: RSTRAMB lsb: 0  msb: 0 INPUT
-			NetFlow* RSTREGA, // net ID: RSTREGA lsb: 0  msb: 0 INPUT
-			NetFlow* RSTREGB, // net ID: RSTREGB lsb: 0  msb: 0 INPUT
-			NetFlow* WEA, // net ID: WEA lsb: 0  msb: 7 INPUT
-			NetFlow* WEB // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* CASCADEOUTA_A0_B, // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
+			NetFlow* CASCADEOUTB_A0_B, // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
+			NetFlow* DBITERR_A0_B, // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOA_A0_B, // net ID: DOA lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOB_A0_B, // net ID: DOB lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOPA_A0_B, // net ID: DOPA lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOPB_A0_B, // net ID: DOPB lsb: 0  msb: 0 OUTPUT
+			NetFlow* ECCPARITY_A0_B, // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
+			NetFlow* RDADDRECC_A0_B, // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
+			NetFlow* SBITERR_A0_B, // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* ADDRA_A0_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A1_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A2_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A3_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A4_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A5_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A6_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A7_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A8_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A9_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A10_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A11_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A12_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A13_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A14_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRA_A15_B, // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A0_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A1_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A2_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A3_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A4_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A5_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A6_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A7_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A8_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A9_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A10_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A11_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A12_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A13_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A14_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* ADDRB_A15_B, // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			NetFlow* CASCADEINA_A0_B, // net ID: CASCADEINA lsb: 0  msb: 0 INPUT
+			NetFlow* CASCADEINB_A0_B, // net ID: CASCADEINB lsb: 0  msb: 0 INPUT
+			NetFlow* CLKA_A0_B, // net ID: CLKA lsb: 0  msb: 0 INPUT
+			NetFlow* CLKB_A0_B, // net ID: CLKB lsb: 0  msb: 0 INPUT
+			NetFlow* DIA_A0_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A1_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A2_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A3_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A4_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A5_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A6_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A7_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A8_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A9_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A10_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A11_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A12_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A13_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A14_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A15_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A16_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A17_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A18_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A19_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A20_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A21_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A22_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A23_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A24_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A25_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A26_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A27_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A28_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A29_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A30_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A31_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A32_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A33_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A34_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A35_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A36_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A37_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A38_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A39_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A40_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A41_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A42_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A43_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A44_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A45_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A46_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A47_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A48_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A49_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A50_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A51_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A52_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A53_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A54_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A55_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A56_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A57_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A58_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A59_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A60_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A61_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A62_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIA_A63_B, // net ID: DIA lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A0_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A1_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A2_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A3_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A4_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A5_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A6_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A7_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A8_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A9_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A10_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A11_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A12_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A13_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A14_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A15_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A16_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A17_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A18_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A19_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A20_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A21_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A22_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A23_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A24_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A25_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A26_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A27_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A28_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A29_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A30_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A31_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A32_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A33_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A34_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A35_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A36_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A37_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A38_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A39_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A40_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A41_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A42_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A43_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A44_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A45_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A46_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A47_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A48_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A49_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A50_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A51_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A52_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A53_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A54_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A55_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A56_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A57_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A58_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A59_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A60_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A61_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A62_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIB_A63_B, // net ID: DIB lsb: 0  msb: 63 INPUT
+			NetFlow* DIPA_A0_B, // net ID: DIPA lsb: 0  msb: 3 INPUT
+			NetFlow* DIPA_A1_B, // net ID: DIPA lsb: 0  msb: 3 INPUT
+			NetFlow* DIPA_A2_B, // net ID: DIPA lsb: 0  msb: 3 INPUT
+			NetFlow* DIPA_A3_B, // net ID: DIPA lsb: 0  msb: 3 INPUT
+			NetFlow* DIPB_A0_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* DIPB_A1_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* DIPB_A2_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* DIPB_A3_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* DIPB_A4_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* DIPB_A5_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* DIPB_A6_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* DIPB_A7_B, // net ID: DIPB lsb: 0  msb: 7 INPUT
+			NetFlow* ENA_A0_B, // net ID: ENA lsb: 0  msb: 0 INPUT
+			NetFlow* ENB_A0_B, // net ID: ENB lsb: 0  msb: 0 INPUT
+			NetFlow* GSR_A0_B, // net ID: GSR lsb: 0  msb: 0 INPUT
+			NetFlow* INJECTDBITERR_A0_B, // net ID: INJECTDBITERR lsb: 0  msb: 0 INPUT
+			NetFlow* INJECTSBITERR_A0_B, // net ID: INJECTSBITERR lsb: 0  msb: 0 INPUT
+			NetFlow* REGCEA_A0_B, // net ID: REGCEA lsb: 0  msb: 0 INPUT
+			NetFlow* REGCEB_A0_B, // net ID: REGCEB lsb: 0  msb: 0 INPUT
+			NetFlow* RSTRAMA_A0_B, // net ID: RSTRAMA lsb: 0  msb: 0 INPUT
+			NetFlow* RSTRAMB_A0_B, // net ID: RSTRAMB lsb: 0  msb: 0 INPUT
+			NetFlow* RSTREGA_A0_B, // net ID: RSTREGA lsb: 0  msb: 0 INPUT
+			NetFlow* RSTREGB_A0_B, // net ID: RSTREGB lsb: 0  msb: 0 INPUT
+			NetFlow* WEA_A0_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEA_A1_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEA_A2_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEA_A3_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEA_A4_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEA_A5_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEA_A6_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEA_A7_B, // net ID: WEA lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A0_B, // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A1_B, // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A2_B, // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A3_B, // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A4_B, // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A5_B, // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A6_B, // net ID: WEB lsb: 0  msb: 7 INPUT
+			NetFlow* WEB_A7_B // net ID: WEB lsb: 0  msb: 7 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -599,39 +961,219 @@ namespace CPrimitives {
 			this->INITP_0F = INITP_0F; // Default: 256'h0000000000000000000000000000000000000000000000000000000000000000
 			this->BRAM_SIZE = BRAM_SIZE; // Default: 36
 			//Verilog Ports in definition order:
-			this->CASCADEOUTA = CASCADEOUTA; // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
-			this->CASCADEOUTB = CASCADEOUTB; // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
-			this->DBITERR = DBITERR; // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
-			this->DOA = DOA; // net ID: DOA lsb: 0  msb: 0 OUTPUT
-			this->DOB = DOB; // net ID: DOB lsb: 0  msb: 0 OUTPUT
-			this->DOPA = DOPA; // net ID: DOPA lsb: 0  msb: 0 OUTPUT
-			this->DOPB = DOPB; // net ID: DOPB lsb: 0  msb: 0 OUTPUT
-			this->ECCPARITY = ECCPARITY; // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
-			this->RDADDRECC = RDADDRECC; // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
-			this->SBITERR = SBITERR; // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
-			this->ADDRA = ADDRA; // net ID: ADDRA lsb: 0  msb: 15 INPUT
-			this->ADDRB = ADDRB; // net ID: ADDRB lsb: 0  msb: 15 INPUT
-			this->CASCADEINA = CASCADEINA; // net ID: CASCADEINA lsb: 0  msb: 0 INPUT
-			this->CASCADEINB = CASCADEINB; // net ID: CASCADEINB lsb: 0  msb: 0 INPUT
-			this->CLKA = CLKA; // net ID: CLKA lsb: 0  msb: 0 INPUT
-			this->CLKB = CLKB; // net ID: CLKB lsb: 0  msb: 0 INPUT
-			this->DIA = DIA; // net ID: DIA lsb: 0  msb: 63 INPUT
-			this->DIB = DIB; // net ID: DIB lsb: 0  msb: 63 INPUT
-			this->DIPA = DIPA; // net ID: DIPA lsb: 0  msb: 3 INPUT
-			this->DIPB = DIPB; // net ID: DIPB lsb: 0  msb: 7 INPUT
-			this->ENA = ENA; // net ID: ENA lsb: 0  msb: 0 INPUT
-			this->ENB = ENB; // net ID: ENB lsb: 0  msb: 0 INPUT
-			this->GSR = GSR; // net ID: GSR lsb: 0  msb: 0 INPUT
-			this->INJECTDBITERR = INJECTDBITERR; // net ID: INJECTDBITERR lsb: 0  msb: 0 INPUT
-			this->INJECTSBITERR = INJECTSBITERR; // net ID: INJECTSBITERR lsb: 0  msb: 0 INPUT
-			this->REGCEA = REGCEA; // net ID: REGCEA lsb: 0  msb: 0 INPUT
-			this->REGCEB = REGCEB; // net ID: REGCEB lsb: 0  msb: 0 INPUT
-			this->RSTRAMA = RSTRAMA; // net ID: RSTRAMA lsb: 0  msb: 0 INPUT
-			this->RSTRAMB = RSTRAMB; // net ID: RSTRAMB lsb: 0  msb: 0 INPUT
-			this->RSTREGA = RSTREGA; // net ID: RSTREGA lsb: 0  msb: 0 INPUT
-			this->RSTREGB = RSTREGB; // net ID: RSTREGB lsb: 0  msb: 0 INPUT
-			this->WEA = WEA; // net ID: WEA lsb: 0  msb: 7 INPUT
-			this->WEB = WEB; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->CASCADEOUTA_A0_B = CASCADEOUTA_A0_B; // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
+			this->CASCADEOUTB_A0_B = CASCADEOUTB_A0_B; // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
+			this->DBITERR_A0_B = DBITERR_A0_B; // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
+			this->DOA_A0_B = DOA_A0_B; // net ID: DOA lsb: 0  msb: 0 OUTPUT
+			this->DOB_A0_B = DOB_A0_B; // net ID: DOB lsb: 0  msb: 0 OUTPUT
+			this->DOPA_A0_B = DOPA_A0_B; // net ID: DOPA lsb: 0  msb: 0 OUTPUT
+			this->DOPB_A0_B = DOPB_A0_B; // net ID: DOPB lsb: 0  msb: 0 OUTPUT
+			this->ECCPARITY_A0_B = ECCPARITY_A0_B; // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
+			this->RDADDRECC_A0_B = RDADDRECC_A0_B; // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
+			this->SBITERR_A0_B = SBITERR_A0_B; // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
+			this->ADDRA_A0_B = ADDRA_A0_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A1_B = ADDRA_A1_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A2_B = ADDRA_A2_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A3_B = ADDRA_A3_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A4_B = ADDRA_A4_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A5_B = ADDRA_A5_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A6_B = ADDRA_A6_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A7_B = ADDRA_A7_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A8_B = ADDRA_A8_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A9_B = ADDRA_A9_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A10_B = ADDRA_A10_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A11_B = ADDRA_A11_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A12_B = ADDRA_A12_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A13_B = ADDRA_A13_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A14_B = ADDRA_A14_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRA_A15_B = ADDRA_A15_B; // net ID: ADDRA lsb: 0  msb: 15 INPUT
+			this->ADDRB_A0_B = ADDRB_A0_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A1_B = ADDRB_A1_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A2_B = ADDRB_A2_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A3_B = ADDRB_A3_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A4_B = ADDRB_A4_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A5_B = ADDRB_A5_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A6_B = ADDRB_A6_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A7_B = ADDRB_A7_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A8_B = ADDRB_A8_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A9_B = ADDRB_A9_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A10_B = ADDRB_A10_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A11_B = ADDRB_A11_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A12_B = ADDRB_A12_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A13_B = ADDRB_A13_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A14_B = ADDRB_A14_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->ADDRB_A15_B = ADDRB_A15_B; // net ID: ADDRB lsb: 0  msb: 15 INPUT
+			this->CASCADEINA_A0_B = CASCADEINA_A0_B; // net ID: CASCADEINA lsb: 0  msb: 0 INPUT
+			this->CASCADEINB_A0_B = CASCADEINB_A0_B; // net ID: CASCADEINB lsb: 0  msb: 0 INPUT
+			this->CLKA_A0_B = CLKA_A0_B; // net ID: CLKA lsb: 0  msb: 0 INPUT
+			this->CLKB_A0_B = CLKB_A0_B; // net ID: CLKB lsb: 0  msb: 0 INPUT
+			this->DIA_A0_B = DIA_A0_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A1_B = DIA_A1_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A2_B = DIA_A2_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A3_B = DIA_A3_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A4_B = DIA_A4_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A5_B = DIA_A5_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A6_B = DIA_A6_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A7_B = DIA_A7_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A8_B = DIA_A8_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A9_B = DIA_A9_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A10_B = DIA_A10_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A11_B = DIA_A11_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A12_B = DIA_A12_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A13_B = DIA_A13_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A14_B = DIA_A14_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A15_B = DIA_A15_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A16_B = DIA_A16_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A17_B = DIA_A17_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A18_B = DIA_A18_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A19_B = DIA_A19_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A20_B = DIA_A20_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A21_B = DIA_A21_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A22_B = DIA_A22_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A23_B = DIA_A23_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A24_B = DIA_A24_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A25_B = DIA_A25_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A26_B = DIA_A26_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A27_B = DIA_A27_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A28_B = DIA_A28_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A29_B = DIA_A29_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A30_B = DIA_A30_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A31_B = DIA_A31_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A32_B = DIA_A32_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A33_B = DIA_A33_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A34_B = DIA_A34_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A35_B = DIA_A35_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A36_B = DIA_A36_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A37_B = DIA_A37_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A38_B = DIA_A38_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A39_B = DIA_A39_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A40_B = DIA_A40_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A41_B = DIA_A41_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A42_B = DIA_A42_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A43_B = DIA_A43_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A44_B = DIA_A44_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A45_B = DIA_A45_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A46_B = DIA_A46_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A47_B = DIA_A47_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A48_B = DIA_A48_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A49_B = DIA_A49_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A50_B = DIA_A50_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A51_B = DIA_A51_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A52_B = DIA_A52_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A53_B = DIA_A53_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A54_B = DIA_A54_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A55_B = DIA_A55_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A56_B = DIA_A56_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A57_B = DIA_A57_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A58_B = DIA_A58_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A59_B = DIA_A59_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A60_B = DIA_A60_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A61_B = DIA_A61_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A62_B = DIA_A62_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIA_A63_B = DIA_A63_B; // net ID: DIA lsb: 0  msb: 63 INPUT
+			this->DIB_A0_B = DIB_A0_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A1_B = DIB_A1_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A2_B = DIB_A2_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A3_B = DIB_A3_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A4_B = DIB_A4_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A5_B = DIB_A5_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A6_B = DIB_A6_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A7_B = DIB_A7_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A8_B = DIB_A8_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A9_B = DIB_A9_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A10_B = DIB_A10_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A11_B = DIB_A11_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A12_B = DIB_A12_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A13_B = DIB_A13_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A14_B = DIB_A14_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A15_B = DIB_A15_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A16_B = DIB_A16_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A17_B = DIB_A17_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A18_B = DIB_A18_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A19_B = DIB_A19_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A20_B = DIB_A20_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A21_B = DIB_A21_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A22_B = DIB_A22_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A23_B = DIB_A23_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A24_B = DIB_A24_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A25_B = DIB_A25_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A26_B = DIB_A26_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A27_B = DIB_A27_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A28_B = DIB_A28_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A29_B = DIB_A29_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A30_B = DIB_A30_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A31_B = DIB_A31_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A32_B = DIB_A32_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A33_B = DIB_A33_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A34_B = DIB_A34_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A35_B = DIB_A35_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A36_B = DIB_A36_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A37_B = DIB_A37_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A38_B = DIB_A38_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A39_B = DIB_A39_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A40_B = DIB_A40_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A41_B = DIB_A41_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A42_B = DIB_A42_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A43_B = DIB_A43_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A44_B = DIB_A44_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A45_B = DIB_A45_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A46_B = DIB_A46_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A47_B = DIB_A47_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A48_B = DIB_A48_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A49_B = DIB_A49_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A50_B = DIB_A50_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A51_B = DIB_A51_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A52_B = DIB_A52_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A53_B = DIB_A53_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A54_B = DIB_A54_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A55_B = DIB_A55_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A56_B = DIB_A56_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A57_B = DIB_A57_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A58_B = DIB_A58_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A59_B = DIB_A59_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A60_B = DIB_A60_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A61_B = DIB_A61_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A62_B = DIB_A62_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIB_A63_B = DIB_A63_B; // net ID: DIB lsb: 0  msb: 63 INPUT
+			this->DIPA_A0_B = DIPA_A0_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+			this->DIPA_A1_B = DIPA_A1_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+			this->DIPA_A2_B = DIPA_A2_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+			this->DIPA_A3_B = DIPA_A3_B; // net ID: DIPA lsb: 0  msb: 3 INPUT
+			this->DIPB_A0_B = DIPB_A0_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->DIPB_A1_B = DIPB_A1_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->DIPB_A2_B = DIPB_A2_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->DIPB_A3_B = DIPB_A3_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->DIPB_A4_B = DIPB_A4_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->DIPB_A5_B = DIPB_A5_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->DIPB_A6_B = DIPB_A6_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->DIPB_A7_B = DIPB_A7_B; // net ID: DIPB lsb: 0  msb: 7 INPUT
+			this->ENA_A0_B = ENA_A0_B; // net ID: ENA lsb: 0  msb: 0 INPUT
+			this->ENB_A0_B = ENB_A0_B; // net ID: ENB lsb: 0  msb: 0 INPUT
+			this->GSR_A0_B = GSR_A0_B; // net ID: GSR lsb: 0  msb: 0 INPUT
+			this->INJECTDBITERR_A0_B = INJECTDBITERR_A0_B; // net ID: INJECTDBITERR lsb: 0  msb: 0 INPUT
+			this->INJECTSBITERR_A0_B = INJECTSBITERR_A0_B; // net ID: INJECTSBITERR lsb: 0  msb: 0 INPUT
+			this->REGCEA_A0_B = REGCEA_A0_B; // net ID: REGCEA lsb: 0  msb: 0 INPUT
+			this->REGCEB_A0_B = REGCEB_A0_B; // net ID: REGCEB lsb: 0  msb: 0 INPUT
+			this->RSTRAMA_A0_B = RSTRAMA_A0_B; // net ID: RSTRAMA lsb: 0  msb: 0 INPUT
+			this->RSTRAMB_A0_B = RSTRAMB_A0_B; // net ID: RSTRAMB lsb: 0  msb: 0 INPUT
+			this->RSTREGA_A0_B = RSTREGA_A0_B; // net ID: RSTREGA lsb: 0  msb: 0 INPUT
+			this->RSTREGB_A0_B = RSTREGB_A0_B; // net ID: RSTREGB lsb: 0  msb: 0 INPUT
+			this->WEA_A0_B = WEA_A0_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEA_A1_B = WEA_A1_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEA_A2_B = WEA_A2_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEA_A3_B = WEA_A3_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEA_A4_B = WEA_A4_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEA_A5_B = WEA_A5_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEA_A6_B = WEA_A6_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEA_A7_B = WEA_A7_B; // net ID: WEA lsb: 0  msb: 7 INPUT
+			this->WEB_A0_B = WEB_A0_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->WEB_A1_B = WEB_A1_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->WEB_A2_B = WEB_A2_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->WEB_A3_B = WEB_A3_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->WEB_A4_B = WEB_A4_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->WEB_A5_B = WEB_A5_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->WEB_A6_B = WEB_A6_B; // net ID: WEB lsb: 0  msb: 7 INPUT
+			this->WEB_A7_B = WEB_A7_B; // net ID: WEB lsb: 0  msb: 7 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -645,6 +1187,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_RB36_INTERNAL_VLOG_H

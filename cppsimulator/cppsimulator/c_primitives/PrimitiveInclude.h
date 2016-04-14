@@ -1,4 +1,6 @@
 
+#ifndef PRIMITIVE_INCLUDE_H
+#define PRIMITIVE_INCLUDE_H
 #include "bscntrl_iserdese1_vlog.h"
 #include "dout_oserdese1_vlog.h"
 #include "fifo_addr_oserdese1_vlog.h"
@@ -293,3 +295,4 @@
 #include "X_XOR8.h"
 #include "X_ZERO.h"
 
+#endif // PRIMITIVE_INCLUDE_H

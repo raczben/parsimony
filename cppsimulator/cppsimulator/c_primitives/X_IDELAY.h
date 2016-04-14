@@ -3,43 +3,45 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_IDELAY_H
+#define X_IDELAY_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_IDELAY: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t IOBDELAY_TYPE;
-		parameter_string_t IOBDELAY_VALUE;
+		parameter_int_t IOBDELAY_VALUE;
 		parameter_string_t LOC;
-		parameter_string_t SIM_DELAY_D;
-		parameter_string_t SIM_TAPDELAY_VALUE;
+		parameter_int_t SIM_DELAY_D;
+		parameter_int_t SIM_TAPDELAY_VALUE;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* C; // net ID: C lsb: 0  msb: 0 INPUT
-		NetFlow* CE; // net ID: CE lsb: 0  msb: 0 INPUT
-		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
-		NetFlow* INC; // net ID: INC lsb: 0  msb: 0 INPUT
-		NetFlow* RST; // net ID: RST lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
+		NetFlow* CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* INC_A0_B; // net ID: INC lsb: 0  msb: 0 INPUT
+		NetFlow* RST_A0_B; // net ID: RST lsb: 0  msb: 0 INPUT
 		
-		X_IDELAY(
+		public: X_IDELAY(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t IOBDELAY_TYPE, // Default: "DEFAULT"
-			parameter_string_t IOBDELAY_VALUE, // Default: 0
+			parameter_int_t IOBDELAY_VALUE, // Default: 0
 			parameter_string_t LOC, // Default: "UNPLACED"
-			parameter_string_t SIM_DELAY_D, // Default: 0
-			parameter_string_t SIM_TAPDELAY_VALUE, // Default: 75
+			parameter_int_t SIM_DELAY_D, // Default: 0
+			parameter_int_t SIM_TAPDELAY_VALUE, // Default: 75
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* C, // net ID: C lsb: 0  msb: 0 INPUT
-			NetFlow* CE, // net ID: CE lsb: 0  msb: 0 INPUT
-			NetFlow* I, // net ID: I lsb: 0  msb: 0 INPUT
-			NetFlow* INC, // net ID: INC lsb: 0  msb: 0 INPUT
-			NetFlow* RST // net ID: RST lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* C_A0_B, // net ID: C lsb: 0  msb: 0 INPUT
+			NetFlow* CE_A0_B, // net ID: CE lsb: 0  msb: 0 INPUT
+			NetFlow* I_A0_B, // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* INC_A0_B, // net ID: INC lsb: 0  msb: 0 INPUT
+			NetFlow* RST_A0_B // net ID: RST lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -50,12 +52,12 @@ namespace CPrimitives {
 			this->SIM_DELAY_D = SIM_DELAY_D; // Default: 0
 			this->SIM_TAPDELAY_VALUE = SIM_TAPDELAY_VALUE; // Default: 75
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->C = C; // net ID: C lsb: 0  msb: 0 INPUT
-			this->CE = CE; // net ID: CE lsb: 0  msb: 0 INPUT
-			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
-			this->INC = INC; // net ID: INC lsb: 0  msb: 0 INPUT
-			this->RST = RST; // net ID: RST lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->C_A0_B = C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
+			this->CE_A0_B = CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
+			this->INC_A0_B = INC_A0_B; // net ID: INC lsb: 0  msb: 0 INPUT
+			this->RST_A0_B = RST_A0_B; // net ID: RST lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -69,6 +71,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_IDELAY_H

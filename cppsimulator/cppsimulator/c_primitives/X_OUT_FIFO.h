@@ -3,91 +3,233 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_OUT_FIFO_H
+#define X_OUT_FIFO_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_OUT_FIFO: public Primitive{
 
 		//Verilog Parameters:
 		parameter_string_t LOC;
-		parameter_string_t ALMOST_EMPTY_VALUE;
-		parameter_string_t ALMOST_FULL_VALUE;
+		parameter_int_t ALMOST_EMPTY_VALUE;
+		parameter_int_t ALMOST_FULL_VALUE;
 		parameter_string_t ARRAY_MODE;
 		parameter_enum_t OUTPUT_DISABLE;
 		parameter_enum_t SYNCHRONOUS_MODE;
 		//Verilog Ports in definition order:
-		NetFlow* ALMOSTEMPTY; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
-		NetFlow* ALMOSTFULL; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
-		NetFlow* EMPTY; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
-		NetFlow* FULL; // net ID: FULL lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q0; // net ID: Q0 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q1; // net ID: Q1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q2; // net ID: Q2 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q3; // net ID: Q3 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q4; // net ID: Q4 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q5; // net ID: Q5 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q6; // net ID: Q6 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q7; // net ID: Q7 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q8; // net ID: Q8 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q9; // net ID: Q9 lsb: 0  msb: 0 OUTPUT
-		NetFlow* D0; // net ID: D0 lsb: 0  msb: 7 INPUT
-		NetFlow* D1; // net ID: D1 lsb: 0  msb: 7 INPUT
-		NetFlow* D2; // net ID: D2 lsb: 0  msb: 7 INPUT
-		NetFlow* D3; // net ID: D3 lsb: 0  msb: 7 INPUT
-		NetFlow* D4; // net ID: D4 lsb: 0  msb: 7 INPUT
-		NetFlow* D5; // net ID: D5 lsb: 0  msb: 7 INPUT
-		NetFlow* D6; // net ID: D6 lsb: 0  msb: 7 INPUT
-		NetFlow* D7; // net ID: D7 lsb: 0  msb: 7 INPUT
-		NetFlow* D8; // net ID: D8 lsb: 0  msb: 7 INPUT
-		NetFlow* D9; // net ID: D9 lsb: 0  msb: 7 INPUT
-		NetFlow* RDCLK; // net ID: RDCLK lsb: 0  msb: 0 INPUT
-		NetFlow* RDEN; // net ID: RDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RESET; // net ID: RESET lsb: 0  msb: 0 INPUT
-		NetFlow* WRCLK; // net ID: WRCLK lsb: 0  msb: 0 INPUT
-		NetFlow* WREN; // net ID: WREN lsb: 0  msb: 0 INPUT
+		NetFlow* ALMOSTEMPTY_A0_B; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
+		NetFlow* ALMOSTFULL_A0_B; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
+		NetFlow* EMPTY_A0_B; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
+		NetFlow* FULL_A0_B; // net ID: FULL lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q0_A0_B; // net ID: Q0 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q1_A0_B; // net ID: Q1 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q2_A0_B; // net ID: Q2 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q3_A0_B; // net ID: Q3 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q4_A0_B; // net ID: Q4 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q5_A0_B; // net ID: Q5 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q6_A0_B; // net ID: Q6 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q7_A0_B; // net ID: Q7 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q8_A0_B; // net ID: Q8 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q9_A0_B; // net ID: Q9 lsb: 0  msb: 0 OUTPUT
+		NetFlow* D0_A0_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D0_A1_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D0_A2_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D0_A3_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D0_A4_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D0_A5_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D0_A6_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D0_A7_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A0_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A1_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A2_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A3_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A4_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A5_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A6_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D1_A7_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A0_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A1_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A2_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A3_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A4_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A5_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A6_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D2_A7_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A0_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A1_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A2_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A3_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A4_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A5_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A6_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D3_A7_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A0_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A1_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A2_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A3_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A4_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A5_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A6_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D4_A7_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A0_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A1_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A2_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A3_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A4_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A5_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A6_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D5_A7_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A0_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A1_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A2_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A3_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A4_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A5_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A6_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D6_A7_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A0_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A1_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A2_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A3_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A4_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A5_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A6_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D7_A7_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A0_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A1_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A2_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A3_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A4_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A5_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A6_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D8_A7_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A0_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A1_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A2_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A3_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A4_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A5_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A6_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* D9_A7_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+		NetFlow* RDCLK_A0_B; // net ID: RDCLK lsb: 0  msb: 0 INPUT
+		NetFlow* RDEN_A0_B; // net ID: RDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RESET_A0_B; // net ID: RESET lsb: 0  msb: 0 INPUT
+		NetFlow* WRCLK_A0_B; // net ID: WRCLK lsb: 0  msb: 0 INPUT
+		NetFlow* WREN_A0_B; // net ID: WREN lsb: 0  msb: 0 INPUT
 		
-		X_OUT_FIFO(
+		public: X_OUT_FIFO(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
-			parameter_string_t ALMOST_EMPTY_VALUE, // Default: 1
-			parameter_string_t ALMOST_FULL_VALUE, // Default: 1
+			parameter_int_t ALMOST_EMPTY_VALUE, // Default: 1
+			parameter_int_t ALMOST_FULL_VALUE, // Default: 1
 			parameter_string_t ARRAY_MODE, // Default: "ARRAY_MODE_8_X_4"
 			parameter_enum_t OUTPUT_DISABLE, // Default: "FALSE"
 			parameter_enum_t SYNCHRONOUS_MODE, // Default: "FALSE"
 			//Verilog Ports in definition order:
-			NetFlow* ALMOSTEMPTY, // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
-			NetFlow* ALMOSTFULL, // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
-			NetFlow* EMPTY, // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
-			NetFlow* FULL, // net ID: FULL lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q0, // net ID: Q0 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q1, // net ID: Q1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q2, // net ID: Q2 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q3, // net ID: Q3 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q4, // net ID: Q4 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q5, // net ID: Q5 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q6, // net ID: Q6 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q7, // net ID: Q7 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q8, // net ID: Q8 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q9, // net ID: Q9 lsb: 0  msb: 0 OUTPUT
-			NetFlow* D0, // net ID: D0 lsb: 0  msb: 7 INPUT
-			NetFlow* D1, // net ID: D1 lsb: 0  msb: 7 INPUT
-			NetFlow* D2, // net ID: D2 lsb: 0  msb: 7 INPUT
-			NetFlow* D3, // net ID: D3 lsb: 0  msb: 7 INPUT
-			NetFlow* D4, // net ID: D4 lsb: 0  msb: 7 INPUT
-			NetFlow* D5, // net ID: D5 lsb: 0  msb: 7 INPUT
-			NetFlow* D6, // net ID: D6 lsb: 0  msb: 7 INPUT
-			NetFlow* D7, // net ID: D7 lsb: 0  msb: 7 INPUT
-			NetFlow* D8, // net ID: D8 lsb: 0  msb: 7 INPUT
-			NetFlow* D9, // net ID: D9 lsb: 0  msb: 7 INPUT
-			NetFlow* RDCLK, // net ID: RDCLK lsb: 0  msb: 0 INPUT
-			NetFlow* RDEN, // net ID: RDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RESET, // net ID: RESET lsb: 0  msb: 0 INPUT
-			NetFlow* WRCLK, // net ID: WRCLK lsb: 0  msb: 0 INPUT
-			NetFlow* WREN // net ID: WREN lsb: 0  msb: 0 INPUT
+			NetFlow* ALMOSTEMPTY_A0_B, // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
+			NetFlow* ALMOSTFULL_A0_B, // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
+			NetFlow* EMPTY_A0_B, // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
+			NetFlow* FULL_A0_B, // net ID: FULL lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q0_A0_B, // net ID: Q0 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q1_A0_B, // net ID: Q1 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q2_A0_B, // net ID: Q2 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q3_A0_B, // net ID: Q3 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q4_A0_B, // net ID: Q4 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q5_A0_B, // net ID: Q5 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q6_A0_B, // net ID: Q6 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q7_A0_B, // net ID: Q7 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q8_A0_B, // net ID: Q8 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q9_A0_B, // net ID: Q9 lsb: 0  msb: 0 OUTPUT
+			NetFlow* D0_A0_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D0_A1_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D0_A2_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D0_A3_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D0_A4_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D0_A5_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D0_A6_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D0_A7_B, // net ID: D0 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A0_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A1_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A2_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A3_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A4_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A5_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A6_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D1_A7_B, // net ID: D1 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A0_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A1_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A2_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A3_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A4_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A5_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A6_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D2_A7_B, // net ID: D2 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A0_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A1_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A2_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A3_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A4_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A5_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A6_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D3_A7_B, // net ID: D3 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A0_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A1_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A2_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A3_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A4_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A5_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A6_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D4_A7_B, // net ID: D4 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A0_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A1_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A2_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A3_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A4_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A5_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A6_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D5_A7_B, // net ID: D5 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A0_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A1_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A2_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A3_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A4_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A5_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A6_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D6_A7_B, // net ID: D6 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A0_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A1_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A2_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A3_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A4_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A5_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A6_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D7_A7_B, // net ID: D7 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A0_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A1_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A2_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A3_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A4_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A5_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A6_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D8_A7_B, // net ID: D8 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A0_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A1_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A2_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A3_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A4_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A5_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A6_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* D9_A7_B, // net ID: D9 lsb: 0  msb: 7 INPUT
+			NetFlow* RDCLK_A0_B, // net ID: RDCLK lsb: 0  msb: 0 INPUT
+			NetFlow* RDEN_A0_B, // net ID: RDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RESET_A0_B, // net ID: RESET lsb: 0  msb: 0 INPUT
+			NetFlow* WRCLK_A0_B, // net ID: WRCLK lsb: 0  msb: 0 INPUT
+			NetFlow* WREN_A0_B // net ID: WREN lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -99,35 +241,105 @@ namespace CPrimitives {
 			this->OUTPUT_DISABLE = OUTPUT_DISABLE; // Default: "FALSE"
 			this->SYNCHRONOUS_MODE = SYNCHRONOUS_MODE; // Default: "FALSE"
 			//Verilog Ports in definition order:
-			this->ALMOSTEMPTY = ALMOSTEMPTY; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
-			this->ALMOSTFULL = ALMOSTFULL; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
-			this->EMPTY = EMPTY; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
-			this->FULL = FULL; // net ID: FULL lsb: 0  msb: 0 OUTPUT
-			this->Q0 = Q0; // net ID: Q0 lsb: 0  msb: 0 OUTPUT
-			this->Q1 = Q1; // net ID: Q1 lsb: 0  msb: 0 OUTPUT
-			this->Q2 = Q2; // net ID: Q2 lsb: 0  msb: 0 OUTPUT
-			this->Q3 = Q3; // net ID: Q3 lsb: 0  msb: 0 OUTPUT
-			this->Q4 = Q4; // net ID: Q4 lsb: 0  msb: 0 OUTPUT
-			this->Q5 = Q5; // net ID: Q5 lsb: 0  msb: 0 OUTPUT
-			this->Q6 = Q6; // net ID: Q6 lsb: 0  msb: 0 OUTPUT
-			this->Q7 = Q7; // net ID: Q7 lsb: 0  msb: 0 OUTPUT
-			this->Q8 = Q8; // net ID: Q8 lsb: 0  msb: 0 OUTPUT
-			this->Q9 = Q9; // net ID: Q9 lsb: 0  msb: 0 OUTPUT
-			this->D0 = D0; // net ID: D0 lsb: 0  msb: 7 INPUT
-			this->D1 = D1; // net ID: D1 lsb: 0  msb: 7 INPUT
-			this->D2 = D2; // net ID: D2 lsb: 0  msb: 7 INPUT
-			this->D3 = D3; // net ID: D3 lsb: 0  msb: 7 INPUT
-			this->D4 = D4; // net ID: D4 lsb: 0  msb: 7 INPUT
-			this->D5 = D5; // net ID: D5 lsb: 0  msb: 7 INPUT
-			this->D6 = D6; // net ID: D6 lsb: 0  msb: 7 INPUT
-			this->D7 = D7; // net ID: D7 lsb: 0  msb: 7 INPUT
-			this->D8 = D8; // net ID: D8 lsb: 0  msb: 7 INPUT
-			this->D9 = D9; // net ID: D9 lsb: 0  msb: 7 INPUT
-			this->RDCLK = RDCLK; // net ID: RDCLK lsb: 0  msb: 0 INPUT
-			this->RDEN = RDEN; // net ID: RDEN lsb: 0  msb: 0 INPUT
-			this->RESET = RESET; // net ID: RESET lsb: 0  msb: 0 INPUT
-			this->WRCLK = WRCLK; // net ID: WRCLK lsb: 0  msb: 0 INPUT
-			this->WREN = WREN; // net ID: WREN lsb: 0  msb: 0 INPUT
+			this->ALMOSTEMPTY_A0_B = ALMOSTEMPTY_A0_B; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
+			this->ALMOSTFULL_A0_B = ALMOSTFULL_A0_B; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
+			this->EMPTY_A0_B = EMPTY_A0_B; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
+			this->FULL_A0_B = FULL_A0_B; // net ID: FULL lsb: 0  msb: 0 OUTPUT
+			this->Q0_A0_B = Q0_A0_B; // net ID: Q0 lsb: 0  msb: 0 OUTPUT
+			this->Q1_A0_B = Q1_A0_B; // net ID: Q1 lsb: 0  msb: 0 OUTPUT
+			this->Q2_A0_B = Q2_A0_B; // net ID: Q2 lsb: 0  msb: 0 OUTPUT
+			this->Q3_A0_B = Q3_A0_B; // net ID: Q3 lsb: 0  msb: 0 OUTPUT
+			this->Q4_A0_B = Q4_A0_B; // net ID: Q4 lsb: 0  msb: 0 OUTPUT
+			this->Q5_A0_B = Q5_A0_B; // net ID: Q5 lsb: 0  msb: 0 OUTPUT
+			this->Q6_A0_B = Q6_A0_B; // net ID: Q6 lsb: 0  msb: 0 OUTPUT
+			this->Q7_A0_B = Q7_A0_B; // net ID: Q7 lsb: 0  msb: 0 OUTPUT
+			this->Q8_A0_B = Q8_A0_B; // net ID: Q8 lsb: 0  msb: 0 OUTPUT
+			this->Q9_A0_B = Q9_A0_B; // net ID: Q9 lsb: 0  msb: 0 OUTPUT
+			this->D0_A0_B = D0_A0_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D0_A1_B = D0_A1_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D0_A2_B = D0_A2_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D0_A3_B = D0_A3_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D0_A4_B = D0_A4_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D0_A5_B = D0_A5_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D0_A6_B = D0_A6_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D0_A7_B = D0_A7_B; // net ID: D0 lsb: 0  msb: 7 INPUT
+			this->D1_A0_B = D1_A0_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D1_A1_B = D1_A1_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D1_A2_B = D1_A2_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D1_A3_B = D1_A3_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D1_A4_B = D1_A4_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D1_A5_B = D1_A5_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D1_A6_B = D1_A6_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D1_A7_B = D1_A7_B; // net ID: D1 lsb: 0  msb: 7 INPUT
+			this->D2_A0_B = D2_A0_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D2_A1_B = D2_A1_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D2_A2_B = D2_A2_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D2_A3_B = D2_A3_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D2_A4_B = D2_A4_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D2_A5_B = D2_A5_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D2_A6_B = D2_A6_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D2_A7_B = D2_A7_B; // net ID: D2 lsb: 0  msb: 7 INPUT
+			this->D3_A0_B = D3_A0_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D3_A1_B = D3_A1_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D3_A2_B = D3_A2_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D3_A3_B = D3_A3_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D3_A4_B = D3_A4_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D3_A5_B = D3_A5_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D3_A6_B = D3_A6_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D3_A7_B = D3_A7_B; // net ID: D3 lsb: 0  msb: 7 INPUT
+			this->D4_A0_B = D4_A0_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D4_A1_B = D4_A1_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D4_A2_B = D4_A2_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D4_A3_B = D4_A3_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D4_A4_B = D4_A4_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D4_A5_B = D4_A5_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D4_A6_B = D4_A6_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D4_A7_B = D4_A7_B; // net ID: D4 lsb: 0  msb: 7 INPUT
+			this->D5_A0_B = D5_A0_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D5_A1_B = D5_A1_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D5_A2_B = D5_A2_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D5_A3_B = D5_A3_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D5_A4_B = D5_A4_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D5_A5_B = D5_A5_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D5_A6_B = D5_A6_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D5_A7_B = D5_A7_B; // net ID: D5 lsb: 0  msb: 7 INPUT
+			this->D6_A0_B = D6_A0_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D6_A1_B = D6_A1_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D6_A2_B = D6_A2_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D6_A3_B = D6_A3_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D6_A4_B = D6_A4_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D6_A5_B = D6_A5_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D6_A6_B = D6_A6_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D6_A7_B = D6_A7_B; // net ID: D6 lsb: 0  msb: 7 INPUT
+			this->D7_A0_B = D7_A0_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D7_A1_B = D7_A1_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D7_A2_B = D7_A2_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D7_A3_B = D7_A3_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D7_A4_B = D7_A4_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D7_A5_B = D7_A5_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D7_A6_B = D7_A6_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D7_A7_B = D7_A7_B; // net ID: D7 lsb: 0  msb: 7 INPUT
+			this->D8_A0_B = D8_A0_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D8_A1_B = D8_A1_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D8_A2_B = D8_A2_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D8_A3_B = D8_A3_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D8_A4_B = D8_A4_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D8_A5_B = D8_A5_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D8_A6_B = D8_A6_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D8_A7_B = D8_A7_B; // net ID: D8 lsb: 0  msb: 7 INPUT
+			this->D9_A0_B = D9_A0_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->D9_A1_B = D9_A1_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->D9_A2_B = D9_A2_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->D9_A3_B = D9_A3_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->D9_A4_B = D9_A4_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->D9_A5_B = D9_A5_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->D9_A6_B = D9_A6_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->D9_A7_B = D9_A7_B; // net ID: D9 lsb: 0  msb: 7 INPUT
+			this->RDCLK_A0_B = RDCLK_A0_B; // net ID: RDCLK lsb: 0  msb: 0 INPUT
+			this->RDEN_A0_B = RDEN_A0_B; // net ID: RDEN lsb: 0  msb: 0 INPUT
+			this->RESET_A0_B = RESET_A0_B; // net ID: RESET lsb: 0  msb: 0 INPUT
+			this->WRCLK_A0_B = WRCLK_A0_B; // net ID: WRCLK lsb: 0  msb: 0 INPUT
+			this->WREN_A0_B = WREN_A0_B; // net ID: WREN lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -141,6 +353,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_OUT_FIFO_H

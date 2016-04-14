@@ -3,139 +3,243 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_XADC_H
+#define X_XADC_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_XADC: public Primitive{
 
 		//Verilog Parameters:
-		parameter_string_t INIT_40;
-		parameter_string_t INIT_41;
-		parameter_string_t INIT_42;
-		parameter_string_t INIT_43;
-		parameter_string_t INIT_44;
-		parameter_string_t INIT_45;
-		parameter_string_t INIT_46;
-		parameter_string_t INIT_47;
-		parameter_string_t INIT_48;
-		parameter_string_t INIT_49;
-		parameter_string_t INIT_4A;
-		parameter_string_t INIT_4B;
-		parameter_string_t INIT_4C;
-		parameter_string_t INIT_4D;
-		parameter_string_t INIT_4E;
-		parameter_string_t INIT_4F;
-		parameter_string_t INIT_50;
-		parameter_string_t INIT_51;
-		parameter_string_t INIT_52;
-		parameter_string_t INIT_53;
-		parameter_string_t INIT_54;
-		parameter_string_t INIT_55;
-		parameter_string_t INIT_56;
-		parameter_string_t INIT_57;
-		parameter_string_t INIT_58;
-		parameter_string_t INIT_59;
-		parameter_string_t INIT_5A;
-		parameter_string_t INIT_5B;
-		parameter_string_t INIT_5C;
-		parameter_string_t INIT_5D;
-		parameter_string_t INIT_5E;
-		parameter_string_t INIT_5F;
+		parameter_int_t INIT_40;
+		parameter_int_t INIT_41;
+		parameter_int_t INIT_42;
+		parameter_int_t INIT_43;
+		parameter_int_t INIT_44;
+		parameter_int_t INIT_45;
+		parameter_int_t INIT_46;
+		parameter_int_t INIT_47;
+		parameter_int_t INIT_48;
+		parameter_int_t INIT_49;
+		parameter_int_t INIT_4A;
+		parameter_int_t INIT_4B;
+		parameter_int_t INIT_4C;
+		parameter_int_t INIT_4D;
+		parameter_int_t INIT_4E;
+		parameter_int_t INIT_4F;
+		parameter_int_t INIT_50;
+		parameter_int_t INIT_51;
+		parameter_int_t INIT_52;
+		parameter_int_t INIT_53;
+		parameter_int_t INIT_54;
+		parameter_int_t INIT_55;
+		parameter_int_t INIT_56;
+		parameter_int_t INIT_57;
+		parameter_int_t INIT_58;
+		parameter_int_t INIT_59;
+		parameter_int_t INIT_5A;
+		parameter_int_t INIT_5B;
+		parameter_int_t INIT_5C;
+		parameter_int_t INIT_5D;
+		parameter_int_t INIT_5E;
+		parameter_int_t INIT_5F;
 		parameter_string_t SIM_DEVICE;
 		parameter_string_t SIM_MONITOR_FILE;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* ALM; // net ID: ALM lsb: 0  msb: 0 OUTPUT
-		NetFlow* BUSY; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-		NetFlow* CHANNEL; // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
-		NetFlow* DO; // net ID: DO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DRDY; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-		NetFlow* EOC; // net ID: EOC lsb: 0  msb: 0 OUTPUT
-		NetFlow* EOS; // net ID: EOS lsb: 0  msb: 0 OUTPUT
-		NetFlow* JTAGBUSY; // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
-		NetFlow* JTAGLOCKED; // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
-		NetFlow* JTAGMODIFIED; // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
-		NetFlow* MUXADDR; // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
-		NetFlow* OT; // net ID: OT lsb: 0  msb: 0 OUTPUT
-		NetFlow* CONVST; // net ID: CONVST lsb: 0  msb: 0 INPUT
-		NetFlow* CONVSTCLK; // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
-		NetFlow* DADDR; // net ID: DADDR lsb: 0  msb: 6 INPUT
-		NetFlow* DCLK; // net ID: DCLK lsb: 0  msb: 0 INPUT
-		NetFlow* DEN; // net ID: DEN lsb: 0  msb: 0 INPUT
-		NetFlow* DI; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DWE; // net ID: DWE lsb: 0  msb: 0 INPUT
-		NetFlow* RESET; // net ID: RESET lsb: 0  msb: 0 INPUT
-		NetFlow* VAUXN; // net ID: VAUXN lsb: 0  msb: 15 INPUT
-		NetFlow* VAUXP; // net ID: VAUXP lsb: 0  msb: 15 INPUT
-		NetFlow* VN; // net ID: VN lsb: 0  msb: 0 INPUT
-		NetFlow* VP; // net ID: VP lsb: 0  msb: 0 INPUT
+		NetFlow* ALM_A0_B; // net ID: ALM lsb: 0  msb: 0 OUTPUT
+		NetFlow* BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+		NetFlow* CHANNEL_A0_B; // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
+		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+		NetFlow* DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
+		NetFlow* EOC_A0_B; // net ID: EOC lsb: 0  msb: 0 OUTPUT
+		NetFlow* EOS_A0_B; // net ID: EOS lsb: 0  msb: 0 OUTPUT
+		NetFlow* JTAGBUSY_A0_B; // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
+		NetFlow* JTAGLOCKED_A0_B; // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
+		NetFlow* JTAGMODIFIED_A0_B; // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
+		NetFlow* MUXADDR_A0_B; // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
+		NetFlow* OT_A0_B; // net ID: OT lsb: 0  msb: 0 OUTPUT
+		NetFlow* CONVST_A0_B; // net ID: CONVST lsb: 0  msb: 0 INPUT
+		NetFlow* CONVSTCLK_A0_B; // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
+		NetFlow* DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
+		NetFlow* DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
+		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
+		NetFlow* RESET_A0_B; // net ID: RESET lsb: 0  msb: 0 INPUT
+		NetFlow* VAUXN_A0_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A1_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A2_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A3_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A4_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A5_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A6_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A7_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A8_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A9_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A10_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A11_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A12_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A13_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A14_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXN_A15_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A0_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A1_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A2_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A3_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A4_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A5_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A6_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A7_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A8_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A9_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A10_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A11_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A12_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A13_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A14_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VAUXP_A15_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+		NetFlow* VN_A0_B; // net ID: VN lsb: 0  msb: 0 INPUT
+		NetFlow* VP_A0_B; // net ID: VP lsb: 0  msb: 0 INPUT
 		
-		X_XADC(
+		public: X_XADC(
 			const char * name,
 			//Verilog Parameters:
-			parameter_string_t INIT_40, // Default: 16'h0
-			parameter_string_t INIT_41, // Default: 16'h0
-			parameter_string_t INIT_42, // Default: 16'h0800
-			parameter_string_t INIT_43, // Default: 16'h0
-			parameter_string_t INIT_44, // Default: 16'h0
-			parameter_string_t INIT_45, // Default: 16'h0
-			parameter_string_t INIT_46, // Default: 16'h0
-			parameter_string_t INIT_47, // Default: 16'h0
-			parameter_string_t INIT_48, // Default: 16'h0
-			parameter_string_t INIT_49, // Default: 16'h0
-			parameter_string_t INIT_4A, // Default: 16'h0
-			parameter_string_t INIT_4B, // Default: 16'h0
-			parameter_string_t INIT_4C, // Default: 16'h0
-			parameter_string_t INIT_4D, // Default: 16'h0
-			parameter_string_t INIT_4E, // Default: 16'h0
-			parameter_string_t INIT_4F, // Default: 16'h0
-			parameter_string_t INIT_50, // Default: 16'h0
-			parameter_string_t INIT_51, // Default: 16'h0
-			parameter_string_t INIT_52, // Default: 16'h0
-			parameter_string_t INIT_53, // Default: 16'h0
-			parameter_string_t INIT_54, // Default: 16'h0
-			parameter_string_t INIT_55, // Default: 16'h0
-			parameter_string_t INIT_56, // Default: 16'h0
-			parameter_string_t INIT_57, // Default: 16'h0
-			parameter_string_t INIT_58, // Default: 16'h0
-			parameter_string_t INIT_59, // Default: 16'h0
-			parameter_string_t INIT_5A, // Default: 16'h0
-			parameter_string_t INIT_5B, // Default: 16'h0
-			parameter_string_t INIT_5C, // Default: 16'h0
-			parameter_string_t INIT_5D, // Default: 16'h0
-			parameter_string_t INIT_5E, // Default: 16'h0
-			parameter_string_t INIT_5F, // Default: 16'h0
+			parameter_int_t INIT_40, // Default: 16'h0
+			parameter_int_t INIT_41, // Default: 16'h0
+			parameter_int_t INIT_42, // Default: 16'h0800
+			parameter_int_t INIT_43, // Default: 16'h0
+			parameter_int_t INIT_44, // Default: 16'h0
+			parameter_int_t INIT_45, // Default: 16'h0
+			parameter_int_t INIT_46, // Default: 16'h0
+			parameter_int_t INIT_47, // Default: 16'h0
+			parameter_int_t INIT_48, // Default: 16'h0
+			parameter_int_t INIT_49, // Default: 16'h0
+			parameter_int_t INIT_4A, // Default: 16'h0
+			parameter_int_t INIT_4B, // Default: 16'h0
+			parameter_int_t INIT_4C, // Default: 16'h0
+			parameter_int_t INIT_4D, // Default: 16'h0
+			parameter_int_t INIT_4E, // Default: 16'h0
+			parameter_int_t INIT_4F, // Default: 16'h0
+			parameter_int_t INIT_50, // Default: 16'h0
+			parameter_int_t INIT_51, // Default: 16'h0
+			parameter_int_t INIT_52, // Default: 16'h0
+			parameter_int_t INIT_53, // Default: 16'h0
+			parameter_int_t INIT_54, // Default: 16'h0
+			parameter_int_t INIT_55, // Default: 16'h0
+			parameter_int_t INIT_56, // Default: 16'h0
+			parameter_int_t INIT_57, // Default: 16'h0
+			parameter_int_t INIT_58, // Default: 16'h0
+			parameter_int_t INIT_59, // Default: 16'h0
+			parameter_int_t INIT_5A, // Default: 16'h0
+			parameter_int_t INIT_5B, // Default: 16'h0
+			parameter_int_t INIT_5C, // Default: 16'h0
+			parameter_int_t INIT_5D, // Default: 16'h0
+			parameter_int_t INIT_5E, // Default: 16'h0
+			parameter_int_t INIT_5F, // Default: 16'h0
 			parameter_string_t SIM_DEVICE, // Default: "7SERIES"
 			parameter_string_t SIM_MONITOR_FILE, // Default: "design.txt"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* ALM, // net ID: ALM lsb: 0  msb: 0 OUTPUT
-			NetFlow* BUSY, // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-			NetFlow* CHANNEL, // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
-			NetFlow* DO, // net ID: DO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DRDY, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-			NetFlow* EOC, // net ID: EOC lsb: 0  msb: 0 OUTPUT
-			NetFlow* EOS, // net ID: EOS lsb: 0  msb: 0 OUTPUT
-			NetFlow* JTAGBUSY, // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
-			NetFlow* JTAGLOCKED, // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
-			NetFlow* JTAGMODIFIED, // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
-			NetFlow* MUXADDR, // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
-			NetFlow* OT, // net ID: OT lsb: 0  msb: 0 OUTPUT
-			NetFlow* CONVST, // net ID: CONVST lsb: 0  msb: 0 INPUT
-			NetFlow* CONVSTCLK, // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
-			NetFlow* DADDR, // net ID: DADDR lsb: 0  msb: 6 INPUT
-			NetFlow* DCLK, // net ID: DCLK lsb: 0  msb: 0 INPUT
-			NetFlow* DEN, // net ID: DEN lsb: 0  msb: 0 INPUT
-			NetFlow* DI, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DWE, // net ID: DWE lsb: 0  msb: 0 INPUT
-			NetFlow* RESET, // net ID: RESET lsb: 0  msb: 0 INPUT
-			NetFlow* VAUXN, // net ID: VAUXN lsb: 0  msb: 15 INPUT
-			NetFlow* VAUXP, // net ID: VAUXP lsb: 0  msb: 15 INPUT
-			NetFlow* VN, // net ID: VN lsb: 0  msb: 0 INPUT
-			NetFlow* VP // net ID: VP lsb: 0  msb: 0 INPUT
+			NetFlow* ALM_A0_B, // net ID: ALM lsb: 0  msb: 0 OUTPUT
+			NetFlow* BUSY_A0_B, // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+			NetFlow* CHANNEL_A0_B, // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
+			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 0 OUTPUT
+			NetFlow* DRDY_A0_B, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
+			NetFlow* EOC_A0_B, // net ID: EOC lsb: 0  msb: 0 OUTPUT
+			NetFlow* EOS_A0_B, // net ID: EOS lsb: 0  msb: 0 OUTPUT
+			NetFlow* JTAGBUSY_A0_B, // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
+			NetFlow* JTAGLOCKED_A0_B, // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
+			NetFlow* JTAGMODIFIED_A0_B, // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
+			NetFlow* MUXADDR_A0_B, // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
+			NetFlow* OT_A0_B, // net ID: OT lsb: 0  msb: 0 OUTPUT
+			NetFlow* CONVST_A0_B, // net ID: CONVST lsb: 0  msb: 0 INPUT
+			NetFlow* CONVSTCLK_A0_B, // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
+			NetFlow* DADDR_A0_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A1_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A2_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A3_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A4_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A5_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A6_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DCLK_A0_B, // net ID: DCLK lsb: 0  msb: 0 INPUT
+			NetFlow* DEN_A0_B, // net ID: DEN lsb: 0  msb: 0 INPUT
+			NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A3_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A4_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A5_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A6_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A7_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A8_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A9_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A10_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A11_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A12_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A13_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A14_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A15_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DWE_A0_B, // net ID: DWE lsb: 0  msb: 0 INPUT
+			NetFlow* RESET_A0_B, // net ID: RESET lsb: 0  msb: 0 INPUT
+			NetFlow* VAUXN_A0_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A1_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A2_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A3_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A4_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A5_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A6_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A7_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A8_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A9_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A10_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A11_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A12_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A13_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A14_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXN_A15_B, // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A0_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A1_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A2_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A3_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A4_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A5_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A6_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A7_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A8_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A9_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A10_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A11_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A12_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A13_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A14_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VAUXP_A15_B, // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			NetFlow* VN_A0_B, // net ID: VN lsb: 0  msb: 0 INPUT
+			NetFlow* VP_A0_B // net ID: VP lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -176,30 +280,81 @@ namespace CPrimitives {
 			this->SIM_MONITOR_FILE = SIM_MONITOR_FILE; // Default: "design.txt"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->ALM = ALM; // net ID: ALM lsb: 0  msb: 0 OUTPUT
-			this->BUSY = BUSY; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-			this->CHANNEL = CHANNEL; // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
-			this->DO = DO; // net ID: DO lsb: 0  msb: 0 OUTPUT
-			this->DRDY = DRDY; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-			this->EOC = EOC; // net ID: EOC lsb: 0  msb: 0 OUTPUT
-			this->EOS = EOS; // net ID: EOS lsb: 0  msb: 0 OUTPUT
-			this->JTAGBUSY = JTAGBUSY; // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
-			this->JTAGLOCKED = JTAGLOCKED; // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
-			this->JTAGMODIFIED = JTAGMODIFIED; // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
-			this->MUXADDR = MUXADDR; // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
-			this->OT = OT; // net ID: OT lsb: 0  msb: 0 OUTPUT
-			this->CONVST = CONVST; // net ID: CONVST lsb: 0  msb: 0 INPUT
-			this->CONVSTCLK = CONVSTCLK; // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
-			this->DADDR = DADDR; // net ID: DADDR lsb: 0  msb: 6 INPUT
-			this->DCLK = DCLK; // net ID: DCLK lsb: 0  msb: 0 INPUT
-			this->DEN = DEN; // net ID: DEN lsb: 0  msb: 0 INPUT
-			this->DI = DI; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DWE = DWE; // net ID: DWE lsb: 0  msb: 0 INPUT
-			this->RESET = RESET; // net ID: RESET lsb: 0  msb: 0 INPUT
-			this->VAUXN = VAUXN; // net ID: VAUXN lsb: 0  msb: 15 INPUT
-			this->VAUXP = VAUXP; // net ID: VAUXP lsb: 0  msb: 15 INPUT
-			this->VN = VN; // net ID: VN lsb: 0  msb: 0 INPUT
-			this->VP = VP; // net ID: VP lsb: 0  msb: 0 INPUT
+			this->ALM_A0_B = ALM_A0_B; // net ID: ALM lsb: 0  msb: 0 OUTPUT
+			this->BUSY_A0_B = BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+			this->CHANNEL_A0_B = CHANNEL_A0_B; // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
+			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+			this->DRDY_A0_B = DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
+			this->EOC_A0_B = EOC_A0_B; // net ID: EOC lsb: 0  msb: 0 OUTPUT
+			this->EOS_A0_B = EOS_A0_B; // net ID: EOS lsb: 0  msb: 0 OUTPUT
+			this->JTAGBUSY_A0_B = JTAGBUSY_A0_B; // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
+			this->JTAGLOCKED_A0_B = JTAGLOCKED_A0_B; // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
+			this->JTAGMODIFIED_A0_B = JTAGMODIFIED_A0_B; // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
+			this->MUXADDR_A0_B = MUXADDR_A0_B; // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
+			this->OT_A0_B = OT_A0_B; // net ID: OT lsb: 0  msb: 0 OUTPUT
+			this->CONVST_A0_B = CONVST_A0_B; // net ID: CONVST lsb: 0  msb: 0 INPUT
+			this->CONVSTCLK_A0_B = CONVSTCLK_A0_B; // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
+			this->DADDR_A0_B = DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A1_B = DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A2_B = DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A3_B = DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A4_B = DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A5_B = DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A6_B = DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DCLK_A0_B = DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
+			this->DEN_A0_B = DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
+			this->DI_A0_B = DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A1_B = DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A2_B = DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A3_B = DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A4_B = DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A5_B = DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A6_B = DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A7_B = DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A8_B = DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A9_B = DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A10_B = DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A11_B = DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A12_B = DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A13_B = DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A14_B = DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A15_B = DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DWE_A0_B = DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
+			this->RESET_A0_B = RESET_A0_B; // net ID: RESET lsb: 0  msb: 0 INPUT
+			this->VAUXN_A0_B = VAUXN_A0_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A1_B = VAUXN_A1_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A2_B = VAUXN_A2_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A3_B = VAUXN_A3_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A4_B = VAUXN_A4_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A5_B = VAUXN_A5_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A6_B = VAUXN_A6_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A7_B = VAUXN_A7_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A8_B = VAUXN_A8_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A9_B = VAUXN_A9_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A10_B = VAUXN_A10_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A11_B = VAUXN_A11_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A12_B = VAUXN_A12_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A13_B = VAUXN_A13_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A14_B = VAUXN_A14_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXN_A15_B = VAUXN_A15_B; // net ID: VAUXN lsb: 0  msb: 15 INPUT
+			this->VAUXP_A0_B = VAUXP_A0_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A1_B = VAUXP_A1_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A2_B = VAUXP_A2_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A3_B = VAUXP_A3_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A4_B = VAUXP_A4_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A5_B = VAUXP_A5_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A6_B = VAUXP_A6_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A7_B = VAUXP_A7_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A8_B = VAUXP_A8_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A9_B = VAUXP_A9_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A10_B = VAUXP_A10_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A11_B = VAUXP_A11_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A12_B = VAUXP_A12_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A13_B = VAUXP_A13_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A14_B = VAUXP_A14_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VAUXP_A15_B = VAUXP_A15_B; // net ID: VAUXP lsb: 0  msb: 15 INPUT
+			this->VN_A0_B = VN_A0_B; // net ID: VN lsb: 0  msb: 0 INPUT
+			this->VP_A0_B = VP_A0_B; // net ID: VP lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -213,6 +368,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_XADC_H

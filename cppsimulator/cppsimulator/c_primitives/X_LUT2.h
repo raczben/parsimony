@@ -3,31 +3,33 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_LUT2_H
+#define X_LUT2_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_LUT2: public Primitive{
 
 		//Verilog Parameters:
-		parameter_string_t INIT;
+		parameter_int_t INIT;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* ADR0; // net ID: ADR0 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR1; // net ID: ADR1 lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* ADR0_A0_B; // net ID: ADR0 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR1_A0_B; // net ID: ADR1 lsb: 0  msb: 0 INPUT
 		
-		X_LUT2(
+		public: X_LUT2(
 			const char * name,
 			//Verilog Parameters:
-			parameter_string_t INIT, // Default: 4'h0
+			parameter_int_t INIT, // Default: 4'h0
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* ADR0, // net ID: ADR0 lsb: 0  msb: 0 INPUT
-			NetFlow* ADR1 // net ID: ADR1 lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* ADR0_A0_B, // net ID: ADR0 lsb: 0  msb: 0 INPUT
+			NetFlow* ADR1_A0_B // net ID: ADR1 lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -35,9 +37,9 @@ namespace CPrimitives {
 			this->INIT = INIT; // Default: 4'h0
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->ADR0 = ADR0; // net ID: ADR0 lsb: 0  msb: 0 INPUT
-			this->ADR1 = ADR1; // net ID: ADR1 lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->ADR0_A0_B = ADR0_A0_B; // net ID: ADR0 lsb: 0  msb: 0 INPUT
+			this->ADR1_A0_B = ADR1_A0_B; // net ID: ADR1 lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -51,6 +53,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_LUT2_H

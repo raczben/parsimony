@@ -3,49 +3,51 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_BSCANE2_H
+#define X_BSCANE2_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_BSCANE2: public Primitive{
 
 		//Verilog Parameters:
 		parameter_enum_t DISABLE_JTAG;
-		parameter_string_t JTAG_CHAIN;
+		parameter_int_t JTAG_CHAIN;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* CAPTURE; // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
-		NetFlow* DRCK; // net ID: DRCK lsb: 0  msb: 0 OUTPUT
-		NetFlow* RESET; // net ID: RESET lsb: 0  msb: 0 OUTPUT
-		NetFlow* RUNTEST; // net ID: RUNTEST lsb: 0  msb: 0 OUTPUT
-		NetFlow* SEL; // net ID: SEL lsb: 0  msb: 0 OUTPUT
-		NetFlow* SHIFT; // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
-		NetFlow* TCK; // net ID: TCK lsb: 0  msb: 0 OUTPUT
-		NetFlow* TDI; // net ID: TDI lsb: 0  msb: 0 OUTPUT
-		NetFlow* TMS; // net ID: TMS lsb: 0  msb: 0 OUTPUT
-		NetFlow* UPDATE; // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
-		NetFlow* TDO; // net ID: TDO lsb: 0  msb: 0 INPUT
+		NetFlow* CAPTURE_A0_B; // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
+		NetFlow* DRCK_A0_B; // net ID: DRCK lsb: 0  msb: 0 OUTPUT
+		NetFlow* RESET_A0_B; // net ID: RESET lsb: 0  msb: 0 OUTPUT
+		NetFlow* RUNTEST_A0_B; // net ID: RUNTEST lsb: 0  msb: 0 OUTPUT
+		NetFlow* SEL_A0_B; // net ID: SEL lsb: 0  msb: 0 OUTPUT
+		NetFlow* SHIFT_A0_B; // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
+		NetFlow* TCK_A0_B; // net ID: TCK lsb: 0  msb: 0 OUTPUT
+		NetFlow* TDI_A0_B; // net ID: TDI lsb: 0  msb: 0 OUTPUT
+		NetFlow* TMS_A0_B; // net ID: TMS lsb: 0  msb: 0 OUTPUT
+		NetFlow* UPDATE_A0_B; // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
+		NetFlow* TDO_A0_B; // net ID: TDO lsb: 0  msb: 0 INPUT
 		
-		X_BSCANE2(
+		public: X_BSCANE2(
 			const char * name,
 			//Verilog Parameters:
 			parameter_enum_t DISABLE_JTAG, // Default: "FALSE"
-			parameter_string_t JTAG_CHAIN, // Default: 1
+			parameter_int_t JTAG_CHAIN, // Default: 1
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* CAPTURE, // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
-			NetFlow* DRCK, // net ID: DRCK lsb: 0  msb: 0 OUTPUT
-			NetFlow* RESET, // net ID: RESET lsb: 0  msb: 0 OUTPUT
-			NetFlow* RUNTEST, // net ID: RUNTEST lsb: 0  msb: 0 OUTPUT
-			NetFlow* SEL, // net ID: SEL lsb: 0  msb: 0 OUTPUT
-			NetFlow* SHIFT, // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
-			NetFlow* TCK, // net ID: TCK lsb: 0  msb: 0 OUTPUT
-			NetFlow* TDI, // net ID: TDI lsb: 0  msb: 0 OUTPUT
-			NetFlow* TMS, // net ID: TMS lsb: 0  msb: 0 OUTPUT
-			NetFlow* UPDATE, // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
-			NetFlow* TDO // net ID: TDO lsb: 0  msb: 0 INPUT
+			NetFlow* CAPTURE_A0_B, // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
+			NetFlow* DRCK_A0_B, // net ID: DRCK lsb: 0  msb: 0 OUTPUT
+			NetFlow* RESET_A0_B, // net ID: RESET lsb: 0  msb: 0 OUTPUT
+			NetFlow* RUNTEST_A0_B, // net ID: RUNTEST lsb: 0  msb: 0 OUTPUT
+			NetFlow* SEL_A0_B, // net ID: SEL lsb: 0  msb: 0 OUTPUT
+			NetFlow* SHIFT_A0_B, // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
+			NetFlow* TCK_A0_B, // net ID: TCK lsb: 0  msb: 0 OUTPUT
+			NetFlow* TDI_A0_B, // net ID: TDI lsb: 0  msb: 0 OUTPUT
+			NetFlow* TMS_A0_B, // net ID: TMS lsb: 0  msb: 0 OUTPUT
+			NetFlow* UPDATE_A0_B, // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
+			NetFlow* TDO_A0_B // net ID: TDO lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -54,17 +56,17 @@ namespace CPrimitives {
 			this->JTAG_CHAIN = JTAG_CHAIN; // Default: 1
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->CAPTURE = CAPTURE; // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
-			this->DRCK = DRCK; // net ID: DRCK lsb: 0  msb: 0 OUTPUT
-			this->RESET = RESET; // net ID: RESET lsb: 0  msb: 0 OUTPUT
-			this->RUNTEST = RUNTEST; // net ID: RUNTEST lsb: 0  msb: 0 OUTPUT
-			this->SEL = SEL; // net ID: SEL lsb: 0  msb: 0 OUTPUT
-			this->SHIFT = SHIFT; // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
-			this->TCK = TCK; // net ID: TCK lsb: 0  msb: 0 OUTPUT
-			this->TDI = TDI; // net ID: TDI lsb: 0  msb: 0 OUTPUT
-			this->TMS = TMS; // net ID: TMS lsb: 0  msb: 0 OUTPUT
-			this->UPDATE = UPDATE; // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
-			this->TDO = TDO; // net ID: TDO lsb: 0  msb: 0 INPUT
+			this->CAPTURE_A0_B = CAPTURE_A0_B; // net ID: CAPTURE lsb: 0  msb: 0 OUTPUT
+			this->DRCK_A0_B = DRCK_A0_B; // net ID: DRCK lsb: 0  msb: 0 OUTPUT
+			this->RESET_A0_B = RESET_A0_B; // net ID: RESET lsb: 0  msb: 0 OUTPUT
+			this->RUNTEST_A0_B = RUNTEST_A0_B; // net ID: RUNTEST lsb: 0  msb: 0 OUTPUT
+			this->SEL_A0_B = SEL_A0_B; // net ID: SEL lsb: 0  msb: 0 OUTPUT
+			this->SHIFT_A0_B = SHIFT_A0_B; // net ID: SHIFT lsb: 0  msb: 0 OUTPUT
+			this->TCK_A0_B = TCK_A0_B; // net ID: TCK lsb: 0  msb: 0 OUTPUT
+			this->TDI_A0_B = TDI_A0_B; // net ID: TDI lsb: 0  msb: 0 OUTPUT
+			this->TMS_A0_B = TMS_A0_B; // net ID: TMS lsb: 0  msb: 0 OUTPUT
+			this->UPDATE_A0_B = UPDATE_A0_B; // net ID: UPDATE lsb: 0  msb: 0 OUTPUT
+			this->TDO_A0_B = TDO_A0_B; // net ID: TDO lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -78,6 +80,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_BSCANE2_H

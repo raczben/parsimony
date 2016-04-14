@@ -155,6 +155,11 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 	    			
 	    			
 	    			String parameterValue = parameterAssignments.constant_expression().getText();
+	    			
+	    			if(! parameterValue.equals("\"UNPLACED\"")){
+	    				System.out.println("hello");
+	    			}
+	    			
 	    			Type parameterType = Type.UNDEFINED;
 	    			
 	    			if (termContextChild instanceof TerminalNodeImpl){

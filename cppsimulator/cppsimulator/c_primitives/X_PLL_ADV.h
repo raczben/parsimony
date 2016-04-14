@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_PLL_ADV_H
+#define X_PLL_ADV_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_PLL_ADV: public Primitive{
@@ -21,74 +23,93 @@ namespace CPrimitives {
 		parameter_string_t CLKOUT3_DESKEW_ADJUST;
 		parameter_string_t CLKOUT4_DESKEW_ADJUST;
 		parameter_string_t CLKOUT5_DESKEW_ADJUST;
-		parameter_string_t CLKFBOUT_MULT;
-		parameter_string_t CLKFBOUT_PHASE;
-		parameter_string_t CLKIN1_PERIOD;
-		parameter_string_t CLKIN2_PERIOD;
-		parameter_string_t CLKOUT0_DIVIDE;
-		parameter_string_t CLKOUT0_DUTY_CYCLE;
-		parameter_string_t CLKOUT0_PHASE;
-		parameter_string_t CLKOUT1_DIVIDE;
-		parameter_string_t CLKOUT1_DUTY_CYCLE;
-		parameter_string_t CLKOUT1_PHASE;
-		parameter_string_t CLKOUT2_DIVIDE;
-		parameter_string_t CLKOUT2_DUTY_CYCLE;
-		parameter_string_t CLKOUT2_PHASE;
-		parameter_string_t CLKOUT3_DIVIDE;
-		parameter_string_t CLKOUT3_DUTY_CYCLE;
-		parameter_string_t CLKOUT3_PHASE;
-		parameter_string_t CLKOUT4_DIVIDE;
-		parameter_string_t CLKOUT4_DUTY_CYCLE;
-		parameter_string_t CLKOUT4_PHASE;
-		parameter_string_t CLKOUT5_DIVIDE;
-		parameter_string_t CLKOUT5_DUTY_CYCLE;
-		parameter_string_t CLKOUT5_PHASE;
+		parameter_int_t CLKFBOUT_MULT;
+		parameter_int_t CLKFBOUT_PHASE;
+		parameter_int_t CLKIN1_PERIOD;
+		parameter_int_t CLKIN2_PERIOD;
+		parameter_int_t CLKOUT0_DIVIDE;
+		parameter_int_t CLKOUT0_DUTY_CYCLE;
+		parameter_int_t CLKOUT0_PHASE;
+		parameter_int_t CLKOUT1_DIVIDE;
+		parameter_int_t CLKOUT1_DUTY_CYCLE;
+		parameter_int_t CLKOUT1_PHASE;
+		parameter_int_t CLKOUT2_DIVIDE;
+		parameter_int_t CLKOUT2_DUTY_CYCLE;
+		parameter_int_t CLKOUT2_PHASE;
+		parameter_int_t CLKOUT3_DIVIDE;
+		parameter_int_t CLKOUT3_DUTY_CYCLE;
+		parameter_int_t CLKOUT3_PHASE;
+		parameter_int_t CLKOUT4_DIVIDE;
+		parameter_int_t CLKOUT4_DUTY_CYCLE;
+		parameter_int_t CLKOUT4_PHASE;
+		parameter_int_t CLKOUT5_DIVIDE;
+		parameter_int_t CLKOUT5_DUTY_CYCLE;
+		parameter_int_t CLKOUT5_PHASE;
 		parameter_string_t COMPENSATION;
-		parameter_string_t DIVCLK_DIVIDE;
+		parameter_int_t DIVCLK_DIVIDE;
 		parameter_enum_t EN_REL;
 		parameter_enum_t PLL_PMCD_MODE;
-		parameter_string_t REF_JITTER;
+		parameter_int_t REF_JITTER;
 		parameter_enum_t RESET_ON_LOSS_OF_LOCK;
 		parameter_string_t RST_DEASSERT_CLK;
 		parameter_string_t SIM_DEVICE;
 		parameter_string_t LOC;
-		parameter_string_t VCOCLK_FREQ_MAX;
-		parameter_string_t VCOCLK_FREQ_MIN;
-		parameter_string_t CLKIN_FREQ_MAX;
-		parameter_string_t CLKIN_FREQ_MIN;
-		parameter_string_t CLKPFD_FREQ_MAX;
-		parameter_string_t CLKPFD_FREQ_MIN;
+		parameter_int_t VCOCLK_FREQ_MAX;
+		parameter_int_t VCOCLK_FREQ_MIN;
+		parameter_int_t CLKIN_FREQ_MAX;
+		parameter_int_t CLKIN_FREQ_MIN;
+		parameter_int_t CLKPFD_FREQ_MAX;
+		parameter_int_t CLKPFD_FREQ_MIN;
 		//Verilog Ports in definition order:
-		NetFlow* CLKFBDCM; // net ID: CLKFBDCM lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKFBOUT; // net ID: CLKFBOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUT0; // net ID: CLKOUT0 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUT1; // net ID: CLKOUT1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUT2; // net ID: CLKOUT2 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUT3; // net ID: CLKOUT3 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUT4; // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUT5; // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUTDCM0; // net ID: CLKOUTDCM0 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUTDCM1; // net ID: CLKOUTDCM1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUTDCM2; // net ID: CLKOUTDCM2 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUTDCM3; // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUTDCM4; // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKOUTDCM5; // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
-		NetFlow* DO; // net ID: DO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DRDY; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-		NetFlow* LOCKED; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLKFBIN; // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
-		NetFlow* CLKIN1; // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
-		NetFlow* CLKIN2; // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
-		NetFlow* CLKINSEL; // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
-		NetFlow* DADDR; // net ID: DADDR lsb: 0  msb: 4 INPUT
-		NetFlow* DCLK; // net ID: DCLK lsb: 0  msb: 0 INPUT
-		NetFlow* DEN; // net ID: DEN lsb: 0  msb: 0 INPUT
-		NetFlow* DI; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DWE; // net ID: DWE lsb: 0  msb: 0 INPUT
-		NetFlow* REL; // net ID: REL lsb: 0  msb: 0 INPUT
-		NetFlow* RST; // net ID: RST lsb: 0  msb: 0 INPUT
+		NetFlow* CLKFBDCM_A0_B; // net ID: CLKFBDCM lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKFBOUT_A0_B; // net ID: CLKFBOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUT0_A0_B; // net ID: CLKOUT0 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUT1_A0_B; // net ID: CLKOUT1 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUT2_A0_B; // net ID: CLKOUT2 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUT3_A0_B; // net ID: CLKOUT3 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUT4_A0_B; // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUT5_A0_B; // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUTDCM0_A0_B; // net ID: CLKOUTDCM0 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUTDCM1_A0_B; // net ID: CLKOUTDCM1 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUTDCM2_A0_B; // net ID: CLKOUTDCM2 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUTDCM3_A0_B; // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUTDCM4_A0_B; // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKOUTDCM5_A0_B; // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
+		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+		NetFlow* DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
+		NetFlow* LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLKFBIN_A0_B; // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
+		NetFlow* CLKIN1_A0_B; // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
+		NetFlow* CLKIN2_A0_B; // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
+		NetFlow* CLKINSEL_A0_B; // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
+		NetFlow* DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+		NetFlow* DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+		NetFlow* DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+		NetFlow* DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+		NetFlow* DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+		NetFlow* DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
+		NetFlow* DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
+		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
+		NetFlow* REL_A0_B; // net ID: REL lsb: 0  msb: 0 INPUT
+		NetFlow* RST_A0_B; // net ID: RST lsb: 0  msb: 0 INPUT
 		
-		X_PLL_ADV(
+		public: X_PLL_ADV(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t BANDWIDTH, // Default: "OPTIMIZED"
@@ -100,72 +121,91 @@ namespace CPrimitives {
 			parameter_string_t CLKOUT3_DESKEW_ADJUST, // Default: "NONE"
 			parameter_string_t CLKOUT4_DESKEW_ADJUST, // Default: "NONE"
 			parameter_string_t CLKOUT5_DESKEW_ADJUST, // Default: "NONE"
-			parameter_string_t CLKFBOUT_MULT, // Default: 1
-			parameter_string_t CLKFBOUT_PHASE, // Default: 0.0
-			parameter_string_t CLKIN1_PERIOD, // Default: 0.000
-			parameter_string_t CLKIN2_PERIOD, // Default: 0.000
-			parameter_string_t CLKOUT0_DIVIDE, // Default: 1
-			parameter_string_t CLKOUT0_DUTY_CYCLE, // Default: 0.5
-			parameter_string_t CLKOUT0_PHASE, // Default: 0.0
-			parameter_string_t CLKOUT1_DIVIDE, // Default: 1
-			parameter_string_t CLKOUT1_DUTY_CYCLE, // Default: 0.5
-			parameter_string_t CLKOUT1_PHASE, // Default: 0.0
-			parameter_string_t CLKOUT2_DIVIDE, // Default: 1
-			parameter_string_t CLKOUT2_DUTY_CYCLE, // Default: 0.5
-			parameter_string_t CLKOUT2_PHASE, // Default: 0.0
-			parameter_string_t CLKOUT3_DIVIDE, // Default: 1
-			parameter_string_t CLKOUT3_DUTY_CYCLE, // Default: 0.5
-			parameter_string_t CLKOUT3_PHASE, // Default: 0.0
-			parameter_string_t CLKOUT4_DIVIDE, // Default: 1
-			parameter_string_t CLKOUT4_DUTY_CYCLE, // Default: 0.5
-			parameter_string_t CLKOUT4_PHASE, // Default: 0.0
-			parameter_string_t CLKOUT5_DIVIDE, // Default: 1
-			parameter_string_t CLKOUT5_DUTY_CYCLE, // Default: 0.5
-			parameter_string_t CLKOUT5_PHASE, // Default: 0.0
+			parameter_int_t CLKFBOUT_MULT, // Default: 1
+			parameter_int_t CLKFBOUT_PHASE, // Default: 0.0
+			parameter_int_t CLKIN1_PERIOD, // Default: 0.000
+			parameter_int_t CLKIN2_PERIOD, // Default: 0.000
+			parameter_int_t CLKOUT0_DIVIDE, // Default: 1
+			parameter_int_t CLKOUT0_DUTY_CYCLE, // Default: 0.5
+			parameter_int_t CLKOUT0_PHASE, // Default: 0.0
+			parameter_int_t CLKOUT1_DIVIDE, // Default: 1
+			parameter_int_t CLKOUT1_DUTY_CYCLE, // Default: 0.5
+			parameter_int_t CLKOUT1_PHASE, // Default: 0.0
+			parameter_int_t CLKOUT2_DIVIDE, // Default: 1
+			parameter_int_t CLKOUT2_DUTY_CYCLE, // Default: 0.5
+			parameter_int_t CLKOUT2_PHASE, // Default: 0.0
+			parameter_int_t CLKOUT3_DIVIDE, // Default: 1
+			parameter_int_t CLKOUT3_DUTY_CYCLE, // Default: 0.5
+			parameter_int_t CLKOUT3_PHASE, // Default: 0.0
+			parameter_int_t CLKOUT4_DIVIDE, // Default: 1
+			parameter_int_t CLKOUT4_DUTY_CYCLE, // Default: 0.5
+			parameter_int_t CLKOUT4_PHASE, // Default: 0.0
+			parameter_int_t CLKOUT5_DIVIDE, // Default: 1
+			parameter_int_t CLKOUT5_DUTY_CYCLE, // Default: 0.5
+			parameter_int_t CLKOUT5_PHASE, // Default: 0.0
 			parameter_string_t COMPENSATION, // Default: "SYSTEM_SYNCHRONOUS"
-			parameter_string_t DIVCLK_DIVIDE, // Default: 1
+			parameter_int_t DIVCLK_DIVIDE, // Default: 1
 			parameter_enum_t EN_REL, // Default: "FALSE"
 			parameter_enum_t PLL_PMCD_MODE, // Default: "FALSE"
-			parameter_string_t REF_JITTER, // Default: 0.100
+			parameter_int_t REF_JITTER, // Default: 0.100
 			parameter_enum_t RESET_ON_LOSS_OF_LOCK, // Default: "FALSE"
 			parameter_string_t RST_DEASSERT_CLK, // Default: "CLKIN1"
 			parameter_string_t SIM_DEVICE, // Default: "VIRTEX5"
 			parameter_string_t LOC, // Default: "UNPLACED"
-			parameter_string_t VCOCLK_FREQ_MAX, // Default: 1440.0
-			parameter_string_t VCOCLK_FREQ_MIN, // Default: 400.0
-			parameter_string_t CLKIN_FREQ_MAX, // Default: 710.0
-			parameter_string_t CLKIN_FREQ_MIN, // Default: 19.0
-			parameter_string_t CLKPFD_FREQ_MAX, // Default: 550.0
-			parameter_string_t CLKPFD_FREQ_MIN, // Default: 19.0
+			parameter_int_t VCOCLK_FREQ_MAX, // Default: 1440.0
+			parameter_int_t VCOCLK_FREQ_MIN, // Default: 400.0
+			parameter_int_t CLKIN_FREQ_MAX, // Default: 710.0
+			parameter_int_t CLKIN_FREQ_MIN, // Default: 19.0
+			parameter_int_t CLKPFD_FREQ_MAX, // Default: 550.0
+			parameter_int_t CLKPFD_FREQ_MIN, // Default: 19.0
 			//Verilog Ports in definition order:
-			NetFlow* CLKFBDCM, // net ID: CLKFBDCM lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKFBOUT, // net ID: CLKFBOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUT0, // net ID: CLKOUT0 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUT1, // net ID: CLKOUT1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUT2, // net ID: CLKOUT2 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUT3, // net ID: CLKOUT3 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUT4, // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUT5, // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUTDCM0, // net ID: CLKOUTDCM0 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUTDCM1, // net ID: CLKOUTDCM1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUTDCM2, // net ID: CLKOUTDCM2 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUTDCM3, // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUTDCM4, // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKOUTDCM5, // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
-			NetFlow* DO, // net ID: DO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DRDY, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-			NetFlow* LOCKED, // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLKFBIN, // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
-			NetFlow* CLKIN1, // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
-			NetFlow* CLKIN2, // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
-			NetFlow* CLKINSEL, // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
-			NetFlow* DADDR, // net ID: DADDR lsb: 0  msb: 4 INPUT
-			NetFlow* DCLK, // net ID: DCLK lsb: 0  msb: 0 INPUT
-			NetFlow* DEN, // net ID: DEN lsb: 0  msb: 0 INPUT
-			NetFlow* DI, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DWE, // net ID: DWE lsb: 0  msb: 0 INPUT
-			NetFlow* REL, // net ID: REL lsb: 0  msb: 0 INPUT
-			NetFlow* RST // net ID: RST lsb: 0  msb: 0 INPUT
+			NetFlow* CLKFBDCM_A0_B, // net ID: CLKFBDCM lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKFBOUT_A0_B, // net ID: CLKFBOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUT0_A0_B, // net ID: CLKOUT0 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUT1_A0_B, // net ID: CLKOUT1 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUT2_A0_B, // net ID: CLKOUT2 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUT3_A0_B, // net ID: CLKOUT3 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUT4_A0_B, // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUT5_A0_B, // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUTDCM0_A0_B, // net ID: CLKOUTDCM0 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUTDCM1_A0_B, // net ID: CLKOUTDCM1 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUTDCM2_A0_B, // net ID: CLKOUTDCM2 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUTDCM3_A0_B, // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUTDCM4_A0_B, // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKOUTDCM5_A0_B, // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
+			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 0 OUTPUT
+			NetFlow* DRDY_A0_B, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
+			NetFlow* LOCKED_A0_B, // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLKFBIN_A0_B, // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
+			NetFlow* CLKIN1_A0_B, // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
+			NetFlow* CLKIN2_A0_B, // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
+			NetFlow* CLKINSEL_A0_B, // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
+			NetFlow* DADDR_A0_B, // net ID: DADDR lsb: 0  msb: 4 INPUT
+			NetFlow* DADDR_A1_B, // net ID: DADDR lsb: 0  msb: 4 INPUT
+			NetFlow* DADDR_A2_B, // net ID: DADDR lsb: 0  msb: 4 INPUT
+			NetFlow* DADDR_A3_B, // net ID: DADDR lsb: 0  msb: 4 INPUT
+			NetFlow* DADDR_A4_B, // net ID: DADDR lsb: 0  msb: 4 INPUT
+			NetFlow* DCLK_A0_B, // net ID: DCLK lsb: 0  msb: 0 INPUT
+			NetFlow* DEN_A0_B, // net ID: DEN lsb: 0  msb: 0 INPUT
+			NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A3_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A4_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A5_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A6_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A7_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A8_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A9_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A10_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A11_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A12_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A13_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A14_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A15_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DWE_A0_B, // net ID: DWE lsb: 0  msb: 0 INPUT
+			NetFlow* REL_A0_B, // net ID: REL lsb: 0  msb: 0 INPUT
+			NetFlow* RST_A0_B // net ID: RST lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -217,34 +257,53 @@ namespace CPrimitives {
 			this->CLKPFD_FREQ_MAX = CLKPFD_FREQ_MAX; // Default: 550.0
 			this->CLKPFD_FREQ_MIN = CLKPFD_FREQ_MIN; // Default: 19.0
 			//Verilog Ports in definition order:
-			this->CLKFBDCM = CLKFBDCM; // net ID: CLKFBDCM lsb: 0  msb: 0 OUTPUT
-			this->CLKFBOUT = CLKFBOUT; // net ID: CLKFBOUT lsb: 0  msb: 0 OUTPUT
-			this->CLKOUT0 = CLKOUT0; // net ID: CLKOUT0 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUT1 = CLKOUT1; // net ID: CLKOUT1 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUT2 = CLKOUT2; // net ID: CLKOUT2 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUT3 = CLKOUT3; // net ID: CLKOUT3 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUT4 = CLKOUT4; // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUT5 = CLKOUT5; // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUTDCM0 = CLKOUTDCM0; // net ID: CLKOUTDCM0 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUTDCM1 = CLKOUTDCM1; // net ID: CLKOUTDCM1 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUTDCM2 = CLKOUTDCM2; // net ID: CLKOUTDCM2 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUTDCM3 = CLKOUTDCM3; // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUTDCM4 = CLKOUTDCM4; // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
-			this->CLKOUTDCM5 = CLKOUTDCM5; // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
-			this->DO = DO; // net ID: DO lsb: 0  msb: 0 OUTPUT
-			this->DRDY = DRDY; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-			this->LOCKED = LOCKED; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
-			this->CLKFBIN = CLKFBIN; // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
-			this->CLKIN1 = CLKIN1; // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
-			this->CLKIN2 = CLKIN2; // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
-			this->CLKINSEL = CLKINSEL; // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
-			this->DADDR = DADDR; // net ID: DADDR lsb: 0  msb: 4 INPUT
-			this->DCLK = DCLK; // net ID: DCLK lsb: 0  msb: 0 INPUT
-			this->DEN = DEN; // net ID: DEN lsb: 0  msb: 0 INPUT
-			this->DI = DI; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DWE = DWE; // net ID: DWE lsb: 0  msb: 0 INPUT
-			this->REL = REL; // net ID: REL lsb: 0  msb: 0 INPUT
-			this->RST = RST; // net ID: RST lsb: 0  msb: 0 INPUT
+			this->CLKFBDCM_A0_B = CLKFBDCM_A0_B; // net ID: CLKFBDCM lsb: 0  msb: 0 OUTPUT
+			this->CLKFBOUT_A0_B = CLKFBOUT_A0_B; // net ID: CLKFBOUT lsb: 0  msb: 0 OUTPUT
+			this->CLKOUT0_A0_B = CLKOUT0_A0_B; // net ID: CLKOUT0 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUT1_A0_B = CLKOUT1_A0_B; // net ID: CLKOUT1 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUT2_A0_B = CLKOUT2_A0_B; // net ID: CLKOUT2 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUT3_A0_B = CLKOUT3_A0_B; // net ID: CLKOUT3 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUT4_A0_B = CLKOUT4_A0_B; // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUT5_A0_B = CLKOUT5_A0_B; // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUTDCM0_A0_B = CLKOUTDCM0_A0_B; // net ID: CLKOUTDCM0 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUTDCM1_A0_B = CLKOUTDCM1_A0_B; // net ID: CLKOUTDCM1 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUTDCM2_A0_B = CLKOUTDCM2_A0_B; // net ID: CLKOUTDCM2 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUTDCM3_A0_B = CLKOUTDCM3_A0_B; // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUTDCM4_A0_B = CLKOUTDCM4_A0_B; // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
+			this->CLKOUTDCM5_A0_B = CLKOUTDCM5_A0_B; // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
+			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+			this->DRDY_A0_B = DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
+			this->LOCKED_A0_B = LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
+			this->CLKFBIN_A0_B = CLKFBIN_A0_B; // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
+			this->CLKIN1_A0_B = CLKIN1_A0_B; // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
+			this->CLKIN2_A0_B = CLKIN2_A0_B; // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
+			this->CLKINSEL_A0_B = CLKINSEL_A0_B; // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
+			this->DADDR_A0_B = DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+			this->DADDR_A1_B = DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+			this->DADDR_A2_B = DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+			this->DADDR_A3_B = DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+			this->DADDR_A4_B = DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 4 INPUT
+			this->DCLK_A0_B = DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
+			this->DEN_A0_B = DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
+			this->DI_A0_B = DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A1_B = DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A2_B = DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A3_B = DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A4_B = DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A5_B = DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A6_B = DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A7_B = DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A8_B = DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A9_B = DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A10_B = DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A11_B = DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A12_B = DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A13_B = DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A14_B = DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A15_B = DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DWE_A0_B = DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
+			this->REL_A0_B = REL_A0_B; // net ID: REL lsb: 0  msb: 0 INPUT
+			this->RST_A0_B = RST_A0_B; // net ID: RST lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -258,6 +317,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_PLL_ADV_H

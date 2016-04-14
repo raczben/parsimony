@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNodeImpl;
 
@@ -35,6 +33,8 @@ import antlr.Verilog2001Parser.Net_identifierContext;
 import antlr.Verilog2001Parser.Net_typeContext;
 import antlr.Verilog2001Parser.Parameter_identifierContext;
 import antlr.Verilog2001Parser.Parameter_value_assignmentContext;
+import antlr.Verilog2001Parser.Port_declarationContext;
+import antlr.Verilog2001Parser.Port_identifierContext;
 import antlr.Verilog2001Parser.RangeContext;
 
 /**
@@ -150,6 +150,41 @@ public class Netinstancer extends Verilog2001BaseListener {
 		CppTemplateGenerator.appendSource("resources/priminstancerSourceBegin.txt", primitiveInstancerSource);
 		
 	}
+	
+	@Override
+	public void enterPort_declaration(Port_declarationContext portDeclaration) {
+			List<Port_identifierContext> portIdList;
+			RangeContext range = null;
+			
+			try{
+				portIdList = portDeclaration.input_declaration().list_of_port_identifiers().port_identifier();
+				range = portDeclaration.input_declaration().range();
+			
+	    		for(Port_identifierContext portId : portIdList){
+	    			nets.add(new NetDescriptor(portId.getText(), range));
+		    		continue;
+	    		}
+			}catch(NullPointerException ex){}
+
+			try{
+				portIdList = portDeclaration.output_declaration().list_of_port_identifiers().port_identifier();
+				range = portDeclaration.output_declaration().range();
+	    		for(Port_identifierContext portId : portIdList){
+	    			nets.add(new NetDescriptor(portId.getText(), range));
+		    		continue;
+    			}
+			}catch(NullPointerException ex){}
+
+			try{
+				portIdList = portDeclaration.inout_declaration().list_of_port_identifiers().port_identifier();
+				range = portDeclaration.inout_declaration().range();
+	    		for(Port_identifierContext portId : portDeclaration.inout_declaration().list_of_port_identifiers().port_identifier()){
+
+	    			nets.add(new NetDescriptor(portId.getText(), range));
+		    		continue;
+    			}
+			}catch(NullPointerException ex){}
+		}
 	
 
 	/**
@@ -384,7 +419,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 
     	SourceGenerator srcGen1 = new SourceGenerator();
     	
-    	srcGen1.add("new " + primitiveCType + "(\"" + instanceName + "\",");
+    	srcGen1.add("new " + primitiveCType + "(\"" + instanceName.replace("\\", "\\\\") + "\",");
     	srcGen1.add("//Module parameters:");
     	for(ParameterDescriptior param : orderedParameters){
     		srcGen1.add("" + param.getDefaultValueCformat() +  ", // " + param.getParameterIdentifier() );
@@ -392,25 +427,18 @@ public class Netinstancer extends Verilog2001BaseListener {
     	srcGen1.add("");
     	srcGen1.add("//Module port assignments:");
     	PortConnection lastPort = orderedPorts.get(orderedPorts.size() - 1);
-    	boolean lastIterate = false;
+		String comma = ", "; //comma
 		for(PortConnection portConnection : orderedPorts){
-			if(lastPort == portConnection){
-				lastIterate = true;
-			}
 			int portLsb = portConnection.getPortIdentifier().getLsb();
 			int portMsb = portConnection.getPortIdentifier().getMsb();
 			
 			for(int i = portLsb; i <= portMsb; i++){
 				if(lastPort == portConnection & (portMsb == i)){
-					lastIterate = true;
+    				comma = " ";
 				}
 	    		if(portConnection.getExpression().isNet(i)){
 	    			NetDescriptor netDesc = portConnection.getExpression().getNet(i);
 	    			String comment = portConnection.getPortIdentifier().getNetIdentifier();
-	    			String comma = ", "; //coma
-	    			if(lastIterate){
-	    				comma = " ";
-	    			}
 	    			srcGen1.add("engine.get_net(" + netDesc.getCdefineIdentifierBit(netDesc.getLsb()) +  ")" + comma + " // " + comment );
 	    		}else{
 	        		Logger.writeError("Primitiveinstantiation : portConnection: " + portConnection + " .");
@@ -422,7 +450,7 @@ public class Netinstancer extends Verilog2001BaseListener {
     	srcGen1.add(")");
 
     	srcGen0.add(srcGen1);
-    	srcGen0.add(")");
+    	srcGen0.add(");");
     	
     	SourceGenerator srcGen00 = new SourceGenerator(srcGen0);
     	
@@ -443,11 +471,11 @@ public class Netinstancer extends Verilog2001BaseListener {
 		List<String> defines = new ArrayList<String>();
 		List<String> netinst = new ArrayList<String>();
 		
-    	for(Entry<String, NetDescriptor> net : nets.entrySet()) {
-    		netinst.add("\tengine.register_net(new NetFlow(\"" + net + "\"));");
+    	for(NetDescriptor net : nets.values()) {
 //    		String cid = toCIdentifier(net, true);
-    		for(String cid : net.getValue().getCdefineIdentifierList() ){
-        		defines.add("#define " + cid + " " + String.valueOf(i));
+    		for(String cid : net.getCdefineIdentifierList() ){
+    			netinst.add("\tengine.register_net(new NetFlow(\"" + cid + "\"));");
+        		defines.add("#define " + cid + "\t\t" + String.valueOf(i));
         		i++;
     		}
 //    		defines.add("#define " + net.getValue().getCdefineIdentifierList() + " " + String.valueOf(i));

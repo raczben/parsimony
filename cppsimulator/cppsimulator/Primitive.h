@@ -9,6 +9,6 @@ public:
 
 
 	virtual void calculate(int time) = 0;
-	}
+	
 };
 

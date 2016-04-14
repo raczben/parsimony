@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_IBUFDS_GTHE1_H
+#define X_IBUFDS_GTHE1_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_IBUFDS_GTHE1: public Primitive{
@@ -14,27 +16,27 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
-		NetFlow* IB; // net ID: IB lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* IB_A0_B; // net ID: IB lsb: 0  msb: 0 INPUT
 		
-		X_IBUFDS_GTHE1(
+		public: X_IBUFDS_GTHE1(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* I, // net ID: I lsb: 0  msb: 0 INPUT
-			NetFlow* IB // net ID: IB lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* I_A0_B, // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* IB_A0_B // net ID: IB lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
-			this->IB = IB; // net ID: IB lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
+			this->IB_A0_B = IB_A0_B; // net ID: IB lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -48,6 +50,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_IBUFDS_GTHE1_H

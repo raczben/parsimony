@@ -3,33 +3,35 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_CLK_DIV_H
+#define X_CLK_DIV_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_CLK_DIV: public Primitive{
 
 		//Verilog Parameters:
-		parameter_string_t DIVIDE_BY;
-		parameter_string_t DIVIDER_DELAY;
+		parameter_int_t DIVIDE_BY;
+		parameter_int_t DIVIDER_DELAY;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* CLKDV; // net ID: CLKDV lsb: 0  msb: 0 OUTPUT
-		NetFlow* CDRST; // net ID: CDRST lsb: 0  msb: 0 INPUT
-		NetFlow* CLKIN; // net ID: CLKIN lsb: 0  msb: 0 INPUT
+		NetFlow* CLKDV_A0_B; // net ID: CLKDV lsb: 0  msb: 0 OUTPUT
+		NetFlow* CDRST_A0_B; // net ID: CDRST lsb: 0  msb: 0 INPUT
+		NetFlow* CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
 		
-		X_CLK_DIV(
+		public: X_CLK_DIV(
 			const char * name,
 			//Verilog Parameters:
-			parameter_string_t DIVIDE_BY, // Default: 2
-			parameter_string_t DIVIDER_DELAY, // Default: 0
+			parameter_int_t DIVIDE_BY, // Default: 2
+			parameter_int_t DIVIDER_DELAY, // Default: 0
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* CLKDV, // net ID: CLKDV lsb: 0  msb: 0 OUTPUT
-			NetFlow* CDRST, // net ID: CDRST lsb: 0  msb: 0 INPUT
-			NetFlow* CLKIN // net ID: CLKIN lsb: 0  msb: 0 INPUT
+			NetFlow* CLKDV_A0_B, // net ID: CLKDV lsb: 0  msb: 0 OUTPUT
+			NetFlow* CDRST_A0_B, // net ID: CDRST lsb: 0  msb: 0 INPUT
+			NetFlow* CLKIN_A0_B // net ID: CLKIN lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -38,9 +40,9 @@ namespace CPrimitives {
 			this->DIVIDER_DELAY = DIVIDER_DELAY; // Default: 0
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->CLKDV = CLKDV; // net ID: CLKDV lsb: 0  msb: 0 OUTPUT
-			this->CDRST = CDRST; // net ID: CDRST lsb: 0  msb: 0 INPUT
-			this->CLKIN = CLKIN; // net ID: CLKIN lsb: 0  msb: 0 INPUT
+			this->CLKDV_A0_B = CLKDV_A0_B; // net ID: CLKDV lsb: 0  msb: 0 OUTPUT
+			this->CDRST_A0_B = CDRST_A0_B; // net ID: CDRST lsb: 0  msb: 0 INPUT
+			this->CLKIN_A0_B = CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -54,6 +56,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_CLK_DIV_H

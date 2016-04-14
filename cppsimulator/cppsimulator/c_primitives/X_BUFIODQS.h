@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_BUFIODQS_H
+#define X_BUFIODQS_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_BUFIODQS: public Primitive{
@@ -15,19 +17,19 @@ namespace CPrimitives {
 		parameter_enum_t DQSMASK_ENABLE;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* DQSMASK; // net ID: DQSMASK lsb: 0  msb: 0 INPUT
-		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* DQSMASK_A0_B; // net ID: DQSMASK lsb: 0  msb: 0 INPUT
+		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 		
-		X_BUFIODQS(
+		public: X_BUFIODQS(
 			const char * name,
 			//Verilog Parameters:
 			parameter_enum_t DQSMASK_ENABLE, // Default: "FALSE"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* DQSMASK, // net ID: DQSMASK lsb: 0  msb: 0 INPUT
-			NetFlow* I // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* DQSMASK_A0_B, // net ID: DQSMASK lsb: 0  msb: 0 INPUT
+			NetFlow* I_A0_B // net ID: I lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -35,9 +37,9 @@ namespace CPrimitives {
 			this->DQSMASK_ENABLE = DQSMASK_ENABLE; // Default: "FALSE"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->DQSMASK = DQSMASK; // net ID: DQSMASK lsb: 0  msb: 0 INPUT
-			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->DQSMASK_A0_B = DQSMASK_A0_B; // net ID: DQSMASK lsb: 0  msb: 0 INPUT
+			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -51,6 +53,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_BUFIODQS_H

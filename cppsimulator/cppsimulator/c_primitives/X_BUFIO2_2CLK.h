@@ -3,37 +3,39 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_BUFIO2_2CLK_H
+#define X_BUFIO2_2CLK_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_BUFIO2_2CLK: public Primitive{
 
 		//Verilog Parameters:
-		parameter_string_t DIVIDE;
+		parameter_int_t DIVIDE;
 		parameter_enum_t I_INVERT;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* DIVCLK; // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
-		NetFlow* IOCLK; // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
-		NetFlow* SERDESSTROBE; // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
-		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
-		NetFlow* IB; // net ID: IB lsb: 0  msb: 0 INPUT
+		NetFlow* DIVCLK_A0_B; // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
+		NetFlow* IOCLK_A0_B; // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
+		NetFlow* SERDESSTROBE_A0_B; // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
+		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* IB_A0_B; // net ID: IB lsb: 0  msb: 0 INPUT
 		
-		X_BUFIO2_2CLK(
+		public: X_BUFIO2_2CLK(
 			const char * name,
 			//Verilog Parameters:
-			parameter_string_t DIVIDE, // Default: 3
+			parameter_int_t DIVIDE, // Default: 3
 			parameter_enum_t I_INVERT, // Default: "FALSE"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* DIVCLK, // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
-			NetFlow* IOCLK, // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
-			NetFlow* SERDESSTROBE, // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
-			NetFlow* I, // net ID: I lsb: 0  msb: 0 INPUT
-			NetFlow* IB // net ID: IB lsb: 0  msb: 0 INPUT
+			NetFlow* DIVCLK_A0_B, // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
+			NetFlow* IOCLK_A0_B, // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
+			NetFlow* SERDESSTROBE_A0_B, // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
+			NetFlow* I_A0_B, // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* IB_A0_B // net ID: IB lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -42,11 +44,11 @@ namespace CPrimitives {
 			this->I_INVERT = I_INVERT; // Default: "FALSE"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->DIVCLK = DIVCLK; // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
-			this->IOCLK = IOCLK; // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
-			this->SERDESSTROBE = SERDESSTROBE; // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
-			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
-			this->IB = IB; // net ID: IB lsb: 0  msb: 0 INPUT
+			this->DIVCLK_A0_B = DIVCLK_A0_B; // net ID: DIVCLK lsb: 0  msb: 0 OUTPUT
+			this->IOCLK_A0_B = IOCLK_A0_B; // net ID: IOCLK lsb: 0  msb: 0 OUTPUT
+			this->SERDESSTROBE_A0_B = SERDESSTROBE_A0_B; // net ID: SERDESSTROBE lsb: 0  msb: 0 OUTPUT
+			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
+			this->IB_A0_B = IB_A0_B; // net ID: IB lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -60,6 +62,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_BUFIO2_2CLK_H

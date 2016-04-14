@@ -206,7 +206,7 @@ public class Main {
 		for(String filename : simulationFilenames.values()){
 			File source = new File(filename);
 			File target = new File("..\\cppsimulator\\cppsimulator", filename);
-			Logger.writeInfo("Copy from: " + source.toPath() + "  to " + target.toPath());
+			Logger.writeInfo("Copy from: " + source.getAbsolutePath() + "  to " + target.getAbsolutePath());
 			Files.copy(source.toPath(), target.toPath(), StandardCopyOption.REPLACE_EXISTING);
 		}
 		
@@ -219,7 +219,8 @@ public class Main {
 	 */
 	private static void generatePrimitiveIncludeHeader() throws IOException {
 		SourceGenerator srcgen = new SourceGenerator("");
-		
+		srcgen.add("#ifndef PRIMITIVE_INCLUDE_H");
+		srcgen.add("#define PRIMITIVE_INCLUDE_H");
 		
 		File folder = new File("generatedCppTemplates");
 	    for (final File fileEntry : folder.listFiles()) {
@@ -237,6 +238,8 @@ public class Main {
 	    }
 	    
     	srcgen.add("");
+
+		srcgen.add("#endif // PRIMITIVE_INCLUDE_H");
 	    
 	    FileWriter outFile = new FileWriter(new File("generatedCppTemplates\\PrimitiveInclude.h"));
 	    outFile.write(srcgen.toString());

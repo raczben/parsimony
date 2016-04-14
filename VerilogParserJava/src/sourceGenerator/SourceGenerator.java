@@ -127,12 +127,13 @@ public class SourceGenerator {
 					add(node.indentedBlock);
 				}
 			}
+			return;
 		}
 		if(1 == indent){
 			nodes.add(new SourceCodeNode(indentedBlock));
 			return;
 		}
-		throw new Exception("Unsupported indent");
+		throw new Exception("Unsupported indent: " + indent);
 	}
 	
 }

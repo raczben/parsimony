@@ -2,6 +2,7 @@ package main;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,13 +15,14 @@ import verilog.PortDescriptior;
 import verilog.PrimitiveDescriptor;
 
 public class CppTemplateGenerator {
-	PrintStream printStream = null;
+//	PrintStream printStream = null;
 	File directory = null;
+	FileWriter sourceFileWrier;
 	String ln = "\r\n";
 	
-	CppTemplateGenerator(PrintStream printStream_){
-		this.printStream = printStream_;		
-	}
+//	CppTemplateGenerator(PrintStream printStream_){
+//		this.printStream = printStream_;		
+//	}
 	
 
 	CppTemplateGenerator(String directoryPath_){		
@@ -48,42 +50,63 @@ public class CppTemplateGenerator {
 	void generateCTemplate() throws IOException{
 		PrimitiveMapper.loadData();
 
-		if(null != printStream){
+		if(null != sourceFileWrier){
 			insertSourceBegin();
 		}
 		
 		for( PrimitiveDescriptor primitive : PrimitiveMapper.primitiveDEclarationList){
 
+			SourceGenerator srcGen0 = new SourceGenerator();
 			if(null != directory){
 				File cTemplateFile = new File(directory, primitive.getPrimitiveHeaderFilename());
-				printStream = new PrintStream(cTemplateFile);
-				insertSourceBegin();				
+				sourceFileWrier = new FileWriter(cTemplateFile, false); 
+//				printStream = new PrintStream(cTemplateFile);
+//				insertSourceBegin();				
 			}
+			String headerGuardDefine = primitive.getPrimitiveClassType().toUpperCase() + "_H";
+			
+			srcGen0.add("/******************************************************************************");
+			srcGen0.add(" * Generated Cpp template for simulation primitives.");
+			srcGen0.add(" * Author: Benedek Racz");
+			srcGen0.add(" ******************************************************************************/");
+			srcGen0.add("");
+			srcGen0.add("#ifndef " + headerGuardDefine);
+			srcGen0.add("#define " + headerGuardDefine);
+			srcGen0.add("");
+			srcGen0.add("#include \"NetFlow.h\"");
+			srcGen0.add("#include \"sim_types.h\"");
+			srcGen0.add("#include \"Primitive.h\"");
+			
+			srcGen0.add("namespace CPrimitives {");
 				
-			String oneCTemplate = generateOneTemplate(primitive).toString(1);
+			srcGen0.add(generateOneTemplate(primitive));
+
+			srcGen0.add("}");
+			srcGen0.add("#endif // " + headerGuardDefine);
 			
 //			oneCTemplate.replaceAll(regex, replacement)ln, ln+"\t");
 			
-			if(null != printStream){
-				printStream.println(oneCTemplate);
+			if(null != sourceFileWrier){
+				sourceFileWrier.write(srcGen0.toString());
 			}
 			
 			if(null != directory){
-				insertSourceEnd();
-				printStream.close();
-				printStream = null;
+//				insertSourceEnd();
+				sourceFileWrier.close();
+				sourceFileWrier = null;
 			}
 		}
 	}
 
 
 	SourceGenerator  generateOneTemplate(PrimitiveDescriptor primitive){
+		
 		String parameterType = "int";
+		
+		Logger.writeInfo("Generating " + primitive.getPrimitiveClassType() + " ...");
 //		List<String> cTemplate = new ArrayList<String>();
 		
 		SourceGenerator srcGen0 = new SourceGenerator("");
-		
-//		cTemplate.add("");
 		
 		/**
 		 * Define The class
@@ -93,15 +116,16 @@ public class CppTemplateGenerator {
 		/**
 		 * Define fields
 		 */
-
 		SourceGenerator memberGen = new SourceGenerator("//Verilog Parameters:");
 		for(Entry<String, ParameterDescriptior> parameter : primitive.getParameters().entrySet()){
 			parameterType = String.valueOf(parameter.getValue().getType()).toLowerCase();
 			memberGen.add(parameterType + " " + parameter.getKey() + ";");				 
 		}
 		memberGen.add("//Verilog Ports in definition order:");
-		for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
-			memberGen.add("NetFlow* " + port.getKey() + "; // " + port.getValue());				 
+		for(PortDescriptior port : primitive.getPorts().values()){
+			for(String cid : port.getCIdentifierList()){
+				memberGen.add("NetFlow* " + cid + "; // " + port);
+			}				 
 		}
 		
 		memberGen.add("");
@@ -139,6 +163,7 @@ public class CppTemplateGenerator {
 		memberGen.add("");
 		
 		srcGen0.add(memberGen);
+
 		
 		return srcGen0;
 	}
@@ -164,7 +189,7 @@ public class CppTemplateGenerator {
 		/**
 		 * Define the constructor
 		 */
-		constrGen.add("" + primitive.getPrimitiveClassType() + "(");
+		constrGen.add("public: " + primitive.getPrimitiveClassType() + "(");
 		constrGen.add(constrParamGen);
 		constrParamGen.add("const char * name,");
 		constrParamGen.add("//Verilog Parameters:");
@@ -172,15 +197,22 @@ public class CppTemplateGenerator {
 			parameterType = String.valueOf(parameter.getValue().getType()).toLowerCase();
 			constrParamGen.add("" + parameterType + " " + parameter.getKey() + ", // Default: " + parameter.getValue().getDefaultValue());				 
 		}
+		/**
+		 * Parameters of constructor
+		 */
 		constrParamGen.add("//Verilog Ports in definition order:");
 		int i = 0;
-		for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
+		for(PortDescriptior port : primitive.getPorts().values()){
 			 i++;
-			 if(i < primitive.getPorts().size()){
-				 constrParamGen.add("NetFlow* " + port.getKey() + ", // " + port.getValue());
-			 }
-			 else{
-				 constrParamGen.add("NetFlow* " + port.getKey() + " // " + port.getValue());
+			 boolean lastPort = (i == primitive.getPorts().size());
+			 String comma = ",";
+			 int index_cntr = port.getLsb();
+			 for(String cid : port.getCIdentifierList()){
+				 if(lastPort && index_cntr == port.getMsb()){
+					 comma = "";
+				 }
+				 constrParamGen.add("NetFlow* " + cid + comma + " // " + port);
+				 index_cntr++;
 			 }
 		 }
 		constrParamGen.add("):Primitive(name){");
@@ -196,8 +228,10 @@ public class CppTemplateGenerator {
 			 constrParamGen.add("this->" + parameter.getKey() + " = " + parameter.getKey() + "; // Default: " + parameter.getValue().getDefaultValue());				 
 		 }
 		 constrParamGen.add("//Verilog Ports in definition order:");
-		 for(Entry<String, PortDescriptior> port : primitive.getPorts().entrySet()){
-			 constrParamGen.add("this->" + port.getKey() + " = " + port.getKey() + "; // " + port.getValue());				 
+		 for(PortDescriptior port : primitive.getPorts().values()){
+			 for(String cid : port.getCIdentifierList()){
+				 constrParamGen.add("this->" + cid + " = " + cid + "; // " + port);
+			 }
 		 }
 
 		 constrParamGen.add("");
@@ -211,16 +245,23 @@ public class CppTemplateGenerator {
 	}
 	
 	void insertSourceBegin() throws IOException{
-		appendSource("resources/cppTemplateHeaderBegin.txt");
+		//SourceGenerator beginGenerator = new SourceGenerator();
+		
+		
+		//printStream.println(beginGenerator);
+		
+//		appendSource("resources/cppTemplateHeaderBegin.txt");
 	}
 	
 
 	private void insertSourceEnd() throws IOException {
-		appendSource("resources/cppTemplateHeaderEnd.txt");
+//		appendSource("resources/cppTemplateHeaderEnd.txt");
+		
 	}
 	
 	private void appendSource(String path) throws IOException {
-		appendSource(path, printStream);
+//		appendSource(path, sourceFileWrier);
+		
 	}
 
 

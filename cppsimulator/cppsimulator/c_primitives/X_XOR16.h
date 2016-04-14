@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_XOR16_H
+#define X_XOR16_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_XOR16: public Primitive{
@@ -14,69 +16,69 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* I0; // net ID: I0 lsb: 0  msb: 0 INPUT
-		NetFlow* I1; // net ID: I1 lsb: 0  msb: 0 INPUT
-		NetFlow* I2; // net ID: I2 lsb: 0  msb: 0 INPUT
-		NetFlow* I3; // net ID: I3 lsb: 0  msb: 0 INPUT
-		NetFlow* I4; // net ID: I4 lsb: 0  msb: 0 INPUT
-		NetFlow* I5; // net ID: I5 lsb: 0  msb: 0 INPUT
-		NetFlow* I6; // net ID: I6 lsb: 0  msb: 0 INPUT
-		NetFlow* I7; // net ID: I7 lsb: 0  msb: 0 INPUT
-		NetFlow* I8; // net ID: I8 lsb: 0  msb: 0 INPUT
-		NetFlow* I9; // net ID: I9 lsb: 0  msb: 0 INPUT
-		NetFlow* I10; // net ID: I10 lsb: 0  msb: 0 INPUT
-		NetFlow* I11; // net ID: I11 lsb: 0  msb: 0 INPUT
-		NetFlow* I12; // net ID: I12 lsb: 0  msb: 0 INPUT
-		NetFlow* I13; // net ID: I13 lsb: 0  msb: 0 INPUT
-		NetFlow* I14; // net ID: I14 lsb: 0  msb: 0 INPUT
-		NetFlow* I15; // net ID: I15 lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* I0_A0_B; // net ID: I0 lsb: 0  msb: 0 INPUT
+		NetFlow* I1_A0_B; // net ID: I1 lsb: 0  msb: 0 INPUT
+		NetFlow* I2_A0_B; // net ID: I2 lsb: 0  msb: 0 INPUT
+		NetFlow* I3_A0_B; // net ID: I3 lsb: 0  msb: 0 INPUT
+		NetFlow* I4_A0_B; // net ID: I4 lsb: 0  msb: 0 INPUT
+		NetFlow* I5_A0_B; // net ID: I5 lsb: 0  msb: 0 INPUT
+		NetFlow* I6_A0_B; // net ID: I6 lsb: 0  msb: 0 INPUT
+		NetFlow* I7_A0_B; // net ID: I7 lsb: 0  msb: 0 INPUT
+		NetFlow* I8_A0_B; // net ID: I8 lsb: 0  msb: 0 INPUT
+		NetFlow* I9_A0_B; // net ID: I9 lsb: 0  msb: 0 INPUT
+		NetFlow* I10_A0_B; // net ID: I10 lsb: 0  msb: 0 INPUT
+		NetFlow* I11_A0_B; // net ID: I11 lsb: 0  msb: 0 INPUT
+		NetFlow* I12_A0_B; // net ID: I12 lsb: 0  msb: 0 INPUT
+		NetFlow* I13_A0_B; // net ID: I13 lsb: 0  msb: 0 INPUT
+		NetFlow* I14_A0_B; // net ID: I14 lsb: 0  msb: 0 INPUT
+		NetFlow* I15_A0_B; // net ID: I15 lsb: 0  msb: 0 INPUT
 		
-		X_XOR16(
+		public: X_XOR16(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* I0, // net ID: I0 lsb: 0  msb: 0 INPUT
-			NetFlow* I1, // net ID: I1 lsb: 0  msb: 0 INPUT
-			NetFlow* I2, // net ID: I2 lsb: 0  msb: 0 INPUT
-			NetFlow* I3, // net ID: I3 lsb: 0  msb: 0 INPUT
-			NetFlow* I4, // net ID: I4 lsb: 0  msb: 0 INPUT
-			NetFlow* I5, // net ID: I5 lsb: 0  msb: 0 INPUT
-			NetFlow* I6, // net ID: I6 lsb: 0  msb: 0 INPUT
-			NetFlow* I7, // net ID: I7 lsb: 0  msb: 0 INPUT
-			NetFlow* I8, // net ID: I8 lsb: 0  msb: 0 INPUT
-			NetFlow* I9, // net ID: I9 lsb: 0  msb: 0 INPUT
-			NetFlow* I10, // net ID: I10 lsb: 0  msb: 0 INPUT
-			NetFlow* I11, // net ID: I11 lsb: 0  msb: 0 INPUT
-			NetFlow* I12, // net ID: I12 lsb: 0  msb: 0 INPUT
-			NetFlow* I13, // net ID: I13 lsb: 0  msb: 0 INPUT
-			NetFlow* I14, // net ID: I14 lsb: 0  msb: 0 INPUT
-			NetFlow* I15 // net ID: I15 lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* I0_A0_B, // net ID: I0 lsb: 0  msb: 0 INPUT
+			NetFlow* I1_A0_B, // net ID: I1 lsb: 0  msb: 0 INPUT
+			NetFlow* I2_A0_B, // net ID: I2 lsb: 0  msb: 0 INPUT
+			NetFlow* I3_A0_B, // net ID: I3 lsb: 0  msb: 0 INPUT
+			NetFlow* I4_A0_B, // net ID: I4 lsb: 0  msb: 0 INPUT
+			NetFlow* I5_A0_B, // net ID: I5 lsb: 0  msb: 0 INPUT
+			NetFlow* I6_A0_B, // net ID: I6 lsb: 0  msb: 0 INPUT
+			NetFlow* I7_A0_B, // net ID: I7 lsb: 0  msb: 0 INPUT
+			NetFlow* I8_A0_B, // net ID: I8 lsb: 0  msb: 0 INPUT
+			NetFlow* I9_A0_B, // net ID: I9 lsb: 0  msb: 0 INPUT
+			NetFlow* I10_A0_B, // net ID: I10 lsb: 0  msb: 0 INPUT
+			NetFlow* I11_A0_B, // net ID: I11 lsb: 0  msb: 0 INPUT
+			NetFlow* I12_A0_B, // net ID: I12 lsb: 0  msb: 0 INPUT
+			NetFlow* I13_A0_B, // net ID: I13 lsb: 0  msb: 0 INPUT
+			NetFlow* I14_A0_B, // net ID: I14 lsb: 0  msb: 0 INPUT
+			NetFlow* I15_A0_B // net ID: I15 lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->I0 = I0; // net ID: I0 lsb: 0  msb: 0 INPUT
-			this->I1 = I1; // net ID: I1 lsb: 0  msb: 0 INPUT
-			this->I2 = I2; // net ID: I2 lsb: 0  msb: 0 INPUT
-			this->I3 = I3; // net ID: I3 lsb: 0  msb: 0 INPUT
-			this->I4 = I4; // net ID: I4 lsb: 0  msb: 0 INPUT
-			this->I5 = I5; // net ID: I5 lsb: 0  msb: 0 INPUT
-			this->I6 = I6; // net ID: I6 lsb: 0  msb: 0 INPUT
-			this->I7 = I7; // net ID: I7 lsb: 0  msb: 0 INPUT
-			this->I8 = I8; // net ID: I8 lsb: 0  msb: 0 INPUT
-			this->I9 = I9; // net ID: I9 lsb: 0  msb: 0 INPUT
-			this->I10 = I10; // net ID: I10 lsb: 0  msb: 0 INPUT
-			this->I11 = I11; // net ID: I11 lsb: 0  msb: 0 INPUT
-			this->I12 = I12; // net ID: I12 lsb: 0  msb: 0 INPUT
-			this->I13 = I13; // net ID: I13 lsb: 0  msb: 0 INPUT
-			this->I14 = I14; // net ID: I14 lsb: 0  msb: 0 INPUT
-			this->I15 = I15; // net ID: I15 lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->I0_A0_B = I0_A0_B; // net ID: I0 lsb: 0  msb: 0 INPUT
+			this->I1_A0_B = I1_A0_B; // net ID: I1 lsb: 0  msb: 0 INPUT
+			this->I2_A0_B = I2_A0_B; // net ID: I2 lsb: 0  msb: 0 INPUT
+			this->I3_A0_B = I3_A0_B; // net ID: I3 lsb: 0  msb: 0 INPUT
+			this->I4_A0_B = I4_A0_B; // net ID: I4 lsb: 0  msb: 0 INPUT
+			this->I5_A0_B = I5_A0_B; // net ID: I5 lsb: 0  msb: 0 INPUT
+			this->I6_A0_B = I6_A0_B; // net ID: I6 lsb: 0  msb: 0 INPUT
+			this->I7_A0_B = I7_A0_B; // net ID: I7 lsb: 0  msb: 0 INPUT
+			this->I8_A0_B = I8_A0_B; // net ID: I8 lsb: 0  msb: 0 INPUT
+			this->I9_A0_B = I9_A0_B; // net ID: I9 lsb: 0  msb: 0 INPUT
+			this->I10_A0_B = I10_A0_B; // net ID: I10 lsb: 0  msb: 0 INPUT
+			this->I11_A0_B = I11_A0_B; // net ID: I11 lsb: 0  msb: 0 INPUT
+			this->I12_A0_B = I12_A0_B; // net ID: I12 lsb: 0  msb: 0 INPUT
+			this->I13_A0_B = I13_A0_B; // net ID: I13 lsb: 0  msb: 0 INPUT
+			this->I14_A0_B = I14_A0_B; // net ID: I14 lsb: 0  msb: 0 INPUT
+			this->I15_A0_B = I15_A0_B; // net ID: I15 lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -90,6 +92,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_XOR16_H

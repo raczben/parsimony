@@ -36,6 +36,885 @@
     <ClInclude Include="shared.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="c_primitives\bscntrl_iserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\dout_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\fifo_addr_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\fifo_reset_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\fifo_tdpipe_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\FPGA_startup_VIRTEX4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\ice_iserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\iodlyctrl_npre_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\plg_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\rank12d_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\selfheal_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\tout_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\trif_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\txbuffer_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AFIFO36_INTERNAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND2B1L.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AND32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ARAMB36_INTERNAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_AUTOBUF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BPAD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCAN_FPGACORE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCAN_SPARTAN3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCAN_SPARTAN3A.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCAN_SPARTAN6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCAN_VIRTEX4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCAN_VIRTEX5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCAN_VIRTEX6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BSCANE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFG_LB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFGCTRL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFGMUX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFGMUX_1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFHCE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFIO2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFIO2_2CLK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFIO2FB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFIODQS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFMRCE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFPLL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFPLL_MCB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_BUFR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CAPTURE_VIRTEX6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CAPTUREE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CARRY4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CKBUF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CLK_DIV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CLKDLL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_clkdll_maximum_period_check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CLKDLLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_clkdlle_maximum_period_check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CRC32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_CRC64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DCM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DCM_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_adv_clock_divide_by_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_adv_clock_lost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_adv_maximum_period_check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DCM_CLKGEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_clock_divide_by_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_clock_lost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_maximum_period_check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DCM_SP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_sp_clock_divide_by_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_sp_clock_lost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\x_dcm_sp_maximum_period_check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DNA_PORT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DSP48.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DSP48A.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DSP48A1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DSP48E.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_DSP48E1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_EFUSE_USR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_EMAC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FDD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FDDRCPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FDDRRSE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FF_CPLD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FF18_INTERNAL_VLOG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FF36_INTERNAL_VLOG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FIFO16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FIFO18.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FIFO18_36.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FIFO18E1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FIFO36_72_EXP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FIFO36_EXP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FIFO36E1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FRAME_ECC_VIRTEX6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_FRAME_ECCE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GT11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GT11CLK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTHE1_QUAD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTHE2_CHANNEL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTHE2_COMMON.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTP_DUAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTPA1_DUAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTPE2_CHANNEL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTPE2_COMMON.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTX_DUAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTXE1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTXE2_CHANNEL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_GTXE2_COMMON.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUF_DLY_ADJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUF_IBUFDISABLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUF_IBUFDISABLE_TPWRGT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUF_INTERMDISABLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUF_INTERMDISABLE_TPWRGT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_DIFF_OUT_IBUFDISABLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_DLY_ADJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_GTE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_GTHE1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_GTXE1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_IBUFDISABLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_IBUFDISABLE_TPWRGT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_INTERMDISABLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IBUFDS_INTERMDISABLE_TPWRGT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ICAP_SPARTAN6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ICAP_VIRTEX6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ICAPE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IDDR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IDDR_2CLK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IDDR2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IDELAY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IDELAYCTRL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IDELAYE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IDELAYE2_FINEDELAY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IN_FIFO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_INV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IOBUF_DCIEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IOBUFDS_DCIEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IOBUFDS_DIFF_OUT_DCIEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IODELAY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IODELAY2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IODELAYE1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IODRP2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IODRP2_MCB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_IPAD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ISERDES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ISERDES_NODELAY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ISERDES2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ISERDESE1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ISERDESE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_JTAG_SIM_SPARTAN3A.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_JTAG_SIM_SPARTAN6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_JTAG_SIM_VIRTEX4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_JTAG_SIM_VIRTEX5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_JTAG_SIM_VIRTEX6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_JTAG_SIME2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_KEEPER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LATCH.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LATCH_CPLD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LATCHE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT6_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_LUT8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_MCB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_MMCM_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_MMCME2_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_MULT18X18.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_MULT18X18S.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_MULT18X18SIO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_MUX2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OBUF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OBUFDS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OBUFT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OBUFT_DCIEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OBUFTDS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OBUFTDS_DCIEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ODDR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ODDR2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ODELAYE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ODELAYE2_FINEDELAY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ONE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OPAD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR2L.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OR32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OSERDES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OSERDES2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OSERDESE1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OSERDESE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_OUT_FIFO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PCIE_2_0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PCIE_2_1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PCIE_3_0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PCIE_A1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PCIE_INTERNAL_1_1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PHASER_IN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PHASER_IN_PHY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PHASER_OUT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PHASER_OUT_PHY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PHASER_REF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PHY_CONTROL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PLL_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PLLE2_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PMCD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_POST_CRC_INTERNAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PPC405_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PPC440.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PS7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_PU.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAM32M.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAM64M.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB8BWER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB16BWE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB16BWER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB18.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB18E1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB18SDP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB36_EXP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB36E1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMB36SDP_EXP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMD16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMD32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMD64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMD64_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMD128.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMS16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMS32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMS64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMS64_ADV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMS128.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RAMS256.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RB18_INTERNAL_VLOG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_RB36_INTERNAL_VLOG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SFF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SIM_CONFIG_S6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SIM_CONFIG_S6_SERIAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SIM_CONFIG_V5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SIM_CONFIG_V6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SIM_CONFIG_V6_SERIAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SIM_CONFIGE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SPI_ACCESS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SRL16E.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SRLC16E.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SRLC32E.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_FPGACORE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_SPARTAN3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_SPARTAN3A.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_SPARTAN3E.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_SPARTAN6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_VIRTEX4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_VIRTEX5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_VIRTEX6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUP_VIRTEX6_SELF_TIMING.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_STARTUPE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SUH.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SUSPEND_SYNC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_SYSMON.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_TEMAC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_TEMAC_SINGLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_TRI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_UPAD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_USR_ACCESS_VIRTEX6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_USR_ACCESSE2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XADC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_XOR32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\X_ZERO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cppsimulator.cpp">
@@ -51,6 +930,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cppTemplate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="primitiveInstatiation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="netinstatiation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

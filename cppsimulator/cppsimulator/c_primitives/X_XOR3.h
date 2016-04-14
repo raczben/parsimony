@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_XOR3_H
+#define X_XOR3_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_XOR3: public Primitive{
@@ -14,30 +16,30 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* I0; // net ID: I0 lsb: 0  msb: 0 INPUT
-		NetFlow* I1; // net ID: I1 lsb: 0  msb: 0 INPUT
-		NetFlow* I2; // net ID: I2 lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* I0_A0_B; // net ID: I0 lsb: 0  msb: 0 INPUT
+		NetFlow* I1_A0_B; // net ID: I1 lsb: 0  msb: 0 INPUT
+		NetFlow* I2_A0_B; // net ID: I2 lsb: 0  msb: 0 INPUT
 		
-		X_XOR3(
+		public: X_XOR3(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* I0, // net ID: I0 lsb: 0  msb: 0 INPUT
-			NetFlow* I1, // net ID: I1 lsb: 0  msb: 0 INPUT
-			NetFlow* I2 // net ID: I2 lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* I0_A0_B, // net ID: I0 lsb: 0  msb: 0 INPUT
+			NetFlow* I1_A0_B, // net ID: I1 lsb: 0  msb: 0 INPUT
+			NetFlow* I2_A0_B // net ID: I2 lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->I0 = I0; // net ID: I0 lsb: 0  msb: 0 INPUT
-			this->I1 = I1; // net ID: I1 lsb: 0  msb: 0 INPUT
-			this->I2 = I2; // net ID: I2 lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->I0_A0_B = I0_A0_B; // net ID: I0 lsb: 0  msb: 0 INPUT
+			this->I1_A0_B = I1_A0_B; // net ID: I1 lsb: 0  msb: 0 INPUT
+			this->I2_A0_B = I2_A0_B; // net ID: I2 lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -51,6 +53,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_XOR3_H

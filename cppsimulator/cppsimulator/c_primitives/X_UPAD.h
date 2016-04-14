@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_UPAD_H
+#define X_UPAD_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_UPAD: public Primitive{
@@ -14,21 +16,21 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* PAD; // net ID: PAD lsb: 0  msb: 0 INOUT
+		NetFlow* PAD_A0_B; // net ID: PAD lsb: 0  msb: 0 INOUT
 		
-		X_UPAD(
+		public: X_UPAD(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* PAD // net ID: PAD lsb: 0  msb: 0 INOUT
+			NetFlow* PAD_A0_B // net ID: PAD lsb: 0  msb: 0 INOUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->PAD = PAD; // net ID: PAD lsb: 0  msb: 0 INOUT
+			this->PAD_A0_B = PAD_A0_B; // net ID: PAD lsb: 0  msb: 0 INOUT
 			
 			register_wait_on_event_nets();
 			
@@ -42,6 +44,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_UPAD_H

@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_BUFGMUX_H
+#define X_BUFGMUX_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_BUFGMUX: public Primitive{
@@ -15,21 +17,21 @@ namespace CPrimitives {
 		parameter_string_t CLK_SEL_TYPE;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* I0; // net ID: I0 lsb: 0  msb: 0 INPUT
-		NetFlow* I1; // net ID: I1 lsb: 0  msb: 0 INPUT
-		NetFlow* S; // net ID: S lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* I0_A0_B; // net ID: I0 lsb: 0  msb: 0 INPUT
+		NetFlow* I1_A0_B; // net ID: I1 lsb: 0  msb: 0 INPUT
+		NetFlow* S_A0_B; // net ID: S lsb: 0  msb: 0 INPUT
 		
-		X_BUFGMUX(
+		public: X_BUFGMUX(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t CLK_SEL_TYPE, // Default: "SYNC"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* I0, // net ID: I0 lsb: 0  msb: 0 INPUT
-			NetFlow* I1, // net ID: I1 lsb: 0  msb: 0 INPUT
-			NetFlow* S // net ID: S lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* I0_A0_B, // net ID: I0 lsb: 0  msb: 0 INPUT
+			NetFlow* I1_A0_B, // net ID: I1 lsb: 0  msb: 0 INPUT
+			NetFlow* S_A0_B // net ID: S lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -37,10 +39,10 @@ namespace CPrimitives {
 			this->CLK_SEL_TYPE = CLK_SEL_TYPE; // Default: "SYNC"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->I0 = I0; // net ID: I0 lsb: 0  msb: 0 INPUT
-			this->I1 = I1; // net ID: I1 lsb: 0  msb: 0 INPUT
-			this->S = S; // net ID: S lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->I0_A0_B = I0_A0_B; // net ID: I0 lsb: 0  msb: 0 INPUT
+			this->I1_A0_B = I1_A0_B; // net ID: I1 lsb: 0  msb: 0 INPUT
+			this->S_A0_B = S_A0_B; // net ID: S lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -54,6 +56,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_BUFGMUX_H

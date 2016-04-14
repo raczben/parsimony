@@ -5,15 +5,21 @@
 #include "NetFlow.h"
 #include "simulator_base.h"
 #include "SimulatorEngine.h"
+#include "netinstatiation.h"
+#include "Primitive.h"
+#include "shared.h"
 
 /**
 *Global engine of simulation.
 */
 SimulatorEngine engine;
 
+void instance_primitives(SimulatorEngine engine);
+void instance_nets(SimulatorEngine engine);
+
 int main()
 {
-	NetFlow *a, *b;
+	/*NetFlow *a, *b;
 
 	printf("Im started!\n");
 	fflush(stdout);
@@ -41,6 +47,12 @@ int main()
 	b->set_now(new_net_level(HIGH));
 
 	printf("Everythink seems OK! Just one step: Exititng...\n");
+	*/
+
+	instance_primitives(engine);
+
+	instance_nets(engine);
+
 
 	return 0;
 }

@@ -118,6 +118,14 @@ public:
 		  throw "my_array: operator[]: index out of range";
   }
 
+  T get_point(unsigned i)
+  {
+	  if (i<size_)
+		  return *(data_ + i);
+	  else
+		  throw "my_array: operator[]: index out of range";
+  }
+
 
   const T& operator[](unsigned i) const
   {

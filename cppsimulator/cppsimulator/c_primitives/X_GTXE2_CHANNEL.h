@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_GTXE2_CHANNEL_H
+#define X_GTXE2_CHANNEL_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_GTXE2_CHANNEL: public Primitive{
@@ -14,870 +16,1340 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		parameter_enum_t ALIGN_COMMA_DOUBLE;
-		parameter_string_t ALIGN_COMMA_ENABLE;
-		parameter_string_t ALIGN_COMMA_WORD;
+		parameter_int_t ALIGN_COMMA_ENABLE;
+		parameter_int_t ALIGN_COMMA_WORD;
 		parameter_enum_t ALIGN_MCOMMA_DET;
-		parameter_string_t ALIGN_MCOMMA_VALUE;
+		parameter_int_t ALIGN_MCOMMA_VALUE;
 		parameter_enum_t ALIGN_PCOMMA_DET;
-		parameter_string_t ALIGN_PCOMMA_VALUE;
+		parameter_int_t ALIGN_PCOMMA_VALUE;
 		parameter_string_t CBCC_DATA_SOURCE_SEL;
 		parameter_enum_t CHAN_BOND_KEEP_ALIGN;
-		parameter_string_t CHAN_BOND_MAX_SKEW;
-		parameter_string_t CHAN_BOND_SEQ_1_1;
-		parameter_string_t CHAN_BOND_SEQ_1_2;
-		parameter_string_t CHAN_BOND_SEQ_1_3;
-		parameter_string_t CHAN_BOND_SEQ_1_4;
-		parameter_string_t CHAN_BOND_SEQ_1_ENABLE;
-		parameter_string_t CHAN_BOND_SEQ_2_1;
-		parameter_string_t CHAN_BOND_SEQ_2_2;
-		parameter_string_t CHAN_BOND_SEQ_2_3;
-		parameter_string_t CHAN_BOND_SEQ_2_4;
-		parameter_string_t CHAN_BOND_SEQ_2_ENABLE;
+		parameter_int_t CHAN_BOND_MAX_SKEW;
+		parameter_int_t CHAN_BOND_SEQ_1_1;
+		parameter_int_t CHAN_BOND_SEQ_1_2;
+		parameter_int_t CHAN_BOND_SEQ_1_3;
+		parameter_int_t CHAN_BOND_SEQ_1_4;
+		parameter_int_t CHAN_BOND_SEQ_1_ENABLE;
+		parameter_int_t CHAN_BOND_SEQ_2_1;
+		parameter_int_t CHAN_BOND_SEQ_2_2;
+		parameter_int_t CHAN_BOND_SEQ_2_3;
+		parameter_int_t CHAN_BOND_SEQ_2_4;
+		parameter_int_t CHAN_BOND_SEQ_2_ENABLE;
 		parameter_enum_t CHAN_BOND_SEQ_2_USE;
-		parameter_string_t CHAN_BOND_SEQ_LEN;
+		parameter_int_t CHAN_BOND_SEQ_LEN;
 		parameter_enum_t CLK_CORRECT_USE;
 		parameter_enum_t CLK_COR_KEEP_IDLE;
-		parameter_string_t CLK_COR_MAX_LAT;
-		parameter_string_t CLK_COR_MIN_LAT;
+		parameter_int_t CLK_COR_MAX_LAT;
+		parameter_int_t CLK_COR_MIN_LAT;
 		parameter_enum_t CLK_COR_PRECEDENCE;
-		parameter_string_t CLK_COR_REPEAT_WAIT;
-		parameter_string_t CLK_COR_SEQ_1_1;
-		parameter_string_t CLK_COR_SEQ_1_2;
-		parameter_string_t CLK_COR_SEQ_1_3;
-		parameter_string_t CLK_COR_SEQ_1_4;
-		parameter_string_t CLK_COR_SEQ_1_ENABLE;
-		parameter_string_t CLK_COR_SEQ_2_1;
-		parameter_string_t CLK_COR_SEQ_2_2;
-		parameter_string_t CLK_COR_SEQ_2_3;
-		parameter_string_t CLK_COR_SEQ_2_4;
-		parameter_string_t CLK_COR_SEQ_2_ENABLE;
+		parameter_int_t CLK_COR_REPEAT_WAIT;
+		parameter_int_t CLK_COR_SEQ_1_1;
+		parameter_int_t CLK_COR_SEQ_1_2;
+		parameter_int_t CLK_COR_SEQ_1_3;
+		parameter_int_t CLK_COR_SEQ_1_4;
+		parameter_int_t CLK_COR_SEQ_1_ENABLE;
+		parameter_int_t CLK_COR_SEQ_2_1;
+		parameter_int_t CLK_COR_SEQ_2_2;
+		parameter_int_t CLK_COR_SEQ_2_3;
+		parameter_int_t CLK_COR_SEQ_2_4;
+		parameter_int_t CLK_COR_SEQ_2_ENABLE;
 		parameter_enum_t CLK_COR_SEQ_2_USE;
-		parameter_string_t CLK_COR_SEQ_LEN;
-		parameter_string_t CPLL_CFG;
-		parameter_string_t CPLL_FBDIV;
-		parameter_string_t CPLL_FBDIV_45;
-		parameter_string_t CPLL_INIT_CFG;
-		parameter_string_t CPLL_LOCK_CFG;
-		parameter_string_t CPLL_REFCLK_DIV;
+		parameter_int_t CLK_COR_SEQ_LEN;
+		parameter_int_t CPLL_CFG;
+		parameter_int_t CPLL_FBDIV;
+		parameter_int_t CPLL_FBDIV_45;
+		parameter_int_t CPLL_INIT_CFG;
+		parameter_int_t CPLL_LOCK_CFG;
+		parameter_int_t CPLL_REFCLK_DIV;
 		parameter_enum_t DEC_MCOMMA_DETECT;
 		parameter_enum_t DEC_PCOMMA_DETECT;
 		parameter_enum_t DEC_VALID_COMMA_ONLY;
-		parameter_string_t DMONITOR_CFG;
-		parameter_string_t ES_CONTROL;
+		parameter_int_t DMONITOR_CFG;
+		parameter_int_t ES_CONTROL;
 		parameter_enum_t ES_ERRDET_EN;
 		parameter_enum_t ES_EYE_SCAN_EN;
-		parameter_string_t ES_HORZ_OFFSET;
-		parameter_string_t ES_PMA_CFG;
-		parameter_string_t ES_PRESCALE;
-		parameter_string_t ES_QUALIFIER;
-		parameter_string_t ES_QUAL_MASK;
-		parameter_string_t ES_SDATA_MASK;
-		parameter_string_t ES_VERT_OFFSET;
-		parameter_string_t FTS_DESKEW_SEQ_ENABLE;
-		parameter_string_t FTS_LANE_DESKEW_CFG;
+		parameter_int_t ES_HORZ_OFFSET;
+		parameter_int_t ES_PMA_CFG;
+		parameter_int_t ES_PRESCALE;
+		parameter_int_t ES_QUALIFIER;
+		parameter_int_t ES_QUAL_MASK;
+		parameter_int_t ES_SDATA_MASK;
+		parameter_int_t ES_VERT_OFFSET;
+		parameter_int_t FTS_DESKEW_SEQ_ENABLE;
+		parameter_int_t FTS_LANE_DESKEW_CFG;
 		parameter_enum_t FTS_LANE_DESKEW_EN;
-		parameter_string_t GEARBOX_MODE;
-		parameter_string_t OUTREFCLK_SEL_INV;
+		parameter_int_t GEARBOX_MODE;
+		parameter_int_t OUTREFCLK_SEL_INV;
 		parameter_enum_t PCS_PCIE_EN;
-		parameter_string_t PCS_RSVD_ATTR;
-		parameter_string_t PD_TRANS_TIME_FROM_P2;
-		parameter_string_t PD_TRANS_TIME_NONE_P2;
-		parameter_string_t PD_TRANS_TIME_TO_P2;
-		parameter_string_t PMA_RSV;
-		parameter_string_t PMA_RSV2;
-		parameter_string_t PMA_RSV3;
-		parameter_string_t PMA_RSV4;
-		parameter_string_t RXBUFRESET_TIME;
+		parameter_int_t PCS_RSVD_ATTR;
+		parameter_int_t PD_TRANS_TIME_FROM_P2;
+		parameter_int_t PD_TRANS_TIME_NONE_P2;
+		parameter_int_t PD_TRANS_TIME_TO_P2;
+		parameter_int_t PMA_RSV;
+		parameter_int_t PMA_RSV2;
+		parameter_int_t PMA_RSV3;
+		parameter_int_t PMA_RSV4;
+		parameter_int_t RXBUFRESET_TIME;
 		parameter_string_t RXBUF_ADDR_MODE;
-		parameter_string_t RXBUF_EIDLE_HI_CNT;
-		parameter_string_t RXBUF_EIDLE_LO_CNT;
+		parameter_int_t RXBUF_EIDLE_HI_CNT;
+		parameter_int_t RXBUF_EIDLE_LO_CNT;
 		parameter_enum_t RXBUF_EN;
 		parameter_enum_t RXBUF_RESET_ON_CB_CHANGE;
 		parameter_enum_t RXBUF_RESET_ON_COMMAALIGN;
 		parameter_enum_t RXBUF_RESET_ON_EIDLE;
 		parameter_enum_t RXBUF_RESET_ON_RATE_CHANGE;
-		parameter_string_t RXBUF_THRESH_OVFLW;
+		parameter_int_t RXBUF_THRESH_OVFLW;
 		parameter_enum_t RXBUF_THRESH_OVRD;
-		parameter_string_t RXBUF_THRESH_UNDFLW;
-		parameter_string_t RXCDRFREQRESET_TIME;
-		parameter_string_t RXCDRPHRESET_TIME;
-		parameter_string_t RXCDR_CFG;
-		parameter_string_t RXCDR_FR_RESET_ON_EIDLE;
-		parameter_string_t RXCDR_HOLD_DURING_EIDLE;
-		parameter_string_t RXCDR_LOCK_CFG;
-		parameter_string_t RXCDR_PH_RESET_ON_EIDLE;
-		parameter_string_t RXDFELPMRESET_TIME;
-		parameter_string_t RXDLY_CFG;
-		parameter_string_t RXDLY_LCFG;
-		parameter_string_t RXDLY_TAP_CFG;
+		parameter_int_t RXBUF_THRESH_UNDFLW;
+		parameter_int_t RXCDRFREQRESET_TIME;
+		parameter_int_t RXCDRPHRESET_TIME;
+		parameter_int_t RXCDR_CFG;
+		parameter_int_t RXCDR_FR_RESET_ON_EIDLE;
+		parameter_int_t RXCDR_HOLD_DURING_EIDLE;
+		parameter_int_t RXCDR_LOCK_CFG;
+		parameter_int_t RXCDR_PH_RESET_ON_EIDLE;
+		parameter_int_t RXDFELPMRESET_TIME;
+		parameter_int_t RXDLY_CFG;
+		parameter_int_t RXDLY_LCFG;
+		parameter_int_t RXDLY_TAP_CFG;
 		parameter_enum_t RXGEARBOX_EN;
-		parameter_string_t RXISCANRESET_TIME;
-		parameter_string_t RXLPM_HF_CFG;
-		parameter_string_t RXLPM_LF_CFG;
-		parameter_string_t RXOOB_CFG;
-		parameter_string_t RXOUT_DIV;
-		parameter_string_t RXPCSRESET_TIME;
-		parameter_string_t RXPHDLY_CFG;
-		parameter_string_t RXPH_CFG;
-		parameter_string_t RXPH_MONITOR_SEL;
-		parameter_string_t RXPMARESET_TIME;
-		parameter_string_t RXPRBS_ERR_LOOPBACK;
-		parameter_string_t RXSLIDE_AUTO_WAIT;
+		parameter_int_t RXISCANRESET_TIME;
+		parameter_int_t RXLPM_HF_CFG;
+		parameter_int_t RXLPM_LF_CFG;
+		parameter_int_t RXOOB_CFG;
+		parameter_int_t RXOUT_DIV;
+		parameter_int_t RXPCSRESET_TIME;
+		parameter_int_t RXPHDLY_CFG;
+		parameter_int_t RXPH_CFG;
+		parameter_int_t RXPH_MONITOR_SEL;
+		parameter_int_t RXPMARESET_TIME;
+		parameter_int_t RXPRBS_ERR_LOOPBACK;
+		parameter_int_t RXSLIDE_AUTO_WAIT;
 		parameter_string_t RXSLIDE_MODE;
-		parameter_string_t RX_BIAS_CFG;
-		parameter_string_t RX_BUFFER_CFG;
-		parameter_string_t RX_CLK25_DIV;
-		parameter_string_t RX_CLKMUX_PD;
-		parameter_string_t RX_CM_SEL;
-		parameter_string_t RX_CM_TRIM;
-		parameter_string_t RX_DATA_WIDTH;
-		parameter_string_t RX_DDI_SEL;
-		parameter_string_t RX_DEBUG_CFG;
+		parameter_int_t RX_BIAS_CFG;
+		parameter_int_t RX_BUFFER_CFG;
+		parameter_int_t RX_CLK25_DIV;
+		parameter_int_t RX_CLKMUX_PD;
+		parameter_int_t RX_CM_SEL;
+		parameter_int_t RX_CM_TRIM;
+		parameter_int_t RX_DATA_WIDTH;
+		parameter_int_t RX_DDI_SEL;
+		parameter_int_t RX_DEBUG_CFG;
 		parameter_enum_t RX_DEFER_RESET_BUF_EN;
-		parameter_string_t RX_DFE_GAIN_CFG;
-		parameter_string_t RX_DFE_H2_CFG;
-		parameter_string_t RX_DFE_H3_CFG;
-		parameter_string_t RX_DFE_H4_CFG;
-		parameter_string_t RX_DFE_H5_CFG;
-		parameter_string_t RX_DFE_KL_CFG;
-		parameter_string_t RX_DFE_KL_CFG2;
-		parameter_string_t RX_DFE_LPM_CFG;
-		parameter_string_t RX_DFE_LPM_HOLD_DURING_EIDLE;
-		parameter_string_t RX_DFE_UT_CFG;
-		parameter_string_t RX_DFE_VP_CFG;
-		parameter_string_t RX_DFE_XYD_CFG;
+		parameter_int_t RX_DFE_GAIN_CFG;
+		parameter_int_t RX_DFE_H2_CFG;
+		parameter_int_t RX_DFE_H3_CFG;
+		parameter_int_t RX_DFE_H4_CFG;
+		parameter_int_t RX_DFE_H5_CFG;
+		parameter_int_t RX_DFE_KL_CFG;
+		parameter_int_t RX_DFE_KL_CFG2;
+		parameter_int_t RX_DFE_LPM_CFG;
+		parameter_int_t RX_DFE_LPM_HOLD_DURING_EIDLE;
+		parameter_int_t RX_DFE_UT_CFG;
+		parameter_int_t RX_DFE_VP_CFG;
+		parameter_int_t RX_DFE_XYD_CFG;
 		parameter_enum_t RX_DISPERR_SEQ_MATCH;
-		parameter_string_t RX_INT_DATAWIDTH;
-		parameter_string_t RX_OS_CFG;
-		parameter_string_t RX_SIG_VALID_DLY;
+		parameter_int_t RX_INT_DATAWIDTH;
+		parameter_int_t RX_OS_CFG;
+		parameter_int_t RX_SIG_VALID_DLY;
 		parameter_string_t RX_XCLK_SEL;
-		parameter_string_t SAS_MAX_COM;
-		parameter_string_t SAS_MIN_COM;
-		parameter_string_t SATA_BURST_SEQ_LEN;
-		parameter_string_t SATA_BURST_VAL;
+		parameter_int_t SAS_MAX_COM;
+		parameter_int_t SAS_MIN_COM;
+		parameter_int_t SATA_BURST_SEQ_LEN;
+		parameter_int_t SATA_BURST_VAL;
 		parameter_string_t SATA_CPLL_CFG;
-		parameter_string_t SATA_EIDLE_VAL;
-		parameter_string_t SATA_MAX_BURST;
-		parameter_string_t SATA_MAX_INIT;
-		parameter_string_t SATA_MAX_WAKE;
-		parameter_string_t SATA_MIN_BURST;
-		parameter_string_t SATA_MIN_INIT;
-		parameter_string_t SATA_MIN_WAKE;
+		parameter_int_t SATA_EIDLE_VAL;
+		parameter_int_t SATA_MAX_BURST;
+		parameter_int_t SATA_MAX_INIT;
+		parameter_int_t SATA_MAX_WAKE;
+		parameter_int_t SATA_MIN_BURST;
+		parameter_int_t SATA_MIN_INIT;
+		parameter_int_t SATA_MIN_WAKE;
 		parameter_enum_t SHOW_REALIGN_COMMA;
-		parameter_string_t SIM_CPLLREFCLK_SEL;
+		parameter_int_t SIM_CPLLREFCLK_SEL;
 		parameter_enum_t SIM_RECEIVER_DETECT_PASS;
 		parameter_enum_t SIM_RESET_SPEEDUP;
 		parameter_string_t SIM_TX_EIDLE_DRIVE_LEVEL;
 		parameter_string_t SIM_VERSION;
-		parameter_string_t TERM_RCAL_CFG;
-		parameter_string_t TERM_RCAL_OVRD;
-		parameter_string_t TRANS_TIME_RATE;
-		parameter_string_t TST_RSV;
+		parameter_int_t TERM_RCAL_CFG;
+		parameter_int_t TERM_RCAL_OVRD;
+		parameter_int_t TRANS_TIME_RATE;
+		parameter_int_t TST_RSV;
 		parameter_enum_t TXBUF_EN;
 		parameter_enum_t TXBUF_RESET_ON_RATE_CHANGE;
-		parameter_string_t TXDLY_CFG;
-		parameter_string_t TXDLY_LCFG;
-		parameter_string_t TXDLY_TAP_CFG;
+		parameter_int_t TXDLY_CFG;
+		parameter_int_t TXDLY_LCFG;
+		parameter_int_t TXDLY_TAP_CFG;
 		parameter_enum_t TXGEARBOX_EN;
-		parameter_string_t TXOUT_DIV;
-		parameter_string_t TXPCSRESET_TIME;
-		parameter_string_t TXPHDLY_CFG;
-		parameter_string_t TXPH_CFG;
-		parameter_string_t TXPH_MONITOR_SEL;
-		parameter_string_t TXPMARESET_TIME;
-		parameter_string_t TX_CLK25_DIV;
-		parameter_string_t TX_CLKMUX_PD;
-		parameter_string_t TX_DATA_WIDTH;
-		parameter_string_t TX_DEEMPH0;
-		parameter_string_t TX_DEEMPH1;
+		parameter_int_t TXOUT_DIV;
+		parameter_int_t TXPCSRESET_TIME;
+		parameter_int_t TXPHDLY_CFG;
+		parameter_int_t TXPH_CFG;
+		parameter_int_t TXPH_MONITOR_SEL;
+		parameter_int_t TXPMARESET_TIME;
+		parameter_int_t TX_CLK25_DIV;
+		parameter_int_t TX_CLKMUX_PD;
+		parameter_int_t TX_DATA_WIDTH;
+		parameter_int_t TX_DEEMPH0;
+		parameter_int_t TX_DEEMPH1;
 		parameter_string_t TX_DRIVE_MODE;
-		parameter_string_t TX_EIDLE_ASSERT_DELAY;
-		parameter_string_t TX_EIDLE_DEASSERT_DELAY;
-		parameter_string_t TX_INT_DATAWIDTH;
+		parameter_int_t TX_EIDLE_ASSERT_DELAY;
+		parameter_int_t TX_EIDLE_DEASSERT_DELAY;
+		parameter_int_t TX_INT_DATAWIDTH;
 		parameter_enum_t TX_LOOPBACK_DRIVE_HIZ;
-		parameter_string_t TX_MAINCURSOR_SEL;
-		parameter_string_t TX_MARGIN_FULL_0;
-		parameter_string_t TX_MARGIN_FULL_1;
-		parameter_string_t TX_MARGIN_FULL_2;
-		parameter_string_t TX_MARGIN_FULL_3;
-		parameter_string_t TX_MARGIN_FULL_4;
-		parameter_string_t TX_MARGIN_LOW_0;
-		parameter_string_t TX_MARGIN_LOW_1;
-		parameter_string_t TX_MARGIN_LOW_2;
-		parameter_string_t TX_MARGIN_LOW_3;
-		parameter_string_t TX_MARGIN_LOW_4;
-		parameter_string_t TX_PREDRIVER_MODE;
-		parameter_string_t TX_QPI_STATUS_EN;
-		parameter_string_t TX_RXDETECT_CFG;
-		parameter_string_t TX_RXDETECT_REF;
+		parameter_int_t TX_MAINCURSOR_SEL;
+		parameter_int_t TX_MARGIN_FULL_0;
+		parameter_int_t TX_MARGIN_FULL_1;
+		parameter_int_t TX_MARGIN_FULL_2;
+		parameter_int_t TX_MARGIN_FULL_3;
+		parameter_int_t TX_MARGIN_FULL_4;
+		parameter_int_t TX_MARGIN_LOW_0;
+		parameter_int_t TX_MARGIN_LOW_1;
+		parameter_int_t TX_MARGIN_LOW_2;
+		parameter_int_t TX_MARGIN_LOW_3;
+		parameter_int_t TX_MARGIN_LOW_4;
+		parameter_int_t TX_PREDRIVER_MODE;
+		parameter_int_t TX_QPI_STATUS_EN;
+		parameter_int_t TX_RXDETECT_CFG;
+		parameter_int_t TX_RXDETECT_REF;
 		parameter_string_t TX_XCLK_SEL;
-		parameter_string_t UCODEER_CLR;
+		parameter_int_t UCODEER_CLR;
 		//Verilog Ports in definition order:
-		NetFlow* CPLLFBCLKLOST; // net ID: CPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
-		NetFlow* CPLLLOCK; // net ID: CPLLLOCK lsb: 0  msb: 0 OUTPUT
-		NetFlow* CPLLREFCLKLOST; // net ID: CPLLREFCLKLOST lsb: 0  msb: 0 OUTPUT
-		NetFlow* DMONITOROUT; // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* DRPDO; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DRPRDY; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
-		NetFlow* EYESCANDATAERROR; // net ID: EYESCANDATAERROR lsb: 0  msb: 0 OUTPUT
-		NetFlow* GTREFCLKMONITOR; // net ID: GTREFCLKMONITOR lsb: 0  msb: 0 OUTPUT
-		NetFlow* GTXTXN; // net ID: GTXTXN lsb: 0  msb: 0 OUTPUT
-		NetFlow* GTXTXP; // net ID: GTXTXP lsb: 0  msb: 0 OUTPUT
-		NetFlow* PCSRSVDOUT; // net ID: PCSRSVDOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* PHYSTATUS; // net ID: PHYSTATUS lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXBUFSTATUS; // net ID: RXBUFSTATUS lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXBYTEISALIGNED; // net ID: RXBYTEISALIGNED lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXBYTEREALIGN; // net ID: RXBYTEREALIGN lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCDRLOCK; // net ID: RXCDRLOCK lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHANBONDSEQ; // net ID: RXCHANBONDSEQ lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHANISALIGNED; // net ID: RXCHANISALIGNED lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHANREALIGN; // net ID: RXCHANREALIGN lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHARISCOMMA; // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHARISK; // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHBONDO; // net ID: RXCHBONDO lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCLKCORCNT; // net ID: RXCLKCORCNT lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCOMINITDET; // net ID: RXCOMINITDET lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCOMMADET; // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCOMSASDET; // net ID: RXCOMSASDET lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCOMWAKEDET; // net ID: RXCOMWAKEDET lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXDATA; // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXDATAVALID; // net ID: RXDATAVALID lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXDISPERR; // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXDLYSRESETDONE; // net ID: RXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXELECIDLE; // net ID: RXELECIDLE lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXHEADER; // net ID: RXHEADER lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXHEADERVALID; // net ID: RXHEADERVALID lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXMONITOROUT; // net ID: RXMONITOROUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXNOTINTABLE; // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXOUTCLK; // net ID: RXOUTCLK lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXOUTCLKFABRIC; // net ID: RXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXOUTCLKPCS; // net ID: RXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXPHALIGNDONE; // net ID: RXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXPHMONITOR; // net ID: RXPHMONITOR lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXPHSLIPMONITOR; // net ID: RXPHSLIPMONITOR lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXPRBSERR; // net ID: RXPRBSERR lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXQPISENN; // net ID: RXQPISENN lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXQPISENP; // net ID: RXQPISENP lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXRATEDONE; // net ID: RXRATEDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXRESETDONE; // net ID: RXRESETDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXSTARTOFSEQ; // net ID: RXSTARTOFSEQ lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXSTATUS; // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXVALID; // net ID: RXVALID lsb: 0  msb: 0 OUTPUT
-		NetFlow* TSTOUT; // net ID: TSTOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXBUFSTATUS; // net ID: TXBUFSTATUS lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXCOMFINISH; // net ID: TXCOMFINISH lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXDLYSRESETDONE; // net ID: TXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXGEARBOXREADY; // net ID: TXGEARBOXREADY lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXOUTCLK; // net ID: TXOUTCLK lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXOUTCLKFABRIC; // net ID: TXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXOUTCLKPCS; // net ID: TXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXPHALIGNDONE; // net ID: TXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXPHINITDONE; // net ID: TXPHINITDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXQPISENN; // net ID: TXQPISENN lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXQPISENP; // net ID: TXQPISENP lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXRATEDONE; // net ID: TXRATEDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXRESETDONE; // net ID: TXRESETDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGRESET; // net ID: CFGRESET lsb: 0  msb: 0 INPUT
-		NetFlow* CLKRSVD; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
-		NetFlow* CPLLLOCKDETCLK; // net ID: CPLLLOCKDETCLK lsb: 0  msb: 0 INPUT
-		NetFlow* CPLLLOCKEN; // net ID: CPLLLOCKEN lsb: 0  msb: 0 INPUT
-		NetFlow* CPLLPD; // net ID: CPLLPD lsb: 0  msb: 0 INPUT
-		NetFlow* CPLLREFCLKSEL; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
-		NetFlow* CPLLRESET; // net ID: CPLLRESET lsb: 0  msb: 0 INPUT
-		NetFlow* DRPADDR; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
-		NetFlow* DRPCLK; // net ID: DRPCLK lsb: 0  msb: 0 INPUT
-		NetFlow* DRPDI; // net ID: DRPDI lsb: 0  msb: 15 INPUT
-		NetFlow* DRPEN; // net ID: DRPEN lsb: 0  msb: 0 INPUT
-		NetFlow* DRPWE; // net ID: DRPWE lsb: 0  msb: 0 INPUT
-		NetFlow* EYESCANMODE; // net ID: EYESCANMODE lsb: 0  msb: 0 INPUT
-		NetFlow* EYESCANRESET; // net ID: EYESCANRESET lsb: 0  msb: 0 INPUT
-		NetFlow* EYESCANTRIGGER; // net ID: EYESCANTRIGGER lsb: 0  msb: 0 INPUT
-		NetFlow* GTGREFCLK; // net ID: GTGREFCLK lsb: 0  msb: 0 INPUT
-		NetFlow* GTNORTHREFCLK0; // net ID: GTNORTHREFCLK0 lsb: 0  msb: 0 INPUT
-		NetFlow* GTNORTHREFCLK1; // net ID: GTNORTHREFCLK1 lsb: 0  msb: 0 INPUT
-		NetFlow* GTREFCLK0; // net ID: GTREFCLK0 lsb: 0  msb: 0 INPUT
-		NetFlow* GTREFCLK1; // net ID: GTREFCLK1 lsb: 0  msb: 0 INPUT
-		NetFlow* GTRESETSEL; // net ID: GTRESETSEL lsb: 0  msb: 0 INPUT
-		NetFlow* GTRSVD; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
-		NetFlow* GTRXRESET; // net ID: GTRXRESET lsb: 0  msb: 0 INPUT
-		NetFlow* GTSOUTHREFCLK0; // net ID: GTSOUTHREFCLK0 lsb: 0  msb: 0 INPUT
-		NetFlow* GTSOUTHREFCLK1; // net ID: GTSOUTHREFCLK1 lsb: 0  msb: 0 INPUT
-		NetFlow* GTTXRESET; // net ID: GTTXRESET lsb: 0  msb: 0 INPUT
-		NetFlow* GTXRXN; // net ID: GTXRXN lsb: 0  msb: 0 INPUT
-		NetFlow* GTXRXP; // net ID: GTXRXP lsb: 0  msb: 0 INPUT
-		NetFlow* LOOPBACK; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
-		NetFlow* PCSRSVDIN; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
-		NetFlow* PCSRSVDIN2; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
-		NetFlow* PMARSVDIN; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
-		NetFlow* PMARSVDIN2; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
-		NetFlow* QPLLCLK; // net ID: QPLLCLK lsb: 0  msb: 0 INPUT
-		NetFlow* QPLLREFCLK; // net ID: QPLLREFCLK lsb: 0  msb: 0 INPUT
-		NetFlow* RESETOVRD; // net ID: RESETOVRD lsb: 0  msb: 0 INPUT
-		NetFlow* RX8B10BEN; // net ID: RX8B10BEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXBUFRESET; // net ID: RXBUFRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXCDRFREQRESET; // net ID: RXCDRFREQRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXCDRHOLD; // net ID: RXCDRHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXCDROVRDEN; // net ID: RXCDROVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXCDRRESET; // net ID: RXCDRRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXCDRRESETRSV; // net ID: RXCDRRESETRSV lsb: 0  msb: 0 INPUT
-		NetFlow* RXCHBONDEN; // net ID: RXCHBONDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXCHBONDI; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
-		NetFlow* RXCHBONDLEVEL; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
-		NetFlow* RXCHBONDMASTER; // net ID: RXCHBONDMASTER lsb: 0  msb: 0 INPUT
-		NetFlow* RXCHBONDSLAVE; // net ID: RXCHBONDSLAVE lsb: 0  msb: 0 INPUT
-		NetFlow* RXCOMMADETEN; // net ID: RXCOMMADETEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDDIEN; // net ID: RXDDIEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEAGCHOLD; // net ID: RXDFEAGCHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEAGCOVRDEN; // net ID: RXDFEAGCOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFECM1EN; // net ID: RXDFECM1EN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFELFHOLD; // net ID: RXDFELFHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFELFOVRDEN; // net ID: RXDFELFOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFELPMRESET; // net ID: RXDFELPMRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP2HOLD; // net ID: RXDFETAP2HOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP2OVRDEN; // net ID: RXDFETAP2OVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP3HOLD; // net ID: RXDFETAP3HOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP3OVRDEN; // net ID: RXDFETAP3OVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP4HOLD; // net ID: RXDFETAP4HOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP4OVRDEN; // net ID: RXDFETAP4OVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP5HOLD; // net ID: RXDFETAP5HOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFETAP5OVRDEN; // net ID: RXDFETAP5OVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEUTHOLD; // net ID: RXDFEUTHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEUTOVRDEN; // net ID: RXDFEUTOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEVPHOLD; // net ID: RXDFEVPHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEVPOVRDEN; // net ID: RXDFEVPOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEVSEN; // net ID: RXDFEVSEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEXYDEN; // net ID: RXDFEXYDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEXYDHOLD; // net ID: RXDFEXYDHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXDFEXYDOVRDEN; // net ID: RXDFEXYDOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDLYBYPASS; // net ID: RXDLYBYPASS lsb: 0  msb: 0 INPUT
-		NetFlow* RXDLYEN; // net ID: RXDLYEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDLYOVRDEN; // net ID: RXDLYOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXDLYSRESET; // net ID: RXDLYSRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXELECIDLEMODE; // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
-		NetFlow* RXGEARBOXSLIP; // net ID: RXGEARBOXSLIP lsb: 0  msb: 0 INPUT
-		NetFlow* RXLPMEN; // net ID: RXLPMEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXLPMHFHOLD; // net ID: RXLPMHFHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXLPMHFOVRDEN; // net ID: RXLPMHFOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXLPMLFHOLD; // net ID: RXLPMLFHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXLPMLFKLOVRDEN; // net ID: RXLPMLFKLOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXMCOMMAALIGNEN; // net ID: RXMCOMMAALIGNEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXMONITORSEL; // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
-		NetFlow* RXOOBRESET; // net ID: RXOOBRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXOSHOLD; // net ID: RXOSHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* RXOSOVRDEN; // net ID: RXOSOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXOUTCLKSEL; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
-		NetFlow* RXPCOMMAALIGNEN; // net ID: RXPCOMMAALIGNEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXPCSRESET; // net ID: RXPCSRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXPD; // net ID: RXPD lsb: 0  msb: 1 INPUT
-		NetFlow* RXPHALIGN; // net ID: RXPHALIGN lsb: 0  msb: 0 INPUT
-		NetFlow* RXPHALIGNEN; // net ID: RXPHALIGNEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXPHDLYPD; // net ID: RXPHDLYPD lsb: 0  msb: 0 INPUT
-		NetFlow* RXPHDLYRESET; // net ID: RXPHDLYRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXPHOVRDEN; // net ID: RXPHOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXPMARESET; // net ID: RXPMARESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXPOLARITY; // net ID: RXPOLARITY lsb: 0  msb: 0 INPUT
-		NetFlow* RXPRBSCNTRESET; // net ID: RXPRBSCNTRESET lsb: 0  msb: 0 INPUT
-		NetFlow* RXPRBSSEL; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
-		NetFlow* RXQPIEN; // net ID: RXQPIEN lsb: 0  msb: 0 INPUT
-		NetFlow* RXRATE; // net ID: RXRATE lsb: 0  msb: 2 INPUT
-		NetFlow* RXSLIDE; // net ID: RXSLIDE lsb: 0  msb: 0 INPUT
-		NetFlow* RXSYSCLKSEL; // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
-		NetFlow* RXUSERRDY; // net ID: RXUSERRDY lsb: 0  msb: 0 INPUT
-		NetFlow* RXUSRCLK; // net ID: RXUSRCLK lsb: 0  msb: 0 INPUT
-		NetFlow* RXUSRCLK2; // net ID: RXUSRCLK2 lsb: 0  msb: 0 INPUT
-		NetFlow* SETERRSTATUS; // net ID: SETERRSTATUS lsb: 0  msb: 0 INPUT
-		NetFlow* TSTIN; // net ID: TSTIN lsb: 0  msb: 19 INPUT
-		NetFlow* TX8B10BBYPASS; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
-		NetFlow* TX8B10BEN; // net ID: TX8B10BEN lsb: 0  msb: 0 INPUT
-		NetFlow* TXBUFDIFFCTRL; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
-		NetFlow* TXCHARDISPMODE; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
-		NetFlow* TXCHARDISPVAL; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
-		NetFlow* TXCHARISK; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
-		NetFlow* TXCOMINIT; // net ID: TXCOMINIT lsb: 0  msb: 0 INPUT
-		NetFlow* TXCOMSAS; // net ID: TXCOMSAS lsb: 0  msb: 0 INPUT
-		NetFlow* TXCOMWAKE; // net ID: TXCOMWAKE lsb: 0  msb: 0 INPUT
-		NetFlow* TXDATA; // net ID: TXDATA lsb: 0  msb: 63 INPUT
-		NetFlow* TXDEEMPH; // net ID: TXDEEMPH lsb: 0  msb: 0 INPUT
-		NetFlow* TXDETECTRX; // net ID: TXDETECTRX lsb: 0  msb: 0 INPUT
-		NetFlow* TXDIFFCTRL; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
-		NetFlow* TXDIFFPD; // net ID: TXDIFFPD lsb: 0  msb: 0 INPUT
-		NetFlow* TXDLYBYPASS; // net ID: TXDLYBYPASS lsb: 0  msb: 0 INPUT
-		NetFlow* TXDLYEN; // net ID: TXDLYEN lsb: 0  msb: 0 INPUT
-		NetFlow* TXDLYHOLD; // net ID: TXDLYHOLD lsb: 0  msb: 0 INPUT
-		NetFlow* TXDLYOVRDEN; // net ID: TXDLYOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* TXDLYSRESET; // net ID: TXDLYSRESET lsb: 0  msb: 0 INPUT
-		NetFlow* TXDLYUPDOWN; // net ID: TXDLYUPDOWN lsb: 0  msb: 0 INPUT
-		NetFlow* TXELECIDLE; // net ID: TXELECIDLE lsb: 0  msb: 0 INPUT
-		NetFlow* TXHEADER; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
-		NetFlow* TXINHIBIT; // net ID: TXINHIBIT lsb: 0  msb: 0 INPUT
-		NetFlow* TXMAINCURSOR; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
-		NetFlow* TXMARGIN; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
-		NetFlow* TXOUTCLKSEL; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
-		NetFlow* TXPCSRESET; // net ID: TXPCSRESET lsb: 0  msb: 0 INPUT
-		NetFlow* TXPD; // net ID: TXPD lsb: 0  msb: 1 INPUT
-		NetFlow* TXPDELECIDLEMODE; // net ID: TXPDELECIDLEMODE lsb: 0  msb: 0 INPUT
-		NetFlow* TXPHALIGN; // net ID: TXPHALIGN lsb: 0  msb: 0 INPUT
-		NetFlow* TXPHALIGNEN; // net ID: TXPHALIGNEN lsb: 0  msb: 0 INPUT
-		NetFlow* TXPHDLYPD; // net ID: TXPHDLYPD lsb: 0  msb: 0 INPUT
-		NetFlow* TXPHDLYRESET; // net ID: TXPHDLYRESET lsb: 0  msb: 0 INPUT
-		NetFlow* TXPHDLYTSTCLK; // net ID: TXPHDLYTSTCLK lsb: 0  msb: 0 INPUT
-		NetFlow* TXPHINIT; // net ID: TXPHINIT lsb: 0  msb: 0 INPUT
-		NetFlow* TXPHOVRDEN; // net ID: TXPHOVRDEN lsb: 0  msb: 0 INPUT
-		NetFlow* TXPISOPD; // net ID: TXPISOPD lsb: 0  msb: 0 INPUT
-		NetFlow* TXPMARESET; // net ID: TXPMARESET lsb: 0  msb: 0 INPUT
-		NetFlow* TXPOLARITY; // net ID: TXPOLARITY lsb: 0  msb: 0 INPUT
-		NetFlow* TXPOSTCURSOR; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
-		NetFlow* TXPOSTCURSORINV; // net ID: TXPOSTCURSORINV lsb: 0  msb: 0 INPUT
-		NetFlow* TXPRBSFORCEERR; // net ID: TXPRBSFORCEERR lsb: 0  msb: 0 INPUT
-		NetFlow* TXPRBSSEL; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
-		NetFlow* TXPRECURSOR; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
-		NetFlow* TXPRECURSORINV; // net ID: TXPRECURSORINV lsb: 0  msb: 0 INPUT
-		NetFlow* TXQPIBIASEN; // net ID: TXQPIBIASEN lsb: 0  msb: 0 INPUT
-		NetFlow* TXQPISTRONGPDOWN; // net ID: TXQPISTRONGPDOWN lsb: 0  msb: 0 INPUT
-		NetFlow* TXQPIWEAKPUP; // net ID: TXQPIWEAKPUP lsb: 0  msb: 0 INPUT
-		NetFlow* TXRATE; // net ID: TXRATE lsb: 0  msb: 2 INPUT
-		NetFlow* TXSEQUENCE; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
-		NetFlow* TXSTARTSEQ; // net ID: TXSTARTSEQ lsb: 0  msb: 0 INPUT
-		NetFlow* TXSWING; // net ID: TXSWING lsb: 0  msb: 0 INPUT
-		NetFlow* TXSYSCLKSEL; // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
-		NetFlow* TXUSERRDY; // net ID: TXUSERRDY lsb: 0  msb: 0 INPUT
-		NetFlow* TXUSRCLK; // net ID: TXUSRCLK lsb: 0  msb: 0 INPUT
-		NetFlow* TXUSRCLK2; // net ID: TXUSRCLK2 lsb: 0  msb: 0 INPUT
+		NetFlow* CPLLFBCLKLOST_A0_B; // net ID: CPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
+		NetFlow* CPLLLOCK_A0_B; // net ID: CPLLLOCK lsb: 0  msb: 0 OUTPUT
+		NetFlow* CPLLREFCLKLOST_A0_B; // net ID: CPLLREFCLKLOST lsb: 0  msb: 0 OUTPUT
+		NetFlow* DMONITOROUT_A0_B; // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+		NetFlow* DRPRDY_A0_B; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
+		NetFlow* EYESCANDATAERROR_A0_B; // net ID: EYESCANDATAERROR lsb: 0  msb: 0 OUTPUT
+		NetFlow* GTREFCLKMONITOR_A0_B; // net ID: GTREFCLKMONITOR lsb: 0  msb: 0 OUTPUT
+		NetFlow* GTXTXN_A0_B; // net ID: GTXTXN lsb: 0  msb: 0 OUTPUT
+		NetFlow* GTXTXP_A0_B; // net ID: GTXTXP lsb: 0  msb: 0 OUTPUT
+		NetFlow* PCSRSVDOUT_A0_B; // net ID: PCSRSVDOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* PHYSTATUS_A0_B; // net ID: PHYSTATUS lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXBUFSTATUS_A0_B; // net ID: RXBUFSTATUS lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXBYTEISALIGNED_A0_B; // net ID: RXBYTEISALIGNED lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXBYTEREALIGN_A0_B; // net ID: RXBYTEREALIGN lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCDRLOCK_A0_B; // net ID: RXCDRLOCK lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCHANBONDSEQ_A0_B; // net ID: RXCHANBONDSEQ lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCHANISALIGNED_A0_B; // net ID: RXCHANISALIGNED lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCHANREALIGN_A0_B; // net ID: RXCHANREALIGN lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCHARISCOMMA_A0_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCHARISK_A0_B; // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCHBONDO_A0_B; // net ID: RXCHBONDO lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCLKCORCNT_A0_B; // net ID: RXCLKCORCNT lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCOMINITDET_A0_B; // net ID: RXCOMINITDET lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCOMMADET_A0_B; // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCOMSASDET_A0_B; // net ID: RXCOMSASDET lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCOMWAKEDET_A0_B; // net ID: RXCOMWAKEDET lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXDATA_A0_B; // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXDATAVALID_A0_B; // net ID: RXDATAVALID lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXDISPERR_A0_B; // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXDLYSRESETDONE_A0_B; // net ID: RXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXELECIDLE_A0_B; // net ID: RXELECIDLE lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXHEADER_A0_B; // net ID: RXHEADER lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXHEADERVALID_A0_B; // net ID: RXHEADERVALID lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXMONITOROUT_A0_B; // net ID: RXMONITOROUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXNOTINTABLE_A0_B; // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXOUTCLK_A0_B; // net ID: RXOUTCLK lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXOUTCLKFABRIC_A0_B; // net ID: RXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXOUTCLKPCS_A0_B; // net ID: RXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXPHALIGNDONE_A0_B; // net ID: RXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXPHMONITOR_A0_B; // net ID: RXPHMONITOR lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXPHSLIPMONITOR_A0_B; // net ID: RXPHSLIPMONITOR lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXPRBSERR_A0_B; // net ID: RXPRBSERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXQPISENN_A0_B; // net ID: RXQPISENN lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXQPISENP_A0_B; // net ID: RXQPISENP lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXRATEDONE_A0_B; // net ID: RXRATEDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXRESETDONE_A0_B; // net ID: RXRESETDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXSTARTOFSEQ_A0_B; // net ID: RXSTARTOFSEQ lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXSTATUS_A0_B; // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXVALID_A0_B; // net ID: RXVALID lsb: 0  msb: 0 OUTPUT
+		NetFlow* TSTOUT_A0_B; // net ID: TSTOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXBUFSTATUS_A0_B; // net ID: TXBUFSTATUS lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXCOMFINISH_A0_B; // net ID: TXCOMFINISH lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXDLYSRESETDONE_A0_B; // net ID: TXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXGEARBOXREADY_A0_B; // net ID: TXGEARBOXREADY lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXOUTCLK_A0_B; // net ID: TXOUTCLK lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXOUTCLKFABRIC_A0_B; // net ID: TXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXOUTCLKPCS_A0_B; // net ID: TXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXPHALIGNDONE_A0_B; // net ID: TXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXPHINITDONE_A0_B; // net ID: TXPHINITDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXQPISENN_A0_B; // net ID: TXQPISENN lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXQPISENP_A0_B; // net ID: TXQPISENP lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXRATEDONE_A0_B; // net ID: TXRATEDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXRESETDONE_A0_B; // net ID: TXRESETDONE lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGRESET_A0_B; // net ID: CFGRESET lsb: 0  msb: 0 INPUT
+		NetFlow* CLKRSVD_A0_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+		NetFlow* CLKRSVD_A1_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+		NetFlow* CLKRSVD_A2_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+		NetFlow* CLKRSVD_A3_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+		NetFlow* CPLLLOCKDETCLK_A0_B; // net ID: CPLLLOCKDETCLK lsb: 0  msb: 0 INPUT
+		NetFlow* CPLLLOCKEN_A0_B; // net ID: CPLLLOCKEN lsb: 0  msb: 0 INPUT
+		NetFlow* CPLLPD_A0_B; // net ID: CPLLPD lsb: 0  msb: 0 INPUT
+		NetFlow* CPLLREFCLKSEL_A0_B; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* CPLLREFCLKSEL_A1_B; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* CPLLREFCLKSEL_A2_B; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* CPLLRESET_A0_B; // net ID: CPLLRESET lsb: 0  msb: 0 INPUT
+		NetFlow* DRPADDR_A0_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A1_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A2_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A3_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A4_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A5_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A6_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A7_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPADDR_A8_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+		NetFlow* DRPCLK_A0_B; // net ID: DRPCLK lsb: 0  msb: 0 INPUT
+		NetFlow* DRPDI_A0_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A1_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A2_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A3_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A4_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A5_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A6_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A7_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A8_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A9_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A10_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A11_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A12_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A13_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A14_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPDI_A15_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+		NetFlow* DRPEN_A0_B; // net ID: DRPEN lsb: 0  msb: 0 INPUT
+		NetFlow* DRPWE_A0_B; // net ID: DRPWE lsb: 0  msb: 0 INPUT
+		NetFlow* EYESCANMODE_A0_B; // net ID: EYESCANMODE lsb: 0  msb: 0 INPUT
+		NetFlow* EYESCANRESET_A0_B; // net ID: EYESCANRESET lsb: 0  msb: 0 INPUT
+		NetFlow* EYESCANTRIGGER_A0_B; // net ID: EYESCANTRIGGER lsb: 0  msb: 0 INPUT
+		NetFlow* GTGREFCLK_A0_B; // net ID: GTGREFCLK lsb: 0  msb: 0 INPUT
+		NetFlow* GTNORTHREFCLK0_A0_B; // net ID: GTNORTHREFCLK0 lsb: 0  msb: 0 INPUT
+		NetFlow* GTNORTHREFCLK1_A0_B; // net ID: GTNORTHREFCLK1 lsb: 0  msb: 0 INPUT
+		NetFlow* GTREFCLK0_A0_B; // net ID: GTREFCLK0 lsb: 0  msb: 0 INPUT
+		NetFlow* GTREFCLK1_A0_B; // net ID: GTREFCLK1 lsb: 0  msb: 0 INPUT
+		NetFlow* GTRESETSEL_A0_B; // net ID: GTRESETSEL lsb: 0  msb: 0 INPUT
+		NetFlow* GTRSVD_A0_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A1_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A2_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A3_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A4_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A5_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A6_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A7_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A8_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A9_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A10_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A11_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A12_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A13_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A14_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRSVD_A15_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+		NetFlow* GTRXRESET_A0_B; // net ID: GTRXRESET lsb: 0  msb: 0 INPUT
+		NetFlow* GTSOUTHREFCLK0_A0_B; // net ID: GTSOUTHREFCLK0 lsb: 0  msb: 0 INPUT
+		NetFlow* GTSOUTHREFCLK1_A0_B; // net ID: GTSOUTHREFCLK1 lsb: 0  msb: 0 INPUT
+		NetFlow* GTTXRESET_A0_B; // net ID: GTTXRESET lsb: 0  msb: 0 INPUT
+		NetFlow* GTXRXN_A0_B; // net ID: GTXRXN lsb: 0  msb: 0 INPUT
+		NetFlow* GTXRXP_A0_B; // net ID: GTXRXP lsb: 0  msb: 0 INPUT
+		NetFlow* LOOPBACK_A0_B; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+		NetFlow* LOOPBACK_A1_B; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+		NetFlow* LOOPBACK_A2_B; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+		NetFlow* PCSRSVDIN_A0_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A1_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A2_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A3_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A4_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A5_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A6_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A7_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A8_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A9_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A10_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A11_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A12_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A13_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A14_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN_A15_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+		NetFlow* PCSRSVDIN2_A0_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PCSRSVDIN2_A1_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PCSRSVDIN2_A2_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PCSRSVDIN2_A3_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PCSRSVDIN2_A4_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN_A0_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN_A1_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN_A2_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN_A3_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN_A4_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN2_A0_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN2_A1_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN2_A2_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN2_A3_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* PMARSVDIN2_A4_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+		NetFlow* QPLLCLK_A0_B; // net ID: QPLLCLK lsb: 0  msb: 0 INPUT
+		NetFlow* QPLLREFCLK_A0_B; // net ID: QPLLREFCLK lsb: 0  msb: 0 INPUT
+		NetFlow* RESETOVRD_A0_B; // net ID: RESETOVRD lsb: 0  msb: 0 INPUT
+		NetFlow* RX8B10BEN_A0_B; // net ID: RX8B10BEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXBUFRESET_A0_B; // net ID: RXBUFRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXCDRFREQRESET_A0_B; // net ID: RXCDRFREQRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXCDRHOLD_A0_B; // net ID: RXCDRHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXCDROVRDEN_A0_B; // net ID: RXCDROVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXCDRRESET_A0_B; // net ID: RXCDRRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXCDRRESETRSV_A0_B; // net ID: RXCDRRESETRSV lsb: 0  msb: 0 INPUT
+		NetFlow* RXCHBONDEN_A0_B; // net ID: RXCHBONDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXCHBONDI_A0_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+		NetFlow* RXCHBONDI_A1_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+		NetFlow* RXCHBONDI_A2_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+		NetFlow* RXCHBONDI_A3_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+		NetFlow* RXCHBONDI_A4_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+		NetFlow* RXCHBONDLEVEL_A0_B; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXCHBONDLEVEL_A1_B; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXCHBONDLEVEL_A2_B; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXCHBONDMASTER_A0_B; // net ID: RXCHBONDMASTER lsb: 0  msb: 0 INPUT
+		NetFlow* RXCHBONDSLAVE_A0_B; // net ID: RXCHBONDSLAVE lsb: 0  msb: 0 INPUT
+		NetFlow* RXCOMMADETEN_A0_B; // net ID: RXCOMMADETEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDDIEN_A0_B; // net ID: RXDDIEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEAGCHOLD_A0_B; // net ID: RXDFEAGCHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEAGCOVRDEN_A0_B; // net ID: RXDFEAGCOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFECM1EN_A0_B; // net ID: RXDFECM1EN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFELFHOLD_A0_B; // net ID: RXDFELFHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFELFOVRDEN_A0_B; // net ID: RXDFELFOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFELPMRESET_A0_B; // net ID: RXDFELPMRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP2HOLD_A0_B; // net ID: RXDFETAP2HOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP2OVRDEN_A0_B; // net ID: RXDFETAP2OVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP3HOLD_A0_B; // net ID: RXDFETAP3HOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP3OVRDEN_A0_B; // net ID: RXDFETAP3OVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP4HOLD_A0_B; // net ID: RXDFETAP4HOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP4OVRDEN_A0_B; // net ID: RXDFETAP4OVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP5HOLD_A0_B; // net ID: RXDFETAP5HOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFETAP5OVRDEN_A0_B; // net ID: RXDFETAP5OVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEUTHOLD_A0_B; // net ID: RXDFEUTHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEUTOVRDEN_A0_B; // net ID: RXDFEUTOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEVPHOLD_A0_B; // net ID: RXDFEVPHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEVPOVRDEN_A0_B; // net ID: RXDFEVPOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEVSEN_A0_B; // net ID: RXDFEVSEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEXYDEN_A0_B; // net ID: RXDFEXYDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEXYDHOLD_A0_B; // net ID: RXDFEXYDHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXDFEXYDOVRDEN_A0_B; // net ID: RXDFEXYDOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDLYBYPASS_A0_B; // net ID: RXDLYBYPASS lsb: 0  msb: 0 INPUT
+		NetFlow* RXDLYEN_A0_B; // net ID: RXDLYEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDLYOVRDEN_A0_B; // net ID: RXDLYOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXDLYSRESET_A0_B; // net ID: RXDLYSRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXELECIDLEMODE_A0_B; // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
+		NetFlow* RXELECIDLEMODE_A1_B; // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
+		NetFlow* RXGEARBOXSLIP_A0_B; // net ID: RXGEARBOXSLIP lsb: 0  msb: 0 INPUT
+		NetFlow* RXLPMEN_A0_B; // net ID: RXLPMEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXLPMHFHOLD_A0_B; // net ID: RXLPMHFHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXLPMHFOVRDEN_A0_B; // net ID: RXLPMHFOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXLPMLFHOLD_A0_B; // net ID: RXLPMLFHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXLPMLFKLOVRDEN_A0_B; // net ID: RXLPMLFKLOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXMCOMMAALIGNEN_A0_B; // net ID: RXMCOMMAALIGNEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXMONITORSEL_A0_B; // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
+		NetFlow* RXMONITORSEL_A1_B; // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
+		NetFlow* RXOOBRESET_A0_B; // net ID: RXOOBRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXOSHOLD_A0_B; // net ID: RXOSHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* RXOSOVRDEN_A0_B; // net ID: RXOSOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXOUTCLKSEL_A0_B; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXOUTCLKSEL_A1_B; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXOUTCLKSEL_A2_B; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXPCOMMAALIGNEN_A0_B; // net ID: RXPCOMMAALIGNEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXPCSRESET_A0_B; // net ID: RXPCSRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXPD_A0_B; // net ID: RXPD lsb: 0  msb: 1 INPUT
+		NetFlow* RXPD_A1_B; // net ID: RXPD lsb: 0  msb: 1 INPUT
+		NetFlow* RXPHALIGN_A0_B; // net ID: RXPHALIGN lsb: 0  msb: 0 INPUT
+		NetFlow* RXPHALIGNEN_A0_B; // net ID: RXPHALIGNEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXPHDLYPD_A0_B; // net ID: RXPHDLYPD lsb: 0  msb: 0 INPUT
+		NetFlow* RXPHDLYRESET_A0_B; // net ID: RXPHDLYRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXPHOVRDEN_A0_B; // net ID: RXPHOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXPMARESET_A0_B; // net ID: RXPMARESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXPOLARITY_A0_B; // net ID: RXPOLARITY lsb: 0  msb: 0 INPUT
+		NetFlow* RXPRBSCNTRESET_A0_B; // net ID: RXPRBSCNTRESET lsb: 0  msb: 0 INPUT
+		NetFlow* RXPRBSSEL_A0_B; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXPRBSSEL_A1_B; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXPRBSSEL_A2_B; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+		NetFlow* RXQPIEN_A0_B; // net ID: RXQPIEN lsb: 0  msb: 0 INPUT
+		NetFlow* RXRATE_A0_B; // net ID: RXRATE lsb: 0  msb: 2 INPUT
+		NetFlow* RXRATE_A1_B; // net ID: RXRATE lsb: 0  msb: 2 INPUT
+		NetFlow* RXRATE_A2_B; // net ID: RXRATE lsb: 0  msb: 2 INPUT
+		NetFlow* RXSLIDE_A0_B; // net ID: RXSLIDE lsb: 0  msb: 0 INPUT
+		NetFlow* RXSYSCLKSEL_A0_B; // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
+		NetFlow* RXSYSCLKSEL_A1_B; // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
+		NetFlow* RXUSERRDY_A0_B; // net ID: RXUSERRDY lsb: 0  msb: 0 INPUT
+		NetFlow* RXUSRCLK_A0_B; // net ID: RXUSRCLK lsb: 0  msb: 0 INPUT
+		NetFlow* RXUSRCLK2_A0_B; // net ID: RXUSRCLK2 lsb: 0  msb: 0 INPUT
+		NetFlow* SETERRSTATUS_A0_B; // net ID: SETERRSTATUS lsb: 0  msb: 0 INPUT
+		NetFlow* TSTIN_A0_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A1_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A2_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A3_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A4_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A5_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A6_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A7_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A8_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A9_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A10_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A11_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A12_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A13_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A14_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A15_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A16_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A17_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A18_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TSTIN_A19_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+		NetFlow* TX8B10BBYPASS_A0_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BBYPASS_A1_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BBYPASS_A2_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BBYPASS_A3_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BBYPASS_A4_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BBYPASS_A5_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BBYPASS_A6_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BBYPASS_A7_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+		NetFlow* TX8B10BEN_A0_B; // net ID: TX8B10BEN lsb: 0  msb: 0 INPUT
+		NetFlow* TXBUFDIFFCTRL_A0_B; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+		NetFlow* TXBUFDIFFCTRL_A1_B; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+		NetFlow* TXBUFDIFFCTRL_A2_B; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+		NetFlow* TXCHARDISPMODE_A0_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPMODE_A1_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPMODE_A2_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPMODE_A3_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPMODE_A4_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPMODE_A5_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPMODE_A6_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPMODE_A7_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A0_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A1_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A2_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A3_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A4_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A5_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A6_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARDISPVAL_A7_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A0_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A1_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A2_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A3_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A4_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A5_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A6_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCHARISK_A7_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+		NetFlow* TXCOMINIT_A0_B; // net ID: TXCOMINIT lsb: 0  msb: 0 INPUT
+		NetFlow* TXCOMSAS_A0_B; // net ID: TXCOMSAS lsb: 0  msb: 0 INPUT
+		NetFlow* TXCOMWAKE_A0_B; // net ID: TXCOMWAKE lsb: 0  msb: 0 INPUT
+		NetFlow* TXDATA_A0_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A1_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A2_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A3_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A4_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A5_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A6_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A7_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A8_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A9_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A10_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A11_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A12_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A13_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A14_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A15_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A16_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A17_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A18_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A19_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A20_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A21_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A22_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A23_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A24_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A25_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A26_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A27_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A28_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A29_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A30_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A31_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A32_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A33_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A34_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A35_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A36_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A37_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A38_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A39_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A40_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A41_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A42_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A43_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A44_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A45_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A46_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A47_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A48_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A49_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A50_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A51_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A52_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A53_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A54_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A55_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A56_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A57_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A58_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A59_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A60_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A61_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A62_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDATA_A63_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+		NetFlow* TXDEEMPH_A0_B; // net ID: TXDEEMPH lsb: 0  msb: 0 INPUT
+		NetFlow* TXDETECTRX_A0_B; // net ID: TXDETECTRX lsb: 0  msb: 0 INPUT
+		NetFlow* TXDIFFCTRL_A0_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL_A1_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL_A2_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL_A3_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFPD_A0_B; // net ID: TXDIFFPD lsb: 0  msb: 0 INPUT
+		NetFlow* TXDLYBYPASS_A0_B; // net ID: TXDLYBYPASS lsb: 0  msb: 0 INPUT
+		NetFlow* TXDLYEN_A0_B; // net ID: TXDLYEN lsb: 0  msb: 0 INPUT
+		NetFlow* TXDLYHOLD_A0_B; // net ID: TXDLYHOLD lsb: 0  msb: 0 INPUT
+		NetFlow* TXDLYOVRDEN_A0_B; // net ID: TXDLYOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* TXDLYSRESET_A0_B; // net ID: TXDLYSRESET lsb: 0  msb: 0 INPUT
+		NetFlow* TXDLYUPDOWN_A0_B; // net ID: TXDLYUPDOWN lsb: 0  msb: 0 INPUT
+		NetFlow* TXELECIDLE_A0_B; // net ID: TXELECIDLE lsb: 0  msb: 0 INPUT
+		NetFlow* TXHEADER_A0_B; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+		NetFlow* TXHEADER_A1_B; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+		NetFlow* TXHEADER_A2_B; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+		NetFlow* TXINHIBIT_A0_B; // net ID: TXINHIBIT lsb: 0  msb: 0 INPUT
+		NetFlow* TXMAINCURSOR_A0_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+		NetFlow* TXMAINCURSOR_A1_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+		NetFlow* TXMAINCURSOR_A2_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+		NetFlow* TXMAINCURSOR_A3_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+		NetFlow* TXMAINCURSOR_A4_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+		NetFlow* TXMAINCURSOR_A5_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+		NetFlow* TXMAINCURSOR_A6_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+		NetFlow* TXMARGIN_A0_B; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+		NetFlow* TXMARGIN_A1_B; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+		NetFlow* TXMARGIN_A2_B; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+		NetFlow* TXOUTCLKSEL_A0_B; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* TXOUTCLKSEL_A1_B; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* TXOUTCLKSEL_A2_B; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+		NetFlow* TXPCSRESET_A0_B; // net ID: TXPCSRESET lsb: 0  msb: 0 INPUT
+		NetFlow* TXPD_A0_B; // net ID: TXPD lsb: 0  msb: 1 INPUT
+		NetFlow* TXPD_A1_B; // net ID: TXPD lsb: 0  msb: 1 INPUT
+		NetFlow* TXPDELECIDLEMODE_A0_B; // net ID: TXPDELECIDLEMODE lsb: 0  msb: 0 INPUT
+		NetFlow* TXPHALIGN_A0_B; // net ID: TXPHALIGN lsb: 0  msb: 0 INPUT
+		NetFlow* TXPHALIGNEN_A0_B; // net ID: TXPHALIGNEN lsb: 0  msb: 0 INPUT
+		NetFlow* TXPHDLYPD_A0_B; // net ID: TXPHDLYPD lsb: 0  msb: 0 INPUT
+		NetFlow* TXPHDLYRESET_A0_B; // net ID: TXPHDLYRESET lsb: 0  msb: 0 INPUT
+		NetFlow* TXPHDLYTSTCLK_A0_B; // net ID: TXPHDLYTSTCLK lsb: 0  msb: 0 INPUT
+		NetFlow* TXPHINIT_A0_B; // net ID: TXPHINIT lsb: 0  msb: 0 INPUT
+		NetFlow* TXPHOVRDEN_A0_B; // net ID: TXPHOVRDEN lsb: 0  msb: 0 INPUT
+		NetFlow* TXPISOPD_A0_B; // net ID: TXPISOPD lsb: 0  msb: 0 INPUT
+		NetFlow* TXPMARESET_A0_B; // net ID: TXPMARESET lsb: 0  msb: 0 INPUT
+		NetFlow* TXPOLARITY_A0_B; // net ID: TXPOLARITY lsb: 0  msb: 0 INPUT
+		NetFlow* TXPOSTCURSOR_A0_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPOSTCURSOR_A1_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPOSTCURSOR_A2_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPOSTCURSOR_A3_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPOSTCURSOR_A4_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPOSTCURSORINV_A0_B; // net ID: TXPOSTCURSORINV lsb: 0  msb: 0 INPUT
+		NetFlow* TXPRBSFORCEERR_A0_B; // net ID: TXPRBSFORCEERR lsb: 0  msb: 0 INPUT
+		NetFlow* TXPRBSSEL_A0_B; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+		NetFlow* TXPRBSSEL_A1_B; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+		NetFlow* TXPRBSSEL_A2_B; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+		NetFlow* TXPRECURSOR_A0_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPRECURSOR_A1_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPRECURSOR_A2_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPRECURSOR_A3_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPRECURSOR_A4_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+		NetFlow* TXPRECURSORINV_A0_B; // net ID: TXPRECURSORINV lsb: 0  msb: 0 INPUT
+		NetFlow* TXQPIBIASEN_A0_B; // net ID: TXQPIBIASEN lsb: 0  msb: 0 INPUT
+		NetFlow* TXQPISTRONGPDOWN_A0_B; // net ID: TXQPISTRONGPDOWN lsb: 0  msb: 0 INPUT
+		NetFlow* TXQPIWEAKPUP_A0_B; // net ID: TXQPIWEAKPUP lsb: 0  msb: 0 INPUT
+		NetFlow* TXRATE_A0_B; // net ID: TXRATE lsb: 0  msb: 2 INPUT
+		NetFlow* TXRATE_A1_B; // net ID: TXRATE lsb: 0  msb: 2 INPUT
+		NetFlow* TXRATE_A2_B; // net ID: TXRATE lsb: 0  msb: 2 INPUT
+		NetFlow* TXSEQUENCE_A0_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+		NetFlow* TXSEQUENCE_A1_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+		NetFlow* TXSEQUENCE_A2_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+		NetFlow* TXSEQUENCE_A3_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+		NetFlow* TXSEQUENCE_A4_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+		NetFlow* TXSEQUENCE_A5_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+		NetFlow* TXSEQUENCE_A6_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+		NetFlow* TXSTARTSEQ_A0_B; // net ID: TXSTARTSEQ lsb: 0  msb: 0 INPUT
+		NetFlow* TXSWING_A0_B; // net ID: TXSWING lsb: 0  msb: 0 INPUT
+		NetFlow* TXSYSCLKSEL_A0_B; // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
+		NetFlow* TXSYSCLKSEL_A1_B; // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
+		NetFlow* TXUSERRDY_A0_B; // net ID: TXUSERRDY lsb: 0  msb: 0 INPUT
+		NetFlow* TXUSRCLK_A0_B; // net ID: TXUSRCLK lsb: 0  msb: 0 INPUT
+		NetFlow* TXUSRCLK2_A0_B; // net ID: TXUSRCLK2 lsb: 0  msb: 0 INPUT
 		
-		X_GTXE2_CHANNEL(
+		public: X_GTXE2_CHANNEL(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_enum_t ALIGN_COMMA_DOUBLE, // Default: "FALSE"
-			parameter_string_t ALIGN_COMMA_ENABLE, // Default: 10'b0001111111
-			parameter_string_t ALIGN_COMMA_WORD, // Default: 1
+			parameter_int_t ALIGN_COMMA_ENABLE, // Default: 10'b0001111111
+			parameter_int_t ALIGN_COMMA_WORD, // Default: 1
 			parameter_enum_t ALIGN_MCOMMA_DET, // Default: "TRUE"
-			parameter_string_t ALIGN_MCOMMA_VALUE, // Default: 10'b1010000011
+			parameter_int_t ALIGN_MCOMMA_VALUE, // Default: 10'b1010000011
 			parameter_enum_t ALIGN_PCOMMA_DET, // Default: "TRUE"
-			parameter_string_t ALIGN_PCOMMA_VALUE, // Default: 10'b0101111100
+			parameter_int_t ALIGN_PCOMMA_VALUE, // Default: 10'b0101111100
 			parameter_string_t CBCC_DATA_SOURCE_SEL, // Default: "DECODED"
 			parameter_enum_t CHAN_BOND_KEEP_ALIGN, // Default: "FALSE"
-			parameter_string_t CHAN_BOND_MAX_SKEW, // Default: 7
-			parameter_string_t CHAN_BOND_SEQ_1_1, // Default: 10'b0101111100
-			parameter_string_t CHAN_BOND_SEQ_1_2, // Default: 10'b0000000000
-			parameter_string_t CHAN_BOND_SEQ_1_3, // Default: 10'b0000000000
-			parameter_string_t CHAN_BOND_SEQ_1_4, // Default: 10'b0000000000
-			parameter_string_t CHAN_BOND_SEQ_1_ENABLE, // Default: 4'b1111
-			parameter_string_t CHAN_BOND_SEQ_2_1, // Default: 10'b0100000000
-			parameter_string_t CHAN_BOND_SEQ_2_2, // Default: 10'b0100000000
-			parameter_string_t CHAN_BOND_SEQ_2_3, // Default: 10'b0100000000
-			parameter_string_t CHAN_BOND_SEQ_2_4, // Default: 10'b0100000000
-			parameter_string_t CHAN_BOND_SEQ_2_ENABLE, // Default: 4'b1111
+			parameter_int_t CHAN_BOND_MAX_SKEW, // Default: 7
+			parameter_int_t CHAN_BOND_SEQ_1_1, // Default: 10'b0101111100
+			parameter_int_t CHAN_BOND_SEQ_1_2, // Default: 10'b0000000000
+			parameter_int_t CHAN_BOND_SEQ_1_3, // Default: 10'b0000000000
+			parameter_int_t CHAN_BOND_SEQ_1_4, // Default: 10'b0000000000
+			parameter_int_t CHAN_BOND_SEQ_1_ENABLE, // Default: 4'b1111
+			parameter_int_t CHAN_BOND_SEQ_2_1, // Default: 10'b0100000000
+			parameter_int_t CHAN_BOND_SEQ_2_2, // Default: 10'b0100000000
+			parameter_int_t CHAN_BOND_SEQ_2_3, // Default: 10'b0100000000
+			parameter_int_t CHAN_BOND_SEQ_2_4, // Default: 10'b0100000000
+			parameter_int_t CHAN_BOND_SEQ_2_ENABLE, // Default: 4'b1111
 			parameter_enum_t CHAN_BOND_SEQ_2_USE, // Default: "FALSE"
-			parameter_string_t CHAN_BOND_SEQ_LEN, // Default: 1
+			parameter_int_t CHAN_BOND_SEQ_LEN, // Default: 1
 			parameter_enum_t CLK_CORRECT_USE, // Default: "TRUE"
 			parameter_enum_t CLK_COR_KEEP_IDLE, // Default: "FALSE"
-			parameter_string_t CLK_COR_MAX_LAT, // Default: 20
-			parameter_string_t CLK_COR_MIN_LAT, // Default: 18
+			parameter_int_t CLK_COR_MAX_LAT, // Default: 20
+			parameter_int_t CLK_COR_MIN_LAT, // Default: 18
 			parameter_enum_t CLK_COR_PRECEDENCE, // Default: "TRUE"
-			parameter_string_t CLK_COR_REPEAT_WAIT, // Default: 0
-			parameter_string_t CLK_COR_SEQ_1_1, // Default: 10'b0100011100
-			parameter_string_t CLK_COR_SEQ_1_2, // Default: 10'b0000000000
-			parameter_string_t CLK_COR_SEQ_1_3, // Default: 10'b0000000000
-			parameter_string_t CLK_COR_SEQ_1_4, // Default: 10'b0000000000
-			parameter_string_t CLK_COR_SEQ_1_ENABLE, // Default: 4'b1111
-			parameter_string_t CLK_COR_SEQ_2_1, // Default: 10'b0100000000
-			parameter_string_t CLK_COR_SEQ_2_2, // Default: 10'b0100000000
-			parameter_string_t CLK_COR_SEQ_2_3, // Default: 10'b0100000000
-			parameter_string_t CLK_COR_SEQ_2_4, // Default: 10'b0100000000
-			parameter_string_t CLK_COR_SEQ_2_ENABLE, // Default: 4'b1111
+			parameter_int_t CLK_COR_REPEAT_WAIT, // Default: 0
+			parameter_int_t CLK_COR_SEQ_1_1, // Default: 10'b0100011100
+			parameter_int_t CLK_COR_SEQ_1_2, // Default: 10'b0000000000
+			parameter_int_t CLK_COR_SEQ_1_3, // Default: 10'b0000000000
+			parameter_int_t CLK_COR_SEQ_1_4, // Default: 10'b0000000000
+			parameter_int_t CLK_COR_SEQ_1_ENABLE, // Default: 4'b1111
+			parameter_int_t CLK_COR_SEQ_2_1, // Default: 10'b0100000000
+			parameter_int_t CLK_COR_SEQ_2_2, // Default: 10'b0100000000
+			parameter_int_t CLK_COR_SEQ_2_3, // Default: 10'b0100000000
+			parameter_int_t CLK_COR_SEQ_2_4, // Default: 10'b0100000000
+			parameter_int_t CLK_COR_SEQ_2_ENABLE, // Default: 4'b1111
 			parameter_enum_t CLK_COR_SEQ_2_USE, // Default: "FALSE"
-			parameter_string_t CLK_COR_SEQ_LEN, // Default: 1
-			parameter_string_t CPLL_CFG, // Default: 24'hB007D8
-			parameter_string_t CPLL_FBDIV, // Default: 4
-			parameter_string_t CPLL_FBDIV_45, // Default: 5
-			parameter_string_t CPLL_INIT_CFG, // Default: 24'h00001E
-			parameter_string_t CPLL_LOCK_CFG, // Default: 16'h01E8
-			parameter_string_t CPLL_REFCLK_DIV, // Default: 1
+			parameter_int_t CLK_COR_SEQ_LEN, // Default: 1
+			parameter_int_t CPLL_CFG, // Default: 24'hB007D8
+			parameter_int_t CPLL_FBDIV, // Default: 4
+			parameter_int_t CPLL_FBDIV_45, // Default: 5
+			parameter_int_t CPLL_INIT_CFG, // Default: 24'h00001E
+			parameter_int_t CPLL_LOCK_CFG, // Default: 16'h01E8
+			parameter_int_t CPLL_REFCLK_DIV, // Default: 1
 			parameter_enum_t DEC_MCOMMA_DETECT, // Default: "TRUE"
 			parameter_enum_t DEC_PCOMMA_DETECT, // Default: "TRUE"
 			parameter_enum_t DEC_VALID_COMMA_ONLY, // Default: "TRUE"
-			parameter_string_t DMONITOR_CFG, // Default: 24'h000A00
-			parameter_string_t ES_CONTROL, // Default: 6'b000000
+			parameter_int_t DMONITOR_CFG, // Default: 24'h000A00
+			parameter_int_t ES_CONTROL, // Default: 6'b000000
 			parameter_enum_t ES_ERRDET_EN, // Default: "FALSE"
 			parameter_enum_t ES_EYE_SCAN_EN, // Default: "FALSE"
-			parameter_string_t ES_HORZ_OFFSET, // Default: 12'h000
-			parameter_string_t ES_PMA_CFG, // Default: 10'b0000000000
-			parameter_string_t ES_PRESCALE, // Default: 5'b00000
-			parameter_string_t ES_QUALIFIER, // Default: 80'h00000000000000000000
-			parameter_string_t ES_QUAL_MASK, // Default: 80'h00000000000000000000
-			parameter_string_t ES_SDATA_MASK, // Default: 80'h00000000000000000000
-			parameter_string_t ES_VERT_OFFSET, // Default: 9'b000000000
-			parameter_string_t FTS_DESKEW_SEQ_ENABLE, // Default: 4'b1111
-			parameter_string_t FTS_LANE_DESKEW_CFG, // Default: 4'b1111
+			parameter_int_t ES_HORZ_OFFSET, // Default: 12'h000
+			parameter_int_t ES_PMA_CFG, // Default: 10'b0000000000
+			parameter_int_t ES_PRESCALE, // Default: 5'b00000
+			parameter_int_t ES_QUALIFIER, // Default: 80'h00000000000000000000
+			parameter_int_t ES_QUAL_MASK, // Default: 80'h00000000000000000000
+			parameter_int_t ES_SDATA_MASK, // Default: 80'h00000000000000000000
+			parameter_int_t ES_VERT_OFFSET, // Default: 9'b000000000
+			parameter_int_t FTS_DESKEW_SEQ_ENABLE, // Default: 4'b1111
+			parameter_int_t FTS_LANE_DESKEW_CFG, // Default: 4'b1111
 			parameter_enum_t FTS_LANE_DESKEW_EN, // Default: "FALSE"
-			parameter_string_t GEARBOX_MODE, // Default: 3'b000
-			parameter_string_t OUTREFCLK_SEL_INV, // Default: 2'b11
+			parameter_int_t GEARBOX_MODE, // Default: 3'b000
+			parameter_int_t OUTREFCLK_SEL_INV, // Default: 2'b11
 			parameter_enum_t PCS_PCIE_EN, // Default: "FALSE"
-			parameter_string_t PCS_RSVD_ATTR, // Default: 48'h000000000000
-			parameter_string_t PD_TRANS_TIME_FROM_P2, // Default: 12'h03C
-			parameter_string_t PD_TRANS_TIME_NONE_P2, // Default: 8'h19
-			parameter_string_t PD_TRANS_TIME_TO_P2, // Default: 8'h64
-			parameter_string_t PMA_RSV, // Default: 32'h00000000
-			parameter_string_t PMA_RSV2, // Default: 16'h2050
-			parameter_string_t PMA_RSV3, // Default: 2'b00
-			parameter_string_t PMA_RSV4, // Default: 32'h00000000
-			parameter_string_t RXBUFRESET_TIME, // Default: 5'b00001
+			parameter_int_t PCS_RSVD_ATTR, // Default: 48'h000000000000
+			parameter_int_t PD_TRANS_TIME_FROM_P2, // Default: 12'h03C
+			parameter_int_t PD_TRANS_TIME_NONE_P2, // Default: 8'h19
+			parameter_int_t PD_TRANS_TIME_TO_P2, // Default: 8'h64
+			parameter_int_t PMA_RSV, // Default: 32'h00000000
+			parameter_int_t PMA_RSV2, // Default: 16'h2050
+			parameter_int_t PMA_RSV3, // Default: 2'b00
+			parameter_int_t PMA_RSV4, // Default: 32'h00000000
+			parameter_int_t RXBUFRESET_TIME, // Default: 5'b00001
 			parameter_string_t RXBUF_ADDR_MODE, // Default: "FULL"
-			parameter_string_t RXBUF_EIDLE_HI_CNT, // Default: 4'b1000
-			parameter_string_t RXBUF_EIDLE_LO_CNT, // Default: 4'b0000
+			parameter_int_t RXBUF_EIDLE_HI_CNT, // Default: 4'b1000
+			parameter_int_t RXBUF_EIDLE_LO_CNT, // Default: 4'b0000
 			parameter_enum_t RXBUF_EN, // Default: "TRUE"
 			parameter_enum_t RXBUF_RESET_ON_CB_CHANGE, // Default: "TRUE"
 			parameter_enum_t RXBUF_RESET_ON_COMMAALIGN, // Default: "FALSE"
 			parameter_enum_t RXBUF_RESET_ON_EIDLE, // Default: "FALSE"
 			parameter_enum_t RXBUF_RESET_ON_RATE_CHANGE, // Default: "TRUE"
-			parameter_string_t RXBUF_THRESH_OVFLW, // Default: 61
+			parameter_int_t RXBUF_THRESH_OVFLW, // Default: 61
 			parameter_enum_t RXBUF_THRESH_OVRD, // Default: "FALSE"
-			parameter_string_t RXBUF_THRESH_UNDFLW, // Default: 4
-			parameter_string_t RXCDRFREQRESET_TIME, // Default: 5'b00001
-			parameter_string_t RXCDRPHRESET_TIME, // Default: 5'b00001
-			parameter_string_t RXCDR_CFG, // Default: 72'h0B000023FF20400020
-			parameter_string_t RXCDR_FR_RESET_ON_EIDLE, // Default: 1'b0
-			parameter_string_t RXCDR_HOLD_DURING_EIDLE, // Default: 1'b0
-			parameter_string_t RXCDR_LOCK_CFG, // Default: 6'b010101
-			parameter_string_t RXCDR_PH_RESET_ON_EIDLE, // Default: 1'b0
-			parameter_string_t RXDFELPMRESET_TIME, // Default: 7'b0001111
-			parameter_string_t RXDLY_CFG, // Default: 16'h001F
-			parameter_string_t RXDLY_LCFG, // Default: 9'h030
-			parameter_string_t RXDLY_TAP_CFG, // Default: 16'h0000
+			parameter_int_t RXBUF_THRESH_UNDFLW, // Default: 4
+			parameter_int_t RXCDRFREQRESET_TIME, // Default: 5'b00001
+			parameter_int_t RXCDRPHRESET_TIME, // Default: 5'b00001
+			parameter_int_t RXCDR_CFG, // Default: 72'h0B000023FF20400020
+			parameter_int_t RXCDR_FR_RESET_ON_EIDLE, // Default: 1'b0
+			parameter_int_t RXCDR_HOLD_DURING_EIDLE, // Default: 1'b0
+			parameter_int_t RXCDR_LOCK_CFG, // Default: 6'b010101
+			parameter_int_t RXCDR_PH_RESET_ON_EIDLE, // Default: 1'b0
+			parameter_int_t RXDFELPMRESET_TIME, // Default: 7'b0001111
+			parameter_int_t RXDLY_CFG, // Default: 16'h001F
+			parameter_int_t RXDLY_LCFG, // Default: 9'h030
+			parameter_int_t RXDLY_TAP_CFG, // Default: 16'h0000
 			parameter_enum_t RXGEARBOX_EN, // Default: "FALSE"
-			parameter_string_t RXISCANRESET_TIME, // Default: 5'b00001
-			parameter_string_t RXLPM_HF_CFG, // Default: 14'b00000011110000
-			parameter_string_t RXLPM_LF_CFG, // Default: 14'b00000011110000
-			parameter_string_t RXOOB_CFG, // Default: 7'b0000110
-			parameter_string_t RXOUT_DIV, // Default: 2
-			parameter_string_t RXPCSRESET_TIME, // Default: 5'b00001
-			parameter_string_t RXPHDLY_CFG, // Default: 24'h084020
-			parameter_string_t RXPH_CFG, // Default: 24'h000000
-			parameter_string_t RXPH_MONITOR_SEL, // Default: 5'b00000
-			parameter_string_t RXPMARESET_TIME, // Default: 5'b00011
-			parameter_string_t RXPRBS_ERR_LOOPBACK, // Default: 1'b0
-			parameter_string_t RXSLIDE_AUTO_WAIT, // Default: 7
+			parameter_int_t RXISCANRESET_TIME, // Default: 5'b00001
+			parameter_int_t RXLPM_HF_CFG, // Default: 14'b00000011110000
+			parameter_int_t RXLPM_LF_CFG, // Default: 14'b00000011110000
+			parameter_int_t RXOOB_CFG, // Default: 7'b0000110
+			parameter_int_t RXOUT_DIV, // Default: 2
+			parameter_int_t RXPCSRESET_TIME, // Default: 5'b00001
+			parameter_int_t RXPHDLY_CFG, // Default: 24'h084020
+			parameter_int_t RXPH_CFG, // Default: 24'h000000
+			parameter_int_t RXPH_MONITOR_SEL, // Default: 5'b00000
+			parameter_int_t RXPMARESET_TIME, // Default: 5'b00011
+			parameter_int_t RXPRBS_ERR_LOOPBACK, // Default: 1'b0
+			parameter_int_t RXSLIDE_AUTO_WAIT, // Default: 7
 			parameter_string_t RXSLIDE_MODE, // Default: "OFF"
-			parameter_string_t RX_BIAS_CFG, // Default: 12'b000000000000
-			parameter_string_t RX_BUFFER_CFG, // Default: 6'b000000
-			parameter_string_t RX_CLK25_DIV, // Default: 7
-			parameter_string_t RX_CLKMUX_PD, // Default: 1'b1
-			parameter_string_t RX_CM_SEL, // Default: 2'b11
-			parameter_string_t RX_CM_TRIM, // Default: 3'b100
-			parameter_string_t RX_DATA_WIDTH, // Default: 20
-			parameter_string_t RX_DDI_SEL, // Default: 6'b000000
-			parameter_string_t RX_DEBUG_CFG, // Default: 12'b000000000000
+			parameter_int_t RX_BIAS_CFG, // Default: 12'b000000000000
+			parameter_int_t RX_BUFFER_CFG, // Default: 6'b000000
+			parameter_int_t RX_CLK25_DIV, // Default: 7
+			parameter_int_t RX_CLKMUX_PD, // Default: 1'b1
+			parameter_int_t RX_CM_SEL, // Default: 2'b11
+			parameter_int_t RX_CM_TRIM, // Default: 3'b100
+			parameter_int_t RX_DATA_WIDTH, // Default: 20
+			parameter_int_t RX_DDI_SEL, // Default: 6'b000000
+			parameter_int_t RX_DEBUG_CFG, // Default: 12'b000000000000
 			parameter_enum_t RX_DEFER_RESET_BUF_EN, // Default: "TRUE"
-			parameter_string_t RX_DFE_GAIN_CFG, // Default: 23'h180E0F
-			parameter_string_t RX_DFE_H2_CFG, // Default: 12'b000111100000
-			parameter_string_t RX_DFE_H3_CFG, // Default: 12'b000111100000
-			parameter_string_t RX_DFE_H4_CFG, // Default: 11'b00011110000
-			parameter_string_t RX_DFE_H5_CFG, // Default: 11'b00011110000
-			parameter_string_t RX_DFE_KL_CFG, // Default: 13'b0001111110000
-			parameter_string_t RX_DFE_KL_CFG2, // Default: 32'h3008E56A
-			parameter_string_t RX_DFE_LPM_CFG, // Default: 16'h0904
-			parameter_string_t RX_DFE_LPM_HOLD_DURING_EIDLE, // Default: 1'b0
-			parameter_string_t RX_DFE_UT_CFG, // Default: 17'b00111111000000000
-			parameter_string_t RX_DFE_VP_CFG, // Default: 17'b00011111100000000
-			parameter_string_t RX_DFE_XYD_CFG, // Default: 13'b0000000010000
+			parameter_int_t RX_DFE_GAIN_CFG, // Default: 23'h180E0F
+			parameter_int_t RX_DFE_H2_CFG, // Default: 12'b000111100000
+			parameter_int_t RX_DFE_H3_CFG, // Default: 12'b000111100000
+			parameter_int_t RX_DFE_H4_CFG, // Default: 11'b00011110000
+			parameter_int_t RX_DFE_H5_CFG, // Default: 11'b00011110000
+			parameter_int_t RX_DFE_KL_CFG, // Default: 13'b0001111110000
+			parameter_int_t RX_DFE_KL_CFG2, // Default: 32'h3008E56A
+			parameter_int_t RX_DFE_LPM_CFG, // Default: 16'h0904
+			parameter_int_t RX_DFE_LPM_HOLD_DURING_EIDLE, // Default: 1'b0
+			parameter_int_t RX_DFE_UT_CFG, // Default: 17'b00111111000000000
+			parameter_int_t RX_DFE_VP_CFG, // Default: 17'b00011111100000000
+			parameter_int_t RX_DFE_XYD_CFG, // Default: 13'b0000000010000
 			parameter_enum_t RX_DISPERR_SEQ_MATCH, // Default: "TRUE"
-			parameter_string_t RX_INT_DATAWIDTH, // Default: 0
-			parameter_string_t RX_OS_CFG, // Default: 13'b0001111110000
-			parameter_string_t RX_SIG_VALID_DLY, // Default: 10
+			parameter_int_t RX_INT_DATAWIDTH, // Default: 0
+			parameter_int_t RX_OS_CFG, // Default: 13'b0001111110000
+			parameter_int_t RX_SIG_VALID_DLY, // Default: 10
 			parameter_string_t RX_XCLK_SEL, // Default: "RXREC"
-			parameter_string_t SAS_MAX_COM, // Default: 64
-			parameter_string_t SAS_MIN_COM, // Default: 36
-			parameter_string_t SATA_BURST_SEQ_LEN, // Default: 4'b1111
-			parameter_string_t SATA_BURST_VAL, // Default: 3'b100
+			parameter_int_t SAS_MAX_COM, // Default: 64
+			parameter_int_t SAS_MIN_COM, // Default: 36
+			parameter_int_t SATA_BURST_SEQ_LEN, // Default: 4'b1111
+			parameter_int_t SATA_BURST_VAL, // Default: 3'b100
 			parameter_string_t SATA_CPLL_CFG, // Default: "VCO_3000MHZ"
-			parameter_string_t SATA_EIDLE_VAL, // Default: 3'b100
-			parameter_string_t SATA_MAX_BURST, // Default: 8
-			parameter_string_t SATA_MAX_INIT, // Default: 21
-			parameter_string_t SATA_MAX_WAKE, // Default: 7
-			parameter_string_t SATA_MIN_BURST, // Default: 4
-			parameter_string_t SATA_MIN_INIT, // Default: 12
-			parameter_string_t SATA_MIN_WAKE, // Default: 4
+			parameter_int_t SATA_EIDLE_VAL, // Default: 3'b100
+			parameter_int_t SATA_MAX_BURST, // Default: 8
+			parameter_int_t SATA_MAX_INIT, // Default: 21
+			parameter_int_t SATA_MAX_WAKE, // Default: 7
+			parameter_int_t SATA_MIN_BURST, // Default: 4
+			parameter_int_t SATA_MIN_INIT, // Default: 12
+			parameter_int_t SATA_MIN_WAKE, // Default: 4
 			parameter_enum_t SHOW_REALIGN_COMMA, // Default: "TRUE"
-			parameter_string_t SIM_CPLLREFCLK_SEL, // Default: 3'b001
+			parameter_int_t SIM_CPLLREFCLK_SEL, // Default: 3'b001
 			parameter_enum_t SIM_RECEIVER_DETECT_PASS, // Default: "TRUE"
 			parameter_enum_t SIM_RESET_SPEEDUP, // Default: "TRUE"
 			parameter_string_t SIM_TX_EIDLE_DRIVE_LEVEL, // Default: "X"
 			parameter_string_t SIM_VERSION, // Default: "4.0"
-			parameter_string_t TERM_RCAL_CFG, // Default: 5'b10000
-			parameter_string_t TERM_RCAL_OVRD, // Default: 1'b0
-			parameter_string_t TRANS_TIME_RATE, // Default: 8'h0E
-			parameter_string_t TST_RSV, // Default: 32'h00000000
+			parameter_int_t TERM_RCAL_CFG, // Default: 5'b10000
+			parameter_int_t TERM_RCAL_OVRD, // Default: 1'b0
+			parameter_int_t TRANS_TIME_RATE, // Default: 8'h0E
+			parameter_int_t TST_RSV, // Default: 32'h00000000
 			parameter_enum_t TXBUF_EN, // Default: "TRUE"
 			parameter_enum_t TXBUF_RESET_ON_RATE_CHANGE, // Default: "FALSE"
-			parameter_string_t TXDLY_CFG, // Default: 16'h001F
-			parameter_string_t TXDLY_LCFG, // Default: 9'h030
-			parameter_string_t TXDLY_TAP_CFG, // Default: 16'h0000
+			parameter_int_t TXDLY_CFG, // Default: 16'h001F
+			parameter_int_t TXDLY_LCFG, // Default: 9'h030
+			parameter_int_t TXDLY_TAP_CFG, // Default: 16'h0000
 			parameter_enum_t TXGEARBOX_EN, // Default: "FALSE"
-			parameter_string_t TXOUT_DIV, // Default: 2
-			parameter_string_t TXPCSRESET_TIME, // Default: 5'b00001
-			parameter_string_t TXPHDLY_CFG, // Default: 24'h084020
-			parameter_string_t TXPH_CFG, // Default: 16'h0780
-			parameter_string_t TXPH_MONITOR_SEL, // Default: 5'b00000
-			parameter_string_t TXPMARESET_TIME, // Default: 5'b00001
-			parameter_string_t TX_CLK25_DIV, // Default: 7
-			parameter_string_t TX_CLKMUX_PD, // Default: 1'b1
-			parameter_string_t TX_DATA_WIDTH, // Default: 20
-			parameter_string_t TX_DEEMPH0, // Default: 5'b00000
-			parameter_string_t TX_DEEMPH1, // Default: 5'b00000
+			parameter_int_t TXOUT_DIV, // Default: 2
+			parameter_int_t TXPCSRESET_TIME, // Default: 5'b00001
+			parameter_int_t TXPHDLY_CFG, // Default: 24'h084020
+			parameter_int_t TXPH_CFG, // Default: 16'h0780
+			parameter_int_t TXPH_MONITOR_SEL, // Default: 5'b00000
+			parameter_int_t TXPMARESET_TIME, // Default: 5'b00001
+			parameter_int_t TX_CLK25_DIV, // Default: 7
+			parameter_int_t TX_CLKMUX_PD, // Default: 1'b1
+			parameter_int_t TX_DATA_WIDTH, // Default: 20
+			parameter_int_t TX_DEEMPH0, // Default: 5'b00000
+			parameter_int_t TX_DEEMPH1, // Default: 5'b00000
 			parameter_string_t TX_DRIVE_MODE, // Default: "DIRECT"
-			parameter_string_t TX_EIDLE_ASSERT_DELAY, // Default: 3'b110
-			parameter_string_t TX_EIDLE_DEASSERT_DELAY, // Default: 3'b100
-			parameter_string_t TX_INT_DATAWIDTH, // Default: 0
+			parameter_int_t TX_EIDLE_ASSERT_DELAY, // Default: 3'b110
+			parameter_int_t TX_EIDLE_DEASSERT_DELAY, // Default: 3'b100
+			parameter_int_t TX_INT_DATAWIDTH, // Default: 0
 			parameter_enum_t TX_LOOPBACK_DRIVE_HIZ, // Default: "FALSE"
-			parameter_string_t TX_MAINCURSOR_SEL, // Default: 1'b0
-			parameter_string_t TX_MARGIN_FULL_0, // Default: 7'b1001110
-			parameter_string_t TX_MARGIN_FULL_1, // Default: 7'b1001001
-			parameter_string_t TX_MARGIN_FULL_2, // Default: 7'b1000101
-			parameter_string_t TX_MARGIN_FULL_3, // Default: 7'b1000010
-			parameter_string_t TX_MARGIN_FULL_4, // Default: 7'b1000000
-			parameter_string_t TX_MARGIN_LOW_0, // Default: 7'b1000110
-			parameter_string_t TX_MARGIN_LOW_1, // Default: 7'b1000100
-			parameter_string_t TX_MARGIN_LOW_2, // Default: 7'b1000010
-			parameter_string_t TX_MARGIN_LOW_3, // Default: 7'b1000000
-			parameter_string_t TX_MARGIN_LOW_4, // Default: 7'b1000000
-			parameter_string_t TX_PREDRIVER_MODE, // Default: 1'b0
-			parameter_string_t TX_QPI_STATUS_EN, // Default: 1'b0
-			parameter_string_t TX_RXDETECT_CFG, // Default: 14'h1832
-			parameter_string_t TX_RXDETECT_REF, // Default: 3'b100
+			parameter_int_t TX_MAINCURSOR_SEL, // Default: 1'b0
+			parameter_int_t TX_MARGIN_FULL_0, // Default: 7'b1001110
+			parameter_int_t TX_MARGIN_FULL_1, // Default: 7'b1001001
+			parameter_int_t TX_MARGIN_FULL_2, // Default: 7'b1000101
+			parameter_int_t TX_MARGIN_FULL_3, // Default: 7'b1000010
+			parameter_int_t TX_MARGIN_FULL_4, // Default: 7'b1000000
+			parameter_int_t TX_MARGIN_LOW_0, // Default: 7'b1000110
+			parameter_int_t TX_MARGIN_LOW_1, // Default: 7'b1000100
+			parameter_int_t TX_MARGIN_LOW_2, // Default: 7'b1000010
+			parameter_int_t TX_MARGIN_LOW_3, // Default: 7'b1000000
+			parameter_int_t TX_MARGIN_LOW_4, // Default: 7'b1000000
+			parameter_int_t TX_PREDRIVER_MODE, // Default: 1'b0
+			parameter_int_t TX_QPI_STATUS_EN, // Default: 1'b0
+			parameter_int_t TX_RXDETECT_CFG, // Default: 14'h1832
+			parameter_int_t TX_RXDETECT_REF, // Default: 3'b100
 			parameter_string_t TX_XCLK_SEL, // Default: "TXUSR"
-			parameter_string_t UCODEER_CLR, // Default: 1'b0
+			parameter_int_t UCODEER_CLR, // Default: 1'b0
 			//Verilog Ports in definition order:
-			NetFlow* CPLLFBCLKLOST, // net ID: CPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
-			NetFlow* CPLLLOCK, // net ID: CPLLLOCK lsb: 0  msb: 0 OUTPUT
-			NetFlow* CPLLREFCLKLOST, // net ID: CPLLREFCLKLOST lsb: 0  msb: 0 OUTPUT
-			NetFlow* DMONITOROUT, // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* DRPDO, // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DRPRDY, // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
-			NetFlow* EYESCANDATAERROR, // net ID: EYESCANDATAERROR lsb: 0  msb: 0 OUTPUT
-			NetFlow* GTREFCLKMONITOR, // net ID: GTREFCLKMONITOR lsb: 0  msb: 0 OUTPUT
-			NetFlow* GTXTXN, // net ID: GTXTXN lsb: 0  msb: 0 OUTPUT
-			NetFlow* GTXTXP, // net ID: GTXTXP lsb: 0  msb: 0 OUTPUT
-			NetFlow* PCSRSVDOUT, // net ID: PCSRSVDOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* PHYSTATUS, // net ID: PHYSTATUS lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXBUFSTATUS, // net ID: RXBUFSTATUS lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXBYTEISALIGNED, // net ID: RXBYTEISALIGNED lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXBYTEREALIGN, // net ID: RXBYTEREALIGN lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCDRLOCK, // net ID: RXCDRLOCK lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHANBONDSEQ, // net ID: RXCHANBONDSEQ lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHANISALIGNED, // net ID: RXCHANISALIGNED lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHANREALIGN, // net ID: RXCHANREALIGN lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHARISCOMMA, // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHARISK, // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHBONDO, // net ID: RXCHBONDO lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCLKCORCNT, // net ID: RXCLKCORCNT lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCOMINITDET, // net ID: RXCOMINITDET lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCOMMADET, // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCOMSASDET, // net ID: RXCOMSASDET lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCOMWAKEDET, // net ID: RXCOMWAKEDET lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXDATA, // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXDATAVALID, // net ID: RXDATAVALID lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXDISPERR, // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXDLYSRESETDONE, // net ID: RXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXELECIDLE, // net ID: RXELECIDLE lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXHEADER, // net ID: RXHEADER lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXHEADERVALID, // net ID: RXHEADERVALID lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXMONITOROUT, // net ID: RXMONITOROUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXNOTINTABLE, // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXOUTCLK, // net ID: RXOUTCLK lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXOUTCLKFABRIC, // net ID: RXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXOUTCLKPCS, // net ID: RXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXPHALIGNDONE, // net ID: RXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXPHMONITOR, // net ID: RXPHMONITOR lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXPHSLIPMONITOR, // net ID: RXPHSLIPMONITOR lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXPRBSERR, // net ID: RXPRBSERR lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXQPISENN, // net ID: RXQPISENN lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXQPISENP, // net ID: RXQPISENP lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXRATEDONE, // net ID: RXRATEDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXRESETDONE, // net ID: RXRESETDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXSTARTOFSEQ, // net ID: RXSTARTOFSEQ lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXSTATUS, // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXVALID, // net ID: RXVALID lsb: 0  msb: 0 OUTPUT
-			NetFlow* TSTOUT, // net ID: TSTOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXBUFSTATUS, // net ID: TXBUFSTATUS lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXCOMFINISH, // net ID: TXCOMFINISH lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXDLYSRESETDONE, // net ID: TXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXGEARBOXREADY, // net ID: TXGEARBOXREADY lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXOUTCLK, // net ID: TXOUTCLK lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXOUTCLKFABRIC, // net ID: TXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXOUTCLKPCS, // net ID: TXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXPHALIGNDONE, // net ID: TXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXPHINITDONE, // net ID: TXPHINITDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXQPISENN, // net ID: TXQPISENN lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXQPISENP, // net ID: TXQPISENP lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXRATEDONE, // net ID: TXRATEDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXRESETDONE, // net ID: TXRESETDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGRESET, // net ID: CFGRESET lsb: 0  msb: 0 INPUT
-			NetFlow* CLKRSVD, // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
-			NetFlow* CPLLLOCKDETCLK, // net ID: CPLLLOCKDETCLK lsb: 0  msb: 0 INPUT
-			NetFlow* CPLLLOCKEN, // net ID: CPLLLOCKEN lsb: 0  msb: 0 INPUT
-			NetFlow* CPLLPD, // net ID: CPLLPD lsb: 0  msb: 0 INPUT
-			NetFlow* CPLLREFCLKSEL, // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
-			NetFlow* CPLLRESET, // net ID: CPLLRESET lsb: 0  msb: 0 INPUT
-			NetFlow* DRPADDR, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
-			NetFlow* DRPCLK, // net ID: DRPCLK lsb: 0  msb: 0 INPUT
-			NetFlow* DRPDI, // net ID: DRPDI lsb: 0  msb: 15 INPUT
-			NetFlow* DRPEN, // net ID: DRPEN lsb: 0  msb: 0 INPUT
-			NetFlow* DRPWE, // net ID: DRPWE lsb: 0  msb: 0 INPUT
-			NetFlow* EYESCANMODE, // net ID: EYESCANMODE lsb: 0  msb: 0 INPUT
-			NetFlow* EYESCANRESET, // net ID: EYESCANRESET lsb: 0  msb: 0 INPUT
-			NetFlow* EYESCANTRIGGER, // net ID: EYESCANTRIGGER lsb: 0  msb: 0 INPUT
-			NetFlow* GTGREFCLK, // net ID: GTGREFCLK lsb: 0  msb: 0 INPUT
-			NetFlow* GTNORTHREFCLK0, // net ID: GTNORTHREFCLK0 lsb: 0  msb: 0 INPUT
-			NetFlow* GTNORTHREFCLK1, // net ID: GTNORTHREFCLK1 lsb: 0  msb: 0 INPUT
-			NetFlow* GTREFCLK0, // net ID: GTREFCLK0 lsb: 0  msb: 0 INPUT
-			NetFlow* GTREFCLK1, // net ID: GTREFCLK1 lsb: 0  msb: 0 INPUT
-			NetFlow* GTRESETSEL, // net ID: GTRESETSEL lsb: 0  msb: 0 INPUT
-			NetFlow* GTRSVD, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
-			NetFlow* GTRXRESET, // net ID: GTRXRESET lsb: 0  msb: 0 INPUT
-			NetFlow* GTSOUTHREFCLK0, // net ID: GTSOUTHREFCLK0 lsb: 0  msb: 0 INPUT
-			NetFlow* GTSOUTHREFCLK1, // net ID: GTSOUTHREFCLK1 lsb: 0  msb: 0 INPUT
-			NetFlow* GTTXRESET, // net ID: GTTXRESET lsb: 0  msb: 0 INPUT
-			NetFlow* GTXRXN, // net ID: GTXRXN lsb: 0  msb: 0 INPUT
-			NetFlow* GTXRXP, // net ID: GTXRXP lsb: 0  msb: 0 INPUT
-			NetFlow* LOOPBACK, // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
-			NetFlow* PCSRSVDIN, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
-			NetFlow* PCSRSVDIN2, // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
-			NetFlow* PMARSVDIN, // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
-			NetFlow* PMARSVDIN2, // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
-			NetFlow* QPLLCLK, // net ID: QPLLCLK lsb: 0  msb: 0 INPUT
-			NetFlow* QPLLREFCLK, // net ID: QPLLREFCLK lsb: 0  msb: 0 INPUT
-			NetFlow* RESETOVRD, // net ID: RESETOVRD lsb: 0  msb: 0 INPUT
-			NetFlow* RX8B10BEN, // net ID: RX8B10BEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXBUFRESET, // net ID: RXBUFRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXCDRFREQRESET, // net ID: RXCDRFREQRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXCDRHOLD, // net ID: RXCDRHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXCDROVRDEN, // net ID: RXCDROVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXCDRRESET, // net ID: RXCDRRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXCDRRESETRSV, // net ID: RXCDRRESETRSV lsb: 0  msb: 0 INPUT
-			NetFlow* RXCHBONDEN, // net ID: RXCHBONDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXCHBONDI, // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
-			NetFlow* RXCHBONDLEVEL, // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
-			NetFlow* RXCHBONDMASTER, // net ID: RXCHBONDMASTER lsb: 0  msb: 0 INPUT
-			NetFlow* RXCHBONDSLAVE, // net ID: RXCHBONDSLAVE lsb: 0  msb: 0 INPUT
-			NetFlow* RXCOMMADETEN, // net ID: RXCOMMADETEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDDIEN, // net ID: RXDDIEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEAGCHOLD, // net ID: RXDFEAGCHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEAGCOVRDEN, // net ID: RXDFEAGCOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFECM1EN, // net ID: RXDFECM1EN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFELFHOLD, // net ID: RXDFELFHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFELFOVRDEN, // net ID: RXDFELFOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFELPMRESET, // net ID: RXDFELPMRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP2HOLD, // net ID: RXDFETAP2HOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP2OVRDEN, // net ID: RXDFETAP2OVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP3HOLD, // net ID: RXDFETAP3HOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP3OVRDEN, // net ID: RXDFETAP3OVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP4HOLD, // net ID: RXDFETAP4HOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP4OVRDEN, // net ID: RXDFETAP4OVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP5HOLD, // net ID: RXDFETAP5HOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFETAP5OVRDEN, // net ID: RXDFETAP5OVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEUTHOLD, // net ID: RXDFEUTHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEUTOVRDEN, // net ID: RXDFEUTOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEVPHOLD, // net ID: RXDFEVPHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEVPOVRDEN, // net ID: RXDFEVPOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEVSEN, // net ID: RXDFEVSEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEXYDEN, // net ID: RXDFEXYDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEXYDHOLD, // net ID: RXDFEXYDHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXDFEXYDOVRDEN, // net ID: RXDFEXYDOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDLYBYPASS, // net ID: RXDLYBYPASS lsb: 0  msb: 0 INPUT
-			NetFlow* RXDLYEN, // net ID: RXDLYEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDLYOVRDEN, // net ID: RXDLYOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXDLYSRESET, // net ID: RXDLYSRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXELECIDLEMODE, // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
-			NetFlow* RXGEARBOXSLIP, // net ID: RXGEARBOXSLIP lsb: 0  msb: 0 INPUT
-			NetFlow* RXLPMEN, // net ID: RXLPMEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXLPMHFHOLD, // net ID: RXLPMHFHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXLPMHFOVRDEN, // net ID: RXLPMHFOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXLPMLFHOLD, // net ID: RXLPMLFHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXLPMLFKLOVRDEN, // net ID: RXLPMLFKLOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXMCOMMAALIGNEN, // net ID: RXMCOMMAALIGNEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXMONITORSEL, // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
-			NetFlow* RXOOBRESET, // net ID: RXOOBRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXOSHOLD, // net ID: RXOSHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* RXOSOVRDEN, // net ID: RXOSOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXOUTCLKSEL, // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
-			NetFlow* RXPCOMMAALIGNEN, // net ID: RXPCOMMAALIGNEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXPCSRESET, // net ID: RXPCSRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXPD, // net ID: RXPD lsb: 0  msb: 1 INPUT
-			NetFlow* RXPHALIGN, // net ID: RXPHALIGN lsb: 0  msb: 0 INPUT
-			NetFlow* RXPHALIGNEN, // net ID: RXPHALIGNEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXPHDLYPD, // net ID: RXPHDLYPD lsb: 0  msb: 0 INPUT
-			NetFlow* RXPHDLYRESET, // net ID: RXPHDLYRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXPHOVRDEN, // net ID: RXPHOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXPMARESET, // net ID: RXPMARESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXPOLARITY, // net ID: RXPOLARITY lsb: 0  msb: 0 INPUT
-			NetFlow* RXPRBSCNTRESET, // net ID: RXPRBSCNTRESET lsb: 0  msb: 0 INPUT
-			NetFlow* RXPRBSSEL, // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
-			NetFlow* RXQPIEN, // net ID: RXQPIEN lsb: 0  msb: 0 INPUT
-			NetFlow* RXRATE, // net ID: RXRATE lsb: 0  msb: 2 INPUT
-			NetFlow* RXSLIDE, // net ID: RXSLIDE lsb: 0  msb: 0 INPUT
-			NetFlow* RXSYSCLKSEL, // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
-			NetFlow* RXUSERRDY, // net ID: RXUSERRDY lsb: 0  msb: 0 INPUT
-			NetFlow* RXUSRCLK, // net ID: RXUSRCLK lsb: 0  msb: 0 INPUT
-			NetFlow* RXUSRCLK2, // net ID: RXUSRCLK2 lsb: 0  msb: 0 INPUT
-			NetFlow* SETERRSTATUS, // net ID: SETERRSTATUS lsb: 0  msb: 0 INPUT
-			NetFlow* TSTIN, // net ID: TSTIN lsb: 0  msb: 19 INPUT
-			NetFlow* TX8B10BBYPASS, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
-			NetFlow* TX8B10BEN, // net ID: TX8B10BEN lsb: 0  msb: 0 INPUT
-			NetFlow* TXBUFDIFFCTRL, // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
-			NetFlow* TXCHARDISPMODE, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
-			NetFlow* TXCHARDISPVAL, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
-			NetFlow* TXCHARISK, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
-			NetFlow* TXCOMINIT, // net ID: TXCOMINIT lsb: 0  msb: 0 INPUT
-			NetFlow* TXCOMSAS, // net ID: TXCOMSAS lsb: 0  msb: 0 INPUT
-			NetFlow* TXCOMWAKE, // net ID: TXCOMWAKE lsb: 0  msb: 0 INPUT
-			NetFlow* TXDATA, // net ID: TXDATA lsb: 0  msb: 63 INPUT
-			NetFlow* TXDEEMPH, // net ID: TXDEEMPH lsb: 0  msb: 0 INPUT
-			NetFlow* TXDETECTRX, // net ID: TXDETECTRX lsb: 0  msb: 0 INPUT
-			NetFlow* TXDIFFCTRL, // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
-			NetFlow* TXDIFFPD, // net ID: TXDIFFPD lsb: 0  msb: 0 INPUT
-			NetFlow* TXDLYBYPASS, // net ID: TXDLYBYPASS lsb: 0  msb: 0 INPUT
-			NetFlow* TXDLYEN, // net ID: TXDLYEN lsb: 0  msb: 0 INPUT
-			NetFlow* TXDLYHOLD, // net ID: TXDLYHOLD lsb: 0  msb: 0 INPUT
-			NetFlow* TXDLYOVRDEN, // net ID: TXDLYOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* TXDLYSRESET, // net ID: TXDLYSRESET lsb: 0  msb: 0 INPUT
-			NetFlow* TXDLYUPDOWN, // net ID: TXDLYUPDOWN lsb: 0  msb: 0 INPUT
-			NetFlow* TXELECIDLE, // net ID: TXELECIDLE lsb: 0  msb: 0 INPUT
-			NetFlow* TXHEADER, // net ID: TXHEADER lsb: 0  msb: 2 INPUT
-			NetFlow* TXINHIBIT, // net ID: TXINHIBIT lsb: 0  msb: 0 INPUT
-			NetFlow* TXMAINCURSOR, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
-			NetFlow* TXMARGIN, // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
-			NetFlow* TXOUTCLKSEL, // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
-			NetFlow* TXPCSRESET, // net ID: TXPCSRESET lsb: 0  msb: 0 INPUT
-			NetFlow* TXPD, // net ID: TXPD lsb: 0  msb: 1 INPUT
-			NetFlow* TXPDELECIDLEMODE, // net ID: TXPDELECIDLEMODE lsb: 0  msb: 0 INPUT
-			NetFlow* TXPHALIGN, // net ID: TXPHALIGN lsb: 0  msb: 0 INPUT
-			NetFlow* TXPHALIGNEN, // net ID: TXPHALIGNEN lsb: 0  msb: 0 INPUT
-			NetFlow* TXPHDLYPD, // net ID: TXPHDLYPD lsb: 0  msb: 0 INPUT
-			NetFlow* TXPHDLYRESET, // net ID: TXPHDLYRESET lsb: 0  msb: 0 INPUT
-			NetFlow* TXPHDLYTSTCLK, // net ID: TXPHDLYTSTCLK lsb: 0  msb: 0 INPUT
-			NetFlow* TXPHINIT, // net ID: TXPHINIT lsb: 0  msb: 0 INPUT
-			NetFlow* TXPHOVRDEN, // net ID: TXPHOVRDEN lsb: 0  msb: 0 INPUT
-			NetFlow* TXPISOPD, // net ID: TXPISOPD lsb: 0  msb: 0 INPUT
-			NetFlow* TXPMARESET, // net ID: TXPMARESET lsb: 0  msb: 0 INPUT
-			NetFlow* TXPOLARITY, // net ID: TXPOLARITY lsb: 0  msb: 0 INPUT
-			NetFlow* TXPOSTCURSOR, // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
-			NetFlow* TXPOSTCURSORINV, // net ID: TXPOSTCURSORINV lsb: 0  msb: 0 INPUT
-			NetFlow* TXPRBSFORCEERR, // net ID: TXPRBSFORCEERR lsb: 0  msb: 0 INPUT
-			NetFlow* TXPRBSSEL, // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
-			NetFlow* TXPRECURSOR, // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
-			NetFlow* TXPRECURSORINV, // net ID: TXPRECURSORINV lsb: 0  msb: 0 INPUT
-			NetFlow* TXQPIBIASEN, // net ID: TXQPIBIASEN lsb: 0  msb: 0 INPUT
-			NetFlow* TXQPISTRONGPDOWN, // net ID: TXQPISTRONGPDOWN lsb: 0  msb: 0 INPUT
-			NetFlow* TXQPIWEAKPUP, // net ID: TXQPIWEAKPUP lsb: 0  msb: 0 INPUT
-			NetFlow* TXRATE, // net ID: TXRATE lsb: 0  msb: 2 INPUT
-			NetFlow* TXSEQUENCE, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
-			NetFlow* TXSTARTSEQ, // net ID: TXSTARTSEQ lsb: 0  msb: 0 INPUT
-			NetFlow* TXSWING, // net ID: TXSWING lsb: 0  msb: 0 INPUT
-			NetFlow* TXSYSCLKSEL, // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
-			NetFlow* TXUSERRDY, // net ID: TXUSERRDY lsb: 0  msb: 0 INPUT
-			NetFlow* TXUSRCLK, // net ID: TXUSRCLK lsb: 0  msb: 0 INPUT
-			NetFlow* TXUSRCLK2 // net ID: TXUSRCLK2 lsb: 0  msb: 0 INPUT
+			NetFlow* CPLLFBCLKLOST_A0_B, // net ID: CPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
+			NetFlow* CPLLLOCK_A0_B, // net ID: CPLLLOCK lsb: 0  msb: 0 OUTPUT
+			NetFlow* CPLLREFCLKLOST_A0_B, // net ID: CPLLREFCLKLOST lsb: 0  msb: 0 OUTPUT
+			NetFlow* DMONITOROUT_A0_B, // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* DRPDO_A0_B, // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+			NetFlow* DRPRDY_A0_B, // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
+			NetFlow* EYESCANDATAERROR_A0_B, // net ID: EYESCANDATAERROR lsb: 0  msb: 0 OUTPUT
+			NetFlow* GTREFCLKMONITOR_A0_B, // net ID: GTREFCLKMONITOR lsb: 0  msb: 0 OUTPUT
+			NetFlow* GTXTXN_A0_B, // net ID: GTXTXN lsb: 0  msb: 0 OUTPUT
+			NetFlow* GTXTXP_A0_B, // net ID: GTXTXP lsb: 0  msb: 0 OUTPUT
+			NetFlow* PCSRSVDOUT_A0_B, // net ID: PCSRSVDOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* PHYSTATUS_A0_B, // net ID: PHYSTATUS lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXBUFSTATUS_A0_B, // net ID: RXBUFSTATUS lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXBYTEISALIGNED_A0_B, // net ID: RXBYTEISALIGNED lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXBYTEREALIGN_A0_B, // net ID: RXBYTEREALIGN lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCDRLOCK_A0_B, // net ID: RXCDRLOCK lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCHANBONDSEQ_A0_B, // net ID: RXCHANBONDSEQ lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCHANISALIGNED_A0_B, // net ID: RXCHANISALIGNED lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCHANREALIGN_A0_B, // net ID: RXCHANREALIGN lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCHARISCOMMA_A0_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCHARISK_A0_B, // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCHBONDO_A0_B, // net ID: RXCHBONDO lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCLKCORCNT_A0_B, // net ID: RXCLKCORCNT lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCOMINITDET_A0_B, // net ID: RXCOMINITDET lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCOMMADET_A0_B, // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCOMSASDET_A0_B, // net ID: RXCOMSASDET lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCOMWAKEDET_A0_B, // net ID: RXCOMWAKEDET lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXDATA_A0_B, // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXDATAVALID_A0_B, // net ID: RXDATAVALID lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXDISPERR_A0_B, // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXDLYSRESETDONE_A0_B, // net ID: RXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXELECIDLE_A0_B, // net ID: RXELECIDLE lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXHEADER_A0_B, // net ID: RXHEADER lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXHEADERVALID_A0_B, // net ID: RXHEADERVALID lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXMONITOROUT_A0_B, // net ID: RXMONITOROUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXNOTINTABLE_A0_B, // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXOUTCLK_A0_B, // net ID: RXOUTCLK lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXOUTCLKFABRIC_A0_B, // net ID: RXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXOUTCLKPCS_A0_B, // net ID: RXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXPHALIGNDONE_A0_B, // net ID: RXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXPHMONITOR_A0_B, // net ID: RXPHMONITOR lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXPHSLIPMONITOR_A0_B, // net ID: RXPHSLIPMONITOR lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXPRBSERR_A0_B, // net ID: RXPRBSERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXQPISENN_A0_B, // net ID: RXQPISENN lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXQPISENP_A0_B, // net ID: RXQPISENP lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXRATEDONE_A0_B, // net ID: RXRATEDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXRESETDONE_A0_B, // net ID: RXRESETDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXSTARTOFSEQ_A0_B, // net ID: RXSTARTOFSEQ lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXSTATUS_A0_B, // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXVALID_A0_B, // net ID: RXVALID lsb: 0  msb: 0 OUTPUT
+			NetFlow* TSTOUT_A0_B, // net ID: TSTOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXBUFSTATUS_A0_B, // net ID: TXBUFSTATUS lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXCOMFINISH_A0_B, // net ID: TXCOMFINISH lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXDLYSRESETDONE_A0_B, // net ID: TXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXGEARBOXREADY_A0_B, // net ID: TXGEARBOXREADY lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXOUTCLK_A0_B, // net ID: TXOUTCLK lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXOUTCLKFABRIC_A0_B, // net ID: TXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXOUTCLKPCS_A0_B, // net ID: TXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXPHALIGNDONE_A0_B, // net ID: TXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXPHINITDONE_A0_B, // net ID: TXPHINITDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXQPISENN_A0_B, // net ID: TXQPISENN lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXQPISENP_A0_B, // net ID: TXQPISENP lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXRATEDONE_A0_B, // net ID: TXRATEDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXRESETDONE_A0_B, // net ID: TXRESETDONE lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGRESET_A0_B, // net ID: CFGRESET lsb: 0  msb: 0 INPUT
+			NetFlow* CLKRSVD_A0_B, // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			NetFlow* CLKRSVD_A1_B, // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			NetFlow* CLKRSVD_A2_B, // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			NetFlow* CLKRSVD_A3_B, // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			NetFlow* CPLLLOCKDETCLK_A0_B, // net ID: CPLLLOCKDETCLK lsb: 0  msb: 0 INPUT
+			NetFlow* CPLLLOCKEN_A0_B, // net ID: CPLLLOCKEN lsb: 0  msb: 0 INPUT
+			NetFlow* CPLLPD_A0_B, // net ID: CPLLPD lsb: 0  msb: 0 INPUT
+			NetFlow* CPLLREFCLKSEL_A0_B, // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* CPLLREFCLKSEL_A1_B, // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* CPLLREFCLKSEL_A2_B, // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* CPLLRESET_A0_B, // net ID: CPLLRESET lsb: 0  msb: 0 INPUT
+			NetFlow* DRPADDR_A0_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A1_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A2_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A3_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A4_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A5_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A6_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A7_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPADDR_A8_B, // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			NetFlow* DRPCLK_A0_B, // net ID: DRPCLK lsb: 0  msb: 0 INPUT
+			NetFlow* DRPDI_A0_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A1_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A2_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A3_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A4_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A5_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A6_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A7_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A8_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A9_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A10_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A11_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A12_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A13_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A14_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPDI_A15_B, // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			NetFlow* DRPEN_A0_B, // net ID: DRPEN lsb: 0  msb: 0 INPUT
+			NetFlow* DRPWE_A0_B, // net ID: DRPWE lsb: 0  msb: 0 INPUT
+			NetFlow* EYESCANMODE_A0_B, // net ID: EYESCANMODE lsb: 0  msb: 0 INPUT
+			NetFlow* EYESCANRESET_A0_B, // net ID: EYESCANRESET lsb: 0  msb: 0 INPUT
+			NetFlow* EYESCANTRIGGER_A0_B, // net ID: EYESCANTRIGGER lsb: 0  msb: 0 INPUT
+			NetFlow* GTGREFCLK_A0_B, // net ID: GTGREFCLK lsb: 0  msb: 0 INPUT
+			NetFlow* GTNORTHREFCLK0_A0_B, // net ID: GTNORTHREFCLK0 lsb: 0  msb: 0 INPUT
+			NetFlow* GTNORTHREFCLK1_A0_B, // net ID: GTNORTHREFCLK1 lsb: 0  msb: 0 INPUT
+			NetFlow* GTREFCLK0_A0_B, // net ID: GTREFCLK0 lsb: 0  msb: 0 INPUT
+			NetFlow* GTREFCLK1_A0_B, // net ID: GTREFCLK1 lsb: 0  msb: 0 INPUT
+			NetFlow* GTRESETSEL_A0_B, // net ID: GTRESETSEL lsb: 0  msb: 0 INPUT
+			NetFlow* GTRSVD_A0_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A1_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A2_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A3_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A4_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A5_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A6_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A7_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A8_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A9_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A10_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A11_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A12_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A13_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A14_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRSVD_A15_B, // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			NetFlow* GTRXRESET_A0_B, // net ID: GTRXRESET lsb: 0  msb: 0 INPUT
+			NetFlow* GTSOUTHREFCLK0_A0_B, // net ID: GTSOUTHREFCLK0 lsb: 0  msb: 0 INPUT
+			NetFlow* GTSOUTHREFCLK1_A0_B, // net ID: GTSOUTHREFCLK1 lsb: 0  msb: 0 INPUT
+			NetFlow* GTTXRESET_A0_B, // net ID: GTTXRESET lsb: 0  msb: 0 INPUT
+			NetFlow* GTXRXN_A0_B, // net ID: GTXRXN lsb: 0  msb: 0 INPUT
+			NetFlow* GTXRXP_A0_B, // net ID: GTXRXP lsb: 0  msb: 0 INPUT
+			NetFlow* LOOPBACK_A0_B, // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+			NetFlow* LOOPBACK_A1_B, // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+			NetFlow* LOOPBACK_A2_B, // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+			NetFlow* PCSRSVDIN_A0_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A1_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A2_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A3_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A4_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A5_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A6_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A7_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A8_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A9_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A10_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A11_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A12_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A13_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A14_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN_A15_B, // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			NetFlow* PCSRSVDIN2_A0_B, // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PCSRSVDIN2_A1_B, // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PCSRSVDIN2_A2_B, // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PCSRSVDIN2_A3_B, // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PCSRSVDIN2_A4_B, // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN_A0_B, // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN_A1_B, // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN_A2_B, // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN_A3_B, // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN_A4_B, // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN2_A0_B, // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN2_A1_B, // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN2_A2_B, // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN2_A3_B, // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* PMARSVDIN2_A4_B, // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			NetFlow* QPLLCLK_A0_B, // net ID: QPLLCLK lsb: 0  msb: 0 INPUT
+			NetFlow* QPLLREFCLK_A0_B, // net ID: QPLLREFCLK lsb: 0  msb: 0 INPUT
+			NetFlow* RESETOVRD_A0_B, // net ID: RESETOVRD lsb: 0  msb: 0 INPUT
+			NetFlow* RX8B10BEN_A0_B, // net ID: RX8B10BEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXBUFRESET_A0_B, // net ID: RXBUFRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXCDRFREQRESET_A0_B, // net ID: RXCDRFREQRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXCDRHOLD_A0_B, // net ID: RXCDRHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXCDROVRDEN_A0_B, // net ID: RXCDROVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXCDRRESET_A0_B, // net ID: RXCDRRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXCDRRESETRSV_A0_B, // net ID: RXCDRRESETRSV lsb: 0  msb: 0 INPUT
+			NetFlow* RXCHBONDEN_A0_B, // net ID: RXCHBONDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXCHBONDI_A0_B, // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			NetFlow* RXCHBONDI_A1_B, // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			NetFlow* RXCHBONDI_A2_B, // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			NetFlow* RXCHBONDI_A3_B, // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			NetFlow* RXCHBONDI_A4_B, // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			NetFlow* RXCHBONDLEVEL_A0_B, // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXCHBONDLEVEL_A1_B, // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXCHBONDLEVEL_A2_B, // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXCHBONDMASTER_A0_B, // net ID: RXCHBONDMASTER lsb: 0  msb: 0 INPUT
+			NetFlow* RXCHBONDSLAVE_A0_B, // net ID: RXCHBONDSLAVE lsb: 0  msb: 0 INPUT
+			NetFlow* RXCOMMADETEN_A0_B, // net ID: RXCOMMADETEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDDIEN_A0_B, // net ID: RXDDIEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEAGCHOLD_A0_B, // net ID: RXDFEAGCHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEAGCOVRDEN_A0_B, // net ID: RXDFEAGCOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFECM1EN_A0_B, // net ID: RXDFECM1EN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFELFHOLD_A0_B, // net ID: RXDFELFHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFELFOVRDEN_A0_B, // net ID: RXDFELFOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFELPMRESET_A0_B, // net ID: RXDFELPMRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP2HOLD_A0_B, // net ID: RXDFETAP2HOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP2OVRDEN_A0_B, // net ID: RXDFETAP2OVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP3HOLD_A0_B, // net ID: RXDFETAP3HOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP3OVRDEN_A0_B, // net ID: RXDFETAP3OVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP4HOLD_A0_B, // net ID: RXDFETAP4HOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP4OVRDEN_A0_B, // net ID: RXDFETAP4OVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP5HOLD_A0_B, // net ID: RXDFETAP5HOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFETAP5OVRDEN_A0_B, // net ID: RXDFETAP5OVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEUTHOLD_A0_B, // net ID: RXDFEUTHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEUTOVRDEN_A0_B, // net ID: RXDFEUTOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEVPHOLD_A0_B, // net ID: RXDFEVPHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEVPOVRDEN_A0_B, // net ID: RXDFEVPOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEVSEN_A0_B, // net ID: RXDFEVSEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEXYDEN_A0_B, // net ID: RXDFEXYDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEXYDHOLD_A0_B, // net ID: RXDFEXYDHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXDFEXYDOVRDEN_A0_B, // net ID: RXDFEXYDOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDLYBYPASS_A0_B, // net ID: RXDLYBYPASS lsb: 0  msb: 0 INPUT
+			NetFlow* RXDLYEN_A0_B, // net ID: RXDLYEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDLYOVRDEN_A0_B, // net ID: RXDLYOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXDLYSRESET_A0_B, // net ID: RXDLYSRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXELECIDLEMODE_A0_B, // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
+			NetFlow* RXELECIDLEMODE_A1_B, // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
+			NetFlow* RXGEARBOXSLIP_A0_B, // net ID: RXGEARBOXSLIP lsb: 0  msb: 0 INPUT
+			NetFlow* RXLPMEN_A0_B, // net ID: RXLPMEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXLPMHFHOLD_A0_B, // net ID: RXLPMHFHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXLPMHFOVRDEN_A0_B, // net ID: RXLPMHFOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXLPMLFHOLD_A0_B, // net ID: RXLPMLFHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXLPMLFKLOVRDEN_A0_B, // net ID: RXLPMLFKLOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXMCOMMAALIGNEN_A0_B, // net ID: RXMCOMMAALIGNEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXMONITORSEL_A0_B, // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
+			NetFlow* RXMONITORSEL_A1_B, // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
+			NetFlow* RXOOBRESET_A0_B, // net ID: RXOOBRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXOSHOLD_A0_B, // net ID: RXOSHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* RXOSOVRDEN_A0_B, // net ID: RXOSOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXOUTCLKSEL_A0_B, // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXOUTCLKSEL_A1_B, // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXOUTCLKSEL_A2_B, // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXPCOMMAALIGNEN_A0_B, // net ID: RXPCOMMAALIGNEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXPCSRESET_A0_B, // net ID: RXPCSRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXPD_A0_B, // net ID: RXPD lsb: 0  msb: 1 INPUT
+			NetFlow* RXPD_A1_B, // net ID: RXPD lsb: 0  msb: 1 INPUT
+			NetFlow* RXPHALIGN_A0_B, // net ID: RXPHALIGN lsb: 0  msb: 0 INPUT
+			NetFlow* RXPHALIGNEN_A0_B, // net ID: RXPHALIGNEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXPHDLYPD_A0_B, // net ID: RXPHDLYPD lsb: 0  msb: 0 INPUT
+			NetFlow* RXPHDLYRESET_A0_B, // net ID: RXPHDLYRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXPHOVRDEN_A0_B, // net ID: RXPHOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXPMARESET_A0_B, // net ID: RXPMARESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXPOLARITY_A0_B, // net ID: RXPOLARITY lsb: 0  msb: 0 INPUT
+			NetFlow* RXPRBSCNTRESET_A0_B, // net ID: RXPRBSCNTRESET lsb: 0  msb: 0 INPUT
+			NetFlow* RXPRBSSEL_A0_B, // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXPRBSSEL_A1_B, // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXPRBSSEL_A2_B, // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+			NetFlow* RXQPIEN_A0_B, // net ID: RXQPIEN lsb: 0  msb: 0 INPUT
+			NetFlow* RXRATE_A0_B, // net ID: RXRATE lsb: 0  msb: 2 INPUT
+			NetFlow* RXRATE_A1_B, // net ID: RXRATE lsb: 0  msb: 2 INPUT
+			NetFlow* RXRATE_A2_B, // net ID: RXRATE lsb: 0  msb: 2 INPUT
+			NetFlow* RXSLIDE_A0_B, // net ID: RXSLIDE lsb: 0  msb: 0 INPUT
+			NetFlow* RXSYSCLKSEL_A0_B, // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			NetFlow* RXSYSCLKSEL_A1_B, // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			NetFlow* RXUSERRDY_A0_B, // net ID: RXUSERRDY lsb: 0  msb: 0 INPUT
+			NetFlow* RXUSRCLK_A0_B, // net ID: RXUSRCLK lsb: 0  msb: 0 INPUT
+			NetFlow* RXUSRCLK2_A0_B, // net ID: RXUSRCLK2 lsb: 0  msb: 0 INPUT
+			NetFlow* SETERRSTATUS_A0_B, // net ID: SETERRSTATUS lsb: 0  msb: 0 INPUT
+			NetFlow* TSTIN_A0_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A1_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A2_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A3_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A4_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A5_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A6_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A7_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A8_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A9_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A10_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A11_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A12_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A13_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A14_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A15_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A16_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A17_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A18_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TSTIN_A19_B, // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			NetFlow* TX8B10BBYPASS_A0_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BBYPASS_A1_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BBYPASS_A2_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BBYPASS_A3_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BBYPASS_A4_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BBYPASS_A5_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BBYPASS_A6_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BBYPASS_A7_B, // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			NetFlow* TX8B10BEN_A0_B, // net ID: TX8B10BEN lsb: 0  msb: 0 INPUT
+			NetFlow* TXBUFDIFFCTRL_A0_B, // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+			NetFlow* TXBUFDIFFCTRL_A1_B, // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+			NetFlow* TXBUFDIFFCTRL_A2_B, // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+			NetFlow* TXCHARDISPMODE_A0_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPMODE_A1_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPMODE_A2_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPMODE_A3_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPMODE_A4_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPMODE_A5_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPMODE_A6_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPMODE_A7_B, // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A0_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A1_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A2_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A3_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A4_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A5_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A6_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARDISPVAL_A7_B, // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A0_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A1_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A2_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A3_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A4_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A5_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A6_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCHARISK_A7_B, // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			NetFlow* TXCOMINIT_A0_B, // net ID: TXCOMINIT lsb: 0  msb: 0 INPUT
+			NetFlow* TXCOMSAS_A0_B, // net ID: TXCOMSAS lsb: 0  msb: 0 INPUT
+			NetFlow* TXCOMWAKE_A0_B, // net ID: TXCOMWAKE lsb: 0  msb: 0 INPUT
+			NetFlow* TXDATA_A0_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A1_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A2_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A3_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A4_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A5_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A6_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A7_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A8_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A9_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A10_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A11_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A12_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A13_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A14_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A15_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A16_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A17_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A18_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A19_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A20_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A21_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A22_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A23_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A24_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A25_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A26_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A27_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A28_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A29_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A30_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A31_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A32_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A33_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A34_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A35_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A36_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A37_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A38_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A39_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A40_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A41_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A42_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A43_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A44_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A45_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A46_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A47_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A48_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A49_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A50_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A51_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A52_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A53_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A54_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A55_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A56_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A57_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A58_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A59_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A60_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A61_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A62_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDATA_A63_B, // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			NetFlow* TXDEEMPH_A0_B, // net ID: TXDEEMPH lsb: 0  msb: 0 INPUT
+			NetFlow* TXDETECTRX_A0_B, // net ID: TXDETECTRX lsb: 0  msb: 0 INPUT
+			NetFlow* TXDIFFCTRL_A0_B, // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL_A1_B, // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL_A2_B, // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL_A3_B, // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFPD_A0_B, // net ID: TXDIFFPD lsb: 0  msb: 0 INPUT
+			NetFlow* TXDLYBYPASS_A0_B, // net ID: TXDLYBYPASS lsb: 0  msb: 0 INPUT
+			NetFlow* TXDLYEN_A0_B, // net ID: TXDLYEN lsb: 0  msb: 0 INPUT
+			NetFlow* TXDLYHOLD_A0_B, // net ID: TXDLYHOLD lsb: 0  msb: 0 INPUT
+			NetFlow* TXDLYOVRDEN_A0_B, // net ID: TXDLYOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* TXDLYSRESET_A0_B, // net ID: TXDLYSRESET lsb: 0  msb: 0 INPUT
+			NetFlow* TXDLYUPDOWN_A0_B, // net ID: TXDLYUPDOWN lsb: 0  msb: 0 INPUT
+			NetFlow* TXELECIDLE_A0_B, // net ID: TXELECIDLE lsb: 0  msb: 0 INPUT
+			NetFlow* TXHEADER_A0_B, // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+			NetFlow* TXHEADER_A1_B, // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+			NetFlow* TXHEADER_A2_B, // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+			NetFlow* TXINHIBIT_A0_B, // net ID: TXINHIBIT lsb: 0  msb: 0 INPUT
+			NetFlow* TXMAINCURSOR_A0_B, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			NetFlow* TXMAINCURSOR_A1_B, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			NetFlow* TXMAINCURSOR_A2_B, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			NetFlow* TXMAINCURSOR_A3_B, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			NetFlow* TXMAINCURSOR_A4_B, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			NetFlow* TXMAINCURSOR_A5_B, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			NetFlow* TXMAINCURSOR_A6_B, // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			NetFlow* TXMARGIN_A0_B, // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+			NetFlow* TXMARGIN_A1_B, // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+			NetFlow* TXMARGIN_A2_B, // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+			NetFlow* TXOUTCLKSEL_A0_B, // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* TXOUTCLKSEL_A1_B, // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* TXOUTCLKSEL_A2_B, // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			NetFlow* TXPCSRESET_A0_B, // net ID: TXPCSRESET lsb: 0  msb: 0 INPUT
+			NetFlow* TXPD_A0_B, // net ID: TXPD lsb: 0  msb: 1 INPUT
+			NetFlow* TXPD_A1_B, // net ID: TXPD lsb: 0  msb: 1 INPUT
+			NetFlow* TXPDELECIDLEMODE_A0_B, // net ID: TXPDELECIDLEMODE lsb: 0  msb: 0 INPUT
+			NetFlow* TXPHALIGN_A0_B, // net ID: TXPHALIGN lsb: 0  msb: 0 INPUT
+			NetFlow* TXPHALIGNEN_A0_B, // net ID: TXPHALIGNEN lsb: 0  msb: 0 INPUT
+			NetFlow* TXPHDLYPD_A0_B, // net ID: TXPHDLYPD lsb: 0  msb: 0 INPUT
+			NetFlow* TXPHDLYRESET_A0_B, // net ID: TXPHDLYRESET lsb: 0  msb: 0 INPUT
+			NetFlow* TXPHDLYTSTCLK_A0_B, // net ID: TXPHDLYTSTCLK lsb: 0  msb: 0 INPUT
+			NetFlow* TXPHINIT_A0_B, // net ID: TXPHINIT lsb: 0  msb: 0 INPUT
+			NetFlow* TXPHOVRDEN_A0_B, // net ID: TXPHOVRDEN lsb: 0  msb: 0 INPUT
+			NetFlow* TXPISOPD_A0_B, // net ID: TXPISOPD lsb: 0  msb: 0 INPUT
+			NetFlow* TXPMARESET_A0_B, // net ID: TXPMARESET lsb: 0  msb: 0 INPUT
+			NetFlow* TXPOLARITY_A0_B, // net ID: TXPOLARITY lsb: 0  msb: 0 INPUT
+			NetFlow* TXPOSTCURSOR_A0_B, // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPOSTCURSOR_A1_B, // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPOSTCURSOR_A2_B, // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPOSTCURSOR_A3_B, // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPOSTCURSOR_A4_B, // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPOSTCURSORINV_A0_B, // net ID: TXPOSTCURSORINV lsb: 0  msb: 0 INPUT
+			NetFlow* TXPRBSFORCEERR_A0_B, // net ID: TXPRBSFORCEERR lsb: 0  msb: 0 INPUT
+			NetFlow* TXPRBSSEL_A0_B, // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+			NetFlow* TXPRBSSEL_A1_B, // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+			NetFlow* TXPRBSSEL_A2_B, // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+			NetFlow* TXPRECURSOR_A0_B, // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPRECURSOR_A1_B, // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPRECURSOR_A2_B, // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPRECURSOR_A3_B, // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPRECURSOR_A4_B, // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			NetFlow* TXPRECURSORINV_A0_B, // net ID: TXPRECURSORINV lsb: 0  msb: 0 INPUT
+			NetFlow* TXQPIBIASEN_A0_B, // net ID: TXQPIBIASEN lsb: 0  msb: 0 INPUT
+			NetFlow* TXQPISTRONGPDOWN_A0_B, // net ID: TXQPISTRONGPDOWN lsb: 0  msb: 0 INPUT
+			NetFlow* TXQPIWEAKPUP_A0_B, // net ID: TXQPIWEAKPUP lsb: 0  msb: 0 INPUT
+			NetFlow* TXRATE_A0_B, // net ID: TXRATE lsb: 0  msb: 2 INPUT
+			NetFlow* TXRATE_A1_B, // net ID: TXRATE lsb: 0  msb: 2 INPUT
+			NetFlow* TXRATE_A2_B, // net ID: TXRATE lsb: 0  msb: 2 INPUT
+			NetFlow* TXSEQUENCE_A0_B, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			NetFlow* TXSEQUENCE_A1_B, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			NetFlow* TXSEQUENCE_A2_B, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			NetFlow* TXSEQUENCE_A3_B, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			NetFlow* TXSEQUENCE_A4_B, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			NetFlow* TXSEQUENCE_A5_B, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			NetFlow* TXSEQUENCE_A6_B, // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			NetFlow* TXSTARTSEQ_A0_B, // net ID: TXSTARTSEQ lsb: 0  msb: 0 INPUT
+			NetFlow* TXSWING_A0_B, // net ID: TXSWING lsb: 0  msb: 0 INPUT
+			NetFlow* TXSYSCLKSEL_A0_B, // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			NetFlow* TXSYSCLKSEL_A1_B, // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			NetFlow* TXUSERRDY_A0_B, // net ID: TXUSERRDY lsb: 0  msb: 0 INPUT
+			NetFlow* TXUSRCLK_A0_B, // net ID: TXUSRCLK lsb: 0  msb: 0 INPUT
+			NetFlow* TXUSRCLK2_A0_B // net ID: TXUSRCLK2 lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -1083,236 +1555,471 @@ namespace CPrimitives {
 			this->TX_XCLK_SEL = TX_XCLK_SEL; // Default: "TXUSR"
 			this->UCODEER_CLR = UCODEER_CLR; // Default: 1'b0
 			//Verilog Ports in definition order:
-			this->CPLLFBCLKLOST = CPLLFBCLKLOST; // net ID: CPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
-			this->CPLLLOCK = CPLLLOCK; // net ID: CPLLLOCK lsb: 0  msb: 0 OUTPUT
-			this->CPLLREFCLKLOST = CPLLREFCLKLOST; // net ID: CPLLREFCLKLOST lsb: 0  msb: 0 OUTPUT
-			this->DMONITOROUT = DMONITOROUT; // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
-			this->DRPDO = DRPDO; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
-			this->DRPRDY = DRPRDY; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
-			this->EYESCANDATAERROR = EYESCANDATAERROR; // net ID: EYESCANDATAERROR lsb: 0  msb: 0 OUTPUT
-			this->GTREFCLKMONITOR = GTREFCLKMONITOR; // net ID: GTREFCLKMONITOR lsb: 0  msb: 0 OUTPUT
-			this->GTXTXN = GTXTXN; // net ID: GTXTXN lsb: 0  msb: 0 OUTPUT
-			this->GTXTXP = GTXTXP; // net ID: GTXTXP lsb: 0  msb: 0 OUTPUT
-			this->PCSRSVDOUT = PCSRSVDOUT; // net ID: PCSRSVDOUT lsb: 0  msb: 0 OUTPUT
-			this->PHYSTATUS = PHYSTATUS; // net ID: PHYSTATUS lsb: 0  msb: 0 OUTPUT
-			this->RXBUFSTATUS = RXBUFSTATUS; // net ID: RXBUFSTATUS lsb: 0  msb: 0 OUTPUT
-			this->RXBYTEISALIGNED = RXBYTEISALIGNED; // net ID: RXBYTEISALIGNED lsb: 0  msb: 0 OUTPUT
-			this->RXBYTEREALIGN = RXBYTEREALIGN; // net ID: RXBYTEREALIGN lsb: 0  msb: 0 OUTPUT
-			this->RXCDRLOCK = RXCDRLOCK; // net ID: RXCDRLOCK lsb: 0  msb: 0 OUTPUT
-			this->RXCHANBONDSEQ = RXCHANBONDSEQ; // net ID: RXCHANBONDSEQ lsb: 0  msb: 0 OUTPUT
-			this->RXCHANISALIGNED = RXCHANISALIGNED; // net ID: RXCHANISALIGNED lsb: 0  msb: 0 OUTPUT
-			this->RXCHANREALIGN = RXCHANREALIGN; // net ID: RXCHANREALIGN lsb: 0  msb: 0 OUTPUT
-			this->RXCHARISCOMMA = RXCHARISCOMMA; // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
-			this->RXCHARISK = RXCHARISK; // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
-			this->RXCHBONDO = RXCHBONDO; // net ID: RXCHBONDO lsb: 0  msb: 0 OUTPUT
-			this->RXCLKCORCNT = RXCLKCORCNT; // net ID: RXCLKCORCNT lsb: 0  msb: 0 OUTPUT
-			this->RXCOMINITDET = RXCOMINITDET; // net ID: RXCOMINITDET lsb: 0  msb: 0 OUTPUT
-			this->RXCOMMADET = RXCOMMADET; // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
-			this->RXCOMSASDET = RXCOMSASDET; // net ID: RXCOMSASDET lsb: 0  msb: 0 OUTPUT
-			this->RXCOMWAKEDET = RXCOMWAKEDET; // net ID: RXCOMWAKEDET lsb: 0  msb: 0 OUTPUT
-			this->RXDATA = RXDATA; // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
-			this->RXDATAVALID = RXDATAVALID; // net ID: RXDATAVALID lsb: 0  msb: 0 OUTPUT
-			this->RXDISPERR = RXDISPERR; // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
-			this->RXDLYSRESETDONE = RXDLYSRESETDONE; // net ID: RXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
-			this->RXELECIDLE = RXELECIDLE; // net ID: RXELECIDLE lsb: 0  msb: 0 OUTPUT
-			this->RXHEADER = RXHEADER; // net ID: RXHEADER lsb: 0  msb: 0 OUTPUT
-			this->RXHEADERVALID = RXHEADERVALID; // net ID: RXHEADERVALID lsb: 0  msb: 0 OUTPUT
-			this->RXMONITOROUT = RXMONITOROUT; // net ID: RXMONITOROUT lsb: 0  msb: 0 OUTPUT
-			this->RXNOTINTABLE = RXNOTINTABLE; // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
-			this->RXOUTCLK = RXOUTCLK; // net ID: RXOUTCLK lsb: 0  msb: 0 OUTPUT
-			this->RXOUTCLKFABRIC = RXOUTCLKFABRIC; // net ID: RXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
-			this->RXOUTCLKPCS = RXOUTCLKPCS; // net ID: RXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
-			this->RXPHALIGNDONE = RXPHALIGNDONE; // net ID: RXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
-			this->RXPHMONITOR = RXPHMONITOR; // net ID: RXPHMONITOR lsb: 0  msb: 0 OUTPUT
-			this->RXPHSLIPMONITOR = RXPHSLIPMONITOR; // net ID: RXPHSLIPMONITOR lsb: 0  msb: 0 OUTPUT
-			this->RXPRBSERR = RXPRBSERR; // net ID: RXPRBSERR lsb: 0  msb: 0 OUTPUT
-			this->RXQPISENN = RXQPISENN; // net ID: RXQPISENN lsb: 0  msb: 0 OUTPUT
-			this->RXQPISENP = RXQPISENP; // net ID: RXQPISENP lsb: 0  msb: 0 OUTPUT
-			this->RXRATEDONE = RXRATEDONE; // net ID: RXRATEDONE lsb: 0  msb: 0 OUTPUT
-			this->RXRESETDONE = RXRESETDONE; // net ID: RXRESETDONE lsb: 0  msb: 0 OUTPUT
-			this->RXSTARTOFSEQ = RXSTARTOFSEQ; // net ID: RXSTARTOFSEQ lsb: 0  msb: 0 OUTPUT
-			this->RXSTATUS = RXSTATUS; // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
-			this->RXVALID = RXVALID; // net ID: RXVALID lsb: 0  msb: 0 OUTPUT
-			this->TSTOUT = TSTOUT; // net ID: TSTOUT lsb: 0  msb: 0 OUTPUT
-			this->TXBUFSTATUS = TXBUFSTATUS; // net ID: TXBUFSTATUS lsb: 0  msb: 0 OUTPUT
-			this->TXCOMFINISH = TXCOMFINISH; // net ID: TXCOMFINISH lsb: 0  msb: 0 OUTPUT
-			this->TXDLYSRESETDONE = TXDLYSRESETDONE; // net ID: TXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
-			this->TXGEARBOXREADY = TXGEARBOXREADY; // net ID: TXGEARBOXREADY lsb: 0  msb: 0 OUTPUT
-			this->TXOUTCLK = TXOUTCLK; // net ID: TXOUTCLK lsb: 0  msb: 0 OUTPUT
-			this->TXOUTCLKFABRIC = TXOUTCLKFABRIC; // net ID: TXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
-			this->TXOUTCLKPCS = TXOUTCLKPCS; // net ID: TXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
-			this->TXPHALIGNDONE = TXPHALIGNDONE; // net ID: TXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
-			this->TXPHINITDONE = TXPHINITDONE; // net ID: TXPHINITDONE lsb: 0  msb: 0 OUTPUT
-			this->TXQPISENN = TXQPISENN; // net ID: TXQPISENN lsb: 0  msb: 0 OUTPUT
-			this->TXQPISENP = TXQPISENP; // net ID: TXQPISENP lsb: 0  msb: 0 OUTPUT
-			this->TXRATEDONE = TXRATEDONE; // net ID: TXRATEDONE lsb: 0  msb: 0 OUTPUT
-			this->TXRESETDONE = TXRESETDONE; // net ID: TXRESETDONE lsb: 0  msb: 0 OUTPUT
-			this->CFGRESET = CFGRESET; // net ID: CFGRESET lsb: 0  msb: 0 INPUT
-			this->CLKRSVD = CLKRSVD; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
-			this->CPLLLOCKDETCLK = CPLLLOCKDETCLK; // net ID: CPLLLOCKDETCLK lsb: 0  msb: 0 INPUT
-			this->CPLLLOCKEN = CPLLLOCKEN; // net ID: CPLLLOCKEN lsb: 0  msb: 0 INPUT
-			this->CPLLPD = CPLLPD; // net ID: CPLLPD lsb: 0  msb: 0 INPUT
-			this->CPLLREFCLKSEL = CPLLREFCLKSEL; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
-			this->CPLLRESET = CPLLRESET; // net ID: CPLLRESET lsb: 0  msb: 0 INPUT
-			this->DRPADDR = DRPADDR; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
-			this->DRPCLK = DRPCLK; // net ID: DRPCLK lsb: 0  msb: 0 INPUT
-			this->DRPDI = DRPDI; // net ID: DRPDI lsb: 0  msb: 15 INPUT
-			this->DRPEN = DRPEN; // net ID: DRPEN lsb: 0  msb: 0 INPUT
-			this->DRPWE = DRPWE; // net ID: DRPWE lsb: 0  msb: 0 INPUT
-			this->EYESCANMODE = EYESCANMODE; // net ID: EYESCANMODE lsb: 0  msb: 0 INPUT
-			this->EYESCANRESET = EYESCANRESET; // net ID: EYESCANRESET lsb: 0  msb: 0 INPUT
-			this->EYESCANTRIGGER = EYESCANTRIGGER; // net ID: EYESCANTRIGGER lsb: 0  msb: 0 INPUT
-			this->GTGREFCLK = GTGREFCLK; // net ID: GTGREFCLK lsb: 0  msb: 0 INPUT
-			this->GTNORTHREFCLK0 = GTNORTHREFCLK0; // net ID: GTNORTHREFCLK0 lsb: 0  msb: 0 INPUT
-			this->GTNORTHREFCLK1 = GTNORTHREFCLK1; // net ID: GTNORTHREFCLK1 lsb: 0  msb: 0 INPUT
-			this->GTREFCLK0 = GTREFCLK0; // net ID: GTREFCLK0 lsb: 0  msb: 0 INPUT
-			this->GTREFCLK1 = GTREFCLK1; // net ID: GTREFCLK1 lsb: 0  msb: 0 INPUT
-			this->GTRESETSEL = GTRESETSEL; // net ID: GTRESETSEL lsb: 0  msb: 0 INPUT
-			this->GTRSVD = GTRSVD; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
-			this->GTRXRESET = GTRXRESET; // net ID: GTRXRESET lsb: 0  msb: 0 INPUT
-			this->GTSOUTHREFCLK0 = GTSOUTHREFCLK0; // net ID: GTSOUTHREFCLK0 lsb: 0  msb: 0 INPUT
-			this->GTSOUTHREFCLK1 = GTSOUTHREFCLK1; // net ID: GTSOUTHREFCLK1 lsb: 0  msb: 0 INPUT
-			this->GTTXRESET = GTTXRESET; // net ID: GTTXRESET lsb: 0  msb: 0 INPUT
-			this->GTXRXN = GTXRXN; // net ID: GTXRXN lsb: 0  msb: 0 INPUT
-			this->GTXRXP = GTXRXP; // net ID: GTXRXP lsb: 0  msb: 0 INPUT
-			this->LOOPBACK = LOOPBACK; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
-			this->PCSRSVDIN = PCSRSVDIN; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
-			this->PCSRSVDIN2 = PCSRSVDIN2; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
-			this->PMARSVDIN = PMARSVDIN; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
-			this->PMARSVDIN2 = PMARSVDIN2; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
-			this->QPLLCLK = QPLLCLK; // net ID: QPLLCLK lsb: 0  msb: 0 INPUT
-			this->QPLLREFCLK = QPLLREFCLK; // net ID: QPLLREFCLK lsb: 0  msb: 0 INPUT
-			this->RESETOVRD = RESETOVRD; // net ID: RESETOVRD lsb: 0  msb: 0 INPUT
-			this->RX8B10BEN = RX8B10BEN; // net ID: RX8B10BEN lsb: 0  msb: 0 INPUT
-			this->RXBUFRESET = RXBUFRESET; // net ID: RXBUFRESET lsb: 0  msb: 0 INPUT
-			this->RXCDRFREQRESET = RXCDRFREQRESET; // net ID: RXCDRFREQRESET lsb: 0  msb: 0 INPUT
-			this->RXCDRHOLD = RXCDRHOLD; // net ID: RXCDRHOLD lsb: 0  msb: 0 INPUT
-			this->RXCDROVRDEN = RXCDROVRDEN; // net ID: RXCDROVRDEN lsb: 0  msb: 0 INPUT
-			this->RXCDRRESET = RXCDRRESET; // net ID: RXCDRRESET lsb: 0  msb: 0 INPUT
-			this->RXCDRRESETRSV = RXCDRRESETRSV; // net ID: RXCDRRESETRSV lsb: 0  msb: 0 INPUT
-			this->RXCHBONDEN = RXCHBONDEN; // net ID: RXCHBONDEN lsb: 0  msb: 0 INPUT
-			this->RXCHBONDI = RXCHBONDI; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
-			this->RXCHBONDLEVEL = RXCHBONDLEVEL; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
-			this->RXCHBONDMASTER = RXCHBONDMASTER; // net ID: RXCHBONDMASTER lsb: 0  msb: 0 INPUT
-			this->RXCHBONDSLAVE = RXCHBONDSLAVE; // net ID: RXCHBONDSLAVE lsb: 0  msb: 0 INPUT
-			this->RXCOMMADETEN = RXCOMMADETEN; // net ID: RXCOMMADETEN lsb: 0  msb: 0 INPUT
-			this->RXDDIEN = RXDDIEN; // net ID: RXDDIEN lsb: 0  msb: 0 INPUT
-			this->RXDFEAGCHOLD = RXDFEAGCHOLD; // net ID: RXDFEAGCHOLD lsb: 0  msb: 0 INPUT
-			this->RXDFEAGCOVRDEN = RXDFEAGCOVRDEN; // net ID: RXDFEAGCOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFECM1EN = RXDFECM1EN; // net ID: RXDFECM1EN lsb: 0  msb: 0 INPUT
-			this->RXDFELFHOLD = RXDFELFHOLD; // net ID: RXDFELFHOLD lsb: 0  msb: 0 INPUT
-			this->RXDFELFOVRDEN = RXDFELFOVRDEN; // net ID: RXDFELFOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFELPMRESET = RXDFELPMRESET; // net ID: RXDFELPMRESET lsb: 0  msb: 0 INPUT
-			this->RXDFETAP2HOLD = RXDFETAP2HOLD; // net ID: RXDFETAP2HOLD lsb: 0  msb: 0 INPUT
-			this->RXDFETAP2OVRDEN = RXDFETAP2OVRDEN; // net ID: RXDFETAP2OVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFETAP3HOLD = RXDFETAP3HOLD; // net ID: RXDFETAP3HOLD lsb: 0  msb: 0 INPUT
-			this->RXDFETAP3OVRDEN = RXDFETAP3OVRDEN; // net ID: RXDFETAP3OVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFETAP4HOLD = RXDFETAP4HOLD; // net ID: RXDFETAP4HOLD lsb: 0  msb: 0 INPUT
-			this->RXDFETAP4OVRDEN = RXDFETAP4OVRDEN; // net ID: RXDFETAP4OVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFETAP5HOLD = RXDFETAP5HOLD; // net ID: RXDFETAP5HOLD lsb: 0  msb: 0 INPUT
-			this->RXDFETAP5OVRDEN = RXDFETAP5OVRDEN; // net ID: RXDFETAP5OVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFEUTHOLD = RXDFEUTHOLD; // net ID: RXDFEUTHOLD lsb: 0  msb: 0 INPUT
-			this->RXDFEUTOVRDEN = RXDFEUTOVRDEN; // net ID: RXDFEUTOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFEVPHOLD = RXDFEVPHOLD; // net ID: RXDFEVPHOLD lsb: 0  msb: 0 INPUT
-			this->RXDFEVPOVRDEN = RXDFEVPOVRDEN; // net ID: RXDFEVPOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDFEVSEN = RXDFEVSEN; // net ID: RXDFEVSEN lsb: 0  msb: 0 INPUT
-			this->RXDFEXYDEN = RXDFEXYDEN; // net ID: RXDFEXYDEN lsb: 0  msb: 0 INPUT
-			this->RXDFEXYDHOLD = RXDFEXYDHOLD; // net ID: RXDFEXYDHOLD lsb: 0  msb: 0 INPUT
-			this->RXDFEXYDOVRDEN = RXDFEXYDOVRDEN; // net ID: RXDFEXYDOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDLYBYPASS = RXDLYBYPASS; // net ID: RXDLYBYPASS lsb: 0  msb: 0 INPUT
-			this->RXDLYEN = RXDLYEN; // net ID: RXDLYEN lsb: 0  msb: 0 INPUT
-			this->RXDLYOVRDEN = RXDLYOVRDEN; // net ID: RXDLYOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXDLYSRESET = RXDLYSRESET; // net ID: RXDLYSRESET lsb: 0  msb: 0 INPUT
-			this->RXELECIDLEMODE = RXELECIDLEMODE; // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
-			this->RXGEARBOXSLIP = RXGEARBOXSLIP; // net ID: RXGEARBOXSLIP lsb: 0  msb: 0 INPUT
-			this->RXLPMEN = RXLPMEN; // net ID: RXLPMEN lsb: 0  msb: 0 INPUT
-			this->RXLPMHFHOLD = RXLPMHFHOLD; // net ID: RXLPMHFHOLD lsb: 0  msb: 0 INPUT
-			this->RXLPMHFOVRDEN = RXLPMHFOVRDEN; // net ID: RXLPMHFOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXLPMLFHOLD = RXLPMLFHOLD; // net ID: RXLPMLFHOLD lsb: 0  msb: 0 INPUT
-			this->RXLPMLFKLOVRDEN = RXLPMLFKLOVRDEN; // net ID: RXLPMLFKLOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXMCOMMAALIGNEN = RXMCOMMAALIGNEN; // net ID: RXMCOMMAALIGNEN lsb: 0  msb: 0 INPUT
-			this->RXMONITORSEL = RXMONITORSEL; // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
-			this->RXOOBRESET = RXOOBRESET; // net ID: RXOOBRESET lsb: 0  msb: 0 INPUT
-			this->RXOSHOLD = RXOSHOLD; // net ID: RXOSHOLD lsb: 0  msb: 0 INPUT
-			this->RXOSOVRDEN = RXOSOVRDEN; // net ID: RXOSOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXOUTCLKSEL = RXOUTCLKSEL; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
-			this->RXPCOMMAALIGNEN = RXPCOMMAALIGNEN; // net ID: RXPCOMMAALIGNEN lsb: 0  msb: 0 INPUT
-			this->RXPCSRESET = RXPCSRESET; // net ID: RXPCSRESET lsb: 0  msb: 0 INPUT
-			this->RXPD = RXPD; // net ID: RXPD lsb: 0  msb: 1 INPUT
-			this->RXPHALIGN = RXPHALIGN; // net ID: RXPHALIGN lsb: 0  msb: 0 INPUT
-			this->RXPHALIGNEN = RXPHALIGNEN; // net ID: RXPHALIGNEN lsb: 0  msb: 0 INPUT
-			this->RXPHDLYPD = RXPHDLYPD; // net ID: RXPHDLYPD lsb: 0  msb: 0 INPUT
-			this->RXPHDLYRESET = RXPHDLYRESET; // net ID: RXPHDLYRESET lsb: 0  msb: 0 INPUT
-			this->RXPHOVRDEN = RXPHOVRDEN; // net ID: RXPHOVRDEN lsb: 0  msb: 0 INPUT
-			this->RXPMARESET = RXPMARESET; // net ID: RXPMARESET lsb: 0  msb: 0 INPUT
-			this->RXPOLARITY = RXPOLARITY; // net ID: RXPOLARITY lsb: 0  msb: 0 INPUT
-			this->RXPRBSCNTRESET = RXPRBSCNTRESET; // net ID: RXPRBSCNTRESET lsb: 0  msb: 0 INPUT
-			this->RXPRBSSEL = RXPRBSSEL; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
-			this->RXQPIEN = RXQPIEN; // net ID: RXQPIEN lsb: 0  msb: 0 INPUT
-			this->RXRATE = RXRATE; // net ID: RXRATE lsb: 0  msb: 2 INPUT
-			this->RXSLIDE = RXSLIDE; // net ID: RXSLIDE lsb: 0  msb: 0 INPUT
-			this->RXSYSCLKSEL = RXSYSCLKSEL; // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
-			this->RXUSERRDY = RXUSERRDY; // net ID: RXUSERRDY lsb: 0  msb: 0 INPUT
-			this->RXUSRCLK = RXUSRCLK; // net ID: RXUSRCLK lsb: 0  msb: 0 INPUT
-			this->RXUSRCLK2 = RXUSRCLK2; // net ID: RXUSRCLK2 lsb: 0  msb: 0 INPUT
-			this->SETERRSTATUS = SETERRSTATUS; // net ID: SETERRSTATUS lsb: 0  msb: 0 INPUT
-			this->TSTIN = TSTIN; // net ID: TSTIN lsb: 0  msb: 19 INPUT
-			this->TX8B10BBYPASS = TX8B10BBYPASS; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
-			this->TX8B10BEN = TX8B10BEN; // net ID: TX8B10BEN lsb: 0  msb: 0 INPUT
-			this->TXBUFDIFFCTRL = TXBUFDIFFCTRL; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
-			this->TXCHARDISPMODE = TXCHARDISPMODE; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
-			this->TXCHARDISPVAL = TXCHARDISPVAL; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
-			this->TXCHARISK = TXCHARISK; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
-			this->TXCOMINIT = TXCOMINIT; // net ID: TXCOMINIT lsb: 0  msb: 0 INPUT
-			this->TXCOMSAS = TXCOMSAS; // net ID: TXCOMSAS lsb: 0  msb: 0 INPUT
-			this->TXCOMWAKE = TXCOMWAKE; // net ID: TXCOMWAKE lsb: 0  msb: 0 INPUT
-			this->TXDATA = TXDATA; // net ID: TXDATA lsb: 0  msb: 63 INPUT
-			this->TXDEEMPH = TXDEEMPH; // net ID: TXDEEMPH lsb: 0  msb: 0 INPUT
-			this->TXDETECTRX = TXDETECTRX; // net ID: TXDETECTRX lsb: 0  msb: 0 INPUT
-			this->TXDIFFCTRL = TXDIFFCTRL; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
-			this->TXDIFFPD = TXDIFFPD; // net ID: TXDIFFPD lsb: 0  msb: 0 INPUT
-			this->TXDLYBYPASS = TXDLYBYPASS; // net ID: TXDLYBYPASS lsb: 0  msb: 0 INPUT
-			this->TXDLYEN = TXDLYEN; // net ID: TXDLYEN lsb: 0  msb: 0 INPUT
-			this->TXDLYHOLD = TXDLYHOLD; // net ID: TXDLYHOLD lsb: 0  msb: 0 INPUT
-			this->TXDLYOVRDEN = TXDLYOVRDEN; // net ID: TXDLYOVRDEN lsb: 0  msb: 0 INPUT
-			this->TXDLYSRESET = TXDLYSRESET; // net ID: TXDLYSRESET lsb: 0  msb: 0 INPUT
-			this->TXDLYUPDOWN = TXDLYUPDOWN; // net ID: TXDLYUPDOWN lsb: 0  msb: 0 INPUT
-			this->TXELECIDLE = TXELECIDLE; // net ID: TXELECIDLE lsb: 0  msb: 0 INPUT
-			this->TXHEADER = TXHEADER; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
-			this->TXINHIBIT = TXINHIBIT; // net ID: TXINHIBIT lsb: 0  msb: 0 INPUT
-			this->TXMAINCURSOR = TXMAINCURSOR; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
-			this->TXMARGIN = TXMARGIN; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
-			this->TXOUTCLKSEL = TXOUTCLKSEL; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
-			this->TXPCSRESET = TXPCSRESET; // net ID: TXPCSRESET lsb: 0  msb: 0 INPUT
-			this->TXPD = TXPD; // net ID: TXPD lsb: 0  msb: 1 INPUT
-			this->TXPDELECIDLEMODE = TXPDELECIDLEMODE; // net ID: TXPDELECIDLEMODE lsb: 0  msb: 0 INPUT
-			this->TXPHALIGN = TXPHALIGN; // net ID: TXPHALIGN lsb: 0  msb: 0 INPUT
-			this->TXPHALIGNEN = TXPHALIGNEN; // net ID: TXPHALIGNEN lsb: 0  msb: 0 INPUT
-			this->TXPHDLYPD = TXPHDLYPD; // net ID: TXPHDLYPD lsb: 0  msb: 0 INPUT
-			this->TXPHDLYRESET = TXPHDLYRESET; // net ID: TXPHDLYRESET lsb: 0  msb: 0 INPUT
-			this->TXPHDLYTSTCLK = TXPHDLYTSTCLK; // net ID: TXPHDLYTSTCLK lsb: 0  msb: 0 INPUT
-			this->TXPHINIT = TXPHINIT; // net ID: TXPHINIT lsb: 0  msb: 0 INPUT
-			this->TXPHOVRDEN = TXPHOVRDEN; // net ID: TXPHOVRDEN lsb: 0  msb: 0 INPUT
-			this->TXPISOPD = TXPISOPD; // net ID: TXPISOPD lsb: 0  msb: 0 INPUT
-			this->TXPMARESET = TXPMARESET; // net ID: TXPMARESET lsb: 0  msb: 0 INPUT
-			this->TXPOLARITY = TXPOLARITY; // net ID: TXPOLARITY lsb: 0  msb: 0 INPUT
-			this->TXPOSTCURSOR = TXPOSTCURSOR; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
-			this->TXPOSTCURSORINV = TXPOSTCURSORINV; // net ID: TXPOSTCURSORINV lsb: 0  msb: 0 INPUT
-			this->TXPRBSFORCEERR = TXPRBSFORCEERR; // net ID: TXPRBSFORCEERR lsb: 0  msb: 0 INPUT
-			this->TXPRBSSEL = TXPRBSSEL; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
-			this->TXPRECURSOR = TXPRECURSOR; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
-			this->TXPRECURSORINV = TXPRECURSORINV; // net ID: TXPRECURSORINV lsb: 0  msb: 0 INPUT
-			this->TXQPIBIASEN = TXQPIBIASEN; // net ID: TXQPIBIASEN lsb: 0  msb: 0 INPUT
-			this->TXQPISTRONGPDOWN = TXQPISTRONGPDOWN; // net ID: TXQPISTRONGPDOWN lsb: 0  msb: 0 INPUT
-			this->TXQPIWEAKPUP = TXQPIWEAKPUP; // net ID: TXQPIWEAKPUP lsb: 0  msb: 0 INPUT
-			this->TXRATE = TXRATE; // net ID: TXRATE lsb: 0  msb: 2 INPUT
-			this->TXSEQUENCE = TXSEQUENCE; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
-			this->TXSTARTSEQ = TXSTARTSEQ; // net ID: TXSTARTSEQ lsb: 0  msb: 0 INPUT
-			this->TXSWING = TXSWING; // net ID: TXSWING lsb: 0  msb: 0 INPUT
-			this->TXSYSCLKSEL = TXSYSCLKSEL; // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
-			this->TXUSERRDY = TXUSERRDY; // net ID: TXUSERRDY lsb: 0  msb: 0 INPUT
-			this->TXUSRCLK = TXUSRCLK; // net ID: TXUSRCLK lsb: 0  msb: 0 INPUT
-			this->TXUSRCLK2 = TXUSRCLK2; // net ID: TXUSRCLK2 lsb: 0  msb: 0 INPUT
+			this->CPLLFBCLKLOST_A0_B = CPLLFBCLKLOST_A0_B; // net ID: CPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
+			this->CPLLLOCK_A0_B = CPLLLOCK_A0_B; // net ID: CPLLLOCK lsb: 0  msb: 0 OUTPUT
+			this->CPLLREFCLKLOST_A0_B = CPLLREFCLKLOST_A0_B; // net ID: CPLLREFCLKLOST lsb: 0  msb: 0 OUTPUT
+			this->DMONITOROUT_A0_B = DMONITOROUT_A0_B; // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
+			this->DRPDO_A0_B = DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+			this->DRPRDY_A0_B = DRPRDY_A0_B; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
+			this->EYESCANDATAERROR_A0_B = EYESCANDATAERROR_A0_B; // net ID: EYESCANDATAERROR lsb: 0  msb: 0 OUTPUT
+			this->GTREFCLKMONITOR_A0_B = GTREFCLKMONITOR_A0_B; // net ID: GTREFCLKMONITOR lsb: 0  msb: 0 OUTPUT
+			this->GTXTXN_A0_B = GTXTXN_A0_B; // net ID: GTXTXN lsb: 0  msb: 0 OUTPUT
+			this->GTXTXP_A0_B = GTXTXP_A0_B; // net ID: GTXTXP lsb: 0  msb: 0 OUTPUT
+			this->PCSRSVDOUT_A0_B = PCSRSVDOUT_A0_B; // net ID: PCSRSVDOUT lsb: 0  msb: 0 OUTPUT
+			this->PHYSTATUS_A0_B = PHYSTATUS_A0_B; // net ID: PHYSTATUS lsb: 0  msb: 0 OUTPUT
+			this->RXBUFSTATUS_A0_B = RXBUFSTATUS_A0_B; // net ID: RXBUFSTATUS lsb: 0  msb: 0 OUTPUT
+			this->RXBYTEISALIGNED_A0_B = RXBYTEISALIGNED_A0_B; // net ID: RXBYTEISALIGNED lsb: 0  msb: 0 OUTPUT
+			this->RXBYTEREALIGN_A0_B = RXBYTEREALIGN_A0_B; // net ID: RXBYTEREALIGN lsb: 0  msb: 0 OUTPUT
+			this->RXCDRLOCK_A0_B = RXCDRLOCK_A0_B; // net ID: RXCDRLOCK lsb: 0  msb: 0 OUTPUT
+			this->RXCHANBONDSEQ_A0_B = RXCHANBONDSEQ_A0_B; // net ID: RXCHANBONDSEQ lsb: 0  msb: 0 OUTPUT
+			this->RXCHANISALIGNED_A0_B = RXCHANISALIGNED_A0_B; // net ID: RXCHANISALIGNED lsb: 0  msb: 0 OUTPUT
+			this->RXCHANREALIGN_A0_B = RXCHANREALIGN_A0_B; // net ID: RXCHANREALIGN lsb: 0  msb: 0 OUTPUT
+			this->RXCHARISCOMMA_A0_B = RXCHARISCOMMA_A0_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
+			this->RXCHARISK_A0_B = RXCHARISK_A0_B; // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
+			this->RXCHBONDO_A0_B = RXCHBONDO_A0_B; // net ID: RXCHBONDO lsb: 0  msb: 0 OUTPUT
+			this->RXCLKCORCNT_A0_B = RXCLKCORCNT_A0_B; // net ID: RXCLKCORCNT lsb: 0  msb: 0 OUTPUT
+			this->RXCOMINITDET_A0_B = RXCOMINITDET_A0_B; // net ID: RXCOMINITDET lsb: 0  msb: 0 OUTPUT
+			this->RXCOMMADET_A0_B = RXCOMMADET_A0_B; // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
+			this->RXCOMSASDET_A0_B = RXCOMSASDET_A0_B; // net ID: RXCOMSASDET lsb: 0  msb: 0 OUTPUT
+			this->RXCOMWAKEDET_A0_B = RXCOMWAKEDET_A0_B; // net ID: RXCOMWAKEDET lsb: 0  msb: 0 OUTPUT
+			this->RXDATA_A0_B = RXDATA_A0_B; // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
+			this->RXDATAVALID_A0_B = RXDATAVALID_A0_B; // net ID: RXDATAVALID lsb: 0  msb: 0 OUTPUT
+			this->RXDISPERR_A0_B = RXDISPERR_A0_B; // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
+			this->RXDLYSRESETDONE_A0_B = RXDLYSRESETDONE_A0_B; // net ID: RXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
+			this->RXELECIDLE_A0_B = RXELECIDLE_A0_B; // net ID: RXELECIDLE lsb: 0  msb: 0 OUTPUT
+			this->RXHEADER_A0_B = RXHEADER_A0_B; // net ID: RXHEADER lsb: 0  msb: 0 OUTPUT
+			this->RXHEADERVALID_A0_B = RXHEADERVALID_A0_B; // net ID: RXHEADERVALID lsb: 0  msb: 0 OUTPUT
+			this->RXMONITOROUT_A0_B = RXMONITOROUT_A0_B; // net ID: RXMONITOROUT lsb: 0  msb: 0 OUTPUT
+			this->RXNOTINTABLE_A0_B = RXNOTINTABLE_A0_B; // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
+			this->RXOUTCLK_A0_B = RXOUTCLK_A0_B; // net ID: RXOUTCLK lsb: 0  msb: 0 OUTPUT
+			this->RXOUTCLKFABRIC_A0_B = RXOUTCLKFABRIC_A0_B; // net ID: RXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
+			this->RXOUTCLKPCS_A0_B = RXOUTCLKPCS_A0_B; // net ID: RXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
+			this->RXPHALIGNDONE_A0_B = RXPHALIGNDONE_A0_B; // net ID: RXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
+			this->RXPHMONITOR_A0_B = RXPHMONITOR_A0_B; // net ID: RXPHMONITOR lsb: 0  msb: 0 OUTPUT
+			this->RXPHSLIPMONITOR_A0_B = RXPHSLIPMONITOR_A0_B; // net ID: RXPHSLIPMONITOR lsb: 0  msb: 0 OUTPUT
+			this->RXPRBSERR_A0_B = RXPRBSERR_A0_B; // net ID: RXPRBSERR lsb: 0  msb: 0 OUTPUT
+			this->RXQPISENN_A0_B = RXQPISENN_A0_B; // net ID: RXQPISENN lsb: 0  msb: 0 OUTPUT
+			this->RXQPISENP_A0_B = RXQPISENP_A0_B; // net ID: RXQPISENP lsb: 0  msb: 0 OUTPUT
+			this->RXRATEDONE_A0_B = RXRATEDONE_A0_B; // net ID: RXRATEDONE lsb: 0  msb: 0 OUTPUT
+			this->RXRESETDONE_A0_B = RXRESETDONE_A0_B; // net ID: RXRESETDONE lsb: 0  msb: 0 OUTPUT
+			this->RXSTARTOFSEQ_A0_B = RXSTARTOFSEQ_A0_B; // net ID: RXSTARTOFSEQ lsb: 0  msb: 0 OUTPUT
+			this->RXSTATUS_A0_B = RXSTATUS_A0_B; // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
+			this->RXVALID_A0_B = RXVALID_A0_B; // net ID: RXVALID lsb: 0  msb: 0 OUTPUT
+			this->TSTOUT_A0_B = TSTOUT_A0_B; // net ID: TSTOUT lsb: 0  msb: 0 OUTPUT
+			this->TXBUFSTATUS_A0_B = TXBUFSTATUS_A0_B; // net ID: TXBUFSTATUS lsb: 0  msb: 0 OUTPUT
+			this->TXCOMFINISH_A0_B = TXCOMFINISH_A0_B; // net ID: TXCOMFINISH lsb: 0  msb: 0 OUTPUT
+			this->TXDLYSRESETDONE_A0_B = TXDLYSRESETDONE_A0_B; // net ID: TXDLYSRESETDONE lsb: 0  msb: 0 OUTPUT
+			this->TXGEARBOXREADY_A0_B = TXGEARBOXREADY_A0_B; // net ID: TXGEARBOXREADY lsb: 0  msb: 0 OUTPUT
+			this->TXOUTCLK_A0_B = TXOUTCLK_A0_B; // net ID: TXOUTCLK lsb: 0  msb: 0 OUTPUT
+			this->TXOUTCLKFABRIC_A0_B = TXOUTCLKFABRIC_A0_B; // net ID: TXOUTCLKFABRIC lsb: 0  msb: 0 OUTPUT
+			this->TXOUTCLKPCS_A0_B = TXOUTCLKPCS_A0_B; // net ID: TXOUTCLKPCS lsb: 0  msb: 0 OUTPUT
+			this->TXPHALIGNDONE_A0_B = TXPHALIGNDONE_A0_B; // net ID: TXPHALIGNDONE lsb: 0  msb: 0 OUTPUT
+			this->TXPHINITDONE_A0_B = TXPHINITDONE_A0_B; // net ID: TXPHINITDONE lsb: 0  msb: 0 OUTPUT
+			this->TXQPISENN_A0_B = TXQPISENN_A0_B; // net ID: TXQPISENN lsb: 0  msb: 0 OUTPUT
+			this->TXQPISENP_A0_B = TXQPISENP_A0_B; // net ID: TXQPISENP lsb: 0  msb: 0 OUTPUT
+			this->TXRATEDONE_A0_B = TXRATEDONE_A0_B; // net ID: TXRATEDONE lsb: 0  msb: 0 OUTPUT
+			this->TXRESETDONE_A0_B = TXRESETDONE_A0_B; // net ID: TXRESETDONE lsb: 0  msb: 0 OUTPUT
+			this->CFGRESET_A0_B = CFGRESET_A0_B; // net ID: CFGRESET lsb: 0  msb: 0 INPUT
+			this->CLKRSVD_A0_B = CLKRSVD_A0_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			this->CLKRSVD_A1_B = CLKRSVD_A1_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			this->CLKRSVD_A2_B = CLKRSVD_A2_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			this->CLKRSVD_A3_B = CLKRSVD_A3_B; // net ID: CLKRSVD lsb: 0  msb: 3 INPUT
+			this->CPLLLOCKDETCLK_A0_B = CPLLLOCKDETCLK_A0_B; // net ID: CPLLLOCKDETCLK lsb: 0  msb: 0 INPUT
+			this->CPLLLOCKEN_A0_B = CPLLLOCKEN_A0_B; // net ID: CPLLLOCKEN lsb: 0  msb: 0 INPUT
+			this->CPLLPD_A0_B = CPLLPD_A0_B; // net ID: CPLLPD lsb: 0  msb: 0 INPUT
+			this->CPLLREFCLKSEL_A0_B = CPLLREFCLKSEL_A0_B; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+			this->CPLLREFCLKSEL_A1_B = CPLLREFCLKSEL_A1_B; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+			this->CPLLREFCLKSEL_A2_B = CPLLREFCLKSEL_A2_B; // net ID: CPLLREFCLKSEL lsb: 0  msb: 2 INPUT
+			this->CPLLRESET_A0_B = CPLLRESET_A0_B; // net ID: CPLLRESET lsb: 0  msb: 0 INPUT
+			this->DRPADDR_A0_B = DRPADDR_A0_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A1_B = DRPADDR_A1_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A2_B = DRPADDR_A2_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A3_B = DRPADDR_A3_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A4_B = DRPADDR_A4_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A5_B = DRPADDR_A5_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A6_B = DRPADDR_A6_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A7_B = DRPADDR_A7_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPADDR_A8_B = DRPADDR_A8_B; // net ID: DRPADDR lsb: 0  msb: 8 INPUT
+			this->DRPCLK_A0_B = DRPCLK_A0_B; // net ID: DRPCLK lsb: 0  msb: 0 INPUT
+			this->DRPDI_A0_B = DRPDI_A0_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A1_B = DRPDI_A1_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A2_B = DRPDI_A2_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A3_B = DRPDI_A3_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A4_B = DRPDI_A4_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A5_B = DRPDI_A5_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A6_B = DRPDI_A6_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A7_B = DRPDI_A7_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A8_B = DRPDI_A8_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A9_B = DRPDI_A9_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A10_B = DRPDI_A10_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A11_B = DRPDI_A11_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A12_B = DRPDI_A12_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A13_B = DRPDI_A13_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A14_B = DRPDI_A14_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPDI_A15_B = DRPDI_A15_B; // net ID: DRPDI lsb: 0  msb: 15 INPUT
+			this->DRPEN_A0_B = DRPEN_A0_B; // net ID: DRPEN lsb: 0  msb: 0 INPUT
+			this->DRPWE_A0_B = DRPWE_A0_B; // net ID: DRPWE lsb: 0  msb: 0 INPUT
+			this->EYESCANMODE_A0_B = EYESCANMODE_A0_B; // net ID: EYESCANMODE lsb: 0  msb: 0 INPUT
+			this->EYESCANRESET_A0_B = EYESCANRESET_A0_B; // net ID: EYESCANRESET lsb: 0  msb: 0 INPUT
+			this->EYESCANTRIGGER_A0_B = EYESCANTRIGGER_A0_B; // net ID: EYESCANTRIGGER lsb: 0  msb: 0 INPUT
+			this->GTGREFCLK_A0_B = GTGREFCLK_A0_B; // net ID: GTGREFCLK lsb: 0  msb: 0 INPUT
+			this->GTNORTHREFCLK0_A0_B = GTNORTHREFCLK0_A0_B; // net ID: GTNORTHREFCLK0 lsb: 0  msb: 0 INPUT
+			this->GTNORTHREFCLK1_A0_B = GTNORTHREFCLK1_A0_B; // net ID: GTNORTHREFCLK1 lsb: 0  msb: 0 INPUT
+			this->GTREFCLK0_A0_B = GTREFCLK0_A0_B; // net ID: GTREFCLK0 lsb: 0  msb: 0 INPUT
+			this->GTREFCLK1_A0_B = GTREFCLK1_A0_B; // net ID: GTREFCLK1 lsb: 0  msb: 0 INPUT
+			this->GTRESETSEL_A0_B = GTRESETSEL_A0_B; // net ID: GTRESETSEL lsb: 0  msb: 0 INPUT
+			this->GTRSVD_A0_B = GTRSVD_A0_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A1_B = GTRSVD_A1_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A2_B = GTRSVD_A2_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A3_B = GTRSVD_A3_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A4_B = GTRSVD_A4_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A5_B = GTRSVD_A5_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A6_B = GTRSVD_A6_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A7_B = GTRSVD_A7_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A8_B = GTRSVD_A8_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A9_B = GTRSVD_A9_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A10_B = GTRSVD_A10_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A11_B = GTRSVD_A11_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A12_B = GTRSVD_A12_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A13_B = GTRSVD_A13_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A14_B = GTRSVD_A14_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRSVD_A15_B = GTRSVD_A15_B; // net ID: GTRSVD lsb: 0  msb: 15 INPUT
+			this->GTRXRESET_A0_B = GTRXRESET_A0_B; // net ID: GTRXRESET lsb: 0  msb: 0 INPUT
+			this->GTSOUTHREFCLK0_A0_B = GTSOUTHREFCLK0_A0_B; // net ID: GTSOUTHREFCLK0 lsb: 0  msb: 0 INPUT
+			this->GTSOUTHREFCLK1_A0_B = GTSOUTHREFCLK1_A0_B; // net ID: GTSOUTHREFCLK1 lsb: 0  msb: 0 INPUT
+			this->GTTXRESET_A0_B = GTTXRESET_A0_B; // net ID: GTTXRESET lsb: 0  msb: 0 INPUT
+			this->GTXRXN_A0_B = GTXRXN_A0_B; // net ID: GTXRXN lsb: 0  msb: 0 INPUT
+			this->GTXRXP_A0_B = GTXRXP_A0_B; // net ID: GTXRXP lsb: 0  msb: 0 INPUT
+			this->LOOPBACK_A0_B = LOOPBACK_A0_B; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+			this->LOOPBACK_A1_B = LOOPBACK_A1_B; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+			this->LOOPBACK_A2_B = LOOPBACK_A2_B; // net ID: LOOPBACK lsb: 0  msb: 2 INPUT
+			this->PCSRSVDIN_A0_B = PCSRSVDIN_A0_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A1_B = PCSRSVDIN_A1_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A2_B = PCSRSVDIN_A2_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A3_B = PCSRSVDIN_A3_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A4_B = PCSRSVDIN_A4_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A5_B = PCSRSVDIN_A5_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A6_B = PCSRSVDIN_A6_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A7_B = PCSRSVDIN_A7_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A8_B = PCSRSVDIN_A8_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A9_B = PCSRSVDIN_A9_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A10_B = PCSRSVDIN_A10_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A11_B = PCSRSVDIN_A11_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A12_B = PCSRSVDIN_A12_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A13_B = PCSRSVDIN_A13_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A14_B = PCSRSVDIN_A14_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN_A15_B = PCSRSVDIN_A15_B; // net ID: PCSRSVDIN lsb: 0  msb: 15 INPUT
+			this->PCSRSVDIN2_A0_B = PCSRSVDIN2_A0_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PCSRSVDIN2_A1_B = PCSRSVDIN2_A1_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PCSRSVDIN2_A2_B = PCSRSVDIN2_A2_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PCSRSVDIN2_A3_B = PCSRSVDIN2_A3_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PCSRSVDIN2_A4_B = PCSRSVDIN2_A4_B; // net ID: PCSRSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN_A0_B = PMARSVDIN_A0_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN_A1_B = PMARSVDIN_A1_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN_A2_B = PMARSVDIN_A2_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN_A3_B = PMARSVDIN_A3_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN_A4_B = PMARSVDIN_A4_B; // net ID: PMARSVDIN lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN2_A0_B = PMARSVDIN2_A0_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN2_A1_B = PMARSVDIN2_A1_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN2_A2_B = PMARSVDIN2_A2_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN2_A3_B = PMARSVDIN2_A3_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			this->PMARSVDIN2_A4_B = PMARSVDIN2_A4_B; // net ID: PMARSVDIN2 lsb: 0  msb: 4 INPUT
+			this->QPLLCLK_A0_B = QPLLCLK_A0_B; // net ID: QPLLCLK lsb: 0  msb: 0 INPUT
+			this->QPLLREFCLK_A0_B = QPLLREFCLK_A0_B; // net ID: QPLLREFCLK lsb: 0  msb: 0 INPUT
+			this->RESETOVRD_A0_B = RESETOVRD_A0_B; // net ID: RESETOVRD lsb: 0  msb: 0 INPUT
+			this->RX8B10BEN_A0_B = RX8B10BEN_A0_B; // net ID: RX8B10BEN lsb: 0  msb: 0 INPUT
+			this->RXBUFRESET_A0_B = RXBUFRESET_A0_B; // net ID: RXBUFRESET lsb: 0  msb: 0 INPUT
+			this->RXCDRFREQRESET_A0_B = RXCDRFREQRESET_A0_B; // net ID: RXCDRFREQRESET lsb: 0  msb: 0 INPUT
+			this->RXCDRHOLD_A0_B = RXCDRHOLD_A0_B; // net ID: RXCDRHOLD lsb: 0  msb: 0 INPUT
+			this->RXCDROVRDEN_A0_B = RXCDROVRDEN_A0_B; // net ID: RXCDROVRDEN lsb: 0  msb: 0 INPUT
+			this->RXCDRRESET_A0_B = RXCDRRESET_A0_B; // net ID: RXCDRRESET lsb: 0  msb: 0 INPUT
+			this->RXCDRRESETRSV_A0_B = RXCDRRESETRSV_A0_B; // net ID: RXCDRRESETRSV lsb: 0  msb: 0 INPUT
+			this->RXCHBONDEN_A0_B = RXCHBONDEN_A0_B; // net ID: RXCHBONDEN lsb: 0  msb: 0 INPUT
+			this->RXCHBONDI_A0_B = RXCHBONDI_A0_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			this->RXCHBONDI_A1_B = RXCHBONDI_A1_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			this->RXCHBONDI_A2_B = RXCHBONDI_A2_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			this->RXCHBONDI_A3_B = RXCHBONDI_A3_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			this->RXCHBONDI_A4_B = RXCHBONDI_A4_B; // net ID: RXCHBONDI lsb: 0  msb: 4 INPUT
+			this->RXCHBONDLEVEL_A0_B = RXCHBONDLEVEL_A0_B; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+			this->RXCHBONDLEVEL_A1_B = RXCHBONDLEVEL_A1_B; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+			this->RXCHBONDLEVEL_A2_B = RXCHBONDLEVEL_A2_B; // net ID: RXCHBONDLEVEL lsb: 0  msb: 2 INPUT
+			this->RXCHBONDMASTER_A0_B = RXCHBONDMASTER_A0_B; // net ID: RXCHBONDMASTER lsb: 0  msb: 0 INPUT
+			this->RXCHBONDSLAVE_A0_B = RXCHBONDSLAVE_A0_B; // net ID: RXCHBONDSLAVE lsb: 0  msb: 0 INPUT
+			this->RXCOMMADETEN_A0_B = RXCOMMADETEN_A0_B; // net ID: RXCOMMADETEN lsb: 0  msb: 0 INPUT
+			this->RXDDIEN_A0_B = RXDDIEN_A0_B; // net ID: RXDDIEN lsb: 0  msb: 0 INPUT
+			this->RXDFEAGCHOLD_A0_B = RXDFEAGCHOLD_A0_B; // net ID: RXDFEAGCHOLD lsb: 0  msb: 0 INPUT
+			this->RXDFEAGCOVRDEN_A0_B = RXDFEAGCOVRDEN_A0_B; // net ID: RXDFEAGCOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFECM1EN_A0_B = RXDFECM1EN_A0_B; // net ID: RXDFECM1EN lsb: 0  msb: 0 INPUT
+			this->RXDFELFHOLD_A0_B = RXDFELFHOLD_A0_B; // net ID: RXDFELFHOLD lsb: 0  msb: 0 INPUT
+			this->RXDFELFOVRDEN_A0_B = RXDFELFOVRDEN_A0_B; // net ID: RXDFELFOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFELPMRESET_A0_B = RXDFELPMRESET_A0_B; // net ID: RXDFELPMRESET lsb: 0  msb: 0 INPUT
+			this->RXDFETAP2HOLD_A0_B = RXDFETAP2HOLD_A0_B; // net ID: RXDFETAP2HOLD lsb: 0  msb: 0 INPUT
+			this->RXDFETAP2OVRDEN_A0_B = RXDFETAP2OVRDEN_A0_B; // net ID: RXDFETAP2OVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFETAP3HOLD_A0_B = RXDFETAP3HOLD_A0_B; // net ID: RXDFETAP3HOLD lsb: 0  msb: 0 INPUT
+			this->RXDFETAP3OVRDEN_A0_B = RXDFETAP3OVRDEN_A0_B; // net ID: RXDFETAP3OVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFETAP4HOLD_A0_B = RXDFETAP4HOLD_A0_B; // net ID: RXDFETAP4HOLD lsb: 0  msb: 0 INPUT
+			this->RXDFETAP4OVRDEN_A0_B = RXDFETAP4OVRDEN_A0_B; // net ID: RXDFETAP4OVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFETAP5HOLD_A0_B = RXDFETAP5HOLD_A0_B; // net ID: RXDFETAP5HOLD lsb: 0  msb: 0 INPUT
+			this->RXDFETAP5OVRDEN_A0_B = RXDFETAP5OVRDEN_A0_B; // net ID: RXDFETAP5OVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFEUTHOLD_A0_B = RXDFEUTHOLD_A0_B; // net ID: RXDFEUTHOLD lsb: 0  msb: 0 INPUT
+			this->RXDFEUTOVRDEN_A0_B = RXDFEUTOVRDEN_A0_B; // net ID: RXDFEUTOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFEVPHOLD_A0_B = RXDFEVPHOLD_A0_B; // net ID: RXDFEVPHOLD lsb: 0  msb: 0 INPUT
+			this->RXDFEVPOVRDEN_A0_B = RXDFEVPOVRDEN_A0_B; // net ID: RXDFEVPOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDFEVSEN_A0_B = RXDFEVSEN_A0_B; // net ID: RXDFEVSEN lsb: 0  msb: 0 INPUT
+			this->RXDFEXYDEN_A0_B = RXDFEXYDEN_A0_B; // net ID: RXDFEXYDEN lsb: 0  msb: 0 INPUT
+			this->RXDFEXYDHOLD_A0_B = RXDFEXYDHOLD_A0_B; // net ID: RXDFEXYDHOLD lsb: 0  msb: 0 INPUT
+			this->RXDFEXYDOVRDEN_A0_B = RXDFEXYDOVRDEN_A0_B; // net ID: RXDFEXYDOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDLYBYPASS_A0_B = RXDLYBYPASS_A0_B; // net ID: RXDLYBYPASS lsb: 0  msb: 0 INPUT
+			this->RXDLYEN_A0_B = RXDLYEN_A0_B; // net ID: RXDLYEN lsb: 0  msb: 0 INPUT
+			this->RXDLYOVRDEN_A0_B = RXDLYOVRDEN_A0_B; // net ID: RXDLYOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXDLYSRESET_A0_B = RXDLYSRESET_A0_B; // net ID: RXDLYSRESET lsb: 0  msb: 0 INPUT
+			this->RXELECIDLEMODE_A0_B = RXELECIDLEMODE_A0_B; // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
+			this->RXELECIDLEMODE_A1_B = RXELECIDLEMODE_A1_B; // net ID: RXELECIDLEMODE lsb: 0  msb: 1 INPUT
+			this->RXGEARBOXSLIP_A0_B = RXGEARBOXSLIP_A0_B; // net ID: RXGEARBOXSLIP lsb: 0  msb: 0 INPUT
+			this->RXLPMEN_A0_B = RXLPMEN_A0_B; // net ID: RXLPMEN lsb: 0  msb: 0 INPUT
+			this->RXLPMHFHOLD_A0_B = RXLPMHFHOLD_A0_B; // net ID: RXLPMHFHOLD lsb: 0  msb: 0 INPUT
+			this->RXLPMHFOVRDEN_A0_B = RXLPMHFOVRDEN_A0_B; // net ID: RXLPMHFOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXLPMLFHOLD_A0_B = RXLPMLFHOLD_A0_B; // net ID: RXLPMLFHOLD lsb: 0  msb: 0 INPUT
+			this->RXLPMLFKLOVRDEN_A0_B = RXLPMLFKLOVRDEN_A0_B; // net ID: RXLPMLFKLOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXMCOMMAALIGNEN_A0_B = RXMCOMMAALIGNEN_A0_B; // net ID: RXMCOMMAALIGNEN lsb: 0  msb: 0 INPUT
+			this->RXMONITORSEL_A0_B = RXMONITORSEL_A0_B; // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
+			this->RXMONITORSEL_A1_B = RXMONITORSEL_A1_B; // net ID: RXMONITORSEL lsb: 0  msb: 1 INPUT
+			this->RXOOBRESET_A0_B = RXOOBRESET_A0_B; // net ID: RXOOBRESET lsb: 0  msb: 0 INPUT
+			this->RXOSHOLD_A0_B = RXOSHOLD_A0_B; // net ID: RXOSHOLD lsb: 0  msb: 0 INPUT
+			this->RXOSOVRDEN_A0_B = RXOSOVRDEN_A0_B; // net ID: RXOSOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXOUTCLKSEL_A0_B = RXOUTCLKSEL_A0_B; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			this->RXOUTCLKSEL_A1_B = RXOUTCLKSEL_A1_B; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			this->RXOUTCLKSEL_A2_B = RXOUTCLKSEL_A2_B; // net ID: RXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			this->RXPCOMMAALIGNEN_A0_B = RXPCOMMAALIGNEN_A0_B; // net ID: RXPCOMMAALIGNEN lsb: 0  msb: 0 INPUT
+			this->RXPCSRESET_A0_B = RXPCSRESET_A0_B; // net ID: RXPCSRESET lsb: 0  msb: 0 INPUT
+			this->RXPD_A0_B = RXPD_A0_B; // net ID: RXPD lsb: 0  msb: 1 INPUT
+			this->RXPD_A1_B = RXPD_A1_B; // net ID: RXPD lsb: 0  msb: 1 INPUT
+			this->RXPHALIGN_A0_B = RXPHALIGN_A0_B; // net ID: RXPHALIGN lsb: 0  msb: 0 INPUT
+			this->RXPHALIGNEN_A0_B = RXPHALIGNEN_A0_B; // net ID: RXPHALIGNEN lsb: 0  msb: 0 INPUT
+			this->RXPHDLYPD_A0_B = RXPHDLYPD_A0_B; // net ID: RXPHDLYPD lsb: 0  msb: 0 INPUT
+			this->RXPHDLYRESET_A0_B = RXPHDLYRESET_A0_B; // net ID: RXPHDLYRESET lsb: 0  msb: 0 INPUT
+			this->RXPHOVRDEN_A0_B = RXPHOVRDEN_A0_B; // net ID: RXPHOVRDEN lsb: 0  msb: 0 INPUT
+			this->RXPMARESET_A0_B = RXPMARESET_A0_B; // net ID: RXPMARESET lsb: 0  msb: 0 INPUT
+			this->RXPOLARITY_A0_B = RXPOLARITY_A0_B; // net ID: RXPOLARITY lsb: 0  msb: 0 INPUT
+			this->RXPRBSCNTRESET_A0_B = RXPRBSCNTRESET_A0_B; // net ID: RXPRBSCNTRESET lsb: 0  msb: 0 INPUT
+			this->RXPRBSSEL_A0_B = RXPRBSSEL_A0_B; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+			this->RXPRBSSEL_A1_B = RXPRBSSEL_A1_B; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+			this->RXPRBSSEL_A2_B = RXPRBSSEL_A2_B; // net ID: RXPRBSSEL lsb: 0  msb: 2 INPUT
+			this->RXQPIEN_A0_B = RXQPIEN_A0_B; // net ID: RXQPIEN lsb: 0  msb: 0 INPUT
+			this->RXRATE_A0_B = RXRATE_A0_B; // net ID: RXRATE lsb: 0  msb: 2 INPUT
+			this->RXRATE_A1_B = RXRATE_A1_B; // net ID: RXRATE lsb: 0  msb: 2 INPUT
+			this->RXRATE_A2_B = RXRATE_A2_B; // net ID: RXRATE lsb: 0  msb: 2 INPUT
+			this->RXSLIDE_A0_B = RXSLIDE_A0_B; // net ID: RXSLIDE lsb: 0  msb: 0 INPUT
+			this->RXSYSCLKSEL_A0_B = RXSYSCLKSEL_A0_B; // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			this->RXSYSCLKSEL_A1_B = RXSYSCLKSEL_A1_B; // net ID: RXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			this->RXUSERRDY_A0_B = RXUSERRDY_A0_B; // net ID: RXUSERRDY lsb: 0  msb: 0 INPUT
+			this->RXUSRCLK_A0_B = RXUSRCLK_A0_B; // net ID: RXUSRCLK lsb: 0  msb: 0 INPUT
+			this->RXUSRCLK2_A0_B = RXUSRCLK2_A0_B; // net ID: RXUSRCLK2 lsb: 0  msb: 0 INPUT
+			this->SETERRSTATUS_A0_B = SETERRSTATUS_A0_B; // net ID: SETERRSTATUS lsb: 0  msb: 0 INPUT
+			this->TSTIN_A0_B = TSTIN_A0_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A1_B = TSTIN_A1_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A2_B = TSTIN_A2_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A3_B = TSTIN_A3_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A4_B = TSTIN_A4_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A5_B = TSTIN_A5_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A6_B = TSTIN_A6_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A7_B = TSTIN_A7_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A8_B = TSTIN_A8_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A9_B = TSTIN_A9_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A10_B = TSTIN_A10_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A11_B = TSTIN_A11_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A12_B = TSTIN_A12_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A13_B = TSTIN_A13_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A14_B = TSTIN_A14_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A15_B = TSTIN_A15_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A16_B = TSTIN_A16_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A17_B = TSTIN_A17_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A18_B = TSTIN_A18_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TSTIN_A19_B = TSTIN_A19_B; // net ID: TSTIN lsb: 0  msb: 19 INPUT
+			this->TX8B10BBYPASS_A0_B = TX8B10BBYPASS_A0_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BBYPASS_A1_B = TX8B10BBYPASS_A1_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BBYPASS_A2_B = TX8B10BBYPASS_A2_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BBYPASS_A3_B = TX8B10BBYPASS_A3_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BBYPASS_A4_B = TX8B10BBYPASS_A4_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BBYPASS_A5_B = TX8B10BBYPASS_A5_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BBYPASS_A6_B = TX8B10BBYPASS_A6_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BBYPASS_A7_B = TX8B10BBYPASS_A7_B; // net ID: TX8B10BBYPASS lsb: 0  msb: 7 INPUT
+			this->TX8B10BEN_A0_B = TX8B10BEN_A0_B; // net ID: TX8B10BEN lsb: 0  msb: 0 INPUT
+			this->TXBUFDIFFCTRL_A0_B = TXBUFDIFFCTRL_A0_B; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+			this->TXBUFDIFFCTRL_A1_B = TXBUFDIFFCTRL_A1_B; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+			this->TXBUFDIFFCTRL_A2_B = TXBUFDIFFCTRL_A2_B; // net ID: TXBUFDIFFCTRL lsb: 0  msb: 2 INPUT
+			this->TXCHARDISPMODE_A0_B = TXCHARDISPMODE_A0_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPMODE_A1_B = TXCHARDISPMODE_A1_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPMODE_A2_B = TXCHARDISPMODE_A2_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPMODE_A3_B = TXCHARDISPMODE_A3_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPMODE_A4_B = TXCHARDISPMODE_A4_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPMODE_A5_B = TXCHARDISPMODE_A5_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPMODE_A6_B = TXCHARDISPMODE_A6_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPMODE_A7_B = TXCHARDISPMODE_A7_B; // net ID: TXCHARDISPMODE lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A0_B = TXCHARDISPVAL_A0_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A1_B = TXCHARDISPVAL_A1_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A2_B = TXCHARDISPVAL_A2_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A3_B = TXCHARDISPVAL_A3_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A4_B = TXCHARDISPVAL_A4_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A5_B = TXCHARDISPVAL_A5_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A6_B = TXCHARDISPVAL_A6_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARDISPVAL_A7_B = TXCHARDISPVAL_A7_B; // net ID: TXCHARDISPVAL lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A0_B = TXCHARISK_A0_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A1_B = TXCHARISK_A1_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A2_B = TXCHARISK_A2_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A3_B = TXCHARISK_A3_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A4_B = TXCHARISK_A4_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A5_B = TXCHARISK_A5_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A6_B = TXCHARISK_A6_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCHARISK_A7_B = TXCHARISK_A7_B; // net ID: TXCHARISK lsb: 0  msb: 7 INPUT
+			this->TXCOMINIT_A0_B = TXCOMINIT_A0_B; // net ID: TXCOMINIT lsb: 0  msb: 0 INPUT
+			this->TXCOMSAS_A0_B = TXCOMSAS_A0_B; // net ID: TXCOMSAS lsb: 0  msb: 0 INPUT
+			this->TXCOMWAKE_A0_B = TXCOMWAKE_A0_B; // net ID: TXCOMWAKE lsb: 0  msb: 0 INPUT
+			this->TXDATA_A0_B = TXDATA_A0_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A1_B = TXDATA_A1_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A2_B = TXDATA_A2_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A3_B = TXDATA_A3_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A4_B = TXDATA_A4_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A5_B = TXDATA_A5_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A6_B = TXDATA_A6_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A7_B = TXDATA_A7_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A8_B = TXDATA_A8_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A9_B = TXDATA_A9_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A10_B = TXDATA_A10_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A11_B = TXDATA_A11_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A12_B = TXDATA_A12_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A13_B = TXDATA_A13_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A14_B = TXDATA_A14_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A15_B = TXDATA_A15_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A16_B = TXDATA_A16_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A17_B = TXDATA_A17_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A18_B = TXDATA_A18_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A19_B = TXDATA_A19_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A20_B = TXDATA_A20_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A21_B = TXDATA_A21_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A22_B = TXDATA_A22_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A23_B = TXDATA_A23_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A24_B = TXDATA_A24_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A25_B = TXDATA_A25_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A26_B = TXDATA_A26_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A27_B = TXDATA_A27_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A28_B = TXDATA_A28_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A29_B = TXDATA_A29_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A30_B = TXDATA_A30_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A31_B = TXDATA_A31_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A32_B = TXDATA_A32_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A33_B = TXDATA_A33_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A34_B = TXDATA_A34_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A35_B = TXDATA_A35_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A36_B = TXDATA_A36_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A37_B = TXDATA_A37_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A38_B = TXDATA_A38_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A39_B = TXDATA_A39_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A40_B = TXDATA_A40_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A41_B = TXDATA_A41_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A42_B = TXDATA_A42_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A43_B = TXDATA_A43_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A44_B = TXDATA_A44_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A45_B = TXDATA_A45_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A46_B = TXDATA_A46_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A47_B = TXDATA_A47_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A48_B = TXDATA_A48_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A49_B = TXDATA_A49_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A50_B = TXDATA_A50_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A51_B = TXDATA_A51_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A52_B = TXDATA_A52_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A53_B = TXDATA_A53_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A54_B = TXDATA_A54_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A55_B = TXDATA_A55_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A56_B = TXDATA_A56_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A57_B = TXDATA_A57_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A58_B = TXDATA_A58_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A59_B = TXDATA_A59_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A60_B = TXDATA_A60_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A61_B = TXDATA_A61_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A62_B = TXDATA_A62_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDATA_A63_B = TXDATA_A63_B; // net ID: TXDATA lsb: 0  msb: 63 INPUT
+			this->TXDEEMPH_A0_B = TXDEEMPH_A0_B; // net ID: TXDEEMPH lsb: 0  msb: 0 INPUT
+			this->TXDETECTRX_A0_B = TXDETECTRX_A0_B; // net ID: TXDETECTRX lsb: 0  msb: 0 INPUT
+			this->TXDIFFCTRL_A0_B = TXDIFFCTRL_A0_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL_A1_B = TXDIFFCTRL_A1_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL_A2_B = TXDIFFCTRL_A2_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL_A3_B = TXDIFFCTRL_A3_B; // net ID: TXDIFFCTRL lsb: 0  msb: 3 INPUT
+			this->TXDIFFPD_A0_B = TXDIFFPD_A0_B; // net ID: TXDIFFPD lsb: 0  msb: 0 INPUT
+			this->TXDLYBYPASS_A0_B = TXDLYBYPASS_A0_B; // net ID: TXDLYBYPASS lsb: 0  msb: 0 INPUT
+			this->TXDLYEN_A0_B = TXDLYEN_A0_B; // net ID: TXDLYEN lsb: 0  msb: 0 INPUT
+			this->TXDLYHOLD_A0_B = TXDLYHOLD_A0_B; // net ID: TXDLYHOLD lsb: 0  msb: 0 INPUT
+			this->TXDLYOVRDEN_A0_B = TXDLYOVRDEN_A0_B; // net ID: TXDLYOVRDEN lsb: 0  msb: 0 INPUT
+			this->TXDLYSRESET_A0_B = TXDLYSRESET_A0_B; // net ID: TXDLYSRESET lsb: 0  msb: 0 INPUT
+			this->TXDLYUPDOWN_A0_B = TXDLYUPDOWN_A0_B; // net ID: TXDLYUPDOWN lsb: 0  msb: 0 INPUT
+			this->TXELECIDLE_A0_B = TXELECIDLE_A0_B; // net ID: TXELECIDLE lsb: 0  msb: 0 INPUT
+			this->TXHEADER_A0_B = TXHEADER_A0_B; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+			this->TXHEADER_A1_B = TXHEADER_A1_B; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+			this->TXHEADER_A2_B = TXHEADER_A2_B; // net ID: TXHEADER lsb: 0  msb: 2 INPUT
+			this->TXINHIBIT_A0_B = TXINHIBIT_A0_B; // net ID: TXINHIBIT lsb: 0  msb: 0 INPUT
+			this->TXMAINCURSOR_A0_B = TXMAINCURSOR_A0_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			this->TXMAINCURSOR_A1_B = TXMAINCURSOR_A1_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			this->TXMAINCURSOR_A2_B = TXMAINCURSOR_A2_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			this->TXMAINCURSOR_A3_B = TXMAINCURSOR_A3_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			this->TXMAINCURSOR_A4_B = TXMAINCURSOR_A4_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			this->TXMAINCURSOR_A5_B = TXMAINCURSOR_A5_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			this->TXMAINCURSOR_A6_B = TXMAINCURSOR_A6_B; // net ID: TXMAINCURSOR lsb: 0  msb: 6 INPUT
+			this->TXMARGIN_A0_B = TXMARGIN_A0_B; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+			this->TXMARGIN_A1_B = TXMARGIN_A1_B; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+			this->TXMARGIN_A2_B = TXMARGIN_A2_B; // net ID: TXMARGIN lsb: 0  msb: 2 INPUT
+			this->TXOUTCLKSEL_A0_B = TXOUTCLKSEL_A0_B; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			this->TXOUTCLKSEL_A1_B = TXOUTCLKSEL_A1_B; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			this->TXOUTCLKSEL_A2_B = TXOUTCLKSEL_A2_B; // net ID: TXOUTCLKSEL lsb: 0  msb: 2 INPUT
+			this->TXPCSRESET_A0_B = TXPCSRESET_A0_B; // net ID: TXPCSRESET lsb: 0  msb: 0 INPUT
+			this->TXPD_A0_B = TXPD_A0_B; // net ID: TXPD lsb: 0  msb: 1 INPUT
+			this->TXPD_A1_B = TXPD_A1_B; // net ID: TXPD lsb: 0  msb: 1 INPUT
+			this->TXPDELECIDLEMODE_A0_B = TXPDELECIDLEMODE_A0_B; // net ID: TXPDELECIDLEMODE lsb: 0  msb: 0 INPUT
+			this->TXPHALIGN_A0_B = TXPHALIGN_A0_B; // net ID: TXPHALIGN lsb: 0  msb: 0 INPUT
+			this->TXPHALIGNEN_A0_B = TXPHALIGNEN_A0_B; // net ID: TXPHALIGNEN lsb: 0  msb: 0 INPUT
+			this->TXPHDLYPD_A0_B = TXPHDLYPD_A0_B; // net ID: TXPHDLYPD lsb: 0  msb: 0 INPUT
+			this->TXPHDLYRESET_A0_B = TXPHDLYRESET_A0_B; // net ID: TXPHDLYRESET lsb: 0  msb: 0 INPUT
+			this->TXPHDLYTSTCLK_A0_B = TXPHDLYTSTCLK_A0_B; // net ID: TXPHDLYTSTCLK lsb: 0  msb: 0 INPUT
+			this->TXPHINIT_A0_B = TXPHINIT_A0_B; // net ID: TXPHINIT lsb: 0  msb: 0 INPUT
+			this->TXPHOVRDEN_A0_B = TXPHOVRDEN_A0_B; // net ID: TXPHOVRDEN lsb: 0  msb: 0 INPUT
+			this->TXPISOPD_A0_B = TXPISOPD_A0_B; // net ID: TXPISOPD lsb: 0  msb: 0 INPUT
+			this->TXPMARESET_A0_B = TXPMARESET_A0_B; // net ID: TXPMARESET lsb: 0  msb: 0 INPUT
+			this->TXPOLARITY_A0_B = TXPOLARITY_A0_B; // net ID: TXPOLARITY lsb: 0  msb: 0 INPUT
+			this->TXPOSTCURSOR_A0_B = TXPOSTCURSOR_A0_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			this->TXPOSTCURSOR_A1_B = TXPOSTCURSOR_A1_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			this->TXPOSTCURSOR_A2_B = TXPOSTCURSOR_A2_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			this->TXPOSTCURSOR_A3_B = TXPOSTCURSOR_A3_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			this->TXPOSTCURSOR_A4_B = TXPOSTCURSOR_A4_B; // net ID: TXPOSTCURSOR lsb: 0  msb: 4 INPUT
+			this->TXPOSTCURSORINV_A0_B = TXPOSTCURSORINV_A0_B; // net ID: TXPOSTCURSORINV lsb: 0  msb: 0 INPUT
+			this->TXPRBSFORCEERR_A0_B = TXPRBSFORCEERR_A0_B; // net ID: TXPRBSFORCEERR lsb: 0  msb: 0 INPUT
+			this->TXPRBSSEL_A0_B = TXPRBSSEL_A0_B; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+			this->TXPRBSSEL_A1_B = TXPRBSSEL_A1_B; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+			this->TXPRBSSEL_A2_B = TXPRBSSEL_A2_B; // net ID: TXPRBSSEL lsb: 0  msb: 2 INPUT
+			this->TXPRECURSOR_A0_B = TXPRECURSOR_A0_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			this->TXPRECURSOR_A1_B = TXPRECURSOR_A1_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			this->TXPRECURSOR_A2_B = TXPRECURSOR_A2_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			this->TXPRECURSOR_A3_B = TXPRECURSOR_A3_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			this->TXPRECURSOR_A4_B = TXPRECURSOR_A4_B; // net ID: TXPRECURSOR lsb: 0  msb: 4 INPUT
+			this->TXPRECURSORINV_A0_B = TXPRECURSORINV_A0_B; // net ID: TXPRECURSORINV lsb: 0  msb: 0 INPUT
+			this->TXQPIBIASEN_A0_B = TXQPIBIASEN_A0_B; // net ID: TXQPIBIASEN lsb: 0  msb: 0 INPUT
+			this->TXQPISTRONGPDOWN_A0_B = TXQPISTRONGPDOWN_A0_B; // net ID: TXQPISTRONGPDOWN lsb: 0  msb: 0 INPUT
+			this->TXQPIWEAKPUP_A0_B = TXQPIWEAKPUP_A0_B; // net ID: TXQPIWEAKPUP lsb: 0  msb: 0 INPUT
+			this->TXRATE_A0_B = TXRATE_A0_B; // net ID: TXRATE lsb: 0  msb: 2 INPUT
+			this->TXRATE_A1_B = TXRATE_A1_B; // net ID: TXRATE lsb: 0  msb: 2 INPUT
+			this->TXRATE_A2_B = TXRATE_A2_B; // net ID: TXRATE lsb: 0  msb: 2 INPUT
+			this->TXSEQUENCE_A0_B = TXSEQUENCE_A0_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			this->TXSEQUENCE_A1_B = TXSEQUENCE_A1_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			this->TXSEQUENCE_A2_B = TXSEQUENCE_A2_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			this->TXSEQUENCE_A3_B = TXSEQUENCE_A3_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			this->TXSEQUENCE_A4_B = TXSEQUENCE_A4_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			this->TXSEQUENCE_A5_B = TXSEQUENCE_A5_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			this->TXSEQUENCE_A6_B = TXSEQUENCE_A6_B; // net ID: TXSEQUENCE lsb: 0  msb: 6 INPUT
+			this->TXSTARTSEQ_A0_B = TXSTARTSEQ_A0_B; // net ID: TXSTARTSEQ lsb: 0  msb: 0 INPUT
+			this->TXSWING_A0_B = TXSWING_A0_B; // net ID: TXSWING lsb: 0  msb: 0 INPUT
+			this->TXSYSCLKSEL_A0_B = TXSYSCLKSEL_A0_B; // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			this->TXSYSCLKSEL_A1_B = TXSYSCLKSEL_A1_B; // net ID: TXSYSCLKSEL lsb: 0  msb: 1 INPUT
+			this->TXUSERRDY_A0_B = TXUSERRDY_A0_B; // net ID: TXUSERRDY lsb: 0  msb: 0 INPUT
+			this->TXUSRCLK_A0_B = TXUSRCLK_A0_B; // net ID: TXUSRCLK lsb: 0  msb: 0 INPUT
+			this->TXUSRCLK2_A0_B = TXUSRCLK2_A0_B; // net ID: TXUSRCLK2 lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -1326,6 +2033,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_GTXE2_CHANNEL_H

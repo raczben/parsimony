@@ -7,6 +7,7 @@
 
 #include "sim_types.h"
 #include "base_vector.h"
+#include "Primitive.h"
 #include "NetFlow.h"
 
 class SimulatorEngine
@@ -14,6 +15,7 @@ class SimulatorEngine
 
 	simtime_t __time__;
 	base::Vector<NetFlow*> nets;
+	base::Vector<Primitive*> primitives;
 
 
 public:
@@ -26,7 +28,10 @@ public:
 
 	void register_net(NetFlow * net);
 
-	void register_primitive(Primitive *);
+	void register_primitive(Primitive * primitive);
+
+
+	NetFlow * SimulatorEngine::get_net(int netIndex);
 
 };
 

@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_IODRP2_H
+#define X_IODRP2_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_IODRP2: public Primitive{
@@ -14,46 +16,46 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		parameter_string_t DATA_RATE;
-		parameter_string_t SIM_TAPDELAY_VALUE;
+		parameter_int_t SIM_TAPDELAY_VALUE;
 		//Verilog Ports in definition order:
-		NetFlow* DATAOUT; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* DATAOUT2; // net ID: DATAOUT2 lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOUT; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* SDO; // net ID: SDO lsb: 0  msb: 0 OUTPUT
-		NetFlow* TOUT; // net ID: TOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* ADD; // net ID: ADD lsb: 0  msb: 0 INPUT
-		NetFlow* BKST; // net ID: BKST lsb: 0  msb: 0 INPUT
-		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
-		NetFlow* CS; // net ID: CS lsb: 0  msb: 0 INPUT
-		NetFlow* IDATAIN; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
-		NetFlow* IOCLK0; // net ID: IOCLK0 lsb: 0  msb: 0 INPUT
-		NetFlow* IOCLK1; // net ID: IOCLK1 lsb: 0  msb: 0 INPUT
-		NetFlow* ODATAIN; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-		NetFlow* SDI; // net ID: SDI lsb: 0  msb: 0 INPUT
-		NetFlow* T; // net ID: T lsb: 0  msb: 0 INPUT
+		NetFlow* DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* DATAOUT2_A0_B; // net ID: DATAOUT2 lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOUT_A0_B; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* SDO_A0_B; // net ID: SDO lsb: 0  msb: 0 OUTPUT
+		NetFlow* TOUT_A0_B; // net ID: TOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* ADD_A0_B; // net ID: ADD lsb: 0  msb: 0 INPUT
+		NetFlow* BKST_A0_B; // net ID: BKST lsb: 0  msb: 0 INPUT
+		NetFlow* CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* CS_A0_B; // net ID: CS lsb: 0  msb: 0 INPUT
+		NetFlow* IDATAIN_A0_B; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
+		NetFlow* IOCLK0_A0_B; // net ID: IOCLK0 lsb: 0  msb: 0 INPUT
+		NetFlow* IOCLK1_A0_B; // net ID: IOCLK1 lsb: 0  msb: 0 INPUT
+		NetFlow* ODATAIN_A0_B; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
+		NetFlow* SDI_A0_B; // net ID: SDI lsb: 0  msb: 0 INPUT
+		NetFlow* T_A0_B; // net ID: T lsb: 0  msb: 0 INPUT
 		
-		X_IODRP2(
+		public: X_IODRP2(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_string_t DATA_RATE, // Default: "SDR";       // "SDR", "DDR"
-			parameter_string_t SIM_TAPDELAY_VALUE, // Default: 75
+			parameter_int_t SIM_TAPDELAY_VALUE, // Default: 75
 			//Verilog Ports in definition order:
-			NetFlow* DATAOUT, // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* DATAOUT2, // net ID: DATAOUT2 lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOUT, // net ID: DOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* SDO, // net ID: SDO lsb: 0  msb: 0 OUTPUT
-			NetFlow* TOUT, // net ID: TOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* ADD, // net ID: ADD lsb: 0  msb: 0 INPUT
-			NetFlow* BKST, // net ID: BKST lsb: 0  msb: 0 INPUT
-			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
-			NetFlow* CS, // net ID: CS lsb: 0  msb: 0 INPUT
-			NetFlow* IDATAIN, // net ID: IDATAIN lsb: 0  msb: 0 INPUT
-			NetFlow* IOCLK0, // net ID: IOCLK0 lsb: 0  msb: 0 INPUT
-			NetFlow* IOCLK1, // net ID: IOCLK1 lsb: 0  msb: 0 INPUT
-			NetFlow* ODATAIN, // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-			NetFlow* SDI, // net ID: SDI lsb: 0  msb: 0 INPUT
-			NetFlow* T // net ID: T lsb: 0  msb: 0 INPUT
+			NetFlow* DATAOUT_A0_B, // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* DATAOUT2_A0_B, // net ID: DATAOUT2 lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOUT_A0_B, // net ID: DOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* SDO_A0_B, // net ID: SDO lsb: 0  msb: 0 OUTPUT
+			NetFlow* TOUT_A0_B, // net ID: TOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* ADD_A0_B, // net ID: ADD lsb: 0  msb: 0 INPUT
+			NetFlow* BKST_A0_B, // net ID: BKST lsb: 0  msb: 0 INPUT
+			NetFlow* CLK_A0_B, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* CS_A0_B, // net ID: CS lsb: 0  msb: 0 INPUT
+			NetFlow* IDATAIN_A0_B, // net ID: IDATAIN lsb: 0  msb: 0 INPUT
+			NetFlow* IOCLK0_A0_B, // net ID: IOCLK0 lsb: 0  msb: 0 INPUT
+			NetFlow* IOCLK1_A0_B, // net ID: IOCLK1 lsb: 0  msb: 0 INPUT
+			NetFlow* ODATAIN_A0_B, // net ID: ODATAIN lsb: 0  msb: 0 INPUT
+			NetFlow* SDI_A0_B, // net ID: SDI lsb: 0  msb: 0 INPUT
+			NetFlow* T_A0_B // net ID: T lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -62,21 +64,21 @@ namespace CPrimitives {
 			this->DATA_RATE = DATA_RATE; // Default: "SDR";       // "SDR", "DDR"
 			this->SIM_TAPDELAY_VALUE = SIM_TAPDELAY_VALUE; // Default: 75
 			//Verilog Ports in definition order:
-			this->DATAOUT = DATAOUT; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
-			this->DATAOUT2 = DATAOUT2; // net ID: DATAOUT2 lsb: 0  msb: 0 OUTPUT
-			this->DOUT = DOUT; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
-			this->SDO = SDO; // net ID: SDO lsb: 0  msb: 0 OUTPUT
-			this->TOUT = TOUT; // net ID: TOUT lsb: 0  msb: 0 OUTPUT
-			this->ADD = ADD; // net ID: ADD lsb: 0  msb: 0 INPUT
-			this->BKST = BKST; // net ID: BKST lsb: 0  msb: 0 INPUT
-			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
-			this->CS = CS; // net ID: CS lsb: 0  msb: 0 INPUT
-			this->IDATAIN = IDATAIN; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
-			this->IOCLK0 = IOCLK0; // net ID: IOCLK0 lsb: 0  msb: 0 INPUT
-			this->IOCLK1 = IOCLK1; // net ID: IOCLK1 lsb: 0  msb: 0 INPUT
-			this->ODATAIN = ODATAIN; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-			this->SDI = SDI; // net ID: SDI lsb: 0  msb: 0 INPUT
-			this->T = T; // net ID: T lsb: 0  msb: 0 INPUT
+			this->DATAOUT_A0_B = DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
+			this->DATAOUT2_A0_B = DATAOUT2_A0_B; // net ID: DATAOUT2 lsb: 0  msb: 0 OUTPUT
+			this->DOUT_A0_B = DOUT_A0_B; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
+			this->SDO_A0_B = SDO_A0_B; // net ID: SDO lsb: 0  msb: 0 OUTPUT
+			this->TOUT_A0_B = TOUT_A0_B; // net ID: TOUT lsb: 0  msb: 0 OUTPUT
+			this->ADD_A0_B = ADD_A0_B; // net ID: ADD lsb: 0  msb: 0 INPUT
+			this->BKST_A0_B = BKST_A0_B; // net ID: BKST lsb: 0  msb: 0 INPUT
+			this->CLK_A0_B = CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->CS_A0_B = CS_A0_B; // net ID: CS lsb: 0  msb: 0 INPUT
+			this->IDATAIN_A0_B = IDATAIN_A0_B; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
+			this->IOCLK0_A0_B = IOCLK0_A0_B; // net ID: IOCLK0 lsb: 0  msb: 0 INPUT
+			this->IOCLK1_A0_B = IOCLK1_A0_B; // net ID: IOCLK1 lsb: 0  msb: 0 INPUT
+			this->ODATAIN_A0_B = ODATAIN_A0_B; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
+			this->SDI_A0_B = SDI_A0_B; // net ID: SDI lsb: 0  msb: 0 INPUT
+			this->T_A0_B = T_A0_B; // net ID: T lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -90,6 +92,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_IODRP2_H

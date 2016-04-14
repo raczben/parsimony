@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_IODELAY_H
+#define X_IODELAY_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_IODELAY: public Primitive{
@@ -15,49 +17,49 @@ namespace CPrimitives {
 		parameter_string_t DELAY_SRC;
 		parameter_enum_t HIGH_PERFORMANCE_MODE;
 		parameter_string_t IDELAY_TYPE;
-		parameter_string_t IDELAY_VALUE;
-		parameter_string_t ODELAY_VALUE;
-		parameter_string_t REFCLK_FREQUENCY;
+		parameter_int_t IDELAY_VALUE;
+		parameter_int_t ODELAY_VALUE;
+		parameter_int_t REFCLK_FREQUENCY;
 		parameter_string_t SIGNAL_PATTERN;
-		parameter_string_t ILEAK_ADJUST;
-		parameter_string_t D_IODELAY_OFFSET;
+		parameter_int_t ILEAK_ADJUST;
+		parameter_int_t D_IODELAY_OFFSET;
 		parameter_string_t LOC;
-		parameter_string_t SIM_DELAY_D;
+		parameter_int_t SIM_DELAY_D;
 		//Verilog Ports in definition order:
-		NetFlow* DATAOUT; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* C; // net ID: C lsb: 0  msb: 0 INPUT
-		NetFlow* CE; // net ID: CE lsb: 0  msb: 0 INPUT
-		NetFlow* DATAIN; // net ID: DATAIN lsb: 0  msb: 0 INPUT
-		NetFlow* IDATAIN; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
-		NetFlow* INC; // net ID: INC lsb: 0  msb: 0 INPUT
-		NetFlow* ODATAIN; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-		NetFlow* RST; // net ID: RST lsb: 0  msb: 0 INPUT
-		NetFlow* T; // net ID: T lsb: 0  msb: 0 INPUT
+		NetFlow* DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
+		NetFlow* CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+		NetFlow* DATAIN_A0_B; // net ID: DATAIN lsb: 0  msb: 0 INPUT
+		NetFlow* IDATAIN_A0_B; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
+		NetFlow* INC_A0_B; // net ID: INC lsb: 0  msb: 0 INPUT
+		NetFlow* ODATAIN_A0_B; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
+		NetFlow* RST_A0_B; // net ID: RST lsb: 0  msb: 0 INPUT
+		NetFlow* T_A0_B; // net ID: T lsb: 0  msb: 0 INPUT
 		
-		X_IODELAY(
+		public: X_IODELAY(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t DELAY_SRC, // Default: "I"
 			parameter_enum_t HIGH_PERFORMANCE_MODE, // Default: "TRUE"
 			parameter_string_t IDELAY_TYPE, // Default: "DEFAULT"
-			parameter_string_t IDELAY_VALUE, // Default: 0
-			parameter_string_t ODELAY_VALUE, // Default: 0
-			parameter_string_t REFCLK_FREQUENCY, // Default: 200.0
+			parameter_int_t IDELAY_VALUE, // Default: 0
+			parameter_int_t ODELAY_VALUE, // Default: 0
+			parameter_int_t REFCLK_FREQUENCY, // Default: 200.0
 			parameter_string_t SIGNAL_PATTERN, // Default: "DATA"
-			parameter_string_t ILEAK_ADJUST, // Default: 1.0
-			parameter_string_t D_IODELAY_OFFSET, // Default: 0.0
+			parameter_int_t ILEAK_ADJUST, // Default: 1.0
+			parameter_int_t D_IODELAY_OFFSET, // Default: 0.0
 			parameter_string_t LOC, // Default: "UNPLACED"
-			parameter_string_t SIM_DELAY_D, // Default: 0
+			parameter_int_t SIM_DELAY_D, // Default: 0
 			//Verilog Ports in definition order:
-			NetFlow* DATAOUT, // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* C, // net ID: C lsb: 0  msb: 0 INPUT
-			NetFlow* CE, // net ID: CE lsb: 0  msb: 0 INPUT
-			NetFlow* DATAIN, // net ID: DATAIN lsb: 0  msb: 0 INPUT
-			NetFlow* IDATAIN, // net ID: IDATAIN lsb: 0  msb: 0 INPUT
-			NetFlow* INC, // net ID: INC lsb: 0  msb: 0 INPUT
-			NetFlow* ODATAIN, // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-			NetFlow* RST, // net ID: RST lsb: 0  msb: 0 INPUT
-			NetFlow* T // net ID: T lsb: 0  msb: 0 INPUT
+			NetFlow* DATAOUT_A0_B, // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* C_A0_B, // net ID: C lsb: 0  msb: 0 INPUT
+			NetFlow* CE_A0_B, // net ID: CE lsb: 0  msb: 0 INPUT
+			NetFlow* DATAIN_A0_B, // net ID: DATAIN lsb: 0  msb: 0 INPUT
+			NetFlow* IDATAIN_A0_B, // net ID: IDATAIN lsb: 0  msb: 0 INPUT
+			NetFlow* INC_A0_B, // net ID: INC lsb: 0  msb: 0 INPUT
+			NetFlow* ODATAIN_A0_B, // net ID: ODATAIN lsb: 0  msb: 0 INPUT
+			NetFlow* RST_A0_B, // net ID: RST lsb: 0  msb: 0 INPUT
+			NetFlow* T_A0_B // net ID: T lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -74,15 +76,15 @@ namespace CPrimitives {
 			this->LOC = LOC; // Default: "UNPLACED"
 			this->SIM_DELAY_D = SIM_DELAY_D; // Default: 0
 			//Verilog Ports in definition order:
-			this->DATAOUT = DATAOUT; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
-			this->C = C; // net ID: C lsb: 0  msb: 0 INPUT
-			this->CE = CE; // net ID: CE lsb: 0  msb: 0 INPUT
-			this->DATAIN = DATAIN; // net ID: DATAIN lsb: 0  msb: 0 INPUT
-			this->IDATAIN = IDATAIN; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
-			this->INC = INC; // net ID: INC lsb: 0  msb: 0 INPUT
-			this->ODATAIN = ODATAIN; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-			this->RST = RST; // net ID: RST lsb: 0  msb: 0 INPUT
-			this->T = T; // net ID: T lsb: 0  msb: 0 INPUT
+			this->DATAOUT_A0_B = DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
+			this->C_A0_B = C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
+			this->CE_A0_B = CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+			this->DATAIN_A0_B = DATAIN_A0_B; // net ID: DATAIN lsb: 0  msb: 0 INPUT
+			this->IDATAIN_A0_B = IDATAIN_A0_B; // net ID: IDATAIN lsb: 0  msb: 0 INPUT
+			this->INC_A0_B = INC_A0_B; // net ID: INC lsb: 0  msb: 0 INPUT
+			this->ODATAIN_A0_B = ODATAIN_A0_B; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
+			this->RST_A0_B = RST_A0_B; // net ID: RST lsb: 0  msb: 0 INPUT
+			this->T_A0_B = T_A0_B; // net ID: T lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -96,6 +98,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_IODELAY_H

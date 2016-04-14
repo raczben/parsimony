@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_OBUFDS_H
+#define X_OBUFDS_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_OBUFDS: public Primitive{
@@ -17,11 +19,11 @@ namespace CPrimitives {
 		parameter_string_t IOSTANDARD;
 		parameter_string_t SLEW;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* OB; // net ID: OB lsb: 0  msb: 0 OUTPUT
-		NetFlow* I; // net ID: I lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* OB_A0_B; // net ID: OB lsb: 0  msb: 0 OUTPUT
+		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 		
-		X_OBUFDS(
+		public: X_OBUFDS(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: " UNPLACED"
@@ -29,9 +31,9 @@ namespace CPrimitives {
 			parameter_string_t IOSTANDARD, // Default: "DEFAULT"
 			parameter_string_t SLEW, // Default: "SLOW"
 			//Verilog Ports in definition order:
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* OB, // net ID: OB lsb: 0  msb: 0 OUTPUT
-			NetFlow* I // net ID: I lsb: 0  msb: 0 INPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* OB_A0_B, // net ID: OB lsb: 0  msb: 0 OUTPUT
+			NetFlow* I_A0_B // net ID: I lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -41,9 +43,9 @@ namespace CPrimitives {
 			this->IOSTANDARD = IOSTANDARD; // Default: "DEFAULT"
 			this->SLEW = SLEW; // Default: "SLOW"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->OB = OB; // net ID: OB lsb: 0  msb: 0 OUTPUT
-			this->I = I; // net ID: I lsb: 0  msb: 0 INPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->OB_A0_B = OB_A0_B; // net ID: OB lsb: 0  msb: 0 OUTPUT
+			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -57,6 +59,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_OBUFDS_H

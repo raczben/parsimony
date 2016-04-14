@@ -3,38 +3,40 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_DCM_SP_CLOCK_DIVIDE_BY_2_H
+#define X_DCM_SP_CLOCK_DIVIDE_BY_2_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class x_dcm_sp_clock_divide_by_2: public Primitive{
 
 		//Verilog Parameters:
 		//Verilog Ports in definition order:
-		NetFlow* clock; // net ID: clock lsb: 0  msb: 0 INPUT
-		NetFlow* clock_type; // net ID: clock_type lsb: 0  msb: 0 INPUT
-		NetFlow* clock_out; // net ID: clock_out lsb: 0  msb: 0 OUTPUT
-		NetFlow* rst; // net ID: rst lsb: 0  msb: 0 INPUT
+		NetFlow* CLOCK_A0_B; // net ID: clock lsb: 0  msb: 0 INPUT
+		NetFlow* CLOCK__TYPE_A0_B; // net ID: clock_type lsb: 0  msb: 0 INPUT
+		NetFlow* CLOCK__OUT_A0_B; // net ID: clock_out lsb: 0  msb: 0 OUTPUT
+		NetFlow* RST_A0_B; // net ID: rst lsb: 0  msb: 0 INPUT
 		
-		x_dcm_sp_clock_divide_by_2(
+		public: x_dcm_sp_clock_divide_by_2(
 			const char * name,
 			//Verilog Parameters:
 			//Verilog Ports in definition order:
-			NetFlow* clock, // net ID: clock lsb: 0  msb: 0 INPUT
-			NetFlow* clock_type, // net ID: clock_type lsb: 0  msb: 0 INPUT
-			NetFlow* clock_out, // net ID: clock_out lsb: 0  msb: 0 OUTPUT
-			NetFlow* rst // net ID: rst lsb: 0  msb: 0 INPUT
+			NetFlow* CLOCK_A0_B, // net ID: clock lsb: 0  msb: 0 INPUT
+			NetFlow* CLOCK__TYPE_A0_B, // net ID: clock_type lsb: 0  msb: 0 INPUT
+			NetFlow* CLOCK__OUT_A0_B, // net ID: clock_out lsb: 0  msb: 0 OUTPUT
+			NetFlow* RST_A0_B // net ID: rst lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			//Verilog Ports in definition order:
-			this->clock = clock; // net ID: clock lsb: 0  msb: 0 INPUT
-			this->clock_type = clock_type; // net ID: clock_type lsb: 0  msb: 0 INPUT
-			this->clock_out = clock_out; // net ID: clock_out lsb: 0  msb: 0 OUTPUT
-			this->rst = rst; // net ID: rst lsb: 0  msb: 0 INPUT
+			this->CLOCK_A0_B = CLOCK_A0_B; // net ID: clock lsb: 0  msb: 0 INPUT
+			this->CLOCK__TYPE_A0_B = CLOCK__TYPE_A0_B; // net ID: clock_type lsb: 0  msb: 0 INPUT
+			this->CLOCK__OUT_A0_B = CLOCK__OUT_A0_B; // net ID: clock_out lsb: 0  msb: 0 OUTPUT
+			this->RST_A0_B = RST_A0_B; // net ID: rst lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -48,6 +50,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_DCM_SP_CLOCK_DIVIDE_BY_2_H

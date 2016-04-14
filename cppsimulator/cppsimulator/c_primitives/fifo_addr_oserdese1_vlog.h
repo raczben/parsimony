@@ -3,59 +3,61 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef FIFO_ADDR_OSERDESE1_VLOG_H
+#define FIFO_ADDR_OSERDESE1_VLOG_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class fifo_addr_oserdese1_vlog: public Primitive{
 
 		//Verilog Parameters:
 		//Verilog Ports in definition order:
-		NetFlow* qwc; // net ID: qwc lsb: 0  msb: 0 OUTPUT
-		NetFlow* qrd; // net ID: qrd lsb: 0  msb: 0 OUTPUT
-		NetFlow* rd_gap1; // net ID: rd_gap1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* rst_bufg_wc; // net ID: rst_bufg_wc lsb: 0  msb: 0 INPUT
-		NetFlow* rst_bufo_rc; // net ID: rst_bufo_rc lsb: 0  msb: 0 INPUT
-		NetFlow* bufg_clk; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
-		NetFlow* bufo_clk; // net ID: bufo_clk lsb: 0  msb: 0 INPUT
-		NetFlow* data; // net ID: data lsb: 0  msb: 0 INPUT
-		NetFlow* extra; // net ID: extra lsb: 0  msb: 0 OUTPUT
-		NetFlow* rst_bufop_rc; // net ID: rst_bufop_rc lsb: 0  msb: 0 INPUT
-		NetFlow* bufop_clk; // net ID: bufop_clk lsb: 0  msb: 0 INPUT
+		NetFlow* QWC_A0_B; // net ID: qwc lsb: 0  msb: 0 OUTPUT
+		NetFlow* QRD_A0_B; // net ID: qrd lsb: 0  msb: 0 OUTPUT
+		NetFlow* RD__GAP1_A0_B; // net ID: rd_gap1 lsb: 0  msb: 0 OUTPUT
+		NetFlow* RST__BUFG__WC_A0_B; // net ID: rst_bufg_wc lsb: 0  msb: 0 INPUT
+		NetFlow* RST__BUFO__RC_A0_B; // net ID: rst_bufo_rc lsb: 0  msb: 0 INPUT
+		NetFlow* BUFG__CLK_A0_B; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
+		NetFlow* BUFO__CLK_A0_B; // net ID: bufo_clk lsb: 0  msb: 0 INPUT
+		NetFlow* DATA_A0_B; // net ID: data lsb: 0  msb: 0 INPUT
+		NetFlow* EXTRA_A0_B; // net ID: extra lsb: 0  msb: 0 OUTPUT
+		NetFlow* RST__BUFOP__RC_A0_B; // net ID: rst_bufop_rc lsb: 0  msb: 0 INPUT
+		NetFlow* BUFOP__CLK_A0_B; // net ID: bufop_clk lsb: 0  msb: 0 INPUT
 		
-		fifo_addr_oserdese1_vlog(
+		public: fifo_addr_oserdese1_vlog(
 			const char * name,
 			//Verilog Parameters:
 			//Verilog Ports in definition order:
-			NetFlow* qwc, // net ID: qwc lsb: 0  msb: 0 OUTPUT
-			NetFlow* qrd, // net ID: qrd lsb: 0  msb: 0 OUTPUT
-			NetFlow* rd_gap1, // net ID: rd_gap1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* rst_bufg_wc, // net ID: rst_bufg_wc lsb: 0  msb: 0 INPUT
-			NetFlow* rst_bufo_rc, // net ID: rst_bufo_rc lsb: 0  msb: 0 INPUT
-			NetFlow* bufg_clk, // net ID: bufg_clk lsb: 0  msb: 0 INPUT
-			NetFlow* bufo_clk, // net ID: bufo_clk lsb: 0  msb: 0 INPUT
-			NetFlow* data, // net ID: data lsb: 0  msb: 0 INPUT
-			NetFlow* extra, // net ID: extra lsb: 0  msb: 0 OUTPUT
-			NetFlow* rst_bufop_rc, // net ID: rst_bufop_rc lsb: 0  msb: 0 INPUT
-			NetFlow* bufop_clk // net ID: bufop_clk lsb: 0  msb: 0 INPUT
+			NetFlow* QWC_A0_B, // net ID: qwc lsb: 0  msb: 0 OUTPUT
+			NetFlow* QRD_A0_B, // net ID: qrd lsb: 0  msb: 0 OUTPUT
+			NetFlow* RD__GAP1_A0_B, // net ID: rd_gap1 lsb: 0  msb: 0 OUTPUT
+			NetFlow* RST__BUFG__WC_A0_B, // net ID: rst_bufg_wc lsb: 0  msb: 0 INPUT
+			NetFlow* RST__BUFO__RC_A0_B, // net ID: rst_bufo_rc lsb: 0  msb: 0 INPUT
+			NetFlow* BUFG__CLK_A0_B, // net ID: bufg_clk lsb: 0  msb: 0 INPUT
+			NetFlow* BUFO__CLK_A0_B, // net ID: bufo_clk lsb: 0  msb: 0 INPUT
+			NetFlow* DATA_A0_B, // net ID: data lsb: 0  msb: 0 INPUT
+			NetFlow* EXTRA_A0_B, // net ID: extra lsb: 0  msb: 0 OUTPUT
+			NetFlow* RST__BUFOP__RC_A0_B, // net ID: rst_bufop_rc lsb: 0  msb: 0 INPUT
+			NetFlow* BUFOP__CLK_A0_B // net ID: bufop_clk lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			//Verilog Ports in definition order:
-			this->qwc = qwc; // net ID: qwc lsb: 0  msb: 0 OUTPUT
-			this->qrd = qrd; // net ID: qrd lsb: 0  msb: 0 OUTPUT
-			this->rd_gap1 = rd_gap1; // net ID: rd_gap1 lsb: 0  msb: 0 OUTPUT
-			this->rst_bufg_wc = rst_bufg_wc; // net ID: rst_bufg_wc lsb: 0  msb: 0 INPUT
-			this->rst_bufo_rc = rst_bufo_rc; // net ID: rst_bufo_rc lsb: 0  msb: 0 INPUT
-			this->bufg_clk = bufg_clk; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
-			this->bufo_clk = bufo_clk; // net ID: bufo_clk lsb: 0  msb: 0 INPUT
-			this->data = data; // net ID: data lsb: 0  msb: 0 INPUT
-			this->extra = extra; // net ID: extra lsb: 0  msb: 0 OUTPUT
-			this->rst_bufop_rc = rst_bufop_rc; // net ID: rst_bufop_rc lsb: 0  msb: 0 INPUT
-			this->bufop_clk = bufop_clk; // net ID: bufop_clk lsb: 0  msb: 0 INPUT
+			this->QWC_A0_B = QWC_A0_B; // net ID: qwc lsb: 0  msb: 0 OUTPUT
+			this->QRD_A0_B = QRD_A0_B; // net ID: qrd lsb: 0  msb: 0 OUTPUT
+			this->RD__GAP1_A0_B = RD__GAP1_A0_B; // net ID: rd_gap1 lsb: 0  msb: 0 OUTPUT
+			this->RST__BUFG__WC_A0_B = RST__BUFG__WC_A0_B; // net ID: rst_bufg_wc lsb: 0  msb: 0 INPUT
+			this->RST__BUFO__RC_A0_B = RST__BUFO__RC_A0_B; // net ID: rst_bufo_rc lsb: 0  msb: 0 INPUT
+			this->BUFG__CLK_A0_B = BUFG__CLK_A0_B; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
+			this->BUFO__CLK_A0_B = BUFO__CLK_A0_B; // net ID: bufo_clk lsb: 0  msb: 0 INPUT
+			this->DATA_A0_B = DATA_A0_B; // net ID: data lsb: 0  msb: 0 INPUT
+			this->EXTRA_A0_B = EXTRA_A0_B; // net ID: extra lsb: 0  msb: 0 OUTPUT
+			this->RST__BUFOP__RC_A0_B = RST__BUFOP__RC_A0_B; // net ID: rst_bufop_rc lsb: 0  msb: 0 INPUT
+			this->BUFOP__CLK_A0_B = BUFOP__CLK_A0_B; // net ID: bufop_clk lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -69,6 +71,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // FIFO_ADDR_OSERDESE1_VLOG_H

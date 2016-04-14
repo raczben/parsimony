@@ -3,35 +3,37 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_DNA_PORT_H
+#define X_DNA_PORT_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_DNA_PORT: public Primitive{
 
 		//Verilog Parameters:
-		parameter_string_t SIM_DNA_VALUE;
+		parameter_int_t SIM_DNA_VALUE;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* DOUT; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
-		NetFlow* DIN; // net ID: DIN lsb: 0  msb: 0 INPUT
-		NetFlow* READ; // net ID: READ lsb: 0  msb: 0 INPUT
-		NetFlow* SHIFT; // net ID: SHIFT lsb: 0  msb: 0 INPUT
+		NetFlow* DOUT_A0_B; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* DIN_A0_B; // net ID: DIN lsb: 0  msb: 0 INPUT
+		NetFlow* READ_A0_B; // net ID: READ lsb: 0  msb: 0 INPUT
+		NetFlow* SHIFT_A0_B; // net ID: SHIFT lsb: 0  msb: 0 INPUT
 		
-		X_DNA_PORT(
+		public: X_DNA_PORT(
 			const char * name,
 			//Verilog Parameters:
-			parameter_string_t SIM_DNA_VALUE, // Default: 57'h0
+			parameter_int_t SIM_DNA_VALUE, // Default: 57'h0
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* DOUT, // net ID: DOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
-			NetFlow* DIN, // net ID: DIN lsb: 0  msb: 0 INPUT
-			NetFlow* READ, // net ID: READ lsb: 0  msb: 0 INPUT
-			NetFlow* SHIFT // net ID: SHIFT lsb: 0  msb: 0 INPUT
+			NetFlow* DOUT_A0_B, // net ID: DOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* CLK_A0_B, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* DIN_A0_B, // net ID: DIN lsb: 0  msb: 0 INPUT
+			NetFlow* READ_A0_B, // net ID: READ lsb: 0  msb: 0 INPUT
+			NetFlow* SHIFT_A0_B // net ID: SHIFT lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -39,11 +41,11 @@ namespace CPrimitives {
 			this->SIM_DNA_VALUE = SIM_DNA_VALUE; // Default: 57'h0
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->DOUT = DOUT; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
-			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
-			this->DIN = DIN; // net ID: DIN lsb: 0  msb: 0 INPUT
-			this->READ = READ; // net ID: READ lsb: 0  msb: 0 INPUT
-			this->SHIFT = SHIFT; // net ID: SHIFT lsb: 0  msb: 0 INPUT
+			this->DOUT_A0_B = DOUT_A0_B; // net ID: DOUT lsb: 0  msb: 0 OUTPUT
+			this->CLK_A0_B = CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->DIN_A0_B = DIN_A0_B; // net ID: DIN lsb: 0  msb: 0 INPUT
+			this->READ_A0_B = READ_A0_B; // net ID: READ lsb: 0  msb: 0 INPUT
+			this->SHIFT_A0_B = SHIFT_A0_B; // net ID: SHIFT lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -57,6 +59,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_DNA_PORT_H

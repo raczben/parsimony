@@ -3,39 +3,71 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_ICAP_SPARTAN6_H
+#define X_ICAP_SPARTAN6_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_ICAP_SPARTAN6: public Primitive{
 
 		//Verilog Parameters:
-		parameter_string_t DEVICE_ID;
+		parameter_int_t DEVICE_ID;
 		parameter_string_t LOC;
 		parameter_string_t SIM_CFG_FILE_NAME;
 		//Verilog Ports in definition order:
-		NetFlow* BUSY; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* CE; // net ID: CE lsb: 0  msb: 0 INPUT
-		NetFlow* CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
-		NetFlow* I; // net ID: I lsb: 0  msb: 15 INPUT
-		NetFlow* WRITE; // net ID: WRITE lsb: 0  msb: 0 INPUT
+		NetFlow* BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+		NetFlow* CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT
+		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A1_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A2_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A3_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A4_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A5_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A6_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A7_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A8_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A9_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A10_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A11_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A12_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A13_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A14_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* I_A15_B; // net ID: I lsb: 0  msb: 15 INPUT
+		NetFlow* WRITE_A0_B; // net ID: WRITE lsb: 0  msb: 0 INPUT
 		
-		X_ICAP_SPARTAN6(
+		public: X_ICAP_SPARTAN6(
 			const char * name,
 			//Verilog Parameters:
-			parameter_string_t DEVICE_ID, // Default: 32'h04000093
+			parameter_int_t DEVICE_ID, // Default: 32'h04000093
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_string_t SIM_CFG_FILE_NAME, // Default: "NONE"
 			//Verilog Ports in definition order:
-			NetFlow* BUSY, // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-			NetFlow* O, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* CE, // net ID: CE lsb: 0  msb: 0 INPUT
-			NetFlow* CLK, // net ID: CLK lsb: 0  msb: 0 INPUT
-			NetFlow* I, // net ID: I lsb: 0  msb: 15 INPUT
-			NetFlow* WRITE // net ID: WRITE lsb: 0  msb: 0 INPUT
+			NetFlow* BUSY_A0_B, // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
+			NetFlow* CE_A0_B, // net ID: CE lsb: 0  msb: 0 INPUT
+			NetFlow* CLK_A0_B, // net ID: CLK lsb: 0  msb: 0 INPUT
+			NetFlow* I_A0_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A1_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A2_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A3_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A4_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A5_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A6_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A7_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A8_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A9_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A10_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A11_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A12_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A13_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A14_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* I_A15_B, // net ID: I lsb: 0  msb: 15 INPUT
+			NetFlow* WRITE_A0_B // net ID: WRITE lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -44,12 +76,27 @@ namespace CPrimitives {
 			this->LOC = LOC; // Default: "UNPLACED"
 			this->SIM_CFG_FILE_NAME = SIM_CFG_FILE_NAME; // Default: "NONE"
 			//Verilog Ports in definition order:
-			this->BUSY = BUSY; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-			this->O = O; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->CE = CE; // net ID: CE lsb: 0  msb: 0 INPUT
-			this->CLK = CLK; // net ID: CLK lsb: 0  msb: 0 INPUT
-			this->I = I; // net ID: I lsb: 0  msb: 15 INPUT
-			this->WRITE = WRITE; // net ID: WRITE lsb: 0  msb: 0 INPUT
+			this->BUSY_A0_B = BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+			this->CE_A0_B = CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
+			this->CLK_A0_B = CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT
+			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A1_B = I_A1_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A2_B = I_A2_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A3_B = I_A3_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A4_B = I_A4_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A5_B = I_A5_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A6_B = I_A6_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A7_B = I_A7_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A8_B = I_A8_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A9_B = I_A9_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A10_B = I_A10_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A11_B = I_A11_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A12_B = I_A12_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A13_B = I_A13_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A14_B = I_A14_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->I_A15_B = I_A15_B; // net ID: I lsb: 0  msb: 15 INPUT
+			this->WRITE_A0_B = WRITE_A0_B; // net ID: WRITE lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();
 			
@@ -63,6 +110,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_ICAP_SPARTAN6_H

@@ -3,10 +3,12 @@
  * Author: Benedek Racz
  ******************************************************************************/
 
+#ifndef X_KEEPER_H
+#define X_KEEPER_H
+
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
-
 namespace CPrimitives {
 	
 	class X_KEEPER: public Primitive{
@@ -14,21 +16,21 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O; // net ID: O lsb: 0  msb: 0 INOUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 INOUT
 		
-		X_KEEPER(
+		public: X_KEEPER(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* O // net ID: O lsb: 0  msb: 0 INOUT
+			NetFlow* O_A0_B // net ID: O lsb: 0  msb: 0 INOUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->O = O; // net ID: O lsb: 0  msb: 0 INOUT
+			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 INOUT
 			
 			register_wait_on_event_nets();
 			
@@ -42,6 +44,5 @@ namespace CPrimitives {
 		}
 		};
 		
-
-
 }
+#endif // X_KEEPER_H

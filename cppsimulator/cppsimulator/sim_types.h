@@ -12,7 +12,7 @@ class NetFlow;
 class SimulatorEngine;
 
 typedef char* parameter_string_t;
-typedef char* parameter_int_t;
+typedef long parameter_int_t;
 
 typedef enum { TRUE, FALSE} parameter_enum_t;
 

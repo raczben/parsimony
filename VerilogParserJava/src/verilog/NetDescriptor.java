@@ -104,6 +104,20 @@ public class NetDescriptor implements Serializable{
     }
     
     /**
+     * Net identifiers usually contains special characters which are illegal
+     * characters in a c identifier. (ex.: / [ ] ...) netId2CdefineId() convert
+     * net identifiers into valid c identifiers.
+     * 
+     * @param netId
+     * @return
+     */
+    static String netId2CId(String netId){
+		String ret = BasicConverters.toCIdentifier(netId, true);
+		//ret =  ret;
+		return ret;
+    }
+    
+    /**
      * 
      * @param netId
      * @param bit
@@ -115,13 +129,36 @@ public class NetDescriptor implements Serializable{
     
     /**
      * 
+     * @param netId
+     * @param bit
+     * @return
+     */
+    public String getCIdentifierBit(int bit){
+		return netId2CId(netIdentifier + "[" + String.valueOf(bit) + "]");
+    }
+    
+    /**
+     * 
      * @return
      */
     public List<String> getCdefineIdentifierList(){
     	List<String> ret = new ArrayList<String>();
     	
-    	for(int i = lsb; i<msb; i++){
+    	for(int i = lsb; i<=msb; i++){
     		ret.add(getCdefineIdentifierBit(i));
+    	}
+    	return ret;
+    }
+    
+    /**
+     * 
+     * @return
+     */
+    public List<String> getCIdentifierList(){
+    	List<String> ret = new ArrayList<String>();
+    	
+    	for(int i = lsb; i<=msb; i++){
+    		ret.add(getCIdentifierBit(i));
     	}
     	return ret;
     }

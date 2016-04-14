@@ -83,13 +83,15 @@ public class ParameterDescriptior implements Serializable{
 	public void setValue(String value){
 		defaultValueStr = value;
 		defaultValueInt = null;
-		if (isEnum(defaultValueStr)){
-			defaultValueCFormat = parameterEnums.get(defaultValueStr);
-			type = Type.PARAMETER_ENUM_T;
-			return;
-		}else {
-			defaultValueCFormat = defaultValueStr;
-			type = Type.PARAMETER_STRING_T;
+		if(null == type){
+			if (isEnum(defaultValueStr)){
+				defaultValueCFormat = parameterEnums.get(defaultValueStr);
+				type = Type.PARAMETER_ENUM_T;
+				return;
+			}else {
+				defaultValueCFormat = defaultValueStr;
+				type = Type.PARAMETER_STRING_T;
+			}
 		}
 			
 		
