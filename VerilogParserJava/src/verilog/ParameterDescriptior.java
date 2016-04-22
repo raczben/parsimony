@@ -50,7 +50,7 @@ public class ParameterDescriptior implements Serializable{
 		if(null != parameterDescriptior.defaultValueInt){
 			this.defaultValueInt = parameterDescriptior.defaultValueInt;
 		}
-		this.defaultValueCFormat = new String(parameterDescriptior.defaultValueCFormat);
+		this.defaultValueCFormat = new String(parameterDescriptior.getDefaultValueCformat());
 		this.type = parameterDescriptior.type;
 	}
 
@@ -70,7 +70,8 @@ public class ParameterDescriptior implements Serializable{
 	}
 
 	public final String getDefaultValueCformat() {
-		return defaultValueCFormat;
+		//return defaultValueCFormat;
+		return defaultValueStr;
 	}
 
 	public  void setValue(BigInteger bigInteger) {

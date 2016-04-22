@@ -314,6 +314,12 @@ public:
 	// TODO const
 	base::Vector<net_change_t*> get_data() {return data;}
 
+	void NetFlow::generate_clock(simtime_t period, simtime_t until, value_t start_value = LOW);
+
+
+	void NetFlow::generate_clock(simtime_t half_period, simtime_t from, simtime_t until, value_t start_value = LOW);
+
+
 	protected:
 	int __find_nearest_earlier_index__(const simtime_t serach_time) const;
 

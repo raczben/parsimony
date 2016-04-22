@@ -19,6 +19,11 @@ void calculate_LUT(simtime_t time,
 	const NetFlow* const in5 = NULL
 	);
 
+void calculate_BUF(simtime_t time,
+	NetFlow* out,
+	const NetFlow* const in
+	);
+
 
 
 #endif // BUILT_IN_PRIMITIVES_H

@@ -419,3 +419,23 @@ void NetFlow::print_flow(int numOfChange) const {
 bool NetFlow::is_equal_at(net_level_t level, simtime_t time) const {
 	return is_equal_at(level.value, time);
 }
+
+void NetFlow::generate_clock(simtime_t period, simtime_t until, value_t start_value) {
+	generate_clock(period, engine->get_current_time(), until, start_value);
+}
+
+
+void NetFlow::generate_clock(simtime_t half_period, simtime_t from, simtime_t until, value_t start_value) {
+
+	while (from < until) {
+		set_at(new_net_level(start_value), from);
+
+		if (LOW == start_value) {
+			start_value = HIGH;
+		}
+		else {
+			start_value = LOW;
+		}
+		from += half_period;
+	}
+}

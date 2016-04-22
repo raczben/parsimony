@@ -9,6 +9,8 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+#include "built_in_primitives.h"
+
 namespace CPrimitives {
 	
 	class X_BUF: public Primitive{
@@ -40,12 +42,14 @@ namespace CPrimitives {
 		}
 		
 		void register_wait_on_event_nets(){
-		// TODO
+			I_A0_B->register_event_reader(this);
 		}
+
 		void calculate(int time){
-		// TODO
+			calculate_BUF(time, O_A0_B, I_A0_B);
 		}
-		};
+
+	};
 		
 }
 #endif // X_BUF_H

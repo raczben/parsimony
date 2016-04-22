@@ -35,14 +35,15 @@ namespace CPrimitives {
 			register_wait_on_event_nets();
 			
 		}
-		
-		void register_wait_on_event_nets(){
-		// TODO
+
+		void register_wait_on_event_nets() {
+			O_A0_B->register_event_reader(this);
 		}
+				
 		void calculate(int time){
-		// TODO
+			O_A0_B->set_at(new_net_level(HIGH), time);
 		}
-		};
+	};
 		
 }
 #endif // X_ONE_H

@@ -18,10 +18,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_3",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y2", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A3_B),  // O
@@ -36,7 +36,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/count<3>_rt",
 		//Module parameters:
-		0xffff0000ffff0000, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -53,7 +53,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\reset_4.D5LUT",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -79,10 +79,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_2",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y2", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A2_B),  // O
@@ -118,7 +118,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/count<2>_rt",
 		//Module parameters:
-		0xffff0000ffff0000, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -135,7 +135,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\reset_5.C5LUT",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -151,10 +151,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_1",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y2", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A1_B),  // O
@@ -169,7 +169,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/count<1>_rt",
 		//Module parameters:
-		0xffff0000ffff0000, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -186,7 +186,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\reset_6.B5LUT",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -202,10 +202,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_0",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y2", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A0_B),  // O
@@ -220,7 +220,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/Mcount_count_lut<0>_INV_0",
 		//Module parameters:
-		0xffff0000ffff, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -237,7 +237,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\N0_2.A5LUT",
 		//Module parameters:
-		0xffffffff, // 
+		null, // 
 		"SLICE_X6Y2", // 
 		
 		//Module port assignments:
@@ -253,10 +253,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_7",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y3", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A7_B),  // O
@@ -271,7 +271,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/count<7>_rt",
 		//Module parameters:
-		0xffffffff00000000, // 
+		null, // 
 		"SLICE_X6Y3", // 
 		
 		//Module port assignments:
@@ -288,10 +288,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_6",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y3", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A6_B),  // O
@@ -327,7 +327,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/count<6>_rt",
 		//Module parameters:
-		0xffff0000ffff0000, // 
+		null, // 
 		"SLICE_X6Y3", // 
 		
 		//Module port assignments:
@@ -344,7 +344,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\reset.C5LUT",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y3", // 
 		
 		//Module port assignments:
@@ -360,10 +360,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_5",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y3", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A5_B),  // O
@@ -378,7 +378,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/count<5>_rt",
 		//Module parameters:
-		0xffff0000ffff0000, // 
+		null, // 
 		"SLICE_X6Y3", // 
 		
 		//Module port assignments:
@@ -395,7 +395,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\reset_2.B5LUT",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y3", // 
 		
 		//Module port assignments:
@@ -411,10 +411,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_FF("\\gray_inst/count_4",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y3", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BGRAY__INST_SCOUNT_A4_B),  // O
@@ -429,7 +429,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/count<4>_rt",
 		//Module parameters:
-		0xffff0000ffff0000, // 
+		null, // 
 		"SLICE_X6Y3", // 
 		
 		//Module port assignments:
@@ -446,7 +446,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\reset_3.A5LUT",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X6Y3", // 
 		
 		//Module port assignments:
@@ -762,10 +762,10 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_SFF("\\cntr_inst/cntr",
 		//Module parameters:
-		0x0, // 
+		null, // 
 		"SLICE_X1Y2", // 
-		TRUE, // 
-		TRUE, // 
+		"TRUE", // 
+		"TRUE", // 
 		
 		//Module port assignments:
 		engine.get_net(NET_INDEX__BCNTR__INST_SCNTR__133_A0_B),  // O
@@ -793,7 +793,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/Mxor_out<3>_xo<0>1",
 		//Module parameters:
-		0xff00ff00ff00ff0, // 
+		null, // 
 		"SLICE_X4Y2", // 
 		
 		//Module port assignments:
@@ -810,7 +810,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\gray_inst/Mxor_out<2>_xo<0>1",
 		//Module parameters:
-		0x3c3c3c3c, // 
+		null, // 
 		"SLICE_X4Y2", // 
 		
 		//Module port assignments:
@@ -837,7 +837,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/Mxor_out<6>_xo<0>1",
 		//Module parameters:
-		0x3c3c3c3c3c3c3c3c, // 
+		null, // 
 		"SLICE_X4Y3", // 
 		
 		//Module port assignments:
@@ -854,7 +854,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\gray_inst/Mxor_out<5>_xo<0>1",
 		//Module parameters:
-		0xff00ff0, // 
+		null, // 
 		"SLICE_X4Y3", // 
 		
 		//Module port assignments:
@@ -870,7 +870,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/Mxor_out<4>_xo<0>1",
 		//Module parameters:
-		0xffffffff0000, // 
+		null, // 
 		"SLICE_X4Y3", // 
 		
 		//Module port assignments:
@@ -898,7 +898,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT6("\\gray_inst/Mxor_out<1>_xo<0>1",
 		//Module parameters:
-		0x3333cccc3333cccc, // 
+		null, // 
 		"SLICE_X7Y2", // 
 		
 		//Module port assignments:
@@ -915,7 +915,7 @@ void instance_primitives(SimulatorEngine engine){
 	engine.register_primitive(
 		new X_LUT5("\\gray_inst/Mxor_out<0>_xo<0>1",
 		//Module parameters:
-		0x3c3c3c3c, // 
+		null, // 
 		"SLICE_X7Y2", // 
 		
 		//Module port assignments:

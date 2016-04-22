@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNodeImpl;
 
@@ -64,6 +66,8 @@ public class Netinstancer extends Verilog2001BaseListener {
 	private FileWriter netInstancerSource;
 //	private PrintStream primitiveInstancerHeader;
 	private PrintStream primitiveInstancerSource;
+	
+	Histogram<String> primitiveHistogram = new Histogram<String>(); 
 	
 	/**
 	 * Complex structure which contains all information of a primitive. The
@@ -276,8 +280,12 @@ public class Netinstancer extends Verilog2001BaseListener {
     		for(Named_parameter_assignmentContext param : parameterlist.named_parameter_assignment()){
     			Parameter_identifierContext primitiveParameterName = param.parameter_identifier();
     			//int parameterValue = toInteger(param.expression());
-    			
-    			ParameterDescriptior instanceParameter  = new ParameterDescriptior(primitiveInfos.get(primType).getParameters().get(primitiveParameterName.getText()));
+    			System.out.println(primType);
+    			System.out.println(primitiveParameterName.getText());
+    		
+    			ParameterDescriptior instanceParameter  = new ParameterDescriptior(
+    					primitiveInfos.get(primType).getParameters().get(primitiveParameterName.getText())
+    					);
     			
     			Expression exp = ParseExpression.parseExpression(param.expression());
 
@@ -341,7 +349,7 @@ public class Netinstancer extends Verilog2001BaseListener {
     	}
 
         generatePrimitiveInstantiation(primType, instanceName, parameterAssignments, portAssignments );
-        	
+        primitiveHistogram.touchBin(primType);
     	
     }
     
@@ -496,9 +504,16 @@ public class Netinstancer extends Verilog2001BaseListener {
     	
     	// TODO 
     	finishFiles();
+    	
+    	print_primitive_histogram();
 
     }
     
+	private void print_primitive_histogram() {
+		System.out.println(primitiveHistogram);
+		
+	}
+
 	/**
 	 * Append common end of each files and close them.
 	 * @throws IOException

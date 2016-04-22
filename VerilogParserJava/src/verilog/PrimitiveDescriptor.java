@@ -8,7 +8,7 @@ import java.util.Map.Entry;
 import antlr.Verilog2001Parser.RangeContext;
 
 
-public class PrimitiveDescriptor implements Serializable {
+public class PrimitiveDescriptor implements Serializable{
 	/**
 	 * 
 	 */
@@ -111,6 +111,9 @@ public class PrimitiveDescriptor implements Serializable {
 		port.setRange(range);
 	}
 
+	boolean equals(PrimitiveDescriptor other){
+		return other.primitiveIdentifier == this.primitiveIdentifier;
+	}
 
 
 }

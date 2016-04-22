@@ -78,7 +78,7 @@ public class Main {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	static void net_instancer() throws FileNotFoundException, IOException{
+	static void compile_verilog_to_c() throws FileNotFoundException, IOException{
 
 //	    PrimitiveMapper primitiveMapper = new PrimitiveMapper();
 	    if(! PrimitiveMapper.loadData()){
@@ -263,8 +263,8 @@ public class Main {
 		
 		
 //		primitiveMapper("C:\\Users\\ebenera\\bme\\2015_16_tavasz\\onlab2\\xilinxPrimitives\\simprims");
-//		net_instancer();
-		generateCTemplate();
+		compile_verilog_to_c();
+//		generateCTemplate();
 //		generatePrimitiveIncludeHeader();
 //		copyResultsToCppProject();
 	

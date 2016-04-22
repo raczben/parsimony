@@ -1,0 +1,13 @@
+  Type   Instances  C-code done
+X_ZERO:     2         OK
+X_CKBUF:    1         OK
+X_OPAD:     9         ???
+X_OBUF:     9         OK
+X_CARRY4:   2         X
+X_IPAD:     2         ???
+X_LUT5:     10        OK
+X_BUF:      26        OK
+X_SFF:      1         X
+X_LUT6:     12        OK
+X_ONE:      1         OK
+X_FF:       8         OK

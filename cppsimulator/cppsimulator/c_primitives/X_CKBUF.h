@@ -9,6 +9,8 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+#include "built_in_primitives.h"
+
 namespace CPrimitives {
 	
 	class X_CKBUF: public Primitive{
@@ -38,14 +40,16 @@ namespace CPrimitives {
 			register_wait_on_event_nets();
 			
 		}
-		
-		void register_wait_on_event_nets(){
-		// TODO
+
+		void register_wait_on_event_nets() {
+			I_A0_B->register_event_reader(this);
 		}
-		void calculate(int time){
-		// TODO
+
+		void calculate(int time) {
+			calculate_BUF(time, O_A0_B, I_A0_B);
 		}
-		};
+
+	};
 		
 }
 #endif // X_CKBUF_H

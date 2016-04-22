@@ -50,3 +50,13 @@ value_t get_value(const NetFlow* const net, simtime_t time, value_t atNull) {
 	}
 	return atNull;
 }
+
+void calculate_BUF(simtime_t time,
+	NetFlow* out,
+	const NetFlow* const in
+	) {
+	out->set_at(
+		in->get_at(time),
+		time+1
+		);
+}
