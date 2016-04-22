@@ -61,12 +61,78 @@ namespace CPrimitives {
 		}
 		
 		void register_wait_on_event_nets(){
-		// TODO
+			CLK_A0_B->register_event_reader(this);
+			RST_A0_B->register_event_reader(this);
+			SET_A0_B->register_event_reader(this);
 		}
+
 		void calculate(int time){
-		// TODO
+			// Async RESET
+			if (RST_A0_B->is_equal_at(HIGH, time)) {
+				O_A0_B->set_at(
+					new_net_level(LOW),
+					time
+					);
+				return;
+			}
+			// Async SET
+			if (SET_A0_B->is_equal_at(HIGH, time)) {
+				O_A0_B->set_at(
+					new_net_level(HIGH),
+					time
+					);
+				return;
+			}
+
+			/**
+			 *  (01)   0      1    0     0       ?    :   ?  :  0;
+			 *  (01)   1      1    0     0       ?    :   ?  :  1;
+			 *  (01)   x      1    0     0       ?    :   ?  :  x;
+			 */
+			if (CLK_A0_B->posedge_at(time)) {
+				if (CLK_A0_B->is_equal_prev(HIGH, time)) {
+					O_A0_B->set_at(
+						new_net_level(I_A0_B->get_value_prev(time)),
+						time
+						);
+					return;
+				}
+			}
+
+
 		}
-		};
+
+		bool if_AND_d_ce_set_rst(
+			simtime_t time,
+			value_t d_val,
+			value_t ce_val,
+			value_t set_val,
+			value_t reset_val
+			) {
+			if (d_val >= 0) {
+				if (!I_A0_B->is_equal_at(d_val, time)) {
+					return false;
+				}
+			}
+			if (ce_val >= 0) {
+				if (!CE_A0_B->is_equal_at(ce_val, time)) {
+					return false;
+				}
+			}
+			if (set_val >= 0) {
+				if (!SET_A0_B->is_equal_at(set_val, time)) {
+					return false;
+				}
+			}
+			if (reset_val >= 0) {
+				if (!RST_A0_B->is_equal_at(reset_val, time)) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+	};
 		
 }
 #endif // X_FF_H

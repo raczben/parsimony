@@ -9,8 +9,9 @@
 #include "sim_types.h"
 #include "SimulatorEngine.h"
 #include "shared.h"
+#include "Primitive.h"
 
-typedef enum {
+typedef enum : unsigned {
 	LOW = 0,
 	HIGH = 1,
 	UNDEFINED = 2,
@@ -23,7 +24,7 @@ static const char *to_string(value_t f)
 	return strings[f];
 }
 
-typedef enum {
+typedef enum: unsigned {
 	highz = 0,
 	small = 1,
 	medium = 2,
@@ -36,7 +37,7 @@ typedef enum {
 
 static const char *to_string(strength_t f)
 {
-	static const char *strings[] = { "highz" "small" "medium" "weak" "large" "pull" "strong" "supply" };
+	static const char *strings[] = { "highz", "small", "medium", "weak", "large", "pull", "strong", "supply" };
 	return strings[f];
 }
 
@@ -58,9 +59,12 @@ net_level_t new_net_level(value_t val, strength_t strength);
 
 net_level_t new_net_level(value_t val);
 
-static char *to_string(net_level_t f)
+/**
+ * charBuffer must be 4 character long
+ */
+static char *to_string(net_level_t f, char *charBuffer)
 {
-	char ret[4];
+	char *ret = charBuffer;
 	ret[3] = '\0';
 	const char* tmp = to_string(f.strength);
 	ret[0] = tmp[0];
@@ -119,11 +123,17 @@ class NetFlow {
 	//
 	bool monitor_change;
 
-	//
+	//not used: Each net has one driver in first implementation.
 	base::Vector<driver_t> *drivers;
 
-	//
+	// not used
 	base::Vector<reader_t> *readers;
+
+	//event_readers contains all primitives, which wait trigger on this net at least once.
+	// Events example: combinational networks, always * ...
+	base::Vector<Primitive*> event_readers;
+
+	bool changed_in_this_delta = false;
 
 	//
 public:
@@ -145,7 +155,7 @@ public:
 	/******************************************************************************
 	* returns the name of net_flow's net
 	*****************************************************************************/
-	const char *get_name();
+	const char *get_name() const;
 
 	/******************************************************************************
 	* sets the name of net_flow's net
@@ -164,13 +174,13 @@ public:
 	* If use_in_event is true this net is used in an event (somewhere in the
 	* simulation) So If it changes some primitive/cell/process must be rerun.
 	*****************************************************************************/
-	bool get_use_in_event();
+	bool get_use_in_event() const;
 
 	/******************************************************************************
 	* check if net_flow's value is equal at the given time. The 0 time is the start
 	* of the simulation.
 	*****************************************************************************/
-	bool is_equal_at(value_t val, simtime_t time);
+	bool is_equal_at(value_t val, simtime_t time) const ;
 
 	/******************************************************************************
 	* check if net_flow's value is equal at the given time. The 0 time is the start
@@ -194,7 +204,7 @@ public:
 	* is_equal_from_now(net_flow, val, 0);
 	* is_equal_at(net_flow, val, get_current_time());
 	*****************************************************************************/
-	bool is_equal_from_now(value_t val, simtime_t time);
+	bool is_equal_from_now(value_t val, simtime_t time) const;
 
 	/******************************************************************************
 	* checks if the net has the given value at the current time.
@@ -210,7 +220,7 @@ public:
 	* is_equal_from_now(net_flow, val, 0);
 	* is_equal_now(net_flow, val);
 	*****************************************************************************/
-	bool is_equal_now(value_t val);
+	bool is_equal_now(value_t val) const;
 
 	/******************************************************************************
 	* checks if the net has the given value at the previous time slot.
@@ -226,13 +236,24 @@ public:
 	* is_equal_from_now(net_flow, val, -1);
 	* is_equal_prev(net_flow, val);
 	*****************************************************************************/
-	bool is_equal_prev(const value_t val);
+	bool is_equal_prev(const value_t val, simtime_t time = -1) const;
+
+	bool posedge_at(simtime_t time);
 
 	/******************************************************************************
 	* returns the net value at a given time. The 0 time is the start
 	* of the simulation.
 	*****************************************************************************/
-	net_level_t get_at(const simtime_t time);
+	net_level_t get_at(const simtime_t time) const ;
+
+	/******************************************************************************
+	* returns the net value at a given time. The 0 time is the start
+	* of the simulation.
+	*****************************************************************************/
+	value_t get_value_at(const simtime_t time) const { return get_at(time).value; }
+	
+
+	value_t get_value_prev(simtime_t time) const;
 
 	/******************************************************************************
 	* returns the net value at a given time. The 0 time is the
@@ -241,7 +262,7 @@ public:
 	* get_from_now(net_flow, 0);
 	* get_at(net_flow, get_current_time());
 	*****************************************************************************/
-	net_level_t get_from_now(const simtime_t time);
+	net_level_t get_from_now(const simtime_t time) const;
 
 	/******************************************************************************
 	* Sets the net_flow value at the given time. The 0 time is the start
@@ -270,15 +291,31 @@ public:
 	//void set_value_from_now(net_value_t val, simtime_t time);
 
 
+	bool NetFlow::is_equal_at(net_level_t level, simtime_t time) const;
+
+
+	void step_delta();
+
+	void clear_change_flag();
+
+	bool get_change_flag() { return changed_in_this_delta; }
+
 
 	void register_reader(const reader_t & reader_primitive);
 
 	void register_driver(const driver_t & driver_primitive);
 
+	void register_event_reader(Primitive*  const reader_primitive);
+
 	void step_time(const unsigned time_to_step);
 
+	void print_flow(int numOfChange = -1) const;
+	
+	// TODO const
+	base::Vector<net_change_t*> get_data() {return data;}
+
 	protected:
-	int __find_nearest_earlier_index__(const simtime_t serach_time);
+	int __find_nearest_earlier_index__(const simtime_t serach_time) const;
 
 
 };

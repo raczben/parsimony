@@ -915,6 +915,12 @@
     <ClInclude Include="Primitive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="built_in_primitives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VCDWiter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cppsimulator.cpp">
@@ -939,6 +945,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="netinstatiation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="builtin_primitives.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VCDWiter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

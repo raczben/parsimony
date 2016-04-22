@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base_vector.h" />
+    <ClInclude Include="built_in_primitives.h" />
     <ClInclude Include="c_primitives\bscntrl_iserdese1_vlog.h" />
     <ClInclude Include="c_primitives\dout_oserdese1_vlog.h" />
     <ClInclude Include="c_primitives\fifo_addr_oserdese1_vlog.h" />
@@ -445,8 +446,10 @@
     <ClInclude Include="SimulatorEngine.h" />
     <ClInclude Include="simulator_base.h" />
     <ClInclude Include="sim_types.h" />
+    <ClInclude Include="VCDWiter.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="builtin_primitives.cpp" />
     <ClCompile Include="cppsimulator.cpp" />
     <ClCompile Include="NetFlow.cpp">
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Level3</WarningLevel>
@@ -457,6 +460,8 @@
     <ClCompile Include="SimulatorEngine.cpp" />
     <ClCompile Include="simulator_base.cpp" />
     <ClCompile Include="cppTemplate.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="VCDWiter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

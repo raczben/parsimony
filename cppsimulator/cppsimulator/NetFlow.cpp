@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <Primitive.h>
 
 /******************************************************************************
 * returns the name of net_flow's net
@@ -25,6 +26,8 @@ void NetFlow::init(const char* name, net_level_t initial_level, bool monitor_cha
 	/*this->data = base::Vector<net_change_t>();*/
 	this->readers = new base::Vector<reader_t>();
 	this->drivers = new base::Vector<driver_t>();
+	//this->event_readers = new base::Vector<Primitive*>();
+	
 
 	set_at(initial_level, 0);
 
@@ -33,7 +36,7 @@ void NetFlow::init(const char* name, net_level_t initial_level, bool monitor_cha
 /******************************************************************************
 * returns the name of net_flow's net
 *****************************************************************************/
-const char* NetFlow::get_name() {
+const char* NetFlow::get_name() const {
 	return this->name;
 }
 
@@ -52,26 +55,31 @@ void NetFlow::set_name(const char *new_name) {
 * If use_in_event is true this net is used in an event (somewhere in the
 * simulation) So If it changes some primitive/cell/process must be rerun.
 *****************************************************************************/
-void NetFlow::set_use_in_event(const bool use_in_event) {
-	this->use_in_event = use_in_event;
-}
+//void NetFlow::set_use_in_event(const bool use_in_event) {
+//	this->use_in_event = use_in_event;
+//}
 
 /******************************************************************************
 * returns the use_in_event flag:
 * If use_in_event is true this net is used in an event (somewhere in the
 * simulation) So If it changes some primitive/cell/process must be rerun.
 *****************************************************************************/
-bool NetFlow::get_use_in_event() {
-	return this->use_in_event;
+bool NetFlow::get_use_in_event() const {
+	return !this->event_readers.empty();
+	//return this->use_in_event;
 }
 
 /******************************************************************************
 * check if net_flow's value is equal at the given time. The 0 time is the start
 * of the simulation.
 *****************************************************************************/
-bool NetFlow::is_equal_at(value_t val, simtime_t time) {
-	net_level_t net_level = get_at(time);
-	value_t net_value = net_level.value;
+bool NetFlow::is_equal_at(value_t val, simtime_t time) const {
+	net_level_t net_level;
+	value_t net_value = UNDEFINED;
+	if (time >= 0) {
+		net_level = get_at(time);
+		net_value = net_level.value;
+	}
 	return net_value == val;
 }
 
@@ -82,15 +90,15 @@ bool NetFlow::is_equal_at(value_t val, simtime_t time) {
 * is_equal_from_now(net_flow, val, 0);
 * is_equal_at(net_flow, val, get_current_time());
 *****************************************************************************/
-bool NetFlow::is_equal_from_now(value_t val, simtime_t time) {
-	return is_equal_at(val, time + engine.get_current_time());
+bool NetFlow::is_equal_from_now(value_t val, simtime_t time) const {
+	return is_equal_at(val, time + engine->get_current_time());
 }
 
 /******************************************************************************
 * returns the net value at a given time. The 0 time is the start
 * of the simulation.
 *****************************************************************************/
-net_level_t NetFlow::get_at(simtime_t serach_time) {
+net_level_t NetFlow::get_at(simtime_t serach_time) const {
 
 	net_change_t tmp_net_value_change;
 	int index = __find_nearest_earlier_index__(serach_time);
@@ -107,8 +115,8 @@ net_level_t NetFlow::get_at(simtime_t serach_time) {
 * get_from_now(net_flow, 0);
 * get_at(net_flow, get_current_time());
 *****************************************************************************/
-net_level_t NetFlow::get_from_now(const simtime_t time) {
-	return get_at(time + engine.get_current_time());
+net_level_t NetFlow::get_from_now(const simtime_t time) const  {
+	return get_at(time + engine->get_current_time());
 }
 
 /******************************************************************************
@@ -117,18 +125,33 @@ net_level_t NetFlow::get_from_now(const simtime_t time) {
 * is_equal_from_now(net_flow, val, 0);
 * is_equal_now(net_flow, val);
 *****************************************************************************/
-bool NetFlow::is_equal_now(const value_t val) {
+bool NetFlow::is_equal_now(const value_t val) const {
 	return is_equal_from_now(val, 0);
 }
 
 /******************************************************************************
-* checks if the net has the given value at the previous time slot.
-* The followings are the same:
-* is_equal_from_now(net_flow, val, -1);
-* is_equal_prev(net_flow, val);
+* 
 *****************************************************************************/
-bool NetFlow::is_equal_prev(const value_t val) {
-	return is_equal_from_now(val, -1);
+bool NetFlow::is_equal_prev(const value_t val, simtime_t time) const  {
+	if (time < 0) {
+		return is_equal_from_now(val, -1);
+	}
+	return is_equal_at(val, time - 1);
+}
+
+value_t NetFlow::get_value_prev(simtime_t time) const {
+	if (time < 0) {
+		return UNDEFINED;
+	}
+	return get_at(time - 1).value;
+
+}
+
+bool NetFlow::posedge_at(simtime_t time) {
+	if (is_equal_at(HIGH, time) && is_equal_prev(LOW, time)) {
+		return true;
+	}
+	return false;
 }
 
 /******************************************************************************
@@ -139,29 +162,74 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	net_change_t* new_element = new net_change_t();
 	new_element->level = level;
 	new_element->time = set_time;
-	int index = __find_nearest_earlier_index__(set_time);
 
-	if (this->monitor_change) {
-		printf("%lld \t net_flow::  %s new value is %s\n", engine.get_current_time(), this->name, to_string(level.value));
+	/**
+	* Negative settime is illegal
+	*/
+	if (set_time < 0) {
+		throw "set time is negative";
 	}
 
-	if (0 > index) {
+	/**
+	* If the data vector is empty then push the new element
+	*/
+	if (data.empty()) {
 		this->data.push_back(new_element);
+		now_index = 0;
+		changed_in_this_delta = true;
 		return;
 	}
-	/*if (this->data.size() - 1 == index) {
+
+	/**
+	* If the new value is equal the previous, there is no change in value => we dont do anythink.
+	*/
+	if (is_equal_at(level, set_time)) {
+		return;	
+	}
+	else {
+		// If the value has to be changed, and we are at now, there must be some rerun...
+		if (set_time == engine->get_current_time()) {
+			changed_in_this_delta = true;
+		}
+	}
+
+
+	/**
+	* If we want to set a future time point just push back
+	Note that now_pointer should not be refreshed.
+	*/
+	/*if (data.get_last()->time < set_time) {
 		this->data.push_back(new_element);
 		return;
 	}*/
-	//else {
-	unsigned uindex = index;
-	while (this->data.size() - 1 > uindex) {
-			this->data.remove(index);
-	}
-	//}
-	this->data.push_back(new_element);
-	return;
 
+	/**
+	* Erease mod: remove all later event on the net than set_time:
+	*/
+	//unsigned size = data.size();
+	while (data.get_last()->time >= set_time) {
+		this->data.remove_last();
+
+		if (data.empty()) {
+			this->data.push_back(new_element);
+			now_index = 0;
+			return;
+		}
+		//size = data.size();
+	}
+
+	this->data.push_back(new_element);
+	now_index = data.size()-1;
+
+	return;
+}
+
+void NetFlow::step_delta() {
+	clear_change_flag();
+}
+
+void NetFlow::clear_change_flag() {
+	changed_in_this_delta = false;
 }
 
 /******************************************************************************
@@ -172,7 +240,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 * set_value_at(net_flow, val, get_current_time());
 *****************************************************************************/
 void NetFlow::set_from_now(const net_level_t level, const simtime_t set_time) {
-	set_at(level, set_time + engine.get_current_time());
+	set_at(level, set_time + engine->get_current_time());
 }
 
 /******************************************************************************
@@ -182,17 +250,17 @@ void NetFlow::set_now(const net_level_t level) {
 	set_from_now(level, 0);
 }
 
-int NetFlow::__find_nearest_earlier_index__(const simtime_t serach_time) {
+int NetFlow::__find_nearest_earlier_index__(const simtime_t serach_time) const  {
 	net_change_t tmp_net_value_change ;
 	simtime_t tmp_time;
 	int first_index;
 	int last_index;
 	int middle_index;
 
-	if (engine.get_current_time() == serach_time) {
+	if (engine->get_current_time() == serach_time) {
 		return now_index;
 	}
-	if (serach_time > engine.get_current_time()) {
+	if (serach_time > engine->get_current_time()) {
 		first_index = now_index;
 		last_index = this->data.size() - 1;
 		middle_index = (first_index + last_index) / 2;
@@ -315,6 +383,10 @@ NetFlow::~NetFlow()
 }
 
 
+void NetFlow::register_event_reader(Primitive*  const reader_primitive) {
+	event_readers.push_back(reader_primitive);
+}
+
 
 
 net_level_t new_net_level(value_t val, strength_t strength) {
@@ -328,3 +400,22 @@ net_level_t new_net_level(value_t val) {
 	return new_net_level(val, strong);
 }
 
+
+void NetFlow::print_flow(int numOfChange) const {
+	char charBuff[4];
+	if (numOfChange<0) {
+		numOfChange = data.size();
+	}
+	printf("%s: ", name);
+	for (int i = 0; i < numOfChange; i++) {
+		net_change_t* change = data.get(i);
+		to_string(change->level, charBuff);
+		printf("   %lld: %s", change->time, charBuff);
+	}
+	printf("\n");
+}
+
+
+bool NetFlow::is_equal_at(net_level_t level, simtime_t time) const {
+	return is_equal_at(level.value, time);
+}

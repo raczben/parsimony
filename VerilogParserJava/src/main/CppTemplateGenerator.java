@@ -76,6 +76,7 @@ public class CppTemplateGenerator {
 			srcGen0.add("#include \"NetFlow.h\"");
 			srcGen0.add("#include \"sim_types.h\"");
 			srcGen0.add("#include \"Primitive.h\"");
+			srcGen0.add("");
 			
 			srcGen0.add("namespace CPrimitives {");
 				
@@ -147,6 +148,7 @@ public class CppTemplateGenerator {
 		memberGen.add("void register_wait_on_event_nets(){");
 		memberGen.add("// TODO");
 		memberGen.add("}");
+		memberGen.add("");
 
 		 /**
 		  * Wait on event register function template 

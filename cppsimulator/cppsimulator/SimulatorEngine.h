@@ -31,7 +31,28 @@ public:
 	void register_primitive(Primitive * primitive);
 
 
+	unsigned  SimulatorEngine::get_net_count() { return nets.size(); }
+
 	NetFlow * SimulatorEngine::get_net(int netIndex);
+
+	void run(simtime_t time);
+
+	void run_to(simtime_t time);
+
+	void process_primitives(simtime_t time);
+	
+	bool need_to_rerun_ts();
+
+	void step_delta();
+
+
+	void writeError(char* const message);
+
+	void writeInfo(char* const message);
+
+	void writeWarning(char* const message);
+
+	void _writeMessage_(char*  const pref, char* const message);
 
 };
 

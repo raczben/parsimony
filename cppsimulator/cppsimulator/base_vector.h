@@ -110,7 +110,7 @@ public:
   }
 
 
-  T& get(unsigned i)
+  T& get(unsigned i) const
   {
 	  if (i<size_)
 		  return *(data_ + i);
@@ -118,7 +118,12 @@ public:
 		  throw "my_array: operator[]: index out of range";
   }
 
-  T get_point(unsigned i)
+  T& get_last() const
+  {
+	  return get(size_ - 1);
+  }
+
+  T get_point(unsigned i) const 
   {
 	  if (i<size_)
 		  return *(data_ + i);
@@ -147,7 +152,7 @@ public:
 
 	  //delete &(data_[index]);
 
-	  for (unsigned i = index; i < size_ - 2; i++) {
+	  for (unsigned i = index; i < size_ - 1; i++) {
 		  data_[i] = data_[i + 1];
 	  }
 
@@ -155,6 +160,10 @@ public:
 
 	  //if (size_ > 0 && size_ == capacity_ / 4)
 		  //re(v, v->capacity / 2);
+  }
+
+  void remove_last() {
+	  remove(size_ - 1);
   }
 
 

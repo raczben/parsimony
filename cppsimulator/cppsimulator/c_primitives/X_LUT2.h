@@ -9,6 +9,8 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+#include "built_in_primitives.h"
+
 namespace CPrimitives {
 	
 	class X_LUT2: public Primitive{
@@ -46,12 +48,19 @@ namespace CPrimitives {
 		}
 		
 		void register_wait_on_event_nets(){
-		// TODO
+			ADR0_A0_B->register_event_reader(this);
+			ADR1_A0_B->register_event_reader(this);
 		}
+
 		void calculate(int time){
-		// TODO
+			calculate_LUT(time,
+				INIT,
+				O_A0_B,
+				ADR0_A0_B,
+				ADR1_A0_B
+				);
 		}
-		};
+	};
 		
 }
 #endif // X_LUT2_H

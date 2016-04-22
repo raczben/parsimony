@@ -24,6 +24,8 @@ namespace CPrimitives {
 		NetFlow* ADR3_A0_B; // net ID: ADR3 lsb: 0  msb: 0 INPUT
 		NetFlow* ADR4_A0_B; // net ID: ADR4 lsb: 0  msb: 0 INPUT
 		
+
+
 		public: X_LUT5(
 			const char * name,
 			//Verilog Parameters:
@@ -52,14 +54,29 @@ namespace CPrimitives {
 			
 			register_wait_on_event_nets();
 			
+
 		}
 		
 		void register_wait_on_event_nets(){
-		// TODO
+			ADR0_A0_B->register_event_reader(this);
+			ADR1_A0_B->register_event_reader(this);
+			ADR2_A0_B->register_event_reader(this);
+			ADR3_A0_B->register_event_reader(this);
+			ADR4_A0_B->register_event_reader(this);
 		}
+
 		void calculate(int time){
-		// TODO
+			calculate_LUT(time,
+				INIT,
+				O_A0_B,
+				ADR0_A0_B,
+				ADR1_A0_B,
+				ADR2_A0_B,
+				ADR3_A0_B,
+				ADR4_A0_B
+				);
 		}
+
 		};
 		
 }

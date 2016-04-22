@@ -4,7 +4,7 @@
 
 #include "SimulatorEngine.h"
 
-extern SimulatorEngine engine;
+extern SimulatorEngine *engine;
 
 
 #endif //SHARED_H
