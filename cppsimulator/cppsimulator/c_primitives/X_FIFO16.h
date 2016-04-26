@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_FIFO16: public Primitive{
@@ -22,13 +23,69 @@ namespace CPrimitives {
 		//Verilog Ports in definition order:
 		NetFlow* ALMOSTEMPTY_A0_B; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
 		NetFlow* ALMOSTFULL_A0_B; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
-		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOP_A0_B; // net ID: DOP lsb: 0  msb: 0 OUTPUT
+		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A1_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A2_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A3_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A4_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A5_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A6_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A7_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A8_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A9_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A10_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A11_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A12_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A13_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A14_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A15_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A16_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A17_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A18_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A19_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A20_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A21_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A22_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A23_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A24_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A25_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A26_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A27_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A28_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A29_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A30_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DO_A31_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOP_A0_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOP_A1_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOP_A2_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOP_A3_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
 		NetFlow* EMPTY_A0_B; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
 		NetFlow* FULL_A0_B; // net ID: FULL lsb: 0  msb: 0 OUTPUT
-		NetFlow* RDCOUNT_A0_B; // net ID: RDCOUNT lsb: 0  msb: 0 OUTPUT
+		NetFlow* RDCOUNT_A0_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A1_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A2_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A3_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A4_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A5_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A6_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A7_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A8_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A9_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A10_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* RDCOUNT_A11_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
 		NetFlow* RDERR_A0_B; // net ID: RDERR lsb: 0  msb: 0 OUTPUT
-		NetFlow* WRCOUNT_A0_B; // net ID: WRCOUNT lsb: 0  msb: 0 OUTPUT
+		NetFlow* WRCOUNT_A0_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A1_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A2_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A3_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A4_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A5_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A6_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A7_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A8_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A9_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A10_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+		NetFlow* WRCOUNT_A11_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
 		NetFlow* WRERR_A0_B; // net ID: WRERR lsb: 0  msb: 0 OUTPUT
 		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 31 INPUT
 		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 31 INPUT
@@ -83,13 +140,69 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			NetFlow* ALMOSTEMPTY_A0_B, // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
 			NetFlow* ALMOSTFULL_A0_B, // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
-			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOP_A0_B, // net ID: DOP lsb: 0  msb: 0 OUTPUT
+			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A1_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A2_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A3_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A4_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A5_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A6_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A7_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A8_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A9_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A10_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A11_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A12_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A13_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A14_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A15_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A16_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A17_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A18_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A19_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A20_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A21_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A22_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A23_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A24_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A25_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A26_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A27_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A28_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A29_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A30_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DO_A31_B, // net ID: DO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOP_A0_B, // net ID: DOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOP_A1_B, // net ID: DOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOP_A2_B, // net ID: DOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOP_A3_B, // net ID: DOP lsb: 0  msb: 3 OUTPUT
 			NetFlow* EMPTY_A0_B, // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
 			NetFlow* FULL_A0_B, // net ID: FULL lsb: 0  msb: 0 OUTPUT
-			NetFlow* RDCOUNT_A0_B, // net ID: RDCOUNT lsb: 0  msb: 0 OUTPUT
+			NetFlow* RDCOUNT_A0_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A1_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A2_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A3_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A4_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A5_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A6_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A7_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A8_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A9_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A10_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* RDCOUNT_A11_B, // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
 			NetFlow* RDERR_A0_B, // net ID: RDERR lsb: 0  msb: 0 OUTPUT
-			NetFlow* WRCOUNT_A0_B, // net ID: WRCOUNT lsb: 0  msb: 0 OUTPUT
+			NetFlow* WRCOUNT_A0_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A1_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A2_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A3_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A4_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A5_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A6_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A7_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A8_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A9_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A10_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			NetFlow* WRCOUNT_A11_B, // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
 			NetFlow* WRERR_A0_B, // net ID: WRERR lsb: 0  msb: 0 OUTPUT
 			NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 31 INPUT
 			NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 31 INPUT
@@ -144,13 +257,69 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			this->ALMOSTEMPTY_A0_B = ALMOSTEMPTY_A0_B; // net ID: ALMOSTEMPTY lsb: 0  msb: 0 OUTPUT
 			this->ALMOSTFULL_A0_B = ALMOSTFULL_A0_B; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
-			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
-			this->DOP_A0_B = DOP_A0_B; // net ID: DOP lsb: 0  msb: 0 OUTPUT
+			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A1_B = DO_A1_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A2_B = DO_A2_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A3_B = DO_A3_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A4_B = DO_A4_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A5_B = DO_A5_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A6_B = DO_A6_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A7_B = DO_A7_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A8_B = DO_A8_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A9_B = DO_A9_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A10_B = DO_A10_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A11_B = DO_A11_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A12_B = DO_A12_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A13_B = DO_A13_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A14_B = DO_A14_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A15_B = DO_A15_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A16_B = DO_A16_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A17_B = DO_A17_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A18_B = DO_A18_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A19_B = DO_A19_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A20_B = DO_A20_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A21_B = DO_A21_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A22_B = DO_A22_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A23_B = DO_A23_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A24_B = DO_A24_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A25_B = DO_A25_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A26_B = DO_A26_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A27_B = DO_A27_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A28_B = DO_A28_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A29_B = DO_A29_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A30_B = DO_A30_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DO_A31_B = DO_A31_B; // net ID: DO lsb: 0  msb: 31 OUTPUT
+			this->DOP_A0_B = DOP_A0_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
+			this->DOP_A1_B = DOP_A1_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
+			this->DOP_A2_B = DOP_A2_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
+			this->DOP_A3_B = DOP_A3_B; // net ID: DOP lsb: 0  msb: 3 OUTPUT
 			this->EMPTY_A0_B = EMPTY_A0_B; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
 			this->FULL_A0_B = FULL_A0_B; // net ID: FULL lsb: 0  msb: 0 OUTPUT
-			this->RDCOUNT_A0_B = RDCOUNT_A0_B; // net ID: RDCOUNT lsb: 0  msb: 0 OUTPUT
+			this->RDCOUNT_A0_B = RDCOUNT_A0_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A1_B = RDCOUNT_A1_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A2_B = RDCOUNT_A2_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A3_B = RDCOUNT_A3_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A4_B = RDCOUNT_A4_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A5_B = RDCOUNT_A5_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A6_B = RDCOUNT_A6_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A7_B = RDCOUNT_A7_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A8_B = RDCOUNT_A8_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A9_B = RDCOUNT_A9_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A10_B = RDCOUNT_A10_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
+			this->RDCOUNT_A11_B = RDCOUNT_A11_B; // net ID: RDCOUNT lsb: 0  msb: 11 OUTPUT
 			this->RDERR_A0_B = RDERR_A0_B; // net ID: RDERR lsb: 0  msb: 0 OUTPUT
-			this->WRCOUNT_A0_B = WRCOUNT_A0_B; // net ID: WRCOUNT lsb: 0  msb: 0 OUTPUT
+			this->WRCOUNT_A0_B = WRCOUNT_A0_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A1_B = WRCOUNT_A1_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A2_B = WRCOUNT_A2_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A3_B = WRCOUNT_A3_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A4_B = WRCOUNT_A4_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A5_B = WRCOUNT_A5_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A6_B = WRCOUNT_A6_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A7_B = WRCOUNT_A7_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A8_B = WRCOUNT_A8_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A9_B = WRCOUNT_A9_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A10_B = WRCOUNT_A10_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
+			this->WRCOUNT_A11_B = WRCOUNT_A11_B; // net ID: WRCOUNT lsb: 0  msb: 11 OUTPUT
 			this->WRERR_A0_B = WRERR_A0_B; // net ID: WRERR lsb: 0  msb: 0 OUTPUT
 			this->DI_A0_B = DI_A0_B; // net ID: DI lsb: 0  msb: 31 INPUT
 			this->DI_A1_B = DI_A1_B; // net ID: DI lsb: 0  msb: 31 INPUT
@@ -201,6 +370,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

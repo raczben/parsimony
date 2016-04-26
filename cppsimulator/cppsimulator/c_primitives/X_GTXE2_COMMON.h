@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_GTXE2_COMMON: public Primitive{
@@ -35,9 +36,31 @@ namespace CPrimitives {
 		parameter_enum_t SIM_RESET_SPEEDUP;
 		parameter_string_t SIM_VERSION;
 		//Verilog Ports in definition order:
-		NetFlow* DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+		NetFlow* DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A15_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DRPRDY_A0_B; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
-		NetFlow* QPLLDMONITOR_A0_B; // net ID: QPLLDMONITOR lsb: 0  msb: 0 OUTPUT
+		NetFlow* QPLLDMONITOR_A0_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+		NetFlow* QPLLDMONITOR_A1_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+		NetFlow* QPLLDMONITOR_A2_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+		NetFlow* QPLLDMONITOR_A3_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+		NetFlow* QPLLDMONITOR_A4_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+		NetFlow* QPLLDMONITOR_A5_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+		NetFlow* QPLLDMONITOR_A6_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+		NetFlow* QPLLDMONITOR_A7_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
 		NetFlow* QPLLFBCLKLOST_A0_B; // net ID: QPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
 		NetFlow* QPLLLOCK_A0_B; // net ID: QPLLLOCK lsb: 0  msb: 0 OUTPUT
 		NetFlow* QPLLOUTCLK_A0_B; // net ID: QPLLOUTCLK lsb: 0  msb: 0 OUTPUT
@@ -149,9 +172,31 @@ namespace CPrimitives {
 			parameter_enum_t SIM_RESET_SPEEDUP, // Default: "TRUE"
 			parameter_string_t SIM_VERSION, // Default: "4.0"
 			//Verilog Ports in definition order:
-			NetFlow* DRPDO_A0_B, // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+			NetFlow* DRPDO_A0_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A1_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A2_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A3_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A4_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A5_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A6_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A7_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A8_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A9_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A10_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A11_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A12_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A13_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A14_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A15_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DRPRDY_A0_B, // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
-			NetFlow* QPLLDMONITOR_A0_B, // net ID: QPLLDMONITOR lsb: 0  msb: 0 OUTPUT
+			NetFlow* QPLLDMONITOR_A0_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			NetFlow* QPLLDMONITOR_A1_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			NetFlow* QPLLDMONITOR_A2_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			NetFlow* QPLLDMONITOR_A3_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			NetFlow* QPLLDMONITOR_A4_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			NetFlow* QPLLDMONITOR_A5_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			NetFlow* QPLLDMONITOR_A6_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			NetFlow* QPLLDMONITOR_A7_B, // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
 			NetFlow* QPLLFBCLKLOST_A0_B, // net ID: QPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
 			NetFlow* QPLLLOCK_A0_B, // net ID: QPLLLOCK lsb: 0  msb: 0 OUTPUT
 			NetFlow* QPLLOUTCLK_A0_B, // net ID: QPLLOUTCLK lsb: 0  msb: 0 OUTPUT
@@ -263,9 +308,31 @@ namespace CPrimitives {
 			this->SIM_RESET_SPEEDUP = SIM_RESET_SPEEDUP; // Default: "TRUE"
 			this->SIM_VERSION = SIM_VERSION; // Default: "4.0"
 			//Verilog Ports in definition order:
-			this->DRPDO_A0_B = DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+			this->DRPDO_A0_B = DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A1_B = DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A2_B = DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A3_B = DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A4_B = DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A5_B = DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A6_B = DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A7_B = DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A8_B = DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A9_B = DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A10_B = DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A11_B = DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A12_B = DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A13_B = DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A14_B = DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A15_B = DRPDO_A15_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			this->DRPRDY_A0_B = DRPRDY_A0_B; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
-			this->QPLLDMONITOR_A0_B = QPLLDMONITOR_A0_B; // net ID: QPLLDMONITOR lsb: 0  msb: 0 OUTPUT
+			this->QPLLDMONITOR_A0_B = QPLLDMONITOR_A0_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			this->QPLLDMONITOR_A1_B = QPLLDMONITOR_A1_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			this->QPLLDMONITOR_A2_B = QPLLDMONITOR_A2_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			this->QPLLDMONITOR_A3_B = QPLLDMONITOR_A3_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			this->QPLLDMONITOR_A4_B = QPLLDMONITOR_A4_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			this->QPLLDMONITOR_A5_B = QPLLDMONITOR_A5_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			this->QPLLDMONITOR_A6_B = QPLLDMONITOR_A6_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
+			this->QPLLDMONITOR_A7_B = QPLLDMONITOR_A7_B; // net ID: QPLLDMONITOR lsb: 0  msb: 7 OUTPUT
 			this->QPLLFBCLKLOST_A0_B = QPLLFBCLKLOST_A0_B; // net ID: QPLLFBCLKLOST lsb: 0  msb: 0 OUTPUT
 			this->QPLLLOCK_A0_B = QPLLLOCK_A0_B; // net ID: QPLLLOCK lsb: 0  msb: 0 OUTPUT
 			this->QPLLOUTCLK_A0_B = QPLLOUTCLK_A0_B; // net ID: QPLLOUTCLK lsb: 0  msb: 0 OUTPUT
@@ -360,6 +427,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

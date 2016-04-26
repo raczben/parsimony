@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class iodlyctrl_npre_oserdese1_vlog: public Primitive{
@@ -66,6 +67,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

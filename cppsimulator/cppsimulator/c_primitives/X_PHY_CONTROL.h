@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_PHY_CONTROL: public Primitive{
@@ -50,14 +51,28 @@ namespace CPrimitives {
 		parameter_int_t WR_DURATION_2;
 		parameter_int_t WR_DURATION_3;
 		//Verilog Ports in definition order:
-		NetFlow* AUXOUTPUT_A0_B; // net ID: AUXOUTPUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* INBURSTPENDING_A0_B; // net ID: INBURSTPENDING lsb: 0  msb: 0 OUTPUT
-		NetFlow* INRANKA_A0_B; // net ID: INRANKA lsb: 0  msb: 0 OUTPUT
-		NetFlow* INRANKB_A0_B; // net ID: INRANKB lsb: 0  msb: 0 OUTPUT
-		NetFlow* INRANKC_A0_B; // net ID: INRANKC lsb: 0  msb: 0 OUTPUT
-		NetFlow* INRANKD_A0_B; // net ID: INRANKD lsb: 0  msb: 0 OUTPUT
-		NetFlow* OUTBURSTPENDING_A0_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 0 OUTPUT
-		NetFlow* PCENABLECALIB_A0_B; // net ID: PCENABLECALIB lsb: 0  msb: 0 OUTPUT
+		NetFlow* AUXOUTPUT_A0_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+		NetFlow* AUXOUTPUT_A1_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+		NetFlow* AUXOUTPUT_A2_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+		NetFlow* AUXOUTPUT_A3_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+		NetFlow* INBURSTPENDING_A0_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* INBURSTPENDING_A1_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* INBURSTPENDING_A2_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* INBURSTPENDING_A3_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* INRANKA_A0_B; // net ID: INRANKA lsb: 0  msb: 1 OUTPUT
+		NetFlow* INRANKA_A1_B; // net ID: INRANKA lsb: 0  msb: 1 OUTPUT
+		NetFlow* INRANKB_A0_B; // net ID: INRANKB lsb: 0  msb: 1 OUTPUT
+		NetFlow* INRANKB_A1_B; // net ID: INRANKB lsb: 0  msb: 1 OUTPUT
+		NetFlow* INRANKC_A0_B; // net ID: INRANKC lsb: 0  msb: 1 OUTPUT
+		NetFlow* INRANKC_A1_B; // net ID: INRANKC lsb: 0  msb: 1 OUTPUT
+		NetFlow* INRANKD_A0_B; // net ID: INRANKD lsb: 0  msb: 1 OUTPUT
+		NetFlow* INRANKD_A1_B; // net ID: INRANKD lsb: 0  msb: 1 OUTPUT
+		NetFlow* OUTBURSTPENDING_A0_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* OUTBURSTPENDING_A1_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* OUTBURSTPENDING_A2_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* OUTBURSTPENDING_A3_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+		NetFlow* PCENABLECALIB_A0_B; // net ID: PCENABLECALIB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PCENABLECALIB_A1_B; // net ID: PCENABLECALIB lsb: 0  msb: 1 OUTPUT
 		NetFlow* PHYCTLALMOSTFULL_A0_B; // net ID: PHYCTLALMOSTFULL lsb: 0  msb: 0 OUTPUT
 		NetFlow* PHYCTLEMPTY_A0_B; // net ID: PHYCTLEMPTY lsb: 0  msb: 0 OUTPUT
 		NetFlow* PHYCTLFULL_A0_B; // net ID: PHYCTLFULL lsb: 0  msb: 0 OUTPUT
@@ -144,14 +159,28 @@ namespace CPrimitives {
 			parameter_int_t WR_DURATION_2, // Default: 0
 			parameter_int_t WR_DURATION_3, // Default: 0
 			//Verilog Ports in definition order:
-			NetFlow* AUXOUTPUT_A0_B, // net ID: AUXOUTPUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* INBURSTPENDING_A0_B, // net ID: INBURSTPENDING lsb: 0  msb: 0 OUTPUT
-			NetFlow* INRANKA_A0_B, // net ID: INRANKA lsb: 0  msb: 0 OUTPUT
-			NetFlow* INRANKB_A0_B, // net ID: INRANKB lsb: 0  msb: 0 OUTPUT
-			NetFlow* INRANKC_A0_B, // net ID: INRANKC lsb: 0  msb: 0 OUTPUT
-			NetFlow* INRANKD_A0_B, // net ID: INRANKD lsb: 0  msb: 0 OUTPUT
-			NetFlow* OUTBURSTPENDING_A0_B, // net ID: OUTBURSTPENDING lsb: 0  msb: 0 OUTPUT
-			NetFlow* PCENABLECALIB_A0_B, // net ID: PCENABLECALIB lsb: 0  msb: 0 OUTPUT
+			NetFlow* AUXOUTPUT_A0_B, // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			NetFlow* AUXOUTPUT_A1_B, // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			NetFlow* AUXOUTPUT_A2_B, // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			NetFlow* AUXOUTPUT_A3_B, // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			NetFlow* INBURSTPENDING_A0_B, // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* INBURSTPENDING_A1_B, // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* INBURSTPENDING_A2_B, // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* INBURSTPENDING_A3_B, // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* INRANKA_A0_B, // net ID: INRANKA lsb: 0  msb: 1 OUTPUT
+			NetFlow* INRANKA_A1_B, // net ID: INRANKA lsb: 0  msb: 1 OUTPUT
+			NetFlow* INRANKB_A0_B, // net ID: INRANKB lsb: 0  msb: 1 OUTPUT
+			NetFlow* INRANKB_A1_B, // net ID: INRANKB lsb: 0  msb: 1 OUTPUT
+			NetFlow* INRANKC_A0_B, // net ID: INRANKC lsb: 0  msb: 1 OUTPUT
+			NetFlow* INRANKC_A1_B, // net ID: INRANKC lsb: 0  msb: 1 OUTPUT
+			NetFlow* INRANKD_A0_B, // net ID: INRANKD lsb: 0  msb: 1 OUTPUT
+			NetFlow* INRANKD_A1_B, // net ID: INRANKD lsb: 0  msb: 1 OUTPUT
+			NetFlow* OUTBURSTPENDING_A0_B, // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* OUTBURSTPENDING_A1_B, // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* OUTBURSTPENDING_A2_B, // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* OUTBURSTPENDING_A3_B, // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			NetFlow* PCENABLECALIB_A0_B, // net ID: PCENABLECALIB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PCENABLECALIB_A1_B, // net ID: PCENABLECALIB lsb: 0  msb: 1 OUTPUT
 			NetFlow* PHYCTLALMOSTFULL_A0_B, // net ID: PHYCTLALMOSTFULL lsb: 0  msb: 0 OUTPUT
 			NetFlow* PHYCTLEMPTY_A0_B, // net ID: PHYCTLEMPTY lsb: 0  msb: 0 OUTPUT
 			NetFlow* PHYCTLFULL_A0_B, // net ID: PHYCTLFULL lsb: 0  msb: 0 OUTPUT
@@ -238,14 +267,28 @@ namespace CPrimitives {
 			this->WR_DURATION_2 = WR_DURATION_2; // Default: 0
 			this->WR_DURATION_3 = WR_DURATION_3; // Default: 0
 			//Verilog Ports in definition order:
-			this->AUXOUTPUT_A0_B = AUXOUTPUT_A0_B; // net ID: AUXOUTPUT lsb: 0  msb: 0 OUTPUT
-			this->INBURSTPENDING_A0_B = INBURSTPENDING_A0_B; // net ID: INBURSTPENDING lsb: 0  msb: 0 OUTPUT
-			this->INRANKA_A0_B = INRANKA_A0_B; // net ID: INRANKA lsb: 0  msb: 0 OUTPUT
-			this->INRANKB_A0_B = INRANKB_A0_B; // net ID: INRANKB lsb: 0  msb: 0 OUTPUT
-			this->INRANKC_A0_B = INRANKC_A0_B; // net ID: INRANKC lsb: 0  msb: 0 OUTPUT
-			this->INRANKD_A0_B = INRANKD_A0_B; // net ID: INRANKD lsb: 0  msb: 0 OUTPUT
-			this->OUTBURSTPENDING_A0_B = OUTBURSTPENDING_A0_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 0 OUTPUT
-			this->PCENABLECALIB_A0_B = PCENABLECALIB_A0_B; // net ID: PCENABLECALIB lsb: 0  msb: 0 OUTPUT
+			this->AUXOUTPUT_A0_B = AUXOUTPUT_A0_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			this->AUXOUTPUT_A1_B = AUXOUTPUT_A1_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			this->AUXOUTPUT_A2_B = AUXOUTPUT_A2_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			this->AUXOUTPUT_A3_B = AUXOUTPUT_A3_B; // net ID: AUXOUTPUT lsb: 0  msb: 3 OUTPUT
+			this->INBURSTPENDING_A0_B = INBURSTPENDING_A0_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->INBURSTPENDING_A1_B = INBURSTPENDING_A1_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->INBURSTPENDING_A2_B = INBURSTPENDING_A2_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->INBURSTPENDING_A3_B = INBURSTPENDING_A3_B; // net ID: INBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->INRANKA_A0_B = INRANKA_A0_B; // net ID: INRANKA lsb: 0  msb: 1 OUTPUT
+			this->INRANKA_A1_B = INRANKA_A1_B; // net ID: INRANKA lsb: 0  msb: 1 OUTPUT
+			this->INRANKB_A0_B = INRANKB_A0_B; // net ID: INRANKB lsb: 0  msb: 1 OUTPUT
+			this->INRANKB_A1_B = INRANKB_A1_B; // net ID: INRANKB lsb: 0  msb: 1 OUTPUT
+			this->INRANKC_A0_B = INRANKC_A0_B; // net ID: INRANKC lsb: 0  msb: 1 OUTPUT
+			this->INRANKC_A1_B = INRANKC_A1_B; // net ID: INRANKC lsb: 0  msb: 1 OUTPUT
+			this->INRANKD_A0_B = INRANKD_A0_B; // net ID: INRANKD lsb: 0  msb: 1 OUTPUT
+			this->INRANKD_A1_B = INRANKD_A1_B; // net ID: INRANKD lsb: 0  msb: 1 OUTPUT
+			this->OUTBURSTPENDING_A0_B = OUTBURSTPENDING_A0_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->OUTBURSTPENDING_A1_B = OUTBURSTPENDING_A1_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->OUTBURSTPENDING_A2_B = OUTBURSTPENDING_A2_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->OUTBURSTPENDING_A3_B = OUTBURSTPENDING_A3_B; // net ID: OUTBURSTPENDING lsb: 0  msb: 3 OUTPUT
+			this->PCENABLECALIB_A0_B = PCENABLECALIB_A0_B; // net ID: PCENABLECALIB lsb: 0  msb: 1 OUTPUT
+			this->PCENABLECALIB_A1_B = PCENABLECALIB_A1_B; // net ID: PCENABLECALIB lsb: 0  msb: 1 OUTPUT
 			this->PHYCTLALMOSTFULL_A0_B = PHYCTLALMOSTFULL_A0_B; // net ID: PHYCTLALMOSTFULL lsb: 0  msb: 0 OUTPUT
 			this->PHYCTLEMPTY_A0_B = PHYCTLEMPTY_A0_B; // net ID: PHYCTLEMPTY lsb: 0  msb: 0 OUTPUT
 			this->PHYCTLFULL_A0_B = PHYCTLFULL_A0_B; // net ID: PHYCTLFULL lsb: 0  msb: 0 OUTPUT
@@ -300,6 +343,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

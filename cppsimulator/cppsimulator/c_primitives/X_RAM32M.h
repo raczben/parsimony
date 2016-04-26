@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_RAM32M: public Primitive{
@@ -20,10 +21,14 @@ namespace CPrimitives {
 		parameter_int_t INIT_D;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* DOA_A0_B; // net ID: DOA lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOB_A0_B; // net ID: DOB lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOC_A0_B; // net ID: DOC lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOD_A0_B; // net ID: DOD lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOA_A0_B; // net ID: DOA lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOA_A1_B; // net ID: DOA lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOB_A0_B; // net ID: DOB lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOB_A1_B; // net ID: DOB lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOC_A0_B; // net ID: DOC lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOC_A1_B; // net ID: DOC lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOD_A0_B; // net ID: DOD lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOD_A1_B; // net ID: DOD lsb: 0  msb: 1 OUTPUT
 		NetFlow* ADDRA_A0_B; // net ID: ADDRA lsb: 0  msb: 4 INPUT
 		NetFlow* ADDRA_A1_B; // net ID: ADDRA lsb: 0  msb: 4 INPUT
 		NetFlow* ADDRA_A2_B; // net ID: ADDRA lsb: 0  msb: 4 INPUT
@@ -64,10 +69,14 @@ namespace CPrimitives {
 			parameter_int_t INIT_D, // Default: 64'h0000000000000000
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* DOA_A0_B, // net ID: DOA lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOB_A0_B, // net ID: DOB lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOC_A0_B, // net ID: DOC lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOD_A0_B, // net ID: DOD lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOA_A0_B, // net ID: DOA lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOA_A1_B, // net ID: DOA lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOB_A0_B, // net ID: DOB lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOB_A1_B, // net ID: DOB lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOC_A0_B, // net ID: DOC lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOC_A1_B, // net ID: DOC lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOD_A0_B, // net ID: DOD lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOD_A1_B, // net ID: DOD lsb: 0  msb: 1 OUTPUT
 			NetFlow* ADDRA_A0_B, // net ID: ADDRA lsb: 0  msb: 4 INPUT
 			NetFlow* ADDRA_A1_B, // net ID: ADDRA lsb: 0  msb: 4 INPUT
 			NetFlow* ADDRA_A2_B, // net ID: ADDRA lsb: 0  msb: 4 INPUT
@@ -108,10 +117,14 @@ namespace CPrimitives {
 			this->INIT_D = INIT_D; // Default: 64'h0000000000000000
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->DOA_A0_B = DOA_A0_B; // net ID: DOA lsb: 0  msb: 0 OUTPUT
-			this->DOB_A0_B = DOB_A0_B; // net ID: DOB lsb: 0  msb: 0 OUTPUT
-			this->DOC_A0_B = DOC_A0_B; // net ID: DOC lsb: 0  msb: 0 OUTPUT
-			this->DOD_A0_B = DOD_A0_B; // net ID: DOD lsb: 0  msb: 0 OUTPUT
+			this->DOA_A0_B = DOA_A0_B; // net ID: DOA lsb: 0  msb: 1 OUTPUT
+			this->DOA_A1_B = DOA_A1_B; // net ID: DOA lsb: 0  msb: 1 OUTPUT
+			this->DOB_A0_B = DOB_A0_B; // net ID: DOB lsb: 0  msb: 1 OUTPUT
+			this->DOB_A1_B = DOB_A1_B; // net ID: DOB lsb: 0  msb: 1 OUTPUT
+			this->DOC_A0_B = DOC_A0_B; // net ID: DOC lsb: 0  msb: 1 OUTPUT
+			this->DOC_A1_B = DOC_A1_B; // net ID: DOC lsb: 0  msb: 1 OUTPUT
+			this->DOD_A0_B = DOD_A0_B; // net ID: DOD lsb: 0  msb: 1 OUTPUT
+			this->DOD_A1_B = DOD_A1_B; // net ID: DOD lsb: 0  msb: 1 OUTPUT
 			this->ADDRA_A0_B = ADDRA_A0_B; // net ID: ADDRA lsb: 0  msb: 4 INPUT
 			this->ADDRA_A1_B = ADDRA_A1_B; // net ID: ADDRA lsb: 0  msb: 4 INPUT
 			this->ADDRA_A2_B = ADDRA_A2_B; // net ID: ADDRA lsb: 0  msb: 4 INPUT
@@ -150,6 +163,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_PHASER_OUT_PHY: public Primitive{
@@ -31,10 +32,21 @@ namespace CPrimitives {
 		parameter_enum_t SYNC_IN_DIV_RST;
 		//Verilog Ports in definition order:
 		NetFlow* COARSEOVERFLOW_A0_B; // net ID: COARSEOVERFLOW lsb: 0  msb: 0 OUTPUT
-		NetFlow* COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
-		NetFlow* CTSBUS_A0_B; // net ID: CTSBUS lsb: 0  msb: 0 OUTPUT
-		NetFlow* DQSBUS_A0_B; // net ID: DQSBUS lsb: 0  msb: 0 OUTPUT
-		NetFlow* DTSBUS_A0_B; // net ID: DTSBUS lsb: 0  msb: 0 OUTPUT
+		NetFlow* COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A1_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A2_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A3_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A4_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A5_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A6_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A7_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* COUNTERREADVAL_A8_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+		NetFlow* CTSBUS_A0_B; // net ID: CTSBUS lsb: 0  msb: 1 OUTPUT
+		NetFlow* CTSBUS_A1_B; // net ID: CTSBUS lsb: 0  msb: 1 OUTPUT
+		NetFlow* DQSBUS_A0_B; // net ID: DQSBUS lsb: 0  msb: 1 OUTPUT
+		NetFlow* DQSBUS_A1_B; // net ID: DQSBUS lsb: 0  msb: 1 OUTPUT
+		NetFlow* DTSBUS_A0_B; // net ID: DTSBUS lsb: 0  msb: 1 OUTPUT
+		NetFlow* DTSBUS_A1_B; // net ID: DTSBUS lsb: 0  msb: 1 OUTPUT
 		NetFlow* FINEOVERFLOW_A0_B; // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
 		NetFlow* OCLK_A0_B; // net ID: OCLK lsb: 0  msb: 0 OUTPUT
 		NetFlow* OCLKDELAYED_A0_B; // net ID: OCLKDELAYED lsb: 0  msb: 0 OUTPUT
@@ -87,10 +99,21 @@ namespace CPrimitives {
 			parameter_enum_t SYNC_IN_DIV_RST, // Default: "FALSE"
 			//Verilog Ports in definition order:
 			NetFlow* COARSEOVERFLOW_A0_B, // net ID: COARSEOVERFLOW lsb: 0  msb: 0 OUTPUT
-			NetFlow* COUNTERREADVAL_A0_B, // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
-			NetFlow* CTSBUS_A0_B, // net ID: CTSBUS lsb: 0  msb: 0 OUTPUT
-			NetFlow* DQSBUS_A0_B, // net ID: DQSBUS lsb: 0  msb: 0 OUTPUT
-			NetFlow* DTSBUS_A0_B, // net ID: DTSBUS lsb: 0  msb: 0 OUTPUT
+			NetFlow* COUNTERREADVAL_A0_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A1_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A2_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A3_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A4_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A5_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A6_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A7_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* COUNTERREADVAL_A8_B, // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			NetFlow* CTSBUS_A0_B, // net ID: CTSBUS lsb: 0  msb: 1 OUTPUT
+			NetFlow* CTSBUS_A1_B, // net ID: CTSBUS lsb: 0  msb: 1 OUTPUT
+			NetFlow* DQSBUS_A0_B, // net ID: DQSBUS lsb: 0  msb: 1 OUTPUT
+			NetFlow* DQSBUS_A1_B, // net ID: DQSBUS lsb: 0  msb: 1 OUTPUT
+			NetFlow* DTSBUS_A0_B, // net ID: DTSBUS lsb: 0  msb: 1 OUTPUT
+			NetFlow* DTSBUS_A1_B, // net ID: DTSBUS lsb: 0  msb: 1 OUTPUT
 			NetFlow* FINEOVERFLOW_A0_B, // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
 			NetFlow* OCLK_A0_B, // net ID: OCLK lsb: 0  msb: 0 OUTPUT
 			NetFlow* OCLKDELAYED_A0_B, // net ID: OCLKDELAYED lsb: 0  msb: 0 OUTPUT
@@ -143,10 +166,21 @@ namespace CPrimitives {
 			this->SYNC_IN_DIV_RST = SYNC_IN_DIV_RST; // Default: "FALSE"
 			//Verilog Ports in definition order:
 			this->COARSEOVERFLOW_A0_B = COARSEOVERFLOW_A0_B; // net ID: COARSEOVERFLOW lsb: 0  msb: 0 OUTPUT
-			this->COUNTERREADVAL_A0_B = COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
-			this->CTSBUS_A0_B = CTSBUS_A0_B; // net ID: CTSBUS lsb: 0  msb: 0 OUTPUT
-			this->DQSBUS_A0_B = DQSBUS_A0_B; // net ID: DQSBUS lsb: 0  msb: 0 OUTPUT
-			this->DTSBUS_A0_B = DTSBUS_A0_B; // net ID: DTSBUS lsb: 0  msb: 0 OUTPUT
+			this->COUNTERREADVAL_A0_B = COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A1_B = COUNTERREADVAL_A1_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A2_B = COUNTERREADVAL_A2_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A3_B = COUNTERREADVAL_A3_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A4_B = COUNTERREADVAL_A4_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A5_B = COUNTERREADVAL_A5_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A6_B = COUNTERREADVAL_A6_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A7_B = COUNTERREADVAL_A7_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->COUNTERREADVAL_A8_B = COUNTERREADVAL_A8_B; // net ID: COUNTERREADVAL lsb: 0  msb: 8 OUTPUT
+			this->CTSBUS_A0_B = CTSBUS_A0_B; // net ID: CTSBUS lsb: 0  msb: 1 OUTPUT
+			this->CTSBUS_A1_B = CTSBUS_A1_B; // net ID: CTSBUS lsb: 0  msb: 1 OUTPUT
+			this->DQSBUS_A0_B = DQSBUS_A0_B; // net ID: DQSBUS lsb: 0  msb: 1 OUTPUT
+			this->DQSBUS_A1_B = DQSBUS_A1_B; // net ID: DQSBUS lsb: 0  msb: 1 OUTPUT
+			this->DTSBUS_A0_B = DTSBUS_A0_B; // net ID: DTSBUS lsb: 0  msb: 1 OUTPUT
+			this->DTSBUS_A1_B = DTSBUS_A1_B; // net ID: DTSBUS lsb: 0  msb: 1 OUTPUT
 			this->FINEOVERFLOW_A0_B = FINEOVERFLOW_A0_B; // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
 			this->OCLK_A0_B = OCLK_A0_B; // net ID: OCLK lsb: 0  msb: 0 OUTPUT
 			this->OCLKDELAYED_A0_B = OCLKDELAYED_A0_B; // net ID: OCLKDELAYED lsb: 0  msb: 0 OUTPUT
@@ -186,6 +220,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

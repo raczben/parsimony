@@ -33,11 +33,9 @@ public class ParserWorker implements Runnable {
 			try {
 				try{
 				filePath = jobs.remove(0);
-				System.out.println("Parsing file: " + filePath + " from " + Thread.currentThread().getName());
+				Logger.writeInfo("Parsing file: " + filePath + " from " + Thread.currentThread().getName());
 				}catch (IndexOutOfBoundsException ex){
-					System.out.println("There is no job. By from " + Thread.currentThread().getName());
-					System.out.flush();
-					System.err.flush();
+					Logger.writeInfo("There is no job. By from " + Thread.currentThread().getName());
 					return;
 				}
 				

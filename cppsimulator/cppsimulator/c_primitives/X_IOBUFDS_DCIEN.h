@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_IOBUFDS_DCIEN: public Primitive{
@@ -23,8 +24,8 @@ namespace CPrimitives {
 		parameter_enum_t USE_IBUFDISABLE;
 		//Verilog Ports in definition order:
 		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* IO_A0_B; // net ID: IO lsb: 0  msb: 0 INOUT
-		NetFlow* IOB_A0_B; // net ID: IOB lsb: 0  msb: 0 INOUT
+		NetFlow* IO_A0_B; // net ID: IO lsb: 0  msb: 0 UNDEFINED
+		NetFlow* IOB_A0_B; // net ID: IOB lsb: 0  msb: 0 UNDEFINED
 		NetFlow* DCITERMDISABLE_A0_B; // net ID: DCITERMDISABLE lsb: 0  msb: 0 INPUT
 		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 		NetFlow* IBUFDISABLE_A0_B; // net ID: IBUFDISABLE lsb: 0  msb: 0 INPUT
@@ -42,8 +43,8 @@ namespace CPrimitives {
 			parameter_enum_t USE_IBUFDISABLE, // Default: "TRUE"
 			//Verilog Ports in definition order:
 			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
-			NetFlow* IO_A0_B, // net ID: IO lsb: 0  msb: 0 INOUT
-			NetFlow* IOB_A0_B, // net ID: IOB lsb: 0  msb: 0 INOUT
+			NetFlow* IO_A0_B, // net ID: IO lsb: 0  msb: 0 UNDEFINED
+			NetFlow* IOB_A0_B, // net ID: IOB lsb: 0  msb: 0 UNDEFINED
 			NetFlow* DCITERMDISABLE_A0_B, // net ID: DCITERMDISABLE lsb: 0  msb: 0 INPUT
 			NetFlow* I_A0_B, // net ID: I lsb: 0  msb: 0 INPUT
 			NetFlow* IBUFDISABLE_A0_B, // net ID: IBUFDISABLE lsb: 0  msb: 0 INPUT
@@ -61,8 +62,8 @@ namespace CPrimitives {
 			this->USE_IBUFDISABLE = USE_IBUFDISABLE; // Default: "TRUE"
 			//Verilog Ports in definition order:
 			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
-			this->IO_A0_B = IO_A0_B; // net ID: IO lsb: 0  msb: 0 INOUT
-			this->IOB_A0_B = IOB_A0_B; // net ID: IOB lsb: 0  msb: 0 INOUT
+			this->IO_A0_B = IO_A0_B; // net ID: IO lsb: 0  msb: 0 UNDEFINED
+			this->IOB_A0_B = IOB_A0_B; // net ID: IOB lsb: 0  msb: 0 UNDEFINED
 			this->DCITERMDISABLE_A0_B = DCITERMDISABLE_A0_B; // net ID: DCITERMDISABLE lsb: 0  msb: 0 INPUT
 			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 			this->IBUFDISABLE_A0_B = IBUFDISABLE_A0_B; // net ID: IBUFDISABLE lsb: 0  msb: 0 INPUT
@@ -75,6 +76,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

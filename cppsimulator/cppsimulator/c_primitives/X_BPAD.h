@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_BPAD: public Primitive{
@@ -16,21 +17,21 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* PAD_A0_B; // net ID: PAD lsb: 0  msb: 0 INOUT
+		NetFlow* PAD_A0_B; // net ID: PAD lsb: 0  msb: 0 UNDEFINED
 		
 		public: X_BPAD(
 			const char * name,
 			//Verilog Parameters:
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* PAD_A0_B // net ID: PAD lsb: 0  msb: 0 INOUT
+			NetFlow* PAD_A0_B // net ID: PAD lsb: 0  msb: 0 UNDEFINED
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->PAD_A0_B = PAD_A0_B; // net ID: PAD lsb: 0  msb: 0 INOUT
+			this->PAD_A0_B = PAD_A0_B; // net ID: PAD lsb: 0  msb: 0 UNDEFINED
 			
 			register_wait_on_event_nets();
 			
@@ -39,6 +40,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_SIM_CONFIG_S6: public Primitive{
@@ -22,11 +23,11 @@ namespace CPrimitives {
 		//Verilog Ports in definition order:
 		NetFlow* BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
 		NetFlow* CSOB_A0_B; // net ID: CSOB lsb: 0  msb: 0 OUTPUT
-		NetFlow* DONE_A0_B; // net ID: DONE lsb: 0  msb: 0 INOUT
+		NetFlow* DONE_A0_B; // net ID: DONE lsb: 0  msb: 0 UNDEFINED
 		NetFlow* CCLK_A0_B; // net ID: CCLK lsb: 0  msb: 0 INPUT
-		NetFlow* D_A0_B; // net ID: D lsb: 0  msb: 0 INOUT
+		NetFlow* D_A0_B; // net ID: D lsb: 0  msb: 0 UNDEFINED
 		NetFlow* CSIB_A0_B; // net ID: CSIB lsb: 0  msb: 0 INPUT
-		NetFlow* INITB_A0_B; // net ID: INITB lsb: 0  msb: 0 INOUT
+		NetFlow* INITB_A0_B; // net ID: INITB lsb: 0  msb: 0 UNDEFINED
 		NetFlow* M_A0_B; // net ID: M lsb: 0  msb: 1 INPUT
 		NetFlow* M_A1_B; // net ID: M lsb: 0  msb: 1 INPUT
 		NetFlow* PROGB_A0_B; // net ID: PROGB lsb: 0  msb: 0 INPUT
@@ -43,11 +44,11 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			NetFlow* BUSY_A0_B, // net ID: BUSY lsb: 0  msb: 0 OUTPUT
 			NetFlow* CSOB_A0_B, // net ID: CSOB lsb: 0  msb: 0 OUTPUT
-			NetFlow* DONE_A0_B, // net ID: DONE lsb: 0  msb: 0 INOUT
+			NetFlow* DONE_A0_B, // net ID: DONE lsb: 0  msb: 0 UNDEFINED
 			NetFlow* CCLK_A0_B, // net ID: CCLK lsb: 0  msb: 0 INPUT
-			NetFlow* D_A0_B, // net ID: D lsb: 0  msb: 0 INOUT
+			NetFlow* D_A0_B, // net ID: D lsb: 0  msb: 0 UNDEFINED
 			NetFlow* CSIB_A0_B, // net ID: CSIB lsb: 0  msb: 0 INPUT
-			NetFlow* INITB_A0_B, // net ID: INITB lsb: 0  msb: 0 INOUT
+			NetFlow* INITB_A0_B, // net ID: INITB lsb: 0  msb: 0 UNDEFINED
 			NetFlow* M_A0_B, // net ID: M lsb: 0  msb: 1 INPUT
 			NetFlow* M_A1_B, // net ID: M lsb: 0  msb: 1 INPUT
 			NetFlow* PROGB_A0_B, // net ID: PROGB lsb: 0  msb: 0 INPUT
@@ -64,11 +65,11 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			this->BUSY_A0_B = BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
 			this->CSOB_A0_B = CSOB_A0_B; // net ID: CSOB lsb: 0  msb: 0 OUTPUT
-			this->DONE_A0_B = DONE_A0_B; // net ID: DONE lsb: 0  msb: 0 INOUT
+			this->DONE_A0_B = DONE_A0_B; // net ID: DONE lsb: 0  msb: 0 UNDEFINED
 			this->CCLK_A0_B = CCLK_A0_B; // net ID: CCLK lsb: 0  msb: 0 INPUT
-			this->D_A0_B = D_A0_B; // net ID: D lsb: 0  msb: 0 INOUT
+			this->D_A0_B = D_A0_B; // net ID: D lsb: 0  msb: 0 UNDEFINED
 			this->CSIB_A0_B = CSIB_A0_B; // net ID: CSIB lsb: 0  msb: 0 INPUT
-			this->INITB_A0_B = INITB_A0_B; // net ID: INITB lsb: 0  msb: 0 INOUT
+			this->INITB_A0_B = INITB_A0_B; // net ID: INITB lsb: 0  msb: 0 UNDEFINED
 			this->M_A0_B = M_A0_B; // net ID: M lsb: 0  msb: 1 INPUT
 			this->M_A1_B = M_A1_B; // net ID: M lsb: 0  msb: 1 INPUT
 			this->PROGB_A0_B = PROGB_A0_B; // net ID: PROGB lsb: 0  msb: 0 INPUT
@@ -81,6 +82,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

@@ -23,7 +23,13 @@ import antlr.Verilog2001Lexer;
 import antlr.Verilog2001Parser;
 import antlr.Verilog2001Parser.Module_declarationContext;
 
-
+/**
+ * Main class contains the main entry point, and basic usecases of the verilog
+ * parser and cpp generator project.
+ * 
+ * @author Benedek Racz
+ *
+ */
 public class Main {
 	
 	static final Map<FileNamesEnum, String> simulationFilenames = new HashMap<FileNamesEnum, String>(){/**
@@ -199,6 +205,9 @@ public class Main {
 	}
 	
 	/**
+	 * copyResultsToCppProject() copy generated files into CPP project. Note
+	 * that this function does not copy the generated primitives' templates.
+	 * Note that it overwrites modifications in the CPP project. 
 	 * @throws IOException 
 	 * 
 	 */
@@ -214,6 +223,10 @@ public class Main {
 	
 
 	/**
+	 * generatePrimitiveIncludeHeader() collects and includes all header files of
+	 * the generated primitives and write them into a header file. This file
+	 * should be included in file which instantiate the primitives.
+	 * 
 	 * @throws IOException 
 	 * 
 	 */
@@ -247,6 +260,19 @@ public class Main {
 		
 		
 	}
+
+	/**
+	 * printPrimitivesInfos() loads the previously mapped primitives and print
+	 * the information of them (Name, IO ports, parameters.)
+	 */
+	private static void printPrimitivesInfos() {
+		 if(! PrimitiveMapper.loadData()){
+		    	Logger.writeError("Failure");
+		    	return;
+		    }
+		    PrimitiveMapper.printResults();
+			
+	}
 	
 	/**
 	 * The main function. Choose (uncomment) functions below. First you should
@@ -263,15 +289,17 @@ public class Main {
 		
 		
 //		primitiveMapper("C:\\Users\\ebenera\\bme\\2015_16_tavasz\\onlab2\\xilinxPrimitives\\simprims");
-		compile_verilog_to_c();
-//		generateCTemplate();
+//		compile_verilog_to_c();
+		generateCTemplate();
 //		generatePrimitiveIncludeHeader();
 //		copyResultsToCppProject();
+//		printPrimitivesInfos();
 	
 		
 		Logger.close();
 		System.out.println("Exit");
 	}
+
 
 
 	

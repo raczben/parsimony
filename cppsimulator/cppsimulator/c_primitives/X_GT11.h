@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_GT11: public Primitive{
@@ -187,42 +188,256 @@ namespace CPrimitives {
 		parameter_int_t TXOUTDIV2SEL;
 		parameter_int_t TXPLLNDIVSEL;
 		//Verilog Ports in definition order:
-		NetFlow* CHBONDO_A0_B; // net ID: CHBONDO lsb: 0  msb: 0 OUTPUT
-		NetFlow* COMBUSOUT_A0_B; // net ID: COMBUSOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+		NetFlow* CHBONDO_A0_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHBONDO_A1_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHBONDO_A2_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHBONDO_A3_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHBONDO_A4_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+		NetFlow* COMBUSOUT_A0_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A1_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A2_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A3_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A4_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A5_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A6_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A7_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A8_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A9_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A10_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A11_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A12_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A13_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A14_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* COMBUSOUT_A15_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXBUFERR_A0_B; // net ID: RXBUFERR lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXCALFAIL_A0_B; // net ID: RXCALFAIL lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHARISCOMMA_A0_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHARISK_A0_B; // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCHARISCOMMA_A0_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISCOMMA_A1_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISCOMMA_A2_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISCOMMA_A3_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISCOMMA_A4_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISCOMMA_A5_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISCOMMA_A6_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISCOMMA_A7_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A0_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A1_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A2_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A3_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A4_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A5_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A6_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXCHARISK_A7_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
 		NetFlow* RXCOMMADET_A0_B; // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCRCOUT_A0_B; // net ID: RXCRCOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXCRCOUT_A0_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A1_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A2_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A3_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A4_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A5_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A6_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A7_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A8_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A9_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A10_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A11_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A12_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A13_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A14_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A15_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A16_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A17_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A18_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A19_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A20_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A21_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A22_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A23_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A24_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A25_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A26_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A27_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A28_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A29_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A30_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXCRCOUT_A31_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
 		NetFlow* RXCYCLELIMIT_A0_B; // net ID: RXCYCLELIMIT lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXDATA_A0_B; // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXDISPERR_A0_B; // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXDATA_A0_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A1_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A2_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A3_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A4_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A5_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A6_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A7_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A8_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A9_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A10_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A11_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A12_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A13_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A14_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A15_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A16_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A17_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A18_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A19_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A20_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A21_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A22_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A23_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A24_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A25_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A26_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A27_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A28_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A29_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A30_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A31_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A32_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A33_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A34_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A35_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A36_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A37_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A38_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A39_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A40_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A41_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A42_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A43_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A44_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A45_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A46_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A47_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A48_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A49_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A50_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A51_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A52_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A53_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A54_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A55_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A56_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A57_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A58_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A59_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A60_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A61_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A62_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDATA_A63_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+		NetFlow* RXDISPERR_A0_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXDISPERR_A1_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXDISPERR_A2_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXDISPERR_A3_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXDISPERR_A4_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXDISPERR_A5_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXDISPERR_A6_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXDISPERR_A7_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
 		NetFlow* RXLOCK_A0_B; // net ID: RXLOCK lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXLOSSOFSYNC_A0_B; // net ID: RXLOSSOFSYNC lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXLOSSOFSYNC_A0_B; // net ID: RXLOSSOFSYNC lsb: 0  msb: 1 OUTPUT
+		NetFlow* RXLOSSOFSYNC_A1_B; // net ID: RXLOSSOFSYNC lsb: 0  msb: 1 OUTPUT
 		NetFlow* RXMCLK_A0_B; // net ID: RXMCLK lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXNOTINTABLE_A0_B; // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXNOTINTABLE_A0_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXNOTINTABLE_A1_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXNOTINTABLE_A2_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXNOTINTABLE_A3_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXNOTINTABLE_A4_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXNOTINTABLE_A5_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXNOTINTABLE_A6_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXNOTINTABLE_A7_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
 		NetFlow* RXPCSHCLKOUT_A0_B; // net ID: RXPCSHCLKOUT lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXREALIGN_A0_B; // net ID: RXREALIGN lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXRECCLK1_A0_B; // net ID: RXRECCLK1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXRECCLK2_A0_B; // net ID: RXRECCLK2 lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXRUNDISP_A0_B; // net ID: RXRUNDISP lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXRUNDISP_A0_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXRUNDISP_A1_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXRUNDISP_A2_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXRUNDISP_A3_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXRUNDISP_A4_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXRUNDISP_A5_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXRUNDISP_A6_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* RXRUNDISP_A7_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
 		NetFlow* RXSIGDET_A0_B; // net ID: RXSIGDET lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXSTATUS_A0_B; // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
+		NetFlow* RXSTATUS_A0_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+		NetFlow* RXSTATUS_A1_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+		NetFlow* RXSTATUS_A2_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+		NetFlow* RXSTATUS_A3_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+		NetFlow* RXSTATUS_A4_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+		NetFlow* RXSTATUS_A5_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
 		NetFlow* TX1N_A0_B; // net ID: TX1N lsb: 0  msb: 0 OUTPUT
 		NetFlow* TX1P_A0_B; // net ID: TX1P lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXBUFERR_A0_B; // net ID: TXBUFERR lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXCALFAIL_A0_B; // net ID: TXCALFAIL lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXCRCOUT_A0_B; // net ID: TXCRCOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXCRCOUT_A0_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A1_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A2_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A3_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A4_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A5_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A6_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A7_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A8_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A9_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A10_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A11_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A12_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A13_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A14_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A15_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A16_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A17_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A18_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A19_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A20_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A21_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A22_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A23_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A24_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A25_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A26_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A27_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A28_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A29_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A30_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* TXCRCOUT_A31_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
 		NetFlow* TXCYCLELIMIT_A0_B; // net ID: TXCYCLELIMIT lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXKERR_A0_B; // net ID: TXKERR lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXKERR_A0_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXKERR_A1_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXKERR_A2_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXKERR_A3_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXKERR_A4_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXKERR_A5_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXKERR_A6_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXKERR_A7_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
 		NetFlow* TXLOCK_A0_B; // net ID: TXLOCK lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXOUTCLK1_A0_B; // net ID: TXOUTCLK1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXOUTCLK2_A0_B; // net ID: TXOUTCLK2 lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXPCSHCLKOUT_A0_B; // net ID: TXPCSHCLKOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXRUNDISP_A0_B; // net ID: TXRUNDISP lsb: 0  msb: 0 OUTPUT
+		NetFlow* TXRUNDISP_A0_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXRUNDISP_A1_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXRUNDISP_A2_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXRUNDISP_A3_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXRUNDISP_A4_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXRUNDISP_A5_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXRUNDISP_A6_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+		NetFlow* TXRUNDISP_A7_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
 		NetFlow* CHBONDI_A0_B; // net ID: CHBONDI lsb: 0  msb: 4 INPUT
 		NetFlow* CHBONDI_A1_B; // net ID: CHBONDI lsb: 0  msb: 4 INPUT
 		NetFlow* CHBONDI_A2_B; // net ID: CHBONDI lsb: 0  msb: 4 INPUT
@@ -736,42 +951,256 @@ namespace CPrimitives {
 			parameter_int_t TXOUTDIV2SEL, // Default: 1
 			parameter_int_t TXPLLNDIVSEL, // Default: 8
 			//Verilog Ports in definition order:
-			NetFlow* CHBONDO_A0_B, // net ID: CHBONDO lsb: 0  msb: 0 OUTPUT
-			NetFlow* COMBUSOUT_A0_B, // net ID: COMBUSOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 0 OUTPUT
+			NetFlow* CHBONDO_A0_B, // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHBONDO_A1_B, // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHBONDO_A2_B, // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHBONDO_A3_B, // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHBONDO_A4_B, // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			NetFlow* COMBUSOUT_A0_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A1_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A2_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A3_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A4_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A5_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A6_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A7_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A8_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A9_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A10_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A11_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A12_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A13_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A14_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* COMBUSOUT_A15_B, // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A1_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A2_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A3_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A4_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A5_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A6_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A7_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A8_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A9_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A10_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A11_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A12_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A13_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A14_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A15_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DRDY_A0_B, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXBUFERR_A0_B, // net ID: RXBUFERR lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXCALFAIL_A0_B, // net ID: RXCALFAIL lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHARISCOMMA_A0_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHARISK_A0_B, // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCHARISCOMMA_A0_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISCOMMA_A1_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISCOMMA_A2_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISCOMMA_A3_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISCOMMA_A4_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISCOMMA_A5_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISCOMMA_A6_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISCOMMA_A7_B, // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A0_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A1_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A2_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A3_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A4_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A5_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A6_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXCHARISK_A7_B, // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
 			NetFlow* RXCOMMADET_A0_B, // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCRCOUT_A0_B, // net ID: RXCRCOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXCRCOUT_A0_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A1_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A2_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A3_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A4_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A5_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A6_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A7_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A8_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A9_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A10_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A11_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A12_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A13_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A14_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A15_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A16_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A17_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A18_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A19_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A20_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A21_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A22_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A23_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A24_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A25_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A26_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A27_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A28_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A29_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A30_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXCRCOUT_A31_B, // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
 			NetFlow* RXCYCLELIMIT_A0_B, // net ID: RXCYCLELIMIT lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXDATA_A0_B, // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXDISPERR_A0_B, // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXDATA_A0_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A1_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A2_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A3_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A4_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A5_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A6_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A7_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A8_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A9_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A10_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A11_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A12_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A13_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A14_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A15_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A16_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A17_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A18_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A19_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A20_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A21_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A22_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A23_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A24_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A25_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A26_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A27_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A28_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A29_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A30_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A31_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A32_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A33_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A34_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A35_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A36_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A37_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A38_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A39_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A40_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A41_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A42_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A43_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A44_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A45_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A46_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A47_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A48_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A49_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A50_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A51_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A52_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A53_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A54_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A55_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A56_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A57_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A58_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A59_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A60_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A61_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A62_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDATA_A63_B, // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			NetFlow* RXDISPERR_A0_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXDISPERR_A1_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXDISPERR_A2_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXDISPERR_A3_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXDISPERR_A4_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXDISPERR_A5_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXDISPERR_A6_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXDISPERR_A7_B, // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
 			NetFlow* RXLOCK_A0_B, // net ID: RXLOCK lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXLOSSOFSYNC_A0_B, // net ID: RXLOSSOFSYNC lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXLOSSOFSYNC_A0_B, // net ID: RXLOSSOFSYNC lsb: 0  msb: 1 OUTPUT
+			NetFlow* RXLOSSOFSYNC_A1_B, // net ID: RXLOSSOFSYNC lsb: 0  msb: 1 OUTPUT
 			NetFlow* RXMCLK_A0_B, // net ID: RXMCLK lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXNOTINTABLE_A0_B, // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXNOTINTABLE_A0_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXNOTINTABLE_A1_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXNOTINTABLE_A2_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXNOTINTABLE_A3_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXNOTINTABLE_A4_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXNOTINTABLE_A5_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXNOTINTABLE_A6_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXNOTINTABLE_A7_B, // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
 			NetFlow* RXPCSHCLKOUT_A0_B, // net ID: RXPCSHCLKOUT lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXREALIGN_A0_B, // net ID: RXREALIGN lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXRECCLK1_A0_B, // net ID: RXRECCLK1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXRECCLK2_A0_B, // net ID: RXRECCLK2 lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXRUNDISP_A0_B, // net ID: RXRUNDISP lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXRUNDISP_A0_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXRUNDISP_A1_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXRUNDISP_A2_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXRUNDISP_A3_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXRUNDISP_A4_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXRUNDISP_A5_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXRUNDISP_A6_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* RXRUNDISP_A7_B, // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
 			NetFlow* RXSIGDET_A0_B, // net ID: RXSIGDET lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXSTATUS_A0_B, // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
+			NetFlow* RXSTATUS_A0_B, // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			NetFlow* RXSTATUS_A1_B, // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			NetFlow* RXSTATUS_A2_B, // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			NetFlow* RXSTATUS_A3_B, // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			NetFlow* RXSTATUS_A4_B, // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			NetFlow* RXSTATUS_A5_B, // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
 			NetFlow* TX1N_A0_B, // net ID: TX1N lsb: 0  msb: 0 OUTPUT
 			NetFlow* TX1P_A0_B, // net ID: TX1P lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXBUFERR_A0_B, // net ID: TXBUFERR lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXCALFAIL_A0_B, // net ID: TXCALFAIL lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXCRCOUT_A0_B, // net ID: TXCRCOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXCRCOUT_A0_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A1_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A2_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A3_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A4_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A5_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A6_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A7_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A8_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A9_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A10_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A11_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A12_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A13_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A14_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A15_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A16_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A17_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A18_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A19_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A20_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A21_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A22_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A23_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A24_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A25_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A26_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A27_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A28_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A29_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A30_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* TXCRCOUT_A31_B, // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
 			NetFlow* TXCYCLELIMIT_A0_B, // net ID: TXCYCLELIMIT lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXKERR_A0_B, // net ID: TXKERR lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXKERR_A0_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXKERR_A1_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXKERR_A2_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXKERR_A3_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXKERR_A4_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXKERR_A5_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXKERR_A6_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXKERR_A7_B, // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
 			NetFlow* TXLOCK_A0_B, // net ID: TXLOCK lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXOUTCLK1_A0_B, // net ID: TXOUTCLK1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXOUTCLK2_A0_B, // net ID: TXOUTCLK2 lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXPCSHCLKOUT_A0_B, // net ID: TXPCSHCLKOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXRUNDISP_A0_B, // net ID: TXRUNDISP lsb: 0  msb: 0 OUTPUT
+			NetFlow* TXRUNDISP_A0_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXRUNDISP_A1_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXRUNDISP_A2_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXRUNDISP_A3_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXRUNDISP_A4_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXRUNDISP_A5_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXRUNDISP_A6_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			NetFlow* TXRUNDISP_A7_B, // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
 			NetFlow* CHBONDI_A0_B, // net ID: CHBONDI lsb: 0  msb: 4 INPUT
 			NetFlow* CHBONDI_A1_B, // net ID: CHBONDI lsb: 0  msb: 4 INPUT
 			NetFlow* CHBONDI_A2_B, // net ID: CHBONDI lsb: 0  msb: 4 INPUT
@@ -1285,42 +1714,256 @@ namespace CPrimitives {
 			this->TXOUTDIV2SEL = TXOUTDIV2SEL; // Default: 1
 			this->TXPLLNDIVSEL = TXPLLNDIVSEL; // Default: 8
 			//Verilog Ports in definition order:
-			this->CHBONDO_A0_B = CHBONDO_A0_B; // net ID: CHBONDO lsb: 0  msb: 0 OUTPUT
-			this->COMBUSOUT_A0_B = COMBUSOUT_A0_B; // net ID: COMBUSOUT lsb: 0  msb: 0 OUTPUT
-			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+			this->CHBONDO_A0_B = CHBONDO_A0_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			this->CHBONDO_A1_B = CHBONDO_A1_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			this->CHBONDO_A2_B = CHBONDO_A2_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			this->CHBONDO_A3_B = CHBONDO_A3_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			this->CHBONDO_A4_B = CHBONDO_A4_B; // net ID: CHBONDO lsb: 0  msb: 4 OUTPUT
+			this->COMBUSOUT_A0_B = COMBUSOUT_A0_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A1_B = COMBUSOUT_A1_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A2_B = COMBUSOUT_A2_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A3_B = COMBUSOUT_A3_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A4_B = COMBUSOUT_A4_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A5_B = COMBUSOUT_A5_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A6_B = COMBUSOUT_A6_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A7_B = COMBUSOUT_A7_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A8_B = COMBUSOUT_A8_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A9_B = COMBUSOUT_A9_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A10_B = COMBUSOUT_A10_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A11_B = COMBUSOUT_A11_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A12_B = COMBUSOUT_A12_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A13_B = COMBUSOUT_A13_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A14_B = COMBUSOUT_A14_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->COMBUSOUT_A15_B = COMBUSOUT_A15_B; // net ID: COMBUSOUT lsb: 0  msb: 15 OUTPUT
+			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A1_B = DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A2_B = DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A3_B = DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A4_B = DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A5_B = DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A6_B = DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A7_B = DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A8_B = DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A9_B = DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A10_B = DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A11_B = DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A12_B = DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A13_B = DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A14_B = DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A15_B = DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 			this->DRDY_A0_B = DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			this->RXBUFERR_A0_B = RXBUFERR_A0_B; // net ID: RXBUFERR lsb: 0  msb: 0 OUTPUT
 			this->RXCALFAIL_A0_B = RXCALFAIL_A0_B; // net ID: RXCALFAIL lsb: 0  msb: 0 OUTPUT
-			this->RXCHARISCOMMA_A0_B = RXCHARISCOMMA_A0_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 0 OUTPUT
-			this->RXCHARISK_A0_B = RXCHARISK_A0_B; // net ID: RXCHARISK lsb: 0  msb: 0 OUTPUT
+			this->RXCHARISCOMMA_A0_B = RXCHARISCOMMA_A0_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISCOMMA_A1_B = RXCHARISCOMMA_A1_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISCOMMA_A2_B = RXCHARISCOMMA_A2_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISCOMMA_A3_B = RXCHARISCOMMA_A3_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISCOMMA_A4_B = RXCHARISCOMMA_A4_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISCOMMA_A5_B = RXCHARISCOMMA_A5_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISCOMMA_A6_B = RXCHARISCOMMA_A6_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISCOMMA_A7_B = RXCHARISCOMMA_A7_B; // net ID: RXCHARISCOMMA lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A0_B = RXCHARISK_A0_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A1_B = RXCHARISK_A1_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A2_B = RXCHARISK_A2_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A3_B = RXCHARISK_A3_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A4_B = RXCHARISK_A4_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A5_B = RXCHARISK_A5_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A6_B = RXCHARISK_A6_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
+			this->RXCHARISK_A7_B = RXCHARISK_A7_B; // net ID: RXCHARISK lsb: 0  msb: 7 OUTPUT
 			this->RXCOMMADET_A0_B = RXCOMMADET_A0_B; // net ID: RXCOMMADET lsb: 0  msb: 0 OUTPUT
-			this->RXCRCOUT_A0_B = RXCRCOUT_A0_B; // net ID: RXCRCOUT lsb: 0  msb: 0 OUTPUT
+			this->RXCRCOUT_A0_B = RXCRCOUT_A0_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A1_B = RXCRCOUT_A1_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A2_B = RXCRCOUT_A2_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A3_B = RXCRCOUT_A3_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A4_B = RXCRCOUT_A4_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A5_B = RXCRCOUT_A5_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A6_B = RXCRCOUT_A6_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A7_B = RXCRCOUT_A7_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A8_B = RXCRCOUT_A8_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A9_B = RXCRCOUT_A9_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A10_B = RXCRCOUT_A10_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A11_B = RXCRCOUT_A11_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A12_B = RXCRCOUT_A12_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A13_B = RXCRCOUT_A13_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A14_B = RXCRCOUT_A14_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A15_B = RXCRCOUT_A15_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A16_B = RXCRCOUT_A16_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A17_B = RXCRCOUT_A17_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A18_B = RXCRCOUT_A18_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A19_B = RXCRCOUT_A19_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A20_B = RXCRCOUT_A20_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A21_B = RXCRCOUT_A21_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A22_B = RXCRCOUT_A22_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A23_B = RXCRCOUT_A23_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A24_B = RXCRCOUT_A24_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A25_B = RXCRCOUT_A25_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A26_B = RXCRCOUT_A26_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A27_B = RXCRCOUT_A27_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A28_B = RXCRCOUT_A28_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A29_B = RXCRCOUT_A29_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A30_B = RXCRCOUT_A30_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->RXCRCOUT_A31_B = RXCRCOUT_A31_B; // net ID: RXCRCOUT lsb: 0  msb: 31 OUTPUT
 			this->RXCYCLELIMIT_A0_B = RXCYCLELIMIT_A0_B; // net ID: RXCYCLELIMIT lsb: 0  msb: 0 OUTPUT
-			this->RXDATA_A0_B = RXDATA_A0_B; // net ID: RXDATA lsb: 0  msb: 0 OUTPUT
-			this->RXDISPERR_A0_B = RXDISPERR_A0_B; // net ID: RXDISPERR lsb: 0  msb: 0 OUTPUT
+			this->RXDATA_A0_B = RXDATA_A0_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A1_B = RXDATA_A1_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A2_B = RXDATA_A2_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A3_B = RXDATA_A3_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A4_B = RXDATA_A4_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A5_B = RXDATA_A5_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A6_B = RXDATA_A6_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A7_B = RXDATA_A7_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A8_B = RXDATA_A8_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A9_B = RXDATA_A9_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A10_B = RXDATA_A10_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A11_B = RXDATA_A11_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A12_B = RXDATA_A12_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A13_B = RXDATA_A13_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A14_B = RXDATA_A14_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A15_B = RXDATA_A15_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A16_B = RXDATA_A16_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A17_B = RXDATA_A17_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A18_B = RXDATA_A18_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A19_B = RXDATA_A19_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A20_B = RXDATA_A20_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A21_B = RXDATA_A21_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A22_B = RXDATA_A22_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A23_B = RXDATA_A23_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A24_B = RXDATA_A24_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A25_B = RXDATA_A25_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A26_B = RXDATA_A26_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A27_B = RXDATA_A27_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A28_B = RXDATA_A28_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A29_B = RXDATA_A29_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A30_B = RXDATA_A30_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A31_B = RXDATA_A31_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A32_B = RXDATA_A32_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A33_B = RXDATA_A33_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A34_B = RXDATA_A34_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A35_B = RXDATA_A35_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A36_B = RXDATA_A36_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A37_B = RXDATA_A37_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A38_B = RXDATA_A38_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A39_B = RXDATA_A39_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A40_B = RXDATA_A40_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A41_B = RXDATA_A41_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A42_B = RXDATA_A42_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A43_B = RXDATA_A43_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A44_B = RXDATA_A44_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A45_B = RXDATA_A45_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A46_B = RXDATA_A46_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A47_B = RXDATA_A47_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A48_B = RXDATA_A48_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A49_B = RXDATA_A49_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A50_B = RXDATA_A50_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A51_B = RXDATA_A51_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A52_B = RXDATA_A52_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A53_B = RXDATA_A53_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A54_B = RXDATA_A54_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A55_B = RXDATA_A55_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A56_B = RXDATA_A56_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A57_B = RXDATA_A57_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A58_B = RXDATA_A58_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A59_B = RXDATA_A59_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A60_B = RXDATA_A60_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A61_B = RXDATA_A61_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A62_B = RXDATA_A62_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDATA_A63_B = RXDATA_A63_B; // net ID: RXDATA lsb: 0  msb: 63 OUTPUT
+			this->RXDISPERR_A0_B = RXDISPERR_A0_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			this->RXDISPERR_A1_B = RXDISPERR_A1_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			this->RXDISPERR_A2_B = RXDISPERR_A2_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			this->RXDISPERR_A3_B = RXDISPERR_A3_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			this->RXDISPERR_A4_B = RXDISPERR_A4_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			this->RXDISPERR_A5_B = RXDISPERR_A5_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			this->RXDISPERR_A6_B = RXDISPERR_A6_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
+			this->RXDISPERR_A7_B = RXDISPERR_A7_B; // net ID: RXDISPERR lsb: 0  msb: 7 OUTPUT
 			this->RXLOCK_A0_B = RXLOCK_A0_B; // net ID: RXLOCK lsb: 0  msb: 0 OUTPUT
-			this->RXLOSSOFSYNC_A0_B = RXLOSSOFSYNC_A0_B; // net ID: RXLOSSOFSYNC lsb: 0  msb: 0 OUTPUT
+			this->RXLOSSOFSYNC_A0_B = RXLOSSOFSYNC_A0_B; // net ID: RXLOSSOFSYNC lsb: 0  msb: 1 OUTPUT
+			this->RXLOSSOFSYNC_A1_B = RXLOSSOFSYNC_A1_B; // net ID: RXLOSSOFSYNC lsb: 0  msb: 1 OUTPUT
 			this->RXMCLK_A0_B = RXMCLK_A0_B; // net ID: RXMCLK lsb: 0  msb: 0 OUTPUT
-			this->RXNOTINTABLE_A0_B = RXNOTINTABLE_A0_B; // net ID: RXNOTINTABLE lsb: 0  msb: 0 OUTPUT
+			this->RXNOTINTABLE_A0_B = RXNOTINTABLE_A0_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			this->RXNOTINTABLE_A1_B = RXNOTINTABLE_A1_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			this->RXNOTINTABLE_A2_B = RXNOTINTABLE_A2_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			this->RXNOTINTABLE_A3_B = RXNOTINTABLE_A3_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			this->RXNOTINTABLE_A4_B = RXNOTINTABLE_A4_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			this->RXNOTINTABLE_A5_B = RXNOTINTABLE_A5_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			this->RXNOTINTABLE_A6_B = RXNOTINTABLE_A6_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
+			this->RXNOTINTABLE_A7_B = RXNOTINTABLE_A7_B; // net ID: RXNOTINTABLE lsb: 0  msb: 7 OUTPUT
 			this->RXPCSHCLKOUT_A0_B = RXPCSHCLKOUT_A0_B; // net ID: RXPCSHCLKOUT lsb: 0  msb: 0 OUTPUT
 			this->RXREALIGN_A0_B = RXREALIGN_A0_B; // net ID: RXREALIGN lsb: 0  msb: 0 OUTPUT
 			this->RXRECCLK1_A0_B = RXRECCLK1_A0_B; // net ID: RXRECCLK1 lsb: 0  msb: 0 OUTPUT
 			this->RXRECCLK2_A0_B = RXRECCLK2_A0_B; // net ID: RXRECCLK2 lsb: 0  msb: 0 OUTPUT
-			this->RXRUNDISP_A0_B = RXRUNDISP_A0_B; // net ID: RXRUNDISP lsb: 0  msb: 0 OUTPUT
+			this->RXRUNDISP_A0_B = RXRUNDISP_A0_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->RXRUNDISP_A1_B = RXRUNDISP_A1_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->RXRUNDISP_A2_B = RXRUNDISP_A2_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->RXRUNDISP_A3_B = RXRUNDISP_A3_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->RXRUNDISP_A4_B = RXRUNDISP_A4_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->RXRUNDISP_A5_B = RXRUNDISP_A5_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->RXRUNDISP_A6_B = RXRUNDISP_A6_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->RXRUNDISP_A7_B = RXRUNDISP_A7_B; // net ID: RXRUNDISP lsb: 0  msb: 7 OUTPUT
 			this->RXSIGDET_A0_B = RXSIGDET_A0_B; // net ID: RXSIGDET lsb: 0  msb: 0 OUTPUT
-			this->RXSTATUS_A0_B = RXSTATUS_A0_B; // net ID: RXSTATUS lsb: 0  msb: 0 OUTPUT
+			this->RXSTATUS_A0_B = RXSTATUS_A0_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			this->RXSTATUS_A1_B = RXSTATUS_A1_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			this->RXSTATUS_A2_B = RXSTATUS_A2_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			this->RXSTATUS_A3_B = RXSTATUS_A3_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			this->RXSTATUS_A4_B = RXSTATUS_A4_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
+			this->RXSTATUS_A5_B = RXSTATUS_A5_B; // net ID: RXSTATUS lsb: 0  msb: 5 OUTPUT
 			this->TX1N_A0_B = TX1N_A0_B; // net ID: TX1N lsb: 0  msb: 0 OUTPUT
 			this->TX1P_A0_B = TX1P_A0_B; // net ID: TX1P lsb: 0  msb: 0 OUTPUT
 			this->TXBUFERR_A0_B = TXBUFERR_A0_B; // net ID: TXBUFERR lsb: 0  msb: 0 OUTPUT
 			this->TXCALFAIL_A0_B = TXCALFAIL_A0_B; // net ID: TXCALFAIL lsb: 0  msb: 0 OUTPUT
-			this->TXCRCOUT_A0_B = TXCRCOUT_A0_B; // net ID: TXCRCOUT lsb: 0  msb: 0 OUTPUT
+			this->TXCRCOUT_A0_B = TXCRCOUT_A0_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A1_B = TXCRCOUT_A1_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A2_B = TXCRCOUT_A2_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A3_B = TXCRCOUT_A3_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A4_B = TXCRCOUT_A4_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A5_B = TXCRCOUT_A5_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A6_B = TXCRCOUT_A6_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A7_B = TXCRCOUT_A7_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A8_B = TXCRCOUT_A8_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A9_B = TXCRCOUT_A9_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A10_B = TXCRCOUT_A10_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A11_B = TXCRCOUT_A11_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A12_B = TXCRCOUT_A12_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A13_B = TXCRCOUT_A13_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A14_B = TXCRCOUT_A14_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A15_B = TXCRCOUT_A15_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A16_B = TXCRCOUT_A16_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A17_B = TXCRCOUT_A17_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A18_B = TXCRCOUT_A18_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A19_B = TXCRCOUT_A19_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A20_B = TXCRCOUT_A20_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A21_B = TXCRCOUT_A21_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A22_B = TXCRCOUT_A22_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A23_B = TXCRCOUT_A23_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A24_B = TXCRCOUT_A24_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A25_B = TXCRCOUT_A25_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A26_B = TXCRCOUT_A26_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A27_B = TXCRCOUT_A27_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A28_B = TXCRCOUT_A28_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A29_B = TXCRCOUT_A29_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A30_B = TXCRCOUT_A30_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
+			this->TXCRCOUT_A31_B = TXCRCOUT_A31_B; // net ID: TXCRCOUT lsb: 0  msb: 31 OUTPUT
 			this->TXCYCLELIMIT_A0_B = TXCYCLELIMIT_A0_B; // net ID: TXCYCLELIMIT lsb: 0  msb: 0 OUTPUT
-			this->TXKERR_A0_B = TXKERR_A0_B; // net ID: TXKERR lsb: 0  msb: 0 OUTPUT
+			this->TXKERR_A0_B = TXKERR_A0_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			this->TXKERR_A1_B = TXKERR_A1_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			this->TXKERR_A2_B = TXKERR_A2_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			this->TXKERR_A3_B = TXKERR_A3_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			this->TXKERR_A4_B = TXKERR_A4_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			this->TXKERR_A5_B = TXKERR_A5_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			this->TXKERR_A6_B = TXKERR_A6_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
+			this->TXKERR_A7_B = TXKERR_A7_B; // net ID: TXKERR lsb: 0  msb: 7 OUTPUT
 			this->TXLOCK_A0_B = TXLOCK_A0_B; // net ID: TXLOCK lsb: 0  msb: 0 OUTPUT
 			this->TXOUTCLK1_A0_B = TXOUTCLK1_A0_B; // net ID: TXOUTCLK1 lsb: 0  msb: 0 OUTPUT
 			this->TXOUTCLK2_A0_B = TXOUTCLK2_A0_B; // net ID: TXOUTCLK2 lsb: 0  msb: 0 OUTPUT
 			this->TXPCSHCLKOUT_A0_B = TXPCSHCLKOUT_A0_B; // net ID: TXPCSHCLKOUT lsb: 0  msb: 0 OUTPUT
-			this->TXRUNDISP_A0_B = TXRUNDISP_A0_B; // net ID: TXRUNDISP lsb: 0  msb: 0 OUTPUT
+			this->TXRUNDISP_A0_B = TXRUNDISP_A0_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->TXRUNDISP_A1_B = TXRUNDISP_A1_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->TXRUNDISP_A2_B = TXRUNDISP_A2_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->TXRUNDISP_A3_B = TXRUNDISP_A3_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->TXRUNDISP_A4_B = TXRUNDISP_A4_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->TXRUNDISP_A5_B = TXRUNDISP_A5_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->TXRUNDISP_A6_B = TXRUNDISP_A6_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
+			this->TXRUNDISP_A7_B = TXRUNDISP_A7_B; // net ID: TXRUNDISP lsb: 0  msb: 7 OUTPUT
 			this->CHBONDI_A0_B = CHBONDI_A0_B; // net ID: CHBONDI lsb: 0  msb: 4 INPUT
 			this->CHBONDI_A1_B = CHBONDI_A1_B; // net ID: CHBONDI lsb: 0  msb: 4 INPUT
 			this->CHBONDI_A2_B = CHBONDI_A2_B; // net ID: CHBONDI lsb: 0  msb: 4 INPUT
@@ -1665,6 +2308,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

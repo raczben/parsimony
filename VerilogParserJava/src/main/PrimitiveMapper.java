@@ -179,6 +179,10 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 	    		continue;
     		}
     		
+    		if(moduleId.equals("X_CARRY4")){
+    			System.out.println("Debug");
+    		}
+    		
     		/**
     		 * Investigate port:
     		 * Distinguish below in/out/inout port.
@@ -189,6 +193,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
     			RangeContext range = null;
     			
     			try{
+    				//The following line throws null pointer if the port is not input port
     				portIdList = portDeclaration.input_declaration().list_of_port_identifiers().port_identifier();
     				range = portDeclaration.input_declaration().range();
 //    				
@@ -210,10 +215,11 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 		    			primitiveDeclaration.updatePort(portId.getText(), Direction.INPUT, range);
 			    		continue;
 		    		}
-    			}catch(NullPointerException ex){}
+    			}catch(NullPointerException ex){} //The port is not input port...
 
     			try{
     				portIdList = portDeclaration.output_declaration().list_of_port_identifiers().port_identifier();
+    				range = portDeclaration.output_declaration().range();
 		    		for(Port_identifierContext portId : portIdList){
 		    			primitiveDeclaration.updatePort(portId.getText(), Direction.OUTPUT, range);
 			    		continue;
@@ -222,6 +228,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
 
     			try{
     				portIdList = portDeclaration.inout_declaration().list_of_port_identifiers().port_identifier();
+    				range = portDeclaration.output_declaration().range();
 		    		for(Port_identifierContext portId : portDeclaration.inout_declaration().list_of_port_identifiers().port_identifier()){
 		    			primitiveDeclaration.updatePort(portId.getText(), Direction.INOUT, range);
 			    		continue;

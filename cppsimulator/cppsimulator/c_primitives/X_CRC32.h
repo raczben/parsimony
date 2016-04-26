@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_CRC32: public Primitive{
@@ -17,7 +18,38 @@ namespace CPrimitives {
 		parameter_int_t CRC_INIT;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* CRCOUT_A0_B; // net ID: CRCOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* CRCOUT_A0_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A1_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A2_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A3_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A4_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A5_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A6_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A7_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A8_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A9_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A10_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A11_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A12_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A13_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A14_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A15_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A16_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A17_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A18_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A19_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A20_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A21_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A22_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A23_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A24_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A25_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A26_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A27_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A28_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A29_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A30_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+		NetFlow* CRCOUT_A31_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
 		NetFlow* CRCCLK_A0_B; // net ID: CRCCLK lsb: 0  msb: 0 INPUT
 		NetFlow* CRCDATAVALID_A0_B; // net ID: CRCDATAVALID lsb: 0  msb: 0 INPUT
 		NetFlow* CRCDATAWIDTH_A0_B; // net ID: CRCDATAWIDTH lsb: 0  msb: 2 INPUT
@@ -63,7 +95,38 @@ namespace CPrimitives {
 			parameter_int_t CRC_INIT, // Default: 32'hFFFFFFFF
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* CRCOUT_A0_B, // net ID: CRCOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* CRCOUT_A0_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A1_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A2_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A3_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A4_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A5_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A6_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A7_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A8_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A9_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A10_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A11_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A12_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A13_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A14_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A15_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A16_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A17_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A18_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A19_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A20_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A21_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A22_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A23_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A24_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A25_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A26_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A27_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A28_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A29_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A30_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			NetFlow* CRCOUT_A31_B, // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
 			NetFlow* CRCCLK_A0_B, // net ID: CRCCLK lsb: 0  msb: 0 INPUT
 			NetFlow* CRCDATAVALID_A0_B, // net ID: CRCDATAVALID lsb: 0  msb: 0 INPUT
 			NetFlow* CRCDATAWIDTH_A0_B, // net ID: CRCDATAWIDTH lsb: 0  msb: 2 INPUT
@@ -109,7 +172,38 @@ namespace CPrimitives {
 			this->CRC_INIT = CRC_INIT; // Default: 32'hFFFFFFFF
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->CRCOUT_A0_B = CRCOUT_A0_B; // net ID: CRCOUT lsb: 0  msb: 0 OUTPUT
+			this->CRCOUT_A0_B = CRCOUT_A0_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A1_B = CRCOUT_A1_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A2_B = CRCOUT_A2_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A3_B = CRCOUT_A3_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A4_B = CRCOUT_A4_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A5_B = CRCOUT_A5_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A6_B = CRCOUT_A6_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A7_B = CRCOUT_A7_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A8_B = CRCOUT_A8_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A9_B = CRCOUT_A9_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A10_B = CRCOUT_A10_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A11_B = CRCOUT_A11_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A12_B = CRCOUT_A12_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A13_B = CRCOUT_A13_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A14_B = CRCOUT_A14_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A15_B = CRCOUT_A15_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A16_B = CRCOUT_A16_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A17_B = CRCOUT_A17_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A18_B = CRCOUT_A18_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A19_B = CRCOUT_A19_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A20_B = CRCOUT_A20_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A21_B = CRCOUT_A21_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A22_B = CRCOUT_A22_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A23_B = CRCOUT_A23_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A24_B = CRCOUT_A24_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A25_B = CRCOUT_A25_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A26_B = CRCOUT_A26_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A27_B = CRCOUT_A27_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A28_B = CRCOUT_A28_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A29_B = CRCOUT_A29_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A30_B = CRCOUT_A30_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
+			this->CRCOUT_A31_B = CRCOUT_A31_B; // net ID: CRCOUT lsb: 0  msb: 31 OUTPUT
 			this->CRCCLK_A0_B = CRCCLK_A0_B; // net ID: CRCCLK lsb: 0  msb: 0 INPUT
 			this->CRCDATAVALID_A0_B = CRCDATAVALID_A0_B; // net ID: CRCDATAVALID lsb: 0  msb: 0 INPUT
 			this->CRCDATAWIDTH_A0_B = CRCDATAWIDTH_A0_B; // net ID: CRCDATAWIDTH lsb: 0  msb: 2 INPUT
@@ -156,6 +250,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_RAMB36E1: public Primitive{
@@ -186,12 +187,95 @@ namespace CPrimitives {
 		NetFlow* CASCADEOUTA_A0_B; // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
 		NetFlow* CASCADEOUTB_A0_B; // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
 		NetFlow* DBITERR_A0_B; // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 0 OUTPUT
-		NetFlow* ECCPARITY_A0_B; // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
-		NetFlow* RDADDRECC_A0_B; // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A15_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A16_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A17_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A18_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A19_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A20_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A21_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A22_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A23_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A24_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A25_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A26_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A27_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A28_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A29_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A30_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOADO_A31_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A15_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A16_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A17_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A18_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A19_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A20_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A21_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A22_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A23_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A24_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A25_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A26_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A27_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A28_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A29_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A30_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOBDO_A31_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOPADOP_A1_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOPADOP_A2_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOPADOP_A3_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOPBDOP_A1_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOPBDOP_A2_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* DOPBDOP_A3_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+		NetFlow* ECCPARITY_A0_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* ECCPARITY_A1_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* ECCPARITY_A2_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* ECCPARITY_A3_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* ECCPARITY_A4_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* ECCPARITY_A5_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* ECCPARITY_A6_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* ECCPARITY_A7_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+		NetFlow* RDADDRECC_A0_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A1_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A2_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A3_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A4_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A5_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A6_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A7_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+		NetFlow* RDADDRECC_A8_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
 		NetFlow* SBITERR_A0_B; // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
 		NetFlow* ADDRARDADDR_A0_B; // net ID: ADDRARDADDR lsb: 0  msb: 15 INPUT
 		NetFlow* ADDRARDADDR_A1_B; // net ID: ADDRARDADDR lsb: 0  msb: 15 INPUT
@@ -499,12 +583,95 @@ namespace CPrimitives {
 			NetFlow* CASCADEOUTA_A0_B, // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
 			NetFlow* CASCADEOUTB_A0_B, // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
 			NetFlow* DBITERR_A0_B, // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOADO_A0_B, // net ID: DOADO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOBDO_A0_B, // net ID: DOBDO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOPADOP_A0_B, // net ID: DOPADOP lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOPBDOP_A0_B, // net ID: DOPBDOP lsb: 0  msb: 0 OUTPUT
-			NetFlow* ECCPARITY_A0_B, // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
-			NetFlow* RDADDRECC_A0_B, // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOADO_A0_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A1_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A2_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A3_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A4_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A5_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A6_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A7_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A8_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A9_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A10_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A11_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A12_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A13_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A14_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A15_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A16_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A17_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A18_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A19_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A20_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A21_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A22_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A23_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A24_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A25_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A26_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A27_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A28_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A29_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A30_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOADO_A31_B, // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A0_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A1_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A2_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A3_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A4_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A5_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A6_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A7_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A8_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A9_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A10_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A11_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A12_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A13_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A14_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A15_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A16_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A17_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A18_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A19_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A20_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A21_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A22_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A23_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A24_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A25_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A26_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A27_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A28_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A29_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A30_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOBDO_A31_B, // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* DOPADOP_A0_B, // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOPADOP_A1_B, // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOPADOP_A2_B, // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOPADOP_A3_B, // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOPBDOP_A0_B, // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOPBDOP_A1_B, // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOPBDOP_A2_B, // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* DOPBDOP_A3_B, // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			NetFlow* ECCPARITY_A0_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* ECCPARITY_A1_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* ECCPARITY_A2_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* ECCPARITY_A3_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* ECCPARITY_A4_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* ECCPARITY_A5_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* ECCPARITY_A6_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* ECCPARITY_A7_B, // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			NetFlow* RDADDRECC_A0_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A1_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A2_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A3_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A4_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A5_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A6_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A7_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			NetFlow* RDADDRECC_A8_B, // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
 			NetFlow* SBITERR_A0_B, // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
 			NetFlow* ADDRARDADDR_A0_B, // net ID: ADDRARDADDR lsb: 0  msb: 15 INPUT
 			NetFlow* ADDRARDADDR_A1_B, // net ID: ADDRARDADDR lsb: 0  msb: 15 INPUT
@@ -812,12 +979,95 @@ namespace CPrimitives {
 			this->CASCADEOUTA_A0_B = CASCADEOUTA_A0_B; // net ID: CASCADEOUTA lsb: 0  msb: 0 OUTPUT
 			this->CASCADEOUTB_A0_B = CASCADEOUTB_A0_B; // net ID: CASCADEOUTB lsb: 0  msb: 0 OUTPUT
 			this->DBITERR_A0_B = DBITERR_A0_B; // net ID: DBITERR lsb: 0  msb: 0 OUTPUT
-			this->DOADO_A0_B = DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 0 OUTPUT
-			this->DOBDO_A0_B = DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 0 OUTPUT
-			this->DOPADOP_A0_B = DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 0 OUTPUT
-			this->DOPBDOP_A0_B = DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 0 OUTPUT
-			this->ECCPARITY_A0_B = ECCPARITY_A0_B; // net ID: ECCPARITY lsb: 0  msb: 0 OUTPUT
-			this->RDADDRECC_A0_B = RDADDRECC_A0_B; // net ID: RDADDRECC lsb: 0  msb: 0 OUTPUT
+			this->DOADO_A0_B = DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A1_B = DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A2_B = DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A3_B = DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A4_B = DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A5_B = DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A6_B = DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A7_B = DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A8_B = DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A9_B = DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A10_B = DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A11_B = DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A12_B = DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A13_B = DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A14_B = DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A15_B = DOADO_A15_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A16_B = DOADO_A16_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A17_B = DOADO_A17_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A18_B = DOADO_A18_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A19_B = DOADO_A19_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A20_B = DOADO_A20_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A21_B = DOADO_A21_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A22_B = DOADO_A22_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A23_B = DOADO_A23_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A24_B = DOADO_A24_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A25_B = DOADO_A25_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A26_B = DOADO_A26_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A27_B = DOADO_A27_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A28_B = DOADO_A28_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A29_B = DOADO_A29_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A30_B = DOADO_A30_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOADO_A31_B = DOADO_A31_B; // net ID: DOADO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A0_B = DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A1_B = DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A2_B = DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A3_B = DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A4_B = DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A5_B = DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A6_B = DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A7_B = DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A8_B = DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A9_B = DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A10_B = DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A11_B = DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A12_B = DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A13_B = DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A14_B = DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A15_B = DOBDO_A15_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A16_B = DOBDO_A16_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A17_B = DOBDO_A17_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A18_B = DOBDO_A18_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A19_B = DOBDO_A19_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A20_B = DOBDO_A20_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A21_B = DOBDO_A21_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A22_B = DOBDO_A22_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A23_B = DOBDO_A23_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A24_B = DOBDO_A24_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A25_B = DOBDO_A25_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A26_B = DOBDO_A26_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A27_B = DOBDO_A27_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A28_B = DOBDO_A28_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A29_B = DOBDO_A29_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A30_B = DOBDO_A30_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOBDO_A31_B = DOBDO_A31_B; // net ID: DOBDO lsb: 0  msb: 31 OUTPUT
+			this->DOPADOP_A0_B = DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			this->DOPADOP_A1_B = DOPADOP_A1_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			this->DOPADOP_A2_B = DOPADOP_A2_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			this->DOPADOP_A3_B = DOPADOP_A3_B; // net ID: DOPADOP lsb: 0  msb: 3 OUTPUT
+			this->DOPBDOP_A0_B = DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			this->DOPBDOP_A1_B = DOPBDOP_A1_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			this->DOPBDOP_A2_B = DOPBDOP_A2_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			this->DOPBDOP_A3_B = DOPBDOP_A3_B; // net ID: DOPBDOP lsb: 0  msb: 3 OUTPUT
+			this->ECCPARITY_A0_B = ECCPARITY_A0_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->ECCPARITY_A1_B = ECCPARITY_A1_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->ECCPARITY_A2_B = ECCPARITY_A2_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->ECCPARITY_A3_B = ECCPARITY_A3_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->ECCPARITY_A4_B = ECCPARITY_A4_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->ECCPARITY_A5_B = ECCPARITY_A5_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->ECCPARITY_A6_B = ECCPARITY_A6_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->ECCPARITY_A7_B = ECCPARITY_A7_B; // net ID: ECCPARITY lsb: 0  msb: 7 OUTPUT
+			this->RDADDRECC_A0_B = RDADDRECC_A0_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A1_B = RDADDRECC_A1_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A2_B = RDADDRECC_A2_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A3_B = RDADDRECC_A3_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A4_B = RDADDRECC_A4_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A5_B = RDADDRECC_A5_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A6_B = RDADDRECC_A6_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A7_B = RDADDRECC_A7_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
+			this->RDADDRECC_A8_B = RDADDRECC_A8_B; // net ID: RDADDRECC lsb: 0  msb: 8 OUTPUT
 			this->SBITERR_A0_B = SBITERR_A0_B; // net ID: SBITERR lsb: 0  msb: 0 OUTPUT
 			this->ADDRARDADDR_A0_B = ADDRARDADDR_A0_B; // net ID: ADDRARDADDR lsb: 0  msb: 15 INPUT
 			this->ADDRARDADDR_A1_B = ADDRARDADDR_A1_B; // net ID: ADDRARDADDR lsb: 0  msb: 15 INPUT
@@ -957,6 +1207,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

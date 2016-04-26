@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_PLL_ADV: public Primitive{
@@ -75,7 +76,22 @@ namespace CPrimitives {
 		NetFlow* CLKOUTDCM3_A0_B; // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
 		NetFlow* CLKOUTDCM4_A0_B; // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
 		NetFlow* CLKOUTDCM5_A0_B; // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
-		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 		NetFlow* LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 		NetFlow* CLKFBIN_A0_B; // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
@@ -173,7 +189,22 @@ namespace CPrimitives {
 			NetFlow* CLKOUTDCM3_A0_B, // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
 			NetFlow* CLKOUTDCM4_A0_B, // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
 			NetFlow* CLKOUTDCM5_A0_B, // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
-			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 0 OUTPUT
+			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A1_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A2_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A3_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A4_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A5_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A6_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A7_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A8_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A9_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A10_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A11_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A12_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A13_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A14_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A15_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DRDY_A0_B, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			NetFlow* LOCKED_A0_B, // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			NetFlow* CLKFBIN_A0_B, // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
@@ -271,7 +302,22 @@ namespace CPrimitives {
 			this->CLKOUTDCM3_A0_B = CLKOUTDCM3_A0_B; // net ID: CLKOUTDCM3 lsb: 0  msb: 0 OUTPUT
 			this->CLKOUTDCM4_A0_B = CLKOUTDCM4_A0_B; // net ID: CLKOUTDCM4 lsb: 0  msb: 0 OUTPUT
 			this->CLKOUTDCM5_A0_B = CLKOUTDCM5_A0_B; // net ID: CLKOUTDCM5 lsb: 0  msb: 0 OUTPUT
-			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A1_B = DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A2_B = DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A3_B = DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A4_B = DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A5_B = DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A6_B = DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A7_B = DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A8_B = DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A9_B = DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A10_B = DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A11_B = DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A12_B = DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A13_B = DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A14_B = DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A15_B = DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 			this->DRDY_A0_B = DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			this->LOCKED_A0_B = LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			this->CLKFBIN_A0_B = CLKFBIN_A0_B; // net ID: CLKFBIN lsb: 0  msb: 0 INPUT
@@ -312,6 +358,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

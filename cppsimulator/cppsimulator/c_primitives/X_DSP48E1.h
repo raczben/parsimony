@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_DSP48E1: public Primitive{
@@ -41,16 +42,159 @@ namespace CPrimitives {
 		parameter_string_t USE_SIMD;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* ACOUT_A0_B; // net ID: ACOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* BCOUT_A0_B; // net ID: BCOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* ACOUT_A0_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A1_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A2_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A3_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A4_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A5_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A6_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A7_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A8_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A9_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A10_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A11_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A12_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A13_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A14_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A15_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A16_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A17_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A18_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A19_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A20_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A21_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A22_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A23_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A24_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A25_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A26_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A27_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A28_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* ACOUT_A29_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+		NetFlow* BCOUT_A0_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A1_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A2_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A3_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A4_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A5_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A6_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A7_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A8_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A9_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A10_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A11_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A12_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A13_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A14_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A15_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A16_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+		NetFlow* BCOUT_A17_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
 		NetFlow* CARRYCASCOUT_A0_B; // net ID: CARRYCASCOUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* CARRYOUT_A0_B; // net ID: CARRYOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* CARRYOUT_A0_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+		NetFlow* CARRYOUT_A1_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+		NetFlow* CARRYOUT_A2_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+		NetFlow* CARRYOUT_A3_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
 		NetFlow* MULTSIGNOUT_A0_B; // net ID: MULTSIGNOUT lsb: 0  msb: 0 OUTPUT
 		NetFlow* OVERFLOW_A0_B; // net ID: OVERFLOW lsb: 0  msb: 0 OUTPUT
-		NetFlow* P_A0_B; // net ID: P lsb: 0  msb: 0 OUTPUT
+		NetFlow* P_A0_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A1_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A2_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A3_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A4_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A5_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A6_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A7_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A8_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A9_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A10_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A11_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A12_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A13_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A14_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A15_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A16_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A17_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A18_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A19_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A20_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A21_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A22_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A23_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A24_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A25_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A26_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A27_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A28_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A29_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A30_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A31_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A32_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A33_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A34_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A35_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A36_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A37_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A38_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A39_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A40_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A41_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A42_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A43_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A44_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A45_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A46_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+		NetFlow* P_A47_B; // net ID: P lsb: 0  msb: 47 OUTPUT
 		NetFlow* PATTERNBDETECT_A0_B; // net ID: PATTERNBDETECT lsb: 0  msb: 0 OUTPUT
 		NetFlow* PATTERNDETECT_A0_B; // net ID: PATTERNDETECT lsb: 0  msb: 0 OUTPUT
-		NetFlow* PCOUT_A0_B; // net ID: PCOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* PCOUT_A0_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A1_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A2_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A3_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A4_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A5_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A6_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A7_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A8_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A9_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A10_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A11_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A12_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A13_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A14_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A15_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A16_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A17_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A18_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A19_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A20_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A21_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A22_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A23_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A24_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A25_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A26_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A27_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A28_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A29_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A30_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A31_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A32_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A33_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A34_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A35_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A36_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A37_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A38_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A39_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A40_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A41_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A42_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A43_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A44_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A45_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A46_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+		NetFlow* PCOUT_A47_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
 		NetFlow* UNDERFLOW_A0_B; // net ID: UNDERFLOW lsb: 0  msb: 0 OUTPUT
 		NetFlow* A_A0_B; // net ID: A lsb: 0  msb: 29 INPUT
 		NetFlow* A_A1_B; // net ID: A lsb: 0  msb: 29 INPUT
@@ -346,16 +490,159 @@ namespace CPrimitives {
 			parameter_string_t USE_SIMD, // Default: "ONE48"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* ACOUT_A0_B, // net ID: ACOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* BCOUT_A0_B, // net ID: BCOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* ACOUT_A0_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A1_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A2_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A3_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A4_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A5_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A6_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A7_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A8_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A9_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A10_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A11_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A12_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A13_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A14_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A15_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A16_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A17_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A18_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A19_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A20_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A21_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A22_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A23_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A24_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A25_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A26_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A27_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A28_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* ACOUT_A29_B, // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			NetFlow* BCOUT_A0_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A1_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A2_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A3_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A4_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A5_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A6_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A7_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A8_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A9_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A10_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A11_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A12_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A13_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A14_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A15_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A16_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			NetFlow* BCOUT_A17_B, // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
 			NetFlow* CARRYCASCOUT_A0_B, // net ID: CARRYCASCOUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* CARRYOUT_A0_B, // net ID: CARRYOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* CARRYOUT_A0_B, // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+			NetFlow* CARRYOUT_A1_B, // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+			NetFlow* CARRYOUT_A2_B, // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+			NetFlow* CARRYOUT_A3_B, // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
 			NetFlow* MULTSIGNOUT_A0_B, // net ID: MULTSIGNOUT lsb: 0  msb: 0 OUTPUT
 			NetFlow* OVERFLOW_A0_B, // net ID: OVERFLOW lsb: 0  msb: 0 OUTPUT
-			NetFlow* P_A0_B, // net ID: P lsb: 0  msb: 0 OUTPUT
+			NetFlow* P_A0_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A1_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A2_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A3_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A4_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A5_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A6_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A7_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A8_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A9_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A10_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A11_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A12_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A13_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A14_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A15_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A16_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A17_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A18_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A19_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A20_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A21_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A22_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A23_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A24_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A25_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A26_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A27_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A28_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A29_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A30_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A31_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A32_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A33_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A34_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A35_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A36_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A37_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A38_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A39_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A40_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A41_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A42_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A43_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A44_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A45_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A46_B, // net ID: P lsb: 0  msb: 47 OUTPUT
+			NetFlow* P_A47_B, // net ID: P lsb: 0  msb: 47 OUTPUT
 			NetFlow* PATTERNBDETECT_A0_B, // net ID: PATTERNBDETECT lsb: 0  msb: 0 OUTPUT
 			NetFlow* PATTERNDETECT_A0_B, // net ID: PATTERNDETECT lsb: 0  msb: 0 OUTPUT
-			NetFlow* PCOUT_A0_B, // net ID: PCOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* PCOUT_A0_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A1_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A2_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A3_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A4_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A5_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A6_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A7_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A8_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A9_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A10_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A11_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A12_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A13_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A14_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A15_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A16_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A17_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A18_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A19_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A20_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A21_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A22_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A23_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A24_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A25_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A26_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A27_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A28_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A29_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A30_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A31_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A32_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A33_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A34_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A35_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A36_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A37_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A38_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A39_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A40_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A41_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A42_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A43_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A44_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A45_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A46_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			NetFlow* PCOUT_A47_B, // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
 			NetFlow* UNDERFLOW_A0_B, // net ID: UNDERFLOW lsb: 0  msb: 0 OUTPUT
 			NetFlow* A_A0_B, // net ID: A lsb: 0  msb: 29 INPUT
 			NetFlow* A_A1_B, // net ID: A lsb: 0  msb: 29 INPUT
@@ -651,16 +938,159 @@ namespace CPrimitives {
 			this->USE_SIMD = USE_SIMD; // Default: "ONE48"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->ACOUT_A0_B = ACOUT_A0_B; // net ID: ACOUT lsb: 0  msb: 0 OUTPUT
-			this->BCOUT_A0_B = BCOUT_A0_B; // net ID: BCOUT lsb: 0  msb: 0 OUTPUT
+			this->ACOUT_A0_B = ACOUT_A0_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A1_B = ACOUT_A1_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A2_B = ACOUT_A2_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A3_B = ACOUT_A3_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A4_B = ACOUT_A4_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A5_B = ACOUT_A5_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A6_B = ACOUT_A6_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A7_B = ACOUT_A7_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A8_B = ACOUT_A8_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A9_B = ACOUT_A9_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A10_B = ACOUT_A10_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A11_B = ACOUT_A11_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A12_B = ACOUT_A12_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A13_B = ACOUT_A13_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A14_B = ACOUT_A14_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A15_B = ACOUT_A15_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A16_B = ACOUT_A16_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A17_B = ACOUT_A17_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A18_B = ACOUT_A18_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A19_B = ACOUT_A19_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A20_B = ACOUT_A20_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A21_B = ACOUT_A21_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A22_B = ACOUT_A22_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A23_B = ACOUT_A23_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A24_B = ACOUT_A24_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A25_B = ACOUT_A25_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A26_B = ACOUT_A26_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A27_B = ACOUT_A27_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A28_B = ACOUT_A28_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->ACOUT_A29_B = ACOUT_A29_B; // net ID: ACOUT lsb: 0  msb: 29 OUTPUT
+			this->BCOUT_A0_B = BCOUT_A0_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A1_B = BCOUT_A1_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A2_B = BCOUT_A2_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A3_B = BCOUT_A3_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A4_B = BCOUT_A4_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A5_B = BCOUT_A5_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A6_B = BCOUT_A6_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A7_B = BCOUT_A7_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A8_B = BCOUT_A8_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A9_B = BCOUT_A9_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A10_B = BCOUT_A10_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A11_B = BCOUT_A11_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A12_B = BCOUT_A12_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A13_B = BCOUT_A13_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A14_B = BCOUT_A14_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A15_B = BCOUT_A15_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A16_B = BCOUT_A16_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
+			this->BCOUT_A17_B = BCOUT_A17_B; // net ID: BCOUT lsb: 0  msb: 17 OUTPUT
 			this->CARRYCASCOUT_A0_B = CARRYCASCOUT_A0_B; // net ID: CARRYCASCOUT lsb: 0  msb: 0 OUTPUT
-			this->CARRYOUT_A0_B = CARRYOUT_A0_B; // net ID: CARRYOUT lsb: 0  msb: 0 OUTPUT
+			this->CARRYOUT_A0_B = CARRYOUT_A0_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+			this->CARRYOUT_A1_B = CARRYOUT_A1_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+			this->CARRYOUT_A2_B = CARRYOUT_A2_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
+			this->CARRYOUT_A3_B = CARRYOUT_A3_B; // net ID: CARRYOUT lsb: 0  msb: 3 OUTPUT
 			this->MULTSIGNOUT_A0_B = MULTSIGNOUT_A0_B; // net ID: MULTSIGNOUT lsb: 0  msb: 0 OUTPUT
 			this->OVERFLOW_A0_B = OVERFLOW_A0_B; // net ID: OVERFLOW lsb: 0  msb: 0 OUTPUT
-			this->P_A0_B = P_A0_B; // net ID: P lsb: 0  msb: 0 OUTPUT
+			this->P_A0_B = P_A0_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A1_B = P_A1_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A2_B = P_A2_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A3_B = P_A3_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A4_B = P_A4_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A5_B = P_A5_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A6_B = P_A6_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A7_B = P_A7_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A8_B = P_A8_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A9_B = P_A9_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A10_B = P_A10_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A11_B = P_A11_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A12_B = P_A12_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A13_B = P_A13_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A14_B = P_A14_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A15_B = P_A15_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A16_B = P_A16_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A17_B = P_A17_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A18_B = P_A18_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A19_B = P_A19_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A20_B = P_A20_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A21_B = P_A21_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A22_B = P_A22_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A23_B = P_A23_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A24_B = P_A24_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A25_B = P_A25_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A26_B = P_A26_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A27_B = P_A27_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A28_B = P_A28_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A29_B = P_A29_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A30_B = P_A30_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A31_B = P_A31_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A32_B = P_A32_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A33_B = P_A33_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A34_B = P_A34_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A35_B = P_A35_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A36_B = P_A36_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A37_B = P_A37_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A38_B = P_A38_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A39_B = P_A39_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A40_B = P_A40_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A41_B = P_A41_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A42_B = P_A42_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A43_B = P_A43_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A44_B = P_A44_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A45_B = P_A45_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A46_B = P_A46_B; // net ID: P lsb: 0  msb: 47 OUTPUT
+			this->P_A47_B = P_A47_B; // net ID: P lsb: 0  msb: 47 OUTPUT
 			this->PATTERNBDETECT_A0_B = PATTERNBDETECT_A0_B; // net ID: PATTERNBDETECT lsb: 0  msb: 0 OUTPUT
 			this->PATTERNDETECT_A0_B = PATTERNDETECT_A0_B; // net ID: PATTERNDETECT lsb: 0  msb: 0 OUTPUT
-			this->PCOUT_A0_B = PCOUT_A0_B; // net ID: PCOUT lsb: 0  msb: 0 OUTPUT
+			this->PCOUT_A0_B = PCOUT_A0_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A1_B = PCOUT_A1_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A2_B = PCOUT_A2_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A3_B = PCOUT_A3_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A4_B = PCOUT_A4_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A5_B = PCOUT_A5_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A6_B = PCOUT_A6_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A7_B = PCOUT_A7_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A8_B = PCOUT_A8_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A9_B = PCOUT_A9_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A10_B = PCOUT_A10_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A11_B = PCOUT_A11_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A12_B = PCOUT_A12_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A13_B = PCOUT_A13_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A14_B = PCOUT_A14_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A15_B = PCOUT_A15_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A16_B = PCOUT_A16_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A17_B = PCOUT_A17_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A18_B = PCOUT_A18_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A19_B = PCOUT_A19_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A20_B = PCOUT_A20_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A21_B = PCOUT_A21_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A22_B = PCOUT_A22_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A23_B = PCOUT_A23_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A24_B = PCOUT_A24_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A25_B = PCOUT_A25_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A26_B = PCOUT_A26_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A27_B = PCOUT_A27_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A28_B = PCOUT_A28_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A29_B = PCOUT_A29_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A30_B = PCOUT_A30_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A31_B = PCOUT_A31_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A32_B = PCOUT_A32_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A33_B = PCOUT_A33_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A34_B = PCOUT_A34_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A35_B = PCOUT_A35_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A36_B = PCOUT_A36_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A37_B = PCOUT_A37_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A38_B = PCOUT_A38_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A39_B = PCOUT_A39_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A40_B = PCOUT_A40_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A41_B = PCOUT_A41_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A42_B = PCOUT_A42_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A43_B = PCOUT_A43_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A44_B = PCOUT_A44_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A45_B = PCOUT_A45_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A46_B = PCOUT_A46_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
+			this->PCOUT_A47_B = PCOUT_A47_B; // net ID: PCOUT lsb: 0  msb: 47 OUTPUT
 			this->UNDERFLOW_A0_B = UNDERFLOW_A0_B; // net ID: UNDERFLOW lsb: 0  msb: 0 OUTPUT
 			this->A_A0_B = A_A0_B; // net ID: A lsb: 0  msb: 29 INPUT
 			this->A_A1_B = A_A1_B; // net ID: A lsb: 0  msb: 29 INPUT
@@ -933,6 +1363,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

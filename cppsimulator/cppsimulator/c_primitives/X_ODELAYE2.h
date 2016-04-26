@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_ODELAYE2: public Primitive{
@@ -25,7 +26,11 @@ namespace CPrimitives {
 		parameter_string_t LOC;
 		parameter_int_t SIM_DELAY_D;
 		//Verilog Ports in definition order:
-		NetFlow* CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A1_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A2_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A3_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A4_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 		NetFlow* DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
 		NetFlow* C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
 		NetFlow* CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
@@ -56,7 +61,11 @@ namespace CPrimitives {
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_int_t SIM_DELAY_D, // Default: 0
 			//Verilog Ports in definition order:
-			NetFlow* CNTVALUEOUT_A0_B, // net ID: CNTVALUEOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* CNTVALUEOUT_A0_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A1_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A2_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A3_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A4_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 			NetFlow* DATAOUT_A0_B, // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
 			NetFlow* C_A0_B, // net ID: C lsb: 0  msb: 0 INPUT
 			NetFlow* CE_A0_B, // net ID: CE lsb: 0  msb: 0 INPUT
@@ -87,7 +96,11 @@ namespace CPrimitives {
 			this->LOC = LOC; // Default: "UNPLACED"
 			this->SIM_DELAY_D = SIM_DELAY_D; // Default: 0
 			//Verilog Ports in definition order:
-			this->CNTVALUEOUT_A0_B = CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 0 OUTPUT
+			this->CNTVALUEOUT_A0_B = CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A1_B = CNTVALUEOUT_A1_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A2_B = CNTVALUEOUT_A2_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A3_B = CNTVALUEOUT_A3_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A4_B = CNTVALUEOUT_A4_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 			this->DATAOUT_A0_B = DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
 			this->C_A0_B = C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
 			this->CE_A0_B = CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
@@ -111,6 +124,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

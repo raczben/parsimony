@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_PCIE_A1: public Primitive{
@@ -97,7 +98,14 @@ namespace CPrimitives {
 		parameter_int_t VC0_TOTAL_CREDITS_PH;
 		parameter_int_t VC0_TX_LASTPACKET;
 		//Verilog Ports in definition order:
-		NetFlow* CFGBUSNUMBER_A0_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGBUSNUMBER_A0_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGBUSNUMBER_A1_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGBUSNUMBER_A2_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGBUSNUMBER_A3_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGBUSNUMBER_A4_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGBUSNUMBER_A5_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGBUSNUMBER_A6_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGBUSNUMBER_A7_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
 		NetFlow* CFGCOMMANDBUSMASTERENABLE_A0_B; // net ID: CFGCOMMANDBUSMASTERENABLE lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGCOMMANDINTERRUPTDISABLE_A0_B; // net ID: CFGCOMMANDINTERRUPTDISABLE lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGCOMMANDIOENABLE_A0_B; // net ID: CFGCOMMANDIOENABLE lsb: 0  msb: 0 OUTPUT
@@ -108,30 +116,87 @@ namespace CPrimitives {
 		NetFlow* CFGDEVCONTROLENABLERO_A0_B; // net ID: CFGDEVCONTROLENABLERO lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVCONTROLEXTTAGEN_A0_B; // net ID: CFGDEVCONTROLEXTTAGEN lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVCONTROLFATALERRREPORTINGEN_A0_B; // net ID: CFGDEVCONTROLFATALERRREPORTINGEN lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGDEVCONTROLMAXPAYLOAD_A0_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGDEVCONTROLMAXREADREQ_A0_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGDEVCONTROLMAXPAYLOAD_A0_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGDEVCONTROLMAXPAYLOAD_A1_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGDEVCONTROLMAXPAYLOAD_A2_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGDEVCONTROLMAXREADREQ_A0_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGDEVCONTROLMAXREADREQ_A1_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGDEVCONTROLMAXREADREQ_A2_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
 		NetFlow* CFGDEVCONTROLNONFATALREPORTINGEN_A0_B; // net ID: CFGDEVCONTROLNONFATALREPORTINGEN lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVCONTROLNOSNOOPEN_A0_B; // net ID: CFGDEVCONTROLNOSNOOPEN lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVCONTROLPHANTOMEN_A0_B; // net ID: CFGDEVCONTROLPHANTOMEN lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVCONTROLURERRREPORTINGEN_A0_B; // net ID: CFGDEVCONTROLURERRREPORTINGEN lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGDEVICENUMBER_A0_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGDEVICENUMBER_A0_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGDEVICENUMBER_A1_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGDEVICENUMBER_A2_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGDEVICENUMBER_A3_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGDEVICENUMBER_A4_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
 		NetFlow* CFGDEVSTATUSCORRERRDETECTED_A0_B; // net ID: CFGDEVSTATUSCORRERRDETECTED lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVSTATUSFATALERRDETECTED_A0_B; // net ID: CFGDEVSTATUSFATALERRDETECTED lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVSTATUSNONFATALERRDETECTED_A0_B; // net ID: CFGDEVSTATUSNONFATALERRDETECTED lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGDEVSTATUSURDETECTED_A0_B; // net ID: CFGDEVSTATUSURDETECTED lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGDO_A0_B; // net ID: CFGDO lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGDO_A0_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A1_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A2_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A3_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A4_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A5_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A6_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A7_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A8_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A9_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A10_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A11_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A12_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A13_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A14_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A15_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A16_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A17_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A18_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A19_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A20_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A21_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A22_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A23_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A24_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A25_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A26_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A27_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A28_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A29_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A30_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+		NetFlow* CFGDO_A31_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
 		NetFlow* CFGERRCPLRDYN_A0_B; // net ID: CFGERRCPLRDYN lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGFUNCTIONNUMBER_A0_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGINTERRUPTDO_A0_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGINTERRUPTMMENABLE_A0_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGFUNCTIONNUMBER_A0_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGFUNCTIONNUMBER_A1_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGFUNCTIONNUMBER_A2_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A0_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A1_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A2_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A3_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A4_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A5_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A6_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTDO_A7_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+		NetFlow* CFGINTERRUPTMMENABLE_A0_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGINTERRUPTMMENABLE_A1_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGINTERRUPTMMENABLE_A2_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
 		NetFlow* CFGINTERRUPTMSIENABLE_A0_B; // net ID: CFGINTERRUPTMSIENABLE lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGINTERRUPTRDYN_A0_B; // net ID: CFGINTERRUPTRDYN lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGLINKCONTOLRCB_A0_B; // net ID: CFGLINKCONTOLRCB lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGLINKCONTROLASPMCONTROL_A0_B; // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGLINKCONTROLASPMCONTROL_A0_B; // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 1 OUTPUT
+		NetFlow* CFGLINKCONTROLASPMCONTROL_A1_B; // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 1 OUTPUT
 		NetFlow* CFGLINKCONTROLCOMMONCLOCK_A0_B; // net ID: CFGLINKCONTROLCOMMONCLOCK lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGLINKCONTROLEXTENDEDSYNC_A0_B; // net ID: CFGLINKCONTROLEXTENDEDSYNC lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGLTSSMSTATE_A0_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 0 OUTPUT
-		NetFlow* CFGPCIELINKSTATEN_A0_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 0 OUTPUT
+		NetFlow* CFGLTSSMSTATE_A0_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGLTSSMSTATE_A1_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGLTSSMSTATE_A2_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGLTSSMSTATE_A3_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGLTSSMSTATE_A4_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+		NetFlow* CFGPCIELINKSTATEN_A0_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGPCIELINKSTATEN_A1_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
+		NetFlow* CFGPCIELINKSTATEN_A2_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
 		NetFlow* CFGRDWRDONEN_A0_B; // net ID: CFGRDWRDONEN lsb: 0  msb: 0 OUTPUT
 		NetFlow* CFGTOTURNOFFN_A0_B; // net ID: CFGTOTURNOFFN lsb: 0  msb: 0 OUTPUT
 		NetFlow* DBGBADDLLPSTATUS_A0_B; // net ID: DBGBADDLLPSTATUS lsb: 0  msb: 0 OUTPUT
@@ -157,50 +222,297 @@ namespace CPrimitives {
 		NetFlow* DBGURPOISCFGWR_A0_B; // net ID: DBGURPOISCFGWR lsb: 0  msb: 0 OUTPUT
 		NetFlow* DBGURSTATUS_A0_B; // net ID: DBGURSTATUS lsb: 0  msb: 0 OUTPUT
 		NetFlow* DBGURUNSUPMSG_A0_B; // net ID: DBGURUNSUPMSG lsb: 0  msb: 0 OUTPUT
-		NetFlow* MIMRXRADDR_A0_B; // net ID: MIMRXRADDR lsb: 0  msb: 0 OUTPUT
+		NetFlow* MIMRXRADDR_A0_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A1_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A2_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A3_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A4_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A5_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A6_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A7_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A8_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A9_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A10_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXRADDR_A11_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
 		NetFlow* MIMRXREN_A0_B; // net ID: MIMRXREN lsb: 0  msb: 0 OUTPUT
-		NetFlow* MIMRXWADDR_A0_B; // net ID: MIMRXWADDR lsb: 0  msb: 0 OUTPUT
-		NetFlow* MIMRXWDATA_A0_B; // net ID: MIMRXWDATA lsb: 0  msb: 0 OUTPUT
+		NetFlow* MIMRXWADDR_A0_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A1_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A2_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A3_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A4_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A5_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A6_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A7_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A8_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A9_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A10_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWADDR_A11_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMRXWDATA_A0_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A1_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A2_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A3_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A4_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A5_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A6_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A7_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A8_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A9_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A10_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A11_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A12_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A13_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A14_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A15_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A16_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A17_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A18_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A19_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A20_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A21_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A22_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A23_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A24_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A25_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A26_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A27_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A28_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A29_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A30_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A31_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A32_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A33_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+		NetFlow* MIMRXWDATA_A34_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
 		NetFlow* MIMRXWEN_A0_B; // net ID: MIMRXWEN lsb: 0  msb: 0 OUTPUT
-		NetFlow* MIMTXRADDR_A0_B; // net ID: MIMTXRADDR lsb: 0  msb: 0 OUTPUT
+		NetFlow* MIMTXRADDR_A0_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A1_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A2_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A3_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A4_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A5_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A6_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A7_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A8_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A9_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A10_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXRADDR_A11_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
 		NetFlow* MIMTXREN_A0_B; // net ID: MIMTXREN lsb: 0  msb: 0 OUTPUT
-		NetFlow* MIMTXWADDR_A0_B; // net ID: MIMTXWADDR lsb: 0  msb: 0 OUTPUT
-		NetFlow* MIMTXWDATA_A0_B; // net ID: MIMTXWDATA lsb: 0  msb: 0 OUTPUT
+		NetFlow* MIMTXWADDR_A0_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A1_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A2_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A3_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A4_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A5_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A6_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A7_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A8_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A9_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A10_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWADDR_A11_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+		NetFlow* MIMTXWDATA_A0_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A1_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A2_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A3_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A4_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A5_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A6_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A7_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A8_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A9_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A10_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A11_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A12_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A13_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A14_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A15_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A16_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A17_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A18_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A19_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A20_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A21_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A22_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A23_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A24_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A25_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A26_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A27_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A28_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A29_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A30_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A31_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A32_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A33_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A34_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+		NetFlow* MIMTXWDATA_A35_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
 		NetFlow* MIMTXWEN_A0_B; // net ID: MIMTXWEN lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPEGTPOWERDOWNA_A0_B; // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPEGTPOWERDOWNB_A0_B; // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 0 OUTPUT
+		NetFlow* PIPEGTPOWERDOWNA_A0_B; // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPEGTPOWERDOWNA_A1_B; // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPEGTPOWERDOWNB_A0_B; // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPEGTPOWERDOWNB_A1_B; // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 1 OUTPUT
 		NetFlow* PIPEGTTXELECIDLEA_A0_B; // net ID: PIPEGTTXELECIDLEA lsb: 0  msb: 0 OUTPUT
 		NetFlow* PIPEGTTXELECIDLEB_A0_B; // net ID: PIPEGTTXELECIDLEB lsb: 0  msb: 0 OUTPUT
 		NetFlow* PIPERXPOLARITYA_A0_B; // net ID: PIPERXPOLARITYA lsb: 0  msb: 0 OUTPUT
 		NetFlow* PIPERXPOLARITYB_A0_B; // net ID: PIPERXPOLARITYB lsb: 0  msb: 0 OUTPUT
 		NetFlow* PIPERXRESETA_A0_B; // net ID: PIPERXRESETA lsb: 0  msb: 0 OUTPUT
 		NetFlow* PIPERXRESETB_A0_B; // net ID: PIPERXRESETB lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXCHARDISPMODEA_A0_B; // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXCHARDISPMODEB_A0_B; // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXCHARDISPVALA_A0_B; // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXCHARDISPVALB_A0_B; // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXCHARISKA_A0_B; // net ID: PIPETXCHARISKA lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXCHARISKB_A0_B; // net ID: PIPETXCHARISKB lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXDATAA_A0_B; // net ID: PIPETXDATAA lsb: 0  msb: 0 OUTPUT
-		NetFlow* PIPETXDATAB_A0_B; // net ID: PIPETXDATAB lsb: 0  msb: 0 OUTPUT
+		NetFlow* PIPETXCHARDISPMODEA_A0_B; // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARDISPMODEA_A1_B; // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARDISPMODEB_A0_B; // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARDISPMODEB_A1_B; // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARDISPVALA_A0_B; // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARDISPVALA_A1_B; // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARDISPVALB_A0_B; // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARDISPVALB_A1_B; // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARISKA_A0_B; // net ID: PIPETXCHARISKA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARISKA_A1_B; // net ID: PIPETXCHARISKA lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARISKB_A0_B; // net ID: PIPETXCHARISKB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXCHARISKB_A1_B; // net ID: PIPETXCHARISKB lsb: 0  msb: 1 OUTPUT
+		NetFlow* PIPETXDATAA_A0_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A1_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A2_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A3_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A4_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A5_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A6_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A7_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A8_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A9_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A10_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A11_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A12_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A13_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A14_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAA_A15_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A0_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A1_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A2_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A3_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A4_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A5_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A6_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A7_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A8_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A9_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A10_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A11_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A12_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A13_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A14_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+		NetFlow* PIPETXDATAB_A15_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
 		NetFlow* PIPETXRCVRDETA_A0_B; // net ID: PIPETXRCVRDETA lsb: 0  msb: 0 OUTPUT
 		NetFlow* PIPETXRCVRDETB_A0_B; // net ID: PIPETXRCVRDETB lsb: 0  msb: 0 OUTPUT
 		NetFlow* RECEIVEDHOTRESET_A0_B; // net ID: RECEIVEDHOTRESET lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNFCCPLD_A0_B; // net ID: TRNFCCPLD lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNFCCPLH_A0_B; // net ID: TRNFCCPLH lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNFCNPD_A0_B; // net ID: TRNFCNPD lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNFCNPH_A0_B; // net ID: TRNFCNPH lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNFCPD_A0_B; // net ID: TRNFCPD lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNFCPH_A0_B; // net ID: TRNFCPH lsb: 0  msb: 0 OUTPUT
+		NetFlow* TRNFCCPLD_A0_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A1_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A2_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A3_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A4_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A5_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A6_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A7_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A8_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A9_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A10_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLD_A11_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCCPLH_A0_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCCPLH_A1_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCCPLH_A2_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCCPLH_A3_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCCPLH_A4_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCCPLH_A5_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCCPLH_A6_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCCPLH_A7_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPD_A0_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A1_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A2_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A3_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A4_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A5_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A6_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A7_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A8_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A9_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A10_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPD_A11_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCNPH_A0_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPH_A1_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPH_A2_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPH_A3_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPH_A4_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPH_A5_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPH_A6_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCNPH_A7_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPD_A0_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A1_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A2_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A3_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A4_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A5_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A6_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A7_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A8_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A9_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A10_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPD_A11_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+		NetFlow* TRNFCPH_A0_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPH_A1_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPH_A2_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPH_A3_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPH_A4_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPH_A5_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPH_A6_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+		NetFlow* TRNFCPH_A7_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
 		NetFlow* TRNLNKUPN_A0_B; // net ID: TRNLNKUPN lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNRBARHITN_A0_B; // net ID: TRNRBARHITN lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNRD_A0_B; // net ID: TRNRD lsb: 0  msb: 0 OUTPUT
+		NetFlow* TRNRBARHITN_A0_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+		NetFlow* TRNRBARHITN_A1_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+		NetFlow* TRNRBARHITN_A2_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+		NetFlow* TRNRBARHITN_A3_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+		NetFlow* TRNRBARHITN_A4_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+		NetFlow* TRNRBARHITN_A5_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+		NetFlow* TRNRBARHITN_A6_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+		NetFlow* TRNRD_A0_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A1_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A2_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A3_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A4_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A5_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A6_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A7_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A8_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A9_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A10_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A11_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A12_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A13_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A14_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A15_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A16_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A17_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A18_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A19_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A20_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A21_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A22_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A23_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A24_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A25_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A26_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A27_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A28_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A29_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A30_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+		NetFlow* TRNRD_A31_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
 		NetFlow* TRNREOFN_A0_B; // net ID: TRNREOFN lsb: 0  msb: 0 OUTPUT
 		NetFlow* TRNRERRFWDN_A0_B; // net ID: TRNRERRFWDN lsb: 0  msb: 0 OUTPUT
 		NetFlow* TRNRSOFN_A0_B; // net ID: TRNRSOFN lsb: 0  msb: 0 OUTPUT
 		NetFlow* TRNRSRCDSCN_A0_B; // net ID: TRNRSRCDSCN lsb: 0  msb: 0 OUTPUT
 		NetFlow* TRNRSRCRDYN_A0_B; // net ID: TRNRSRCRDYN lsb: 0  msb: 0 OUTPUT
-		NetFlow* TRNTBUFAV_A0_B; // net ID: TRNTBUFAV lsb: 0  msb: 0 OUTPUT
+		NetFlow* TRNTBUFAV_A0_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+		NetFlow* TRNTBUFAV_A1_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+		NetFlow* TRNTBUFAV_A2_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+		NetFlow* TRNTBUFAV_A3_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+		NetFlow* TRNTBUFAV_A4_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+		NetFlow* TRNTBUFAV_A5_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
 		NetFlow* TRNTCFGREQN_A0_B; // net ID: TRNTCFGREQN lsb: 0  msb: 0 OUTPUT
 		NetFlow* TRNTDSTRDYN_A0_B; // net ID: TRNTDSTRDYN lsb: 0  msb: 0 OUTPUT
 		NetFlow* TRNTERRDROPN_A0_B; // net ID: TRNTERRDROPN lsb: 0  msb: 0 OUTPUT
@@ -674,7 +986,14 @@ namespace CPrimitives {
 			parameter_int_t VC0_TOTAL_CREDITS_PH, // Default: 32
 			parameter_int_t VC0_TX_LASTPACKET, // Default: 31
 			//Verilog Ports in definition order:
-			NetFlow* CFGBUSNUMBER_A0_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGBUSNUMBER_A0_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGBUSNUMBER_A1_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGBUSNUMBER_A2_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGBUSNUMBER_A3_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGBUSNUMBER_A4_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGBUSNUMBER_A5_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGBUSNUMBER_A6_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGBUSNUMBER_A7_B, // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
 			NetFlow* CFGCOMMANDBUSMASTERENABLE_A0_B, // net ID: CFGCOMMANDBUSMASTERENABLE lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGCOMMANDINTERRUPTDISABLE_A0_B, // net ID: CFGCOMMANDINTERRUPTDISABLE lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGCOMMANDIOENABLE_A0_B, // net ID: CFGCOMMANDIOENABLE lsb: 0  msb: 0 OUTPUT
@@ -685,30 +1004,87 @@ namespace CPrimitives {
 			NetFlow* CFGDEVCONTROLENABLERO_A0_B, // net ID: CFGDEVCONTROLENABLERO lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVCONTROLEXTTAGEN_A0_B, // net ID: CFGDEVCONTROLEXTTAGEN lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVCONTROLFATALERRREPORTINGEN_A0_B, // net ID: CFGDEVCONTROLFATALERRREPORTINGEN lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGDEVCONTROLMAXPAYLOAD_A0_B, // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGDEVCONTROLMAXREADREQ_A0_B, // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGDEVCONTROLMAXPAYLOAD_A0_B, // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGDEVCONTROLMAXPAYLOAD_A1_B, // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGDEVCONTROLMAXPAYLOAD_A2_B, // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGDEVCONTROLMAXREADREQ_A0_B, // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGDEVCONTROLMAXREADREQ_A1_B, // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGDEVCONTROLMAXREADREQ_A2_B, // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
 			NetFlow* CFGDEVCONTROLNONFATALREPORTINGEN_A0_B, // net ID: CFGDEVCONTROLNONFATALREPORTINGEN lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVCONTROLNOSNOOPEN_A0_B, // net ID: CFGDEVCONTROLNOSNOOPEN lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVCONTROLPHANTOMEN_A0_B, // net ID: CFGDEVCONTROLPHANTOMEN lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVCONTROLURERRREPORTINGEN_A0_B, // net ID: CFGDEVCONTROLURERRREPORTINGEN lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGDEVICENUMBER_A0_B, // net ID: CFGDEVICENUMBER lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGDEVICENUMBER_A0_B, // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGDEVICENUMBER_A1_B, // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGDEVICENUMBER_A2_B, // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGDEVICENUMBER_A3_B, // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGDEVICENUMBER_A4_B, // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
 			NetFlow* CFGDEVSTATUSCORRERRDETECTED_A0_B, // net ID: CFGDEVSTATUSCORRERRDETECTED lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVSTATUSFATALERRDETECTED_A0_B, // net ID: CFGDEVSTATUSFATALERRDETECTED lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVSTATUSNONFATALERRDETECTED_A0_B, // net ID: CFGDEVSTATUSNONFATALERRDETECTED lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGDEVSTATUSURDETECTED_A0_B, // net ID: CFGDEVSTATUSURDETECTED lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGDO_A0_B, // net ID: CFGDO lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGDO_A0_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A1_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A2_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A3_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A4_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A5_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A6_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A7_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A8_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A9_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A10_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A11_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A12_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A13_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A14_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A15_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A16_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A17_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A18_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A19_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A20_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A21_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A22_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A23_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A24_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A25_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A26_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A27_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A28_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A29_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A30_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			NetFlow* CFGDO_A31_B, // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
 			NetFlow* CFGERRCPLRDYN_A0_B, // net ID: CFGERRCPLRDYN lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGFUNCTIONNUMBER_A0_B, // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGINTERRUPTDO_A0_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGINTERRUPTMMENABLE_A0_B, // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGFUNCTIONNUMBER_A0_B, // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGFUNCTIONNUMBER_A1_B, // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGFUNCTIONNUMBER_A2_B, // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A0_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A1_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A2_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A3_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A4_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A5_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A6_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTDO_A7_B, // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			NetFlow* CFGINTERRUPTMMENABLE_A0_B, // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGINTERRUPTMMENABLE_A1_B, // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGINTERRUPTMMENABLE_A2_B, // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
 			NetFlow* CFGINTERRUPTMSIENABLE_A0_B, // net ID: CFGINTERRUPTMSIENABLE lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGINTERRUPTRDYN_A0_B, // net ID: CFGINTERRUPTRDYN lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGLINKCONTOLRCB_A0_B, // net ID: CFGLINKCONTOLRCB lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGLINKCONTROLASPMCONTROL_A0_B, // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGLINKCONTROLASPMCONTROL_A0_B, // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 1 OUTPUT
+			NetFlow* CFGLINKCONTROLASPMCONTROL_A1_B, // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 1 OUTPUT
 			NetFlow* CFGLINKCONTROLCOMMONCLOCK_A0_B, // net ID: CFGLINKCONTROLCOMMONCLOCK lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGLINKCONTROLEXTENDEDSYNC_A0_B, // net ID: CFGLINKCONTROLEXTENDEDSYNC lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGLTSSMSTATE_A0_B, // net ID: CFGLTSSMSTATE lsb: 0  msb: 0 OUTPUT
-			NetFlow* CFGPCIELINKSTATEN_A0_B, // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 0 OUTPUT
+			NetFlow* CFGLTSSMSTATE_A0_B, // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGLTSSMSTATE_A1_B, // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGLTSSMSTATE_A2_B, // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGLTSSMSTATE_A3_B, // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGLTSSMSTATE_A4_B, // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			NetFlow* CFGPCIELINKSTATEN_A0_B, // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGPCIELINKSTATEN_A1_B, // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
+			NetFlow* CFGPCIELINKSTATEN_A2_B, // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
 			NetFlow* CFGRDWRDONEN_A0_B, // net ID: CFGRDWRDONEN lsb: 0  msb: 0 OUTPUT
 			NetFlow* CFGTOTURNOFFN_A0_B, // net ID: CFGTOTURNOFFN lsb: 0  msb: 0 OUTPUT
 			NetFlow* DBGBADDLLPSTATUS_A0_B, // net ID: DBGBADDLLPSTATUS lsb: 0  msb: 0 OUTPUT
@@ -734,50 +1110,297 @@ namespace CPrimitives {
 			NetFlow* DBGURPOISCFGWR_A0_B, // net ID: DBGURPOISCFGWR lsb: 0  msb: 0 OUTPUT
 			NetFlow* DBGURSTATUS_A0_B, // net ID: DBGURSTATUS lsb: 0  msb: 0 OUTPUT
 			NetFlow* DBGURUNSUPMSG_A0_B, // net ID: DBGURUNSUPMSG lsb: 0  msb: 0 OUTPUT
-			NetFlow* MIMRXRADDR_A0_B, // net ID: MIMRXRADDR lsb: 0  msb: 0 OUTPUT
+			NetFlow* MIMRXRADDR_A0_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A1_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A2_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A3_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A4_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A5_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A6_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A7_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A8_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A9_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A10_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXRADDR_A11_B, // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
 			NetFlow* MIMRXREN_A0_B, // net ID: MIMRXREN lsb: 0  msb: 0 OUTPUT
-			NetFlow* MIMRXWADDR_A0_B, // net ID: MIMRXWADDR lsb: 0  msb: 0 OUTPUT
-			NetFlow* MIMRXWDATA_A0_B, // net ID: MIMRXWDATA lsb: 0  msb: 0 OUTPUT
+			NetFlow* MIMRXWADDR_A0_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A1_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A2_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A3_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A4_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A5_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A6_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A7_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A8_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A9_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A10_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWADDR_A11_B, // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMRXWDATA_A0_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A1_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A2_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A3_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A4_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A5_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A6_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A7_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A8_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A9_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A10_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A11_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A12_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A13_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A14_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A15_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A16_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A17_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A18_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A19_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A20_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A21_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A22_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A23_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A24_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A25_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A26_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A27_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A28_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A29_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A30_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A31_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A32_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A33_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			NetFlow* MIMRXWDATA_A34_B, // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
 			NetFlow* MIMRXWEN_A0_B, // net ID: MIMRXWEN lsb: 0  msb: 0 OUTPUT
-			NetFlow* MIMTXRADDR_A0_B, // net ID: MIMTXRADDR lsb: 0  msb: 0 OUTPUT
+			NetFlow* MIMTXRADDR_A0_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A1_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A2_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A3_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A4_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A5_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A6_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A7_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A8_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A9_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A10_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXRADDR_A11_B, // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
 			NetFlow* MIMTXREN_A0_B, // net ID: MIMTXREN lsb: 0  msb: 0 OUTPUT
-			NetFlow* MIMTXWADDR_A0_B, // net ID: MIMTXWADDR lsb: 0  msb: 0 OUTPUT
-			NetFlow* MIMTXWDATA_A0_B, // net ID: MIMTXWDATA lsb: 0  msb: 0 OUTPUT
+			NetFlow* MIMTXWADDR_A0_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A1_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A2_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A3_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A4_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A5_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A6_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A7_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A8_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A9_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A10_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWADDR_A11_B, // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			NetFlow* MIMTXWDATA_A0_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A1_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A2_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A3_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A4_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A5_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A6_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A7_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A8_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A9_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A10_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A11_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A12_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A13_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A14_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A15_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A16_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A17_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A18_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A19_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A20_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A21_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A22_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A23_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A24_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A25_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A26_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A27_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A28_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A29_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A30_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A31_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A32_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A33_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A34_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			NetFlow* MIMTXWDATA_A35_B, // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
 			NetFlow* MIMTXWEN_A0_B, // net ID: MIMTXWEN lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPEGTPOWERDOWNA_A0_B, // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPEGTPOWERDOWNB_A0_B, // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 0 OUTPUT
+			NetFlow* PIPEGTPOWERDOWNA_A0_B, // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPEGTPOWERDOWNA_A1_B, // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPEGTPOWERDOWNB_A0_B, // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPEGTPOWERDOWNB_A1_B, // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 1 OUTPUT
 			NetFlow* PIPEGTTXELECIDLEA_A0_B, // net ID: PIPEGTTXELECIDLEA lsb: 0  msb: 0 OUTPUT
 			NetFlow* PIPEGTTXELECIDLEB_A0_B, // net ID: PIPEGTTXELECIDLEB lsb: 0  msb: 0 OUTPUT
 			NetFlow* PIPERXPOLARITYA_A0_B, // net ID: PIPERXPOLARITYA lsb: 0  msb: 0 OUTPUT
 			NetFlow* PIPERXPOLARITYB_A0_B, // net ID: PIPERXPOLARITYB lsb: 0  msb: 0 OUTPUT
 			NetFlow* PIPERXRESETA_A0_B, // net ID: PIPERXRESETA lsb: 0  msb: 0 OUTPUT
 			NetFlow* PIPERXRESETB_A0_B, // net ID: PIPERXRESETB lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXCHARDISPMODEA_A0_B, // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXCHARDISPMODEB_A0_B, // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXCHARDISPVALA_A0_B, // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXCHARDISPVALB_A0_B, // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXCHARISKA_A0_B, // net ID: PIPETXCHARISKA lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXCHARISKB_A0_B, // net ID: PIPETXCHARISKB lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXDATAA_A0_B, // net ID: PIPETXDATAA lsb: 0  msb: 0 OUTPUT
-			NetFlow* PIPETXDATAB_A0_B, // net ID: PIPETXDATAB lsb: 0  msb: 0 OUTPUT
+			NetFlow* PIPETXCHARDISPMODEA_A0_B, // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARDISPMODEA_A1_B, // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARDISPMODEB_A0_B, // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARDISPMODEB_A1_B, // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARDISPVALA_A0_B, // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARDISPVALA_A1_B, // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARDISPVALB_A0_B, // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARDISPVALB_A1_B, // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARISKA_A0_B, // net ID: PIPETXCHARISKA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARISKA_A1_B, // net ID: PIPETXCHARISKA lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARISKB_A0_B, // net ID: PIPETXCHARISKB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXCHARISKB_A1_B, // net ID: PIPETXCHARISKB lsb: 0  msb: 1 OUTPUT
+			NetFlow* PIPETXDATAA_A0_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A1_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A2_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A3_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A4_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A5_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A6_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A7_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A8_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A9_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A10_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A11_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A12_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A13_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A14_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAA_A15_B, // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A0_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A1_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A2_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A3_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A4_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A5_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A6_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A7_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A8_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A9_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A10_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A11_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A12_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A13_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A14_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			NetFlow* PIPETXDATAB_A15_B, // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
 			NetFlow* PIPETXRCVRDETA_A0_B, // net ID: PIPETXRCVRDETA lsb: 0  msb: 0 OUTPUT
 			NetFlow* PIPETXRCVRDETB_A0_B, // net ID: PIPETXRCVRDETB lsb: 0  msb: 0 OUTPUT
 			NetFlow* RECEIVEDHOTRESET_A0_B, // net ID: RECEIVEDHOTRESET lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNFCCPLD_A0_B, // net ID: TRNFCCPLD lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNFCCPLH_A0_B, // net ID: TRNFCCPLH lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNFCNPD_A0_B, // net ID: TRNFCNPD lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNFCNPH_A0_B, // net ID: TRNFCNPH lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNFCPD_A0_B, // net ID: TRNFCPD lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNFCPH_A0_B, // net ID: TRNFCPH lsb: 0  msb: 0 OUTPUT
+			NetFlow* TRNFCCPLD_A0_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A1_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A2_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A3_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A4_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A5_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A6_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A7_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A8_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A9_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A10_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLD_A11_B, // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCCPLH_A0_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCCPLH_A1_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCCPLH_A2_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCCPLH_A3_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCCPLH_A4_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCCPLH_A5_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCCPLH_A6_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCCPLH_A7_B, // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPD_A0_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A1_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A2_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A3_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A4_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A5_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A6_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A7_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A8_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A9_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A10_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPD_A11_B, // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCNPH_A0_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPH_A1_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPH_A2_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPH_A3_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPH_A4_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPH_A5_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPH_A6_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCNPH_A7_B, // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPD_A0_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A1_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A2_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A3_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A4_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A5_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A6_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A7_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A8_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A9_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A10_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPD_A11_B, // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			NetFlow* TRNFCPH_A0_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPH_A1_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPH_A2_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPH_A3_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPH_A4_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPH_A5_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPH_A6_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			NetFlow* TRNFCPH_A7_B, // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
 			NetFlow* TRNLNKUPN_A0_B, // net ID: TRNLNKUPN lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNRBARHITN_A0_B, // net ID: TRNRBARHITN lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNRD_A0_B, // net ID: TRNRD lsb: 0  msb: 0 OUTPUT
+			NetFlow* TRNRBARHITN_A0_B, // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			NetFlow* TRNRBARHITN_A1_B, // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			NetFlow* TRNRBARHITN_A2_B, // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			NetFlow* TRNRBARHITN_A3_B, // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			NetFlow* TRNRBARHITN_A4_B, // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			NetFlow* TRNRBARHITN_A5_B, // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			NetFlow* TRNRBARHITN_A6_B, // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			NetFlow* TRNRD_A0_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A1_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A2_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A3_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A4_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A5_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A6_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A7_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A8_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A9_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A10_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A11_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A12_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A13_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A14_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A15_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A16_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A17_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A18_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A19_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A20_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A21_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A22_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A23_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A24_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A25_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A26_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A27_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A28_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A29_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A30_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			NetFlow* TRNRD_A31_B, // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
 			NetFlow* TRNREOFN_A0_B, // net ID: TRNREOFN lsb: 0  msb: 0 OUTPUT
 			NetFlow* TRNRERRFWDN_A0_B, // net ID: TRNRERRFWDN lsb: 0  msb: 0 OUTPUT
 			NetFlow* TRNRSOFN_A0_B, // net ID: TRNRSOFN lsb: 0  msb: 0 OUTPUT
 			NetFlow* TRNRSRCDSCN_A0_B, // net ID: TRNRSRCDSCN lsb: 0  msb: 0 OUTPUT
 			NetFlow* TRNRSRCRDYN_A0_B, // net ID: TRNRSRCRDYN lsb: 0  msb: 0 OUTPUT
-			NetFlow* TRNTBUFAV_A0_B, // net ID: TRNTBUFAV lsb: 0  msb: 0 OUTPUT
+			NetFlow* TRNTBUFAV_A0_B, // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			NetFlow* TRNTBUFAV_A1_B, // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			NetFlow* TRNTBUFAV_A2_B, // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			NetFlow* TRNTBUFAV_A3_B, // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			NetFlow* TRNTBUFAV_A4_B, // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			NetFlow* TRNTBUFAV_A5_B, // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
 			NetFlow* TRNTCFGREQN_A0_B, // net ID: TRNTCFGREQN lsb: 0  msb: 0 OUTPUT
 			NetFlow* TRNTDSTRDYN_A0_B, // net ID: TRNTDSTRDYN lsb: 0  msb: 0 OUTPUT
 			NetFlow* TRNTERRDROPN_A0_B, // net ID: TRNTERRDROPN lsb: 0  msb: 0 OUTPUT
@@ -1251,7 +1874,14 @@ namespace CPrimitives {
 			this->VC0_TOTAL_CREDITS_PH = VC0_TOTAL_CREDITS_PH; // Default: 32
 			this->VC0_TX_LASTPACKET = VC0_TX_LASTPACKET; // Default: 31
 			//Verilog Ports in definition order:
-			this->CFGBUSNUMBER_A0_B = CFGBUSNUMBER_A0_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 0 OUTPUT
+			this->CFGBUSNUMBER_A0_B = CFGBUSNUMBER_A0_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			this->CFGBUSNUMBER_A1_B = CFGBUSNUMBER_A1_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			this->CFGBUSNUMBER_A2_B = CFGBUSNUMBER_A2_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			this->CFGBUSNUMBER_A3_B = CFGBUSNUMBER_A3_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			this->CFGBUSNUMBER_A4_B = CFGBUSNUMBER_A4_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			this->CFGBUSNUMBER_A5_B = CFGBUSNUMBER_A5_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			this->CFGBUSNUMBER_A6_B = CFGBUSNUMBER_A6_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
+			this->CFGBUSNUMBER_A7_B = CFGBUSNUMBER_A7_B; // net ID: CFGBUSNUMBER lsb: 0  msb: 7 OUTPUT
 			this->CFGCOMMANDBUSMASTERENABLE_A0_B = CFGCOMMANDBUSMASTERENABLE_A0_B; // net ID: CFGCOMMANDBUSMASTERENABLE lsb: 0  msb: 0 OUTPUT
 			this->CFGCOMMANDINTERRUPTDISABLE_A0_B = CFGCOMMANDINTERRUPTDISABLE_A0_B; // net ID: CFGCOMMANDINTERRUPTDISABLE lsb: 0  msb: 0 OUTPUT
 			this->CFGCOMMANDIOENABLE_A0_B = CFGCOMMANDIOENABLE_A0_B; // net ID: CFGCOMMANDIOENABLE lsb: 0  msb: 0 OUTPUT
@@ -1262,30 +1892,87 @@ namespace CPrimitives {
 			this->CFGDEVCONTROLENABLERO_A0_B = CFGDEVCONTROLENABLERO_A0_B; // net ID: CFGDEVCONTROLENABLERO lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVCONTROLEXTTAGEN_A0_B = CFGDEVCONTROLEXTTAGEN_A0_B; // net ID: CFGDEVCONTROLEXTTAGEN lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVCONTROLFATALERRREPORTINGEN_A0_B = CFGDEVCONTROLFATALERRREPORTINGEN_A0_B; // net ID: CFGDEVCONTROLFATALERRREPORTINGEN lsb: 0  msb: 0 OUTPUT
-			this->CFGDEVCONTROLMAXPAYLOAD_A0_B = CFGDEVCONTROLMAXPAYLOAD_A0_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 0 OUTPUT
-			this->CFGDEVCONTROLMAXREADREQ_A0_B = CFGDEVCONTROLMAXREADREQ_A0_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 0 OUTPUT
+			this->CFGDEVCONTROLMAXPAYLOAD_A0_B = CFGDEVCONTROLMAXPAYLOAD_A0_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+			this->CFGDEVCONTROLMAXPAYLOAD_A1_B = CFGDEVCONTROLMAXPAYLOAD_A1_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+			this->CFGDEVCONTROLMAXPAYLOAD_A2_B = CFGDEVCONTROLMAXPAYLOAD_A2_B; // net ID: CFGDEVCONTROLMAXPAYLOAD lsb: 0  msb: 2 OUTPUT
+			this->CFGDEVCONTROLMAXREADREQ_A0_B = CFGDEVCONTROLMAXREADREQ_A0_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
+			this->CFGDEVCONTROLMAXREADREQ_A1_B = CFGDEVCONTROLMAXREADREQ_A1_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
+			this->CFGDEVCONTROLMAXREADREQ_A2_B = CFGDEVCONTROLMAXREADREQ_A2_B; // net ID: CFGDEVCONTROLMAXREADREQ lsb: 0  msb: 2 OUTPUT
 			this->CFGDEVCONTROLNONFATALREPORTINGEN_A0_B = CFGDEVCONTROLNONFATALREPORTINGEN_A0_B; // net ID: CFGDEVCONTROLNONFATALREPORTINGEN lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVCONTROLNOSNOOPEN_A0_B = CFGDEVCONTROLNOSNOOPEN_A0_B; // net ID: CFGDEVCONTROLNOSNOOPEN lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVCONTROLPHANTOMEN_A0_B = CFGDEVCONTROLPHANTOMEN_A0_B; // net ID: CFGDEVCONTROLPHANTOMEN lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVCONTROLURERRREPORTINGEN_A0_B = CFGDEVCONTROLURERRREPORTINGEN_A0_B; // net ID: CFGDEVCONTROLURERRREPORTINGEN lsb: 0  msb: 0 OUTPUT
-			this->CFGDEVICENUMBER_A0_B = CFGDEVICENUMBER_A0_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 0 OUTPUT
+			this->CFGDEVICENUMBER_A0_B = CFGDEVICENUMBER_A0_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			this->CFGDEVICENUMBER_A1_B = CFGDEVICENUMBER_A1_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			this->CFGDEVICENUMBER_A2_B = CFGDEVICENUMBER_A2_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			this->CFGDEVICENUMBER_A3_B = CFGDEVICENUMBER_A3_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
+			this->CFGDEVICENUMBER_A4_B = CFGDEVICENUMBER_A4_B; // net ID: CFGDEVICENUMBER lsb: 0  msb: 4 OUTPUT
 			this->CFGDEVSTATUSCORRERRDETECTED_A0_B = CFGDEVSTATUSCORRERRDETECTED_A0_B; // net ID: CFGDEVSTATUSCORRERRDETECTED lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVSTATUSFATALERRDETECTED_A0_B = CFGDEVSTATUSFATALERRDETECTED_A0_B; // net ID: CFGDEVSTATUSFATALERRDETECTED lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVSTATUSNONFATALERRDETECTED_A0_B = CFGDEVSTATUSNONFATALERRDETECTED_A0_B; // net ID: CFGDEVSTATUSNONFATALERRDETECTED lsb: 0  msb: 0 OUTPUT
 			this->CFGDEVSTATUSURDETECTED_A0_B = CFGDEVSTATUSURDETECTED_A0_B; // net ID: CFGDEVSTATUSURDETECTED lsb: 0  msb: 0 OUTPUT
-			this->CFGDO_A0_B = CFGDO_A0_B; // net ID: CFGDO lsb: 0  msb: 0 OUTPUT
+			this->CFGDO_A0_B = CFGDO_A0_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A1_B = CFGDO_A1_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A2_B = CFGDO_A2_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A3_B = CFGDO_A3_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A4_B = CFGDO_A4_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A5_B = CFGDO_A5_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A6_B = CFGDO_A6_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A7_B = CFGDO_A7_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A8_B = CFGDO_A8_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A9_B = CFGDO_A9_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A10_B = CFGDO_A10_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A11_B = CFGDO_A11_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A12_B = CFGDO_A12_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A13_B = CFGDO_A13_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A14_B = CFGDO_A14_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A15_B = CFGDO_A15_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A16_B = CFGDO_A16_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A17_B = CFGDO_A17_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A18_B = CFGDO_A18_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A19_B = CFGDO_A19_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A20_B = CFGDO_A20_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A21_B = CFGDO_A21_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A22_B = CFGDO_A22_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A23_B = CFGDO_A23_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A24_B = CFGDO_A24_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A25_B = CFGDO_A25_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A26_B = CFGDO_A26_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A27_B = CFGDO_A27_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A28_B = CFGDO_A28_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A29_B = CFGDO_A29_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A30_B = CFGDO_A30_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
+			this->CFGDO_A31_B = CFGDO_A31_B; // net ID: CFGDO lsb: 0  msb: 31 OUTPUT
 			this->CFGERRCPLRDYN_A0_B = CFGERRCPLRDYN_A0_B; // net ID: CFGERRCPLRDYN lsb: 0  msb: 0 OUTPUT
-			this->CFGFUNCTIONNUMBER_A0_B = CFGFUNCTIONNUMBER_A0_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 0 OUTPUT
-			this->CFGINTERRUPTDO_A0_B = CFGINTERRUPTDO_A0_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 0 OUTPUT
-			this->CFGINTERRUPTMMENABLE_A0_B = CFGINTERRUPTMMENABLE_A0_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 0 OUTPUT
+			this->CFGFUNCTIONNUMBER_A0_B = CFGFUNCTIONNUMBER_A0_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+			this->CFGFUNCTIONNUMBER_A1_B = CFGFUNCTIONNUMBER_A1_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+			this->CFGFUNCTIONNUMBER_A2_B = CFGFUNCTIONNUMBER_A2_B; // net ID: CFGFUNCTIONNUMBER lsb: 0  msb: 2 OUTPUT
+			this->CFGINTERRUPTDO_A0_B = CFGINTERRUPTDO_A0_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTDO_A1_B = CFGINTERRUPTDO_A1_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTDO_A2_B = CFGINTERRUPTDO_A2_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTDO_A3_B = CFGINTERRUPTDO_A3_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTDO_A4_B = CFGINTERRUPTDO_A4_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTDO_A5_B = CFGINTERRUPTDO_A5_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTDO_A6_B = CFGINTERRUPTDO_A6_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTDO_A7_B = CFGINTERRUPTDO_A7_B; // net ID: CFGINTERRUPTDO lsb: 0  msb: 7 OUTPUT
+			this->CFGINTERRUPTMMENABLE_A0_B = CFGINTERRUPTMMENABLE_A0_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
+			this->CFGINTERRUPTMMENABLE_A1_B = CFGINTERRUPTMMENABLE_A1_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
+			this->CFGINTERRUPTMMENABLE_A2_B = CFGINTERRUPTMMENABLE_A2_B; // net ID: CFGINTERRUPTMMENABLE lsb: 0  msb: 2 OUTPUT
 			this->CFGINTERRUPTMSIENABLE_A0_B = CFGINTERRUPTMSIENABLE_A0_B; // net ID: CFGINTERRUPTMSIENABLE lsb: 0  msb: 0 OUTPUT
 			this->CFGINTERRUPTRDYN_A0_B = CFGINTERRUPTRDYN_A0_B; // net ID: CFGINTERRUPTRDYN lsb: 0  msb: 0 OUTPUT
 			this->CFGLINKCONTOLRCB_A0_B = CFGLINKCONTOLRCB_A0_B; // net ID: CFGLINKCONTOLRCB lsb: 0  msb: 0 OUTPUT
-			this->CFGLINKCONTROLASPMCONTROL_A0_B = CFGLINKCONTROLASPMCONTROL_A0_B; // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 0 OUTPUT
+			this->CFGLINKCONTROLASPMCONTROL_A0_B = CFGLINKCONTROLASPMCONTROL_A0_B; // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 1 OUTPUT
+			this->CFGLINKCONTROLASPMCONTROL_A1_B = CFGLINKCONTROLASPMCONTROL_A1_B; // net ID: CFGLINKCONTROLASPMCONTROL lsb: 0  msb: 1 OUTPUT
 			this->CFGLINKCONTROLCOMMONCLOCK_A0_B = CFGLINKCONTROLCOMMONCLOCK_A0_B; // net ID: CFGLINKCONTROLCOMMONCLOCK lsb: 0  msb: 0 OUTPUT
 			this->CFGLINKCONTROLEXTENDEDSYNC_A0_B = CFGLINKCONTROLEXTENDEDSYNC_A0_B; // net ID: CFGLINKCONTROLEXTENDEDSYNC lsb: 0  msb: 0 OUTPUT
-			this->CFGLTSSMSTATE_A0_B = CFGLTSSMSTATE_A0_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 0 OUTPUT
-			this->CFGPCIELINKSTATEN_A0_B = CFGPCIELINKSTATEN_A0_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 0 OUTPUT
+			this->CFGLTSSMSTATE_A0_B = CFGLTSSMSTATE_A0_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			this->CFGLTSSMSTATE_A1_B = CFGLTSSMSTATE_A1_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			this->CFGLTSSMSTATE_A2_B = CFGLTSSMSTATE_A2_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			this->CFGLTSSMSTATE_A3_B = CFGLTSSMSTATE_A3_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			this->CFGLTSSMSTATE_A4_B = CFGLTSSMSTATE_A4_B; // net ID: CFGLTSSMSTATE lsb: 0  msb: 4 OUTPUT
+			this->CFGPCIELINKSTATEN_A0_B = CFGPCIELINKSTATEN_A0_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
+			this->CFGPCIELINKSTATEN_A1_B = CFGPCIELINKSTATEN_A1_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
+			this->CFGPCIELINKSTATEN_A2_B = CFGPCIELINKSTATEN_A2_B; // net ID: CFGPCIELINKSTATEN lsb: 0  msb: 2 OUTPUT
 			this->CFGRDWRDONEN_A0_B = CFGRDWRDONEN_A0_B; // net ID: CFGRDWRDONEN lsb: 0  msb: 0 OUTPUT
 			this->CFGTOTURNOFFN_A0_B = CFGTOTURNOFFN_A0_B; // net ID: CFGTOTURNOFFN lsb: 0  msb: 0 OUTPUT
 			this->DBGBADDLLPSTATUS_A0_B = DBGBADDLLPSTATUS_A0_B; // net ID: DBGBADDLLPSTATUS lsb: 0  msb: 0 OUTPUT
@@ -1311,50 +1998,297 @@ namespace CPrimitives {
 			this->DBGURPOISCFGWR_A0_B = DBGURPOISCFGWR_A0_B; // net ID: DBGURPOISCFGWR lsb: 0  msb: 0 OUTPUT
 			this->DBGURSTATUS_A0_B = DBGURSTATUS_A0_B; // net ID: DBGURSTATUS lsb: 0  msb: 0 OUTPUT
 			this->DBGURUNSUPMSG_A0_B = DBGURUNSUPMSG_A0_B; // net ID: DBGURUNSUPMSG lsb: 0  msb: 0 OUTPUT
-			this->MIMRXRADDR_A0_B = MIMRXRADDR_A0_B; // net ID: MIMRXRADDR lsb: 0  msb: 0 OUTPUT
+			this->MIMRXRADDR_A0_B = MIMRXRADDR_A0_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A1_B = MIMRXRADDR_A1_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A2_B = MIMRXRADDR_A2_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A3_B = MIMRXRADDR_A3_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A4_B = MIMRXRADDR_A4_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A5_B = MIMRXRADDR_A5_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A6_B = MIMRXRADDR_A6_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A7_B = MIMRXRADDR_A7_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A8_B = MIMRXRADDR_A8_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A9_B = MIMRXRADDR_A9_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A10_B = MIMRXRADDR_A10_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXRADDR_A11_B = MIMRXRADDR_A11_B; // net ID: MIMRXRADDR lsb: 0  msb: 11 OUTPUT
 			this->MIMRXREN_A0_B = MIMRXREN_A0_B; // net ID: MIMRXREN lsb: 0  msb: 0 OUTPUT
-			this->MIMRXWADDR_A0_B = MIMRXWADDR_A0_B; // net ID: MIMRXWADDR lsb: 0  msb: 0 OUTPUT
-			this->MIMRXWDATA_A0_B = MIMRXWDATA_A0_B; // net ID: MIMRXWDATA lsb: 0  msb: 0 OUTPUT
+			this->MIMRXWADDR_A0_B = MIMRXWADDR_A0_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A1_B = MIMRXWADDR_A1_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A2_B = MIMRXWADDR_A2_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A3_B = MIMRXWADDR_A3_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A4_B = MIMRXWADDR_A4_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A5_B = MIMRXWADDR_A5_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A6_B = MIMRXWADDR_A6_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A7_B = MIMRXWADDR_A7_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A8_B = MIMRXWADDR_A8_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A9_B = MIMRXWADDR_A9_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A10_B = MIMRXWADDR_A10_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWADDR_A11_B = MIMRXWADDR_A11_B; // net ID: MIMRXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMRXWDATA_A0_B = MIMRXWDATA_A0_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A1_B = MIMRXWDATA_A1_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A2_B = MIMRXWDATA_A2_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A3_B = MIMRXWDATA_A3_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A4_B = MIMRXWDATA_A4_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A5_B = MIMRXWDATA_A5_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A6_B = MIMRXWDATA_A6_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A7_B = MIMRXWDATA_A7_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A8_B = MIMRXWDATA_A8_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A9_B = MIMRXWDATA_A9_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A10_B = MIMRXWDATA_A10_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A11_B = MIMRXWDATA_A11_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A12_B = MIMRXWDATA_A12_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A13_B = MIMRXWDATA_A13_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A14_B = MIMRXWDATA_A14_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A15_B = MIMRXWDATA_A15_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A16_B = MIMRXWDATA_A16_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A17_B = MIMRXWDATA_A17_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A18_B = MIMRXWDATA_A18_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A19_B = MIMRXWDATA_A19_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A20_B = MIMRXWDATA_A20_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A21_B = MIMRXWDATA_A21_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A22_B = MIMRXWDATA_A22_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A23_B = MIMRXWDATA_A23_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A24_B = MIMRXWDATA_A24_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A25_B = MIMRXWDATA_A25_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A26_B = MIMRXWDATA_A26_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A27_B = MIMRXWDATA_A27_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A28_B = MIMRXWDATA_A28_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A29_B = MIMRXWDATA_A29_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A30_B = MIMRXWDATA_A30_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A31_B = MIMRXWDATA_A31_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A32_B = MIMRXWDATA_A32_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A33_B = MIMRXWDATA_A33_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
+			this->MIMRXWDATA_A34_B = MIMRXWDATA_A34_B; // net ID: MIMRXWDATA lsb: 0  msb: 34 OUTPUT
 			this->MIMRXWEN_A0_B = MIMRXWEN_A0_B; // net ID: MIMRXWEN lsb: 0  msb: 0 OUTPUT
-			this->MIMTXRADDR_A0_B = MIMTXRADDR_A0_B; // net ID: MIMTXRADDR lsb: 0  msb: 0 OUTPUT
+			this->MIMTXRADDR_A0_B = MIMTXRADDR_A0_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A1_B = MIMTXRADDR_A1_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A2_B = MIMTXRADDR_A2_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A3_B = MIMTXRADDR_A3_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A4_B = MIMTXRADDR_A4_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A5_B = MIMTXRADDR_A5_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A6_B = MIMTXRADDR_A6_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A7_B = MIMTXRADDR_A7_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A8_B = MIMTXRADDR_A8_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A9_B = MIMTXRADDR_A9_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A10_B = MIMTXRADDR_A10_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXRADDR_A11_B = MIMTXRADDR_A11_B; // net ID: MIMTXRADDR lsb: 0  msb: 11 OUTPUT
 			this->MIMTXREN_A0_B = MIMTXREN_A0_B; // net ID: MIMTXREN lsb: 0  msb: 0 OUTPUT
-			this->MIMTXWADDR_A0_B = MIMTXWADDR_A0_B; // net ID: MIMTXWADDR lsb: 0  msb: 0 OUTPUT
-			this->MIMTXWDATA_A0_B = MIMTXWDATA_A0_B; // net ID: MIMTXWDATA lsb: 0  msb: 0 OUTPUT
+			this->MIMTXWADDR_A0_B = MIMTXWADDR_A0_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A1_B = MIMTXWADDR_A1_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A2_B = MIMTXWADDR_A2_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A3_B = MIMTXWADDR_A3_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A4_B = MIMTXWADDR_A4_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A5_B = MIMTXWADDR_A5_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A6_B = MIMTXWADDR_A6_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A7_B = MIMTXWADDR_A7_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A8_B = MIMTXWADDR_A8_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A9_B = MIMTXWADDR_A9_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A10_B = MIMTXWADDR_A10_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWADDR_A11_B = MIMTXWADDR_A11_B; // net ID: MIMTXWADDR lsb: 0  msb: 11 OUTPUT
+			this->MIMTXWDATA_A0_B = MIMTXWDATA_A0_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A1_B = MIMTXWDATA_A1_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A2_B = MIMTXWDATA_A2_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A3_B = MIMTXWDATA_A3_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A4_B = MIMTXWDATA_A4_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A5_B = MIMTXWDATA_A5_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A6_B = MIMTXWDATA_A6_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A7_B = MIMTXWDATA_A7_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A8_B = MIMTXWDATA_A8_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A9_B = MIMTXWDATA_A9_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A10_B = MIMTXWDATA_A10_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A11_B = MIMTXWDATA_A11_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A12_B = MIMTXWDATA_A12_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A13_B = MIMTXWDATA_A13_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A14_B = MIMTXWDATA_A14_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A15_B = MIMTXWDATA_A15_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A16_B = MIMTXWDATA_A16_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A17_B = MIMTXWDATA_A17_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A18_B = MIMTXWDATA_A18_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A19_B = MIMTXWDATA_A19_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A20_B = MIMTXWDATA_A20_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A21_B = MIMTXWDATA_A21_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A22_B = MIMTXWDATA_A22_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A23_B = MIMTXWDATA_A23_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A24_B = MIMTXWDATA_A24_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A25_B = MIMTXWDATA_A25_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A26_B = MIMTXWDATA_A26_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A27_B = MIMTXWDATA_A27_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A28_B = MIMTXWDATA_A28_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A29_B = MIMTXWDATA_A29_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A30_B = MIMTXWDATA_A30_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A31_B = MIMTXWDATA_A31_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A32_B = MIMTXWDATA_A32_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A33_B = MIMTXWDATA_A33_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A34_B = MIMTXWDATA_A34_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
+			this->MIMTXWDATA_A35_B = MIMTXWDATA_A35_B; // net ID: MIMTXWDATA lsb: 0  msb: 35 OUTPUT
 			this->MIMTXWEN_A0_B = MIMTXWEN_A0_B; // net ID: MIMTXWEN lsb: 0  msb: 0 OUTPUT
-			this->PIPEGTPOWERDOWNA_A0_B = PIPEGTPOWERDOWNA_A0_B; // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 0 OUTPUT
-			this->PIPEGTPOWERDOWNB_A0_B = PIPEGTPOWERDOWNB_A0_B; // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 0 OUTPUT
+			this->PIPEGTPOWERDOWNA_A0_B = PIPEGTPOWERDOWNA_A0_B; // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 1 OUTPUT
+			this->PIPEGTPOWERDOWNA_A1_B = PIPEGTPOWERDOWNA_A1_B; // net ID: PIPEGTPOWERDOWNA lsb: 0  msb: 1 OUTPUT
+			this->PIPEGTPOWERDOWNB_A0_B = PIPEGTPOWERDOWNB_A0_B; // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 1 OUTPUT
+			this->PIPEGTPOWERDOWNB_A1_B = PIPEGTPOWERDOWNB_A1_B; // net ID: PIPEGTPOWERDOWNB lsb: 0  msb: 1 OUTPUT
 			this->PIPEGTTXELECIDLEA_A0_B = PIPEGTTXELECIDLEA_A0_B; // net ID: PIPEGTTXELECIDLEA lsb: 0  msb: 0 OUTPUT
 			this->PIPEGTTXELECIDLEB_A0_B = PIPEGTTXELECIDLEB_A0_B; // net ID: PIPEGTTXELECIDLEB lsb: 0  msb: 0 OUTPUT
 			this->PIPERXPOLARITYA_A0_B = PIPERXPOLARITYA_A0_B; // net ID: PIPERXPOLARITYA lsb: 0  msb: 0 OUTPUT
 			this->PIPERXPOLARITYB_A0_B = PIPERXPOLARITYB_A0_B; // net ID: PIPERXPOLARITYB lsb: 0  msb: 0 OUTPUT
 			this->PIPERXRESETA_A0_B = PIPERXRESETA_A0_B; // net ID: PIPERXRESETA lsb: 0  msb: 0 OUTPUT
 			this->PIPERXRESETB_A0_B = PIPERXRESETB_A0_B; // net ID: PIPERXRESETB lsb: 0  msb: 0 OUTPUT
-			this->PIPETXCHARDISPMODEA_A0_B = PIPETXCHARDISPMODEA_A0_B; // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 0 OUTPUT
-			this->PIPETXCHARDISPMODEB_A0_B = PIPETXCHARDISPMODEB_A0_B; // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 0 OUTPUT
-			this->PIPETXCHARDISPVALA_A0_B = PIPETXCHARDISPVALA_A0_B; // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 0 OUTPUT
-			this->PIPETXCHARDISPVALB_A0_B = PIPETXCHARDISPVALB_A0_B; // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 0 OUTPUT
-			this->PIPETXCHARISKA_A0_B = PIPETXCHARISKA_A0_B; // net ID: PIPETXCHARISKA lsb: 0  msb: 0 OUTPUT
-			this->PIPETXCHARISKB_A0_B = PIPETXCHARISKB_A0_B; // net ID: PIPETXCHARISKB lsb: 0  msb: 0 OUTPUT
-			this->PIPETXDATAA_A0_B = PIPETXDATAA_A0_B; // net ID: PIPETXDATAA lsb: 0  msb: 0 OUTPUT
-			this->PIPETXDATAB_A0_B = PIPETXDATAB_A0_B; // net ID: PIPETXDATAB lsb: 0  msb: 0 OUTPUT
+			this->PIPETXCHARDISPMODEA_A0_B = PIPETXCHARDISPMODEA_A0_B; // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARDISPMODEA_A1_B = PIPETXCHARDISPMODEA_A1_B; // net ID: PIPETXCHARDISPMODEA lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARDISPMODEB_A0_B = PIPETXCHARDISPMODEB_A0_B; // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARDISPMODEB_A1_B = PIPETXCHARDISPMODEB_A1_B; // net ID: PIPETXCHARDISPMODEB lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARDISPVALA_A0_B = PIPETXCHARDISPVALA_A0_B; // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARDISPVALA_A1_B = PIPETXCHARDISPVALA_A1_B; // net ID: PIPETXCHARDISPVALA lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARDISPVALB_A0_B = PIPETXCHARDISPVALB_A0_B; // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARDISPVALB_A1_B = PIPETXCHARDISPVALB_A1_B; // net ID: PIPETXCHARDISPVALB lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARISKA_A0_B = PIPETXCHARISKA_A0_B; // net ID: PIPETXCHARISKA lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARISKA_A1_B = PIPETXCHARISKA_A1_B; // net ID: PIPETXCHARISKA lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARISKB_A0_B = PIPETXCHARISKB_A0_B; // net ID: PIPETXCHARISKB lsb: 0  msb: 1 OUTPUT
+			this->PIPETXCHARISKB_A1_B = PIPETXCHARISKB_A1_B; // net ID: PIPETXCHARISKB lsb: 0  msb: 1 OUTPUT
+			this->PIPETXDATAA_A0_B = PIPETXDATAA_A0_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A1_B = PIPETXDATAA_A1_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A2_B = PIPETXDATAA_A2_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A3_B = PIPETXDATAA_A3_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A4_B = PIPETXDATAA_A4_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A5_B = PIPETXDATAA_A5_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A6_B = PIPETXDATAA_A6_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A7_B = PIPETXDATAA_A7_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A8_B = PIPETXDATAA_A8_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A9_B = PIPETXDATAA_A9_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A10_B = PIPETXDATAA_A10_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A11_B = PIPETXDATAA_A11_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A12_B = PIPETXDATAA_A12_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A13_B = PIPETXDATAA_A13_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A14_B = PIPETXDATAA_A14_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAA_A15_B = PIPETXDATAA_A15_B; // net ID: PIPETXDATAA lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A0_B = PIPETXDATAB_A0_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A1_B = PIPETXDATAB_A1_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A2_B = PIPETXDATAB_A2_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A3_B = PIPETXDATAB_A3_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A4_B = PIPETXDATAB_A4_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A5_B = PIPETXDATAB_A5_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A6_B = PIPETXDATAB_A6_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A7_B = PIPETXDATAB_A7_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A8_B = PIPETXDATAB_A8_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A9_B = PIPETXDATAB_A9_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A10_B = PIPETXDATAB_A10_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A11_B = PIPETXDATAB_A11_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A12_B = PIPETXDATAB_A12_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A13_B = PIPETXDATAB_A13_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A14_B = PIPETXDATAB_A14_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
+			this->PIPETXDATAB_A15_B = PIPETXDATAB_A15_B; // net ID: PIPETXDATAB lsb: 0  msb: 15 OUTPUT
 			this->PIPETXRCVRDETA_A0_B = PIPETXRCVRDETA_A0_B; // net ID: PIPETXRCVRDETA lsb: 0  msb: 0 OUTPUT
 			this->PIPETXRCVRDETB_A0_B = PIPETXRCVRDETB_A0_B; // net ID: PIPETXRCVRDETB lsb: 0  msb: 0 OUTPUT
 			this->RECEIVEDHOTRESET_A0_B = RECEIVEDHOTRESET_A0_B; // net ID: RECEIVEDHOTRESET lsb: 0  msb: 0 OUTPUT
-			this->TRNFCCPLD_A0_B = TRNFCCPLD_A0_B; // net ID: TRNFCCPLD lsb: 0  msb: 0 OUTPUT
-			this->TRNFCCPLH_A0_B = TRNFCCPLH_A0_B; // net ID: TRNFCCPLH lsb: 0  msb: 0 OUTPUT
-			this->TRNFCNPD_A0_B = TRNFCNPD_A0_B; // net ID: TRNFCNPD lsb: 0  msb: 0 OUTPUT
-			this->TRNFCNPH_A0_B = TRNFCNPH_A0_B; // net ID: TRNFCNPH lsb: 0  msb: 0 OUTPUT
-			this->TRNFCPD_A0_B = TRNFCPD_A0_B; // net ID: TRNFCPD lsb: 0  msb: 0 OUTPUT
-			this->TRNFCPH_A0_B = TRNFCPH_A0_B; // net ID: TRNFCPH lsb: 0  msb: 0 OUTPUT
+			this->TRNFCCPLD_A0_B = TRNFCCPLD_A0_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A1_B = TRNFCCPLD_A1_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A2_B = TRNFCCPLD_A2_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A3_B = TRNFCCPLD_A3_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A4_B = TRNFCCPLD_A4_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A5_B = TRNFCCPLD_A5_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A6_B = TRNFCCPLD_A6_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A7_B = TRNFCCPLD_A7_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A8_B = TRNFCCPLD_A8_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A9_B = TRNFCCPLD_A9_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A10_B = TRNFCCPLD_A10_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLD_A11_B = TRNFCCPLD_A11_B; // net ID: TRNFCCPLD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCCPLH_A0_B = TRNFCCPLH_A0_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCCPLH_A1_B = TRNFCCPLH_A1_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCCPLH_A2_B = TRNFCCPLH_A2_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCCPLH_A3_B = TRNFCCPLH_A3_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCCPLH_A4_B = TRNFCCPLH_A4_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCCPLH_A5_B = TRNFCCPLH_A5_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCCPLH_A6_B = TRNFCCPLH_A6_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCCPLH_A7_B = TRNFCCPLH_A7_B; // net ID: TRNFCCPLH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPD_A0_B = TRNFCNPD_A0_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A1_B = TRNFCNPD_A1_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A2_B = TRNFCNPD_A2_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A3_B = TRNFCNPD_A3_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A4_B = TRNFCNPD_A4_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A5_B = TRNFCNPD_A5_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A6_B = TRNFCNPD_A6_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A7_B = TRNFCNPD_A7_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A8_B = TRNFCNPD_A8_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A9_B = TRNFCNPD_A9_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A10_B = TRNFCNPD_A10_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPD_A11_B = TRNFCNPD_A11_B; // net ID: TRNFCNPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCNPH_A0_B = TRNFCNPH_A0_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPH_A1_B = TRNFCNPH_A1_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPH_A2_B = TRNFCNPH_A2_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPH_A3_B = TRNFCNPH_A3_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPH_A4_B = TRNFCNPH_A4_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPH_A5_B = TRNFCNPH_A5_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPH_A6_B = TRNFCNPH_A6_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCNPH_A7_B = TRNFCNPH_A7_B; // net ID: TRNFCNPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPD_A0_B = TRNFCPD_A0_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A1_B = TRNFCPD_A1_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A2_B = TRNFCPD_A2_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A3_B = TRNFCPD_A3_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A4_B = TRNFCPD_A4_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A5_B = TRNFCPD_A5_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A6_B = TRNFCPD_A6_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A7_B = TRNFCPD_A7_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A8_B = TRNFCPD_A8_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A9_B = TRNFCPD_A9_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A10_B = TRNFCPD_A10_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPD_A11_B = TRNFCPD_A11_B; // net ID: TRNFCPD lsb: 0  msb: 11 OUTPUT
+			this->TRNFCPH_A0_B = TRNFCPH_A0_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPH_A1_B = TRNFCPH_A1_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPH_A2_B = TRNFCPH_A2_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPH_A3_B = TRNFCPH_A3_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPH_A4_B = TRNFCPH_A4_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPH_A5_B = TRNFCPH_A5_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPH_A6_B = TRNFCPH_A6_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
+			this->TRNFCPH_A7_B = TRNFCPH_A7_B; // net ID: TRNFCPH lsb: 0  msb: 7 OUTPUT
 			this->TRNLNKUPN_A0_B = TRNLNKUPN_A0_B; // net ID: TRNLNKUPN lsb: 0  msb: 0 OUTPUT
-			this->TRNRBARHITN_A0_B = TRNRBARHITN_A0_B; // net ID: TRNRBARHITN lsb: 0  msb: 0 OUTPUT
-			this->TRNRD_A0_B = TRNRD_A0_B; // net ID: TRNRD lsb: 0  msb: 0 OUTPUT
+			this->TRNRBARHITN_A0_B = TRNRBARHITN_A0_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			this->TRNRBARHITN_A1_B = TRNRBARHITN_A1_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			this->TRNRBARHITN_A2_B = TRNRBARHITN_A2_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			this->TRNRBARHITN_A3_B = TRNRBARHITN_A3_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			this->TRNRBARHITN_A4_B = TRNRBARHITN_A4_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			this->TRNRBARHITN_A5_B = TRNRBARHITN_A5_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			this->TRNRBARHITN_A6_B = TRNRBARHITN_A6_B; // net ID: TRNRBARHITN lsb: 0  msb: 6 OUTPUT
+			this->TRNRD_A0_B = TRNRD_A0_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A1_B = TRNRD_A1_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A2_B = TRNRD_A2_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A3_B = TRNRD_A3_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A4_B = TRNRD_A4_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A5_B = TRNRD_A5_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A6_B = TRNRD_A6_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A7_B = TRNRD_A7_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A8_B = TRNRD_A8_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A9_B = TRNRD_A9_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A10_B = TRNRD_A10_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A11_B = TRNRD_A11_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A12_B = TRNRD_A12_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A13_B = TRNRD_A13_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A14_B = TRNRD_A14_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A15_B = TRNRD_A15_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A16_B = TRNRD_A16_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A17_B = TRNRD_A17_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A18_B = TRNRD_A18_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A19_B = TRNRD_A19_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A20_B = TRNRD_A20_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A21_B = TRNRD_A21_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A22_B = TRNRD_A22_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A23_B = TRNRD_A23_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A24_B = TRNRD_A24_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A25_B = TRNRD_A25_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A26_B = TRNRD_A26_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A27_B = TRNRD_A27_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A28_B = TRNRD_A28_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A29_B = TRNRD_A29_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A30_B = TRNRD_A30_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
+			this->TRNRD_A31_B = TRNRD_A31_B; // net ID: TRNRD lsb: 0  msb: 31 OUTPUT
 			this->TRNREOFN_A0_B = TRNREOFN_A0_B; // net ID: TRNREOFN lsb: 0  msb: 0 OUTPUT
 			this->TRNRERRFWDN_A0_B = TRNRERRFWDN_A0_B; // net ID: TRNRERRFWDN lsb: 0  msb: 0 OUTPUT
 			this->TRNRSOFN_A0_B = TRNRSOFN_A0_B; // net ID: TRNRSOFN lsb: 0  msb: 0 OUTPUT
 			this->TRNRSRCDSCN_A0_B = TRNRSRCDSCN_A0_B; // net ID: TRNRSRCDSCN lsb: 0  msb: 0 OUTPUT
 			this->TRNRSRCRDYN_A0_B = TRNRSRCRDYN_A0_B; // net ID: TRNRSRCRDYN lsb: 0  msb: 0 OUTPUT
-			this->TRNTBUFAV_A0_B = TRNTBUFAV_A0_B; // net ID: TRNTBUFAV lsb: 0  msb: 0 OUTPUT
+			this->TRNTBUFAV_A0_B = TRNTBUFAV_A0_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			this->TRNTBUFAV_A1_B = TRNTBUFAV_A1_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			this->TRNTBUFAV_A2_B = TRNTBUFAV_A2_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			this->TRNTBUFAV_A3_B = TRNTBUFAV_A3_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			this->TRNTBUFAV_A4_B = TRNTBUFAV_A4_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
+			this->TRNTBUFAV_A5_B = TRNTBUFAV_A5_B; // net ID: TRNTBUFAV lsb: 0  msb: 5 OUTPUT
 			this->TRNTCFGREQN_A0_B = TRNTCFGREQN_A0_B; // net ID: TRNTCFGREQN lsb: 0  msb: 0 OUTPUT
 			this->TRNTDSTRDYN_A0_B = TRNTDSTRDYN_A0_B; // net ID: TRNTDSTRDYN lsb: 0  msb: 0 OUTPUT
 			this->TRNTERRDROPN_A0_B = TRNTERRDROPN_A0_B; // net ID: TRNTERRDROPN lsb: 0  msb: 0 OUTPUT
@@ -1749,6 +2683,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_RAMB8BWER: public Primitive{
@@ -72,10 +73,42 @@ namespace CPrimitives {
 		parameter_string_t WRITE_MODE_A;
 		parameter_string_t WRITE_MODE_B;
 		//Verilog Ports in definition order:
-		NetFlow* DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 0 OUTPUT
-		NetFlow* DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 0 OUTPUT
+		NetFlow* DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A15_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A15_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOPADOP_A1_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOPBDOP_A1_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
 		NetFlow* ADDRAWRADDR_A0_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 		NetFlow* ADDRAWRADDR_A1_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 		NetFlow* ADDRAWRADDR_A2_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
@@ -212,10 +245,42 @@ namespace CPrimitives {
 			parameter_string_t WRITE_MODE_A, // Default: "WRITE_FIRST"
 			parameter_string_t WRITE_MODE_B, // Default: "WRITE_FIRST"
 			//Verilog Ports in definition order:
-			NetFlow* DOADO_A0_B, // net ID: DOADO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOBDO_A0_B, // net ID: DOBDO lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOPADOP_A0_B, // net ID: DOPADOP lsb: 0  msb: 0 OUTPUT
-			NetFlow* DOPBDOP_A0_B, // net ID: DOPBDOP lsb: 0  msb: 0 OUTPUT
+			NetFlow* DOADO_A0_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A1_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A2_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A3_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A4_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A5_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A6_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A7_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A8_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A9_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A10_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A11_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A12_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A13_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A14_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A15_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A0_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A1_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A2_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A3_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A4_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A5_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A6_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A7_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A8_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A9_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A10_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A11_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A12_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A13_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A14_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A15_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOPADOP_A0_B, // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOPADOP_A1_B, // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOPBDOP_A0_B, // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOPBDOP_A1_B, // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
 			NetFlow* ADDRAWRADDR_A0_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 			NetFlow* ADDRAWRADDR_A1_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 			NetFlow* ADDRAWRADDR_A2_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
@@ -352,10 +417,42 @@ namespace CPrimitives {
 			this->WRITE_MODE_A = WRITE_MODE_A; // Default: "WRITE_FIRST"
 			this->WRITE_MODE_B = WRITE_MODE_B; // Default: "WRITE_FIRST"
 			//Verilog Ports in definition order:
-			this->DOADO_A0_B = DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 0 OUTPUT
-			this->DOBDO_A0_B = DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 0 OUTPUT
-			this->DOPADOP_A0_B = DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 0 OUTPUT
-			this->DOPBDOP_A0_B = DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 0 OUTPUT
+			this->DOADO_A0_B = DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A1_B = DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A2_B = DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A3_B = DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A4_B = DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A5_B = DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A6_B = DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A7_B = DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A8_B = DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A9_B = DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A10_B = DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A11_B = DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A12_B = DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A13_B = DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A14_B = DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A15_B = DOADO_A15_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A0_B = DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A1_B = DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A2_B = DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A3_B = DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A4_B = DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A5_B = DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A6_B = DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A7_B = DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A8_B = DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A9_B = DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A10_B = DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A11_B = DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A12_B = DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A13_B = DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A14_B = DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A15_B = DOBDO_A15_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOPADOP_A0_B = DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+			this->DOPADOP_A1_B = DOPADOP_A1_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+			this->DOPBDOP_A0_B = DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
+			this->DOPBDOP_A1_B = DOPBDOP_A1_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
 			this->ADDRAWRADDR_A0_B = ADDRAWRADDR_A0_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 			this->ADDRAWRADDR_A1_B = ADDRAWRADDR_A1_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 			this->ADDRAWRADDR_A2_B = ADDRAWRADDR_A2_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
@@ -438,6 +535,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

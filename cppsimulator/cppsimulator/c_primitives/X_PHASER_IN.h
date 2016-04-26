@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_PHASER_IN: public Primitive{
@@ -27,7 +28,12 @@ namespace CPrimitives {
 		parameter_int_t SEL_CLK_OFFSET;
 		parameter_enum_t SYNC_IN_DIV_RST;
 		//Verilog Ports in definition order:
-		NetFlow* COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
+		NetFlow* COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+		NetFlow* COUNTERREADVAL_A1_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+		NetFlow* COUNTERREADVAL_A2_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+		NetFlow* COUNTERREADVAL_A3_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+		NetFlow* COUNTERREADVAL_A4_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+		NetFlow* COUNTERREADVAL_A5_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
 		NetFlow* FINEOVERFLOW_A0_B; // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
 		NetFlow* ICLK_A0_B; // net ID: ICLK lsb: 0  msb: 0 OUTPUT
 		NetFlow* ICLKDIV_A0_B; // net ID: ICLKDIV lsb: 0  msb: 0 OUTPUT
@@ -70,7 +76,12 @@ namespace CPrimitives {
 			parameter_int_t SEL_CLK_OFFSET, // Default: 5
 			parameter_enum_t SYNC_IN_DIV_RST, // Default: "FALSE"
 			//Verilog Ports in definition order:
-			NetFlow* COUNTERREADVAL_A0_B, // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
+			NetFlow* COUNTERREADVAL_A0_B, // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			NetFlow* COUNTERREADVAL_A1_B, // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			NetFlow* COUNTERREADVAL_A2_B, // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			NetFlow* COUNTERREADVAL_A3_B, // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			NetFlow* COUNTERREADVAL_A4_B, // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			NetFlow* COUNTERREADVAL_A5_B, // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
 			NetFlow* FINEOVERFLOW_A0_B, // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
 			NetFlow* ICLK_A0_B, // net ID: ICLK lsb: 0  msb: 0 OUTPUT
 			NetFlow* ICLKDIV_A0_B, // net ID: ICLKDIV lsb: 0  msb: 0 OUTPUT
@@ -113,7 +124,12 @@ namespace CPrimitives {
 			this->SEL_CLK_OFFSET = SEL_CLK_OFFSET; // Default: 5
 			this->SYNC_IN_DIV_RST = SYNC_IN_DIV_RST; // Default: "FALSE"
 			//Verilog Ports in definition order:
-			this->COUNTERREADVAL_A0_B = COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 0 OUTPUT
+			this->COUNTERREADVAL_A0_B = COUNTERREADVAL_A0_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			this->COUNTERREADVAL_A1_B = COUNTERREADVAL_A1_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			this->COUNTERREADVAL_A2_B = COUNTERREADVAL_A2_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			this->COUNTERREADVAL_A3_B = COUNTERREADVAL_A3_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			this->COUNTERREADVAL_A4_B = COUNTERREADVAL_A4_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
+			this->COUNTERREADVAL_A5_B = COUNTERREADVAL_A5_B; // net ID: COUNTERREADVAL lsb: 0  msb: 5 OUTPUT
 			this->FINEOVERFLOW_A0_B = FINEOVERFLOW_A0_B; // net ID: FINEOVERFLOW lsb: 0  msb: 0 OUTPUT
 			this->ICLK_A0_B = ICLK_A0_B; // net ID: ICLK lsb: 0  msb: 0 OUTPUT
 			this->ICLKDIV_A0_B = ICLKDIV_A0_B; // net ID: ICLKDIV lsb: 0  msb: 0 OUTPUT
@@ -147,6 +163,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

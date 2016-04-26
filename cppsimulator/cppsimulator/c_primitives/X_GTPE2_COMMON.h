@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_GTPE2_COMMON: public Primitive{
@@ -39,8 +40,30 @@ namespace CPrimitives {
 		parameter_enum_t SIM_RESET_SPEEDUP;
 		parameter_string_t SIM_VERSION;
 		//Verilog Ports in definition order:
-		NetFlow* DMONITOROUT_A0_B; // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
-		NetFlow* DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+		NetFlow* DMONITOROUT_A0_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DMONITOROUT_A1_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DMONITOROUT_A2_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DMONITOROUT_A3_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DMONITOROUT_A4_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DMONITOROUT_A5_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DMONITOROUT_A6_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DMONITOROUT_A7_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+		NetFlow* DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A15_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DRPRDY_A0_B; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
 		NetFlow* PLL0FBCLKLOST_A0_B; // net ID: PLL0FBCLKLOST lsb: 0  msb: 0 OUTPUT
 		NetFlow* PLL0LOCK_A0_B; // net ID: PLL0LOCK lsb: 0  msb: 0 OUTPUT
@@ -52,7 +75,22 @@ namespace CPrimitives {
 		NetFlow* PLL1OUTCLK_A0_B; // net ID: PLL1OUTCLK lsb: 0  msb: 0 OUTPUT
 		NetFlow* PLL1OUTREFCLK_A0_B; // net ID: PLL1OUTREFCLK lsb: 0  msb: 0 OUTPUT
 		NetFlow* PLL1REFCLKLOST_A0_B; // net ID: PLL1REFCLKLOST lsb: 0  msb: 0 OUTPUT
-		NetFlow* PMARSVDOUT_A0_B; // net ID: PMARSVDOUT lsb: 0  msb: 0 OUTPUT
+		NetFlow* PMARSVDOUT_A0_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A1_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A2_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A3_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A4_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A5_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A6_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A7_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A8_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A9_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A10_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A11_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A12_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A13_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A14_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+		NetFlow* PMARSVDOUT_A15_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
 		NetFlow* REFCLKOUTMONITOR0_A0_B; // net ID: REFCLKOUTMONITOR0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* REFCLKOUTMONITOR1_A0_B; // net ID: REFCLKOUTMONITOR1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* BGBYPASSB_A0_B; // net ID: BGBYPASSB lsb: 0  msb: 0 INPUT
@@ -172,8 +210,30 @@ namespace CPrimitives {
 			parameter_enum_t SIM_RESET_SPEEDUP, // Default: "TRUE"
 			parameter_string_t SIM_VERSION, // Default: "1.0"
 			//Verilog Ports in definition order:
-			NetFlow* DMONITOROUT_A0_B, // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
-			NetFlow* DRPDO_A0_B, // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+			NetFlow* DMONITOROUT_A0_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DMONITOROUT_A1_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DMONITOROUT_A2_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DMONITOROUT_A3_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DMONITOROUT_A4_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DMONITOROUT_A5_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DMONITOROUT_A6_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DMONITOROUT_A7_B, // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			NetFlow* DRPDO_A0_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A1_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A2_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A3_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A4_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A5_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A6_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A7_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A8_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A9_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A10_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A11_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A12_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A13_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A14_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A15_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DRPRDY_A0_B, // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
 			NetFlow* PLL0FBCLKLOST_A0_B, // net ID: PLL0FBCLKLOST lsb: 0  msb: 0 OUTPUT
 			NetFlow* PLL0LOCK_A0_B, // net ID: PLL0LOCK lsb: 0  msb: 0 OUTPUT
@@ -185,7 +245,22 @@ namespace CPrimitives {
 			NetFlow* PLL1OUTCLK_A0_B, // net ID: PLL1OUTCLK lsb: 0  msb: 0 OUTPUT
 			NetFlow* PLL1OUTREFCLK_A0_B, // net ID: PLL1OUTREFCLK lsb: 0  msb: 0 OUTPUT
 			NetFlow* PLL1REFCLKLOST_A0_B, // net ID: PLL1REFCLKLOST lsb: 0  msb: 0 OUTPUT
-			NetFlow* PMARSVDOUT_A0_B, // net ID: PMARSVDOUT lsb: 0  msb: 0 OUTPUT
+			NetFlow* PMARSVDOUT_A0_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A1_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A2_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A3_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A4_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A5_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A6_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A7_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A8_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A9_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A10_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A11_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A12_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A13_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A14_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			NetFlow* PMARSVDOUT_A15_B, // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
 			NetFlow* REFCLKOUTMONITOR0_A0_B, // net ID: REFCLKOUTMONITOR0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* REFCLKOUTMONITOR1_A0_B, // net ID: REFCLKOUTMONITOR1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* BGBYPASSB_A0_B, // net ID: BGBYPASSB lsb: 0  msb: 0 INPUT
@@ -305,8 +380,30 @@ namespace CPrimitives {
 			this->SIM_RESET_SPEEDUP = SIM_RESET_SPEEDUP; // Default: "TRUE"
 			this->SIM_VERSION = SIM_VERSION; // Default: "1.0"
 			//Verilog Ports in definition order:
-			this->DMONITOROUT_A0_B = DMONITOROUT_A0_B; // net ID: DMONITOROUT lsb: 0  msb: 0 OUTPUT
-			this->DRPDO_A0_B = DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 0 OUTPUT
+			this->DMONITOROUT_A0_B = DMONITOROUT_A0_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DMONITOROUT_A1_B = DMONITOROUT_A1_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DMONITOROUT_A2_B = DMONITOROUT_A2_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DMONITOROUT_A3_B = DMONITOROUT_A3_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DMONITOROUT_A4_B = DMONITOROUT_A4_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DMONITOROUT_A5_B = DMONITOROUT_A5_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DMONITOROUT_A6_B = DMONITOROUT_A6_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DMONITOROUT_A7_B = DMONITOROUT_A7_B; // net ID: DMONITOROUT lsb: 0  msb: 7 OUTPUT
+			this->DRPDO_A0_B = DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A1_B = DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A2_B = DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A3_B = DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A4_B = DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A5_B = DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A6_B = DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A7_B = DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A8_B = DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A9_B = DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A10_B = DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A11_B = DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A12_B = DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A13_B = DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A14_B = DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A15_B = DRPDO_A15_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			this->DRPRDY_A0_B = DRPRDY_A0_B; // net ID: DRPRDY lsb: 0  msb: 0 OUTPUT
 			this->PLL0FBCLKLOST_A0_B = PLL0FBCLKLOST_A0_B; // net ID: PLL0FBCLKLOST lsb: 0  msb: 0 OUTPUT
 			this->PLL0LOCK_A0_B = PLL0LOCK_A0_B; // net ID: PLL0LOCK lsb: 0  msb: 0 OUTPUT
@@ -318,7 +415,22 @@ namespace CPrimitives {
 			this->PLL1OUTCLK_A0_B = PLL1OUTCLK_A0_B; // net ID: PLL1OUTCLK lsb: 0  msb: 0 OUTPUT
 			this->PLL1OUTREFCLK_A0_B = PLL1OUTREFCLK_A0_B; // net ID: PLL1OUTREFCLK lsb: 0  msb: 0 OUTPUT
 			this->PLL1REFCLKLOST_A0_B = PLL1REFCLKLOST_A0_B; // net ID: PLL1REFCLKLOST lsb: 0  msb: 0 OUTPUT
-			this->PMARSVDOUT_A0_B = PMARSVDOUT_A0_B; // net ID: PMARSVDOUT lsb: 0  msb: 0 OUTPUT
+			this->PMARSVDOUT_A0_B = PMARSVDOUT_A0_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A1_B = PMARSVDOUT_A1_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A2_B = PMARSVDOUT_A2_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A3_B = PMARSVDOUT_A3_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A4_B = PMARSVDOUT_A4_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A5_B = PMARSVDOUT_A5_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A6_B = PMARSVDOUT_A6_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A7_B = PMARSVDOUT_A7_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A8_B = PMARSVDOUT_A8_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A9_B = PMARSVDOUT_A9_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A10_B = PMARSVDOUT_A10_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A11_B = PMARSVDOUT_A11_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A12_B = PMARSVDOUT_A12_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A13_B = PMARSVDOUT_A13_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A14_B = PMARSVDOUT_A14_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
+			this->PMARSVDOUT_A15_B = PMARSVDOUT_A15_B; // net ID: PMARSVDOUT lsb: 0  msb: 15 OUTPUT
 			this->REFCLKOUTMONITOR0_A0_B = REFCLKOUTMONITOR0_A0_B; // net ID: REFCLKOUTMONITOR0 lsb: 0  msb: 0 OUTPUT
 			this->REFCLKOUTMONITOR1_A0_B = REFCLKOUTMONITOR1_A0_B; // net ID: REFCLKOUTMONITOR1 lsb: 0  msb: 0 OUTPUT
 			this->BGBYPASSB_A0_B = BGBYPASSB_A0_B; // net ID: BGBYPASSB lsb: 0  msb: 0 INPUT
@@ -417,6 +529,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

@@ -254,17 +254,7 @@ public class CppTemplateGenerator {
 		
 //		appendSource("resources/cppTemplateHeaderBegin.txt");
 	}
-	
 
-	private void insertSourceEnd() throws IOException {
-//		appendSource("resources/cppTemplateHeaderEnd.txt");
-		
-	}
-	
-	private void appendSource(String path) throws IOException {
-//		appendSource(path, sourceFileWrier);
-		
-	}
 
 
 	static void appendSource(String path, PrintStream printStream) throws IOException{

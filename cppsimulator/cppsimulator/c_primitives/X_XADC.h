@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_XADC: public Primitive{
@@ -50,17 +51,47 @@ namespace CPrimitives {
 		parameter_string_t SIM_MONITOR_FILE;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* ALM_A0_B; // net ID: ALM lsb: 0  msb: 0 OUTPUT
+		NetFlow* ALM_A0_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+		NetFlow* ALM_A1_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+		NetFlow* ALM_A2_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+		NetFlow* ALM_A3_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+		NetFlow* ALM_A4_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+		NetFlow* ALM_A5_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+		NetFlow* ALM_A6_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+		NetFlow* ALM_A7_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
 		NetFlow* BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-		NetFlow* CHANNEL_A0_B; // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
-		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+		NetFlow* CHANNEL_A0_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHANNEL_A1_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHANNEL_A2_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHANNEL_A3_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+		NetFlow* CHANNEL_A4_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 		NetFlow* EOC_A0_B; // net ID: EOC lsb: 0  msb: 0 OUTPUT
 		NetFlow* EOS_A0_B; // net ID: EOS lsb: 0  msb: 0 OUTPUT
 		NetFlow* JTAGBUSY_A0_B; // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
 		NetFlow* JTAGLOCKED_A0_B; // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
 		NetFlow* JTAGMODIFIED_A0_B; // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
-		NetFlow* MUXADDR_A0_B; // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
+		NetFlow* MUXADDR_A0_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+		NetFlow* MUXADDR_A1_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+		NetFlow* MUXADDR_A2_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+		NetFlow* MUXADDR_A3_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+		NetFlow* MUXADDR_A4_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
 		NetFlow* OT_A0_B; // net ID: OT lsb: 0  msb: 0 OUTPUT
 		NetFlow* CONVST_A0_B; // net ID: CONVST lsb: 0  msb: 0 INPUT
 		NetFlow* CONVSTCLK_A0_B; // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
@@ -165,17 +196,47 @@ namespace CPrimitives {
 			parameter_string_t SIM_MONITOR_FILE, // Default: "design.txt"
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			NetFlow* ALM_A0_B, // net ID: ALM lsb: 0  msb: 0 OUTPUT
+			NetFlow* ALM_A0_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			NetFlow* ALM_A1_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			NetFlow* ALM_A2_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			NetFlow* ALM_A3_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			NetFlow* ALM_A4_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			NetFlow* ALM_A5_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			NetFlow* ALM_A6_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			NetFlow* ALM_A7_B, // net ID: ALM lsb: 0  msb: 7 OUTPUT
 			NetFlow* BUSY_A0_B, // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-			NetFlow* CHANNEL_A0_B, // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
-			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 0 OUTPUT
+			NetFlow* CHANNEL_A0_B, // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHANNEL_A1_B, // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHANNEL_A2_B, // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHANNEL_A3_B, // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			NetFlow* CHANNEL_A4_B, // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A1_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A2_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A3_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A4_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A5_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A6_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A7_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A8_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A9_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A10_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A11_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A12_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A13_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A14_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A15_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DRDY_A0_B, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			NetFlow* EOC_A0_B, // net ID: EOC lsb: 0  msb: 0 OUTPUT
 			NetFlow* EOS_A0_B, // net ID: EOS lsb: 0  msb: 0 OUTPUT
 			NetFlow* JTAGBUSY_A0_B, // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
 			NetFlow* JTAGLOCKED_A0_B, // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
 			NetFlow* JTAGMODIFIED_A0_B, // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
-			NetFlow* MUXADDR_A0_B, // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
+			NetFlow* MUXADDR_A0_B, // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			NetFlow* MUXADDR_A1_B, // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			NetFlow* MUXADDR_A2_B, // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			NetFlow* MUXADDR_A3_B, // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			NetFlow* MUXADDR_A4_B, // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
 			NetFlow* OT_A0_B, // net ID: OT lsb: 0  msb: 0 OUTPUT
 			NetFlow* CONVST_A0_B, // net ID: CONVST lsb: 0  msb: 0 INPUT
 			NetFlow* CONVSTCLK_A0_B, // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
@@ -280,17 +341,47 @@ namespace CPrimitives {
 			this->SIM_MONITOR_FILE = SIM_MONITOR_FILE; // Default: "design.txt"
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
-			this->ALM_A0_B = ALM_A0_B; // net ID: ALM lsb: 0  msb: 0 OUTPUT
+			this->ALM_A0_B = ALM_A0_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			this->ALM_A1_B = ALM_A1_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			this->ALM_A2_B = ALM_A2_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			this->ALM_A3_B = ALM_A3_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			this->ALM_A4_B = ALM_A4_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			this->ALM_A5_B = ALM_A5_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			this->ALM_A6_B = ALM_A6_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
+			this->ALM_A7_B = ALM_A7_B; // net ID: ALM lsb: 0  msb: 7 OUTPUT
 			this->BUSY_A0_B = BUSY_A0_B; // net ID: BUSY lsb: 0  msb: 0 OUTPUT
-			this->CHANNEL_A0_B = CHANNEL_A0_B; // net ID: CHANNEL lsb: 0  msb: 0 OUTPUT
-			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 0 OUTPUT
+			this->CHANNEL_A0_B = CHANNEL_A0_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			this->CHANNEL_A1_B = CHANNEL_A1_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			this->CHANNEL_A2_B = CHANNEL_A2_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			this->CHANNEL_A3_B = CHANNEL_A3_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			this->CHANNEL_A4_B = CHANNEL_A4_B; // net ID: CHANNEL lsb: 0  msb: 4 OUTPUT
+			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A1_B = DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A2_B = DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A3_B = DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A4_B = DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A5_B = DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A6_B = DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A7_B = DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A8_B = DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A9_B = DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A10_B = DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A11_B = DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A12_B = DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A13_B = DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A14_B = DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A15_B = DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 			this->DRDY_A0_B = DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			this->EOC_A0_B = EOC_A0_B; // net ID: EOC lsb: 0  msb: 0 OUTPUT
 			this->EOS_A0_B = EOS_A0_B; // net ID: EOS lsb: 0  msb: 0 OUTPUT
 			this->JTAGBUSY_A0_B = JTAGBUSY_A0_B; // net ID: JTAGBUSY lsb: 0  msb: 0 OUTPUT
 			this->JTAGLOCKED_A0_B = JTAGLOCKED_A0_B; // net ID: JTAGLOCKED lsb: 0  msb: 0 OUTPUT
 			this->JTAGMODIFIED_A0_B = JTAGMODIFIED_A0_B; // net ID: JTAGMODIFIED lsb: 0  msb: 0 OUTPUT
-			this->MUXADDR_A0_B = MUXADDR_A0_B; // net ID: MUXADDR lsb: 0  msb: 0 OUTPUT
+			this->MUXADDR_A0_B = MUXADDR_A0_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			this->MUXADDR_A1_B = MUXADDR_A1_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			this->MUXADDR_A2_B = MUXADDR_A2_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			this->MUXADDR_A3_B = MUXADDR_A3_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
+			this->MUXADDR_A4_B = MUXADDR_A4_B; // net ID: MUXADDR lsb: 0  msb: 4 OUTPUT
 			this->OT_A0_B = OT_A0_B; // net ID: OT lsb: 0  msb: 0 OUTPUT
 			this->CONVST_A0_B = CONVST_A0_B; // net ID: CONVST lsb: 0  msb: 0 INPUT
 			this->CONVSTCLK_A0_B = CONVSTCLK_A0_B; // net ID: CONVSTCLK lsb: 0  msb: 0 INPUT
@@ -363,6 +454,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

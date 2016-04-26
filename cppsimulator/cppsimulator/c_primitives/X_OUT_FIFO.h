@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_OUT_FIFO: public Primitive{
@@ -25,16 +26,54 @@ namespace CPrimitives {
 		NetFlow* ALMOSTFULL_A0_B; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
 		NetFlow* EMPTY_A0_B; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
 		NetFlow* FULL_A0_B; // net ID: FULL lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q0_A0_B; // net ID: Q0 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q1_A0_B; // net ID: Q1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q2_A0_B; // net ID: Q2 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q3_A0_B; // net ID: Q3 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q4_A0_B; // net ID: Q4 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q5_A0_B; // net ID: Q5 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q6_A0_B; // net ID: Q6 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q7_A0_B; // net ID: Q7 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q8_A0_B; // net ID: Q8 lsb: 0  msb: 0 OUTPUT
-		NetFlow* Q9_A0_B; // net ID: Q9 lsb: 0  msb: 0 OUTPUT
+		NetFlow* Q0_A0_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q0_A1_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q0_A2_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q0_A3_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q1_A0_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q1_A1_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q1_A2_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q1_A3_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q2_A0_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q2_A1_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q2_A2_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q2_A3_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q3_A0_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q3_A1_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q3_A2_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q3_A3_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q4_A0_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q4_A1_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q4_A2_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q4_A3_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q5_A0_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q5_A1_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q5_A2_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q5_A3_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q5_A4_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q5_A5_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q5_A6_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q5_A7_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A0_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A1_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A2_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A3_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A4_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A5_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A6_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q6_A7_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+		NetFlow* Q7_A0_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q7_A1_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q7_A2_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q7_A3_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q8_A0_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q8_A1_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q8_A2_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q8_A3_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q9_A0_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q9_A1_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q9_A2_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+		NetFlow* Q9_A3_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
 		NetFlow* D0_A0_B; // net ID: D0 lsb: 0  msb: 7 INPUT
 		NetFlow* D0_A1_B; // net ID: D0 lsb: 0  msb: 7 INPUT
 		NetFlow* D0_A2_B; // net ID: D0 lsb: 0  msb: 7 INPUT
@@ -135,16 +174,54 @@ namespace CPrimitives {
 			NetFlow* ALMOSTFULL_A0_B, // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
 			NetFlow* EMPTY_A0_B, // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
 			NetFlow* FULL_A0_B, // net ID: FULL lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q0_A0_B, // net ID: Q0 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q1_A0_B, // net ID: Q1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q2_A0_B, // net ID: Q2 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q3_A0_B, // net ID: Q3 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q4_A0_B, // net ID: Q4 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q5_A0_B, // net ID: Q5 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q6_A0_B, // net ID: Q6 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q7_A0_B, // net ID: Q7 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q8_A0_B, // net ID: Q8 lsb: 0  msb: 0 OUTPUT
-			NetFlow* Q9_A0_B, // net ID: Q9 lsb: 0  msb: 0 OUTPUT
+			NetFlow* Q0_A0_B, // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q0_A1_B, // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q0_A2_B, // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q0_A3_B, // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q1_A0_B, // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q1_A1_B, // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q1_A2_B, // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q1_A3_B, // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q2_A0_B, // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q2_A1_B, // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q2_A2_B, // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q2_A3_B, // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q3_A0_B, // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q3_A1_B, // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q3_A2_B, // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q3_A3_B, // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q4_A0_B, // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q4_A1_B, // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q4_A2_B, // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q4_A3_B, // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q5_A0_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q5_A1_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q5_A2_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q5_A3_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q5_A4_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q5_A5_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q5_A6_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q5_A7_B, // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A0_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A1_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A2_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A3_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A4_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A5_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A6_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q6_A7_B, // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			NetFlow* Q7_A0_B, // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q7_A1_B, // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q7_A2_B, // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q7_A3_B, // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q8_A0_B, // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q8_A1_B, // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q8_A2_B, // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q8_A3_B, // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q9_A0_B, // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q9_A1_B, // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q9_A2_B, // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+			NetFlow* Q9_A3_B, // net ID: Q9 lsb: 0  msb: 3 OUTPUT
 			NetFlow* D0_A0_B, // net ID: D0 lsb: 0  msb: 7 INPUT
 			NetFlow* D0_A1_B, // net ID: D0 lsb: 0  msb: 7 INPUT
 			NetFlow* D0_A2_B, // net ID: D0 lsb: 0  msb: 7 INPUT
@@ -245,16 +322,54 @@ namespace CPrimitives {
 			this->ALMOSTFULL_A0_B = ALMOSTFULL_A0_B; // net ID: ALMOSTFULL lsb: 0  msb: 0 OUTPUT
 			this->EMPTY_A0_B = EMPTY_A0_B; // net ID: EMPTY lsb: 0  msb: 0 OUTPUT
 			this->FULL_A0_B = FULL_A0_B; // net ID: FULL lsb: 0  msb: 0 OUTPUT
-			this->Q0_A0_B = Q0_A0_B; // net ID: Q0 lsb: 0  msb: 0 OUTPUT
-			this->Q1_A0_B = Q1_A0_B; // net ID: Q1 lsb: 0  msb: 0 OUTPUT
-			this->Q2_A0_B = Q2_A0_B; // net ID: Q2 lsb: 0  msb: 0 OUTPUT
-			this->Q3_A0_B = Q3_A0_B; // net ID: Q3 lsb: 0  msb: 0 OUTPUT
-			this->Q4_A0_B = Q4_A0_B; // net ID: Q4 lsb: 0  msb: 0 OUTPUT
-			this->Q5_A0_B = Q5_A0_B; // net ID: Q5 lsb: 0  msb: 0 OUTPUT
-			this->Q6_A0_B = Q6_A0_B; // net ID: Q6 lsb: 0  msb: 0 OUTPUT
-			this->Q7_A0_B = Q7_A0_B; // net ID: Q7 lsb: 0  msb: 0 OUTPUT
-			this->Q8_A0_B = Q8_A0_B; // net ID: Q8 lsb: 0  msb: 0 OUTPUT
-			this->Q9_A0_B = Q9_A0_B; // net ID: Q9 lsb: 0  msb: 0 OUTPUT
+			this->Q0_A0_B = Q0_A0_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			this->Q0_A1_B = Q0_A1_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			this->Q0_A2_B = Q0_A2_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			this->Q0_A3_B = Q0_A3_B; // net ID: Q0 lsb: 0  msb: 3 OUTPUT
+			this->Q1_A0_B = Q1_A0_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			this->Q1_A1_B = Q1_A1_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			this->Q1_A2_B = Q1_A2_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			this->Q1_A3_B = Q1_A3_B; // net ID: Q1 lsb: 0  msb: 3 OUTPUT
+			this->Q2_A0_B = Q2_A0_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			this->Q2_A1_B = Q2_A1_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			this->Q2_A2_B = Q2_A2_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			this->Q2_A3_B = Q2_A3_B; // net ID: Q2 lsb: 0  msb: 3 OUTPUT
+			this->Q3_A0_B = Q3_A0_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			this->Q3_A1_B = Q3_A1_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			this->Q3_A2_B = Q3_A2_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			this->Q3_A3_B = Q3_A3_B; // net ID: Q3 lsb: 0  msb: 3 OUTPUT
+			this->Q4_A0_B = Q4_A0_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			this->Q4_A1_B = Q4_A1_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			this->Q4_A2_B = Q4_A2_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			this->Q4_A3_B = Q4_A3_B; // net ID: Q4 lsb: 0  msb: 3 OUTPUT
+			this->Q5_A0_B = Q5_A0_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q5_A1_B = Q5_A1_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q5_A2_B = Q5_A2_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q5_A3_B = Q5_A3_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q5_A4_B = Q5_A4_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q5_A5_B = Q5_A5_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q5_A6_B = Q5_A6_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q5_A7_B = Q5_A7_B; // net ID: Q5 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A0_B = Q6_A0_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A1_B = Q6_A1_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A2_B = Q6_A2_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A3_B = Q6_A3_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A4_B = Q6_A4_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A5_B = Q6_A5_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A6_B = Q6_A6_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q6_A7_B = Q6_A7_B; // net ID: Q6 lsb: 0  msb: 7 OUTPUT
+			this->Q7_A0_B = Q7_A0_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			this->Q7_A1_B = Q7_A1_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			this->Q7_A2_B = Q7_A2_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			this->Q7_A3_B = Q7_A3_B; // net ID: Q7 lsb: 0  msb: 3 OUTPUT
+			this->Q8_A0_B = Q8_A0_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			this->Q8_A1_B = Q8_A1_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			this->Q8_A2_B = Q8_A2_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			this->Q8_A3_B = Q8_A3_B; // net ID: Q8 lsb: 0  msb: 3 OUTPUT
+			this->Q9_A0_B = Q9_A0_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+			this->Q9_A1_B = Q9_A1_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+			this->Q9_A2_B = Q9_A2_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
+			this->Q9_A3_B = Q9_A3_B; // net ID: Q9 lsb: 0  msb: 3 OUTPUT
 			this->D0_A0_B = D0_A0_B; // net ID: D0 lsb: 0  msb: 7 INPUT
 			this->D0_A1_B = D0_A1_B; // net ID: D0 lsb: 0  msb: 7 INPUT
 			this->D0_A2_B = D0_A2_B; // net ID: D0 lsb: 0  msb: 7 INPUT
@@ -348,6 +463,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}

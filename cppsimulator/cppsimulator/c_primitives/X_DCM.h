@@ -9,6 +9,7 @@
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "Primitive.h"
+
 namespace CPrimitives {
 	
 	class X_DCM: public Primitive{
@@ -46,7 +47,14 @@ namespace CPrimitives {
 		NetFlow* CLKFX180_A0_B; // net ID: CLKFX180 lsb: 0  msb: 0 OUTPUT
 		NetFlow* LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 		NetFlow* PSDONE_A0_B; // net ID: PSDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 0 OUTPUT
+		NetFlow* STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A1_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A2_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A3_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A4_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A5_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A6_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A7_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 		NetFlow* CLKFB_A0_B; // net ID: CLKFB lsb: 0  msb: 0 INPUT
 		NetFlow* CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
 		NetFlow* DSSEN_A0_B; // net ID: DSSEN lsb: 0  msb: 0 INPUT
@@ -90,7 +98,14 @@ namespace CPrimitives {
 			NetFlow* CLKFX180_A0_B, // net ID: CLKFX180 lsb: 0  msb: 0 OUTPUT
 			NetFlow* LOCKED_A0_B, // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			NetFlow* PSDONE_A0_B, // net ID: PSDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* STATUS_A0_B, // net ID: STATUS lsb: 0  msb: 0 OUTPUT
+			NetFlow* STATUS_A0_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A1_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A2_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A3_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A4_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A5_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A6_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A7_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 			NetFlow* CLKFB_A0_B, // net ID: CLKFB lsb: 0  msb: 0 INPUT
 			NetFlow* CLKIN_A0_B, // net ID: CLKIN lsb: 0  msb: 0 INPUT
 			NetFlow* DSSEN_A0_B, // net ID: DSSEN lsb: 0  msb: 0 INPUT
@@ -134,7 +149,14 @@ namespace CPrimitives {
 			this->CLKFX180_A0_B = CLKFX180_A0_B; // net ID: CLKFX180 lsb: 0  msb: 0 OUTPUT
 			this->LOCKED_A0_B = LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			this->PSDONE_A0_B = PSDONE_A0_B; // net ID: PSDONE lsb: 0  msb: 0 OUTPUT
-			this->STATUS_A0_B = STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 0 OUTPUT
+			this->STATUS_A0_B = STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A1_B = STATUS_A1_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A2_B = STATUS_A2_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A3_B = STATUS_A3_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A4_B = STATUS_A4_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A5_B = STATUS_A5_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A6_B = STATUS_A6_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A7_B = STATUS_A7_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 			this->CLKFB_A0_B = CLKFB_A0_B; // net ID: CLKFB lsb: 0  msb: 0 INPUT
 			this->CLKIN_A0_B = CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
 			this->DSSEN_A0_B = DSSEN_A0_B; // net ID: DSSEN lsb: 0  msb: 0 INPUT
@@ -150,6 +172,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 		// TODO
 		}
+		
 		void calculate(int time){
 		// TODO
 		}
