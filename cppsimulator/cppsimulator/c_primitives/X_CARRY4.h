@@ -149,14 +149,14 @@ namespace CPrimitives {
 
 
 			//Set net levels
-			O_A0_B->set_at(new_net_level(o_out_0));
-			O_A1_B->set_at(new_net_level(o_out_1));
-			O_A2_B->set_at(new_net_level(o_out_2));
-			O_A3_B->set_at(new_net_level(o_out_3));
-			CO_A0_B->set_at(new_net_level(co_out_0));
-			CO_A1_B->set_at(new_net_level(co_out_1));
-			CO_A2_B->set_at(new_net_level(co_out_2));
-			CO_A3_B->set_at(new_net_level(co_out_3));
+			O_A0_B->set_at(new_net_level(o_out_0), time);
+			O_A1_B->set_at(new_net_level(o_out_1), time);
+			O_A2_B->set_at(new_net_level(o_out_2), time);
+			O_A3_B->set_at(new_net_level(o_out_3), time);
+			CO_A0_B->set_at(new_net_level(co_out_0), time);
+			CO_A1_B->set_at(new_net_level(co_out_1), time);
+			CO_A2_B->set_at(new_net_level(co_out_2), time);
+			CO_A3_B->set_at(new_net_level(co_out_3), time);
 			 
 		}
 

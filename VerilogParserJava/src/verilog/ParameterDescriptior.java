@@ -62,6 +62,10 @@ public class ParameterDescriptior implements Serializable{
 		return type;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public final String getDefaultValue() {
 		if(null != defaultValueStr){
 			return defaultValueStr;
@@ -69,11 +73,24 @@ public class ParameterDescriptior implements Serializable{
 		return String.valueOf(defaultValueInt);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public final String getDefaultValueCformat() {
-		//return defaultValueCFormat;
+		if (null == defaultValueStr){
+			return defaultValueCFormat;
+		}
+		if(isEnum(defaultValueStr)){
+			return parameterEnums.get(defaultValueStr);
+		}
 		return defaultValueStr;
 	}
 
+	/**
+	 * 
+	 * @param bigInteger
+	 */
 	public  void setValue(BigInteger bigInteger) {
 		defaultValueStr = null;
 		defaultValueInt = bigInteger;

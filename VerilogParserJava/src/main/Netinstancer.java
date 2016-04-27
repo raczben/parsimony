@@ -421,7 +421,7 @@ public class Netinstancer extends Verilog2001BaseListener {
     	 */
     	SourceGenerator srcGen0 = new SourceGenerator();
     	
-    	srcGen0.add("engine.register_primitive(");
+    	srcGen0.add("engine->register_primitive(");
     	
 
     	SourceGenerator srcGen1 = new SourceGenerator();
@@ -446,7 +446,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 	    		if(portConnection.getExpression().isNet(i)){
 	    			NetDescriptor netDesc = portConnection.getExpression().getNet(i);
 	    			String comment = portConnection.getPortIdentifier().getNetIdentifier();
-	    			srcGen1.add("engine.get_net(" + netDesc.getCdefineIdentifierBit(netDesc.getLsb()) +  ")" + comma + " // " + comment );
+	    			srcGen1.add("engine->get_net(" + netDesc.getCdefineIdentifierBit(netDesc.getLsb()) +  ")" + comma + " // " + comment );
 	    		}else{
 	        		Logger.writeError("Primitiveinstantiation : portConnection: " + portConnection + " .");
 	        		return;
@@ -481,7 +481,7 @@ public class Netinstancer extends Verilog2001BaseListener {
     	for(NetDescriptor net : nets.values()) {
 //    		String cid = toCIdentifier(net, true);
     		for(String cid : net.getCdefineIdentifierList() ){
-    			netinst.add("\tengine.register_net(new NetFlow(\"" + cid + "\"));");
+    			netinst.add("\tengine->register_net(new NetFlow(\"" + cid + "\"));");
         		defines.add("#define " + cid + "\t\t" + String.valueOf(i));
         		i++;
     		}

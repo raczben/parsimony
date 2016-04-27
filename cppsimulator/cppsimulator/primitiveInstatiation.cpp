@@ -8,12 +8,12 @@
 #include <stdio.h>
 #include "NetFlow.h"
 #include "netinstatiation.h"
-#include "Simulatorengine.h"
+#include "SimulatorEngine.h"
 #include "c_primitives\PrimitiveInclude.h"
 
 using namespace CPrimitives;
 
-void instance_primitives(SimulatorEngine *engine){
+void instance_primitives(SimulatorEngine* engine){
 
 	engine->register_primitive(
 		new X_FF("\\gray_inst/count_3",
@@ -101,7 +101,13 @@ void instance_primitives(SimulatorEngine *engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BGRAY__INST_SMCOUNT__COUNT__CY_A3_B),  // CO
+		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__CY_L3_G__CO_A2_B__UNCONNECTED_A0_B),  // CO
+		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__CY_L3_G__CO_A1_B__UNCONNECTED_A0_B),  // CO
+		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__CY_L3_G__CO_A0_B__UNCONNECTED_A0_B),  // CO
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A3_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A2_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A1_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // CI
 		engine->get_net(NET_INDEX__BPROTOCOMP1_DCYINITGND_D0_A0_B),  // CYINIT
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // DI
@@ -310,7 +316,13 @@ void instance_primitives(SimulatorEngine *engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__XOR_L7_G__CO_A3_B__UNCONNECTED_A0_B),  // CO
+		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__XOR_L7_G__CO_A2_B__UNCONNECTED_A0_B),  // CO
+		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__XOR_L7_G__CO_A1_B__UNCONNECTED_A0_B),  // CO
+		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__XOR_L7_G__CO_A0_B__UNCONNECTED_A0_B),  // CO
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A7_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A6_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A5_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A4_B),  // O
 		engine->get_net(NET_INDEX__BGRAY__INST_SMCOUNT__COUNT__CY_A3_B),  // CI
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // CYINIT
 		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__XOR_L7_G__DI_A3_B__UNCONNECTED_A0_B),  // DI

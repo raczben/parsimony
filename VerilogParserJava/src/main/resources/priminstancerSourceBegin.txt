@@ -13,5 +13,5 @@
 
 using namespace CPrimitives;
 
-void instance_primitives(SimulatorEngine engine){
+void instance_primitives(SimulatorEngine* engine){
 

@@ -289,10 +289,10 @@ public class Main {
 		
 		
 //		primitiveMapper("C:\\Users\\ebenera\\bme\\2015_16_tavasz\\onlab2\\xilinxPrimitives\\simprims");
-//		compile_verilog_to_c();
-		generateCTemplate();
+		compile_verilog_to_c();
+//		generateCTemplate();
 //		generatePrimitiveIncludeHeader();
-//		copyResultsToCppProject();
+		copyResultsToCppProject();
 //		printPrimitivesInfos();
 	
 		

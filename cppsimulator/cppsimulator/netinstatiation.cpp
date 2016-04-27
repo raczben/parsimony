@@ -10,7 +10,7 @@
 #include "netinstatiation.h"
 #include "SimulatorEngine.h"
 
-void instance_nets(SimulatorEngine *engine){
+void instance_nets(SimulatorEngine* engine){
 
 	engine->register_net(new NetFlow("NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__0_SCLK_A0_B"));
 	engine->register_net(new NetFlow("NET_INDEX_CLK__BUFGP_A0_B"));

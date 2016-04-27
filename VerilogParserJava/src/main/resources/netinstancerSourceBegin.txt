@@ -10,5 +10,5 @@
 #include "netinstatiation.h"
 #include "SimulatorEngine.h"
 
-void instance_nets(SimulatorEngine engine){
+void instance_nets(SimulatorEngine* engine){
 
