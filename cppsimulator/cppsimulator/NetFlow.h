@@ -1,6 +1,9 @@
 /******************************************************************************
- *
- *****************************************************************************/
+* NetFlow.h
+*
+* created by: Benedek Racz
+*       date: 2016. 05. 11.
+*****************************************************************************/
 #ifndef NET_FLOW_H
 #define NET_FLOW_H
 
@@ -10,95 +13,13 @@
 #include "SimulatorEngine.h"
 #include "shared.h"
 #include "Primitive.h"
-
-typedef enum : unsigned {
-	LOW = 0,
-	HIGH = 1,
-	UNDEFINED = 2,
-	HIGH_Z = 3
-} value_t;
-
-static const char *to_string(value_t f)
-{
-	static const char *strings[] = { "LOW", "HIGH", "UNDEFINED", "HIGH_Z" };
-	return strings[f];
-}
-
-typedef enum: unsigned {
-	highz = 0,
-	small = 1,
-	medium = 2,
-	weak = 3,
-	large = 4,
-	pull = 5,
-	strong = 6,
-	supply = 7
-} strength_t;
-
-static const char *to_string(strength_t f)
-{
-	static const char *strings[] = { "highz", "small", "medium", "weak", "large", "pull", "strong", "supply" };
-	return strings[f];
-}
-
-
-
-/*
-supply0, supply1,
-strong0, strong1, pull0, pull1, weak0, weak1,
-highz0, highz1, small, medium, large
-*/
-
-struct net_level_struct {
-	value_t value : 2;
-	strength_t strength : 3;
-};
-typedef struct net_level_struct net_level_t;
-
-net_level_t new_net_level(value_t val, strength_t strength);
-
-net_level_t new_net_level(value_t val);
-
-/**
- * charBuffer must be 4 character long
- */
-static char *to_string(net_level_t f, char *charBuffer)
-{
-	char *ret = charBuffer;
-	ret[3] = '\0';
-	const char* tmp = to_string(f.strength);
-	ret[0] = tmp[0];
-	ret[1] = tmp[1];
-	if (HIGH == f.value) {
-		ret[2] = '1';
-		return ret;
-	}
-	if (LOW == f.value) {
-		ret[2] = '0';
-		return ret;
-	}
-	if (UNDEFINED == f.value) {
-		ret[2] = 'x';
-		return ret;
-	}
-	if (HIGH_Z == f.value) {
-		ret[2] = 'z';
-		return ret;
-	}
-}
-
-struct net_change_struct {
-	net_level_t level;
-	simtime_t time;
-};
-typedef struct net_change_struct net_change_t;
-
+#include "NetLevel.h"
 
 /******************************************************************************
-* net_flow_struct contains all data related to a net. Ex.: tt contains its
-* name, and data in the past/future. It is not recommended to use it directly.
-* Use functions below instead.
-*****************************************************************************/
+ * net_flow_struct contains all data related to a net. Ex.: tt contains its
+ * name, and data in the past/future. It is not recommended to use it directly.
+ * Use functions below instead.
+ *****************************************************************************/
 class NetFlow {
 	// The name of the NET
 	char *name;
@@ -162,12 +83,6 @@ public:
 	*****************************************************************************/
 	void set_name(const char *);
 
-	/******************************************************************************
-	* Sets the use_in_event flag:
-	* If use_in_event is true this net is used in an event (somewhere in the
-	* simulation) So If it changes some primitive/cell/process must be rerun.
-	*****************************************************************************/
-	void set_use_in_event(bool use_in_event);
 
 	/******************************************************************************
 	* returns the use_in_event flag:
@@ -176,26 +91,83 @@ public:
 	*****************************************************************************/
 	bool get_use_in_event() const;
 
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void step_delta();
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void clear_change_flag();
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	bool get_change_flag() { return changed_in_this_delta; }
+
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void register_reader(const reader_t & reader_primitive);
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void register_driver(const driver_t & driver_primitive);
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void register_event_reader(Primitive*  const reader_primitive);
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void step_time(const unsigned time_to_step);
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void print_flow(int numOfChange = -1) const;
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	// TODO const
+	base::Vector<net_change_t*> get_data() { return data; }
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void NetFlow::generate_clock(simtime_t period, simtime_t until, value_t start_value = LOW);
+
+
+	/******************************************************************************
+	*
+	*****************************************************************************/
+	void NetFlow::generate_clock(simtime_t half_period, simtime_t from, simtime_t until, value_t start_value = LOW);
+
+	/**************************************************************************
+	 *
+     * XXXXX   XXX    X   X   XXX    X    
+     *  X     X   X   X   X  X   X   X     
+     *  X     X   X   X   X  X   X   X     
+     *  XXX   X   X   X   X  XXXXX   X     
+     *  X     X X X   X   X  X   X   X    
+     *  X     X  XX   X   X  X   X   X    
+     * XXXXX   XXXXX   XXX   X   X  XXXXX 
+	 *
+	 *************************************************************************/
+
 	/******************************************************************************
 	* check if net_flow's value is equal at the given time. The 0 time is the start
 	* of the simulation.
 	*****************************************************************************/
 	bool is_equal_at(value_t val, simtime_t time) const ;
 
-	/******************************************************************************
-	* check if net_flow's value is equal at the given time. The 0 time is the start
-	* of the simulation.
-	*****************************************************************************/
-	//bool is_equal_at(net_value_t val, simtime_t time);
-
-	/******************************************************************************
-	* check if net_flow's value is equal at the given time. The 0 time is the
-	* current time of the simulation.
-	* The followings are the same:
-	* is_equal_from_now(net_flow, val, 0);
-	* is_equal_at(net_flow, val, get_current_time());
-	*****************************************************************************/
-	//bool is_equal_from_now(net_value_t val, simtime_t time);
 
 	/******************************************************************************
 	* check if net_flow's value is equal at the given time. The 0 time is the
@@ -212,23 +184,8 @@ public:
 	* is_equal_from_now(net_flow, val, 0);
 	* is_equal_now(net_flow, val);
 	*****************************************************************************/
-	//bool is_equal_now(net_value_t val);
-
-	/******************************************************************************
-	* checks if the net has the given value at the current time.
-	* The followings are the same:
-	* is_equal_from_now(net_flow, val, 0);
-	* is_equal_now(net_flow, val);
-	*****************************************************************************/
 	bool is_equal_now(value_t val) const;
 
-	/******************************************************************************
-	* checks if the net has the given value at the previous time slot.
-	* The followings are the same:
-	* is_equal_from_now(net_flow, val, -1);
-	* is_equal_prev(net_flow, val);
-	*****************************************************************************/
-	//bool is_equal_prev(net_value_t val);
 
 	/******************************************************************************
 	* checks if the net has the given value at the previous time slot.
@@ -238,7 +195,23 @@ public:
 	*****************************************************************************/
 	bool is_equal_prev(const value_t val, simtime_t time = -1) const;
 
+
+	bool is_equal_at(net_level_t level, simtime_t time) const;
+
+
 	bool posedge_at(simtime_t time);
+
+	/******************************************************************************
+	 *
+	 *  XXX   XXXXX  XXXXX   XXXXX   XXXXX   XXXX     XXX    
+     * X       X       X       X      X      X   X   X       
+     * X       X       X       X      X      X   X   X       
+     * X  XXX  XXX     X       X      XXX    XXXX     XXX    
+     * X   X   X       X       X      X      XX          X   
+     * X   X   X       X       X      X      X X         X   
+     *  XXX   XXXXX    X       X     XXXXX   X  X     XXX    
+	 *
+	 ******************************************************************************/
 
 	/******************************************************************************
 	* returns the net value at a given time. The 0 time is the start
@@ -253,6 +226,9 @@ public:
 	value_t get_value_at(const simtime_t time) const { return get_at(time).value; }
 	
 
+	/******************************************************************************
+	*
+	*****************************************************************************/
 	value_t get_value_prev(simtime_t time) const;
 
 	/******************************************************************************
@@ -264,6 +240,21 @@ public:
 	*****************************************************************************/
 	net_level_t get_from_now(const simtime_t time) const;
 
+
+
+	/******************************************************************************
+	 *
+     *  XXX   XXXXX  XXXXX   XXXXX   XXXXX   XXXX     XXX    
+     * X       X       X       X      X      X   X   X      
+     * X       X       X       X      X      X   X   X       
+     *  XXX    XXX     X       X      XXX    XXXX     XXX   
+     *     X   X       X       X      X      XX          X  
+     *     X   X       X       X      X      X X         X  
+     *  XXX   XXXXX    X       X     XXXXX   X  X     XXX   
+	 *
+	 ******************************************************************************/
+	
+
 	/******************************************************************************
 	* Sets the net_flow value at the given time. The 0 time is the start
 	* of the simulation.
@@ -272,58 +263,36 @@ public:
 
 
 	/******************************************************************************
-
-	*****************************************************************************/
+	 *
+	 *****************************************************************************/
 	void set_from_now(const net_level_t level, const simtime_t set_time);
 
-	/******************************************************************************
 
-	*****************************************************************************/
+	/******************************************************************************
+	 *
+	 *****************************************************************************/
 	void set_now(const net_level_t level);
 
-	void NetFlow::set_now(const value_t val, const strength_t strength = strong);
-
-	void set_from_now(const value_t val, const simtime_t time, const strength_t strength = strong);
-
-	void set_at(const value_t val, const simtime_t time, const strength_t strength = strong);
 
 	/******************************************************************************
-	* Sets the net_flow value at the given time. The 0 time is the
-	* current time of the simulation.
-	* The followings are the same:
-	* set_value_from_now(net_flow, val, 0);
-	* set_value_at(net_flow, val, get_current_time());
-	*****************************************************************************/
-	//void set_value_from_now(net_value_t val, simtime_t time);
+	 *
+	 *****************************************************************************/
+	void set_now(const value_t val, const strength_t strength = strong);
 
 
-	bool NetFlow::is_equal_at(net_level_t level, simtime_t time) const;
+	/******************************************************************************
+	 *
+	 *****************************************************************************/
+	void set_from_now(const value_t val, const simtime_t time, const strength_t strength = strong);
 
 
-	void step_delta();
-
-	void clear_change_flag();
-
-	bool get_change_flag() { return changed_in_this_delta; }
-
-
-	void register_reader(const reader_t & reader_primitive);
-
-	void register_driver(const driver_t & driver_primitive);
-
-	void register_event_reader(Primitive*  const reader_primitive);
-
-	void step_time(const unsigned time_to_step);
-
-	void print_flow(int numOfChange = -1) const;
-	
-	// TODO const
-	base::Vector<net_change_t*> get_data() {return data;}
-
-	void NetFlow::generate_clock(simtime_t period, simtime_t until, value_t start_value = LOW);
+	/******************************************************************************
+	 *
+	 *****************************************************************************/
+	void set_at(const value_t val, const simtime_t time, const strength_t strength = strong);
 
 
-	void NetFlow::generate_clock(simtime_t half_period, simtime_t from, simtime_t until, value_t start_value = LOW);
+
 
 
 	protected:

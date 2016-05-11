@@ -21,12 +21,9 @@ NetFlow::NetFlow(const char* name, net_level_t initial_level, bool monitor_chang
 *****************************************************************************/
 void NetFlow::init(const char* name, net_level_t initial_level, bool monitor_change) {
 	this->monitor_change = monitor_change;
-	//this->name = NULL;
 	set_name(name);
-	/*this->data = base::Vector<net_change_t>();*/
 	this->readers = new base::Vector<reader_t>();
 	this->drivers = new base::Vector<driver_t>();
-	//this->event_readers = new base::Vector<Primitive*>();
 	
 
 	set_at(initial_level, 0);
@@ -50,14 +47,6 @@ void NetFlow::set_name(const char *new_name) {
 	this->name = _strdup(new_name);
 }
 
-/******************************************************************************
-* Sets the use_in_event flag:
-* If use_in_event is true this net is used in an event (somewhere in the
-* simulation) So If it changes some primitive/cell/process must be rerun.
-*****************************************************************************/
-//void NetFlow::set_use_in_event(const bool use_in_event) {
-//	this->use_in_event = use_in_event;
-//}
 
 /******************************************************************************
 * returns the use_in_event flag:
@@ -66,7 +55,6 @@ void NetFlow::set_name(const char *new_name) {
 *****************************************************************************/
 bool NetFlow::get_use_in_event() const {
 	return !this->event_readers.empty();
-	//return this->use_in_event;
 }
 
 /******************************************************************************
@@ -139,6 +127,7 @@ bool NetFlow::is_equal_prev(const value_t val, simtime_t time) const  {
 	return is_equal_at(val, time - 1);
 }
 
+
 value_t NetFlow::get_value_prev(simtime_t time) const {
 	if (time < 0) {
 		return UNDEFINED;
@@ -146,6 +135,7 @@ value_t NetFlow::get_value_prev(simtime_t time) const {
 	return get_at(time - 1).value;
 
 }
+
 
 bool NetFlow::posedge_at(simtime_t time) {
 	if (is_equal_at(HIGH, time) && is_equal_prev(LOW, time)) {
@@ -226,9 +216,11 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	return;
 }
 
+
 void NetFlow::step_delta() {
 	clear_change_flag();
 }
+
 
 void NetFlow::clear_change_flag() {
 	changed_in_this_delta = false;
@@ -245,9 +237,11 @@ void NetFlow::set_from_now(const net_level_t level, const simtime_t set_time) {
 	set_at(level, set_time + engine->get_current_time());
 }
 
+
 void NetFlow::set_from_now(const value_t val, const simtime_t set_time, const strength_t strength) {
 	set_at(val, set_time + engine->get_current_time(), strength);
 }
+
 
 void NetFlow::set_at(const value_t val, const simtime_t time, const strength_t strength) {
 	set_at(new_net_level(val, strength), time);
@@ -293,13 +287,6 @@ int NetFlow::__find_nearest_earlier_index__(const simtime_t serach_time) const  
 		return -1;
 	}
 
-	// Usually the last value is good:
-	/*tmp_net_value_change = this->data[last_index];
-	tmp_time = tmp_net_value_change.time;
-	if (tmp_time < serach_time) {
-		return last_index;
-	}
-	last_index--;*/
 
 	while (first_index <= last_index) {
 		tmp_net_value_change = *(data[middle_index]);
@@ -352,9 +339,6 @@ void NetFlow::step_time(const unsigned time_to_step)
 
 
 
-
-
-
 NetFlow::NetFlow(const NetFlow & other)
 {
 	set_name(other.name);
@@ -373,28 +357,7 @@ NetFlow::NetFlow(const NetFlow & other)
 	readers = new base::Vector<reader_t>(*readers);
 }
 
-/*
-NetFlow::NetFlow():name(0)
-{
-	//init("new_name", );
-	set_name("new_net");
-	data = base::Vector<net_change_t*>();
 
-	now_index = -1;
-
-	use_in_event = false;
-
-	//current_driver_count = other.current_driver_count;
-
-	monitor_change = false;
-
-	drivers = new base::Vector<driver_t>();
-
-	readers = new base::Vector<reader_t>();
-
-}*/
-//
-//
 NetFlow::~NetFlow()
 {
 	free(name);
@@ -418,11 +381,6 @@ net_level_t new_net_level(value_t val, strength_t strength) {
 	new_instance.strength = strength;
 	return new_instance;
 }
-
-net_level_t new_net_level(value_t val) {
-	return new_net_level(val, strong);
-}
-
 
 void NetFlow::print_flow(int numOfChange) const {
 	char charBuff[4];

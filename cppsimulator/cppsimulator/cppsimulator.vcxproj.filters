@@ -921,6 +921,9 @@
     <ClInclude Include="built_in_primitives.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NetLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cppsimulator.cpp">

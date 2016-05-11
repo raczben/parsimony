@@ -1,7 +1,14 @@
+/******************************************************************************
+* built_in_primitives.cpp
+*
+* created by: Benedek Racz
+*       date: 2016. 05. 11.
+*****************************************************************************/
 
 #include "NetFlow.h"
 #include "sim_types.h"
 #include "built_in_primitives.h"
+
 
 void calculate_LUT(simtime_t time,
 	uint64_t lut,
@@ -54,6 +61,7 @@ value_t get_value(const NetFlow* const net, simtime_t time, value_t atNull) {
 	return atNull;
 }
 
+
 void calculate_BUF(simtime_t time,
 	NetFlow* out,
 	const NetFlow* const in
@@ -78,15 +86,10 @@ value_t or_gate(value_t in1, value_t in2) {
 	if ( (HIGH == in1) | (HIGH == in2) ) {
 		return HIGH;
 	}
-	else {
-		if ( (LOW == in1) | (LOW == in2) ) {
-			return LOW;
-		}
-		else {
-			return UNDEFINED;
-		}
+	if ( (LOW == in1) | (LOW == in2) ) {
+		return LOW;
 	}
-
+	return UNDEFINED;
 }
 
 /**

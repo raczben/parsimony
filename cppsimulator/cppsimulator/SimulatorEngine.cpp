@@ -19,12 +19,12 @@ void SimulatorEngine::step_time()
 		//printf("i: %d ", i);
 		NetFlow* net = nets.get(i);
 		//printf("nets[i]: %s \n", net->get_name());
-		net->step_time(__time__);
+		net->step_time((unsigned) __time__);
 	}
 
 	//int delta = -1;
 	while (need_to_rerun_ts()) {
-		printf("Running TS: %d", __time__);
+		printf("Running TS: %ld", __time__);
 		fflush(stdout);
 		step_delta();
 		//printf("   [  OK  ]\n");

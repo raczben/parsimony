@@ -441,6 +441,7 @@
     <ClInclude Include="c_primitives\X_XOR8.h" />
     <ClInclude Include="c_primitives\X_ZERO.h" />
     <ClInclude Include="NetFlow.h" />
+    <ClInclude Include="NetLevel.h" />
     <ClInclude Include="Primitive.h" />
     <ClInclude Include="shared.h" />
     <ClInclude Include="SimulatorEngine.h" />

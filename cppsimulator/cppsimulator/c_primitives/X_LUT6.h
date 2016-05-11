@@ -17,35 +17,35 @@ namespace CPrimitives {
 		parameter_int_t INIT;
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* ADR0_A0_B; // net ID: ADR0 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR1_A0_B; // net ID: ADR1 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR2_A0_B; // net ID: ADR2 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR3_A0_B; // net ID: ADR3 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR4_A0_B; // net ID: ADR4 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR5_A0_B; // net ID: ADR5 lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B;		// net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* ADR0_A0_B;		// net ID: ADR0 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR1_A0_B;		// net ID: ADR1 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR2_A0_B;		// net ID: ADR2 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR3_A0_B;		// net ID: ADR3 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR4_A0_B;		// net ID: ADR4 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR5_A0_B;		// net ID: ADR5 lsb: 0  msb: 0 INPUT
 
 	public: X_LUT6(
 		const char * name,
 		//Verilog Parameters:
-		parameter_int_t INIT, // Default: 64'h0000000000000000
+		parameter_int_t INIT,	// Default: 64'h0000000000000000
 		parameter_string_t LOC, // Default: "UNPLACED"
 		//Verilog Ports in definition order:
-		NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
-		NetFlow* ADR0_A0_B, // net ID: ADR0 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR1_A0_B, // net ID: ADR1 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR2_A0_B, // net ID: ADR2 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR3_A0_B, // net ID: ADR3 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR4_A0_B, // net ID: ADR4 lsb: 0  msb: 0 INPUT
-		NetFlow* ADR5_A0_B // net ID: ADR5 lsb: 0  msb: 0 INPUT
+		NetFlow* O_A0_B,		// net ID: O lsb: 0  msb: 0 OUTPUT
+		NetFlow* ADR0_A0_B,		// net ID: ADR0 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR1_A0_B,		// net ID: ADR1 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR2_A0_B,		// net ID: ADR2 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR3_A0_B,		// net ID: ADR3 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR4_A0_B,		// net ID: ADR4 lsb: 0  msb: 0 INPUT
+		NetFlow* ADR5_A0_B		// net ID: ADR5 lsb: 0  msb: 0 INPUT
 		) :Primitive(name) {
 
 		// Assign parameters and ports: 
 		//Verilog Parameters:
-		this->INIT = INIT; // Default: 64'h0000000000000000
-		this->LOC = LOC; // Default: "UNPLACED"
+		this->INIT = INIT;		// Default: 64'h0000000000000000
+		this->LOC = LOC;		// Default: "UNPLACED"
 		//Verilog Ports in definition order:
-		this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
+		this->O_A0_B = O_A0_B;	// net ID: O lsb: 0  msb: 0 OUTPUT
 		this->ADR0_A0_B = ADR0_A0_B; // net ID: ADR0 lsb: 0  msb: 0 INPUT
 		this->ADR1_A0_B = ADR1_A0_B; // net ID: ADR1 lsb: 0  msb: 0 INPUT
 		this->ADR2_A0_B = ADR2_A0_B; // net ID: ADR2 lsb: 0  msb: 0 INPUT
