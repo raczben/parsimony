@@ -16,10 +16,10 @@ using namespace CPrimitives;
 void instance_primitives(SimulatorEngine* engine){
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_3",
+		new X_SFF("\\gray_inst/count_3",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -29,7 +29,9 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__3_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A3_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
@@ -37,10 +39,10 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/count<3>_rt",
 		//Module parameters:
 		0xffff0000ffff0000, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L3_G__RT__1_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L3_G__RT__2_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -51,13 +53,13 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_LUT5("\\reset_4.D5LUT",
+		new X_LUT5("\\N0_4.D5LUT",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BNLW__RESET__4_DD5LUT__O__UNCONNECTED_A0_B),  // O
+		engine->get_net(NET_INDEX__BNLW__N0__4_DD5LUT__O__UNCONNECTED_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -69,7 +71,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_ZERO("\\ProtoComp1.CYINITGND",
 		//Module parameters:
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BPROTOCOMP1_DCYINITGND_D0_A0_B)  // O
@@ -77,10 +79,10 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_2",
+		new X_SFF("\\gray_inst/count_2",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -90,14 +92,16 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__2_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A2_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
 	engine->register_primitive(
 		new X_CARRY4("\\gray_inst/Mcount_count_cy<3>",
 		//Module parameters:
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BGRAY__INST_SMCOUNT__COUNT__CY_A3_B),  // CO
@@ -114,9 +118,9 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // DI
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // DI
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // DI
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L3_G__RT__1_A0_B),  // S
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L2_G__RT__13_A0_B),  // S
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L1_G__RT__17_A0_B),  // S
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L3_G__RT__2_A0_B),  // S
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L2_G__RT__14_A0_B),  // S
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L1_G__RT__18_A0_B),  // S
 		engine->get_net(NET_INDEX__BGRAY__INST_SMCOUNT__COUNT__LUT_A0_B)  // S
 		)
 	);
@@ -125,10 +129,10 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/count<2>_rt",
 		//Module parameters:
 		0xffff0000ffff0000, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L2_G__RT__13_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L2_G__RT__14_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -139,13 +143,13 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_LUT5("\\reset_5.C5LUT",
+		new X_LUT5("\\N0_5.C5LUT",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BNLW__RESET__5_DC5LUT__O__UNCONNECTED_A0_B),  // O
+		engine->get_net(NET_INDEX__BNLW__N0__5_DC5LUT__O__UNCONNECTED_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -155,10 +159,10 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_1",
+		new X_SFF("\\gray_inst/count_1",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -168,7 +172,9 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__1_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A1_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
@@ -176,10 +182,10 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/count<1>_rt",
 		//Module parameters:
 		0xffff0000ffff0000, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L1_G__RT__17_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L1_G__RT__18_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -190,13 +196,13 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_LUT5("\\reset_6.B5LUT",
+		new X_LUT5("\\N0_6.B5LUT",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BNLW__RESET__6_DB5LUT__O__UNCONNECTED_A0_B),  // O
+		engine->get_net(NET_INDEX__BNLW__N0__6_DB5LUT__O__UNCONNECTED_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -206,10 +212,10 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_0",
+		new X_SFF("\\gray_inst/count_0",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -219,7 +225,9 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__0_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A0_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
@@ -227,7 +235,7 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/Mcount_count_lut<0>_INV_0",
 		//Module parameters:
 		0xffff0000ffff, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BGRAY__INST_SMCOUNT__COUNT__LUT_A0_B),  // O
@@ -241,13 +249,13 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_LUT5("\\N0_2.A5LUT",
+		new X_LUT5("\\N1.A5LUT",
 		//Module parameters:
 		0xffffffff, // 
-		"SLICE_X6Y2", // 
+		"SLICE_X4Y4", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BNLW__N0__2_DA5LUT__O__UNCONNECTED_A0_B),  // O
+		engine->get_net(NET_INDEX__BNLW__N1_DA5LUT__O__UNCONNECTED_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -257,10 +265,10 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_7",
+		new X_SFF("\\gray_inst/count_7",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -270,7 +278,9 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__7_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A7_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
@@ -278,10 +288,10 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/count<7>_rt",
 		//Module parameters:
 		0xffffffff00000000, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L7_G__RT__29_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L7_G__RT__31_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -292,10 +302,10 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_6",
+		new X_SFF("\\gray_inst/count_6",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -305,14 +315,16 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__6_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A6_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
 	engine->register_primitive(
 		new X_CARRY4("\\gray_inst/Mcount_count_xor<7>",
 		//Module parameters:
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BNLW__GRAY__INST_SMCOUNT__COUNT__XOR_L7_G__CO_A3_B__UNCONNECTED_A0_B),  // CO
@@ -329,10 +341,10 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // DI
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // DI
 		engine->get_net(NET_INDEX_CONST__ZERO_A0_B),  // DI
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L7_G__RT__29_A0_B),  // S
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L6_G__RT__39_A0_B),  // S
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L5_G__RT__43_A0_B),  // S
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L4_G__RT__47_A0_B)  // S
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L7_G__RT__31_A0_B),  // S
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L6_G__RT__41_A0_B),  // S
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L5_G__RT__45_A0_B),  // S
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L4_G__RT__49_A0_B)  // S
 		)
 	);
 
@@ -340,10 +352,10 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/count<6>_rt",
 		//Module parameters:
 		0xffff0000ffff0000, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L6_G__RT__39_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L6_G__RT__41_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -354,13 +366,13 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_LUT5("\\reset.C5LUT",
+		new X_LUT5("\\N0.C5LUT",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BNLW__RESET_DC5LUT__O__UNCONNECTED_A0_B),  // O
+		engine->get_net(NET_INDEX__BNLW__N0_DC5LUT__O__UNCONNECTED_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -370,10 +382,10 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_5",
+		new X_SFF("\\gray_inst/count_5",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -383,7 +395,9 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__5_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A5_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
@@ -391,10 +405,10 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/count<5>_rt",
 		//Module parameters:
 		0xffff0000ffff0000, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L5_G__RT__43_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L5_G__RT__45_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -405,13 +419,13 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_LUT5("\\reset_2.B5LUT",
+		new X_LUT5("\\N0_2.B5LUT",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BNLW__RESET__2_DB5LUT__O__UNCONNECTED_A0_B),  // O
+		engine->get_net(NET_INDEX__BNLW__N0__2_DB5LUT__O__UNCONNECTED_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -421,10 +435,10 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_FF("\\gray_inst/count_4",
+		new X_SFF("\\gray_inst/count_4",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		TRUE, // 
 		TRUE, // 
 		
@@ -434,7 +448,9 @@ void instance_primitives(SimulatorEngine* engine){
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__GRAY__INST_SCOUNT__4_SCLK_A0_B),  // CLK
 		engine->get_net(NET_INDEX__BGRAY__INST_SRESULT_A4_B),  // I
 		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SET
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
 		)
 	);
 
@@ -442,10 +458,10 @@ void instance_primitives(SimulatorEngine* engine){
 		new X_LUT6("\\gray_inst/count<4>_rt",
 		//Module parameters:
 		0xffff0000ffff0000, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L4_G__RT__47_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_L4_G__RT__49_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -456,13 +472,13 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_LUT5("\\reset_3.A5LUT",
+		new X_LUT5("\\N0_3.A5LUT",
 		//Module parameters:
 		0x0, // 
-		"SLICE_X6Y3", // 
+		"SLICE_X4Y5", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BNLW__RESET__3_DA5LUT__O__UNCONNECTED_A0_B),  // O
+		engine->get_net(NET_INDEX__BNLW__N0__3_DA5LUT__O__UNCONNECTED_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
@@ -474,7 +490,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OPAD("q_31",
 		//Module parameters:
-		"PAD143", // 
+		"PAD122", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_Q_A0_B)  // PAD
@@ -484,7 +500,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("q_OBUF",
 		//Module parameters:
-		"PAD143", // 
+		"PAD122", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -512,7 +528,7 @@ void instance_primitives(SimulatorEngine* engine){
 		"PAD172", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BCLK__BUFGP_SIBUFG__56_A0_B),  // O
+		engine->get_net(NET_INDEX__BCLK__BUFGP_SIBUFG__58_A0_B),  // O
 		engine->get_net(NET_INDEX_CLK_A0_B)  // I
 		)
 	);
@@ -524,14 +540,14 @@ void instance_primitives(SimulatorEngine* engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BCLK__BUFGP_SIBUFG__0_A0_B),  // O
-		engine->get_net(NET_INDEX__BCLK__BUFGP_SIBUFG__56_A0_B)  // I
+		engine->get_net(NET_INDEX__BCLK__BUFGP_SIBUFG__58_A0_B)  // I
 		)
 	);
 
 	engine->register_primitive(
 		new X_IPAD("enable_39",
 		//Module parameters:
-		"PAD144", // 
+		"PAD133", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_ENABLE_A0_B)  // PAD
@@ -541,10 +557,10 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_BUF("enable_IBUF",
 		//Module parameters:
-		"PAD144", // 
+		"PAD133", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX_ENABLE__IBUF__59_A0_B),  // O
+		engine->get_net(NET_INDEX_ENABLE__IBUF__61_A0_B),  // O
 		engine->get_net(NET_INDEX_ENABLE_A0_B)  // I
 		)
 	);
@@ -552,18 +568,18 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_BUF("\\ProtoComp4.IMUX.1",
 		//Module parameters:
-		"PAD144", // 
+		"PAD133", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_ENABLE__IBUF__0_A0_B),  // O
-		engine->get_net(NET_INDEX_ENABLE__IBUF__59_A0_B)  // I
+		engine->get_net(NET_INDEX_ENABLE__IBUF__61_A0_B)  // I
 		)
 	);
 
 	engine->register_primitive(
 		new X_OPAD("\\out<0>",
 		//Module parameters:
-		"PAD121", // 
+		"PAD134", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A0_B)  // PAD
@@ -573,7 +589,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_0_OBUF",
 		//Module parameters:
-		"PAD121", // 
+		"PAD134", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -588,7 +604,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OPAD("\\out<1>",
 		//Module parameters:
-		"PAD122", // 
+		"PAD135", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A1_B)  // PAD
@@ -598,7 +614,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_1_OBUF",
 		//Module parameters:
-		"PAD122", // 
+		"PAD135", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -613,7 +629,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OPAD("\\out<2>",
 		//Module parameters:
-		"PAD133", // 
+		"PAD136", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A2_B)  // PAD
@@ -623,7 +639,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_2_OBUF",
 		//Module parameters:
-		"PAD133", // 
+		"PAD136", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -638,7 +654,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OPAD("\\out<3>",
 		//Module parameters:
-		"PAD134", // 
+		"PAD137", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A3_B)  // PAD
@@ -648,7 +664,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_3_OBUF",
 		//Module parameters:
-		"PAD134", // 
+		"PAD137", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -663,7 +679,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OPAD("\\out<4>",
 		//Module parameters:
-		"PAD135", // 
+		"PAD138", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A4_B)  // PAD
@@ -673,7 +689,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_4_OBUF",
 		//Module parameters:
-		"PAD135", // 
+		"PAD138", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -688,7 +704,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OPAD("\\out<5>",
 		//Module parameters:
-		"PAD136", // 
+		"PAD141", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A5_B)  // PAD
@@ -698,7 +714,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_5_OBUF",
 		//Module parameters:
-		"PAD136", // 
+		"PAD141", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -711,9 +727,41 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
+		new X_IPAD("rst_61",
+		//Module parameters:
+		"PAD121", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX_RST_A0_B)  // PAD
+		)
+	);
+
+	engine->register_primitive(
+		new X_BUF("rst_IBUF",
+		//Module parameters:
+		"PAD121", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX_RST__IBUF__76_A0_B),  // O
+		engine->get_net(NET_INDEX_RST_A0_B)  // I
+		)
+	);
+
+	engine->register_primitive(
+		new X_BUF("\\ProtoComp4.IMUX.2",
+		//Module parameters:
+		"PAD121", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // O
+		engine->get_net(NET_INDEX_RST__IBUF__76_A0_B)  // I
+		)
+	);
+
+	engine->register_primitive(
 		new X_OPAD("\\out<6>",
 		//Module parameters:
-		"PAD137", // 
+		"PAD144", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A6_B)  // PAD
@@ -723,7 +771,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_6_OBUF",
 		//Module parameters:
-		"PAD137", // 
+		"PAD144", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -738,7 +786,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OPAD("\\out<7>",
 		//Module parameters:
-		"PAD138", // 
+		"PAD143", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT_A7_B)  // PAD
@@ -748,7 +796,7 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_OBUF("out_7_OBUF",
 		//Module parameters:
-		"PAD138", // 
+		"PAD143", // 
 		"DONT_CARE", // 
 		12, // 
 		"DEFAULT", // 
@@ -772,22 +820,63 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_SFF("\\cntr_inst/cntr",
+		new X_BUF("\\out_4_OBUF/out_4_OBUF_CMUX_Delay",
 		//Module parameters:
-		0x0, // 
-		"SLICE_X1Y2", // 
-		TRUE, // 
-		TRUE, // 
+		"UNPLACED", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__133_A0_B),  // O
-		engine->get_net(NET_INDEX_VCC_A0_B),  // CE
-		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__CNTR__INST_SCNTR_SCLK_A0_B),  // CLK
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // I
-		engine->get_net(NET_INDEX_GND_A0_B),  // RST
-		engine->get_net(NET_INDEX_GND_A0_B),  // SET
-		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__133_A0_B),  // SRST
-		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
+		engine->get_net(NET_INDEX_OUT__5__OBUF__0_A0_B),  // O
+		engine->get_net(NET_INDEX_OUT__5__OBUF__88_A0_B)  // I
+		)
+	);
+
+	engine->register_primitive(
+		new X_LUT6("\\gray_inst/Mxor_out<4>_xo<0>1",
+		//Module parameters:
+		0x33cc33cc33cc33cc, // 
+		"SLICE_X3Y2", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX_OUT__4__OBUF__143_A0_B),  // O
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A5_B),  // ADR1
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A4_B),  // ADR3
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR4
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR5
+		)
+	);
+
+	engine->register_primitive(
+		new X_LUT6("\\gray_inst/Mxor_out<6>_xo<0>1",
+		//Module parameters:
+		0x6666666666666666, // 
+		"SLICE_X3Y2", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX_OUT__6__OBUF__122_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A6_B),  // ADR0
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A7_B),  // ADR1
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR3
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR4
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR5
+		)
+	);
+
+	engine->register_primitive(
+		new X_LUT5("\\gray_inst/Mxor_out<5>_xo<0>1",
+		//Module parameters:
+		0x55aa55aa, // 
+		"SLICE_X3Y2", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX_OUT__5__OBUF__88_A0_B),  // O
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A6_B),  // ADR0
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A5_B),  // ADR3
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR4
 		)
 	);
 
@@ -798,23 +887,34 @@ void instance_primitives(SimulatorEngine* engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT__2__OBUF__0_A0_B),  // O
-		engine->get_net(NET_INDEX_OUT__2__OBUF__84_A0_B)  // I
+		engine->get_net(NET_INDEX_OUT__2__OBUF__94_A0_B)  // I
+		)
+	);
+
+	engine->register_primitive(
+		new X_BUF("\\out_3_OBUF/out_3_OBUF_AMUX_Delay",
+		//Module parameters:
+		"UNPLACED", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX_OUT__0__OBUF__0_A0_B),  // O
+		engine->get_net(NET_INDEX_OUT__0__OBUF__99_A0_B)  // I
 		)
 	);
 
 	engine->register_primitive(
 		new X_LUT6("\\gray_inst/Mxor_out<3>_xo<0>1",
 		//Module parameters:
-		0xff00ff00ff00ff0, // 
+		0xf0ff0f00f0ff0f0, // 
 		"SLICE_X4Y2", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__3__OBUF__126_A0_B),  // O
+		engine->get_net(NET_INDEX_OUT__3__OBUF__133_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A3_B),  // ADR2
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A4_B),  // ADR3
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR4
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR3
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A4_B),  // ADR4
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR5
 		)
 	);
@@ -826,7 +926,7 @@ void instance_primitives(SimulatorEngine* engine){
 		"SLICE_X4Y2", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__2__OBUF__84_A0_B),  // O
+		engine->get_net(NET_INDEX_OUT__2__OBUF__94_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
 		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A2_B),  // ADR1
 		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A3_B),  // ADR2
@@ -836,90 +936,18 @@ void instance_primitives(SimulatorEngine* engine){
 	);
 
 	engine->register_primitive(
-		new X_BUF("\\out_6_OBUF/out_6_OBUF_BMUX_Delay",
-		//Module parameters:
-		"UNPLACED", // 
-		
-		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__5__OBUF__0_A0_B),  // O
-		engine->get_net(NET_INDEX_OUT__5__OBUF__90_A0_B)  // I
-		)
-	);
-
-	engine->register_primitive(
-		new X_LUT6("\\gray_inst/Mxor_out<6>_xo<0>1",
-		//Module parameters:
-		0x3c3c3c3c3c3c3c3c, // 
-		"SLICE_X4Y3", // 
-		
-		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__6__OBUF__115_A0_B),  // O
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A7_B),  // ADR1
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A6_B),  // ADR2
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR3
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR4
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR5
-		)
-	);
-
-	engine->register_primitive(
-		new X_LUT5("\\gray_inst/Mxor_out<5>_xo<0>1",
-		//Module parameters:
-		0xff00ff0, // 
-		"SLICE_X4Y3", // 
-		
-		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__5__OBUF__90_A0_B),  // O
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A6_B),  // ADR2
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A5_B),  // ADR3
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR4
-		)
-	);
-
-	engine->register_primitive(
-		new X_LUT6("\\gray_inst/Mxor_out<4>_xo<0>1",
-		//Module parameters:
-		0xffffffff0000, // 
-		"SLICE_X4Y3", // 
-		
-		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__4__OBUF__135_A0_B),  // O
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR3
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A5_B),  // ADR4
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A4_B)  // ADR5
-		)
-	);
-
-	engine->register_primitive(
-		new X_BUF("\\out_1_OBUF/out_1_OBUF_DMUX_Delay",
-		//Module parameters:
-		"UNPLACED", // 
-		
-		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__0__OBUF__0_A0_B),  // O
-		engine->get_net(NET_INDEX_OUT__0__OBUF__99_A0_B)  // I
-		)
-	);
-
-	engine->register_primitive(
 		new X_LUT6("\\gray_inst/Mxor_out<1>_xo<0>1",
 		//Module parameters:
-		0x3333cccc3333cccc, // 
-		"SLICE_X7Y2", // 
+		0xffff0000ffff00, // 
+		"SLICE_X4Y2", // 
 		
 		//Module port assignments:
-		engine->get_net(NET_INDEX_OUT__1__OBUF__121_A0_B),  // O
+		engine->get_net(NET_INDEX_OUT__1__OBUF__128_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A1_B),  // ADR1
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR3
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A2_B),  // ADR4
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A2_B),  // ADR3
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A1_B),  // ADR4
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR5
 		)
 	);
@@ -927,16 +955,53 @@ void instance_primitives(SimulatorEngine* engine){
 	engine->register_primitive(
 		new X_LUT5("\\gray_inst/Mxor_out<0>_xo<0>1",
 		//Module parameters:
-		0x3c3c3c3c, // 
-		"SLICE_X7Y2", // 
+		0x3333cccc, // 
+		"SLICE_X4Y2", // 
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX_OUT__0__OBUF__99_A0_B),  // O
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A1_B),  // ADR1
-		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A0_B),  // ADR2
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A0_B),  // ADR1
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
 		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR3
-		engine->get_net(NET_INDEX_CONST__ONE_A0_B)  // ADR4
+		engine->get_net(NET_INDEX__BGRAY__INST_SCOUNT_A1_B)  // ADR4
+		)
+	);
+
+	engine->register_primitive(
+		new X_SFF("\\cntr_inst/cntr",
+		//Module parameters:
+		0x0, // 
+		"SLICE_X11Y2", // 
+		TRUE, // 
+		TRUE, // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__141_A0_B),  // O
+		engine->get_net(NET_INDEX_VCC_A0_B),  // CE
+		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__CNTR__INST_SCNTR_SCLK_A0_B),  // CLK
+		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__INV__1__O_A0_B),  // I
+		engine->get_net(NET_INDEX_GND_A0_B),  // RST
+		engine->get_net(NET_INDEX_GND_A0_B),  // SET
+		engine->get_net(NET_INDEX_RST__IBUF__0_A0_B),  // SRST
+		engine->get_net(NET_INDEX_GND_A0_B)  // SSET
+		)
+	);
+
+	engine->register_primitive(
+		new X_LUT6("\\cntr_inst/cntr_INV_1_o1_INV_0",
+		//Module parameters:
+		0xffffffff, // 
+		"SLICE_X11Y2", // 
+		
+		//Module port assignments:
+		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__INV__1__O_A0_B),  // O
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR0
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR1
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR2
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR3
+		engine->get_net(NET_INDEX_CONST__ONE_A0_B),  // ADR4
+		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__141_A0_B)  // ADR5
 		)
 	);
 
@@ -1035,7 +1100,7 @@ void instance_primitives(SimulatorEngine* engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__Q__OBUF_SI_A0_B),  // O
-		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__133_A0_B)  // I
+		engine->get_net(NET_INDEX__BCNTR__INST_SCNTR__141_A0_B)  // I
 		)
 	);
 
@@ -1057,7 +1122,7 @@ void instance_primitives(SimulatorEngine* engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__OUT__1__OBUF_SI_A0_B),  // O
-		engine->get_net(NET_INDEX_OUT__1__OBUF__121_A0_B)  // I
+		engine->get_net(NET_INDEX_OUT__1__OBUF__128_A0_B)  // I
 		)
 	);
 
@@ -1079,7 +1144,7 @@ void instance_primitives(SimulatorEngine* engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__OUT__3__OBUF_SI_A0_B),  // O
-		engine->get_net(NET_INDEX_OUT__3__OBUF__126_A0_B)  // I
+		engine->get_net(NET_INDEX_OUT__3__OBUF__133_A0_B)  // I
 		)
 	);
 
@@ -1090,7 +1155,7 @@ void instance_primitives(SimulatorEngine* engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__OUT__4__OBUF_SI_A0_B),  // O
-		engine->get_net(NET_INDEX_OUT__4__OBUF__135_A0_B)  // I
+		engine->get_net(NET_INDEX_OUT__4__OBUF__143_A0_B)  // I
 		)
 	);
 
@@ -1112,7 +1177,7 @@ void instance_primitives(SimulatorEngine* engine){
 		
 		//Module port assignments:
 		engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__OUT__6__OBUF_SI_A0_B),  // O
-		engine->get_net(NET_INDEX_OUT__6__OBUF__115_A0_B)  // I
+		engine->get_net(NET_INDEX_OUT__6__OBUF__122_A0_B)  // I
 		)
 	);
 

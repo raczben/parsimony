@@ -22,21 +22,21 @@ void SimulatorEngine::step_time()
 		net->step_time(__time__);
 	}
 
-	int delta = -1;
-	do {
-		printf("Stepping delta...");
+	//int delta = -1;
+	while (need_to_rerun_ts()) {
+		printf("Running TS: %d", __time__);
 		fflush(stdout);
 		step_delta();
-		printf("   [  OK  ]\n");
-		fflush(stdout);
+		//printf("   [  OK  ]\n");
+		//fflush(stdout);
 
-		printf("Process primitives...");
-		fflush(stdout);
+		/*printf("Process primitives...");
+		fflush(stdout);*/
 		process_primitives(get_current_time());
 		printf("   [  OK  ]\n");
 		fflush(stdout);
 
-	} while (need_to_rerun_ts());
+	}
 
 
 	__time__++;
@@ -98,6 +98,7 @@ bool SimulatorEngine::need_to_rerun_ts() {
 	for (unsigned i = 0; i < nets.size(); i++) {
 		if (nets.get(i)->get_use_in_event()) {
 			if (nets.get(i)->get_change_flag()) {
+				printf("The %d  %s changed.\n", i, nets.get(i)->get_name());
 				return true;
 			}
 		}

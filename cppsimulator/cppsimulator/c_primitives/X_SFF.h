@@ -68,12 +68,58 @@ namespace CPrimitives {
 		}
 		
 		void register_wait_on_event_nets(){
-		// TODO
+			CLK_A0_B->register_event_reader(this);
+			RST_A0_B->register_event_reader(this);
+			SET_A0_B->register_event_reader(this);
 		}
 		
 		void calculate(int time){
-		// TODO
+			if (RST_A0_B->is_equal_at(HIGH, time)) {
+				O_A0_B->set_at(
+					LOW,
+					time
+					);
+				return;
+			}
+			// Async SET
+			if (SET_A0_B->is_equal_at(HIGH, time)) {
+				O_A0_B->set_at(
+					HIGH,
+					time
+					);
+				return;
+			}
+
+			/**
+			*  (01)   0      1    0     0       ?    :   ?  :  0;
+			*  (01)   1      1    0     0       ?    :   ?  :  1;
+			*  (01)   x      1    0     0       ?    :   ?  :  x;
+			*/
+			if (CLK_A0_B->posedge_at(time)) {
+				if (CE_A0_B->is_equal_prev(HIGH, time)) {
+					if (SRST_A0_B->is_equal_prev(HIGH, time)) {
+						O_A0_B->set_at(
+							LOW,
+							time
+							);
+						return;
+					}
+					if (SSET_A0_B->is_equal_prev(HIGH, time)) {
+						O_A0_B->set_at(
+							HIGH,
+							time
+							);
+						return;
+					}
+					O_A0_B->set_at(
+						I_A0_B->get_value_prev(time),
+						time
+						);
+					return;
+				}
+			}
 		}
+
 		};
 		
 }

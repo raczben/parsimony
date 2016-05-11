@@ -90,7 +90,7 @@ namespace CPrimitives {
 			 *  (01)   x      1    0     0       ?    :   ?  :  x;
 			 */
 			if (CLK_A0_B->posedge_at(time)) {
-				if (CLK_A0_B->is_equal_prev(HIGH, time)) {
+				if (CE_A0_B->is_equal_prev(HIGH, time)) {
 					O_A0_B->set_at(
 						new_net_level(I_A0_B->get_value_prev(time)),
 						time

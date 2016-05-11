@@ -36,7 +36,7 @@ void calculate_LUT(simtime_t time,
 		return;
 	}
 
-	int bit_select = a0 + (a1 << 1) + (a2 << 2) + (a3 << 3) + (a4 << 4) + (a4 << 5);
+	int bit_select = a0 + (a1 << 1) + (a2 << 2) + (a3 << 3) + (a4 << 4) + (a5 << 5);
 	lut = (lut >> bit_select);
 	out_val = static_cast<value_t>(lut & 1 );
 
@@ -60,7 +60,7 @@ void calculate_BUF(simtime_t time,
 	) {
 	out->set_at(
 		in->get_at(time),
-		time+1
+		time
 		);
 }
 
@@ -80,7 +80,7 @@ value_t or_gate(value_t in1, value_t in2) {
 	}
 	else {
 		if ( (LOW == in1) | (LOW == in2) ) {
-			return HIGH;
+			return LOW;
 		}
 		else {
 			return UNDEFINED;
@@ -96,10 +96,10 @@ value_t xor_gate(value_t in1, value_t in2) {
 	if (is_undefined(in1) | is_undefined(in2)) {
 		return UNDEFINED;
 	}
-	if ( (LOW == in1) | (LOW == in2) ) {
+	if ( (LOW == in1) & (LOW == in2) ) {
 		return LOW;
 	}
-	if ( (HIGH == in1) | (HIGH == in2) ) {
+	if ( (HIGH == in1) & (HIGH == in2) ) {
 		return LOW;
 	}
 	return HIGH;

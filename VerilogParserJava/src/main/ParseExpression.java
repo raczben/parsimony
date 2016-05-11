@@ -107,7 +107,7 @@ public class ParseExpression {
 					if(null != primary.range_expression()){
 						Range_expressionContext rangeExp = primary.range_expression();
 						Expression msbExp = parseExpression(rangeExp.msb_constant_expression().constant_expression().expression());
-						Expression lsbExp = parseExpression(rangeExp.msb_constant_expression().constant_expression().expression());
+						Expression lsbExp = parseExpression(rangeExp.lsb_constant_expression().constant_expression().expression());
 						retExp = new Expression(new NetDescriptor(hierId.getText(), msbExp.getInteger().intValue(), (int)lsbExp.getInteger().intValue()));
 						
 					} if(primary.expression().size()>0){
@@ -131,7 +131,6 @@ public class ParseExpression {
 								// there is no vector selection
 							}
 							retExp = new Expression(new NetDescriptor(netName, vectorIndex, vectorIndex));
-							
 							
 						}
 						else if(null != hierId.escaped_hierarchical_identifier()){

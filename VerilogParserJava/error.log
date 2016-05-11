@@ -1,14 +1,14 @@
 INFO: main: Load Success?
 INFO: main: Load Success?
-INFO: main: Net identifier: out_6_OBUF_115
+INFO: main: Net identifier: out_6_OBUF_122
 INFO: main: Generating...
 INFO: main: Net identifier: out_5_OBUF_0
 INFO: main: Generating...
-INFO: main: Net identifier: out_1_OBUF_121
+INFO: main: Net identifier: out_1_OBUF_128
 INFO: main: Generating...
 INFO: main: Net identifier: out_0_OBUF_0
 INFO: main: Generating...
-INFO: main: Net identifier: out_3_OBUF_126
+INFO: main: Net identifier: out_3_OBUF_133
 INFO: main: Generating...
 INFO: main: Net identifier: out_2_OBUF_0
 INFO: main: Generating...
@@ -16,37 +16,43 @@ INFO: main: Net identifier: enable_IBUF_0
 INFO: main: Generating...
 INFO: main: Net identifier: clk_BUFGP
 INFO: main: Generating...
-INFO: main: Net identifier: \cntr_inst/cntr_133
+INFO: main: Net identifier: rst_IBUF_0
+INFO: main: Generating...
+INFO: main: Net identifier: \cntr_inst/cntr_141
 INFO: main: Generating...
 INFO: main: Net identifier: \clk_BUFGP/IBUFG_0
 INFO: main: Generating...
-INFO: main: Net identifier: out_4_OBUF_135
+INFO: main: Net identifier: out_4_OBUF_143
 INFO: main: Generating...
-INFO: main: Net identifier: \gray_inst/count<1>_rt_17
+INFO: main: Net identifier: \gray_inst/count<1>_rt_18
 INFO: main: Generating...
-INFO: main: Net identifier: \gray_inst/count<2>_rt_13
+INFO: main: Net identifier: \gray_inst/count<2>_rt_14
 INFO: main: Generating...
 INFO: main: Net identifier: \ProtoComp1.CYINITGND.0
 INFO: main: Generating...
-INFO: main: Net identifier: \gray_inst/count<3>_rt_1
+INFO: main: Net identifier: \gray_inst/count<3>_rt_2
 INFO: main: Generating...
-INFO: main: Net identifier: \gray_inst/count<4>_rt_47
+INFO: main: Net identifier: \gray_inst/count<4>_rt_49
 INFO: main: Generating...
-INFO: main: Net identifier: \gray_inst/count<5>_rt_43
+INFO: main: Net identifier: \gray_inst/count<5>_rt_45
 INFO: main: Generating...
-INFO: main: Net identifier: \gray_inst/count<6>_rt_39
+INFO: main: Net identifier: \gray_inst/count<6>_rt_41
 INFO: main: Generating...
-INFO: main: Net identifier: \gray_inst/count<7>_rt_29
+INFO: main: Net identifier: \gray_inst/count<7>_rt_31
 INFO: main: Generating...
-INFO: main: Net identifier: \clk_BUFGP/IBUFG_56
+INFO: main: Net identifier: \clk_BUFGP/IBUFG_58
 INFO: main: Generating...
-INFO: main: Net identifier: enable_IBUF_59
+INFO: main: Net identifier: enable_IBUF_61
 INFO: main: Generating...
-INFO: main: Net identifier: out_2_OBUF_84
+INFO: main: Net identifier: rst_IBUF_76
 INFO: main: Generating...
-INFO: main: Net identifier: out_5_OBUF_90
+INFO: main: Net identifier: out_5_OBUF_88
 INFO: main: Generating...
 INFO: main: Net identifier: out_0_OBUF_99
+INFO: main: Generating...
+INFO: main: Net identifier: out_2_OBUF_94
+INFO: main: Generating...
+INFO: main: Net identifier: \cntr_inst/cntr_INV_1_o
 INFO: main: Generating...
 INFO: main: Net identifier: \NlwBufferSignal_gray_inst/count_3/CLK
 INFO: main: Generating...
@@ -88,7 +94,7 @@ INFO: main: Net identifier: \NlwBufferSignal_cntr_inst/cntr/CLK
 INFO: main: Generating...
 INFO: main: Net identifier: GND
 INFO: main: Generating...
-INFO: main: Net identifier: \NLW_reset_4.D5LUT_O_UNCONNECTED
+INFO: main: Net identifier: \NLW_N0_4.D5LUT_O_UNCONNECTED
 INFO: main: Generating...
 INFO: main: Net identifier: \NLW_gray_inst/Mcount_count_cy<3>_CO[0]_UNCONNECTED
 INFO: main: Generating...
@@ -96,11 +102,11 @@ INFO: main: Net identifier: \NLW_gray_inst/Mcount_count_cy<3>_CO[1]_UNCONNECTED
 INFO: main: Generating...
 INFO: main: Net identifier: \NLW_gray_inst/Mcount_count_cy<3>_CO[2]_UNCONNECTED
 INFO: main: Generating...
-INFO: main: Net identifier: \NLW_reset_5.C5LUT_O_UNCONNECTED
+INFO: main: Net identifier: \NLW_N0_5.C5LUT_O_UNCONNECTED
 INFO: main: Generating...
-INFO: main: Net identifier: \NLW_reset_6.B5LUT_O_UNCONNECTED
+INFO: main: Net identifier: \NLW_N0_6.B5LUT_O_UNCONNECTED
 INFO: main: Generating...
-INFO: main: Net identifier: \NLW_N0_2.A5LUT_O_UNCONNECTED
+INFO: main: Net identifier: \NLW_N1.A5LUT_O_UNCONNECTED
 INFO: main: Generating...
 INFO: main: Net identifier: \NLW_gray_inst/Mcount_count_xor<7>_CO[0]_UNCONNECTED
 INFO: main: Generating...
@@ -112,11 +118,11 @@ INFO: main: Net identifier: \NLW_gray_inst/Mcount_count_xor<7>_CO[3]_UNCONNECTED
 INFO: main: Generating...
 INFO: main: Net identifier: \NLW_gray_inst/Mcount_count_xor<7>_DI[3]_UNCONNECTED
 INFO: main: Generating...
-INFO: main: Net identifier: \NLW_reset.C5LUT_O_UNCONNECTED
+INFO: main: Net identifier: \NLW_N0.C5LUT_O_UNCONNECTED
 INFO: main: Generating...
-INFO: main: Net identifier: \NLW_reset_2.B5LUT_O_UNCONNECTED
+INFO: main: Net identifier: \NLW_N0_2.B5LUT_O_UNCONNECTED
 INFO: main: Generating...
-INFO: main: Net identifier: \NLW_reset_3.A5LUT_O_UNCONNECTED
+INFO: main: Net identifier: \NLW_N0_3.A5LUT_O_UNCONNECTED
 INFO: main: Generating...
 INFO: main: Net identifier: VCC
 INFO: main: Generating...
@@ -128,44 +134,38 @@ INFO: main: Net identifier: \gray_inst/Mcount_count_lut
 INFO: main: Generating...
 INFO: main: Net identifier: \gray_inst/Result
 INFO: main: Generating...
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X6Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD143"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD143"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD172"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD172"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD172"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD144"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD144"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD144"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD121"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD121"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y4"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y5"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD122"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD122"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD172"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD172"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD172"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD133"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD133"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD133"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD134"
@@ -178,15 +178,25 @@ ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.Ter
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD137"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD138"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD138"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD141"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD141"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD121"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD121"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD121"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD144"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD144"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD143"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "PAD143"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "BUFGMUX_X3Y13"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X1Y2"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X3Y2"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X3Y2"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X3Y2"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y2"
 ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y3"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X7Y2"
-ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X7Y2"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y2"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X4Y2"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X11Y2"
+ERROR: main: Unsupported child type in term: class org.antlr.v4.runtime.tree.TerminalNodeImpl  value: "SLICE_X11Y2"
 INFO: main: Copy from: C:\Users\ebenera\bme\2015_16_tavasz\onlab2\parSimony\VerilogParserJava\primitiveInstatiation.cpp  to C:\Users\ebenera\bme\2015_16_tavasz\onlab2\parSimony\VerilogParserJava\..\cppsimulator\cppsimulator\primitiveInstatiation.cpp
 INFO: main: Copy from: C:\Users\ebenera\bme\2015_16_tavasz\onlab2\parSimony\VerilogParserJava\netinstatiation.cpp  to C:\Users\ebenera\bme\2015_16_tavasz\onlab2\parSimony\VerilogParserJava\..\cppsimulator\cppsimulator\netinstatiation.cpp
 INFO: main: Copy from: C:\Users\ebenera\bme\2015_16_tavasz\onlab2\parSimony\VerilogParserJava\netinstatiation.h  to C:\Users\ebenera\bme\2015_16_tavasz\onlab2\parSimony\VerilogParserJava\..\cppsimulator\cppsimulator\netinstatiation.h

@@ -219,7 +219,9 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	}
 
 	this->data.push_back(new_element);
-	now_index = data.size()-1;
+	if (set_time<=engine->get_current_time()) {
+		now_index = data.size() - 1;
+	}
 
 	return;
 }
@@ -243,11 +245,26 @@ void NetFlow::set_from_now(const net_level_t level, const simtime_t set_time) {
 	set_at(level, set_time + engine->get_current_time());
 }
 
+void NetFlow::set_from_now(const value_t val, const simtime_t set_time, const strength_t strength) {
+	set_at(val, set_time + engine->get_current_time(), strength);
+}
+
+void NetFlow::set_at(const value_t val, const simtime_t time, const strength_t strength) {
+	set_at(new_net_level(val, strength), time);
+}
+
 /******************************************************************************
 
 *****************************************************************************/
 void NetFlow::set_now(const net_level_t level) {
 	set_from_now(level, 0);
+}
+
+/******************************************************************************
+
+*****************************************************************************/
+void NetFlow::set_now(const value_t val, const strength_t strength) {
+	set_from_now(val, 0, strength);
 }
 
 int NetFlow::__find_nearest_earlier_index__(const simtime_t serach_time) const  {
@@ -316,6 +333,9 @@ void NetFlow::step_time(const unsigned time_to_step)
 {
 	if (data.size() == 1) {
 		now_index = 0;
+		if (time_to_step == now_index) {
+			changed_in_this_delta = true;
+		}
 		return;
 	}
 	while (true) {
@@ -324,6 +344,9 @@ void NetFlow::step_time(const unsigned time_to_step)
 		if (data[now_index + 1]->time > time_to_step)
 			return;
 		now_index++;
+		if (time_to_step == data.get(now_index)->time ) {
+			changed_in_this_delta = true;
+		}
 	}
 }
 

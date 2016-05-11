@@ -133,7 +133,7 @@ class NetFlow {
 	// Events example: combinational networks, always * ...
 	base::Vector<Primitive*> event_readers;
 
-	bool changed_in_this_delta = false;
+	bool changed_in_this_delta = true;
 
 	//
 public:
@@ -280,6 +280,12 @@ public:
 
 	*****************************************************************************/
 	void set_now(const net_level_t level);
+
+	void NetFlow::set_now(const value_t val, const strength_t strength = strong);
+
+	void set_from_now(const value_t val, const simtime_t time, const strength_t strength = strong);
+
+	void set_at(const value_t val, const simtime_t time, const strength_t strength = strong);
 
 	/******************************************************************************
 	* Sets the net_flow value at the given time. The 0 time is the

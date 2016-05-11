@@ -18,48 +18,48 @@ namespace CPrimitives {
 		//Verilog Parameters:
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
-		NetFlow* CO_A0_B; // net ID: CO lsb: 0  msb: 3 OUTPUT
-		NetFlow* CO_A1_B; // net ID: CO lsb: 0  msb: 3 OUTPUT
-		NetFlow* CO_A2_B; // net ID: CO lsb: 0  msb: 3 OUTPUT
 		NetFlow* CO_A3_B; // net ID: CO lsb: 0  msb: 3 OUTPUT
-		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 3 OUTPUT
-		NetFlow* O_A1_B; // net ID: O lsb: 0  msb: 3 OUTPUT
-		NetFlow* O_A2_B; // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* CO_A2_B; // net ID: CO lsb: 0  msb: 3 OUTPUT
+		NetFlow* CO_A1_B; // net ID: CO lsb: 0  msb: 3 OUTPUT
+		NetFlow* CO_A0_B; // net ID: CO lsb: 0  msb: 3 OUTPUT
 		NetFlow* O_A3_B; // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* O_A2_B; // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* O_A1_B; // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 3 OUTPUT
 		NetFlow* CI_A0_B; // net ID: CI lsb: 0  msb: 0 INPUT
 		NetFlow* CYINIT_A0_B; // net ID: CYINIT lsb: 0  msb: 0 INPUT
-		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 3 INPUT
-		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 3 INPUT
-		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 3 INPUT
 		NetFlow* DI_A3_B; // net ID: DI lsb: 0  msb: 3 INPUT
-		NetFlow* S_A0_B; // net ID: S lsb: 0  msb: 3 INPUT
-		NetFlow* S_A1_B; // net ID: S lsb: 0  msb: 3 INPUT
-		NetFlow* S_A2_B; // net ID: S lsb: 0  msb: 3 INPUT
+		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 3 INPUT
+		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 3 INPUT
+		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 3 INPUT
 		NetFlow* S_A3_B; // net ID: S lsb: 0  msb: 3 INPUT
+		NetFlow* S_A2_B; // net ID: S lsb: 0  msb: 3 INPUT
+		NetFlow* S_A1_B; // net ID: S lsb: 0  msb: 3 INPUT
+		NetFlow* S_A0_B; // net ID: S lsb: 0  msb: 3 INPUT
 
 	public: X_CARRY4(
 		const char * name,
 		//Verilog Parameters:
 		parameter_string_t LOC, // Default: "UNPLACED"
 								//Verilog Ports in definition order:
-		NetFlow* CO_A0_B, // net ID: CO lsb: 0  msb: 3 OUTPUT
-		NetFlow* CO_A1_B, // net ID: CO lsb: 0  msb: 3 OUTPUT
-		NetFlow* CO_A2_B, // net ID: CO lsb: 0  msb: 3 OUTPUT
 		NetFlow* CO_A3_B, // net ID: CO lsb: 0  msb: 3 OUTPUT
-		NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 3 OUTPUT
-		NetFlow* O_A1_B, // net ID: O lsb: 0  msb: 3 OUTPUT
-		NetFlow* O_A2_B, // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* CO_A2_B, // net ID: CO lsb: 0  msb: 3 OUTPUT
+		NetFlow* CO_A1_B, // net ID: CO lsb: 0  msb: 3 OUTPUT
+		NetFlow* CO_A0_B, // net ID: CO lsb: 0  msb: 3 OUTPUT
 		NetFlow* O_A3_B, // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* O_A2_B, // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* O_A1_B, // net ID: O lsb: 0  msb: 3 OUTPUT
+		NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 3 OUTPUT
 		NetFlow* CI_A0_B, // net ID: CI lsb: 0  msb: 0 INPUT
 		NetFlow* CYINIT_A0_B, // net ID: CYINIT lsb: 0  msb: 0 INPUT
-		NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 3 INPUT
-		NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 3 INPUT
-		NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 3 INPUT
 		NetFlow* DI_A3_B, // net ID: DI lsb: 0  msb: 3 INPUT
-		NetFlow* S_A0_B, // net ID: S lsb: 0  msb: 3 INPUT
-		NetFlow* S_A1_B, // net ID: S lsb: 0  msb: 3 INPUT
+		NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 3 INPUT
+		NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 3 INPUT
+		NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 3 INPUT
+		NetFlow* S_A3_B, // net ID: S lsb: 0  msb: 3 INPUT
 		NetFlow* S_A2_B, // net ID: S lsb: 0  msb: 3 INPUT
-		NetFlow* S_A3_B // net ID: S lsb: 0  msb: 3 INPUT
+		NetFlow* S_A1_B, // net ID: S lsb: 0  msb: 3 INPUT
+		NetFlow* S_A0_B // net ID: S lsb: 0  msb: 3 INPUT
 		):Primitive(name) {
 
 		// Assign parameters and ports: 
