@@ -1,4 +1,8 @@
 */Debug/*
 Debug/*
+*/Release/*
+Release/*
 *sdf
 cppsimulator.sdf
+*.vsp
+*.psess

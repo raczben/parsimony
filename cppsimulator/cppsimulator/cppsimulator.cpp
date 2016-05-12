@@ -9,6 +9,23 @@
 #include "Primitive.h"
 #include "shared.h"
 #include "VCDWiter.h"
+#include <ctime>
+
+#define CLOCKS_PER_MSEC  ( CLOCKS_PER_SEC / 1000 )
+
+/********************************************
+ * Define testcases:
+ ********************************************/
+#define LUT6_TEST	  ( 0 ) 
+#define TEST_DUT_TEST ( 1 ) 
+#define CARRY4_TEST   ( 2 ) 
+
+ /********************************************
+ * Choose the current testcase:
+ ********************************************/
+#define TEST_TEST_CASE TEST_DUT_TEST
+
+
 
 /**
 *Global engine of simulation.
@@ -19,11 +36,7 @@ void instance_primitives(SimulatorEngine* engine);
 void instance_nets(SimulatorEngine* engine);
 
 
-#define LUT6_TEST 0
-#define TEST_DUT_TEST 1
-#define CARRY4_TEST 2
 
-#define TEST_TEST_CASE TEST_DUT_TEST
 
 
 #if (TEST_TEST_CASE == LUT6_TEST)
@@ -87,7 +100,7 @@ void run_TEST_DUT_test_stimulus() {
 	printf("Start generating clock ... \n");
 	fflush(stdout);
 	net = (engine->get_net(NET_INDEX_CLK_A0_B));
-	net->generate_clock(5, 0, 400);
+	net->generate_clock(5, 0, 40000);
 
 	printf("run to 5 \n");
 	fflush(stdout);
@@ -104,7 +117,7 @@ void run_TEST_DUT_test_stimulus() {
 
 	printf("run to 10 \n");
 	fflush(stdout);
-	engine->run(400);
+	engine->run(40000);
 
 }
 #endif
@@ -146,8 +159,12 @@ void start_simulation() {
 
 int main()
 {
+
+	const clock_t begin_time = clock();
+
 	start_simulation();
 
+	const clock_t after_init_time = clock();
 	/*************************************************
 	* STimulus here:
 	**************************************************/
@@ -162,7 +179,8 @@ int main()
 	run_CARRY4_test_stumulus();
 #endif
 
-	//net->print_flow();
+
+	const clock_t after_run_time = clock();
 
 	VCDWiter vcdWriter("parsimony.vcd");
 	vcdWriter.write_vcd();
@@ -170,6 +188,14 @@ int main()
 	printf("Exiting... \n By");
 	fflush(stdout);
 
+
+	const clock_t finish_time = clock();
+
+	printf("Summary of time of running:\n");
+	printf(" Init     :  %.0f ms\n", float(after_init_time - begin_time) / CLOCKS_PER_MSEC);
+	printf(" Run      :  %.0f ms\n", float(after_run_time - after_init_time) / CLOCKS_PER_MSEC);
+	printf(" VCD write:  %.0f ms\n", float(finish_time - after_run_time) / CLOCKS_PER_MSEC);
+	printf("Sum       :  %.0f ms\n", float(finish_time - begin_time) / CLOCKS_PER_MSEC);
 
 
 	return 0;

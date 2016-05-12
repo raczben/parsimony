@@ -16,25 +16,22 @@ SimulatorEngine::~SimulatorEngine()
 void SimulatorEngine::step_time()
 {
 	for (unsigned i = 0; i < nets.size(); i++) {
-		//printf("i: %d ", i);
 		NetFlow* net = nets.get(i);
-		//printf("nets[i]: %s \n", net->get_name());
 		net->step_time((unsigned) __time__);
 	}
 
 	//int delta = -1;
 	while (need_to_rerun_ts()) {
+#if VERBOSE > 0
 		printf("Running TS: %ld", __time__);
 		fflush(stdout);
+#endif
 		step_delta();
-		//printf("   [  OK  ]\n");
-		//fflush(stdout);
-
-		/*printf("Process primitives...");
-		fflush(stdout);*/
 		process_primitives(get_current_time());
+#if VERBOSE > 0
 		printf("   [  OK  ]\n");
 		fflush(stdout);
+#endif
 
 	}
 
@@ -98,7 +95,9 @@ bool SimulatorEngine::need_to_rerun_ts() {
 	for (unsigned i = 0; i < nets.size(); i++) {
 		if (nets.get(i)->get_use_in_event()) {
 			if (nets.get(i)->get_change_flag()) {
+#if VERBOSE > 0
 				printf("The %d  %s changed.\n", i, nets.get(i)->get_name());
+#endif
 				return true;
 			}
 		}

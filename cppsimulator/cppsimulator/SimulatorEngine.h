@@ -12,6 +12,7 @@
 #include "base_vector.h"
 #include "Primitive.h"
 #include "NetFlow.h"
+#include "shared.h"
 
 /******************************************************************************
  * The SimulatorEngine is the controller of the simulation. This class contains
