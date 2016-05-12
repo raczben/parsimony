@@ -38,10 +38,10 @@ namespace CPrimitives {
 		NetFlow* SHIFTOUT1_A0_B; // net ID: SHIFTOUT1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* SHIFTOUT2_A0_B; // net ID: SHIFTOUT2 lsb: 0  msb: 0 OUTPUT
 		NetFlow* DATA__RATE__OQ_A0_B; // net ID: DATA_RATE_OQ lsb: 0  msb: 0 INPUT
-		NetFlow* DATA__WIDTH_A0_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
-		NetFlow* DATA__WIDTH_A1_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
-		NetFlow* DATA__WIDTH_A2_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
 		NetFlow* DATA__WIDTH_A3_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+		NetFlow* DATA__WIDTH_A2_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+		NetFlow* DATA__WIDTH_A1_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+		NetFlow* DATA__WIDTH_A0_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
 		NetFlow* SERDES__MODE_A0_B; // net ID: SERDES_MODE lsb: 0  msb: 0 INPUT
 		NetFlow* LOAD_A0_B; // net ID: load lsb: 0  msb: 0 OUTPUT
 		NetFlow* IOCLK__GLITCH_A0_B; // net ID: IOCLK_GLITCH lsb: 0  msb: 0 OUTPUT
@@ -74,10 +74,10 @@ namespace CPrimitives {
 			NetFlow* SHIFTOUT1_A0_B, // net ID: SHIFTOUT1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* SHIFTOUT2_A0_B, // net ID: SHIFTOUT2 lsb: 0  msb: 0 OUTPUT
 			NetFlow* DATA__RATE__OQ_A0_B, // net ID: DATA_RATE_OQ lsb: 0  msb: 0 INPUT
-			NetFlow* DATA__WIDTH_A0_B, // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
-			NetFlow* DATA__WIDTH_A1_B, // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
-			NetFlow* DATA__WIDTH_A2_B, // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
 			NetFlow* DATA__WIDTH_A3_B, // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+			NetFlow* DATA__WIDTH_A2_B, // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+			NetFlow* DATA__WIDTH_A1_B, // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+			NetFlow* DATA__WIDTH_A0_B, // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
 			NetFlow* SERDES__MODE_A0_B, // net ID: SERDES_MODE lsb: 0  msb: 0 INPUT
 			NetFlow* LOAD_A0_B, // net ID: load lsb: 0  msb: 0 OUTPUT
 			NetFlow* IOCLK__GLITCH_A0_B, // net ID: IOCLK_GLITCH lsb: 0  msb: 0 OUTPUT
@@ -110,10 +110,10 @@ namespace CPrimitives {
 			this->SHIFTOUT1_A0_B = SHIFTOUT1_A0_B; // net ID: SHIFTOUT1 lsb: 0  msb: 0 OUTPUT
 			this->SHIFTOUT2_A0_B = SHIFTOUT2_A0_B; // net ID: SHIFTOUT2 lsb: 0  msb: 0 OUTPUT
 			this->DATA__RATE__OQ_A0_B = DATA__RATE__OQ_A0_B; // net ID: DATA_RATE_OQ lsb: 0  msb: 0 INPUT
-			this->DATA__WIDTH_A0_B = DATA__WIDTH_A0_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
-			this->DATA__WIDTH_A1_B = DATA__WIDTH_A1_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
-			this->DATA__WIDTH_A2_B = DATA__WIDTH_A2_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
 			this->DATA__WIDTH_A3_B = DATA__WIDTH_A3_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+			this->DATA__WIDTH_A2_B = DATA__WIDTH_A2_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+			this->DATA__WIDTH_A1_B = DATA__WIDTH_A1_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
+			this->DATA__WIDTH_A0_B = DATA__WIDTH_A0_B; // net ID: DATA_WIDTH lsb: 0  msb: 3 INPUT
 			this->SERDES__MODE_A0_B = SERDES__MODE_A0_B; // net ID: SERDES_MODE lsb: 0  msb: 0 INPUT
 			this->LOAD_A0_B = LOAD_A0_B; // net ID: load lsb: 0  msb: 0 OUTPUT
 			this->IOCLK__GLITCH_A0_B = IOCLK__GLITCH_A0_B; // net ID: IOCLK_GLITCH lsb: 0  msb: 0 OUTPUT

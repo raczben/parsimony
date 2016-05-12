@@ -23,9 +23,9 @@ namespace CPrimitives {
 		NetFlow* CCLK_A0_B; // net ID: CCLK lsb: 0  msb: 0 INPUT
 		NetFlow* DIN_A0_B; // net ID: DIN lsb: 0  msb: 0 INPUT
 		NetFlow* INITB_A0_B; // net ID: INITB lsb: 0  msb: 0 UNDEFINED
-		NetFlow* M_A0_B; // net ID: M lsb: 0  msb: 2 INPUT
-		NetFlow* M_A1_B; // net ID: M lsb: 0  msb: 2 INPUT
 		NetFlow* M_A2_B; // net ID: M lsb: 0  msb: 2 INPUT
+		NetFlow* M_A1_B; // net ID: M lsb: 0  msb: 2 INPUT
+		NetFlow* M_A0_B; // net ID: M lsb: 0  msb: 2 INPUT
 		NetFlow* PROGB_A0_B; // net ID: PROGB lsb: 0  msb: 0 INPUT
 		
 		public: X_SIM_CONFIG_V6_SERIAL(
@@ -39,9 +39,9 @@ namespace CPrimitives {
 			NetFlow* CCLK_A0_B, // net ID: CCLK lsb: 0  msb: 0 INPUT
 			NetFlow* DIN_A0_B, // net ID: DIN lsb: 0  msb: 0 INPUT
 			NetFlow* INITB_A0_B, // net ID: INITB lsb: 0  msb: 0 UNDEFINED
-			NetFlow* M_A0_B, // net ID: M lsb: 0  msb: 2 INPUT
-			NetFlow* M_A1_B, // net ID: M lsb: 0  msb: 2 INPUT
 			NetFlow* M_A2_B, // net ID: M lsb: 0  msb: 2 INPUT
+			NetFlow* M_A1_B, // net ID: M lsb: 0  msb: 2 INPUT
+			NetFlow* M_A0_B, // net ID: M lsb: 0  msb: 2 INPUT
 			NetFlow* PROGB_A0_B // net ID: PROGB lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
@@ -55,9 +55,9 @@ namespace CPrimitives {
 			this->CCLK_A0_B = CCLK_A0_B; // net ID: CCLK lsb: 0  msb: 0 INPUT
 			this->DIN_A0_B = DIN_A0_B; // net ID: DIN lsb: 0  msb: 0 INPUT
 			this->INITB_A0_B = INITB_A0_B; // net ID: INITB lsb: 0  msb: 0 UNDEFINED
-			this->M_A0_B = M_A0_B; // net ID: M lsb: 0  msb: 2 INPUT
-			this->M_A1_B = M_A1_B; // net ID: M lsb: 0  msb: 2 INPUT
 			this->M_A2_B = M_A2_B; // net ID: M lsb: 0  msb: 2 INPUT
+			this->M_A1_B = M_A1_B; // net ID: M lsb: 0  msb: 2 INPUT
+			this->M_A0_B = M_A0_B; // net ID: M lsb: 0  msb: 2 INPUT
 			this->PROGB_A0_B = PROGB_A0_B; // net ID: PROGB lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();

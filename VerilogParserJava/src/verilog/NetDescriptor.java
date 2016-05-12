@@ -144,7 +144,7 @@ public class NetDescriptor implements Serializable{
     public List<String> getCdefineIdentifierList(){
     	List<String> ret = new ArrayList<String>();
     	
-    	for(int i = lsb; i<=msb; i++){
+    	for(int i = msb; i>=lsb; i--){
     		ret.add(getCdefineIdentifierBit(i));
     	}
     	return ret;
@@ -157,7 +157,7 @@ public class NetDescriptor implements Serializable{
     public List<String> getCIdentifierList(){
     	List<String> ret = new ArrayList<String>();
     	
-    	for(int i = lsb; i<=msb; i++){
+    	for(int i = msb; i>=lsb; i--){
     		ret.add(getCIdentifierBit(i));
     	}
     	return ret;

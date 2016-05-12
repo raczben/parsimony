@@ -27,28 +27,28 @@ namespace CPrimitives {
 		parameter_string_t LOC;
 		parameter_int_t SIM_DELAY_D;
 		//Verilog Ports in definition order:
-		NetFlow* CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-		NetFlow* CNTVALUEOUT_A1_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-		NetFlow* CNTVALUEOUT_A2_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-		NetFlow* CNTVALUEOUT_A3_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 		NetFlow* CNTVALUEOUT_A4_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A3_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A2_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A1_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+		NetFlow* CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 		NetFlow* DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
 		NetFlow* C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
 		NetFlow* CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
 		NetFlow* CINVCTRL_A0_B; // net ID: CINVCTRL lsb: 0  msb: 0 INPUT
 		NetFlow* CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
-		NetFlow* CNTVALUEIN_A0_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-		NetFlow* CNTVALUEIN_A1_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-		NetFlow* CNTVALUEIN_A2_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-		NetFlow* CNTVALUEIN_A3_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
 		NetFlow* CNTVALUEIN_A4_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+		NetFlow* CNTVALUEIN_A3_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+		NetFlow* CNTVALUEIN_A2_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+		NetFlow* CNTVALUEIN_A1_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+		NetFlow* CNTVALUEIN_A0_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
 		NetFlow* INC_A0_B; // net ID: INC lsb: 0  msb: 0 INPUT
 		NetFlow* LD_A0_B; // net ID: LD lsb: 0  msb: 0 INPUT
 		NetFlow* LDPIPEEN_A0_B; // net ID: LDPIPEEN lsb: 0  msb: 0 INPUT
 		NetFlow* ODATAIN_A0_B; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-		NetFlow* OFDLY_A0_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
-		NetFlow* OFDLY_A1_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
 		NetFlow* OFDLY_A2_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
+		NetFlow* OFDLY_A1_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
+		NetFlow* OFDLY_A0_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
 		NetFlow* REGRST_A0_B; // net ID: REGRST lsb: 0  msb: 0 INPUT
 		
 		public: X_ODELAYE2_FINEDELAY(
@@ -66,28 +66,28 @@ namespace CPrimitives {
 			parameter_string_t LOC, // Default: "UNPLACED"
 			parameter_int_t SIM_DELAY_D, // Default: 0
 			//Verilog Ports in definition order:
-			NetFlow* CNTVALUEOUT_A0_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-			NetFlow* CNTVALUEOUT_A1_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-			NetFlow* CNTVALUEOUT_A2_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-			NetFlow* CNTVALUEOUT_A3_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 			NetFlow* CNTVALUEOUT_A4_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A3_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A2_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A1_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			NetFlow* CNTVALUEOUT_A0_B, // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 			NetFlow* DATAOUT_A0_B, // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
 			NetFlow* C_A0_B, // net ID: C lsb: 0  msb: 0 INPUT
 			NetFlow* CE_A0_B, // net ID: CE lsb: 0  msb: 0 INPUT
 			NetFlow* CINVCTRL_A0_B, // net ID: CINVCTRL lsb: 0  msb: 0 INPUT
 			NetFlow* CLKIN_A0_B, // net ID: CLKIN lsb: 0  msb: 0 INPUT
-			NetFlow* CNTVALUEIN_A0_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-			NetFlow* CNTVALUEIN_A1_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-			NetFlow* CNTVALUEIN_A2_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-			NetFlow* CNTVALUEIN_A3_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
 			NetFlow* CNTVALUEIN_A4_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			NetFlow* CNTVALUEIN_A3_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			NetFlow* CNTVALUEIN_A2_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			NetFlow* CNTVALUEIN_A1_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			NetFlow* CNTVALUEIN_A0_B, // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
 			NetFlow* INC_A0_B, // net ID: INC lsb: 0  msb: 0 INPUT
 			NetFlow* LD_A0_B, // net ID: LD lsb: 0  msb: 0 INPUT
 			NetFlow* LDPIPEEN_A0_B, // net ID: LDPIPEEN lsb: 0  msb: 0 INPUT
 			NetFlow* ODATAIN_A0_B, // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-			NetFlow* OFDLY_A0_B, // net ID: OFDLY lsb: 0  msb: 2 INPUT
-			NetFlow* OFDLY_A1_B, // net ID: OFDLY lsb: 0  msb: 2 INPUT
 			NetFlow* OFDLY_A2_B, // net ID: OFDLY lsb: 0  msb: 2 INPUT
+			NetFlow* OFDLY_A1_B, // net ID: OFDLY lsb: 0  msb: 2 INPUT
+			NetFlow* OFDLY_A0_B, // net ID: OFDLY lsb: 0  msb: 2 INPUT
 			NetFlow* REGRST_A0_B // net ID: REGRST lsb: 0  msb: 0 INPUT
 			):Primitive(name){
 			
@@ -105,28 +105,28 @@ namespace CPrimitives {
 			this->LOC = LOC; // Default: "UNPLACED"
 			this->SIM_DELAY_D = SIM_DELAY_D; // Default: 0
 			//Verilog Ports in definition order:
-			this->CNTVALUEOUT_A0_B = CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-			this->CNTVALUEOUT_A1_B = CNTVALUEOUT_A1_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-			this->CNTVALUEOUT_A2_B = CNTVALUEOUT_A2_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
-			this->CNTVALUEOUT_A3_B = CNTVALUEOUT_A3_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 			this->CNTVALUEOUT_A4_B = CNTVALUEOUT_A4_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A3_B = CNTVALUEOUT_A3_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A2_B = CNTVALUEOUT_A2_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A1_B = CNTVALUEOUT_A1_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
+			this->CNTVALUEOUT_A0_B = CNTVALUEOUT_A0_B; // net ID: CNTVALUEOUT lsb: 0  msb: 4 OUTPUT
 			this->DATAOUT_A0_B = DATAOUT_A0_B; // net ID: DATAOUT lsb: 0  msb: 0 OUTPUT
 			this->C_A0_B = C_A0_B; // net ID: C lsb: 0  msb: 0 INPUT
 			this->CE_A0_B = CE_A0_B; // net ID: CE lsb: 0  msb: 0 INPUT
 			this->CINVCTRL_A0_B = CINVCTRL_A0_B; // net ID: CINVCTRL lsb: 0  msb: 0 INPUT
 			this->CLKIN_A0_B = CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
-			this->CNTVALUEIN_A0_B = CNTVALUEIN_A0_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-			this->CNTVALUEIN_A1_B = CNTVALUEIN_A1_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-			this->CNTVALUEIN_A2_B = CNTVALUEIN_A2_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
-			this->CNTVALUEIN_A3_B = CNTVALUEIN_A3_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
 			this->CNTVALUEIN_A4_B = CNTVALUEIN_A4_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			this->CNTVALUEIN_A3_B = CNTVALUEIN_A3_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			this->CNTVALUEIN_A2_B = CNTVALUEIN_A2_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			this->CNTVALUEIN_A1_B = CNTVALUEIN_A1_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
+			this->CNTVALUEIN_A0_B = CNTVALUEIN_A0_B; // net ID: CNTVALUEIN lsb: 0  msb: 4 INPUT
 			this->INC_A0_B = INC_A0_B; // net ID: INC lsb: 0  msb: 0 INPUT
 			this->LD_A0_B = LD_A0_B; // net ID: LD lsb: 0  msb: 0 INPUT
 			this->LDPIPEEN_A0_B = LDPIPEEN_A0_B; // net ID: LDPIPEEN lsb: 0  msb: 0 INPUT
 			this->ODATAIN_A0_B = ODATAIN_A0_B; // net ID: ODATAIN lsb: 0  msb: 0 INPUT
-			this->OFDLY_A0_B = OFDLY_A0_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
-			this->OFDLY_A1_B = OFDLY_A1_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
 			this->OFDLY_A2_B = OFDLY_A2_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
+			this->OFDLY_A1_B = OFDLY_A1_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
+			this->OFDLY_A0_B = OFDLY_A0_B; // net ID: OFDLY lsb: 0  msb: 2 INPUT
 			this->REGRST_A0_B = REGRST_A0_B; // net ID: REGRST lsb: 0  msb: 0 INPUT
 			
 			register_wait_on_event_nets();

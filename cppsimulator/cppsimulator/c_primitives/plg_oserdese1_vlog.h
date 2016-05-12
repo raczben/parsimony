@@ -22,8 +22,8 @@ namespace CPrimitives {
 		NetFlow* C23_A0_B; // net ID: c23 lsb: 0  msb: 0 INPUT
 		NetFlow* C45_A0_B; // net ID: c45 lsb: 0  msb: 0 INPUT
 		NetFlow* C67_A0_B; // net ID: c67 lsb: 0  msb: 0 INPUT
-		NetFlow* SEL_A0_B; // net ID: sel lsb: 0  msb: 1 INPUT
 		NetFlow* SEL_A1_B; // net ID: sel lsb: 0  msb: 1 INPUT
+		NetFlow* SEL_A0_B; // net ID: sel lsb: 0  msb: 1 INPUT
 		NetFlow* CLK_A0_B; // net ID: clk lsb: 0  msb: 0 INPUT
 		NetFlow* CLKDIV_A0_B; // net ID: clkdiv lsb: 0  msb: 0 INPUT
 		NetFlow* RST_A0_B; // net ID: rst lsb: 0  msb: 0 INPUT
@@ -40,8 +40,8 @@ namespace CPrimitives {
 			NetFlow* C23_A0_B, // net ID: c23 lsb: 0  msb: 0 INPUT
 			NetFlow* C45_A0_B, // net ID: c45 lsb: 0  msb: 0 INPUT
 			NetFlow* C67_A0_B, // net ID: c67 lsb: 0  msb: 0 INPUT
-			NetFlow* SEL_A0_B, // net ID: sel lsb: 0  msb: 1 INPUT
 			NetFlow* SEL_A1_B, // net ID: sel lsb: 0  msb: 1 INPUT
+			NetFlow* SEL_A0_B, // net ID: sel lsb: 0  msb: 1 INPUT
 			NetFlow* CLK_A0_B, // net ID: clk lsb: 0  msb: 0 INPUT
 			NetFlow* CLKDIV_A0_B, // net ID: clkdiv lsb: 0  msb: 0 INPUT
 			NetFlow* RST_A0_B, // net ID: rst lsb: 0  msb: 0 INPUT
@@ -58,8 +58,8 @@ namespace CPrimitives {
 			this->C23_A0_B = C23_A0_B; // net ID: c23 lsb: 0  msb: 0 INPUT
 			this->C45_A0_B = C45_A0_B; // net ID: c45 lsb: 0  msb: 0 INPUT
 			this->C67_A0_B = C67_A0_B; // net ID: c67 lsb: 0  msb: 0 INPUT
-			this->SEL_A0_B = SEL_A0_B; // net ID: sel lsb: 0  msb: 1 INPUT
 			this->SEL_A1_B = SEL_A1_B; // net ID: sel lsb: 0  msb: 1 INPUT
+			this->SEL_A0_B = SEL_A0_B; // net ID: sel lsb: 0  msb: 1 INPUT
 			this->CLK_A0_B = CLK_A0_B; // net ID: clk lsb: 0  msb: 0 INPUT
 			this->CLKDIV_A0_B = CLKDIV_A0_B; // net ID: clkdiv lsb: 0  msb: 0 INPUT
 			this->RST_A0_B = RST_A0_B; // net ID: rst lsb: 0  msb: 0 INPUT

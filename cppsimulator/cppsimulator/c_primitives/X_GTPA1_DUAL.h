@@ -244,56 +244,56 @@ namespace CPrimitives {
 		parameter_string_t LOC;
 		//Verilog Ports in definition order:
 		NetFlow* DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-		NetFlow* DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DRPDO_A15_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* GTPCLKFBEAST_A0_B; // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
+		NetFlow* DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 		NetFlow* GTPCLKFBEAST_A1_B; // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
-		NetFlow* GTPCLKFBWEST_A0_B; // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
+		NetFlow* GTPCLKFBEAST_A0_B; // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
 		NetFlow* GTPCLKFBWEST_A1_B; // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
-		NetFlow* GTPCLKOUT0_A0_B; // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
+		NetFlow* GTPCLKFBWEST_A0_B; // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
 		NetFlow* GTPCLKOUT0_A1_B; // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
-		NetFlow* GTPCLKOUT1_A0_B; // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
+		NetFlow* GTPCLKOUT0_A0_B; // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
 		NetFlow* GTPCLKOUT1_A1_B; // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
+		NetFlow* GTPCLKOUT1_A0_B; // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
 		NetFlow* PHYSTATUS0_A0_B; // net ID: PHYSTATUS0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* PHYSTATUS1_A0_B; // net ID: PHYSTATUS1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* PLLLKDET0_A0_B; // net ID: PLLLKDET0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* PLLLKDET1_A0_B; // net ID: PLLLKDET1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* RCALOUTEAST_A0_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-		NetFlow* RCALOUTEAST_A1_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-		NetFlow* RCALOUTEAST_A2_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-		NetFlow* RCALOUTEAST_A3_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
 		NetFlow* RCALOUTEAST_A4_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-		NetFlow* RCALOUTWEST_A0_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-		NetFlow* RCALOUTWEST_A1_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-		NetFlow* RCALOUTWEST_A2_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-		NetFlow* RCALOUTWEST_A3_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTEAST_A3_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTEAST_A2_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTEAST_A1_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTEAST_A0_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
 		NetFlow* RCALOUTWEST_A4_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTWEST_A3_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTWEST_A2_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTWEST_A1_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+		NetFlow* RCALOUTWEST_A0_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
 		NetFlow* REFCLKOUT0_A0_B; // net ID: REFCLKOUT0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* REFCLKOUT1_A0_B; // net ID: REFCLKOUT1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* REFCLKPLL0_A0_B; // net ID: REFCLKPLL0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* REFCLKPLL1_A0_B; // net ID: REFCLKPLL1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RESETDONE0_A0_B; // net ID: RESETDONE0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RESETDONE1_A0_B; // net ID: RESETDONE1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXBUFSTATUS0_A0_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXBUFSTATUS0_A1_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXBUFSTATUS0_A2_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXBUFSTATUS1_A0_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXBUFSTATUS1_A1_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXBUFSTATUS0_A1_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXBUFSTATUS0_A0_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXBUFSTATUS1_A2_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXBUFSTATUS1_A1_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXBUFSTATUS1_A0_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXBYTEISALIGNED0_A0_B; // net ID: RXBYTEISALIGNED0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXBYTEISALIGNED1_A0_B; // net ID: RXBYTEISALIGNED1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXBYTEREALIGN0_A0_B; // net ID: RXBYTEREALIGN0 lsb: 0  msb: 0 OUTPUT
@@ -304,175 +304,175 @@ namespace CPrimitives {
 		NetFlow* RXCHANISALIGNED1_A0_B; // net ID: RXCHANISALIGNED1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXCHANREALIGN0_A0_B; // net ID: RXCHANREALIGN0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXCHANREALIGN1_A0_B; // net ID: RXCHANREALIGN1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXCHARISCOMMA0_A0_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISCOMMA0_A1_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISCOMMA0_A2_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXCHARISCOMMA0_A3_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISCOMMA1_A0_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISCOMMA1_A1_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISCOMMA1_A2_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISCOMMA0_A2_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISCOMMA0_A1_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISCOMMA0_A0_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXCHARISCOMMA1_A3_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISK0_A0_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISK0_A1_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISK0_A2_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISCOMMA1_A2_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISCOMMA1_A1_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISCOMMA1_A0_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXCHARISK0_A3_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISK1_A0_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISK1_A1_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHARISK1_A2_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISK0_A2_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISK0_A1_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISK0_A0_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXCHARISK1_A3_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXCHBONDO_A0_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXCHBONDO_A1_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXCHARISK1_A2_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISK1_A1_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXCHARISK1_A0_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXCHBONDO_A2_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXCLKCORCNT0_A0_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXCLKCORCNT0_A1_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXCHBONDO_A1_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXCHBONDO_A0_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXCLKCORCNT0_A2_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXCLKCORCNT1_A0_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXCLKCORCNT1_A1_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXCLKCORCNT0_A1_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXCLKCORCNT0_A0_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXCLKCORCNT1_A2_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXCLKCORCNT1_A1_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXCLKCORCNT1_A0_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXCOMMADET0_A0_B; // net ID: RXCOMMADET0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXCOMMADET1_A0_B; // net ID: RXCOMMADET1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXDATA0_A0_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A1_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A2_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A3_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A4_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A5_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A6_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A7_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A8_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A9_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A10_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A11_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A12_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A13_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A14_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A15_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A16_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A17_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A18_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A19_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A20_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A21_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A22_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A23_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A24_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A25_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A26_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A27_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A28_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A29_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA0_A30_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
 		NetFlow* RXDATA0_A31_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A0_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A1_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A2_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A3_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A4_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A5_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A6_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A7_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A8_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A9_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A10_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A11_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A12_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A13_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A14_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A15_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A16_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A17_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A18_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A19_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A20_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A21_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A22_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A23_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A24_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A25_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A26_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A27_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A28_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A29_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDATA1_A30_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A30_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A29_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A28_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A27_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A26_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A25_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A24_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A23_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A22_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A21_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A20_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A19_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A18_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A17_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A16_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A15_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A14_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A13_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A12_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A11_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A10_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A9_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A8_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A7_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A6_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A5_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A4_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A3_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A2_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A1_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA0_A0_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
 		NetFlow* RXDATA1_A31_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-		NetFlow* RXDISPERR0_A0_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXDISPERR0_A1_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXDISPERR0_A2_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXDATA1_A30_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A29_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A28_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A27_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A26_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A25_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A24_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A23_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A22_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A21_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A20_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A19_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A18_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A17_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A16_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A15_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A14_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A13_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A12_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A11_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A10_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A9_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A8_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A7_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A6_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A5_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A4_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A3_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A2_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A1_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+		NetFlow* RXDATA1_A0_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
 		NetFlow* RXDISPERR0_A3_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXDISPERR1_A0_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXDISPERR1_A1_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXDISPERR1_A2_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXDISPERR0_A2_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXDISPERR0_A1_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXDISPERR0_A0_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXDISPERR1_A3_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXDISPERR1_A2_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXDISPERR1_A1_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXDISPERR1_A0_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXELECIDLE0_A0_B; // net ID: RXELECIDLE0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXELECIDLE1_A0_B; // net ID: RXELECIDLE1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXLOSSOFSYNC0_A0_B; // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
 		NetFlow* RXLOSSOFSYNC0_A1_B; // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
-		NetFlow* RXLOSSOFSYNC1_A0_B; // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
+		NetFlow* RXLOSSOFSYNC0_A0_B; // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
 		NetFlow* RXLOSSOFSYNC1_A1_B; // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
-		NetFlow* RXNOTINTABLE0_A0_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXNOTINTABLE0_A1_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXNOTINTABLE0_A2_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXLOSSOFSYNC1_A0_B; // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
 		NetFlow* RXNOTINTABLE0_A3_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXNOTINTABLE1_A0_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXNOTINTABLE1_A1_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXNOTINTABLE1_A2_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXNOTINTABLE0_A2_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXNOTINTABLE0_A1_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXNOTINTABLE0_A0_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXNOTINTABLE1_A3_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXNOTINTABLE1_A2_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXNOTINTABLE1_A1_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXNOTINTABLE1_A0_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXPRBSERR0_A0_B; // net ID: RXPRBSERR0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXPRBSERR1_A0_B; // net ID: RXPRBSERR1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXRECCLK0_A0_B; // net ID: RXRECCLK0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXRECCLK1_A0_B; // net ID: RXRECCLK1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* RXRUNDISP0_A0_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXRUNDISP0_A1_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXRUNDISP0_A2_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXRUNDISP0_A3_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXRUNDISP1_A0_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXRUNDISP1_A1_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXRUNDISP1_A2_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXRUNDISP0_A2_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXRUNDISP0_A1_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXRUNDISP0_A0_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXRUNDISP1_A3_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* RXSTATUS0_A0_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXSTATUS0_A1_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXRUNDISP1_A2_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXRUNDISP1_A1_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* RXRUNDISP1_A0_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
 		NetFlow* RXSTATUS0_A2_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXSTATUS1_A0_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
-		NetFlow* RXSTATUS1_A1_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXSTATUS0_A1_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXSTATUS0_A0_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXSTATUS1_A2_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXSTATUS1_A1_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+		NetFlow* RXSTATUS1_A0_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
 		NetFlow* RXVALID0_A0_B; // net ID: RXVALID0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* RXVALID1_A0_B; // net ID: RXVALID1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* TSTOUT0_A0_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TSTOUT0_A1_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TSTOUT0_A2_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TSTOUT0_A3_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
 		NetFlow* TSTOUT0_A4_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TSTOUT1_A0_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TSTOUT1_A1_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TSTOUT1_A2_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TSTOUT1_A3_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+		NetFlow* TSTOUT0_A3_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+		NetFlow* TSTOUT0_A2_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+		NetFlow* TSTOUT0_A1_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+		NetFlow* TSTOUT0_A0_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
 		NetFlow* TSTOUT1_A4_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-		NetFlow* TXBUFSTATUS0_A0_B; // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
+		NetFlow* TSTOUT1_A3_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+		NetFlow* TSTOUT1_A2_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+		NetFlow* TSTOUT1_A1_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+		NetFlow* TSTOUT1_A0_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
 		NetFlow* TXBUFSTATUS0_A1_B; // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
-		NetFlow* TXBUFSTATUS1_A0_B; // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
+		NetFlow* TXBUFSTATUS0_A0_B; // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
 		NetFlow* TXBUFSTATUS1_A1_B; // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
-		NetFlow* TXKERR0_A0_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXKERR0_A1_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXKERR0_A2_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXBUFSTATUS1_A0_B; // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
 		NetFlow* TXKERR0_A3_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXKERR1_A0_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXKERR1_A1_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXKERR1_A2_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXKERR0_A2_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXKERR0_A1_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXKERR0_A0_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* TXKERR1_A3_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXKERR1_A2_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXKERR1_A1_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXKERR1_A0_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
 		NetFlow* TXN0_A0_B; // net ID: TXN0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXN1_A0_B; // net ID: TXN1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXOUTCLK0_A0_B; // net ID: TXOUTCLK0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXOUTCLK1_A0_B; // net ID: TXOUTCLK1 lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXP0_A0_B; // net ID: TXP0 lsb: 0  msb: 0 OUTPUT
 		NetFlow* TXP1_A0_B; // net ID: TXP1 lsb: 0  msb: 0 OUTPUT
-		NetFlow* TXRUNDISP0_A0_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXRUNDISP0_A1_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXRUNDISP0_A2_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* TXRUNDISP0_A3_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXRUNDISP1_A0_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXRUNDISP1_A1_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-		NetFlow* TXRUNDISP1_A2_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXRUNDISP0_A2_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXRUNDISP0_A1_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXRUNDISP0_A0_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 		NetFlow* TXRUNDISP1_A3_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXRUNDISP1_A2_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXRUNDISP1_A1_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+		NetFlow* TXRUNDISP1_A0_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
 		NetFlow* CLK00_A0_B; // net ID: CLK00 lsb: 0  msb: 0 INPUT
 		NetFlow* CLK01_A0_B; // net ID: CLK01 lsb: 0  msb: 0 INPUT
 		NetFlow* CLK10_A0_B; // net ID: CLK10 lsb: 0  msb: 0 INPUT
@@ -481,32 +481,32 @@ namespace CPrimitives {
 		NetFlow* CLKINEAST1_A0_B; // net ID: CLKINEAST1 lsb: 0  msb: 0 INPUT
 		NetFlow* CLKINWEST0_A0_B; // net ID: CLKINWEST0 lsb: 0  msb: 0 INPUT
 		NetFlow* CLKINWEST1_A0_B; // net ID: CLKINWEST1 lsb: 0  msb: 0 INPUT
-		NetFlow* DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-		NetFlow* DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-		NetFlow* DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-		NetFlow* DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-		NetFlow* DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-		NetFlow* DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-		NetFlow* DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
 		NetFlow* DADDR_A7_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+		NetFlow* DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+		NetFlow* DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+		NetFlow* DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+		NetFlow* DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+		NetFlow* DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+		NetFlow* DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+		NetFlow* DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
 		NetFlow* DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
 		NetFlow* DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
-		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
 		NetFlow* DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
 		NetFlow* DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
 		NetFlow* GATERXELECIDLE0_A0_B; // net ID: GATERXELECIDLE0 lsb: 0  msb: 0 INPUT
 		NetFlow* GATERXELECIDLE1_A0_B; // net ID: GATERXELECIDLE1 lsb: 0  msb: 0 INPUT
@@ -514,42 +514,42 @@ namespace CPrimitives {
 		NetFlow* GCLK01_A0_B; // net ID: GCLK01 lsb: 0  msb: 0 INPUT
 		NetFlow* GCLK10_A0_B; // net ID: GCLK10 lsb: 0  msb: 0 INPUT
 		NetFlow* GCLK11_A0_B; // net ID: GCLK11 lsb: 0  msb: 0 INPUT
-		NetFlow* GTPCLKFBSEL0EAST_A0_B; // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
 		NetFlow* GTPCLKFBSEL0EAST_A1_B; // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
-		NetFlow* GTPCLKFBSEL0WEST_A0_B; // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
+		NetFlow* GTPCLKFBSEL0EAST_A0_B; // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
 		NetFlow* GTPCLKFBSEL0WEST_A1_B; // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
-		NetFlow* GTPCLKFBSEL1EAST_A0_B; // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
+		NetFlow* GTPCLKFBSEL0WEST_A0_B; // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
 		NetFlow* GTPCLKFBSEL1EAST_A1_B; // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
-		NetFlow* GTPCLKFBSEL1WEST_A0_B; // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
+		NetFlow* GTPCLKFBSEL1EAST_A0_B; // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
 		NetFlow* GTPCLKFBSEL1WEST_A1_B; // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
+		NetFlow* GTPCLKFBSEL1WEST_A0_B; // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
 		NetFlow* GTPRESET0_A0_B; // net ID: GTPRESET0 lsb: 0  msb: 0 INPUT
 		NetFlow* GTPRESET1_A0_B; // net ID: GTPRESET1 lsb: 0  msb: 0 INPUT
-		NetFlow* GTPTEST0_A0_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST0_A1_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST0_A2_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST0_A3_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST0_A4_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST0_A5_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST0_A6_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
 		NetFlow* GTPTEST0_A7_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST1_A0_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST1_A1_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST1_A2_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST1_A3_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST1_A4_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST1_A5_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-		NetFlow* GTPTEST1_A6_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST0_A6_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST0_A5_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST0_A4_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST0_A3_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST0_A2_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST0_A1_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST0_A0_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
 		NetFlow* GTPTEST1_A7_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST1_A6_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST1_A5_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST1_A4_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST1_A3_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST1_A2_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST1_A1_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+		NetFlow* GTPTEST1_A0_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
 		NetFlow* IGNORESIGDET0_A0_B; // net ID: IGNORESIGDET0 lsb: 0  msb: 0 INPUT
 		NetFlow* IGNORESIGDET1_A0_B; // net ID: IGNORESIGDET1 lsb: 0  msb: 0 INPUT
 		NetFlow* INTDATAWIDTH0_A0_B; // net ID: INTDATAWIDTH0 lsb: 0  msb: 0 INPUT
 		NetFlow* INTDATAWIDTH1_A0_B; // net ID: INTDATAWIDTH1 lsb: 0  msb: 0 INPUT
-		NetFlow* LOOPBACK0_A0_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
-		NetFlow* LOOPBACK0_A1_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
 		NetFlow* LOOPBACK0_A2_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
-		NetFlow* LOOPBACK1_A0_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
-		NetFlow* LOOPBACK1_A1_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+		NetFlow* LOOPBACK0_A1_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
+		NetFlow* LOOPBACK0_A0_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
 		NetFlow* LOOPBACK1_A2_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+		NetFlow* LOOPBACK1_A1_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+		NetFlow* LOOPBACK1_A0_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
 		NetFlow* PLLCLK00_A0_B; // net ID: PLLCLK00 lsb: 0  msb: 0 INPUT
 		NetFlow* PLLCLK01_A0_B; // net ID: PLLCLK01 lsb: 0  msb: 0 INPUT
 		NetFlow* PLLCLK10_A0_B; // net ID: PLLCLK10 lsb: 0  msb: 0 INPUT
@@ -560,41 +560,41 @@ namespace CPrimitives {
 		NetFlow* PLLPOWERDOWN1_A0_B; // net ID: PLLPOWERDOWN1 lsb: 0  msb: 0 INPUT
 		NetFlow* PRBSCNTRESET0_A0_B; // net ID: PRBSCNTRESET0 lsb: 0  msb: 0 INPUT
 		NetFlow* PRBSCNTRESET1_A0_B; // net ID: PRBSCNTRESET1 lsb: 0  msb: 0 INPUT
-		NetFlow* RCALINEAST_A0_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-		NetFlow* RCALINEAST_A1_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-		NetFlow* RCALINEAST_A2_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-		NetFlow* RCALINEAST_A3_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
 		NetFlow* RCALINEAST_A4_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-		NetFlow* RCALINWEST_A0_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-		NetFlow* RCALINWEST_A1_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-		NetFlow* RCALINWEST_A2_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-		NetFlow* RCALINWEST_A3_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINEAST_A3_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINEAST_A2_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINEAST_A1_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINEAST_A0_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
 		NetFlow* RCALINWEST_A4_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINWEST_A3_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINWEST_A2_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINWEST_A1_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+		NetFlow* RCALINWEST_A0_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
 		NetFlow* REFCLKPWRDNB0_A0_B; // net ID: REFCLKPWRDNB0 lsb: 0  msb: 0 INPUT
 		NetFlow* REFCLKPWRDNB1_A0_B; // net ID: REFCLKPWRDNB1 lsb: 0  msb: 0 INPUT
-		NetFlow* REFSELDYPLL0_A0_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
-		NetFlow* REFSELDYPLL0_A1_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
 		NetFlow* REFSELDYPLL0_A2_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
-		NetFlow* REFSELDYPLL1_A0_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
-		NetFlow* REFSELDYPLL1_A1_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+		NetFlow* REFSELDYPLL0_A1_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
+		NetFlow* REFSELDYPLL0_A0_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
 		NetFlow* REFSELDYPLL1_A2_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+		NetFlow* REFSELDYPLL1_A1_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+		NetFlow* REFSELDYPLL1_A0_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
 		NetFlow* RXBUFRESET0_A0_B; // net ID: RXBUFRESET0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXBUFRESET1_A0_B; // net ID: RXBUFRESET1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXCDRRESET0_A0_B; // net ID: RXCDRRESET0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXCDRRESET1_A0_B; // net ID: RXCDRRESET1 lsb: 0  msb: 0 INPUT
-		NetFlow* RXCHBONDI_A0_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
-		NetFlow* RXCHBONDI_A1_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
 		NetFlow* RXCHBONDI_A2_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
+		NetFlow* RXCHBONDI_A1_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
+		NetFlow* RXCHBONDI_A0_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
 		NetFlow* RXCHBONDMASTER0_A0_B; // net ID: RXCHBONDMASTER0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXCHBONDMASTER1_A0_B; // net ID: RXCHBONDMASTER1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXCHBONDSLAVE0_A0_B; // net ID: RXCHBONDSLAVE0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXCHBONDSLAVE1_A0_B; // net ID: RXCHBONDSLAVE1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXCOMMADETUSE0_A0_B; // net ID: RXCOMMADETUSE0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXCOMMADETUSE1_A0_B; // net ID: RXCOMMADETUSE1 lsb: 0  msb: 0 INPUT
-		NetFlow* RXDATAWIDTH0_A0_B; // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 		NetFlow* RXDATAWIDTH0_A1_B; // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
-		NetFlow* RXDATAWIDTH1_A0_B; // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+		NetFlow* RXDATAWIDTH0_A0_B; // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 		NetFlow* RXDATAWIDTH1_A1_B; // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+		NetFlow* RXDATAWIDTH1_A0_B; // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
 		NetFlow* RXDEC8B10BUSE0_A0_B; // net ID: RXDEC8B10BUSE0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXDEC8B10BUSE1_A0_B; // net ID: RXDEC8B10BUSE1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXENCHANSYNC0_A0_B; // net ID: RXENCHANSYNC0 lsb: 0  msb: 0 INPUT
@@ -605,16 +605,16 @@ namespace CPrimitives {
 		NetFlow* RXENPCOMMAALIGN1_A0_B; // net ID: RXENPCOMMAALIGN1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXENPMAPHASEALIGN0_A0_B; // net ID: RXENPMAPHASEALIGN0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXENPMAPHASEALIGN1_A0_B; // net ID: RXENPMAPHASEALIGN1 lsb: 0  msb: 0 INPUT
-		NetFlow* RXENPRBSTST0_A0_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
-		NetFlow* RXENPRBSTST0_A1_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
 		NetFlow* RXENPRBSTST0_A2_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
-		NetFlow* RXENPRBSTST1_A0_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
-		NetFlow* RXENPRBSTST1_A1_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
+		NetFlow* RXENPRBSTST0_A1_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
+		NetFlow* RXENPRBSTST0_A0_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
 		NetFlow* RXENPRBSTST1_A2_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
-		NetFlow* RXEQMIX0_A0_B; // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
+		NetFlow* RXENPRBSTST1_A1_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
+		NetFlow* RXENPRBSTST1_A0_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
 		NetFlow* RXEQMIX0_A1_B; // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
-		NetFlow* RXEQMIX1_A0_B; // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
+		NetFlow* RXEQMIX0_A0_B; // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
 		NetFlow* RXEQMIX1_A1_B; // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
+		NetFlow* RXEQMIX1_A0_B; // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
 		NetFlow* RXN0_A0_B; // net ID: RXN0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXN1_A0_B; // net ID: RXN1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXP0_A0_B; // net ID: RXP0 lsb: 0  msb: 0 INPUT
@@ -623,10 +623,10 @@ namespace CPrimitives {
 		NetFlow* RXPMASETPHASE1_A0_B; // net ID: RXPMASETPHASE1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXPOLARITY0_A0_B; // net ID: RXPOLARITY0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXPOLARITY1_A0_B; // net ID: RXPOLARITY1 lsb: 0  msb: 0 INPUT
-		NetFlow* RXPOWERDOWN0_A0_B; // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 		NetFlow* RXPOWERDOWN0_A1_B; // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
-		NetFlow* RXPOWERDOWN1_A0_B; // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+		NetFlow* RXPOWERDOWN0_A0_B; // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 		NetFlow* RXPOWERDOWN1_A1_B; // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+		NetFlow* RXPOWERDOWN1_A0_B; // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
 		NetFlow* RXRESET0_A0_B; // net ID: RXRESET0 lsb: 0  msb: 0 INPUT
 		NetFlow* RXRESET1_A0_B; // net ID: RXRESET1 lsb: 0  msb: 0 INPUT
 		NetFlow* RXSLIDE0_A0_B; // net ID: RXSLIDE0 lsb: 0  msb: 0 INPUT
@@ -637,162 +637,162 @@ namespace CPrimitives {
 		NetFlow* RXUSRCLK21_A0_B; // net ID: RXUSRCLK21 lsb: 0  msb: 0 INPUT
 		NetFlow* TSTCLK0_A0_B; // net ID: TSTCLK0 lsb: 0  msb: 0 INPUT
 		NetFlow* TSTCLK1_A0_B; // net ID: TSTCLK1 lsb: 0  msb: 0 INPUT
-		NetFlow* TSTIN0_A0_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A1_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A2_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A3_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A4_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A5_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A6_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A7_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A8_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A9_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN0_A10_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
 		NetFlow* TSTIN0_A11_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A0_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A1_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A2_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A3_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A4_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A5_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A6_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A7_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A8_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A9_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TSTIN1_A10_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A10_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A9_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A8_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A7_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A6_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A5_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A4_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A3_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A2_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A1_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN0_A0_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
 		NetFlow* TSTIN1_A11_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-		NetFlow* TXBUFDIFFCTRL0_A0_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
-		NetFlow* TXBUFDIFFCTRL0_A1_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
+		NetFlow* TSTIN1_A10_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A9_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A8_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A7_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A6_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A5_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A4_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A3_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A2_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A1_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+		NetFlow* TSTIN1_A0_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
 		NetFlow* TXBUFDIFFCTRL0_A2_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
-		NetFlow* TXBUFDIFFCTRL1_A0_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
-		NetFlow* TXBUFDIFFCTRL1_A1_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXBUFDIFFCTRL0_A1_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
+		NetFlow* TXBUFDIFFCTRL0_A0_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
 		NetFlow* TXBUFDIFFCTRL1_A2_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
-		NetFlow* TXBYPASS8B10B0_A0_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXBYPASS8B10B0_A1_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXBYPASS8B10B0_A2_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXBUFDIFFCTRL1_A1_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXBUFDIFFCTRL1_A0_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
 		NetFlow* TXBYPASS8B10B0_A3_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXBYPASS8B10B1_A0_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXBYPASS8B10B1_A1_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXBYPASS8B10B1_A2_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXBYPASS8B10B0_A2_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXBYPASS8B10B0_A1_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXBYPASS8B10B0_A0_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
 		NetFlow* TXBYPASS8B10B1_A3_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPMODE0_A0_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPMODE0_A1_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPMODE0_A2_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXBYPASS8B10B1_A2_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXBYPASS8B10B1_A1_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXBYPASS8B10B1_A0_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
 		NetFlow* TXCHARDISPMODE0_A3_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPMODE1_A0_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPMODE1_A1_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPMODE1_A2_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPMODE0_A2_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPMODE0_A1_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPMODE0_A0_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
 		NetFlow* TXCHARDISPMODE1_A3_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPVAL0_A0_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPVAL0_A1_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPVAL0_A2_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPMODE1_A2_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPMODE1_A1_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPMODE1_A0_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
 		NetFlow* TXCHARDISPVAL0_A3_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPVAL1_A0_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPVAL1_A1_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARDISPVAL1_A2_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPVAL0_A2_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPVAL0_A1_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPVAL0_A0_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
 		NetFlow* TXCHARDISPVAL1_A3_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARISK0_A0_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARISK0_A1_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARISK0_A2_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPVAL1_A2_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPVAL1_A1_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARDISPVAL1_A0_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
 		NetFlow* TXCHARISK0_A3_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARISK1_A0_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARISK1_A1_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXCHARISK1_A2_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARISK0_A2_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARISK0_A1_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARISK0_A0_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
 		NetFlow* TXCHARISK1_A3_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARISK1_A2_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARISK1_A1_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXCHARISK1_A0_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
 		NetFlow* TXCOMSTART0_A0_B; // net ID: TXCOMSTART0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXCOMSTART1_A0_B; // net ID: TXCOMSTART1 lsb: 0  msb: 0 INPUT
 		NetFlow* TXCOMTYPE0_A0_B; // net ID: TXCOMTYPE0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXCOMTYPE1_A0_B; // net ID: TXCOMTYPE1 lsb: 0  msb: 0 INPUT
-		NetFlow* TXDATA0_A0_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A1_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A2_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A3_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A4_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A5_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A6_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A7_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A8_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A9_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A10_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A11_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A12_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A13_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A14_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A15_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A16_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A17_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A18_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A19_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A20_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A21_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A22_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A23_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A24_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A25_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A26_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A27_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A28_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A29_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA0_A30_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
 		NetFlow* TXDATA0_A31_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A0_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A1_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A2_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A3_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A4_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A5_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A6_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A7_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A8_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A9_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A10_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A11_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A12_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A13_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A14_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A15_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A16_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A17_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A18_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A19_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A20_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A21_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A22_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A23_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A24_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A25_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A26_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A27_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A28_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A29_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATA1_A30_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A30_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A29_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A28_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A27_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A26_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A25_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A24_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A23_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A22_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A21_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A20_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A19_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A18_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A17_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A16_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A15_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A14_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A13_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A12_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A11_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A10_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A9_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A8_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A7_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A6_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A5_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A4_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A3_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A2_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A1_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA0_A0_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
 		NetFlow* TXDATA1_A31_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-		NetFlow* TXDATAWIDTH0_A0_B; // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
+		NetFlow* TXDATA1_A30_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A29_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A28_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A27_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A26_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A25_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A24_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A23_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A22_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A21_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A20_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A19_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A18_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A17_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A16_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A15_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A14_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A13_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A12_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A11_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A10_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A9_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A8_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A7_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A6_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A5_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A4_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A3_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A2_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A1_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+		NetFlow* TXDATA1_A0_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
 		NetFlow* TXDATAWIDTH0_A1_B; // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
-		NetFlow* TXDATAWIDTH1_A0_B; // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+		NetFlow* TXDATAWIDTH0_A0_B; // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 		NetFlow* TXDATAWIDTH1_A1_B; // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+		NetFlow* TXDATAWIDTH1_A0_B; // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
 		NetFlow* TXDETECTRX0_A0_B; // net ID: TXDETECTRX0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXDETECTRX1_A0_B; // net ID: TXDETECTRX1 lsb: 0  msb: 0 INPUT
-		NetFlow* TXDIFFCTRL0_A0_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXDIFFCTRL0_A1_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXDIFFCTRL0_A2_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
 		NetFlow* TXDIFFCTRL0_A3_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-		NetFlow* TXDIFFCTRL1_A0_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXDIFFCTRL1_A1_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
-		NetFlow* TXDIFFCTRL1_A2_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL0_A2_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL0_A1_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL0_A0_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
 		NetFlow* TXDIFFCTRL1_A3_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL1_A2_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL1_A1_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+		NetFlow* TXDIFFCTRL1_A0_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
 		NetFlow* TXELECIDLE0_A0_B; // net ID: TXELECIDLE0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXELECIDLE1_A0_B; // net ID: TXELECIDLE1 lsb: 0  msb: 0 INPUT
 		NetFlow* TXENC8B10BUSE0_A0_B; // net ID: TXENC8B10BUSE0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXENC8B10BUSE1_A0_B; // net ID: TXENC8B10BUSE1 lsb: 0  msb: 0 INPUT
 		NetFlow* TXENPMAPHASEALIGN0_A0_B; // net ID: TXENPMAPHASEALIGN0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXENPMAPHASEALIGN1_A0_B; // net ID: TXENPMAPHASEALIGN1 lsb: 0  msb: 0 INPUT
-		NetFlow* TXENPRBSTST0_A0_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
-		NetFlow* TXENPRBSTST0_A1_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
 		NetFlow* TXENPRBSTST0_A2_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
-		NetFlow* TXENPRBSTST1_A0_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
-		NetFlow* TXENPRBSTST1_A1_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXENPRBSTST0_A1_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
+		NetFlow* TXENPRBSTST0_A0_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
 		NetFlow* TXENPRBSTST1_A2_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXENPRBSTST1_A1_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXENPRBSTST1_A0_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
 		NetFlow* TXINHIBIT0_A0_B; // net ID: TXINHIBIT0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXINHIBIT1_A0_B; // net ID: TXINHIBIT1 lsb: 0  msb: 0 INPUT
 		NetFlow* TXPDOWNASYNCH0_A0_B; // net ID: TXPDOWNASYNCH0 lsb: 0  msb: 0 INPUT
@@ -801,18 +801,18 @@ namespace CPrimitives {
 		NetFlow* TXPMASETPHASE1_A0_B; // net ID: TXPMASETPHASE1 lsb: 0  msb: 0 INPUT
 		NetFlow* TXPOLARITY0_A0_B; // net ID: TXPOLARITY0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXPOLARITY1_A0_B; // net ID: TXPOLARITY1 lsb: 0  msb: 0 INPUT
-		NetFlow* TXPOWERDOWN0_A0_B; // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 		NetFlow* TXPOWERDOWN0_A1_B; // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
-		NetFlow* TXPOWERDOWN1_A0_B; // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+		NetFlow* TXPOWERDOWN0_A0_B; // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 		NetFlow* TXPOWERDOWN1_A1_B; // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+		NetFlow* TXPOWERDOWN1_A0_B; // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
 		NetFlow* TXPRBSFORCEERR0_A0_B; // net ID: TXPRBSFORCEERR0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXPRBSFORCEERR1_A0_B; // net ID: TXPRBSFORCEERR1 lsb: 0  msb: 0 INPUT
-		NetFlow* TXPREEMPHASIS0_A0_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
-		NetFlow* TXPREEMPHASIS0_A1_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
 		NetFlow* TXPREEMPHASIS0_A2_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
-		NetFlow* TXPREEMPHASIS1_A0_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
-		NetFlow* TXPREEMPHASIS1_A1_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXPREEMPHASIS0_A1_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
+		NetFlow* TXPREEMPHASIS0_A0_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
 		NetFlow* TXPREEMPHASIS1_A2_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXPREEMPHASIS1_A1_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+		NetFlow* TXPREEMPHASIS1_A0_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
 		NetFlow* TXRESET0_A0_B; // net ID: TXRESET0 lsb: 0  msb: 0 INPUT
 		NetFlow* TXRESET1_A0_B; // net ID: TXRESET1 lsb: 0  msb: 0 INPUT
 		NetFlow* TXUSRCLK0_A0_B; // net ID: TXUSRCLK0 lsb: 0  msb: 0 INPUT
@@ -1054,56 +1054,56 @@ namespace CPrimitives {
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
 			NetFlow* DRDY_A0_B, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-			NetFlow* DRPDO_A0_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A1_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A2_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A3_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A4_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A5_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A6_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A7_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A8_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A9_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A10_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A11_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A12_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A13_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DRPDO_A14_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DRPDO_A15_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* GTPCLKFBEAST_A0_B, // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
+			NetFlow* DRPDO_A14_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A13_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A12_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A11_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A10_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A9_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A8_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A7_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A6_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A5_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A4_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A3_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A2_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A1_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DRPDO_A0_B, // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			NetFlow* GTPCLKFBEAST_A1_B, // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
-			NetFlow* GTPCLKFBWEST_A0_B, // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
+			NetFlow* GTPCLKFBEAST_A0_B, // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
 			NetFlow* GTPCLKFBWEST_A1_B, // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
-			NetFlow* GTPCLKOUT0_A0_B, // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
+			NetFlow* GTPCLKFBWEST_A0_B, // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
 			NetFlow* GTPCLKOUT0_A1_B, // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
-			NetFlow* GTPCLKOUT1_A0_B, // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
+			NetFlow* GTPCLKOUT0_A0_B, // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
 			NetFlow* GTPCLKOUT1_A1_B, // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
+			NetFlow* GTPCLKOUT1_A0_B, // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
 			NetFlow* PHYSTATUS0_A0_B, // net ID: PHYSTATUS0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* PHYSTATUS1_A0_B, // net ID: PHYSTATUS1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* PLLLKDET0_A0_B, // net ID: PLLLKDET0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* PLLLKDET1_A0_B, // net ID: PLLLKDET1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* RCALOUTEAST_A0_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			NetFlow* RCALOUTEAST_A1_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			NetFlow* RCALOUTEAST_A2_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			NetFlow* RCALOUTEAST_A3_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
 			NetFlow* RCALOUTEAST_A4_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			NetFlow* RCALOUTWEST_A0_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-			NetFlow* RCALOUTWEST_A1_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-			NetFlow* RCALOUTWEST_A2_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-			NetFlow* RCALOUTWEST_A3_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTEAST_A3_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTEAST_A2_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTEAST_A1_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTEAST_A0_B, // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
 			NetFlow* RCALOUTWEST_A4_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTWEST_A3_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTWEST_A2_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTWEST_A1_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			NetFlow* RCALOUTWEST_A0_B, // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
 			NetFlow* REFCLKOUT0_A0_B, // net ID: REFCLKOUT0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* REFCLKOUT1_A0_B, // net ID: REFCLKOUT1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* REFCLKPLL0_A0_B, // net ID: REFCLKPLL0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* REFCLKPLL1_A0_B, // net ID: REFCLKPLL1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RESETDONE0_A0_B, // net ID: RESETDONE0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RESETDONE1_A0_B, // net ID: RESETDONE1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXBUFSTATUS0_A0_B, // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXBUFSTATUS0_A1_B, // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXBUFSTATUS0_A2_B, // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXBUFSTATUS1_A0_B, // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXBUFSTATUS1_A1_B, // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXBUFSTATUS0_A1_B, // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXBUFSTATUS0_A0_B, // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXBUFSTATUS1_A2_B, // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXBUFSTATUS1_A1_B, // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXBUFSTATUS1_A0_B, // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXBYTEISALIGNED0_A0_B, // net ID: RXBYTEISALIGNED0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXBYTEISALIGNED1_A0_B, // net ID: RXBYTEISALIGNED1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXBYTEREALIGN0_A0_B, // net ID: RXBYTEREALIGN0 lsb: 0  msb: 0 OUTPUT
@@ -1114,175 +1114,175 @@ namespace CPrimitives {
 			NetFlow* RXCHANISALIGNED1_A0_B, // net ID: RXCHANISALIGNED1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXCHANREALIGN0_A0_B, // net ID: RXCHANREALIGN0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXCHANREALIGN1_A0_B, // net ID: RXCHANREALIGN1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXCHARISCOMMA0_A0_B, // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISCOMMA0_A1_B, // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISCOMMA0_A2_B, // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXCHARISCOMMA0_A3_B, // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISCOMMA1_A0_B, // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISCOMMA1_A1_B, // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISCOMMA1_A2_B, // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISCOMMA0_A2_B, // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISCOMMA0_A1_B, // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISCOMMA0_A0_B, // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXCHARISCOMMA1_A3_B, // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISK0_A0_B, // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISK0_A1_B, // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISK0_A2_B, // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISCOMMA1_A2_B, // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISCOMMA1_A1_B, // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISCOMMA1_A0_B, // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXCHARISK0_A3_B, // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISK1_A0_B, // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISK1_A1_B, // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHARISK1_A2_B, // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISK0_A2_B, // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISK0_A1_B, // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISK0_A0_B, // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXCHARISK1_A3_B, // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXCHBONDO_A0_B, // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXCHBONDO_A1_B, // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXCHARISK1_A2_B, // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISK1_A1_B, // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXCHARISK1_A0_B, // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXCHBONDO_A2_B, // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXCLKCORCNT0_A0_B, // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXCLKCORCNT0_A1_B, // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXCHBONDO_A1_B, // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXCHBONDO_A0_B, // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXCLKCORCNT0_A2_B, // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXCLKCORCNT1_A0_B, // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXCLKCORCNT1_A1_B, // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXCLKCORCNT0_A1_B, // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXCLKCORCNT0_A0_B, // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXCLKCORCNT1_A2_B, // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXCLKCORCNT1_A1_B, // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXCLKCORCNT1_A0_B, // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXCOMMADET0_A0_B, // net ID: RXCOMMADET0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXCOMMADET1_A0_B, // net ID: RXCOMMADET1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXDATA0_A0_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A1_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A2_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A3_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A4_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A5_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A6_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A7_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A8_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A9_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A10_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A11_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A12_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A13_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A14_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A15_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A16_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A17_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A18_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A19_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A20_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A21_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A22_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A23_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A24_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A25_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A26_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A27_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A28_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A29_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA0_A30_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
 			NetFlow* RXDATA0_A31_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A0_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A1_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A2_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A3_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A4_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A5_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A6_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A7_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A8_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A9_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A10_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A11_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A12_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A13_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A14_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A15_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A16_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A17_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A18_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A19_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A20_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A21_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A22_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A23_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A24_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A25_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A26_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A27_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A28_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A29_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDATA1_A30_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A30_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A29_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A28_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A27_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A26_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A25_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A24_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A23_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A22_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A21_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A20_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A19_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A18_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A17_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A16_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A15_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A14_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A13_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A12_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A11_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A10_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A9_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A8_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A7_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A6_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A5_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A4_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A3_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A2_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A1_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA0_A0_B, // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
 			NetFlow* RXDATA1_A31_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			NetFlow* RXDISPERR0_A0_B, // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXDISPERR0_A1_B, // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXDISPERR0_A2_B, // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXDATA1_A30_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A29_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A28_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A27_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A26_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A25_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A24_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A23_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A22_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A21_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A20_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A19_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A18_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A17_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A16_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A15_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A14_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A13_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A12_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A11_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A10_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A9_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A8_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A7_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A6_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A5_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A4_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A3_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A2_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A1_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			NetFlow* RXDATA1_A0_B, // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
 			NetFlow* RXDISPERR0_A3_B, // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXDISPERR1_A0_B, // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXDISPERR1_A1_B, // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXDISPERR1_A2_B, // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXDISPERR0_A2_B, // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXDISPERR0_A1_B, // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXDISPERR0_A0_B, // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXDISPERR1_A3_B, // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXDISPERR1_A2_B, // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXDISPERR1_A1_B, // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXDISPERR1_A0_B, // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXELECIDLE0_A0_B, // net ID: RXELECIDLE0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXELECIDLE1_A0_B, // net ID: RXELECIDLE1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXLOSSOFSYNC0_A0_B, // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
 			NetFlow* RXLOSSOFSYNC0_A1_B, // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
-			NetFlow* RXLOSSOFSYNC1_A0_B, // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
+			NetFlow* RXLOSSOFSYNC0_A0_B, // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
 			NetFlow* RXLOSSOFSYNC1_A1_B, // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
-			NetFlow* RXNOTINTABLE0_A0_B, // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXNOTINTABLE0_A1_B, // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXNOTINTABLE0_A2_B, // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXLOSSOFSYNC1_A0_B, // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
 			NetFlow* RXNOTINTABLE0_A3_B, // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXNOTINTABLE1_A0_B, // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXNOTINTABLE1_A1_B, // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXNOTINTABLE1_A2_B, // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXNOTINTABLE0_A2_B, // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXNOTINTABLE0_A1_B, // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXNOTINTABLE0_A0_B, // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXNOTINTABLE1_A3_B, // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXNOTINTABLE1_A2_B, // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXNOTINTABLE1_A1_B, // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXNOTINTABLE1_A0_B, // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXPRBSERR0_A0_B, // net ID: RXPRBSERR0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXPRBSERR1_A0_B, // net ID: RXPRBSERR1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXRECCLK0_A0_B, // net ID: RXRECCLK0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXRECCLK1_A0_B, // net ID: RXRECCLK1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* RXRUNDISP0_A0_B, // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXRUNDISP0_A1_B, // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXRUNDISP0_A2_B, // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXRUNDISP0_A3_B, // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXRUNDISP1_A0_B, // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXRUNDISP1_A1_B, // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXRUNDISP1_A2_B, // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXRUNDISP0_A2_B, // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXRUNDISP0_A1_B, // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXRUNDISP0_A0_B, // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXRUNDISP1_A3_B, // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* RXSTATUS0_A0_B, // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXSTATUS0_A1_B, // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXRUNDISP1_A2_B, // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXRUNDISP1_A1_B, // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* RXRUNDISP1_A0_B, // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
 			NetFlow* RXSTATUS0_A2_B, // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXSTATUS1_A0_B, // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
-			NetFlow* RXSTATUS1_A1_B, // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXSTATUS0_A1_B, // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXSTATUS0_A0_B, // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXSTATUS1_A2_B, // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXSTATUS1_A1_B, // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+			NetFlow* RXSTATUS1_A0_B, // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
 			NetFlow* RXVALID0_A0_B, // net ID: RXVALID0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* RXVALID1_A0_B, // net ID: RXVALID1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* TSTOUT0_A0_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TSTOUT0_A1_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TSTOUT0_A2_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TSTOUT0_A3_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
 			NetFlow* TSTOUT0_A4_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TSTOUT1_A0_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TSTOUT1_A1_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TSTOUT1_A2_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TSTOUT1_A3_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			NetFlow* TSTOUT0_A3_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+			NetFlow* TSTOUT0_A2_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+			NetFlow* TSTOUT0_A1_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+			NetFlow* TSTOUT0_A0_B, // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
 			NetFlow* TSTOUT1_A4_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			NetFlow* TXBUFSTATUS0_A0_B, // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
+			NetFlow* TSTOUT1_A3_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			NetFlow* TSTOUT1_A2_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			NetFlow* TSTOUT1_A1_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			NetFlow* TSTOUT1_A0_B, // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
 			NetFlow* TXBUFSTATUS0_A1_B, // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
-			NetFlow* TXBUFSTATUS1_A0_B, // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
+			NetFlow* TXBUFSTATUS0_A0_B, // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
 			NetFlow* TXBUFSTATUS1_A1_B, // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
-			NetFlow* TXKERR0_A0_B, // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXKERR0_A1_B, // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXKERR0_A2_B, // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXBUFSTATUS1_A0_B, // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
 			NetFlow* TXKERR0_A3_B, // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXKERR1_A0_B, // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXKERR1_A1_B, // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXKERR1_A2_B, // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXKERR0_A2_B, // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXKERR0_A1_B, // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXKERR0_A0_B, // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* TXKERR1_A3_B, // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXKERR1_A2_B, // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXKERR1_A1_B, // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXKERR1_A0_B, // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
 			NetFlow* TXN0_A0_B, // net ID: TXN0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXN1_A0_B, // net ID: TXN1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXOUTCLK0_A0_B, // net ID: TXOUTCLK0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXOUTCLK1_A0_B, // net ID: TXOUTCLK1 lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXP0_A0_B, // net ID: TXP0 lsb: 0  msb: 0 OUTPUT
 			NetFlow* TXP1_A0_B, // net ID: TXP1 lsb: 0  msb: 0 OUTPUT
-			NetFlow* TXRUNDISP0_A0_B, // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXRUNDISP0_A1_B, // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXRUNDISP0_A2_B, // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* TXRUNDISP0_A3_B, // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXRUNDISP1_A0_B, // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXRUNDISP1_A1_B, // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			NetFlow* TXRUNDISP1_A2_B, // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXRUNDISP0_A2_B, // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXRUNDISP0_A1_B, // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXRUNDISP0_A0_B, // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			NetFlow* TXRUNDISP1_A3_B, // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXRUNDISP1_A2_B, // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXRUNDISP1_A1_B, // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			NetFlow* TXRUNDISP1_A0_B, // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
 			NetFlow* CLK00_A0_B, // net ID: CLK00 lsb: 0  msb: 0 INPUT
 			NetFlow* CLK01_A0_B, // net ID: CLK01 lsb: 0  msb: 0 INPUT
 			NetFlow* CLK10_A0_B, // net ID: CLK10 lsb: 0  msb: 0 INPUT
@@ -1291,32 +1291,32 @@ namespace CPrimitives {
 			NetFlow* CLKINEAST1_A0_B, // net ID: CLKINEAST1 lsb: 0  msb: 0 INPUT
 			NetFlow* CLKINWEST0_A0_B, // net ID: CLKINWEST0 lsb: 0  msb: 0 INPUT
 			NetFlow* CLKINWEST1_A0_B, // net ID: CLKINWEST1 lsb: 0  msb: 0 INPUT
-			NetFlow* DADDR_A0_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
-			NetFlow* DADDR_A1_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
-			NetFlow* DADDR_A2_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
-			NetFlow* DADDR_A3_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
-			NetFlow* DADDR_A4_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
-			NetFlow* DADDR_A5_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
-			NetFlow* DADDR_A6_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
 			NetFlow* DADDR_A7_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
+			NetFlow* DADDR_A6_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
+			NetFlow* DADDR_A5_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
+			NetFlow* DADDR_A4_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
+			NetFlow* DADDR_A3_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
+			NetFlow* DADDR_A2_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
+			NetFlow* DADDR_A1_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
+			NetFlow* DADDR_A0_B, // net ID: DADDR lsb: 0  msb: 7 INPUT
 			NetFlow* DCLK_A0_B, // net ID: DCLK lsb: 0  msb: 0 INPUT
 			NetFlow* DEN_A0_B, // net ID: DEN lsb: 0  msb: 0 INPUT
-			NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A3_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A4_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A5_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A6_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A7_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A8_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A9_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A10_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A11_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A12_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A13_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A14_B, // net ID: DI lsb: 0  msb: 15 INPUT
 			NetFlow* DI_A15_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A14_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A13_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A12_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A11_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A10_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A9_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A8_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A7_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A6_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A5_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A4_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A3_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 15 INPUT
 			NetFlow* DWE_A0_B, // net ID: DWE lsb: 0  msb: 0 INPUT
 			NetFlow* GATERXELECIDLE0_A0_B, // net ID: GATERXELECIDLE0 lsb: 0  msb: 0 INPUT
 			NetFlow* GATERXELECIDLE1_A0_B, // net ID: GATERXELECIDLE1 lsb: 0  msb: 0 INPUT
@@ -1324,42 +1324,42 @@ namespace CPrimitives {
 			NetFlow* GCLK01_A0_B, // net ID: GCLK01 lsb: 0  msb: 0 INPUT
 			NetFlow* GCLK10_A0_B, // net ID: GCLK10 lsb: 0  msb: 0 INPUT
 			NetFlow* GCLK11_A0_B, // net ID: GCLK11 lsb: 0  msb: 0 INPUT
-			NetFlow* GTPCLKFBSEL0EAST_A0_B, // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
 			NetFlow* GTPCLKFBSEL0EAST_A1_B, // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
-			NetFlow* GTPCLKFBSEL0WEST_A0_B, // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
+			NetFlow* GTPCLKFBSEL0EAST_A0_B, // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
 			NetFlow* GTPCLKFBSEL0WEST_A1_B, // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
-			NetFlow* GTPCLKFBSEL1EAST_A0_B, // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
+			NetFlow* GTPCLKFBSEL0WEST_A0_B, // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
 			NetFlow* GTPCLKFBSEL1EAST_A1_B, // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
-			NetFlow* GTPCLKFBSEL1WEST_A0_B, // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
+			NetFlow* GTPCLKFBSEL1EAST_A0_B, // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
 			NetFlow* GTPCLKFBSEL1WEST_A1_B, // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
+			NetFlow* GTPCLKFBSEL1WEST_A0_B, // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
 			NetFlow* GTPRESET0_A0_B, // net ID: GTPRESET0 lsb: 0  msb: 0 INPUT
 			NetFlow* GTPRESET1_A0_B, // net ID: GTPRESET1 lsb: 0  msb: 0 INPUT
-			NetFlow* GTPTEST0_A0_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST0_A1_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST0_A2_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST0_A3_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST0_A4_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST0_A5_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST0_A6_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
 			NetFlow* GTPTEST0_A7_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST1_A0_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST1_A1_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST1_A2_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST1_A3_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST1_A4_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST1_A5_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			NetFlow* GTPTEST1_A6_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST0_A6_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST0_A5_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST0_A4_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST0_A3_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST0_A2_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST0_A1_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST0_A0_B, // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
 			NetFlow* GTPTEST1_A7_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST1_A6_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST1_A5_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST1_A4_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST1_A3_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST1_A2_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST1_A1_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			NetFlow* GTPTEST1_A0_B, // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
 			NetFlow* IGNORESIGDET0_A0_B, // net ID: IGNORESIGDET0 lsb: 0  msb: 0 INPUT
 			NetFlow* IGNORESIGDET1_A0_B, // net ID: IGNORESIGDET1 lsb: 0  msb: 0 INPUT
 			NetFlow* INTDATAWIDTH0_A0_B, // net ID: INTDATAWIDTH0 lsb: 0  msb: 0 INPUT
 			NetFlow* INTDATAWIDTH1_A0_B, // net ID: INTDATAWIDTH1 lsb: 0  msb: 0 INPUT
-			NetFlow* LOOPBACK0_A0_B, // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
-			NetFlow* LOOPBACK0_A1_B, // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
 			NetFlow* LOOPBACK0_A2_B, // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
-			NetFlow* LOOPBACK1_A0_B, // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
-			NetFlow* LOOPBACK1_A1_B, // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+			NetFlow* LOOPBACK0_A1_B, // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
+			NetFlow* LOOPBACK0_A0_B, // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
 			NetFlow* LOOPBACK1_A2_B, // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+			NetFlow* LOOPBACK1_A1_B, // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+			NetFlow* LOOPBACK1_A0_B, // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
 			NetFlow* PLLCLK00_A0_B, // net ID: PLLCLK00 lsb: 0  msb: 0 INPUT
 			NetFlow* PLLCLK01_A0_B, // net ID: PLLCLK01 lsb: 0  msb: 0 INPUT
 			NetFlow* PLLCLK10_A0_B, // net ID: PLLCLK10 lsb: 0  msb: 0 INPUT
@@ -1370,41 +1370,41 @@ namespace CPrimitives {
 			NetFlow* PLLPOWERDOWN1_A0_B, // net ID: PLLPOWERDOWN1 lsb: 0  msb: 0 INPUT
 			NetFlow* PRBSCNTRESET0_A0_B, // net ID: PRBSCNTRESET0 lsb: 0  msb: 0 INPUT
 			NetFlow* PRBSCNTRESET1_A0_B, // net ID: PRBSCNTRESET1 lsb: 0  msb: 0 INPUT
-			NetFlow* RCALINEAST_A0_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			NetFlow* RCALINEAST_A1_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			NetFlow* RCALINEAST_A2_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			NetFlow* RCALINEAST_A3_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
 			NetFlow* RCALINEAST_A4_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			NetFlow* RCALINWEST_A0_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-			NetFlow* RCALINWEST_A1_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-			NetFlow* RCALINWEST_A2_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-			NetFlow* RCALINWEST_A3_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINEAST_A3_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINEAST_A2_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINEAST_A1_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINEAST_A0_B, // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
 			NetFlow* RCALINWEST_A4_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINWEST_A3_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINWEST_A2_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINWEST_A1_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			NetFlow* RCALINWEST_A0_B, // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
 			NetFlow* REFCLKPWRDNB0_A0_B, // net ID: REFCLKPWRDNB0 lsb: 0  msb: 0 INPUT
 			NetFlow* REFCLKPWRDNB1_A0_B, // net ID: REFCLKPWRDNB1 lsb: 0  msb: 0 INPUT
-			NetFlow* REFSELDYPLL0_A0_B, // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
-			NetFlow* REFSELDYPLL0_A1_B, // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
 			NetFlow* REFSELDYPLL0_A2_B, // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
-			NetFlow* REFSELDYPLL1_A0_B, // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
-			NetFlow* REFSELDYPLL1_A1_B, // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+			NetFlow* REFSELDYPLL0_A1_B, // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
+			NetFlow* REFSELDYPLL0_A0_B, // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
 			NetFlow* REFSELDYPLL1_A2_B, // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+			NetFlow* REFSELDYPLL1_A1_B, // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+			NetFlow* REFSELDYPLL1_A0_B, // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
 			NetFlow* RXBUFRESET0_A0_B, // net ID: RXBUFRESET0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXBUFRESET1_A0_B, // net ID: RXBUFRESET1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXCDRRESET0_A0_B, // net ID: RXCDRRESET0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXCDRRESET1_A0_B, // net ID: RXCDRRESET1 lsb: 0  msb: 0 INPUT
-			NetFlow* RXCHBONDI_A0_B, // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
-			NetFlow* RXCHBONDI_A1_B, // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
 			NetFlow* RXCHBONDI_A2_B, // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
+			NetFlow* RXCHBONDI_A1_B, // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
+			NetFlow* RXCHBONDI_A0_B, // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
 			NetFlow* RXCHBONDMASTER0_A0_B, // net ID: RXCHBONDMASTER0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXCHBONDMASTER1_A0_B, // net ID: RXCHBONDMASTER1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXCHBONDSLAVE0_A0_B, // net ID: RXCHBONDSLAVE0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXCHBONDSLAVE1_A0_B, // net ID: RXCHBONDSLAVE1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXCOMMADETUSE0_A0_B, // net ID: RXCOMMADETUSE0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXCOMMADETUSE1_A0_B, // net ID: RXCOMMADETUSE1 lsb: 0  msb: 0 INPUT
-			NetFlow* RXDATAWIDTH0_A0_B, // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 			NetFlow* RXDATAWIDTH0_A1_B, // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
-			NetFlow* RXDATAWIDTH1_A0_B, // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			NetFlow* RXDATAWIDTH0_A0_B, // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 			NetFlow* RXDATAWIDTH1_A1_B, // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			NetFlow* RXDATAWIDTH1_A0_B, // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
 			NetFlow* RXDEC8B10BUSE0_A0_B, // net ID: RXDEC8B10BUSE0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXDEC8B10BUSE1_A0_B, // net ID: RXDEC8B10BUSE1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXENCHANSYNC0_A0_B, // net ID: RXENCHANSYNC0 lsb: 0  msb: 0 INPUT
@@ -1415,16 +1415,16 @@ namespace CPrimitives {
 			NetFlow* RXENPCOMMAALIGN1_A0_B, // net ID: RXENPCOMMAALIGN1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXENPMAPHASEALIGN0_A0_B, // net ID: RXENPMAPHASEALIGN0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXENPMAPHASEALIGN1_A0_B, // net ID: RXENPMAPHASEALIGN1 lsb: 0  msb: 0 INPUT
-			NetFlow* RXENPRBSTST0_A0_B, // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			NetFlow* RXENPRBSTST0_A1_B, // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			NetFlow* RXENPRBSTST0_A2_B, // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			NetFlow* RXENPRBSTST1_A0_B, // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
-			NetFlow* RXENPRBSTST1_A1_B, // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			NetFlow* RXENPRBSTST0_A1_B, // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
+			NetFlow* RXENPRBSTST0_A0_B, // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			NetFlow* RXENPRBSTST1_A2_B, // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
-			NetFlow* RXEQMIX0_A0_B, // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
+			NetFlow* RXENPRBSTST1_A1_B, // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			NetFlow* RXENPRBSTST1_A0_B, // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
 			NetFlow* RXEQMIX0_A1_B, // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
-			NetFlow* RXEQMIX1_A0_B, // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
+			NetFlow* RXEQMIX0_A0_B, // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
 			NetFlow* RXEQMIX1_A1_B, // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
+			NetFlow* RXEQMIX1_A0_B, // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
 			NetFlow* RXN0_A0_B, // net ID: RXN0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXN1_A0_B, // net ID: RXN1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXP0_A0_B, // net ID: RXP0 lsb: 0  msb: 0 INPUT
@@ -1433,10 +1433,10 @@ namespace CPrimitives {
 			NetFlow* RXPMASETPHASE1_A0_B, // net ID: RXPMASETPHASE1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXPOLARITY0_A0_B, // net ID: RXPOLARITY0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXPOLARITY1_A0_B, // net ID: RXPOLARITY1 lsb: 0  msb: 0 INPUT
-			NetFlow* RXPOWERDOWN0_A0_B, // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			NetFlow* RXPOWERDOWN0_A1_B, // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
-			NetFlow* RXPOWERDOWN1_A0_B, // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			NetFlow* RXPOWERDOWN0_A0_B, // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			NetFlow* RXPOWERDOWN1_A1_B, // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			NetFlow* RXPOWERDOWN1_A0_B, // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
 			NetFlow* RXRESET0_A0_B, // net ID: RXRESET0 lsb: 0  msb: 0 INPUT
 			NetFlow* RXRESET1_A0_B, // net ID: RXRESET1 lsb: 0  msb: 0 INPUT
 			NetFlow* RXSLIDE0_A0_B, // net ID: RXSLIDE0 lsb: 0  msb: 0 INPUT
@@ -1447,162 +1447,162 @@ namespace CPrimitives {
 			NetFlow* RXUSRCLK21_A0_B, // net ID: RXUSRCLK21 lsb: 0  msb: 0 INPUT
 			NetFlow* TSTCLK0_A0_B, // net ID: TSTCLK0 lsb: 0  msb: 0 INPUT
 			NetFlow* TSTCLK1_A0_B, // net ID: TSTCLK1 lsb: 0  msb: 0 INPUT
-			NetFlow* TSTIN0_A0_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A1_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A2_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A3_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A4_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A5_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A6_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A7_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A8_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A9_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN0_A10_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
 			NetFlow* TSTIN0_A11_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A0_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A1_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A2_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A3_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A4_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A5_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A6_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A7_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A8_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A9_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TSTIN1_A10_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A10_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A9_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A8_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A7_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A6_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A5_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A4_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A3_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A2_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A1_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN0_A0_B, // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
 			NetFlow* TSTIN1_A11_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			NetFlow* TXBUFDIFFCTRL0_A0_B, // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
-			NetFlow* TXBUFDIFFCTRL0_A1_B, // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
+			NetFlow* TSTIN1_A10_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A9_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A8_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A7_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A6_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A5_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A4_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A3_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A2_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A1_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			NetFlow* TSTIN1_A0_B, // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
 			NetFlow* TXBUFDIFFCTRL0_A2_B, // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
-			NetFlow* TXBUFDIFFCTRL1_A0_B, // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
-			NetFlow* TXBUFDIFFCTRL1_A1_B, // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXBUFDIFFCTRL0_A1_B, // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
+			NetFlow* TXBUFDIFFCTRL0_A0_B, // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
 			NetFlow* TXBUFDIFFCTRL1_A2_B, // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
-			NetFlow* TXBYPASS8B10B0_A0_B, // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXBYPASS8B10B0_A1_B, // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXBYPASS8B10B0_A2_B, // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXBUFDIFFCTRL1_A1_B, // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXBUFDIFFCTRL1_A0_B, // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
 			NetFlow* TXBYPASS8B10B0_A3_B, // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXBYPASS8B10B1_A0_B, // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXBYPASS8B10B1_A1_B, // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXBYPASS8B10B1_A2_B, // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXBYPASS8B10B0_A2_B, // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXBYPASS8B10B0_A1_B, // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXBYPASS8B10B0_A0_B, // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
 			NetFlow* TXBYPASS8B10B1_A3_B, // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPMODE0_A0_B, // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPMODE0_A1_B, // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPMODE0_A2_B, // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXBYPASS8B10B1_A2_B, // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXBYPASS8B10B1_A1_B, // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXBYPASS8B10B1_A0_B, // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
 			NetFlow* TXCHARDISPMODE0_A3_B, // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPMODE1_A0_B, // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPMODE1_A1_B, // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPMODE1_A2_B, // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPMODE0_A2_B, // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPMODE0_A1_B, // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPMODE0_A0_B, // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
 			NetFlow* TXCHARDISPMODE1_A3_B, // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPVAL0_A0_B, // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPVAL0_A1_B, // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPVAL0_A2_B, // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPMODE1_A2_B, // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPMODE1_A1_B, // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPMODE1_A0_B, // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
 			NetFlow* TXCHARDISPVAL0_A3_B, // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPVAL1_A0_B, // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPVAL1_A1_B, // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARDISPVAL1_A2_B, // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPVAL0_A2_B, // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPVAL0_A1_B, // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPVAL0_A0_B, // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
 			NetFlow* TXCHARDISPVAL1_A3_B, // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARISK0_A0_B, // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARISK0_A1_B, // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARISK0_A2_B, // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPVAL1_A2_B, // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPVAL1_A1_B, // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARDISPVAL1_A0_B, // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
 			NetFlow* TXCHARISK0_A3_B, // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARISK1_A0_B, // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARISK1_A1_B, // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXCHARISK1_A2_B, // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARISK0_A2_B, // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARISK0_A1_B, // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARISK0_A0_B, // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
 			NetFlow* TXCHARISK1_A3_B, // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARISK1_A2_B, // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARISK1_A1_B, // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXCHARISK1_A0_B, // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
 			NetFlow* TXCOMSTART0_A0_B, // net ID: TXCOMSTART0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXCOMSTART1_A0_B, // net ID: TXCOMSTART1 lsb: 0  msb: 0 INPUT
 			NetFlow* TXCOMTYPE0_A0_B, // net ID: TXCOMTYPE0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXCOMTYPE1_A0_B, // net ID: TXCOMTYPE1 lsb: 0  msb: 0 INPUT
-			NetFlow* TXDATA0_A0_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A1_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A2_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A3_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A4_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A5_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A6_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A7_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A8_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A9_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A10_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A11_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A12_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A13_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A14_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A15_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A16_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A17_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A18_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A19_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A20_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A21_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A22_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A23_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A24_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A25_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A26_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A27_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A28_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A29_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA0_A30_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
 			NetFlow* TXDATA0_A31_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A0_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A1_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A2_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A3_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A4_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A5_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A6_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A7_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A8_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A9_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A10_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A11_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A12_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A13_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A14_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A15_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A16_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A17_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A18_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A19_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A20_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A21_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A22_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A23_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A24_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A25_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A26_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A27_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A28_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A29_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATA1_A30_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A30_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A29_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A28_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A27_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A26_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A25_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A24_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A23_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A22_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A21_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A20_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A19_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A18_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A17_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A16_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A15_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A14_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A13_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A12_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A11_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A10_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A9_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A8_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A7_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A6_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A5_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A4_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A3_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A2_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A1_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA0_A0_B, // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
 			NetFlow* TXDATA1_A31_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			NetFlow* TXDATAWIDTH0_A0_B, // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
+			NetFlow* TXDATA1_A30_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A29_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A28_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A27_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A26_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A25_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A24_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A23_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A22_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A21_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A20_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A19_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A18_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A17_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A16_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A15_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A14_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A13_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A12_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A11_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A10_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A9_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A8_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A7_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A6_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A5_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A4_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A3_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A2_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A1_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			NetFlow* TXDATA1_A0_B, // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
 			NetFlow* TXDATAWIDTH0_A1_B, // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
-			NetFlow* TXDATAWIDTH1_A0_B, // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			NetFlow* TXDATAWIDTH0_A0_B, // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 			NetFlow* TXDATAWIDTH1_A1_B, // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			NetFlow* TXDATAWIDTH1_A0_B, // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
 			NetFlow* TXDETECTRX0_A0_B, // net ID: TXDETECTRX0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXDETECTRX1_A0_B, // net ID: TXDETECTRX1 lsb: 0  msb: 0 INPUT
-			NetFlow* TXDIFFCTRL0_A0_B, // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXDIFFCTRL0_A1_B, // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXDIFFCTRL0_A2_B, // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
 			NetFlow* TXDIFFCTRL0_A3_B, // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-			NetFlow* TXDIFFCTRL1_A0_B, // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXDIFFCTRL1_A1_B, // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
-			NetFlow* TXDIFFCTRL1_A2_B, // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL0_A2_B, // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL0_A1_B, // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL0_A0_B, // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
 			NetFlow* TXDIFFCTRL1_A3_B, // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL1_A2_B, // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL1_A1_B, // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			NetFlow* TXDIFFCTRL1_A0_B, // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
 			NetFlow* TXELECIDLE0_A0_B, // net ID: TXELECIDLE0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXELECIDLE1_A0_B, // net ID: TXELECIDLE1 lsb: 0  msb: 0 INPUT
 			NetFlow* TXENC8B10BUSE0_A0_B, // net ID: TXENC8B10BUSE0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXENC8B10BUSE1_A0_B, // net ID: TXENC8B10BUSE1 lsb: 0  msb: 0 INPUT
 			NetFlow* TXENPMAPHASEALIGN0_A0_B, // net ID: TXENPMAPHASEALIGN0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXENPMAPHASEALIGN1_A0_B, // net ID: TXENPMAPHASEALIGN1 lsb: 0  msb: 0 INPUT
-			NetFlow* TXENPRBSTST0_A0_B, // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			NetFlow* TXENPRBSTST0_A1_B, // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			NetFlow* TXENPRBSTST0_A2_B, // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			NetFlow* TXENPRBSTST1_A0_B, // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
-			NetFlow* TXENPRBSTST1_A1_B, // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXENPRBSTST0_A1_B, // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
+			NetFlow* TXENPRBSTST0_A0_B, // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			NetFlow* TXENPRBSTST1_A2_B, // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXENPRBSTST1_A1_B, // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXENPRBSTST1_A0_B, // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
 			NetFlow* TXINHIBIT0_A0_B, // net ID: TXINHIBIT0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXINHIBIT1_A0_B, // net ID: TXINHIBIT1 lsb: 0  msb: 0 INPUT
 			NetFlow* TXPDOWNASYNCH0_A0_B, // net ID: TXPDOWNASYNCH0 lsb: 0  msb: 0 INPUT
@@ -1611,18 +1611,18 @@ namespace CPrimitives {
 			NetFlow* TXPMASETPHASE1_A0_B, // net ID: TXPMASETPHASE1 lsb: 0  msb: 0 INPUT
 			NetFlow* TXPOLARITY0_A0_B, // net ID: TXPOLARITY0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXPOLARITY1_A0_B, // net ID: TXPOLARITY1 lsb: 0  msb: 0 INPUT
-			NetFlow* TXPOWERDOWN0_A0_B, // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			NetFlow* TXPOWERDOWN0_A1_B, // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
-			NetFlow* TXPOWERDOWN1_A0_B, // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			NetFlow* TXPOWERDOWN0_A0_B, // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			NetFlow* TXPOWERDOWN1_A1_B, // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			NetFlow* TXPOWERDOWN1_A0_B, // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
 			NetFlow* TXPRBSFORCEERR0_A0_B, // net ID: TXPRBSFORCEERR0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXPRBSFORCEERR1_A0_B, // net ID: TXPRBSFORCEERR1 lsb: 0  msb: 0 INPUT
-			NetFlow* TXPREEMPHASIS0_A0_B, // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
-			NetFlow* TXPREEMPHASIS0_A1_B, // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
 			NetFlow* TXPREEMPHASIS0_A2_B, // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
-			NetFlow* TXPREEMPHASIS1_A0_B, // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
-			NetFlow* TXPREEMPHASIS1_A1_B, // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXPREEMPHASIS0_A1_B, // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
+			NetFlow* TXPREEMPHASIS0_A0_B, // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
 			NetFlow* TXPREEMPHASIS1_A2_B, // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXPREEMPHASIS1_A1_B, // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+			NetFlow* TXPREEMPHASIS1_A0_B, // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
 			NetFlow* TXRESET0_A0_B, // net ID: TXRESET0 lsb: 0  msb: 0 INPUT
 			NetFlow* TXRESET1_A0_B, // net ID: TXRESET1 lsb: 0  msb: 0 INPUT
 			NetFlow* TXUSRCLK0_A0_B, // net ID: TXUSRCLK0 lsb: 0  msb: 0 INPUT
@@ -1864,56 +1864,56 @@ namespace CPrimitives {
 			this->LOC = LOC; // Default: "UNPLACED"
 			//Verilog Ports in definition order:
 			this->DRDY_A0_B = DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
-			this->DRPDO_A0_B = DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A1_B = DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A2_B = DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A3_B = DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A4_B = DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A5_B = DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A6_B = DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A7_B = DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A8_B = DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A9_B = DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A10_B = DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A11_B = DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A12_B = DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A13_B = DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->DRPDO_A14_B = DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			this->DRPDO_A15_B = DRPDO_A15_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
-			this->GTPCLKFBEAST_A0_B = GTPCLKFBEAST_A0_B; // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
+			this->DRPDO_A14_B = DRPDO_A14_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A13_B = DRPDO_A13_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A12_B = DRPDO_A12_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A11_B = DRPDO_A11_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A10_B = DRPDO_A10_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A9_B = DRPDO_A9_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A8_B = DRPDO_A8_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A7_B = DRPDO_A7_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A6_B = DRPDO_A6_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A5_B = DRPDO_A5_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A4_B = DRPDO_A4_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A3_B = DRPDO_A3_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A2_B = DRPDO_A2_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A1_B = DRPDO_A1_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
+			this->DRPDO_A0_B = DRPDO_A0_B; // net ID: DRPDO lsb: 0  msb: 15 OUTPUT
 			this->GTPCLKFBEAST_A1_B = GTPCLKFBEAST_A1_B; // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
-			this->GTPCLKFBWEST_A0_B = GTPCLKFBWEST_A0_B; // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
+			this->GTPCLKFBEAST_A0_B = GTPCLKFBEAST_A0_B; // net ID: GTPCLKFBEAST lsb: 0  msb: 1 OUTPUT
 			this->GTPCLKFBWEST_A1_B = GTPCLKFBWEST_A1_B; // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
-			this->GTPCLKOUT0_A0_B = GTPCLKOUT0_A0_B; // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
+			this->GTPCLKFBWEST_A0_B = GTPCLKFBWEST_A0_B; // net ID: GTPCLKFBWEST lsb: 0  msb: 1 OUTPUT
 			this->GTPCLKOUT0_A1_B = GTPCLKOUT0_A1_B; // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
-			this->GTPCLKOUT1_A0_B = GTPCLKOUT1_A0_B; // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
+			this->GTPCLKOUT0_A0_B = GTPCLKOUT0_A0_B; // net ID: GTPCLKOUT0 lsb: 0  msb: 1 OUTPUT
 			this->GTPCLKOUT1_A1_B = GTPCLKOUT1_A1_B; // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
+			this->GTPCLKOUT1_A0_B = GTPCLKOUT1_A0_B; // net ID: GTPCLKOUT1 lsb: 0  msb: 1 OUTPUT
 			this->PHYSTATUS0_A0_B = PHYSTATUS0_A0_B; // net ID: PHYSTATUS0 lsb: 0  msb: 0 OUTPUT
 			this->PHYSTATUS1_A0_B = PHYSTATUS1_A0_B; // net ID: PHYSTATUS1 lsb: 0  msb: 0 OUTPUT
 			this->PLLLKDET0_A0_B = PLLLKDET0_A0_B; // net ID: PLLLKDET0 lsb: 0  msb: 0 OUTPUT
 			this->PLLLKDET1_A0_B = PLLLKDET1_A0_B; // net ID: PLLLKDET1 lsb: 0  msb: 0 OUTPUT
-			this->RCALOUTEAST_A0_B = RCALOUTEAST_A0_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			this->RCALOUTEAST_A1_B = RCALOUTEAST_A1_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			this->RCALOUTEAST_A2_B = RCALOUTEAST_A2_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			this->RCALOUTEAST_A3_B = RCALOUTEAST_A3_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
 			this->RCALOUTEAST_A4_B = RCALOUTEAST_A4_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
-			this->RCALOUTWEST_A0_B = RCALOUTWEST_A0_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-			this->RCALOUTWEST_A1_B = RCALOUTWEST_A1_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-			this->RCALOUTWEST_A2_B = RCALOUTWEST_A2_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
-			this->RCALOUTWEST_A3_B = RCALOUTWEST_A3_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTEAST_A3_B = RCALOUTEAST_A3_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTEAST_A2_B = RCALOUTEAST_A2_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTEAST_A1_B = RCALOUTEAST_A1_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTEAST_A0_B = RCALOUTEAST_A0_B; // net ID: RCALOUTEAST lsb: 0  msb: 4 OUTPUT
 			this->RCALOUTWEST_A4_B = RCALOUTWEST_A4_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTWEST_A3_B = RCALOUTWEST_A3_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTWEST_A2_B = RCALOUTWEST_A2_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTWEST_A1_B = RCALOUTWEST_A1_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
+			this->RCALOUTWEST_A0_B = RCALOUTWEST_A0_B; // net ID: RCALOUTWEST lsb: 0  msb: 4 OUTPUT
 			this->REFCLKOUT0_A0_B = REFCLKOUT0_A0_B; // net ID: REFCLKOUT0 lsb: 0  msb: 0 OUTPUT
 			this->REFCLKOUT1_A0_B = REFCLKOUT1_A0_B; // net ID: REFCLKOUT1 lsb: 0  msb: 0 OUTPUT
 			this->REFCLKPLL0_A0_B = REFCLKPLL0_A0_B; // net ID: REFCLKPLL0 lsb: 0  msb: 0 OUTPUT
 			this->REFCLKPLL1_A0_B = REFCLKPLL1_A0_B; // net ID: REFCLKPLL1 lsb: 0  msb: 0 OUTPUT
 			this->RESETDONE0_A0_B = RESETDONE0_A0_B; // net ID: RESETDONE0 lsb: 0  msb: 0 OUTPUT
 			this->RESETDONE1_A0_B = RESETDONE1_A0_B; // net ID: RESETDONE1 lsb: 0  msb: 0 OUTPUT
-			this->RXBUFSTATUS0_A0_B = RXBUFSTATUS0_A0_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
-			this->RXBUFSTATUS0_A1_B = RXBUFSTATUS0_A1_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
 			this->RXBUFSTATUS0_A2_B = RXBUFSTATUS0_A2_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
-			this->RXBUFSTATUS1_A0_B = RXBUFSTATUS1_A0_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
-			this->RXBUFSTATUS1_A1_B = RXBUFSTATUS1_A1_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+			this->RXBUFSTATUS0_A1_B = RXBUFSTATUS0_A1_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
+			this->RXBUFSTATUS0_A0_B = RXBUFSTATUS0_A0_B; // net ID: RXBUFSTATUS0 lsb: 0  msb: 2 OUTPUT
 			this->RXBUFSTATUS1_A2_B = RXBUFSTATUS1_A2_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+			this->RXBUFSTATUS1_A1_B = RXBUFSTATUS1_A1_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
+			this->RXBUFSTATUS1_A0_B = RXBUFSTATUS1_A0_B; // net ID: RXBUFSTATUS1 lsb: 0  msb: 2 OUTPUT
 			this->RXBYTEISALIGNED0_A0_B = RXBYTEISALIGNED0_A0_B; // net ID: RXBYTEISALIGNED0 lsb: 0  msb: 0 OUTPUT
 			this->RXBYTEISALIGNED1_A0_B = RXBYTEISALIGNED1_A0_B; // net ID: RXBYTEISALIGNED1 lsb: 0  msb: 0 OUTPUT
 			this->RXBYTEREALIGN0_A0_B = RXBYTEREALIGN0_A0_B; // net ID: RXBYTEREALIGN0 lsb: 0  msb: 0 OUTPUT
@@ -1924,175 +1924,175 @@ namespace CPrimitives {
 			this->RXCHANISALIGNED1_A0_B = RXCHANISALIGNED1_A0_B; // net ID: RXCHANISALIGNED1 lsb: 0  msb: 0 OUTPUT
 			this->RXCHANREALIGN0_A0_B = RXCHANREALIGN0_A0_B; // net ID: RXCHANREALIGN0 lsb: 0  msb: 0 OUTPUT
 			this->RXCHANREALIGN1_A0_B = RXCHANREALIGN1_A0_B; // net ID: RXCHANREALIGN1 lsb: 0  msb: 0 OUTPUT
-			this->RXCHARISCOMMA0_A0_B = RXCHARISCOMMA0_A0_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISCOMMA0_A1_B = RXCHARISCOMMA0_A1_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISCOMMA0_A2_B = RXCHARISCOMMA0_A2_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
 			this->RXCHARISCOMMA0_A3_B = RXCHARISCOMMA0_A3_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISCOMMA1_A0_B = RXCHARISCOMMA1_A0_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISCOMMA1_A1_B = RXCHARISCOMMA1_A1_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISCOMMA1_A2_B = RXCHARISCOMMA1_A2_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISCOMMA0_A2_B = RXCHARISCOMMA0_A2_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISCOMMA0_A1_B = RXCHARISCOMMA0_A1_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISCOMMA0_A0_B = RXCHARISCOMMA0_A0_B; // net ID: RXCHARISCOMMA0 lsb: 0  msb: 3 OUTPUT
 			this->RXCHARISCOMMA1_A3_B = RXCHARISCOMMA1_A3_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISK0_A0_B = RXCHARISK0_A0_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISK0_A1_B = RXCHARISK0_A1_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISK0_A2_B = RXCHARISK0_A2_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISCOMMA1_A2_B = RXCHARISCOMMA1_A2_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISCOMMA1_A1_B = RXCHARISCOMMA1_A1_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISCOMMA1_A0_B = RXCHARISCOMMA1_A0_B; // net ID: RXCHARISCOMMA1 lsb: 0  msb: 3 OUTPUT
 			this->RXCHARISK0_A3_B = RXCHARISK0_A3_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISK1_A0_B = RXCHARISK1_A0_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISK1_A1_B = RXCHARISK1_A1_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-			this->RXCHARISK1_A2_B = RXCHARISK1_A2_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISK0_A2_B = RXCHARISK0_A2_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISK0_A1_B = RXCHARISK0_A1_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISK0_A0_B = RXCHARISK0_A0_B; // net ID: RXCHARISK0 lsb: 0  msb: 3 OUTPUT
 			this->RXCHARISK1_A3_B = RXCHARISK1_A3_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
-			this->RXCHBONDO_A0_B = RXCHBONDO_A0_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
-			this->RXCHBONDO_A1_B = RXCHBONDO_A1_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
+			this->RXCHARISK1_A2_B = RXCHARISK1_A2_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISK1_A1_B = RXCHARISK1_A1_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
+			this->RXCHARISK1_A0_B = RXCHARISK1_A0_B; // net ID: RXCHARISK1 lsb: 0  msb: 3 OUTPUT
 			this->RXCHBONDO_A2_B = RXCHBONDO_A2_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
-			this->RXCLKCORCNT0_A0_B = RXCLKCORCNT0_A0_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
-			this->RXCLKCORCNT0_A1_B = RXCLKCORCNT0_A1_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
+			this->RXCHBONDO_A1_B = RXCHBONDO_A1_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
+			this->RXCHBONDO_A0_B = RXCHBONDO_A0_B; // net ID: RXCHBONDO lsb: 0  msb: 2 OUTPUT
 			this->RXCLKCORCNT0_A2_B = RXCLKCORCNT0_A2_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
-			this->RXCLKCORCNT1_A0_B = RXCLKCORCNT1_A0_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
-			this->RXCLKCORCNT1_A1_B = RXCLKCORCNT1_A1_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+			this->RXCLKCORCNT0_A1_B = RXCLKCORCNT0_A1_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
+			this->RXCLKCORCNT0_A0_B = RXCLKCORCNT0_A0_B; // net ID: RXCLKCORCNT0 lsb: 0  msb: 2 OUTPUT
 			this->RXCLKCORCNT1_A2_B = RXCLKCORCNT1_A2_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+			this->RXCLKCORCNT1_A1_B = RXCLKCORCNT1_A1_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
+			this->RXCLKCORCNT1_A0_B = RXCLKCORCNT1_A0_B; // net ID: RXCLKCORCNT1 lsb: 0  msb: 2 OUTPUT
 			this->RXCOMMADET0_A0_B = RXCOMMADET0_A0_B; // net ID: RXCOMMADET0 lsb: 0  msb: 0 OUTPUT
 			this->RXCOMMADET1_A0_B = RXCOMMADET1_A0_B; // net ID: RXCOMMADET1 lsb: 0  msb: 0 OUTPUT
-			this->RXDATA0_A0_B = RXDATA0_A0_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A1_B = RXDATA0_A1_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A2_B = RXDATA0_A2_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A3_B = RXDATA0_A3_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A4_B = RXDATA0_A4_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A5_B = RXDATA0_A5_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A6_B = RXDATA0_A6_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A7_B = RXDATA0_A7_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A8_B = RXDATA0_A8_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A9_B = RXDATA0_A9_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A10_B = RXDATA0_A10_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A11_B = RXDATA0_A11_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A12_B = RXDATA0_A12_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A13_B = RXDATA0_A13_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A14_B = RXDATA0_A14_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A15_B = RXDATA0_A15_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A16_B = RXDATA0_A16_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A17_B = RXDATA0_A17_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A18_B = RXDATA0_A18_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A19_B = RXDATA0_A19_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A20_B = RXDATA0_A20_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A21_B = RXDATA0_A21_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A22_B = RXDATA0_A22_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A23_B = RXDATA0_A23_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A24_B = RXDATA0_A24_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A25_B = RXDATA0_A25_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A26_B = RXDATA0_A26_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A27_B = RXDATA0_A27_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A28_B = RXDATA0_A28_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A29_B = RXDATA0_A29_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA0_A30_B = RXDATA0_A30_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
 			this->RXDATA0_A31_B = RXDATA0_A31_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A0_B = RXDATA1_A0_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A1_B = RXDATA1_A1_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A2_B = RXDATA1_A2_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A3_B = RXDATA1_A3_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A4_B = RXDATA1_A4_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A5_B = RXDATA1_A5_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A6_B = RXDATA1_A6_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A7_B = RXDATA1_A7_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A8_B = RXDATA1_A8_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A9_B = RXDATA1_A9_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A10_B = RXDATA1_A10_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A11_B = RXDATA1_A11_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A12_B = RXDATA1_A12_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A13_B = RXDATA1_A13_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A14_B = RXDATA1_A14_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A15_B = RXDATA1_A15_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A16_B = RXDATA1_A16_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A17_B = RXDATA1_A17_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A18_B = RXDATA1_A18_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A19_B = RXDATA1_A19_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A20_B = RXDATA1_A20_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A21_B = RXDATA1_A21_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A22_B = RXDATA1_A22_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A23_B = RXDATA1_A23_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A24_B = RXDATA1_A24_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A25_B = RXDATA1_A25_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A26_B = RXDATA1_A26_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A27_B = RXDATA1_A27_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A28_B = RXDATA1_A28_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A29_B = RXDATA1_A29_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDATA1_A30_B = RXDATA1_A30_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A30_B = RXDATA0_A30_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A29_B = RXDATA0_A29_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A28_B = RXDATA0_A28_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A27_B = RXDATA0_A27_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A26_B = RXDATA0_A26_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A25_B = RXDATA0_A25_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A24_B = RXDATA0_A24_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A23_B = RXDATA0_A23_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A22_B = RXDATA0_A22_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A21_B = RXDATA0_A21_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A20_B = RXDATA0_A20_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A19_B = RXDATA0_A19_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A18_B = RXDATA0_A18_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A17_B = RXDATA0_A17_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A16_B = RXDATA0_A16_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A15_B = RXDATA0_A15_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A14_B = RXDATA0_A14_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A13_B = RXDATA0_A13_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A12_B = RXDATA0_A12_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A11_B = RXDATA0_A11_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A10_B = RXDATA0_A10_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A9_B = RXDATA0_A9_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A8_B = RXDATA0_A8_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A7_B = RXDATA0_A7_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A6_B = RXDATA0_A6_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A5_B = RXDATA0_A5_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A4_B = RXDATA0_A4_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A3_B = RXDATA0_A3_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A2_B = RXDATA0_A2_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A1_B = RXDATA0_A1_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA0_A0_B = RXDATA0_A0_B; // net ID: RXDATA0 lsb: 0  msb: 31 OUTPUT
 			this->RXDATA1_A31_B = RXDATA1_A31_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
-			this->RXDISPERR0_A0_B = RXDISPERR0_A0_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-			this->RXDISPERR0_A1_B = RXDISPERR0_A1_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-			this->RXDISPERR0_A2_B = RXDISPERR0_A2_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+			this->RXDATA1_A30_B = RXDATA1_A30_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A29_B = RXDATA1_A29_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A28_B = RXDATA1_A28_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A27_B = RXDATA1_A27_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A26_B = RXDATA1_A26_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A25_B = RXDATA1_A25_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A24_B = RXDATA1_A24_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A23_B = RXDATA1_A23_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A22_B = RXDATA1_A22_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A21_B = RXDATA1_A21_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A20_B = RXDATA1_A20_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A19_B = RXDATA1_A19_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A18_B = RXDATA1_A18_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A17_B = RXDATA1_A17_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A16_B = RXDATA1_A16_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A15_B = RXDATA1_A15_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A14_B = RXDATA1_A14_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A13_B = RXDATA1_A13_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A12_B = RXDATA1_A12_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A11_B = RXDATA1_A11_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A10_B = RXDATA1_A10_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A9_B = RXDATA1_A9_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A8_B = RXDATA1_A8_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A7_B = RXDATA1_A7_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A6_B = RXDATA1_A6_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A5_B = RXDATA1_A5_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A4_B = RXDATA1_A4_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A3_B = RXDATA1_A3_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A2_B = RXDATA1_A2_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A1_B = RXDATA1_A1_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
+			this->RXDATA1_A0_B = RXDATA1_A0_B; // net ID: RXDATA1 lsb: 0  msb: 31 OUTPUT
 			this->RXDISPERR0_A3_B = RXDISPERR0_A3_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
-			this->RXDISPERR1_A0_B = RXDISPERR1_A0_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
-			this->RXDISPERR1_A1_B = RXDISPERR1_A1_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
-			this->RXDISPERR1_A2_B = RXDISPERR1_A2_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			this->RXDISPERR0_A2_B = RXDISPERR0_A2_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+			this->RXDISPERR0_A1_B = RXDISPERR0_A1_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
+			this->RXDISPERR0_A0_B = RXDISPERR0_A0_B; // net ID: RXDISPERR0 lsb: 0  msb: 3 OUTPUT
 			this->RXDISPERR1_A3_B = RXDISPERR1_A3_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			this->RXDISPERR1_A2_B = RXDISPERR1_A2_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			this->RXDISPERR1_A1_B = RXDISPERR1_A1_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
+			this->RXDISPERR1_A0_B = RXDISPERR1_A0_B; // net ID: RXDISPERR1 lsb: 0  msb: 3 OUTPUT
 			this->RXELECIDLE0_A0_B = RXELECIDLE0_A0_B; // net ID: RXELECIDLE0 lsb: 0  msb: 0 OUTPUT
 			this->RXELECIDLE1_A0_B = RXELECIDLE1_A0_B; // net ID: RXELECIDLE1 lsb: 0  msb: 0 OUTPUT
-			this->RXLOSSOFSYNC0_A0_B = RXLOSSOFSYNC0_A0_B; // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
 			this->RXLOSSOFSYNC0_A1_B = RXLOSSOFSYNC0_A1_B; // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
-			this->RXLOSSOFSYNC1_A0_B = RXLOSSOFSYNC1_A0_B; // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
+			this->RXLOSSOFSYNC0_A0_B = RXLOSSOFSYNC0_A0_B; // net ID: RXLOSSOFSYNC0 lsb: 0  msb: 1 OUTPUT
 			this->RXLOSSOFSYNC1_A1_B = RXLOSSOFSYNC1_A1_B; // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
-			this->RXNOTINTABLE0_A0_B = RXNOTINTABLE0_A0_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-			this->RXNOTINTABLE0_A1_B = RXNOTINTABLE0_A1_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-			this->RXNOTINTABLE0_A2_B = RXNOTINTABLE0_A2_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+			this->RXLOSSOFSYNC1_A0_B = RXLOSSOFSYNC1_A0_B; // net ID: RXLOSSOFSYNC1 lsb: 0  msb: 1 OUTPUT
 			this->RXNOTINTABLE0_A3_B = RXNOTINTABLE0_A3_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
-			this->RXNOTINTABLE1_A0_B = RXNOTINTABLE1_A0_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
-			this->RXNOTINTABLE1_A1_B = RXNOTINTABLE1_A1_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
-			this->RXNOTINTABLE1_A2_B = RXNOTINTABLE1_A2_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			this->RXNOTINTABLE0_A2_B = RXNOTINTABLE0_A2_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+			this->RXNOTINTABLE0_A1_B = RXNOTINTABLE0_A1_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
+			this->RXNOTINTABLE0_A0_B = RXNOTINTABLE0_A0_B; // net ID: RXNOTINTABLE0 lsb: 0  msb: 3 OUTPUT
 			this->RXNOTINTABLE1_A3_B = RXNOTINTABLE1_A3_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			this->RXNOTINTABLE1_A2_B = RXNOTINTABLE1_A2_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			this->RXNOTINTABLE1_A1_B = RXNOTINTABLE1_A1_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
+			this->RXNOTINTABLE1_A0_B = RXNOTINTABLE1_A0_B; // net ID: RXNOTINTABLE1 lsb: 0  msb: 3 OUTPUT
 			this->RXPRBSERR0_A0_B = RXPRBSERR0_A0_B; // net ID: RXPRBSERR0 lsb: 0  msb: 0 OUTPUT
 			this->RXPRBSERR1_A0_B = RXPRBSERR1_A0_B; // net ID: RXPRBSERR1 lsb: 0  msb: 0 OUTPUT
 			this->RXRECCLK0_A0_B = RXRECCLK0_A0_B; // net ID: RXRECCLK0 lsb: 0  msb: 0 OUTPUT
 			this->RXRECCLK1_A0_B = RXRECCLK1_A0_B; // net ID: RXRECCLK1 lsb: 0  msb: 0 OUTPUT
-			this->RXRUNDISP0_A0_B = RXRUNDISP0_A0_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			this->RXRUNDISP0_A1_B = RXRUNDISP0_A1_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			this->RXRUNDISP0_A2_B = RXRUNDISP0_A2_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			this->RXRUNDISP0_A3_B = RXRUNDISP0_A3_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			this->RXRUNDISP1_A0_B = RXRUNDISP1_A0_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			this->RXRUNDISP1_A1_B = RXRUNDISP1_A1_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			this->RXRUNDISP1_A2_B = RXRUNDISP1_A2_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			this->RXRUNDISP0_A2_B = RXRUNDISP0_A2_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			this->RXRUNDISP0_A1_B = RXRUNDISP0_A1_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			this->RXRUNDISP0_A0_B = RXRUNDISP0_A0_B; // net ID: RXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			this->RXRUNDISP1_A3_B = RXRUNDISP1_A3_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			this->RXSTATUS0_A0_B = RXSTATUS0_A0_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
-			this->RXSTATUS0_A1_B = RXSTATUS0_A1_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
+			this->RXRUNDISP1_A2_B = RXRUNDISP1_A2_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			this->RXRUNDISP1_A1_B = RXRUNDISP1_A1_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			this->RXRUNDISP1_A0_B = RXRUNDISP1_A0_B; // net ID: RXRUNDISP1 lsb: 0  msb: 3 OUTPUT
 			this->RXSTATUS0_A2_B = RXSTATUS0_A2_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
-			this->RXSTATUS1_A0_B = RXSTATUS1_A0_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
-			this->RXSTATUS1_A1_B = RXSTATUS1_A1_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+			this->RXSTATUS0_A1_B = RXSTATUS0_A1_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
+			this->RXSTATUS0_A0_B = RXSTATUS0_A0_B; // net ID: RXSTATUS0 lsb: 0  msb: 2 OUTPUT
 			this->RXSTATUS1_A2_B = RXSTATUS1_A2_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+			this->RXSTATUS1_A1_B = RXSTATUS1_A1_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
+			this->RXSTATUS1_A0_B = RXSTATUS1_A0_B; // net ID: RXSTATUS1 lsb: 0  msb: 2 OUTPUT
 			this->RXVALID0_A0_B = RXVALID0_A0_B; // net ID: RXVALID0 lsb: 0  msb: 0 OUTPUT
 			this->RXVALID1_A0_B = RXVALID1_A0_B; // net ID: RXVALID1 lsb: 0  msb: 0 OUTPUT
-			this->TSTOUT0_A0_B = TSTOUT0_A0_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			this->TSTOUT0_A1_B = TSTOUT0_A1_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			this->TSTOUT0_A2_B = TSTOUT0_A2_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			this->TSTOUT0_A3_B = TSTOUT0_A3_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
 			this->TSTOUT0_A4_B = TSTOUT0_A4_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
-			this->TSTOUT1_A0_B = TSTOUT1_A0_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			this->TSTOUT1_A1_B = TSTOUT1_A1_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			this->TSTOUT1_A2_B = TSTOUT1_A2_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			this->TSTOUT1_A3_B = TSTOUT1_A3_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			this->TSTOUT0_A3_B = TSTOUT0_A3_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+			this->TSTOUT0_A2_B = TSTOUT0_A2_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+			this->TSTOUT0_A1_B = TSTOUT0_A1_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
+			this->TSTOUT0_A0_B = TSTOUT0_A0_B; // net ID: TSTOUT0 lsb: 0  msb: 4 OUTPUT
 			this->TSTOUT1_A4_B = TSTOUT1_A4_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
-			this->TXBUFSTATUS0_A0_B = TXBUFSTATUS0_A0_B; // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
+			this->TSTOUT1_A3_B = TSTOUT1_A3_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			this->TSTOUT1_A2_B = TSTOUT1_A2_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			this->TSTOUT1_A1_B = TSTOUT1_A1_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
+			this->TSTOUT1_A0_B = TSTOUT1_A0_B; // net ID: TSTOUT1 lsb: 0  msb: 4 OUTPUT
 			this->TXBUFSTATUS0_A1_B = TXBUFSTATUS0_A1_B; // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
-			this->TXBUFSTATUS1_A0_B = TXBUFSTATUS1_A0_B; // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
+			this->TXBUFSTATUS0_A0_B = TXBUFSTATUS0_A0_B; // net ID: TXBUFSTATUS0 lsb: 0  msb: 1 OUTPUT
 			this->TXBUFSTATUS1_A1_B = TXBUFSTATUS1_A1_B; // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
-			this->TXKERR0_A0_B = TXKERR0_A0_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-			this->TXKERR0_A1_B = TXKERR0_A1_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-			this->TXKERR0_A2_B = TXKERR0_A2_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+			this->TXBUFSTATUS1_A0_B = TXBUFSTATUS1_A0_B; // net ID: TXBUFSTATUS1 lsb: 0  msb: 1 OUTPUT
 			this->TXKERR0_A3_B = TXKERR0_A3_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
-			this->TXKERR1_A0_B = TXKERR1_A0_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
-			this->TXKERR1_A1_B = TXKERR1_A1_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
-			this->TXKERR1_A2_B = TXKERR1_A2_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			this->TXKERR0_A2_B = TXKERR0_A2_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+			this->TXKERR0_A1_B = TXKERR0_A1_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
+			this->TXKERR0_A0_B = TXKERR0_A0_B; // net ID: TXKERR0 lsb: 0  msb: 3 OUTPUT
 			this->TXKERR1_A3_B = TXKERR1_A3_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			this->TXKERR1_A2_B = TXKERR1_A2_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			this->TXKERR1_A1_B = TXKERR1_A1_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
+			this->TXKERR1_A0_B = TXKERR1_A0_B; // net ID: TXKERR1 lsb: 0  msb: 3 OUTPUT
 			this->TXN0_A0_B = TXN0_A0_B; // net ID: TXN0 lsb: 0  msb: 0 OUTPUT
 			this->TXN1_A0_B = TXN1_A0_B; // net ID: TXN1 lsb: 0  msb: 0 OUTPUT
 			this->TXOUTCLK0_A0_B = TXOUTCLK0_A0_B; // net ID: TXOUTCLK0 lsb: 0  msb: 0 OUTPUT
 			this->TXOUTCLK1_A0_B = TXOUTCLK1_A0_B; // net ID: TXOUTCLK1 lsb: 0  msb: 0 OUTPUT
 			this->TXP0_A0_B = TXP0_A0_B; // net ID: TXP0 lsb: 0  msb: 0 OUTPUT
 			this->TXP1_A0_B = TXP1_A0_B; // net ID: TXP1 lsb: 0  msb: 0 OUTPUT
-			this->TXRUNDISP0_A0_B = TXRUNDISP0_A0_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			this->TXRUNDISP0_A1_B = TXRUNDISP0_A1_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			this->TXRUNDISP0_A2_B = TXRUNDISP0_A2_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			this->TXRUNDISP0_A3_B = TXRUNDISP0_A3_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
-			this->TXRUNDISP1_A0_B = TXRUNDISP1_A0_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			this->TXRUNDISP1_A1_B = TXRUNDISP1_A1_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
-			this->TXRUNDISP1_A2_B = TXRUNDISP1_A2_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			this->TXRUNDISP0_A2_B = TXRUNDISP0_A2_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			this->TXRUNDISP0_A1_B = TXRUNDISP0_A1_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
+			this->TXRUNDISP0_A0_B = TXRUNDISP0_A0_B; // net ID: TXRUNDISP0 lsb: 0  msb: 3 OUTPUT
 			this->TXRUNDISP1_A3_B = TXRUNDISP1_A3_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			this->TXRUNDISP1_A2_B = TXRUNDISP1_A2_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			this->TXRUNDISP1_A1_B = TXRUNDISP1_A1_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
+			this->TXRUNDISP1_A0_B = TXRUNDISP1_A0_B; // net ID: TXRUNDISP1 lsb: 0  msb: 3 OUTPUT
 			this->CLK00_A0_B = CLK00_A0_B; // net ID: CLK00 lsb: 0  msb: 0 INPUT
 			this->CLK01_A0_B = CLK01_A0_B; // net ID: CLK01 lsb: 0  msb: 0 INPUT
 			this->CLK10_A0_B = CLK10_A0_B; // net ID: CLK10 lsb: 0  msb: 0 INPUT
@@ -2101,32 +2101,32 @@ namespace CPrimitives {
 			this->CLKINEAST1_A0_B = CLKINEAST1_A0_B; // net ID: CLKINEAST1 lsb: 0  msb: 0 INPUT
 			this->CLKINWEST0_A0_B = CLKINWEST0_A0_B; // net ID: CLKINWEST0 lsb: 0  msb: 0 INPUT
 			this->CLKINWEST1_A0_B = CLKINWEST1_A0_B; // net ID: CLKINWEST1 lsb: 0  msb: 0 INPUT
-			this->DADDR_A0_B = DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-			this->DADDR_A1_B = DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-			this->DADDR_A2_B = DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-			this->DADDR_A3_B = DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-			this->DADDR_A4_B = DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-			this->DADDR_A5_B = DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
-			this->DADDR_A6_B = DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
 			this->DADDR_A7_B = DADDR_A7_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+			this->DADDR_A6_B = DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+			this->DADDR_A5_B = DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+			this->DADDR_A4_B = DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+			this->DADDR_A3_B = DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+			this->DADDR_A2_B = DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+			this->DADDR_A1_B = DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
+			this->DADDR_A0_B = DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 7 INPUT
 			this->DCLK_A0_B = DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
 			this->DEN_A0_B = DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
-			this->DI_A0_B = DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A1_B = DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A2_B = DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A3_B = DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A4_B = DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A5_B = DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A6_B = DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A7_B = DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A8_B = DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A9_B = DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A10_B = DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A11_B = DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A12_B = DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A13_B = DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A14_B = DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
 			this->DI_A15_B = DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A14_B = DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A13_B = DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A12_B = DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A11_B = DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A10_B = DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A9_B = DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A8_B = DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A7_B = DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A6_B = DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A5_B = DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A4_B = DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A3_B = DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A2_B = DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A1_B = DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A0_B = DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
 			this->DWE_A0_B = DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
 			this->GATERXELECIDLE0_A0_B = GATERXELECIDLE0_A0_B; // net ID: GATERXELECIDLE0 lsb: 0  msb: 0 INPUT
 			this->GATERXELECIDLE1_A0_B = GATERXELECIDLE1_A0_B; // net ID: GATERXELECIDLE1 lsb: 0  msb: 0 INPUT
@@ -2134,42 +2134,42 @@ namespace CPrimitives {
 			this->GCLK01_A0_B = GCLK01_A0_B; // net ID: GCLK01 lsb: 0  msb: 0 INPUT
 			this->GCLK10_A0_B = GCLK10_A0_B; // net ID: GCLK10 lsb: 0  msb: 0 INPUT
 			this->GCLK11_A0_B = GCLK11_A0_B; // net ID: GCLK11 lsb: 0  msb: 0 INPUT
-			this->GTPCLKFBSEL0EAST_A0_B = GTPCLKFBSEL0EAST_A0_B; // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
 			this->GTPCLKFBSEL0EAST_A1_B = GTPCLKFBSEL0EAST_A1_B; // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
-			this->GTPCLKFBSEL0WEST_A0_B = GTPCLKFBSEL0WEST_A0_B; // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
+			this->GTPCLKFBSEL0EAST_A0_B = GTPCLKFBSEL0EAST_A0_B; // net ID: GTPCLKFBSEL0EAST lsb: 0  msb: 1 INPUT
 			this->GTPCLKFBSEL0WEST_A1_B = GTPCLKFBSEL0WEST_A1_B; // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
-			this->GTPCLKFBSEL1EAST_A0_B = GTPCLKFBSEL1EAST_A0_B; // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
+			this->GTPCLKFBSEL0WEST_A0_B = GTPCLKFBSEL0WEST_A0_B; // net ID: GTPCLKFBSEL0WEST lsb: 0  msb: 1 INPUT
 			this->GTPCLKFBSEL1EAST_A1_B = GTPCLKFBSEL1EAST_A1_B; // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
-			this->GTPCLKFBSEL1WEST_A0_B = GTPCLKFBSEL1WEST_A0_B; // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
+			this->GTPCLKFBSEL1EAST_A0_B = GTPCLKFBSEL1EAST_A0_B; // net ID: GTPCLKFBSEL1EAST lsb: 0  msb: 1 INPUT
 			this->GTPCLKFBSEL1WEST_A1_B = GTPCLKFBSEL1WEST_A1_B; // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
+			this->GTPCLKFBSEL1WEST_A0_B = GTPCLKFBSEL1WEST_A0_B; // net ID: GTPCLKFBSEL1WEST lsb: 0  msb: 1 INPUT
 			this->GTPRESET0_A0_B = GTPRESET0_A0_B; // net ID: GTPRESET0 lsb: 0  msb: 0 INPUT
 			this->GTPRESET1_A0_B = GTPRESET1_A0_B; // net ID: GTPRESET1 lsb: 0  msb: 0 INPUT
-			this->GTPTEST0_A0_B = GTPTEST0_A0_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			this->GTPTEST0_A1_B = GTPTEST0_A1_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			this->GTPTEST0_A2_B = GTPTEST0_A2_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			this->GTPTEST0_A3_B = GTPTEST0_A3_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			this->GTPTEST0_A4_B = GTPTEST0_A4_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			this->GTPTEST0_A5_B = GTPTEST0_A5_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			this->GTPTEST0_A6_B = GTPTEST0_A6_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
 			this->GTPTEST0_A7_B = GTPTEST0_A7_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
-			this->GTPTEST1_A0_B = GTPTEST1_A0_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			this->GTPTEST1_A1_B = GTPTEST1_A1_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			this->GTPTEST1_A2_B = GTPTEST1_A2_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			this->GTPTEST1_A3_B = GTPTEST1_A3_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			this->GTPTEST1_A4_B = GTPTEST1_A4_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			this->GTPTEST1_A5_B = GTPTEST1_A5_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
-			this->GTPTEST1_A6_B = GTPTEST1_A6_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST0_A6_B = GTPTEST0_A6_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			this->GTPTEST0_A5_B = GTPTEST0_A5_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			this->GTPTEST0_A4_B = GTPTEST0_A4_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			this->GTPTEST0_A3_B = GTPTEST0_A3_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			this->GTPTEST0_A2_B = GTPTEST0_A2_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			this->GTPTEST0_A1_B = GTPTEST0_A1_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
+			this->GTPTEST0_A0_B = GTPTEST0_A0_B; // net ID: GTPTEST0 lsb: 0  msb: 7 INPUT
 			this->GTPTEST1_A7_B = GTPTEST1_A7_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST1_A6_B = GTPTEST1_A6_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST1_A5_B = GTPTEST1_A5_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST1_A4_B = GTPTEST1_A4_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST1_A3_B = GTPTEST1_A3_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST1_A2_B = GTPTEST1_A2_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST1_A1_B = GTPTEST1_A1_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
+			this->GTPTEST1_A0_B = GTPTEST1_A0_B; // net ID: GTPTEST1 lsb: 0  msb: 7 INPUT
 			this->IGNORESIGDET0_A0_B = IGNORESIGDET0_A0_B; // net ID: IGNORESIGDET0 lsb: 0  msb: 0 INPUT
 			this->IGNORESIGDET1_A0_B = IGNORESIGDET1_A0_B; // net ID: IGNORESIGDET1 lsb: 0  msb: 0 INPUT
 			this->INTDATAWIDTH0_A0_B = INTDATAWIDTH0_A0_B; // net ID: INTDATAWIDTH0 lsb: 0  msb: 0 INPUT
 			this->INTDATAWIDTH1_A0_B = INTDATAWIDTH1_A0_B; // net ID: INTDATAWIDTH1 lsb: 0  msb: 0 INPUT
-			this->LOOPBACK0_A0_B = LOOPBACK0_A0_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
-			this->LOOPBACK0_A1_B = LOOPBACK0_A1_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
 			this->LOOPBACK0_A2_B = LOOPBACK0_A2_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
-			this->LOOPBACK1_A0_B = LOOPBACK1_A0_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
-			this->LOOPBACK1_A1_B = LOOPBACK1_A1_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+			this->LOOPBACK0_A1_B = LOOPBACK0_A1_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
+			this->LOOPBACK0_A0_B = LOOPBACK0_A0_B; // net ID: LOOPBACK0 lsb: 0  msb: 2 INPUT
 			this->LOOPBACK1_A2_B = LOOPBACK1_A2_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+			this->LOOPBACK1_A1_B = LOOPBACK1_A1_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
+			this->LOOPBACK1_A0_B = LOOPBACK1_A0_B; // net ID: LOOPBACK1 lsb: 0  msb: 2 INPUT
 			this->PLLCLK00_A0_B = PLLCLK00_A0_B; // net ID: PLLCLK00 lsb: 0  msb: 0 INPUT
 			this->PLLCLK01_A0_B = PLLCLK01_A0_B; // net ID: PLLCLK01 lsb: 0  msb: 0 INPUT
 			this->PLLCLK10_A0_B = PLLCLK10_A0_B; // net ID: PLLCLK10 lsb: 0  msb: 0 INPUT
@@ -2180,41 +2180,41 @@ namespace CPrimitives {
 			this->PLLPOWERDOWN1_A0_B = PLLPOWERDOWN1_A0_B; // net ID: PLLPOWERDOWN1 lsb: 0  msb: 0 INPUT
 			this->PRBSCNTRESET0_A0_B = PRBSCNTRESET0_A0_B; // net ID: PRBSCNTRESET0 lsb: 0  msb: 0 INPUT
 			this->PRBSCNTRESET1_A0_B = PRBSCNTRESET1_A0_B; // net ID: PRBSCNTRESET1 lsb: 0  msb: 0 INPUT
-			this->RCALINEAST_A0_B = RCALINEAST_A0_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			this->RCALINEAST_A1_B = RCALINEAST_A1_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			this->RCALINEAST_A2_B = RCALINEAST_A2_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			this->RCALINEAST_A3_B = RCALINEAST_A3_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
 			this->RCALINEAST_A4_B = RCALINEAST_A4_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
-			this->RCALINWEST_A0_B = RCALINWEST_A0_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-			this->RCALINWEST_A1_B = RCALINWEST_A1_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-			this->RCALINWEST_A2_B = RCALINWEST_A2_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
-			this->RCALINWEST_A3_B = RCALINWEST_A3_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			this->RCALINEAST_A3_B = RCALINEAST_A3_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+			this->RCALINEAST_A2_B = RCALINEAST_A2_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+			this->RCALINEAST_A1_B = RCALINEAST_A1_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
+			this->RCALINEAST_A0_B = RCALINEAST_A0_B; // net ID: RCALINEAST lsb: 0  msb: 4 INPUT
 			this->RCALINWEST_A4_B = RCALINWEST_A4_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			this->RCALINWEST_A3_B = RCALINWEST_A3_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			this->RCALINWEST_A2_B = RCALINWEST_A2_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			this->RCALINWEST_A1_B = RCALINWEST_A1_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
+			this->RCALINWEST_A0_B = RCALINWEST_A0_B; // net ID: RCALINWEST lsb: 0  msb: 4 INPUT
 			this->REFCLKPWRDNB0_A0_B = REFCLKPWRDNB0_A0_B; // net ID: REFCLKPWRDNB0 lsb: 0  msb: 0 INPUT
 			this->REFCLKPWRDNB1_A0_B = REFCLKPWRDNB1_A0_B; // net ID: REFCLKPWRDNB1 lsb: 0  msb: 0 INPUT
-			this->REFSELDYPLL0_A0_B = REFSELDYPLL0_A0_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
-			this->REFSELDYPLL0_A1_B = REFSELDYPLL0_A1_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
 			this->REFSELDYPLL0_A2_B = REFSELDYPLL0_A2_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
-			this->REFSELDYPLL1_A0_B = REFSELDYPLL1_A0_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
-			this->REFSELDYPLL1_A1_B = REFSELDYPLL1_A1_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+			this->REFSELDYPLL0_A1_B = REFSELDYPLL0_A1_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
+			this->REFSELDYPLL0_A0_B = REFSELDYPLL0_A0_B; // net ID: REFSELDYPLL0 lsb: 0  msb: 2 INPUT
 			this->REFSELDYPLL1_A2_B = REFSELDYPLL1_A2_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+			this->REFSELDYPLL1_A1_B = REFSELDYPLL1_A1_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
+			this->REFSELDYPLL1_A0_B = REFSELDYPLL1_A0_B; // net ID: REFSELDYPLL1 lsb: 0  msb: 2 INPUT
 			this->RXBUFRESET0_A0_B = RXBUFRESET0_A0_B; // net ID: RXBUFRESET0 lsb: 0  msb: 0 INPUT
 			this->RXBUFRESET1_A0_B = RXBUFRESET1_A0_B; // net ID: RXBUFRESET1 lsb: 0  msb: 0 INPUT
 			this->RXCDRRESET0_A0_B = RXCDRRESET0_A0_B; // net ID: RXCDRRESET0 lsb: 0  msb: 0 INPUT
 			this->RXCDRRESET1_A0_B = RXCDRRESET1_A0_B; // net ID: RXCDRRESET1 lsb: 0  msb: 0 INPUT
-			this->RXCHBONDI_A0_B = RXCHBONDI_A0_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
-			this->RXCHBONDI_A1_B = RXCHBONDI_A1_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
 			this->RXCHBONDI_A2_B = RXCHBONDI_A2_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
+			this->RXCHBONDI_A1_B = RXCHBONDI_A1_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
+			this->RXCHBONDI_A0_B = RXCHBONDI_A0_B; // net ID: RXCHBONDI lsb: 0  msb: 2 INPUT
 			this->RXCHBONDMASTER0_A0_B = RXCHBONDMASTER0_A0_B; // net ID: RXCHBONDMASTER0 lsb: 0  msb: 0 INPUT
 			this->RXCHBONDMASTER1_A0_B = RXCHBONDMASTER1_A0_B; // net ID: RXCHBONDMASTER1 lsb: 0  msb: 0 INPUT
 			this->RXCHBONDSLAVE0_A0_B = RXCHBONDSLAVE0_A0_B; // net ID: RXCHBONDSLAVE0 lsb: 0  msb: 0 INPUT
 			this->RXCHBONDSLAVE1_A0_B = RXCHBONDSLAVE1_A0_B; // net ID: RXCHBONDSLAVE1 lsb: 0  msb: 0 INPUT
 			this->RXCOMMADETUSE0_A0_B = RXCOMMADETUSE0_A0_B; // net ID: RXCOMMADETUSE0 lsb: 0  msb: 0 INPUT
 			this->RXCOMMADETUSE1_A0_B = RXCOMMADETUSE1_A0_B; // net ID: RXCOMMADETUSE1 lsb: 0  msb: 0 INPUT
-			this->RXDATAWIDTH0_A0_B = RXDATAWIDTH0_A0_B; // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 			this->RXDATAWIDTH0_A1_B = RXDATAWIDTH0_A1_B; // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
-			this->RXDATAWIDTH1_A0_B = RXDATAWIDTH1_A0_B; // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			this->RXDATAWIDTH0_A0_B = RXDATAWIDTH0_A0_B; // net ID: RXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 			this->RXDATAWIDTH1_A1_B = RXDATAWIDTH1_A1_B; // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			this->RXDATAWIDTH1_A0_B = RXDATAWIDTH1_A0_B; // net ID: RXDATAWIDTH1 lsb: 0  msb: 1 INPUT
 			this->RXDEC8B10BUSE0_A0_B = RXDEC8B10BUSE0_A0_B; // net ID: RXDEC8B10BUSE0 lsb: 0  msb: 0 INPUT
 			this->RXDEC8B10BUSE1_A0_B = RXDEC8B10BUSE1_A0_B; // net ID: RXDEC8B10BUSE1 lsb: 0  msb: 0 INPUT
 			this->RXENCHANSYNC0_A0_B = RXENCHANSYNC0_A0_B; // net ID: RXENCHANSYNC0 lsb: 0  msb: 0 INPUT
@@ -2225,16 +2225,16 @@ namespace CPrimitives {
 			this->RXENPCOMMAALIGN1_A0_B = RXENPCOMMAALIGN1_A0_B; // net ID: RXENPCOMMAALIGN1 lsb: 0  msb: 0 INPUT
 			this->RXENPMAPHASEALIGN0_A0_B = RXENPMAPHASEALIGN0_A0_B; // net ID: RXENPMAPHASEALIGN0 lsb: 0  msb: 0 INPUT
 			this->RXENPMAPHASEALIGN1_A0_B = RXENPMAPHASEALIGN1_A0_B; // net ID: RXENPMAPHASEALIGN1 lsb: 0  msb: 0 INPUT
-			this->RXENPRBSTST0_A0_B = RXENPRBSTST0_A0_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			this->RXENPRBSTST0_A1_B = RXENPRBSTST0_A1_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			this->RXENPRBSTST0_A2_B = RXENPRBSTST0_A2_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			this->RXENPRBSTST1_A0_B = RXENPRBSTST1_A0_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
-			this->RXENPRBSTST1_A1_B = RXENPRBSTST1_A1_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			this->RXENPRBSTST0_A1_B = RXENPRBSTST0_A1_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
+			this->RXENPRBSTST0_A0_B = RXENPRBSTST0_A0_B; // net ID: RXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			this->RXENPRBSTST1_A2_B = RXENPRBSTST1_A2_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
-			this->RXEQMIX0_A0_B = RXEQMIX0_A0_B; // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
+			this->RXENPRBSTST1_A1_B = RXENPRBSTST1_A1_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			this->RXENPRBSTST1_A0_B = RXENPRBSTST1_A0_B; // net ID: RXENPRBSTST1 lsb: 0  msb: 2 INPUT
 			this->RXEQMIX0_A1_B = RXEQMIX0_A1_B; // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
-			this->RXEQMIX1_A0_B = RXEQMIX1_A0_B; // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
+			this->RXEQMIX0_A0_B = RXEQMIX0_A0_B; // net ID: RXEQMIX0 lsb: 0  msb: 1 INPUT
 			this->RXEQMIX1_A1_B = RXEQMIX1_A1_B; // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
+			this->RXEQMIX1_A0_B = RXEQMIX1_A0_B; // net ID: RXEQMIX1 lsb: 0  msb: 1 INPUT
 			this->RXN0_A0_B = RXN0_A0_B; // net ID: RXN0 lsb: 0  msb: 0 INPUT
 			this->RXN1_A0_B = RXN1_A0_B; // net ID: RXN1 lsb: 0  msb: 0 INPUT
 			this->RXP0_A0_B = RXP0_A0_B; // net ID: RXP0 lsb: 0  msb: 0 INPUT
@@ -2243,10 +2243,10 @@ namespace CPrimitives {
 			this->RXPMASETPHASE1_A0_B = RXPMASETPHASE1_A0_B; // net ID: RXPMASETPHASE1 lsb: 0  msb: 0 INPUT
 			this->RXPOLARITY0_A0_B = RXPOLARITY0_A0_B; // net ID: RXPOLARITY0 lsb: 0  msb: 0 INPUT
 			this->RXPOLARITY1_A0_B = RXPOLARITY1_A0_B; // net ID: RXPOLARITY1 lsb: 0  msb: 0 INPUT
-			this->RXPOWERDOWN0_A0_B = RXPOWERDOWN0_A0_B; // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			this->RXPOWERDOWN0_A1_B = RXPOWERDOWN0_A1_B; // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
-			this->RXPOWERDOWN1_A0_B = RXPOWERDOWN1_A0_B; // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			this->RXPOWERDOWN0_A0_B = RXPOWERDOWN0_A0_B; // net ID: RXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			this->RXPOWERDOWN1_A1_B = RXPOWERDOWN1_A1_B; // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			this->RXPOWERDOWN1_A0_B = RXPOWERDOWN1_A0_B; // net ID: RXPOWERDOWN1 lsb: 0  msb: 1 INPUT
 			this->RXRESET0_A0_B = RXRESET0_A0_B; // net ID: RXRESET0 lsb: 0  msb: 0 INPUT
 			this->RXRESET1_A0_B = RXRESET1_A0_B; // net ID: RXRESET1 lsb: 0  msb: 0 INPUT
 			this->RXSLIDE0_A0_B = RXSLIDE0_A0_B; // net ID: RXSLIDE0 lsb: 0  msb: 0 INPUT
@@ -2257,162 +2257,162 @@ namespace CPrimitives {
 			this->RXUSRCLK21_A0_B = RXUSRCLK21_A0_B; // net ID: RXUSRCLK21 lsb: 0  msb: 0 INPUT
 			this->TSTCLK0_A0_B = TSTCLK0_A0_B; // net ID: TSTCLK0 lsb: 0  msb: 0 INPUT
 			this->TSTCLK1_A0_B = TSTCLK1_A0_B; // net ID: TSTCLK1 lsb: 0  msb: 0 INPUT
-			this->TSTIN0_A0_B = TSTIN0_A0_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A1_B = TSTIN0_A1_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A2_B = TSTIN0_A2_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A3_B = TSTIN0_A3_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A4_B = TSTIN0_A4_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A5_B = TSTIN0_A5_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A6_B = TSTIN0_A6_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A7_B = TSTIN0_A7_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A8_B = TSTIN0_A8_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A9_B = TSTIN0_A9_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN0_A10_B = TSTIN0_A10_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
 			this->TSTIN0_A11_B = TSTIN0_A11_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A0_B = TSTIN1_A0_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A1_B = TSTIN1_A1_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A2_B = TSTIN1_A2_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A3_B = TSTIN1_A3_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A4_B = TSTIN1_A4_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A5_B = TSTIN1_A5_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A6_B = TSTIN1_A6_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A7_B = TSTIN1_A7_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A8_B = TSTIN1_A8_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A9_B = TSTIN1_A9_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TSTIN1_A10_B = TSTIN1_A10_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A10_B = TSTIN0_A10_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A9_B = TSTIN0_A9_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A8_B = TSTIN0_A8_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A7_B = TSTIN0_A7_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A6_B = TSTIN0_A6_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A5_B = TSTIN0_A5_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A4_B = TSTIN0_A4_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A3_B = TSTIN0_A3_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A2_B = TSTIN0_A2_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A1_B = TSTIN0_A1_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
+			this->TSTIN0_A0_B = TSTIN0_A0_B; // net ID: TSTIN0 lsb: 0  msb: 11 INPUT
 			this->TSTIN1_A11_B = TSTIN1_A11_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
-			this->TXBUFDIFFCTRL0_A0_B = TXBUFDIFFCTRL0_A0_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
-			this->TXBUFDIFFCTRL0_A1_B = TXBUFDIFFCTRL0_A1_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
+			this->TSTIN1_A10_B = TSTIN1_A10_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A9_B = TSTIN1_A9_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A8_B = TSTIN1_A8_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A7_B = TSTIN1_A7_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A6_B = TSTIN1_A6_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A5_B = TSTIN1_A5_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A4_B = TSTIN1_A4_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A3_B = TSTIN1_A3_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A2_B = TSTIN1_A2_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A1_B = TSTIN1_A1_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
+			this->TSTIN1_A0_B = TSTIN1_A0_B; // net ID: TSTIN1 lsb: 0  msb: 11 INPUT
 			this->TXBUFDIFFCTRL0_A2_B = TXBUFDIFFCTRL0_A2_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
-			this->TXBUFDIFFCTRL1_A0_B = TXBUFDIFFCTRL1_A0_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
-			this->TXBUFDIFFCTRL1_A1_B = TXBUFDIFFCTRL1_A1_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
+			this->TXBUFDIFFCTRL0_A1_B = TXBUFDIFFCTRL0_A1_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
+			this->TXBUFDIFFCTRL0_A0_B = TXBUFDIFFCTRL0_A0_B; // net ID: TXBUFDIFFCTRL0 lsb: 0  msb: 2 INPUT
 			this->TXBUFDIFFCTRL1_A2_B = TXBUFDIFFCTRL1_A2_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
-			this->TXBYPASS8B10B0_A0_B = TXBYPASS8B10B0_A0_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-			this->TXBYPASS8B10B0_A1_B = TXBYPASS8B10B0_A1_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-			this->TXBYPASS8B10B0_A2_B = TXBYPASS8B10B0_A2_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+			this->TXBUFDIFFCTRL1_A1_B = TXBUFDIFFCTRL1_A1_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
+			this->TXBUFDIFFCTRL1_A0_B = TXBUFDIFFCTRL1_A0_B; // net ID: TXBUFDIFFCTRL1 lsb: 0  msb: 2 INPUT
 			this->TXBYPASS8B10B0_A3_B = TXBYPASS8B10B0_A3_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
-			this->TXBYPASS8B10B1_A0_B = TXBYPASS8B10B1_A0_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-			this->TXBYPASS8B10B1_A1_B = TXBYPASS8B10B1_A1_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-			this->TXBYPASS8B10B1_A2_B = TXBYPASS8B10B1_A2_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+			this->TXBYPASS8B10B0_A2_B = TXBYPASS8B10B0_A2_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+			this->TXBYPASS8B10B0_A1_B = TXBYPASS8B10B0_A1_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
+			this->TXBYPASS8B10B0_A0_B = TXBYPASS8B10B0_A0_B; // net ID: TXBYPASS8B10B0 lsb: 0  msb: 3 INPUT
 			this->TXBYPASS8B10B1_A3_B = TXBYPASS8B10B1_A3_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPMODE0_A0_B = TXCHARDISPMODE0_A0_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPMODE0_A1_B = TXCHARDISPMODE0_A1_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPMODE0_A2_B = TXCHARDISPMODE0_A2_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+			this->TXBYPASS8B10B1_A2_B = TXBYPASS8B10B1_A2_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+			this->TXBYPASS8B10B1_A1_B = TXBYPASS8B10B1_A1_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
+			this->TXBYPASS8B10B1_A0_B = TXBYPASS8B10B1_A0_B; // net ID: TXBYPASS8B10B1 lsb: 0  msb: 3 INPUT
 			this->TXCHARDISPMODE0_A3_B = TXCHARDISPMODE0_A3_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPMODE1_A0_B = TXCHARDISPMODE1_A0_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPMODE1_A1_B = TXCHARDISPMODE1_A1_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPMODE1_A2_B = TXCHARDISPMODE1_A2_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPMODE0_A2_B = TXCHARDISPMODE0_A2_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPMODE0_A1_B = TXCHARDISPMODE0_A1_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPMODE0_A0_B = TXCHARDISPMODE0_A0_B; // net ID: TXCHARDISPMODE0 lsb: 0  msb: 3 INPUT
 			this->TXCHARDISPMODE1_A3_B = TXCHARDISPMODE1_A3_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPVAL0_A0_B = TXCHARDISPVAL0_A0_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPVAL0_A1_B = TXCHARDISPVAL0_A1_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPVAL0_A2_B = TXCHARDISPVAL0_A2_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPMODE1_A2_B = TXCHARDISPMODE1_A2_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPMODE1_A1_B = TXCHARDISPMODE1_A1_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPMODE1_A0_B = TXCHARDISPMODE1_A0_B; // net ID: TXCHARDISPMODE1 lsb: 0  msb: 3 INPUT
 			this->TXCHARDISPVAL0_A3_B = TXCHARDISPVAL0_A3_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPVAL1_A0_B = TXCHARDISPVAL1_A0_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPVAL1_A1_B = TXCHARDISPVAL1_A1_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-			this->TXCHARDISPVAL1_A2_B = TXCHARDISPVAL1_A2_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPVAL0_A2_B = TXCHARDISPVAL0_A2_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPVAL0_A1_B = TXCHARDISPVAL0_A1_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPVAL0_A0_B = TXCHARDISPVAL0_A0_B; // net ID: TXCHARDISPVAL0 lsb: 0  msb: 3 INPUT
 			this->TXCHARDISPVAL1_A3_B = TXCHARDISPVAL1_A3_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
-			this->TXCHARISK0_A0_B = TXCHARISK0_A0_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-			this->TXCHARISK0_A1_B = TXCHARISK0_A1_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-			this->TXCHARISK0_A2_B = TXCHARISK0_A2_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPVAL1_A2_B = TXCHARDISPVAL1_A2_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPVAL1_A1_B = TXCHARDISPVAL1_A1_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
+			this->TXCHARDISPVAL1_A0_B = TXCHARDISPVAL1_A0_B; // net ID: TXCHARDISPVAL1 lsb: 0  msb: 3 INPUT
 			this->TXCHARISK0_A3_B = TXCHARISK0_A3_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
-			this->TXCHARISK1_A0_B = TXCHARISK1_A0_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
-			this->TXCHARISK1_A1_B = TXCHARISK1_A1_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
-			this->TXCHARISK1_A2_B = TXCHARISK1_A2_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			this->TXCHARISK0_A2_B = TXCHARISK0_A2_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+			this->TXCHARISK0_A1_B = TXCHARISK0_A1_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
+			this->TXCHARISK0_A0_B = TXCHARISK0_A0_B; // net ID: TXCHARISK0 lsb: 0  msb: 3 INPUT
 			this->TXCHARISK1_A3_B = TXCHARISK1_A3_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			this->TXCHARISK1_A2_B = TXCHARISK1_A2_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			this->TXCHARISK1_A1_B = TXCHARISK1_A1_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
+			this->TXCHARISK1_A0_B = TXCHARISK1_A0_B; // net ID: TXCHARISK1 lsb: 0  msb: 3 INPUT
 			this->TXCOMSTART0_A0_B = TXCOMSTART0_A0_B; // net ID: TXCOMSTART0 lsb: 0  msb: 0 INPUT
 			this->TXCOMSTART1_A0_B = TXCOMSTART1_A0_B; // net ID: TXCOMSTART1 lsb: 0  msb: 0 INPUT
 			this->TXCOMTYPE0_A0_B = TXCOMTYPE0_A0_B; // net ID: TXCOMTYPE0 lsb: 0  msb: 0 INPUT
 			this->TXCOMTYPE1_A0_B = TXCOMTYPE1_A0_B; // net ID: TXCOMTYPE1 lsb: 0  msb: 0 INPUT
-			this->TXDATA0_A0_B = TXDATA0_A0_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A1_B = TXDATA0_A1_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A2_B = TXDATA0_A2_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A3_B = TXDATA0_A3_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A4_B = TXDATA0_A4_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A5_B = TXDATA0_A5_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A6_B = TXDATA0_A6_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A7_B = TXDATA0_A7_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A8_B = TXDATA0_A8_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A9_B = TXDATA0_A9_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A10_B = TXDATA0_A10_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A11_B = TXDATA0_A11_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A12_B = TXDATA0_A12_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A13_B = TXDATA0_A13_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A14_B = TXDATA0_A14_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A15_B = TXDATA0_A15_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A16_B = TXDATA0_A16_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A17_B = TXDATA0_A17_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A18_B = TXDATA0_A18_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A19_B = TXDATA0_A19_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A20_B = TXDATA0_A20_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A21_B = TXDATA0_A21_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A22_B = TXDATA0_A22_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A23_B = TXDATA0_A23_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A24_B = TXDATA0_A24_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A25_B = TXDATA0_A25_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A26_B = TXDATA0_A26_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A27_B = TXDATA0_A27_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A28_B = TXDATA0_A28_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A29_B = TXDATA0_A29_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA0_A30_B = TXDATA0_A30_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
 			this->TXDATA0_A31_B = TXDATA0_A31_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A0_B = TXDATA1_A0_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A1_B = TXDATA1_A1_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A2_B = TXDATA1_A2_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A3_B = TXDATA1_A3_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A4_B = TXDATA1_A4_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A5_B = TXDATA1_A5_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A6_B = TXDATA1_A6_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A7_B = TXDATA1_A7_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A8_B = TXDATA1_A8_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A9_B = TXDATA1_A9_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A10_B = TXDATA1_A10_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A11_B = TXDATA1_A11_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A12_B = TXDATA1_A12_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A13_B = TXDATA1_A13_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A14_B = TXDATA1_A14_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A15_B = TXDATA1_A15_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A16_B = TXDATA1_A16_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A17_B = TXDATA1_A17_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A18_B = TXDATA1_A18_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A19_B = TXDATA1_A19_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A20_B = TXDATA1_A20_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A21_B = TXDATA1_A21_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A22_B = TXDATA1_A22_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A23_B = TXDATA1_A23_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A24_B = TXDATA1_A24_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A25_B = TXDATA1_A25_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A26_B = TXDATA1_A26_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A27_B = TXDATA1_A27_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A28_B = TXDATA1_A28_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A29_B = TXDATA1_A29_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATA1_A30_B = TXDATA1_A30_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A30_B = TXDATA0_A30_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A29_B = TXDATA0_A29_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A28_B = TXDATA0_A28_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A27_B = TXDATA0_A27_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A26_B = TXDATA0_A26_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A25_B = TXDATA0_A25_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A24_B = TXDATA0_A24_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A23_B = TXDATA0_A23_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A22_B = TXDATA0_A22_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A21_B = TXDATA0_A21_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A20_B = TXDATA0_A20_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A19_B = TXDATA0_A19_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A18_B = TXDATA0_A18_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A17_B = TXDATA0_A17_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A16_B = TXDATA0_A16_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A15_B = TXDATA0_A15_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A14_B = TXDATA0_A14_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A13_B = TXDATA0_A13_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A12_B = TXDATA0_A12_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A11_B = TXDATA0_A11_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A10_B = TXDATA0_A10_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A9_B = TXDATA0_A9_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A8_B = TXDATA0_A8_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A7_B = TXDATA0_A7_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A6_B = TXDATA0_A6_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A5_B = TXDATA0_A5_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A4_B = TXDATA0_A4_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A3_B = TXDATA0_A3_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A2_B = TXDATA0_A2_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A1_B = TXDATA0_A1_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
+			this->TXDATA0_A0_B = TXDATA0_A0_B; // net ID: TXDATA0 lsb: 0  msb: 31 INPUT
 			this->TXDATA1_A31_B = TXDATA1_A31_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
-			this->TXDATAWIDTH0_A0_B = TXDATAWIDTH0_A0_B; // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
+			this->TXDATA1_A30_B = TXDATA1_A30_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A29_B = TXDATA1_A29_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A28_B = TXDATA1_A28_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A27_B = TXDATA1_A27_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A26_B = TXDATA1_A26_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A25_B = TXDATA1_A25_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A24_B = TXDATA1_A24_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A23_B = TXDATA1_A23_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A22_B = TXDATA1_A22_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A21_B = TXDATA1_A21_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A20_B = TXDATA1_A20_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A19_B = TXDATA1_A19_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A18_B = TXDATA1_A18_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A17_B = TXDATA1_A17_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A16_B = TXDATA1_A16_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A15_B = TXDATA1_A15_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A14_B = TXDATA1_A14_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A13_B = TXDATA1_A13_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A12_B = TXDATA1_A12_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A11_B = TXDATA1_A11_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A10_B = TXDATA1_A10_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A9_B = TXDATA1_A9_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A8_B = TXDATA1_A8_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A7_B = TXDATA1_A7_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A6_B = TXDATA1_A6_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A5_B = TXDATA1_A5_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A4_B = TXDATA1_A4_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A3_B = TXDATA1_A3_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A2_B = TXDATA1_A2_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A1_B = TXDATA1_A1_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
+			this->TXDATA1_A0_B = TXDATA1_A0_B; // net ID: TXDATA1 lsb: 0  msb: 31 INPUT
 			this->TXDATAWIDTH0_A1_B = TXDATAWIDTH0_A1_B; // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
-			this->TXDATAWIDTH1_A0_B = TXDATAWIDTH1_A0_B; // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			this->TXDATAWIDTH0_A0_B = TXDATAWIDTH0_A0_B; // net ID: TXDATAWIDTH0 lsb: 0  msb: 1 INPUT
 			this->TXDATAWIDTH1_A1_B = TXDATAWIDTH1_A1_B; // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
+			this->TXDATAWIDTH1_A0_B = TXDATAWIDTH1_A0_B; // net ID: TXDATAWIDTH1 lsb: 0  msb: 1 INPUT
 			this->TXDETECTRX0_A0_B = TXDETECTRX0_A0_B; // net ID: TXDETECTRX0 lsb: 0  msb: 0 INPUT
 			this->TXDETECTRX1_A0_B = TXDETECTRX1_A0_B; // net ID: TXDETECTRX1 lsb: 0  msb: 0 INPUT
-			this->TXDIFFCTRL0_A0_B = TXDIFFCTRL0_A0_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-			this->TXDIFFCTRL0_A1_B = TXDIFFCTRL0_A1_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-			this->TXDIFFCTRL0_A2_B = TXDIFFCTRL0_A2_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
 			this->TXDIFFCTRL0_A3_B = TXDIFFCTRL0_A3_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
-			this->TXDIFFCTRL1_A0_B = TXDIFFCTRL1_A0_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
-			this->TXDIFFCTRL1_A1_B = TXDIFFCTRL1_A1_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
-			this->TXDIFFCTRL1_A2_B = TXDIFFCTRL1_A2_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL0_A2_B = TXDIFFCTRL0_A2_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL0_A1_B = TXDIFFCTRL0_A1_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL0_A0_B = TXDIFFCTRL0_A0_B; // net ID: TXDIFFCTRL0 lsb: 0  msb: 3 INPUT
 			this->TXDIFFCTRL1_A3_B = TXDIFFCTRL1_A3_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL1_A2_B = TXDIFFCTRL1_A2_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL1_A1_B = TXDIFFCTRL1_A1_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
+			this->TXDIFFCTRL1_A0_B = TXDIFFCTRL1_A0_B; // net ID: TXDIFFCTRL1 lsb: 0  msb: 3 INPUT
 			this->TXELECIDLE0_A0_B = TXELECIDLE0_A0_B; // net ID: TXELECIDLE0 lsb: 0  msb: 0 INPUT
 			this->TXELECIDLE1_A0_B = TXELECIDLE1_A0_B; // net ID: TXELECIDLE1 lsb: 0  msb: 0 INPUT
 			this->TXENC8B10BUSE0_A0_B = TXENC8B10BUSE0_A0_B; // net ID: TXENC8B10BUSE0 lsb: 0  msb: 0 INPUT
 			this->TXENC8B10BUSE1_A0_B = TXENC8B10BUSE1_A0_B; // net ID: TXENC8B10BUSE1 lsb: 0  msb: 0 INPUT
 			this->TXENPMAPHASEALIGN0_A0_B = TXENPMAPHASEALIGN0_A0_B; // net ID: TXENPMAPHASEALIGN0 lsb: 0  msb: 0 INPUT
 			this->TXENPMAPHASEALIGN1_A0_B = TXENPMAPHASEALIGN1_A0_B; // net ID: TXENPMAPHASEALIGN1 lsb: 0  msb: 0 INPUT
-			this->TXENPRBSTST0_A0_B = TXENPRBSTST0_A0_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			this->TXENPRBSTST0_A1_B = TXENPRBSTST0_A1_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			this->TXENPRBSTST0_A2_B = TXENPRBSTST0_A2_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
-			this->TXENPRBSTST1_A0_B = TXENPRBSTST1_A0_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
-			this->TXENPRBSTST1_A1_B = TXENPRBSTST1_A1_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			this->TXENPRBSTST0_A1_B = TXENPRBSTST0_A1_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
+			this->TXENPRBSTST0_A0_B = TXENPRBSTST0_A0_B; // net ID: TXENPRBSTST0 lsb: 0  msb: 2 INPUT
 			this->TXENPRBSTST1_A2_B = TXENPRBSTST1_A2_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			this->TXENPRBSTST1_A1_B = TXENPRBSTST1_A1_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
+			this->TXENPRBSTST1_A0_B = TXENPRBSTST1_A0_B; // net ID: TXENPRBSTST1 lsb: 0  msb: 2 INPUT
 			this->TXINHIBIT0_A0_B = TXINHIBIT0_A0_B; // net ID: TXINHIBIT0 lsb: 0  msb: 0 INPUT
 			this->TXINHIBIT1_A0_B = TXINHIBIT1_A0_B; // net ID: TXINHIBIT1 lsb: 0  msb: 0 INPUT
 			this->TXPDOWNASYNCH0_A0_B = TXPDOWNASYNCH0_A0_B; // net ID: TXPDOWNASYNCH0 lsb: 0  msb: 0 INPUT
@@ -2421,18 +2421,18 @@ namespace CPrimitives {
 			this->TXPMASETPHASE1_A0_B = TXPMASETPHASE1_A0_B; // net ID: TXPMASETPHASE1 lsb: 0  msb: 0 INPUT
 			this->TXPOLARITY0_A0_B = TXPOLARITY0_A0_B; // net ID: TXPOLARITY0 lsb: 0  msb: 0 INPUT
 			this->TXPOLARITY1_A0_B = TXPOLARITY1_A0_B; // net ID: TXPOLARITY1 lsb: 0  msb: 0 INPUT
-			this->TXPOWERDOWN0_A0_B = TXPOWERDOWN0_A0_B; // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			this->TXPOWERDOWN0_A1_B = TXPOWERDOWN0_A1_B; // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
-			this->TXPOWERDOWN1_A0_B = TXPOWERDOWN1_A0_B; // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			this->TXPOWERDOWN0_A0_B = TXPOWERDOWN0_A0_B; // net ID: TXPOWERDOWN0 lsb: 0  msb: 1 INPUT
 			this->TXPOWERDOWN1_A1_B = TXPOWERDOWN1_A1_B; // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
+			this->TXPOWERDOWN1_A0_B = TXPOWERDOWN1_A0_B; // net ID: TXPOWERDOWN1 lsb: 0  msb: 1 INPUT
 			this->TXPRBSFORCEERR0_A0_B = TXPRBSFORCEERR0_A0_B; // net ID: TXPRBSFORCEERR0 lsb: 0  msb: 0 INPUT
 			this->TXPRBSFORCEERR1_A0_B = TXPRBSFORCEERR1_A0_B; // net ID: TXPRBSFORCEERR1 lsb: 0  msb: 0 INPUT
-			this->TXPREEMPHASIS0_A0_B = TXPREEMPHASIS0_A0_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
-			this->TXPREEMPHASIS0_A1_B = TXPREEMPHASIS0_A1_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
 			this->TXPREEMPHASIS0_A2_B = TXPREEMPHASIS0_A2_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
-			this->TXPREEMPHASIS1_A0_B = TXPREEMPHASIS1_A0_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
-			this->TXPREEMPHASIS1_A1_B = TXPREEMPHASIS1_A1_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+			this->TXPREEMPHASIS0_A1_B = TXPREEMPHASIS0_A1_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
+			this->TXPREEMPHASIS0_A0_B = TXPREEMPHASIS0_A0_B; // net ID: TXPREEMPHASIS0 lsb: 0  msb: 2 INPUT
 			this->TXPREEMPHASIS1_A2_B = TXPREEMPHASIS1_A2_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+			this->TXPREEMPHASIS1_A1_B = TXPREEMPHASIS1_A1_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
+			this->TXPREEMPHASIS1_A0_B = TXPREEMPHASIS1_A0_B; // net ID: TXPREEMPHASIS1 lsb: 0  msb: 2 INPUT
 			this->TXRESET0_A0_B = TXRESET0_A0_B; // net ID: TXRESET0 lsb: 0  msb: 0 INPUT
 			this->TXRESET1_A0_B = TXRESET1_A0_B; // net ID: TXRESET1 lsb: 0  msb: 0 INPUT
 			this->TXUSRCLK0_A0_B = TXUSRCLK0_A0_B; // net ID: TXUSRCLK0 lsb: 0  msb: 0 INPUT

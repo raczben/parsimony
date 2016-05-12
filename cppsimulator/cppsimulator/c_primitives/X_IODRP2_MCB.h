@@ -32,11 +32,11 @@ namespace CPrimitives {
 		NetFlow* SDO_A0_B; // net ID: SDO lsb: 0  msb: 0 OUTPUT
 		NetFlow* TOUT_A0_B; // net ID: TOUT lsb: 0  msb: 0 OUTPUT
 		NetFlow* ADD_A0_B; // net ID: ADD lsb: 0  msb: 0 INPUT
-		NetFlow* AUXADDR_A0_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-		NetFlow* AUXADDR_A1_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-		NetFlow* AUXADDR_A2_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-		NetFlow* AUXADDR_A3_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
 		NetFlow* AUXADDR_A4_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+		NetFlow* AUXADDR_A3_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+		NetFlow* AUXADDR_A2_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+		NetFlow* AUXADDR_A1_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+		NetFlow* AUXADDR_A0_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
 		NetFlow* AUXSDOIN_A0_B; // net ID: AUXSDOIN lsb: 0  msb: 0 INPUT
 		NetFlow* BKST_A0_B; // net ID: BKST lsb: 0  msb: 0 INPUT
 		NetFlow* CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT
@@ -69,11 +69,11 @@ namespace CPrimitives {
 			NetFlow* SDO_A0_B, // net ID: SDO lsb: 0  msb: 0 OUTPUT
 			NetFlow* TOUT_A0_B, // net ID: TOUT lsb: 0  msb: 0 OUTPUT
 			NetFlow* ADD_A0_B, // net ID: ADD lsb: 0  msb: 0 INPUT
-			NetFlow* AUXADDR_A0_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-			NetFlow* AUXADDR_A1_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-			NetFlow* AUXADDR_A2_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-			NetFlow* AUXADDR_A3_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
 			NetFlow* AUXADDR_A4_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			NetFlow* AUXADDR_A3_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			NetFlow* AUXADDR_A2_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			NetFlow* AUXADDR_A1_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			NetFlow* AUXADDR_A0_B, // net ID: AUXADDR lsb: 0  msb: 4 INPUT
 			NetFlow* AUXSDOIN_A0_B, // net ID: AUXSDOIN lsb: 0  msb: 0 INPUT
 			NetFlow* BKST_A0_B, // net ID: BKST lsb: 0  msb: 0 INPUT
 			NetFlow* CLK_A0_B, // net ID: CLK lsb: 0  msb: 0 INPUT
@@ -106,11 +106,11 @@ namespace CPrimitives {
 			this->SDO_A0_B = SDO_A0_B; // net ID: SDO lsb: 0  msb: 0 OUTPUT
 			this->TOUT_A0_B = TOUT_A0_B; // net ID: TOUT lsb: 0  msb: 0 OUTPUT
 			this->ADD_A0_B = ADD_A0_B; // net ID: ADD lsb: 0  msb: 0 INPUT
-			this->AUXADDR_A0_B = AUXADDR_A0_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-			this->AUXADDR_A1_B = AUXADDR_A1_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-			this->AUXADDR_A2_B = AUXADDR_A2_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
-			this->AUXADDR_A3_B = AUXADDR_A3_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
 			this->AUXADDR_A4_B = AUXADDR_A4_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			this->AUXADDR_A3_B = AUXADDR_A3_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			this->AUXADDR_A2_B = AUXADDR_A2_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			this->AUXADDR_A1_B = AUXADDR_A1_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
+			this->AUXADDR_A0_B = AUXADDR_A0_B; // net ID: AUXADDR lsb: 0  msb: 4 INPUT
 			this->AUXSDOIN_A0_B = AUXSDOIN_A0_B; // net ID: AUXSDOIN lsb: 0  msb: 0 INPUT
 			this->BKST_A0_B = BKST_A0_B; // net ID: BKST lsb: 0  msb: 0 INPUT
 			this->CLK_A0_B = CLK_A0_B; // net ID: CLK lsb: 0  msb: 0 INPUT

@@ -221,12 +221,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 	    			String name =  childchild.getText();
 	    			Logger.writeInfo("Net identifier: " + name);
 	    			Logger.writeInfo("Generating...");
-//	    	    	for(int index = lsb; index <=msb; index++){
-//	    	    		String name2 = name + "[" + String.valueOf(index) + "]";
-//	    	    		Logger.writeInfo("  Net identifier: " + name2);
-		    	    	nets.add(new NetDescriptor(name, range));
-		    	    	//defines.put(name2, value);
-//	    	    	}
+	    	    	nets.add(new NetDescriptor(name, range));
 	    		}
 	    		else{
 	    			Logger.writeError("Type is unknown: " + childchild.getText());
@@ -237,15 +232,11 @@ public class Netinstancer extends Verilog2001BaseListener {
 		}
 		if(child instanceof RangeContext){
 	        range = ((RangeContext)child);
-//	        msb = BasicConverters.toInteger(range.msb_constant_expression().constant_expression());
-//	        lsb = BasicConverters.toInteger(range.lsb_constant_expression().constant_expression());
 	        continue;
 		}
 		
 		Logger.writeError("Net identifier: unexpected: " + child.getText() + " Type is: " + child.getClass());
-    	}
-    	//System.out.println("enterList_of_net_identifiers: " + txt);
-    	
+    	}    	
     }
     
 
@@ -278,7 +269,6 @@ public class Netinstancer extends Verilog2001BaseListener {
     		}
     		for(Named_parameter_assignmentContext param : parameterlist.named_parameter_assignment()){
     			Parameter_identifierContext primitiveParameterName = param.parameter_identifier();
-    			//int parameterValue = toInteger(param.expression());
     			System.out.println(primType);
     			System.out.println(primitiveParameterName.getText());
     		
@@ -329,16 +319,11 @@ public class Netinstancer extends Verilog2001BaseListener {
         		return;
     		}
     		String nameOfPrimitivePort = portConnection.port_identifier().getText();
-    		//String errorCheck = portConnection.expression().getText();
-
     		PortConnection connection;
 
-//    		ExpressionContext expr = portConnection.expression();
     		
     		Expression expression = ParseExpression.parseExpression(portConnection.expression());
     		
-    		//String nameOfNet = portConnection.expression().getText();
-
         	PrimitiveDescriptor primitive = primitiveInfos.get(primType);
         	
     		connection = new PortConnection(primitive.getPorts().get(nameOfPrimitivePort), expression);
@@ -435,12 +420,16 @@ public class Netinstancer extends Verilog2001BaseListener {
     	srcGen1.add("//Module port assignments:");
     	PortConnection lastPort = orderedPorts.get(orderedPorts.size() - 1);
 		String comma = ", "; //comma
+		
+		/**
+		 *  Connect port of the primitive to a net. 
+		 */
 		for(PortConnection portConnection : orderedPorts){
 			int portLsb = portConnection.getPortIdentifier().getLsb();
 			int portMsb = portConnection.getPortIdentifier().getMsb();
 			
-			for(int i = portLsb; i <= portMsb; i++){
-				if(lastPort == portConnection & (portMsb == i)){
+			for(int i = portMsb; i >= portLsb; i--){
+				if(lastPort == portConnection & (portLsb == i)){
     				comma = " ";
 				}
 	    		if(portConnection.getExpression().isNet(i)){
@@ -480,7 +469,7 @@ public class Netinstancer extends Verilog2001BaseListener {
 		
     	for(NetDescriptor net : nets.values()) {
 //    		String cid = toCIdentifier(net, true);
-    		for(int bit = net.getLsb(); bit <= net.getMsb(); bit++ ){
+    		for(int bit = net.getMsb(); bit >= net.getLsb(); bit-- ){
     			String cid = net.getCdefineIdentifierBit(bit);
     			String netName = net.getNetIdentifier().replace("\\", "\\\\") + "[" + bit + "]";
     			netinst.add("\tengine->register_net(new NetFlow(\"" + netName + "\"));");

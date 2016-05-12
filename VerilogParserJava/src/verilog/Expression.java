@@ -53,10 +53,17 @@ public class Expression {
 	}
 	
 
-	public void addBit(Expression exp) {
+	public void addBit(int index, Expression exp) {
 		for(ExpressionBit bit : exp.bits){
-			bits.add(bit);
+			if(index<0)
+				bits.add(bit);
+			else
+				bits.add(index, bit);
 		}
+	}
+	
+	public void addBit(Expression exp) {
+		addBit(-1, exp);
 	}
 
 

@@ -73,116 +73,116 @@ namespace CPrimitives {
 		parameter_string_t WRITE_MODE_A;
 		parameter_string_t WRITE_MODE_B;
 		//Verilog Ports in definition order:
-		NetFlow* DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DOADO_A15_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DOBDO_A15_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DOPADOP_A1_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
-		NetFlow* DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
+		NetFlow* DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
 		NetFlow* DOPBDOP_A1_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
-		NetFlow* ADDRAWRADDR_A0_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A1_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A2_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A3_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A4_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A5_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A6_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A7_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A8_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A9_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A10_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRAWRADDR_A11_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
 		NetFlow* ADDRAWRADDR_A12_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A0_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A1_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A2_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A3_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A4_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A5_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A6_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A7_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A8_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A9_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A10_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-		NetFlow* ADDRBRDADDR_A11_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A11_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A10_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A9_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A8_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A7_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A6_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A5_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A4_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A3_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A2_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A1_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRAWRADDR_A0_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 		NetFlow* ADDRBRDADDR_A12_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A11_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A10_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A9_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A8_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A7_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A6_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A5_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A4_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A3_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A2_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A1_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+		NetFlow* ADDRBRDADDR_A0_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
 		NetFlow* CLKAWRCLK_A0_B; // net ID: CLKAWRCLK lsb: 0  msb: 0 INPUT
 		NetFlow* CLKBRDCLK_A0_B; // net ID: CLKBRDCLK lsb: 0  msb: 0 INPUT
-		NetFlow* DIADI_A0_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A1_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A2_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A3_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A4_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A5_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A6_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A7_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A8_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A9_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A10_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A11_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A12_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A13_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIADI_A14_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
 		NetFlow* DIADI_A15_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A0_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A1_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A2_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A3_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A4_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A5_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A6_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A7_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A8_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A9_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A10_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A11_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A12_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A13_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIBDI_A14_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A14_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A13_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A12_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A11_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A10_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A9_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A8_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A7_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A6_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A5_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A4_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A3_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A2_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A1_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+		NetFlow* DIADI_A0_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
 		NetFlow* DIBDI_A15_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-		NetFlow* DIPADIP_A0_B; // net ID: DIPADIP lsb: 0  msb: 1 INPUT
+		NetFlow* DIBDI_A14_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A13_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A12_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A11_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A10_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A9_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A8_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A7_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A6_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A5_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A4_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A3_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A2_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A1_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+		NetFlow* DIBDI_A0_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
 		NetFlow* DIPADIP_A1_B; // net ID: DIPADIP lsb: 0  msb: 1 INPUT
-		NetFlow* DIPBDIP_A0_B; // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
+		NetFlow* DIPADIP_A0_B; // net ID: DIPADIP lsb: 0  msb: 1 INPUT
 		NetFlow* DIPBDIP_A1_B; // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
+		NetFlow* DIPBDIP_A0_B; // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
 		NetFlow* ENAWREN_A0_B; // net ID: ENAWREN lsb: 0  msb: 0 INPUT
 		NetFlow* ENBRDEN_A0_B; // net ID: ENBRDEN lsb: 0  msb: 0 INPUT
 		NetFlow* REGCEA_A0_B; // net ID: REGCEA lsb: 0  msb: 0 INPUT
 		NetFlow* REGCEBREGCE_A0_B; // net ID: REGCEBREGCE lsb: 0  msb: 0 INPUT
 		NetFlow* RSTA_A0_B; // net ID: RSTA lsb: 0  msb: 0 INPUT
 		NetFlow* RSTBRST_A0_B; // net ID: RSTBRST lsb: 0  msb: 0 INPUT
-		NetFlow* WEAWEL_A0_B; // net ID: WEAWEL lsb: 0  msb: 1 INPUT
 		NetFlow* WEAWEL_A1_B; // net ID: WEAWEL lsb: 0  msb: 1 INPUT
-		NetFlow* WEBWEU_A0_B; // net ID: WEBWEU lsb: 0  msb: 1 INPUT
+		NetFlow* WEAWEL_A0_B; // net ID: WEAWEL lsb: 0  msb: 1 INPUT
 		NetFlow* WEBWEU_A1_B; // net ID: WEBWEU lsb: 0  msb: 1 INPUT
+		NetFlow* WEBWEU_A0_B; // net ID: WEBWEU lsb: 0  msb: 1 INPUT
 		
 		public: X_RAMB8BWER(
 			const char * name,
@@ -245,116 +245,116 @@ namespace CPrimitives {
 			parameter_string_t WRITE_MODE_A, // Default: "WRITE_FIRST"
 			parameter_string_t WRITE_MODE_B, // Default: "WRITE_FIRST"
 			//Verilog Ports in definition order:
-			NetFlow* DOADO_A0_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A1_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A2_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A3_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A4_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A5_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A6_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A7_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A8_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A9_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A10_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A11_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A12_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A13_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOADO_A14_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DOADO_A15_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A0_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A1_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A2_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A3_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A4_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A5_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A6_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A7_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A8_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A9_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A10_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A11_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A12_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A13_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOBDO_A14_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A14_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A13_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A12_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A11_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A10_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A9_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A8_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A7_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A6_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A5_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A4_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A3_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A2_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A1_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOADO_A0_B, // net ID: DOADO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DOBDO_A15_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DOPADOP_A0_B, // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOBDO_A14_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A13_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A12_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A11_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A10_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A9_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A8_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A7_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A6_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A5_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A4_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A3_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A2_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A1_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DOBDO_A0_B, // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DOPADOP_A1_B, // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
-			NetFlow* DOPBDOP_A0_B, // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
+			NetFlow* DOPADOP_A0_B, // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
 			NetFlow* DOPBDOP_A1_B, // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
-			NetFlow* ADDRAWRADDR_A0_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A1_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A2_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A3_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A4_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A5_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A6_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A7_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A8_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A9_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A10_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRAWRADDR_A11_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* DOPBDOP_A0_B, // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
 			NetFlow* ADDRAWRADDR_A12_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A0_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A1_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A2_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A3_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A4_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A5_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A6_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A7_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A8_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A9_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A10_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			NetFlow* ADDRBRDADDR_A11_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A11_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A10_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A9_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A8_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A7_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A6_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A5_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A4_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A3_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A2_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A1_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRAWRADDR_A0_B, // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 			NetFlow* ADDRBRDADDR_A12_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A11_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A10_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A9_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A8_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A7_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A6_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A5_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A4_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A3_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A2_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A1_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			NetFlow* ADDRBRDADDR_A0_B, // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
 			NetFlow* CLKAWRCLK_A0_B, // net ID: CLKAWRCLK lsb: 0  msb: 0 INPUT
 			NetFlow* CLKBRDCLK_A0_B, // net ID: CLKBRDCLK lsb: 0  msb: 0 INPUT
-			NetFlow* DIADI_A0_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A1_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A2_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A3_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A4_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A5_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A6_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A7_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A8_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A9_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A10_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A11_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A12_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A13_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIADI_A14_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
 			NetFlow* DIADI_A15_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A0_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A1_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A2_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A3_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A4_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A5_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A6_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A7_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A8_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A9_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A10_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A11_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A12_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A13_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIBDI_A14_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A14_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A13_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A12_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A11_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A10_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A9_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A8_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A7_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A6_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A5_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A4_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A3_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A2_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A1_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
+			NetFlow* DIADI_A0_B, // net ID: DIADI lsb: 0  msb: 15 INPUT
 			NetFlow* DIBDI_A15_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			NetFlow* DIPADIP_A0_B, // net ID: DIPADIP lsb: 0  msb: 1 INPUT
+			NetFlow* DIBDI_A14_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A13_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A12_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A11_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A10_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A9_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A8_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A7_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A6_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A5_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A4_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A3_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A2_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A1_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			NetFlow* DIBDI_A0_B, // net ID: DIBDI lsb: 0  msb: 15 INPUT
 			NetFlow* DIPADIP_A1_B, // net ID: DIPADIP lsb: 0  msb: 1 INPUT
-			NetFlow* DIPBDIP_A0_B, // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
+			NetFlow* DIPADIP_A0_B, // net ID: DIPADIP lsb: 0  msb: 1 INPUT
 			NetFlow* DIPBDIP_A1_B, // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
+			NetFlow* DIPBDIP_A0_B, // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
 			NetFlow* ENAWREN_A0_B, // net ID: ENAWREN lsb: 0  msb: 0 INPUT
 			NetFlow* ENBRDEN_A0_B, // net ID: ENBRDEN lsb: 0  msb: 0 INPUT
 			NetFlow* REGCEA_A0_B, // net ID: REGCEA lsb: 0  msb: 0 INPUT
 			NetFlow* REGCEBREGCE_A0_B, // net ID: REGCEBREGCE lsb: 0  msb: 0 INPUT
 			NetFlow* RSTA_A0_B, // net ID: RSTA lsb: 0  msb: 0 INPUT
 			NetFlow* RSTBRST_A0_B, // net ID: RSTBRST lsb: 0  msb: 0 INPUT
-			NetFlow* WEAWEL_A0_B, // net ID: WEAWEL lsb: 0  msb: 1 INPUT
 			NetFlow* WEAWEL_A1_B, // net ID: WEAWEL lsb: 0  msb: 1 INPUT
-			NetFlow* WEBWEU_A0_B, // net ID: WEBWEU lsb: 0  msb: 1 INPUT
-			NetFlow* WEBWEU_A1_B // net ID: WEBWEU lsb: 0  msb: 1 INPUT
+			NetFlow* WEAWEL_A0_B, // net ID: WEAWEL lsb: 0  msb: 1 INPUT
+			NetFlow* WEBWEU_A1_B, // net ID: WEBWEU lsb: 0  msb: 1 INPUT
+			NetFlow* WEBWEU_A0_B // net ID: WEBWEU lsb: 0  msb: 1 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -417,116 +417,116 @@ namespace CPrimitives {
 			this->WRITE_MODE_A = WRITE_MODE_A; // Default: "WRITE_FIRST"
 			this->WRITE_MODE_B = WRITE_MODE_B; // Default: "WRITE_FIRST"
 			//Verilog Ports in definition order:
-			this->DOADO_A0_B = DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A1_B = DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A2_B = DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A3_B = DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A4_B = DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A5_B = DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A6_B = DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A7_B = DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A8_B = DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A9_B = DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A10_B = DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A11_B = DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A12_B = DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A13_B = DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOADO_A14_B = DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
 			this->DOADO_A15_B = DOADO_A15_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A0_B = DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A1_B = DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A2_B = DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A3_B = DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A4_B = DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A5_B = DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A6_B = DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A7_B = DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A8_B = DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A9_B = DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A10_B = DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A11_B = DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A12_B = DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A13_B = DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOBDO_A14_B = DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A14_B = DOADO_A14_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A13_B = DOADO_A13_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A12_B = DOADO_A12_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A11_B = DOADO_A11_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A10_B = DOADO_A10_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A9_B = DOADO_A9_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A8_B = DOADO_A8_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A7_B = DOADO_A7_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A6_B = DOADO_A6_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A5_B = DOADO_A5_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A4_B = DOADO_A4_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A3_B = DOADO_A3_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A2_B = DOADO_A2_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A1_B = DOADO_A1_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
+			this->DOADO_A0_B = DOADO_A0_B; // net ID: DOADO lsb: 0  msb: 15 OUTPUT
 			this->DOBDO_A15_B = DOBDO_A15_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
-			this->DOPADOP_A0_B = DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
+			this->DOBDO_A14_B = DOBDO_A14_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A13_B = DOBDO_A13_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A12_B = DOBDO_A12_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A11_B = DOBDO_A11_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A10_B = DOBDO_A10_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A9_B = DOBDO_A9_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A8_B = DOBDO_A8_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A7_B = DOBDO_A7_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A6_B = DOBDO_A6_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A5_B = DOBDO_A5_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A4_B = DOBDO_A4_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A3_B = DOBDO_A3_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A2_B = DOBDO_A2_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A1_B = DOBDO_A1_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
+			this->DOBDO_A0_B = DOBDO_A0_B; // net ID: DOBDO lsb: 0  msb: 15 OUTPUT
 			this->DOPADOP_A1_B = DOPADOP_A1_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
-			this->DOPBDOP_A0_B = DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
+			this->DOPADOP_A0_B = DOPADOP_A0_B; // net ID: DOPADOP lsb: 0  msb: 1 OUTPUT
 			this->DOPBDOP_A1_B = DOPBDOP_A1_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
-			this->ADDRAWRADDR_A0_B = ADDRAWRADDR_A0_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A1_B = ADDRAWRADDR_A1_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A2_B = ADDRAWRADDR_A2_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A3_B = ADDRAWRADDR_A3_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A4_B = ADDRAWRADDR_A4_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A5_B = ADDRAWRADDR_A5_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A6_B = ADDRAWRADDR_A6_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A7_B = ADDRAWRADDR_A7_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A8_B = ADDRAWRADDR_A8_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A9_B = ADDRAWRADDR_A9_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A10_B = ADDRAWRADDR_A10_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRAWRADDR_A11_B = ADDRAWRADDR_A11_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->DOPBDOP_A0_B = DOPBDOP_A0_B; // net ID: DOPBDOP lsb: 0  msb: 1 OUTPUT
 			this->ADDRAWRADDR_A12_B = ADDRAWRADDR_A12_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A0_B = ADDRBRDADDR_A0_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A1_B = ADDRBRDADDR_A1_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A2_B = ADDRBRDADDR_A2_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A3_B = ADDRBRDADDR_A3_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A4_B = ADDRBRDADDR_A4_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A5_B = ADDRBRDADDR_A5_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A6_B = ADDRBRDADDR_A6_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A7_B = ADDRBRDADDR_A7_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A8_B = ADDRBRDADDR_A8_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A9_B = ADDRBRDADDR_A9_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A10_B = ADDRBRDADDR_A10_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
-			this->ADDRBRDADDR_A11_B = ADDRBRDADDR_A11_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A11_B = ADDRAWRADDR_A11_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A10_B = ADDRAWRADDR_A10_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A9_B = ADDRAWRADDR_A9_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A8_B = ADDRAWRADDR_A8_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A7_B = ADDRAWRADDR_A7_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A6_B = ADDRAWRADDR_A6_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A5_B = ADDRAWRADDR_A5_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A4_B = ADDRAWRADDR_A4_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A3_B = ADDRAWRADDR_A3_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A2_B = ADDRAWRADDR_A2_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A1_B = ADDRAWRADDR_A1_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
+			this->ADDRAWRADDR_A0_B = ADDRAWRADDR_A0_B; // net ID: ADDRAWRADDR lsb: 0  msb: 12 INPUT
 			this->ADDRBRDADDR_A12_B = ADDRBRDADDR_A12_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A11_B = ADDRBRDADDR_A11_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A10_B = ADDRBRDADDR_A10_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A9_B = ADDRBRDADDR_A9_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A8_B = ADDRBRDADDR_A8_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A7_B = ADDRBRDADDR_A7_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A6_B = ADDRBRDADDR_A6_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A5_B = ADDRBRDADDR_A5_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A4_B = ADDRBRDADDR_A4_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A3_B = ADDRBRDADDR_A3_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A2_B = ADDRBRDADDR_A2_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A1_B = ADDRBRDADDR_A1_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
+			this->ADDRBRDADDR_A0_B = ADDRBRDADDR_A0_B; // net ID: ADDRBRDADDR lsb: 0  msb: 12 INPUT
 			this->CLKAWRCLK_A0_B = CLKAWRCLK_A0_B; // net ID: CLKAWRCLK lsb: 0  msb: 0 INPUT
 			this->CLKBRDCLK_A0_B = CLKBRDCLK_A0_B; // net ID: CLKBRDCLK lsb: 0  msb: 0 INPUT
-			this->DIADI_A0_B = DIADI_A0_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A1_B = DIADI_A1_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A2_B = DIADI_A2_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A3_B = DIADI_A3_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A4_B = DIADI_A4_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A5_B = DIADI_A5_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A6_B = DIADI_A6_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A7_B = DIADI_A7_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A8_B = DIADI_A8_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A9_B = DIADI_A9_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A10_B = DIADI_A10_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A11_B = DIADI_A11_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A12_B = DIADI_A12_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A13_B = DIADI_A13_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIADI_A14_B = DIADI_A14_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
 			this->DIADI_A15_B = DIADI_A15_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A0_B = DIBDI_A0_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A1_B = DIBDI_A1_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A2_B = DIBDI_A2_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A3_B = DIBDI_A3_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A4_B = DIBDI_A4_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A5_B = DIBDI_A5_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A6_B = DIBDI_A6_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A7_B = DIBDI_A7_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A8_B = DIBDI_A8_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A9_B = DIBDI_A9_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A10_B = DIBDI_A10_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A11_B = DIBDI_A11_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A12_B = DIBDI_A12_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A13_B = DIBDI_A13_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIBDI_A14_B = DIBDI_A14_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIADI_A14_B = DIADI_A14_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A13_B = DIADI_A13_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A12_B = DIADI_A12_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A11_B = DIADI_A11_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A10_B = DIADI_A10_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A9_B = DIADI_A9_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A8_B = DIADI_A8_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A7_B = DIADI_A7_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A6_B = DIADI_A6_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A5_B = DIADI_A5_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A4_B = DIADI_A4_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A3_B = DIADI_A3_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A2_B = DIADI_A2_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A1_B = DIADI_A1_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
+			this->DIADI_A0_B = DIADI_A0_B; // net ID: DIADI lsb: 0  msb: 15 INPUT
 			this->DIBDI_A15_B = DIBDI_A15_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
-			this->DIPADIP_A0_B = DIPADIP_A0_B; // net ID: DIPADIP lsb: 0  msb: 1 INPUT
+			this->DIBDI_A14_B = DIBDI_A14_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A13_B = DIBDI_A13_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A12_B = DIBDI_A12_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A11_B = DIBDI_A11_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A10_B = DIBDI_A10_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A9_B = DIBDI_A9_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A8_B = DIBDI_A8_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A7_B = DIBDI_A7_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A6_B = DIBDI_A6_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A5_B = DIBDI_A5_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A4_B = DIBDI_A4_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A3_B = DIBDI_A3_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A2_B = DIBDI_A2_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A1_B = DIBDI_A1_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
+			this->DIBDI_A0_B = DIBDI_A0_B; // net ID: DIBDI lsb: 0  msb: 15 INPUT
 			this->DIPADIP_A1_B = DIPADIP_A1_B; // net ID: DIPADIP lsb: 0  msb: 1 INPUT
-			this->DIPBDIP_A0_B = DIPBDIP_A0_B; // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
+			this->DIPADIP_A0_B = DIPADIP_A0_B; // net ID: DIPADIP lsb: 0  msb: 1 INPUT
 			this->DIPBDIP_A1_B = DIPBDIP_A1_B; // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
+			this->DIPBDIP_A0_B = DIPBDIP_A0_B; // net ID: DIPBDIP lsb: 0  msb: 1 INPUT
 			this->ENAWREN_A0_B = ENAWREN_A0_B; // net ID: ENAWREN lsb: 0  msb: 0 INPUT
 			this->ENBRDEN_A0_B = ENBRDEN_A0_B; // net ID: ENBRDEN lsb: 0  msb: 0 INPUT
 			this->REGCEA_A0_B = REGCEA_A0_B; // net ID: REGCEA lsb: 0  msb: 0 INPUT
 			this->REGCEBREGCE_A0_B = REGCEBREGCE_A0_B; // net ID: REGCEBREGCE lsb: 0  msb: 0 INPUT
 			this->RSTA_A0_B = RSTA_A0_B; // net ID: RSTA lsb: 0  msb: 0 INPUT
 			this->RSTBRST_A0_B = RSTBRST_A0_B; // net ID: RSTBRST lsb: 0  msb: 0 INPUT
-			this->WEAWEL_A0_B = WEAWEL_A0_B; // net ID: WEAWEL lsb: 0  msb: 1 INPUT
 			this->WEAWEL_A1_B = WEAWEL_A1_B; // net ID: WEAWEL lsb: 0  msb: 1 INPUT
-			this->WEBWEU_A0_B = WEBWEU_A0_B; // net ID: WEBWEU lsb: 0  msb: 1 INPUT
+			this->WEAWEL_A0_B = WEAWEL_A0_B; // net ID: WEAWEL lsb: 0  msb: 1 INPUT
 			this->WEBWEU_A1_B = WEBWEU_A1_B; // net ID: WEBWEU lsb: 0  msb: 1 INPUT
+			this->WEBWEU_A0_B = WEBWEU_A0_B; // net ID: WEBWEU lsb: 0  msb: 1 INPUT
 			
 			register_wait_on_event_nets();
 			

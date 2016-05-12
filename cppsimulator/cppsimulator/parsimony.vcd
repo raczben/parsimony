@@ -35,14 +35,14 @@ $var wire 1 w \NLW_N0_4.D5LUT_O_UNCONNECTED[0] $end
 $var wire 1  \gray_inst/Mcount_count_cy[3] $end
 $var wire 1 ( \cntr_inst/cntr_141[0] $end
 $var wire 1 / \ProtoComp1.CYINITGND.0[0] $end
-$var wire 1 W \gray_inst/Result[0] $end
-$var wire 1 X \gray_inst/Result[1] $end
-$var wire 1 Y \gray_inst/Result[2] $end
-$var wire 1 Z \gray_inst/Result[3] $end
-$var wire 1 [ \gray_inst/Result[4] $end
-$var wire 1 \ \gray_inst/Result[5] $end
-$var wire 1 ] \gray_inst/Result[6] $end
-$var wire 1 ^ \gray_inst/Result[7] $end
+$var wire 1 W \gray_inst/Result[7] $end
+$var wire 1 X \gray_inst/Result[6] $end
+$var wire 1 Y \gray_inst/Result[5] $end
+$var wire 1 Z \gray_inst/Result[4] $end
+$var wire 1 [ \gray_inst/Result[3] $end
+$var wire 1 \ \gray_inst/Result[2] $end
+$var wire 1 ] \gray_inst/Result[1] $end
+$var wire 1 ^ \gray_inst/Result[0] $end
 $var wire 1 i \cntr_inst/cntr_INV_1_o[0] $end
 $var wire 1 k \clk_BUFGP/IBUFG_58[0] $end
 $var wire 1 r \clk_BUFGP/IBUFG_0[0] $end
@@ -77,24 +77,24 @@ $var wire 1 H GND[0] $end
 $var wire 1 A \NlwBufferSignal_gray_inst/count_6/CLK[0] $end
 $var wire 1 K enable_IBUF_61[0] $end
 $var wire 1 L rst_IBUF_0[0] $end
-$var wire 1 O \gray_inst/count[0] $end
-$var wire 1 P \gray_inst/count[1] $end
-$var wire 1 Q \gray_inst/count[2] $end
-$var wire 1 R \gray_inst/count[3] $end
-$var wire 1 S \gray_inst/count[4] $end
-$var wire 1 T \gray_inst/count[5] $end
-$var wire 1 U \gray_inst/count[6] $end
-$var wire 1 V \gray_inst/count[7] $end
+$var wire 1 O \gray_inst/count[7] $end
+$var wire 1 P \gray_inst/count[6] $end
+$var wire 1 Q \gray_inst/count[5] $end
+$var wire 1 R \gray_inst/count[4] $end
+$var wire 1 S \gray_inst/count[3] $end
+$var wire 1 T \gray_inst/count[2] $end
+$var wire 1 U \gray_inst/count[1] $end
+$var wire 1 V \gray_inst/count[0] $end
 $var wire 1 ` \NLW_gray_inst/Mcount_count_cy<3>_CO[2]_UNCONNECTED[0] $end
 $var wire 1 n out_5_OBUF_88[0] $end
-$var wire 1 a out[0] $end
-$var wire 1 b out[1] $end
-$var wire 1 c out[2] $end
-$var wire 1 d out[3] $end
-$var wire 1 e out[4] $end
-$var wire 1 f out[5] $end
-$var wire 1 g out[6] $end
-$var wire 1 h out[7] $end
+$var wire 1 a out[7] $end
+$var wire 1 b out[6] $end
+$var wire 1 c out[5] $end
+$var wire 1 d out[4] $end
+$var wire 1 e out[3] $end
+$var wire 1 f out[2] $end
+$var wire 1 g out[1] $end
+$var wire 1 h out[0] $end
 $var wire 1 l rst[0] $end
 $var wire 1 y q[0] $end
 $var wire 1 u out_0_OBUF_0[0] $end
@@ -279,14 +279,14 @@ x
 0T
 0U
 0V
-1W
+0W
 0X
 0Y
 0Z
 0[
 0\
 0]
-0^
+1^
 0_
 0`
 0a
@@ -346,10 +346,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -390,10 +390,10 @@ x
 0F
 1G
 1N
-0O
-1P
-1W
-1b
+1U
+0V
+1^
+1g
 1i
 1k
 1m
@@ -433,11 +433,11 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-1Y
-0a
+1V
+1\
+0]
+0^
+0h
 0i
 1k
 1m
@@ -480,11 +480,11 @@ x
 0D
 0F
 1N
-0O
-0P
-1Q
-1W
-1c
+1T
+0U
+0V
+1^
+1f
 1i
 1k
 1m
@@ -524,10 +524,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -568,10 +568,10 @@ x
 0F
 0G
 1N
-0O
-1P
-1W
-0b
+1U
+0V
+1^
+0g
 1i
 1k
 1m
@@ -611,13 +611,13 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-0Y
-1Z
+1V
+1[
+0\
+0]
+0^
 1`
-0a
+0h
 0i
 1k
 1m
@@ -660,15 +660,15 @@ x
 0D
 0F
 1N
-0O
-0P
-0Q
-1R
-1W
-1Z
-0[
+1S
+0T
+0U
+0V
+0Z
+1[
+1^
 0`
-1d
+1e
 1i
 1k
 1m
@@ -709,10 +709,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -753,10 +753,10 @@ x
 0F
 1G
 1N
-0O
-1P
-1W
-1b
+1U
+0V
+1^
+1g
 1i
 1k
 1m
@@ -796,11 +796,11 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-1Y
-0a
+1V
+1\
+0]
+0^
+0h
 0i
 1k
 1m
@@ -843,11 +843,11 @@ x
 0D
 0F
 1N
-0O
-0P
-1Q
-1W
-0c
+1T
+0U
+0V
+1^
+0f
 1i
 1k
 1m
@@ -887,10 +887,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -931,10 +931,10 @@ x
 0F
 0G
 1N
-0O
-1P
-1W
-0b
+1U
+0V
+1^
+0g
 1i
 1k
 1m
@@ -974,14 +974,14 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-0Y
-0Z
-1[
+1V
+1Z
+0[
+0\
+0]
+0^
 1`
-0a
+0h
 0i
 1k
 1m
@@ -1025,16 +1025,16 @@ x
 0D
 0F
 1N
-0O
-0P
-0Q
-0R
-1S
-1W
-0Z
-1[
+1R
+0S
+0T
+0U
+0V
+1Z
+0[
+1^
 0`
-1e
+1d
 1i
 1k
 1m
@@ -1076,10 +1076,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -1120,10 +1120,10 @@ x
 0F
 1G
 1N
-0O
-1P
-1W
-1b
+1U
+0V
+1^
+1g
 1i
 1k
 1m
@@ -1163,11 +1163,11 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-1Y
-0a
+1V
+1\
+0]
+0^
+0h
 0i
 1k
 1m
@@ -1210,11 +1210,11 @@ x
 0D
 0F
 1N
-0O
-0P
-1Q
-1W
-1c
+1T
+0U
+0V
+1^
+1f
 1i
 1k
 1m
@@ -1254,10 +1254,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -1298,10 +1298,10 @@ x
 0F
 0G
 1N
-0O
-1P
-1W
-0b
+1U
+0V
+1^
+0g
 1i
 1k
 1m
@@ -1341,13 +1341,13 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-0Y
-1Z
+1V
+1[
+0\
+0]
+0^
 1`
-0a
+0h
 0i
 1k
 1m
@@ -1391,16 +1391,16 @@ x
 0D
 0F
 1N
-0O
-0P
-0Q
-1R
-1W
+1S
+0T
+0U
+0V
+0Y
 1Z
 1[
-0\
+1^
 0`
-0d
+0e
 1i
 1k
 1m
@@ -1441,10 +1441,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -1485,10 +1485,10 @@ x
 0F
 1G
 1N
-0O
-1P
-1W
-1b
+1U
+0V
+1^
+1g
 1i
 1k
 1m
@@ -1528,11 +1528,11 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-1Y
-0a
+1V
+1\
+0]
+0^
+0h
 0i
 1k
 1m
@@ -1575,11 +1575,11 @@ x
 0D
 0F
 1N
-0O
-0P
-1Q
-1W
-0c
+1T
+0U
+0V
+1^
+0f
 1i
 1k
 1m
@@ -1619,10 +1619,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -1663,10 +1663,10 @@ x
 0F
 0G
 1N
-0O
-1P
-1W
-0b
+1U
+0V
+1^
+0g
 1i
 1k
 1m
@@ -1707,15 +1707,15 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-0Y
+1V
+1Y
 0Z
 0[
-1\
+0\
+0]
+0^
 1`
-0a
+0h
 0i
 1k
 1m
@@ -1760,18 +1760,18 @@ x
 0D
 0F
 1N
-0O
-0P
-0Q
+1Q
 0R
 0S
-1T
-1W
+0T
+0U
+0V
+1Y
 0Z
 0[
-1\
+1^
 0`
-1f
+1c
 1i
 1j
 1k
@@ -1815,10 +1815,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -1859,10 +1859,10 @@ x
 0F
 1G
 1N
-0O
-1P
-1W
-1b
+1U
+0V
+1^
+1g
 1i
 1k
 1m
@@ -1902,11 +1902,11 @@ x
 1D
 1F
 1N
-1O
-0W
-0X
-1Y
-0a
+1V
+1\
+0]
+0^
+0h
 0i
 1k
 1m
@@ -1949,11 +1949,11 @@ x
 0D
 0F
 1N
-0O
-0P
-1Q
-1W
-1c
+1T
+0U
+0V
+1^
+1f
 1i
 1k
 1m
@@ -1993,10 +1993,10 @@ x
 1A
 1F
 1N
-1O
-0W
-1X
-1a
+1V
+1]
+0^
+1h
 0i
 1k
 1m
@@ -2037,10 +2037,10 @@ x
 0F
 0G
 1N
-0O
-1P
-1W
-0b
+1U
+0V
+1^
+0g
 1i
 1k
 1m

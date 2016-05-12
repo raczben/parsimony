@@ -196,22 +196,7 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
     				//The following line throws null pointer if the port is not input port
     				portIdList = portDeclaration.input_declaration().list_of_port_identifiers().port_identifier();
     				range = portDeclaration.input_declaration().range();
-//    				
-//    		        msb = BasicConverters.toInteger(range.msb_constant_expression().constant_expression());
-//    		        lsb = BasicConverters.toInteger(range.lsb_constant_expression().constant_expression());
-//    		        	
-    						
 		    		for(Port_identifierContext portId : portIdList){
-
-//	    		        for(int index = lsb; index <=msb; index++){
-//		    	    		String name2 = portId.getText() + "[" + String.valueOf(index) + "]";
-//		    	    		Logger.writeInfo("  Net identifier: " + name2);
-//			    	    	nets.add(name2);
-//			    	    	primitiveDeclaration.updatePort(portId.getText(), Direction.INPUT, msb, lsb);
-//			    	    	//defines.put(name2, value);
-//		    	    	}	
-		    			
-		    			
 		    			primitiveDeclaration.updatePort(portId.getText(), Direction.INPUT, range);
 			    		continue;
 		    		}
@@ -313,10 +298,6 @@ public class PrimitiveMapper extends Verilog2001BaseListener {
     			Logger.writeError("o is not instanceof array");
     		}
 	        
-	        
-	       /* if(readedObj instanceof List<?>){
-	        	primitiveDEclarationList = (List<PrimitiveDescriptor>) readedObj;
-	        }*/
 	        in.close();
 	        fileIn.close();
 	      }catch(IOException i)

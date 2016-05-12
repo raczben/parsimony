@@ -27,10 +27,10 @@ namespace CPrimitives {
 		NetFlow* CLKDIV_A0_B; // net ID: CLKDIV lsb: 0  msb: 0 INPUT
 		NetFlow* SR_A0_B; // net ID: SR lsb: 0  msb: 0 INPUT
 		NetFlow* TCE_A0_B; // net ID: TCE lsb: 0  msb: 0 INPUT
-		NetFlow* DATA__RATE__TQ_A0_B; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
 		NetFlow* DATA__RATE__TQ_A1_B; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
-		NetFlow* TRISTATE__WIDTH_A0_B; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+		NetFlow* DATA__RATE__TQ_A0_B; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
 		NetFlow* TRISTATE__WIDTH_A1_B; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+		NetFlow* TRISTATE__WIDTH_A0_B; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
 		NetFlow* INIT__TQ_A0_B; // net ID: INIT_TQ lsb: 0  msb: 0 INPUT
 		NetFlow* SRVAL__TQ_A0_B; // net ID: SRVAL_TQ lsb: 0  msb: 0 INPUT
 		NetFlow* DATA1_A0_B; // net ID: data1 lsb: 0  msb: 0 OUTPUT
@@ -51,10 +51,10 @@ namespace CPrimitives {
 			NetFlow* CLKDIV_A0_B, // net ID: CLKDIV lsb: 0  msb: 0 INPUT
 			NetFlow* SR_A0_B, // net ID: SR lsb: 0  msb: 0 INPUT
 			NetFlow* TCE_A0_B, // net ID: TCE lsb: 0  msb: 0 INPUT
-			NetFlow* DATA__RATE__TQ_A0_B, // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
 			NetFlow* DATA__RATE__TQ_A1_B, // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
-			NetFlow* TRISTATE__WIDTH_A0_B, // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+			NetFlow* DATA__RATE__TQ_A0_B, // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
 			NetFlow* TRISTATE__WIDTH_A1_B, // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+			NetFlow* TRISTATE__WIDTH_A0_B, // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
 			NetFlow* INIT__TQ_A0_B, // net ID: INIT_TQ lsb: 0  msb: 0 INPUT
 			NetFlow* SRVAL__TQ_A0_B, // net ID: SRVAL_TQ lsb: 0  msb: 0 INPUT
 			NetFlow* DATA1_A0_B, // net ID: data1 lsb: 0  msb: 0 OUTPUT
@@ -75,10 +75,10 @@ namespace CPrimitives {
 			this->CLKDIV_A0_B = CLKDIV_A0_B; // net ID: CLKDIV lsb: 0  msb: 0 INPUT
 			this->SR_A0_B = SR_A0_B; // net ID: SR lsb: 0  msb: 0 INPUT
 			this->TCE_A0_B = TCE_A0_B; // net ID: TCE lsb: 0  msb: 0 INPUT
-			this->DATA__RATE__TQ_A0_B = DATA__RATE__TQ_A0_B; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
 			this->DATA__RATE__TQ_A1_B = DATA__RATE__TQ_A1_B; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
-			this->TRISTATE__WIDTH_A0_B = TRISTATE__WIDTH_A0_B; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+			this->DATA__RATE__TQ_A0_B = DATA__RATE__TQ_A0_B; // net ID: DATA_RATE_TQ lsb: 0  msb: 1 INPUT
 			this->TRISTATE__WIDTH_A1_B = TRISTATE__WIDTH_A1_B; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
+			this->TRISTATE__WIDTH_A0_B = TRISTATE__WIDTH_A0_B; // net ID: TRISTATE_WIDTH lsb: 0  msb: 1 INPUT
 			this->INIT__TQ_A0_B = INIT__TQ_A0_B; // net ID: INIT_TQ lsb: 0  msb: 0 INPUT
 			this->SRVAL__TQ_A0_B = SRVAL__TQ_A0_B; // net ID: SRVAL_TQ lsb: 0  msb: 0 INPUT
 			this->DATA1_A0_B = DATA1_A0_B; // net ID: data1 lsb: 0  msb: 0 OUTPUT

@@ -40,9 +40,9 @@ namespace CPrimitives {
 		//Verilog Ports in definition order:
 		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
 		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
-		NetFlow* S_A0_B; // net ID: S lsb: 0  msb: 2 INPUT
-		NetFlow* S_A1_B; // net ID: S lsb: 0  msb: 2 INPUT
 		NetFlow* S_A2_B; // net ID: S lsb: 0  msb: 2 INPUT
+		NetFlow* S_A1_B; // net ID: S lsb: 0  msb: 2 INPUT
+		NetFlow* S_A0_B; // net ID: S lsb: 0  msb: 2 INPUT
 		
 		public: X_IBUF_DLY_ADJ(
 			const char * name,
@@ -72,9 +72,9 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
 			NetFlow* I_A0_B, // net ID: I lsb: 0  msb: 0 INPUT
-			NetFlow* S_A0_B, // net ID: S lsb: 0  msb: 2 INPUT
+			NetFlow* S_A2_B, // net ID: S lsb: 0  msb: 2 INPUT
 			NetFlow* S_A1_B, // net ID: S lsb: 0  msb: 2 INPUT
-			NetFlow* S_A2_B // net ID: S lsb: 0  msb: 2 INPUT
+			NetFlow* S_A0_B // net ID: S lsb: 0  msb: 2 INPUT
 			):Primitive(name){
 			
 			// Assign parameters and ports: 
@@ -104,9 +104,9 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			this->O_A0_B = O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
 			this->I_A0_B = I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
-			this->S_A0_B = S_A0_B; // net ID: S lsb: 0  msb: 2 INPUT
-			this->S_A1_B = S_A1_B; // net ID: S lsb: 0  msb: 2 INPUT
 			this->S_A2_B = S_A2_B; // net ID: S lsb: 0  msb: 2 INPUT
+			this->S_A1_B = S_A1_B; // net ID: S lsb: 0  msb: 2 INPUT
+			this->S_A0_B = S_A0_B; // net ID: S lsb: 0  msb: 2 INPUT
 			
 			register_wait_on_event_nets();
 			

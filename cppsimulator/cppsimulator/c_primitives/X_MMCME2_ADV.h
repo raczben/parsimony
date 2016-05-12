@@ -81,22 +81,22 @@ namespace CPrimitives {
 		NetFlow* CLKOUT4_A0_B; // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
 		NetFlow* CLKOUT5_A0_B; // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
 		NetFlow* CLKOUT6_A0_B; // net ID: CLKOUT6 lsb: 0  msb: 0 OUTPUT
-		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-		NetFlow* DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+		NetFlow* DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 		NetFlow* DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 		NetFlow* LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 		NetFlow* PSDONE_A0_B; // net ID: PSDONE lsb: 0  msb: 0 OUTPUT
@@ -104,31 +104,31 @@ namespace CPrimitives {
 		NetFlow* CLKIN1_A0_B; // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
 		NetFlow* CLKIN2_A0_B; // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
 		NetFlow* CLKINSEL_A0_B; // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
-		NetFlow* DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-		NetFlow* DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-		NetFlow* DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-		NetFlow* DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-		NetFlow* DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-		NetFlow* DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
 		NetFlow* DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+		NetFlow* DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
 		NetFlow* DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
 		NetFlow* DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
-		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
-		NetFlow* DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
 		NetFlow* DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+		NetFlow* DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
 		NetFlow* DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
 		NetFlow* PSCLK_A0_B; // net ID: PSCLK lsb: 0  msb: 0 INPUT
 		NetFlow* PSEN_A0_B; // net ID: PSEN lsb: 0  msb: 0 INPUT
@@ -205,22 +205,22 @@ namespace CPrimitives {
 			NetFlow* CLKOUT4_A0_B, // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
 			NetFlow* CLKOUT5_A0_B, // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
 			NetFlow* CLKOUT6_A0_B, // net ID: CLKOUT6 lsb: 0  msb: 0 OUTPUT
-			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A1_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A2_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A3_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A4_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A5_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A6_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A7_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A8_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A9_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A10_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A11_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A12_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A13_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
-			NetFlow* DO_A14_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DO_A15_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A14_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A13_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A12_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A11_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A10_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A9_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A8_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A7_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A6_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A5_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A4_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A3_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A2_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A1_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
+			NetFlow* DO_A0_B, // net ID: DO lsb: 0  msb: 15 OUTPUT
 			NetFlow* DRDY_A0_B, // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			NetFlow* LOCKED_A0_B, // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			NetFlow* PSDONE_A0_B, // net ID: PSDONE lsb: 0  msb: 0 OUTPUT
@@ -228,31 +228,31 @@ namespace CPrimitives {
 			NetFlow* CLKIN1_A0_B, // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
 			NetFlow* CLKIN2_A0_B, // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
 			NetFlow* CLKINSEL_A0_B, // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
-			NetFlow* DADDR_A0_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
-			NetFlow* DADDR_A1_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
-			NetFlow* DADDR_A2_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
-			NetFlow* DADDR_A3_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
-			NetFlow* DADDR_A4_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
-			NetFlow* DADDR_A5_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
 			NetFlow* DADDR_A6_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A5_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A4_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A3_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A2_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A1_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
+			NetFlow* DADDR_A0_B, // net ID: DADDR lsb: 0  msb: 6 INPUT
 			NetFlow* DCLK_A0_B, // net ID: DCLK lsb: 0  msb: 0 INPUT
 			NetFlow* DEN_A0_B, // net ID: DEN lsb: 0  msb: 0 INPUT
-			NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A3_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A4_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A5_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A6_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A7_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A8_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A9_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A10_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A11_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A12_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A13_B, // net ID: DI lsb: 0  msb: 15 INPUT
-			NetFlow* DI_A14_B, // net ID: DI lsb: 0  msb: 15 INPUT
 			NetFlow* DI_A15_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A14_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A13_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A12_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A11_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A10_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A9_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A8_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A7_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A6_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A5_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A4_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A3_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A2_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A1_B, // net ID: DI lsb: 0  msb: 15 INPUT
+			NetFlow* DI_A0_B, // net ID: DI lsb: 0  msb: 15 INPUT
 			NetFlow* DWE_A0_B, // net ID: DWE lsb: 0  msb: 0 INPUT
 			NetFlow* PSCLK_A0_B, // net ID: PSCLK lsb: 0  msb: 0 INPUT
 			NetFlow* PSEN_A0_B, // net ID: PSEN lsb: 0  msb: 0 INPUT
@@ -329,22 +329,22 @@ namespace CPrimitives {
 			this->CLKOUT4_A0_B = CLKOUT4_A0_B; // net ID: CLKOUT4 lsb: 0  msb: 0 OUTPUT
 			this->CLKOUT5_A0_B = CLKOUT5_A0_B; // net ID: CLKOUT5 lsb: 0  msb: 0 OUTPUT
 			this->CLKOUT6_A0_B = CLKOUT6_A0_B; // net ID: CLKOUT6 lsb: 0  msb: 0 OUTPUT
-			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A1_B = DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A2_B = DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A3_B = DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A4_B = DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A5_B = DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A6_B = DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A7_B = DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A8_B = DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A9_B = DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A10_B = DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A11_B = DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A12_B = DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A13_B = DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
-			this->DO_A14_B = DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 			this->DO_A15_B = DO_A15_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A14_B = DO_A14_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A13_B = DO_A13_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A12_B = DO_A12_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A11_B = DO_A11_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A10_B = DO_A10_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A9_B = DO_A9_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A8_B = DO_A8_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A7_B = DO_A7_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A6_B = DO_A6_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A5_B = DO_A5_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A4_B = DO_A4_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A3_B = DO_A3_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A2_B = DO_A2_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A1_B = DO_A1_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
+			this->DO_A0_B = DO_A0_B; // net ID: DO lsb: 0  msb: 15 OUTPUT
 			this->DRDY_A0_B = DRDY_A0_B; // net ID: DRDY lsb: 0  msb: 0 OUTPUT
 			this->LOCKED_A0_B = LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			this->PSDONE_A0_B = PSDONE_A0_B; // net ID: PSDONE lsb: 0  msb: 0 OUTPUT
@@ -352,31 +352,31 @@ namespace CPrimitives {
 			this->CLKIN1_A0_B = CLKIN1_A0_B; // net ID: CLKIN1 lsb: 0  msb: 0 INPUT
 			this->CLKIN2_A0_B = CLKIN2_A0_B; // net ID: CLKIN2 lsb: 0  msb: 0 INPUT
 			this->CLKINSEL_A0_B = CLKINSEL_A0_B; // net ID: CLKINSEL lsb: 0  msb: 0 INPUT
-			this->DADDR_A0_B = DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-			this->DADDR_A1_B = DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-			this->DADDR_A2_B = DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-			this->DADDR_A3_B = DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-			this->DADDR_A4_B = DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
-			this->DADDR_A5_B = DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
 			this->DADDR_A6_B = DADDR_A6_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A5_B = DADDR_A5_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A4_B = DADDR_A4_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A3_B = DADDR_A3_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A2_B = DADDR_A2_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A1_B = DADDR_A1_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
+			this->DADDR_A0_B = DADDR_A0_B; // net ID: DADDR lsb: 0  msb: 6 INPUT
 			this->DCLK_A0_B = DCLK_A0_B; // net ID: DCLK lsb: 0  msb: 0 INPUT
 			this->DEN_A0_B = DEN_A0_B; // net ID: DEN lsb: 0  msb: 0 INPUT
-			this->DI_A0_B = DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A1_B = DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A2_B = DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A3_B = DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A4_B = DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A5_B = DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A6_B = DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A7_B = DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A8_B = DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A9_B = DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A10_B = DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A11_B = DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A12_B = DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A13_B = DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
-			this->DI_A14_B = DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
 			this->DI_A15_B = DI_A15_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A14_B = DI_A14_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A13_B = DI_A13_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A12_B = DI_A12_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A11_B = DI_A11_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A10_B = DI_A10_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A9_B = DI_A9_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A8_B = DI_A8_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A7_B = DI_A7_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A6_B = DI_A6_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A5_B = DI_A5_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A4_B = DI_A4_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A3_B = DI_A3_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A2_B = DI_A2_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A1_B = DI_A1_B; // net ID: DI lsb: 0  msb: 15 INPUT
+			this->DI_A0_B = DI_A0_B; // net ID: DI lsb: 0  msb: 15 INPUT
 			this->DWE_A0_B = DWE_A0_B; // net ID: DWE lsb: 0  msb: 0 INPUT
 			this->PSCLK_A0_B = PSCLK_A0_B; // net ID: PSCLK lsb: 0  msb: 0 INPUT
 			this->PSEN_A0_B = PSEN_A0_B; // net ID: PSEN lsb: 0  msb: 0 INPUT

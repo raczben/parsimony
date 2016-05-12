@@ -18,10 +18,10 @@ namespace CPrimitives {
 		//Verilog Ports in definition order:
 		NetFlow* MUXOUT_A0_B; // net ID: muxout lsb: 0  msb: 0 OUTPUT
 		NetFlow* DIN_A0_B; // net ID: din lsb: 0  msb: 0 INPUT
-		NetFlow* QWC_A0_B; // net ID: qwc lsb: 0  msb: 1 INPUT
 		NetFlow* QWC_A1_B; // net ID: qwc lsb: 0  msb: 1 INPUT
-		NetFlow* QRD_A0_B; // net ID: qrd lsb: 0  msb: 1 INPUT
+		NetFlow* QWC_A0_B; // net ID: qwc lsb: 0  msb: 1 INPUT
 		NetFlow* QRD_A1_B; // net ID: qrd lsb: 0  msb: 1 INPUT
+		NetFlow* QRD_A0_B; // net ID: qrd lsb: 0  msb: 1 INPUT
 		NetFlow* RD__GAP1_A0_B; // net ID: rd_gap1 lsb: 0  msb: 0 INPUT
 		NetFlow* BUFG__CLK_A0_B; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
 		NetFlow* BUFO__CLK_A0_B; // net ID: bufo_clk lsb: 0  msb: 0 INPUT
@@ -38,10 +38,10 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			NetFlow* MUXOUT_A0_B, // net ID: muxout lsb: 0  msb: 0 OUTPUT
 			NetFlow* DIN_A0_B, // net ID: din lsb: 0  msb: 0 INPUT
-			NetFlow* QWC_A0_B, // net ID: qwc lsb: 0  msb: 1 INPUT
 			NetFlow* QWC_A1_B, // net ID: qwc lsb: 0  msb: 1 INPUT
-			NetFlow* QRD_A0_B, // net ID: qrd lsb: 0  msb: 1 INPUT
+			NetFlow* QWC_A0_B, // net ID: qwc lsb: 0  msb: 1 INPUT
 			NetFlow* QRD_A1_B, // net ID: qrd lsb: 0  msb: 1 INPUT
+			NetFlow* QRD_A0_B, // net ID: qrd lsb: 0  msb: 1 INPUT
 			NetFlow* RD__GAP1_A0_B, // net ID: rd_gap1 lsb: 0  msb: 0 INPUT
 			NetFlow* BUFG__CLK_A0_B, // net ID: bufg_clk lsb: 0  msb: 0 INPUT
 			NetFlow* BUFO__CLK_A0_B, // net ID: bufo_clk lsb: 0  msb: 0 INPUT
@@ -58,10 +58,10 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			this->MUXOUT_A0_B = MUXOUT_A0_B; // net ID: muxout lsb: 0  msb: 0 OUTPUT
 			this->DIN_A0_B = DIN_A0_B; // net ID: din lsb: 0  msb: 0 INPUT
-			this->QWC_A0_B = QWC_A0_B; // net ID: qwc lsb: 0  msb: 1 INPUT
 			this->QWC_A1_B = QWC_A1_B; // net ID: qwc lsb: 0  msb: 1 INPUT
-			this->QRD_A0_B = QRD_A0_B; // net ID: qrd lsb: 0  msb: 1 INPUT
+			this->QWC_A0_B = QWC_A0_B; // net ID: qwc lsb: 0  msb: 1 INPUT
 			this->QRD_A1_B = QRD_A1_B; // net ID: qrd lsb: 0  msb: 1 INPUT
+			this->QRD_A0_B = QRD_A0_B; // net ID: qrd lsb: 0  msb: 1 INPUT
 			this->RD__GAP1_A0_B = RD__GAP1_A0_B; // net ID: rd_gap1 lsb: 0  msb: 0 INPUT
 			this->BUFG__CLK_A0_B = BUFG__CLK_A0_B; // net ID: bufg_clk lsb: 0  msb: 0 INPUT
 			this->BUFO__CLK_A0_B = BUFO__CLK_A0_B; // net ID: bufo_clk lsb: 0  msb: 0 INPUT

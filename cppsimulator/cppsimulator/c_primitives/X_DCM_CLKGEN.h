@@ -29,14 +29,14 @@ namespace CPrimitives {
 		NetFlow* CLKFXDV_A0_B; // net ID: CLKFXDV lsb: 0  msb: 0 OUTPUT
 		NetFlow* LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 		NetFlow* PROGDONE_A0_B; // net ID: PROGDONE lsb: 0  msb: 0 OUTPUT
-		NetFlow* STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-		NetFlow* STATUS_A1_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-		NetFlow* STATUS_A2_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-		NetFlow* STATUS_A3_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-		NetFlow* STATUS_A4_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-		NetFlow* STATUS_A5_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-		NetFlow* STATUS_A6_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 		NetFlow* STATUS_A7_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A6_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A5_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A4_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A3_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A2_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A1_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+		NetFlow* STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 		NetFlow* CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
 		NetFlow* FREEZEDCM_A0_B; // net ID: FREEZEDCM lsb: 0  msb: 0 INPUT
 		NetFlow* PROGCLK_A0_B; // net ID: PROGCLK lsb: 0  msb: 0 INPUT
@@ -61,14 +61,14 @@ namespace CPrimitives {
 			NetFlow* CLKFXDV_A0_B, // net ID: CLKFXDV lsb: 0  msb: 0 OUTPUT
 			NetFlow* LOCKED_A0_B, // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			NetFlow* PROGDONE_A0_B, // net ID: PROGDONE lsb: 0  msb: 0 OUTPUT
-			NetFlow* STATUS_A0_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			NetFlow* STATUS_A1_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			NetFlow* STATUS_A2_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			NetFlow* STATUS_A3_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			NetFlow* STATUS_A4_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			NetFlow* STATUS_A5_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			NetFlow* STATUS_A6_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 			NetFlow* STATUS_A7_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A6_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A5_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A4_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A3_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A2_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A1_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			NetFlow* STATUS_A0_B, // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 			NetFlow* CLKIN_A0_B, // net ID: CLKIN lsb: 0  msb: 0 INPUT
 			NetFlow* FREEZEDCM_A0_B, // net ID: FREEZEDCM lsb: 0  msb: 0 INPUT
 			NetFlow* PROGCLK_A0_B, // net ID: PROGCLK lsb: 0  msb: 0 INPUT
@@ -93,14 +93,14 @@ namespace CPrimitives {
 			this->CLKFXDV_A0_B = CLKFXDV_A0_B; // net ID: CLKFXDV lsb: 0  msb: 0 OUTPUT
 			this->LOCKED_A0_B = LOCKED_A0_B; // net ID: LOCKED lsb: 0  msb: 0 OUTPUT
 			this->PROGDONE_A0_B = PROGDONE_A0_B; // net ID: PROGDONE lsb: 0  msb: 0 OUTPUT
-			this->STATUS_A0_B = STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			this->STATUS_A1_B = STATUS_A1_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			this->STATUS_A2_B = STATUS_A2_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			this->STATUS_A3_B = STATUS_A3_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			this->STATUS_A4_B = STATUS_A4_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			this->STATUS_A5_B = STATUS_A5_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
-			this->STATUS_A6_B = STATUS_A6_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 			this->STATUS_A7_B = STATUS_A7_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A6_B = STATUS_A6_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A5_B = STATUS_A5_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A4_B = STATUS_A4_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A3_B = STATUS_A3_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A2_B = STATUS_A2_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A1_B = STATUS_A1_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
+			this->STATUS_A0_B = STATUS_A0_B; // net ID: STATUS lsb: 0  msb: 7 OUTPUT
 			this->CLKIN_A0_B = CLKIN_A0_B; // net ID: CLKIN lsb: 0  msb: 0 INPUT
 			this->FREEZEDCM_A0_B = FREEZEDCM_A0_B; // net ID: FREEZEDCM lsb: 0  msb: 0 INPUT
 			this->PROGCLK_A0_B = PROGCLK_A0_B; // net ID: PROGCLK lsb: 0  msb: 0 INPUT

@@ -98,7 +98,7 @@ public class ParseExpression {
 					ConcatenationContext concat = primary.concatenation();
 					retExp = new Expression();
 					for(ExpressionContext exp : concat.expression()){
-						retExp.addBit(parseExpression(exp));
+						retExp.addBit(0, parseExpression(exp));
 					}
 					continue;
 				}
