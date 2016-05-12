@@ -480,14 +480,13 @@ public class Netinstancer extends Verilog2001BaseListener {
 		
     	for(NetDescriptor net : nets.values()) {
 //    		String cid = toCIdentifier(net, true);
-    		for(String cid : net.getCdefineIdentifierList() ){
-    			netinst.add("\tengine->register_net(new NetFlow(\"" + cid + "\"));");
+    		for(int bit = net.getLsb(); bit <= net.getMsb(); bit++ ){
+    			String cid = net.getCdefineIdentifierBit(bit);
+    			String netName = net.getNetIdentifier().replace("\\", "\\\\") + "[" + bit + "]";
+    			netinst.add("\tengine->register_net(new NetFlow(\"" + netName + "\"));");
         		defines.add("#define " + cid + "\t\t" + String.valueOf(i));
         		i++;
     		}
-//    		defines.add("#define " + net.getValue().getCdefineIdentifierList() + " " + String.valueOf(i));
-//    		defines.add("#define " + net.getValue().getCdefineIdentifierList() + " " + String.valueOf(i));
-//    		i++;
     	}
 
     	for(String def : defines) {
