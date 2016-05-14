@@ -14,6 +14,7 @@
 #include "shared.h"
 #include "Primitive.h"
 #include "NetLevel.h"
+#include <mutex>
 
 /******************************************************************************
  * net_flow_struct contains all data related to a net. Ex.: tt contains its
@@ -55,6 +56,8 @@ class NetFlow {
 	base::Vector<Primitive*> event_readers;
 
 	bool changed_in_this_delta = true;
+
+	std::mutex m;
 
 	//
 public:

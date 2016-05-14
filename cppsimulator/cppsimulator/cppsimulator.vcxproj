@@ -88,7 +88,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\cppsimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\cppsimulator;pthreads.2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -117,7 +117,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\cppsimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\cppsimulator;pthreads.2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +147,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Barrier.h" />
     <ClInclude Include="base_vector.h" />
     <ClInclude Include="built_in_primitives.h" />
     <ClInclude Include="c_primitives\bscntrl_iserdese1_vlog.h" />
@@ -444,10 +445,14 @@
     <ClInclude Include="NetFlow.h" />
     <ClInclude Include="NetLevel.h" />
     <ClInclude Include="Primitive.h" />
+    <ClInclude Include="RunnerWorker.h" />
+    <ClInclude Include="semaphore.h" />
     <ClInclude Include="shared.h" />
+    <ClInclude Include="SimRunnerThread.h" />
     <ClInclude Include="SimulatorEngine.h" />
     <ClInclude Include="simulator_base.h" />
     <ClInclude Include="sim_types.h" />
+    <ClInclude Include="Synchroniser.h" />
     <ClInclude Include="VCDWiter.h" />
   </ItemGroup>
   <ItemGroup>
@@ -459,6 +464,8 @@
     <ClCompile Include="netinstatiation.cpp" />
     <ClCompile Include="Primitive.cpp" />
     <ClCompile Include="primitiveInstatiation.cpp" />
+    <ClCompile Include="RunnerWorker.cpp" />
+    <ClCompile Include="SimRunnerThread.cpp" />
     <ClCompile Include="SimulatorEngine.cpp" />
     <ClCompile Include="simulator_base.cpp" />
     <ClCompile Include="cppTemplate.cpp" />

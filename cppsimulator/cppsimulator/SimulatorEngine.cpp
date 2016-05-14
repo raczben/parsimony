@@ -1,9 +1,18 @@
 #include "SimulatorEngine.h"
 #include "stdio.h"
+#include <iostream>
 
 
-SimulatorEngine::SimulatorEngine(): __time__(0)
+SimulatorEngine::SimulatorEngine(int numOfThreads): __time__(0)
 {
+	barrier = new Barrier(numOfThreads);
+
+	for (int i = 0; i < numOfThreads; i++) {
+		SimRunnerThread *thread = new SimRunnerThread(i, barrier);
+		workers.push_back(thread);
+		threads.push_back(nullptr);
+	}
+
 	//nets = new base::Vector<NetFlow*>();
 	//primitives = new base::Vector<Primitive*>();
 }
@@ -15,33 +24,8 @@ SimulatorEngine::~SimulatorEngine()
 
 void SimulatorEngine::step_time()
 {
-	for (unsigned i = 0; i < nets.size(); i++) {
-		NetFlow* net = nets.get(i);
-		net->step_time((unsigned) __time__);
-	}
-
-	//int delta = -1;
-	while (need_to_rerun_ts()) {
-#if VERBOSE > 0
-		printf("Running TS: %ld", __time__);
-		fflush(stdout);
-#endif
-		step_delta();
-		process_primitives(get_current_time());
-#if VERBOSE > 0
-		printf("   [  OK  ]\n");
-		fflush(stdout);
-#endif
-
-	}
-
-
-	__time__++;
-
-
-
-
-
+	
+	//throw new Exeption("Deprecated");
 }
 
 simtime_t SimulatorEngine::get_current_time()
@@ -58,17 +42,81 @@ void SimulatorEngine::register_net(NetFlow * net)
 void SimulatorEngine::register_primitive(Primitive * primitive)
 {
 	primitives.push_back(primitive);
+/*	workers.get(new_prim_to_this_TH)->register_primitive(primitive);
+	
+	new_prim_to_this_TH++;
+	if (new_prim_to_this_TH >= workers.size()) {
+		new_prim_to_this_TH = 0;
+	}*/
+}
+
+void SimulatorEngine::prepare_for_running() {
+	int primitivesPerThread;
+	int from, toPlusOne = 0;
+	for (int i = 0; i < workers.size(); i++) {
+		primitivesPerThread = (primitives.size()-toPlusOne) / (workers.size()-i);
+		from = toPlusOne;
+		toPlusOne = primitivesPerThread + from;
+		workers.get(i)->set_processing_range(from, toPlusOne);
+	}
 }
 
 
-NetFlow * SimulatorEngine::get_net(int netIndex)
+//NetFlow * SimulatorEngine::get_net(int netIndex)
+//{
+//
+//	return this->nets.get(netIndex);
+//}
+
+Primitive * SimulatorEngine::get_primitive(int netIndex)
 {
-
-	return this->nets.get_point(netIndex);
+	return primitives.get(netIndex);
 }
+
 
 void SimulatorEngine::run(simtime_t time) {
-	run_to(get_current_time() + time);
+
+	try {
+		printf("Create Threads:  ");
+		for (int i = 0; i < workers.size(); i++) {
+			printf(" %d ", i);
+			SimRunnerThread* worker = workers.get(i);
+			worker->runUntil = engine->get_current_time() + time;
+			threads[i] = (new std::thread([worker] { worker->__run__(); }));
+			//threads.get(i)->run(time);
+
+		}
+	}
+	catch (const std::exception &exc)
+	{
+		// catch anything thrown within try block that derives from std::exception
+		std::cerr << "SimulatorEngine::run: start sim: " << exc.what() << std::endl;
+		exit(-1);
+	}
+
+	printf("\n");
+	try {
+	printf("Wait for TH:  ");
+	for (int i = 0; i < threads.size(); i++) {
+		printf(" %d ", i);
+		
+		threads.get(i)->join();
+		printf(" [  OK  ] ");
+
+		delete (threads.get(i));
+
+	}
+	}
+	catch (const std::exception &exc)
+	{
+		// catch anything thrown within try block that derives from std::exception
+		std::cerr << "SimulatorEngine::run: join sim: " << exc.what() << std::endl;
+		exit(-1);
+	}
+
+	printf("\n");
+	printf("\n");
+	//run_to(get_current_time() + time);
 }
 
 
@@ -85,11 +133,18 @@ void SimulatorEngine::step_delta() {
 }
 
 
-void SimulatorEngine::process_primitives(simtime_t time) {
+void SimulatorEngine::process_primitives_thread(base::Vector<Primitive*>* my_primitives , simtime_t time) {
+	for (unsigned i = 0; i < my_primitives->size(); i++) {
+		my_primitives->get(i)->calculate(time);
+	}
+}
+
+
+/*void SimulatorEngine::process_primitives(simtime_t time) {
 	for (unsigned i = 0; i < primitives.size(); i++) {
 		primitives.get(i)->calculate(time);
 	}
-}
+}*/
 
 bool SimulatorEngine::need_to_rerun_ts() {
 	for (unsigned i = 0; i < nets.size(); i++) {
@@ -123,6 +178,6 @@ void SimulatorEngine::writeWarning(char* message) {
 
 
 void SimulatorEngine::_writeMessage_(char* const pref, char* message) {
-	printf("%ld : %s: %s", get_current_time(), pref, message);
+	printf("%lld : %s: %s", get_current_time(), pref, message);
 	fflush(stdout);
 }

@@ -13,6 +13,10 @@
 #include "Primitive.h"
 #include "NetFlow.h"
 #include "shared.h"
+#include <thread>         // std::thread
+//#include "RunnerWorker.h"
+#include "SimRunnerThread.h"
+#include "Barrier.h"
 
 /******************************************************************************
  * The SimulatorEngine is the controller of the simulation. This class contains
@@ -22,12 +26,21 @@
 class SimulatorEngine
 {
 
-	simtime_t __time__;
 	base::Vector<NetFlow*> nets;
+
+	base::Vector< SimRunnerThread* > workers;
+	base::Vector< std::thread* > threads;
+
+	int new_prim_to_this_TH = 0;
+
+	Barrier* barrier;
+public:
+	simtime_t __time__;
+
 	base::Vector<Primitive*> primitives;
 
 public:
-	SimulatorEngine();
+	SimulatorEngine(int numOfThreads = 4);
 	~SimulatorEngine();
 
 
@@ -49,16 +62,29 @@ public:
 	 *************************************************************************/
 	void register_primitive(Primitive * primitive);
 
+	/**************************************************************************
+	* prepare_for_running() Must be called after all primitives has been added
+	* to the engine. This method allocate each primitives to a specific thread.
+	*************************************************************************/
+	void prepare_for_running();
+
 
 	/**************************************************************************
 	 * get_net_count() returns the number of the registrated nets.
 	 *************************************************************************/
-	unsigned  SimulatorEngine::get_net_count() { return nets.size(); }
+	unsigned  get_net_count() { return nets.size(); }
 
 	/**************************************************************************
 	 * get_net(i) returns the pointer of the i-th netFlow.
 	 *************************************************************************/
-	NetFlow * SimulatorEngine::get_net(int netIndex);
+	inline NetFlow * get_net(int netIndex)
+		{		return this->nets.get(netIndex);
+		}
+
+	/**************************************************************************
+	* get_primitive(i) returns the pointer of the i-th Primitive.
+	*************************************************************************/
+	Primitive * get_primitive(int netIndex);
 
 	/**************************************************
 	 *
@@ -99,7 +125,12 @@ public:
 	 * process_primitives() call calculate function of each registrated
 	 * primitives
 	 *************************************************************************/
-	void process_primitives(simtime_t time);
+	//void process_primitives(simtime_t time);
+
+	/**************************************************************************
+	* 
+	*************************************************************************/
+	void process_primitives_thread(base::Vector<Primitive*>* my_primitives, simtime_t time);
 
 	/**************************************************************************
 	 * need_to_rerun_ts() go therew the nets and return true if the value has

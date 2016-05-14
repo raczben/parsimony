@@ -160,6 +160,8 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		throw "set time is negative";
 	}
 
+	m.lock();
+
 	/**
 	* If the data vector is empty then push the new element
 	*/
@@ -167,6 +169,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		this->data.push_back(new_element);
 		now_index = 0;
 		changed_in_this_delta = true;
+		m.unlock();
 		return;
 	}
 
@@ -174,6 +177,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	* If the new value is equal the previous, there is no change in value => we dont do anythink.
 	*/
 	if (is_equal_at(level, set_time)) {
+		m.unlock();
 		return;	
 	}
 	else {
@@ -203,6 +207,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		if (data.empty()) {
 			this->data.push_back(new_element);
 			now_index = 0;
+			m.unlock();
 			return;
 		}
 		//size = data.size();
@@ -213,6 +218,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		now_index = data.size() - 1;
 	}
 
+	m.unlock();
 	return;
 }
 

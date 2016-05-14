@@ -16,6 +16,8 @@ typedef char reader_t;
 
 class NetFlow;
 class SimulatorEngine;
+class RunnerWorker;
+class SimRunnerThread;
 
 typedef char* parameter_string_t;
 typedef uint64_t parameter_int_t;

@@ -924,6 +924,21 @@
     <ClInclude Include="NetLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RunnerWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="semaphore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Synchroniser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Barrier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimRunnerThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cppsimulator.cpp">
@@ -957,6 +972,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="builtin_primitives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RunnerWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimRunnerThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

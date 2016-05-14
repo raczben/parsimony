@@ -96,6 +96,9 @@ void run_CARRY4_test_stumulus() {
 
 #if (TEST_TEST_CASE == TEST_DUT_TEST)
 void run_TEST_DUT_test_stimulus() {
+
+	engine->prepare_for_running();
+
 	NetFlow * net;
 	printf("Start generating clock ... \n");
 	fflush(stdout);
@@ -130,7 +133,7 @@ void start_simulation() {
 
 	printf("Creating simulator engine ... ");
 	fflush(stdout);
-	engine = new SimulatorEngine();
+	engine = new SimulatorEngine(1);
 	printf("    [  OK  ]\n");
 	fflush(stdout);
 
