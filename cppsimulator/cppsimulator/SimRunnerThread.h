@@ -14,7 +14,7 @@
 #include "NetFlow.h"
 #include "shared.h"
 #include <thread>         // std::thread
-#include "RunnerWorker.h"
+//#include "RunnerWorker.h"
 #include "Barrier.h"
 
 class SimRunnerThread

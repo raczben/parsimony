@@ -133,7 +133,7 @@ void start_simulation() {
 
 	printf("Creating simulator engine ... ");
 	fflush(stdout);
-	engine = new SimulatorEngine(1);
+	engine = new SimulatorEngine(4);
 	printf("    [  OK  ]\n");
 	fflush(stdout);
 
@@ -153,8 +153,10 @@ void start_simulation() {
 	fflush(stdout);
 	net = (engine->get_net(NET_INDEX_CONST__ONE_A0_B));
 	net->set_now(HIGH);
+
 	net = (engine->get_net(NET_INDEX_CONST__ZERO_A0_B));
 	net->set_now(LOW);
+
 	printf("    [  OK  ]\n");
 	fflush(stdout);
 

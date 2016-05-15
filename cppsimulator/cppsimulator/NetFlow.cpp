@@ -89,9 +89,15 @@ bool NetFlow::is_equal_from_now(value_t val, simtime_t time) const {
 net_level_t NetFlow::get_at(simtime_t serach_time) const {
 
 	net_change_t tmp_net_value_change;
+
+	m.lock();
+	//std::unique_lock<std::mutex>(m);
+	//m.lock();
 	int index = __find_nearest_earlier_index__(serach_time);
 
 	tmp_net_value_change = *(data[index]);
+
+	m.unlock();
 	return tmp_net_value_change.level;
 
 }
@@ -160,6 +166,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		throw "set time is negative";
 	}
 
+	//std::unique_lock<std::mutex>(m);
 	m.lock();
 
 	/**

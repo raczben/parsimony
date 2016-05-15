@@ -57,7 +57,7 @@ class NetFlow {
 
 	bool changed_in_this_delta = true;
 
-	std::mutex m;
+	mutable std::recursive_mutex m;
 
 	//
 public:

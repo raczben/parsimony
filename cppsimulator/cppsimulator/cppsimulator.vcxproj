@@ -464,7 +464,6 @@
     <ClCompile Include="netinstatiation.cpp" />
     <ClCompile Include="Primitive.cpp" />
     <ClCompile Include="primitiveInstatiation.cpp" />
-    <ClCompile Include="RunnerWorker.cpp" />
     <ClCompile Include="SimRunnerThread.cpp" />
     <ClCompile Include="SimulatorEngine.cpp" />
     <ClCompile Include="simulator_base.cpp" />
