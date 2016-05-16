@@ -114,7 +114,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets() {
 			// TODO
 		}
-		void calculate(int time) {
+		void calculate(simtime_t time) {
 			// TODO
 		}
 	};

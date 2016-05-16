@@ -7,12 +7,17 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <Primitive.h>
-
+//#include <Primitive.h>
+ 
 /******************************************************************************
 * returns the name of net_flow's net
 *****************************************************************************/
-NetFlow::NetFlow(const char* name, net_level_t initial_level, bool monitor_change):name(0)  {
+NetFlow::NetFlow(const char* name, net_level_t initial_level, bool monitor_change):
+	name(0),
+	data({
+		{UNDEFINED, strong},
+		(simtime_t)UINT64_MAX })
+{
 	init(name, initial_level, monitor_change);
 }
 
@@ -90,14 +95,14 @@ net_level_t NetFlow::get_at(simtime_t serach_time) const {
 
 	net_change_t tmp_net_value_change;
 
-	m.lock();
+	//m.lock();
 	//std::unique_lock<std::mutex>(m);
 	//m.lock();
 	int index = __find_nearest_earlier_index__(serach_time);
 
-	tmp_net_value_change = *(data[index]);
+	tmp_net_value_change = data[index];
 
-	m.unlock();
+	//m.unlock();
 	return tmp_net_value_change.level;
 
 }
@@ -155,9 +160,9 @@ bool NetFlow::posedge_at(simtime_t time) {
 * of the simulation.
 *****************************************************************************/
 void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
-	net_change_t* new_element = new net_change_t();
-	new_element->level = level;
-	new_element->time = set_time;
+	net_change_t new_element;//= new net_change_t();
+	new_element.level = level;
+	new_element.time = set_time;
 
 	/**
 	* Negative settime is illegal
@@ -167,7 +172,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	}
 
 	//std::unique_lock<std::mutex>(m);
-	m.lock();
+	//m.lock();
 
 	/**
 	* If the data vector is empty then push the new element
@@ -176,7 +181,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		this->data.push_back(new_element);
 		now_index = 0;
 		changed_in_this_delta = true;
-		m.unlock();
+	//	m.unlock();
 		return;
 	}
 
@@ -184,7 +189,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	* If the new value is equal the previous, there is no change in value => we dont do anythink.
 	*/
 	if (is_equal_at(level, set_time)) {
-		m.unlock();
+		//m.unlock();
 		return;	
 	}
 	else {
@@ -208,13 +213,13 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	* Erease mod: remove all later event on the net than set_time:
 	*/
 	//unsigned size = data.size();
-	while (data.get_last()->time >= set_time) {
+	while (data.get_last().time >= set_time) {
 		this->data.remove_last();
 
 		if (data.empty()) {
 			this->data.push_back(new_element);
 			now_index = 0;
-			m.unlock();
+			//m.unlock();
 			return;
 		}
 		//size = data.size();
@@ -225,7 +230,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		now_index = data.size() - 1;
 	}
 
-	m.unlock();
+	//m.unlock();
 	return;
 }
 
@@ -302,7 +307,7 @@ int NetFlow::__find_nearest_earlier_index__(const simtime_t serach_time) const  
 
 
 	while (first_index <= last_index) {
-		tmp_net_value_change = *(data[middle_index]);
+		tmp_net_value_change = data[middle_index];
 		tmp_time = tmp_net_value_change.time;
 		if (tmp_time < serach_time) {
 			first_index = middle_index + 1;
@@ -329,7 +334,7 @@ void NetFlow::register_driver(const driver_t & driver_primitive) {
 	this->drivers->push_back(driver_primitive);
 }
 
-void NetFlow::step_time(const unsigned time_to_step)
+void NetFlow::step_time(const simtime_t time_to_step)
 {
 	if (data.size() == 1) {
 		now_index = 0;
@@ -341,10 +346,10 @@ void NetFlow::step_time(const unsigned time_to_step)
 	while (true) {
 		if (now_index + 1 >= (signed)data.size())
 			return;
-		if (data[now_index + 1]->time > time_to_step)
+		if (data[now_index + 1].time > time_to_step)
 			return;
 		now_index++;
-		if (time_to_step == data.get(now_index)->time ) {
+		if (time_to_step == data.get(now_index).time ) {
 			changed_in_this_delta = true;
 		}
 	}
@@ -352,10 +357,10 @@ void NetFlow::step_time(const unsigned time_to_step)
 
 
 
-NetFlow::NetFlow(const NetFlow & other)
+/*NetFlow::NetFlow(const NetFlow & other)
 {
 	set_name(other.name);
-	data = base::Vector<net_change_t*>(other.data);
+	data = base::Vector<net_change_t>(other.data);
 
 	now_index = other.now_index;
 
@@ -368,7 +373,7 @@ NetFlow::NetFlow(const NetFlow & other)
 	drivers = new base::Vector<driver_t>(*drivers);
 
 	readers = new base::Vector<reader_t>(*readers);
-}
+}*/
 
 
 NetFlow::~NetFlow()
@@ -402,9 +407,9 @@ void NetFlow::print_flow(int numOfChange) const {
 	}
 	printf("%s: ", name);
 	for (int i = 0; i < numOfChange; i++) {
-		net_change_t* change = data.get(i);
-		to_string(change->level, charBuff);
-		printf("   %lld: %s", change->time, charBuff);
+		net_change_t change = data.get(i);
+		to_string(change.level, charBuff);
+		printf("   %lld: %s", change.time, charBuff);
 	}
 	printf("\n");
 }

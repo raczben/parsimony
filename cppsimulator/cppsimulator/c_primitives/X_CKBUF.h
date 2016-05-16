@@ -45,7 +45,7 @@ namespace CPrimitives {
 			I_A0_B->register_event_reader(this);
 		}
 
-		void calculate(int time) {
+		void calculate(simtime_t time) {
 			calculate_BUF(time, O_A0_B, I_A0_B);
 		}
 

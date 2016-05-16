@@ -1,7 +1,7 @@
-*/Debug/*
-Debug/*
-*/Release/*
-Release/*
+**/Debug/*
+#Debug/*
+#*/Release/*
+**/Release/*
 *sdf
 cppsimulator.sdf
 *.vsp

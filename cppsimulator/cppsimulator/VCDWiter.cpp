@@ -8,6 +8,9 @@
 #include <map>
 
 
+#define strdup _strdup
+
+
 VCDWiter::VCDWiter(char* filename)
 {
 	if (nullptr != filename) {
@@ -30,23 +33,23 @@ VCDWiter::~VCDWiter()
 void VCDWiter::fillVCDData(){
 	NetFlow * net;
 	char id = '!';
-	for (int netIndex = 0; netIndex < engine->get_net_count(); netIndex++) {
+	for (unsigned netIndex = 0; netIndex < engine->get_net_count(); netIndex++) {
 		net = engine->get_net(netIndex);
 		netIDToName.insert(std::pair<const char*, char>(net->get_name(), id));
 		
-		base::Vector<net_change_t*> data = net->get_data();
-		for (int i = 0; i < data.size(); i++) {
-			net_change_t* net_change = data.get(i);
-			const char* val = to_string(net_change->level.value);
+		base::Vector<net_change_t> data = net->get_data();
+		for (unsigned i = 0; i < data.size(); i++) {
+			net_change_t net_change = data.get(i);
+			const char* val = to_string(net_change.level.value);
 
 			vcd_node node;
 			node.net_id = id;
-			node.value = net_value2vcd_char(net_change->level.value);
-			std::map<int, std::vector<vcd_node> >::iterator it = vcdData.find(net_change->time);
+			node.value = net_value2vcd_char(net_change.level.value);
+			std::map<simtime_t, std::vector<vcd_node> >::iterator it = vcdData.find(net_change.time);
 			if (it == vcdData.end()) {
 				std::vector<vcd_node> vec;// = new std::vector<vcd_node>();
 				vec.push_back(node);
-				int time = net_change->time;
+				int time = (int) net_change.time;
 				vcdData.insert(std::pair<int, std::vector<vcd_node> > (time, vec) );
 			}
 			else { //key exist
@@ -111,8 +114,8 @@ void VCDWiter::write_vcd(char* filename_ ) {
 
 	myfile << "$upscope $end" << std::endl;
 	myfile << "$enddefinitions $end" << std::endl;
-	for (std::map<int , std::vector<vcd_node> >::iterator it = vcdData.begin(); it != vcdData.end(); it++) {
-		int time = it->first;
+	for (std::map<simtime_t , std::vector<vcd_node> >::iterator it = vcdData.begin(); it != vcdData.end(); it++) {
+		simtime_t time = it->first;
 		std::vector<vcd_node> changes = it->second;
 		myfile << "#" << time << std::endl;
 		for (std::vector<vcd_node>::iterator chit = changes.begin(); chit != changes.end(); chit++) {

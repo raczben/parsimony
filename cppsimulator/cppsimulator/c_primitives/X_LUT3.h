@@ -54,7 +54,7 @@ namespace CPrimitives {
 			ADR2_A0_B->register_event_reader(this);
 		}
 
-		void calculate(int time){
+		void calculate(simtime_t time){
 			calculate_LUT(time,
 				INIT,
 				O_A0_B,

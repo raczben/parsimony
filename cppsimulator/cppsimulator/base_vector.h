@@ -31,17 +31,22 @@ class Vector {
   unsigned capacity_;  // allocated
   unsigned size_;      // used
   enum { initialSize=4 };
+  T* errorRet;
 
 
 public:
   typedef T* iterator;
 
-  Vector() :data_(0), capacity_(0), size_(0) {
+  Vector(T errorRet = (T) 0) :data_(0), capacity_(0), size_(0){
     reserve(initialSize);
+	this->errorRet = new T;
+	*(this->errorRet) = errorRet;
   }
 
-  Vector(unsigned n) :data_(0), capacity_(0), size_(0) {
+  Vector(unsigned n, T errorRet = (T)0) :data_(0), capacity_(0), size_(0) {
     resize(n);
+	this->errorRet = new T;
+	*(this->errorRet) = errorRet;
   }
 
   ~Vector() {
@@ -112,10 +117,14 @@ public:
 
   T& get(unsigned i) const
   {
-	  if (i<size_)
+	  if (i < size_)
 		  return *(data_ + i);
-	  else
-		  throw "my_array: operator[]: index out of range";
+	  //else
+	  //T ret = out_of_range();
+	  //throw "OoR";
+	  return out_of_range();// out_of_range();
+		  //throw "OoR";
+	//throw "my_array: operator[]: index out of range";
   }
 
   T& get_last() const
@@ -164,6 +173,10 @@ public:
 
   void remove_last() {
 	  remove(size_ - 1);
+  }
+
+  T& out_of_range() const {
+	  return *errorRet;
   }
 
 

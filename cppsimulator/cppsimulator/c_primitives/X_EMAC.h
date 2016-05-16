@@ -1982,7 +1982,7 @@ namespace CPrimitives {
 		// TODO
 		}
 		
-		void calculate(int time){
+		void calculate(simtime_t time){
 		// TODO
 		}
 		};

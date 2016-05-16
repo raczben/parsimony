@@ -102,7 +102,7 @@ namespace CPrimitives {
 			S_A3_B->register_event_reader(this);
 		}
 
-		void calculate(int time){
+		void calculate(simtime_t time){
 			value_t ci_or_cyinit;
 			value_t di_in_0, di_in_1, di_in_2, di_in_3;
 			value_t s_in_0, s_in_1, s_in_2, s_in_3;

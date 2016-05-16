@@ -1,4 +1,8 @@
-#pragma once
+#ifndef PRIMITIVE_H
+#define PRIMITIVE_H
+
+#include "sim_types.h"
+
 class Primitive
 {
 private:
@@ -8,7 +12,8 @@ public:
 	~Primitive();
 
 
-	virtual void calculate(int time) = 0;
+	virtual void calculate(simtime_t time) = 0;
 	
 };
 
+#endif // PRIMITIVE_H

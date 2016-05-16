@@ -53,7 +53,7 @@ void SimulatorEngine::register_primitive(Primitive * primitive)
 void SimulatorEngine::prepare_for_running() {
 	int primitivesPerThread;
 	int from, toPlusOne = 0;
-	for (int i = 0; i < workers.size(); i++) {
+	for (unsigned i = 0; i < workers.size(); i++) {
 		primitivesPerThread = (primitives.size()-toPlusOne) / (workers.size()-i);
 		from = toPlusOne;
 		toPlusOne = primitivesPerThread + from;
@@ -78,7 +78,7 @@ void SimulatorEngine::run(simtime_t time) {
 
 	try {
 		printf("Create Threads:  ");
-		for (int i = 0; i < workers.size(); i++) {
+		for (unsigned i = 0; i < workers.size(); i++) {
 			printf(" %d ", i);
 			SimRunnerThread* worker = workers.get(i);
 			worker->runUntil = engine->get_current_time() + time;
@@ -97,7 +97,7 @@ void SimulatorEngine::run(simtime_t time) {
 	printf("\n");
 	try {
 	printf("Wait for TH:  ");
-	for (int i = 0; i < threads.size(); i++) {
+	for (unsigned i = 0; i < threads.size(); i++) {
 		printf(" %d ", i);
 		
 		threads.get(i)->join();

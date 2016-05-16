@@ -26,7 +26,7 @@ class NetFlow {
 	char *name;
 
 	// The data in the past/future
-	base::Vector<net_change_t*> data;
+	base::Vector<net_change_t> data;
 
 	// points on the actual time-slot in the data vector.
 	// If there is a entry with the current timeslot it points on this, 
@@ -129,7 +129,7 @@ public:
 	/******************************************************************************
 	*
 	*****************************************************************************/
-	void step_time(const unsigned time_to_step);
+	void step_time(const simtime_t time_to_step);
 
 	/******************************************************************************
 	*
@@ -140,7 +140,7 @@ public:
 	*
 	*****************************************************************************/
 	// TODO const
-	base::Vector<net_change_t*> get_data() { return data; }
+	base::Vector<net_change_t> get_data() { return data; }
 
 	/******************************************************************************
 	*

@@ -39,7 +39,7 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 			O_A0_B->register_event_reader(this);
 		}
-		void calculate(int time){
+		void calculate(simtime_t time){
 			O_A0_B->set_at(new_net_level(LOW), time);
 		}
 		};

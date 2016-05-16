@@ -66,7 +66,7 @@ namespace CPrimitives {
 			SET_A0_B->register_event_reader(this);
 		}
 
-		void calculate(int time){
+		void calculate(simtime_t time){
 			// Async RESET
 			if (RST_A0_B->is_equal_at(HIGH, time)) {
 				O_A0_B->set_at(
