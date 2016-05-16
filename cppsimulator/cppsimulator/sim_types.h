@@ -26,5 +26,9 @@ typedef unsigned char bit_t;
 
 typedef enum { TRUE, FALSE} parameter_enum_t;
 
+///////// Exception codes
+typedef int exception_code_t;
+#define NET_FLOW_VECTOR_IS_FULL ( (exception_code_t) ( 1001 ) )
+
 
 #endif //SIMULATOR_TYPES_H

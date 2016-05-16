@@ -9,6 +9,7 @@
 
 #include <stdbool.h>
 #include "base_vector.h"
+#include "netFlowVector.h"
 #include "sim_types.h"
 #include "SimulatorEngine.h"
 #include "shared.h"
@@ -26,7 +27,7 @@ class NetFlow {
 	char *name;
 
 	// The data in the past/future
-	base::Vector<net_change_t> data;
+	base::netFlowVector data;
 
 	// points on the actual time-slot in the data vector.
 	// If there is a entry with the current timeslot it points on this, 
@@ -61,15 +62,15 @@ class NetFlow {
 
 	//
 public:
-	NetFlow(const NetFlow& other);
-	NetFlow();
+	//NetFlow(const NetFlow& other);
+	//NetFlow();
 	~NetFlow();
 
 	/******************************************************************************
 	* returns the name of net_flow's net
 	*****************************************************************************/
 	//net_flow_t* new_net_flow(const char* name, net_level_t initial_level, bool monitor_change = false);
-	NetFlow(const char * name, net_level_t initial_level = new_net_level(UNDEFINED), bool monitor_change = false);
+	NetFlow(const char * name, unsigned lengthOfData = 16, net_level_t initial_level = new_net_level(UNDEFINED), bool monitor_change = false);
 
 	/******************************************************************************
 	* initialize the net_flow. Use new_net_flow instead.
@@ -108,7 +109,10 @@ public:
 	/******************************************************************************
 	*
 	*****************************************************************************/
-	bool get_change_flag() { return changed_in_this_delta; }
+	bool get_change_flag() {
+		//return false;
+		return changed_in_this_delta;
+	}
 
 
 	/******************************************************************************
@@ -140,7 +144,7 @@ public:
 	*
 	*****************************************************************************/
 	// TODO const
-	base::Vector<net_change_t> get_data() { return data; }
+	base::netFlowVector get_data() { return data; }
 
 	/******************************************************************************
 	*
@@ -152,6 +156,10 @@ public:
 	*
 	*****************************************************************************/
 	void NetFlow::generate_clock(simtime_t half_period, simtime_t from, simtime_t until, value_t start_value = LOW);
+
+	void expand_data() {
+		data.expand();
+	}
 
 	/**************************************************************************
 	 *
@@ -260,39 +268,45 @@ public:
 
 	/******************************************************************************
 	* Sets the net_flow value at the given time. The 0 time is the start
-	* of the simulation.
+	* of the simulation. Returns true if the value of this net has been changed in
+	* this delta.
 	*****************************************************************************/
-	void set_at(const net_level_t level, const simtime_t set_time);
+	bool set_at(const net_level_t level, const simtime_t set_time);
 
 
 	/******************************************************************************
-	 *
+	 * Returns true if the value of this net has been changed in
+	 * this delta.
 	 *****************************************************************************/
-	void set_from_now(const net_level_t level, const simtime_t set_time);
+	bool set_from_now(const net_level_t level, const simtime_t set_time);
 
 
 	/******************************************************************************
-	 *
+	 * Returns true if the value of this net has been changed in
+	 * this delta.
 	 *****************************************************************************/
-	void set_now(const net_level_t level);
+	bool set_now(const net_level_t level);
 
 
 	/******************************************************************************
-	 *
+	 * Returns true if the value of this net has been changed in
+	 * this delta.
 	 *****************************************************************************/
-	void set_now(const value_t val, const strength_t strength = strong);
+	bool set_now(const value_t val, const strength_t strength = strong);
 
 
 	/******************************************************************************
-	 *
+	 * Returns true if the value of this net has been changed in
+	 * this delta.
 	 *****************************************************************************/
-	void set_from_now(const value_t val, const simtime_t time, const strength_t strength = strong);
+	bool set_from_now(const value_t val, const simtime_t time, const strength_t strength = strong);
 
 
 	/******************************************************************************
-	 *
+	 * Returns true if the value of this net has been changed in
+	 * this delta.
 	 *****************************************************************************/
-	void set_at(const value_t val, const simtime_t time, const strength_t strength = strong);
+	bool set_at(const value_t val, const simtime_t time, const strength_t strength = strong);
 
 
 

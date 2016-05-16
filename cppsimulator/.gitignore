@@ -6,3 +6,4 @@
 cppsimulator.sdf
 *.vsp
 *.psess
+**/.vs/*

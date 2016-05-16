@@ -10,6 +10,7 @@
 #include "shared.h"
 #include "VCDWiter.h"
 #include <ctime>
+#include <iostream>
 
 #define CLOCKS_PER_MSEC  ( CLOCKS_PER_SEC / 1000 )
 
@@ -24,6 +25,9 @@
  * Choose the current testcase:
  ********************************************/
 #define TEST_TEST_CASE TEST_DUT_TEST
+
+
+#define NUMBER_OF_THREADS   ( 4 ) 
 
 
 
@@ -121,6 +125,8 @@ void run_TEST_DUT_test_stimulus() {
 	printf("run to 10 \n");
 	fflush(stdout);
 	engine->run(40000);
+	printf("RUN done\n");
+	fflush(stdout);
 
 }
 #endif
@@ -133,7 +139,7 @@ void start_simulation() {
 
 	printf("Creating simulator engine ... ");
 	fflush(stdout);
-	engine = new SimulatorEngine(4);
+	engine = new SimulatorEngine(NUMBER_OF_THREADS);
 	printf("    [  OK  ]\n");
 	fflush(stdout);
 
@@ -165,43 +171,63 @@ void start_simulation() {
 int main()
 {
 
-	const clock_t begin_time = clock();
+	try {
 
-	start_simulation();
+		const clock_t begin_time = clock();
 
-	const clock_t after_init_time = clock();
-	/*************************************************
-	* STimulus here:
-	**************************************************/
+		start_simulation();
+
+		const clock_t after_init_time = clock();
+		/*************************************************
+		* STimulus here:
+		**************************************************/
 #if TEST_TEST_CASE == LUT6_TEST
-	run_LUT6_test_stumulus();
+		run_LUT6_test_stumulus();
 #endif
 #if TEST_TEST_CASE == TEST_DUT_TEST
-	run_TEST_DUT_test_stimulus();
+		run_TEST_DUT_test_stimulus();
 #endif
 
 #if (TEST_TEST_CASE == CARRY4_TEST)
-	run_CARRY4_test_stumulus();
+		run_CARRY4_test_stumulus();
 #endif
 
 
-	const clock_t after_run_time = clock();
+		const clock_t after_run_time = clock();
 
-	VCDWiter vcdWriter("parsimony.vcd");
-	vcdWriter.write_vcd();
+		VCDWiter vcdWriter("parsimony.vcd");
+		vcdWriter.write_vcd();
 
-	printf("Exiting... \n By");
-	fflush(stdout);
+		printf("Exiting... \n By");
+		fflush(stdout);
 
 
-	const clock_t finish_time = clock();
+		const clock_t finish_time = clock();
 
-	printf("Summary of time of running:\n");
-	printf(" Init     :  %.0f ms\n", float(after_init_time - begin_time) / CLOCKS_PER_MSEC);
-	printf(" Run      :  %.0f ms\n", float(after_run_time - after_init_time) / CLOCKS_PER_MSEC);
-	printf(" VCD write:  %.0f ms\n", float(finish_time - after_run_time) / CLOCKS_PER_MSEC);
-	printf("Sum       :  %.0f ms\n", float(finish_time - begin_time) / CLOCKS_PER_MSEC);
-
+		printf("Summary of time of running:\n");
+		printf(" Init     :  %.0f ms\n", float(after_init_time - begin_time) / CLOCKS_PER_MSEC);
+		printf(" Run      :  %.0f ms\n", float(after_run_time - after_init_time) / CLOCKS_PER_MSEC);
+		printf(" VCD write:  %.0f ms\n", float(finish_time - after_run_time) / CLOCKS_PER_MSEC);
+		printf("Sum       :  %.0f ms\n", float(finish_time - begin_time) / CLOCKS_PER_MSEC);
+	}
+	catch (const std::exception &exc)
+	{
+		// catch anything thrown within try block that derives from std::exception
+		std::cerr << "SimulatorEngine::run: start sim: " << exc.what() << std::endl;
+		exit(-1);
+	}
+	catch (const char * ex)
+	{
+		// catch anything thrown within try block that derives from std::exception
+		std::cerr << ex << std::endl;
+		exit(-1);
+	}
+	catch (...)
+	{
+		// catch anything thrown within try block that derives from std::exception
+		std::cerr << "Semi Unhandled EX in main" << std::endl;
+		exit(-1);
+	}
 
 	return 0;
 }

@@ -1,4 +1,3 @@
-#include "NetFlow.h"
 
 #include "NetFlow.h"
 #include "simulator_base.h"
@@ -12,11 +11,9 @@
 /******************************************************************************
 * returns the name of net_flow's net
 *****************************************************************************/
-NetFlow::NetFlow(const char* name, net_level_t initial_level, bool monitor_change):
+NetFlow::NetFlow(const char* name, unsigned lengthOfData, net_level_t initial_level, bool monitor_change):
 	name(0),
-	data({
-		{UNDEFINED, strong},
-		(simtime_t)UINT64_MAX })
+	data(lengthOfData)
 {
 	init(name, initial_level, monitor_change);
 }
@@ -100,7 +97,7 @@ net_level_t NetFlow::get_at(simtime_t serach_time) const {
 	//m.lock();
 	int index = __find_nearest_earlier_index__(serach_time);
 
-	tmp_net_value_change = data[index];
+	tmp_net_value_change = data.get(index);
 
 	//m.unlock();
 	return tmp_net_value_change.level;
@@ -159,7 +156,7 @@ bool NetFlow::posedge_at(simtime_t time) {
 * Sets the net_flow value at the given time. The 0 time is the start
 * of the simulation.
 *****************************************************************************/
-void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
+bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	net_change_t new_element;//= new net_change_t();
 	new_element.level = level;
 	new_element.time = set_time;
@@ -167,9 +164,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	/**
 	* Negative settime is illegal
 	*/
-	if (set_time < 0) {
-		throw "set time is negative";
-	}
+	assert(set_time >= 0);
 
 	//std::unique_lock<std::mutex>(m);
 	//m.lock();
@@ -182,7 +177,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		now_index = 0;
 		changed_in_this_delta = true;
 	//	m.unlock();
-		return;
+		return changed_in_this_delta;
 	}
 
 	/**
@@ -190,7 +185,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	*/
 	if (is_equal_at(level, set_time)) {
 		//m.unlock();
-		return;	
+		return false;	
 	}
 	else {
 		// If the value has to be changed, and we are at now, there must be some rerun...
@@ -220,7 +215,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 			this->data.push_back(new_element);
 			now_index = 0;
 			//m.unlock();
-			return;
+			return changed_in_this_delta;
 		}
 		//size = data.size();
 	}
@@ -231,7 +226,7 @@ void NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	}
 
 	//m.unlock();
-	return;
+	return changed_in_this_delta;
 }
 
 
@@ -251,32 +246,32 @@ void NetFlow::clear_change_flag() {
 * set_value_from_now(net_flow, val, 0);
 * set_value_at(net_flow, val, get_current_time());
 *****************************************************************************/
-void NetFlow::set_from_now(const net_level_t level, const simtime_t set_time) {
-	set_at(level, set_time + engine->get_current_time());
+bool NetFlow::set_from_now(const net_level_t level, const simtime_t set_time) {
+	return set_at(level, set_time + engine->get_current_time());
 }
 
 
-void NetFlow::set_from_now(const value_t val, const simtime_t set_time, const strength_t strength) {
-	set_at(val, set_time + engine->get_current_time(), strength);
+bool NetFlow::set_from_now(const value_t val, const simtime_t set_time, const strength_t strength) {
+	return set_at(val, set_time + engine->get_current_time(), strength);
 }
 
 
-void NetFlow::set_at(const value_t val, const simtime_t time, const strength_t strength) {
-	set_at(new_net_level(val, strength), time);
-}
-
-/******************************************************************************
-
-*****************************************************************************/
-void NetFlow::set_now(const net_level_t level) {
-	set_from_now(level, 0);
+bool NetFlow::set_at(const value_t val, const simtime_t time, const strength_t strength) {
+	return set_at(new_net_level(val, strength), time);
 }
 
 /******************************************************************************
 
 *****************************************************************************/
-void NetFlow::set_now(const value_t val, const strength_t strength) {
-	set_from_now(val, 0, strength);
+bool NetFlow::set_now(const net_level_t level) {
+	return set_from_now(level, 0);
+}
+
+/******************************************************************************
+
+*****************************************************************************/
+bool NetFlow::set_now(const value_t val, const strength_t strength) {
+	return set_from_now(val, 0, strength);
 }
 
 int NetFlow::__find_nearest_earlier_index__(const simtime_t serach_time) const  {
@@ -307,7 +302,7 @@ int NetFlow::__find_nearest_earlier_index__(const simtime_t serach_time) const  
 
 
 	while (first_index <= last_index) {
-		tmp_net_value_change = data[middle_index];
+		tmp_net_value_change = data.get(middle_index);
 		tmp_time = tmp_net_value_change.time;
 		if (tmp_time < serach_time) {
 			first_index = middle_index + 1;
@@ -346,7 +341,7 @@ void NetFlow::step_time(const simtime_t time_to_step)
 	while (true) {
 		if (now_index + 1 >= (signed)data.size())
 			return;
-		if (data[now_index + 1].time > time_to_step)
+		if (data.get(now_index + 1).time > time_to_step)
 			return;
 		now_index++;
 		if (time_to_step == data.get(now_index).time ) {
@@ -423,11 +418,19 @@ void NetFlow::generate_clock(simtime_t period, simtime_t until, value_t start_va
 	generate_clock(period, engine->get_current_time(), until, start_value);
 }
 
-
+// Note that this function is not thread safe
 void NetFlow::generate_clock(simtime_t half_period, simtime_t from, simtime_t until, value_t start_value) {
 
 	while (from < until) {
-		set_at(new_net_level(start_value), from);
+		try {
+			set_at(new_net_level(start_value), from);
+		}
+		
+		catch (exception_code_t ex) {
+			if (NET_FLOW_VECTOR_IS_FULL == ex) {
+				engine->expand_all_nets();
+			}
+		}
 
 		if (LOW == start_value) {
 			start_value = HIGH;

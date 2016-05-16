@@ -64,16 +64,49 @@ void SimRunnerThread::step_time()
 //}
 
 void SimRunnerThread::__run__() {
+	bool expandNets;
 	try {
 		while (runUntil > engine->get_current_time()) {
-			step_time();
+			try {
+				step_time();
+			}
+			catch (exception_code_t code)
+			{
+				if (code == NET_FLOW_VECTOR_IS_FULL) {
+					expandNets = true;
+				}
+				
+				// catch anything thrown within try block that derives from std::exception
+				std::cerr << "SimRunnerThread::__run__() exception code: " << code << std::endl;
+				exit(-1);
+			}
+			synch_threads();
+			if (true == expandNets) {
+				if (threadID == 0) {
+					printf("Expanding nets during running...\n");
+					engine->expand_all_nets();
+					expandNets = false;
+				}
+			}
 			synch_threads();
 		}
 	}
-	catch (const std::exception &exc)
+	catch (exception_code_t code)
 	{
 		// catch anything thrown within try block that derives from std::exception
-		std::cerr << "SimRunnerThread::__run__(): " << exc.what() << std::endl;
+		std::cerr << "SimRunnerThread::__run__() exception code: " << code << std::endl;
+		exit(-1);
+	}
+	catch (char* str)
+	{
+		// catch anything thrown within try block that derives from std::exception
+		std::cerr << "SimRunnerThread::__run__() exception char*: " << str << std::endl;
+		exit(-1);
+	}
+	catch (...)
+	{
+		// catch anything thrown within try block that derives from std::exception
+		std::cerr << "SimRunnerThread::__run__()2 "  << std::endl;
 		exit(-1);
 	}
 }

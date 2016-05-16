@@ -15,25 +15,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="NetFlow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="simulator_base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sim_types.h">
+    <ClInclude Include="Barrier.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="base_vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SimulatorEngine.h">
+    <ClInclude Include="built_in_primitives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetFlow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="netinstatiation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="shared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sim_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimRunnerThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simulator_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VCDWiter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c_primitives\bscntrl_iserdese1_vlog.h">
@@ -61,6 +79,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c_primitives\plg_oserdese1_vlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_primitives\primitiveinclude.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c_primitives\rank12d_oserdese1_vlog.h">
@@ -912,39 +933,33 @@
     <ClInclude Include="c_primitives\X_ZERO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Primitive.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VCDWiter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="built_in_primitives.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NetLevel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RunnerWorker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="semaphore.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Synchroniser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Barrier.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SimRunnerThread.h">
+    <ClInclude Include="netFlowVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="builtin_primitives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="cppsimulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cppTemplate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="NetFlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="netinstatiation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="primitiveInstatiation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimRunnerThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="simulator_base.cpp">
@@ -953,28 +968,10 @@
     <ClCompile Include="SimulatorEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cppTemplate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="primitiveInstatiation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Primitive.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="netinstatiation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VCDWiter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="builtin_primitives.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SimRunnerThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

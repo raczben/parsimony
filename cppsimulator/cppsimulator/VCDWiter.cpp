@@ -37,7 +37,7 @@ void VCDWiter::fillVCDData(){
 		net = engine->get_net(netIndex);
 		netIDToName.insert(std::pair<const char*, char>(net->get_name(), id));
 		
-		base::Vector<net_change_t> data = net->get_data();
+		base::netFlowVector data = net->get_data();
 		for (unsigned i = 0; i < data.size(); i++) {
 			net_change_t net_change = data.get(i);
 			const char* val = to_string(net_change.level.value);

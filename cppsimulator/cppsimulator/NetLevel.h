@@ -7,6 +7,8 @@
 #ifndef NET_LEVEL_H
 #define NET_LEVEL_H
 
+#include "sim_types.h"
+
 /*******************************************************************************
 * value_t is an enum which can be LOW (means 0), HIGH (means 1)
 * UNDEFINED (means could be any 1 or 0), HIGH_Z (means there is no driver
@@ -126,5 +128,18 @@ struct net_change_struct {
 };
 typedef struct net_change_struct net_change_t;
 
+const net_level_t NET_LEVEL_DUMMY_VAL2 = { // or maybe FOO_DEFAULT or something
+	 UNDEFINED, strong 
+};
+
+
+const simtime_t TIME_DUMMY_VAL2 =  // or maybe FOO_DEFAULT or something
+	UINT64_MAX;
+
+const net_change_t NET_CHANGE_DUMMY_VAL2 = { // or maybe FOO_DEFAULT or something
+	NET_LEVEL_DUMMY_VAL2, (simtime_t)UINT64_MAX
+};
+
+#define NET_CHANGE_DUMMY_VAL = ( { { UNDEFINED, strong },(simtime_t)UINT64_MAX } )
 
 #endif // NET_LEVEL_H

@@ -36,7 +36,7 @@ value_t get_value(const NetFlow* const net, simtime_t time, value_t atNull = LOW
  * calculate_LUT() is a generic calculator for LUTs
  * it can be used up to LUT 6
  *************************************************/
-void calculate_LUT(simtime_t time,
+bool calculate_LUT(simtime_t time,
 	uint64_t lut,
 	NetFlow* out,
 	const NetFlow* const in0,
@@ -52,7 +52,7 @@ void calculate_LUT(simtime_t time,
  * calculate_BUF() is a generic function for calculate a BUFFER.
  * It copies the input to the output without delay.
  *******************************************************************************/
-void calculate_BUF(simtime_t time,
+bool calculate_BUF(simtime_t time,
 	NetFlow* out,
 	const NetFlow* const in
 	);

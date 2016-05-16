@@ -73,6 +73,11 @@ Primitive * SimulatorEngine::get_primitive(int netIndex)
 	return primitives.get(netIndex);
 }
 
+void SimulatorEngine::expand_all_nets() {
+	for (unsigned i = 0; i < get_net_count(); i++) {
+		get_net(i)->expand_data();
+	}
+}
 
 void SimulatorEngine::run(simtime_t time) {
 
@@ -87,10 +92,10 @@ void SimulatorEngine::run(simtime_t time) {
 
 		}
 	}
-	catch (const std::exception &exc)
+	catch (...)
 	{
 		// catch anything thrown within try block that derives from std::exception
-		std::cerr << "SimulatorEngine::run: start sim: " << exc.what() << std::endl;
+		std::cerr << "SimulatorEngine::run: start sim " << std::endl;
 		exit(-1);
 	}
 
@@ -107,10 +112,10 @@ void SimulatorEngine::run(simtime_t time) {
 
 	}
 	}
-	catch (const std::exception &exc)
+	catch (...)
 	{
 		// catch anything thrown within try block that derives from std::exception
-		std::cerr << "SimulatorEngine::run: join sim: " << exc.what() << std::endl;
+		std::cerr << "SimulatorEngine::run: join sim " << std::endl;
 		exit(-1);
 	}
 
