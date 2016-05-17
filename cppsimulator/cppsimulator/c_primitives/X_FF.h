@@ -40,7 +40,7 @@ namespace CPrimitives {
 		NetFlow* I_A0_B,				// net ID: I lsb: 0  msb: 0 INPUT
 		NetFlow* RST_A0_B,				// net ID: RST lsb: 0  msb: 0 INPUT
 		NetFlow* SET_A0_B				// net ID: SET lsb: 0  msb: 0 INPUT
-		) :Primitive(name) {
+		) :Primitive(name, true) {
 
 			// Assign parameters and ports: 
 			//Verilog Parameters:
@@ -66,22 +66,20 @@ namespace CPrimitives {
 			SET_A0_B->register_event_reader(this);
 		}
 
-		void calculate(simtime_t time){
+		bool calculate(simtime_t time){
 			// Async RESET
 			if (RST_A0_B->is_equal_at(HIGH, time)) {
-				O_A0_B->set_at(
+				return O_A0_B->set_at(
 					new_net_level(LOW),
 					time
 					);
-				return;
 			}
 			// Async SET
 			if (SET_A0_B->is_equal_at(HIGH, time)) {
-				O_A0_B->set_at(
+				return O_A0_B->set_at(
 					new_net_level(HIGH),
 					time
 					);
-				return;
 			}
 
 			/**
@@ -91,46 +89,16 @@ namespace CPrimitives {
 			 */
 			if (CLK_A0_B->posedge_at(time)) {
 				if (CE_A0_B->is_equal_prev(HIGH, time)) {
-					O_A0_B->set_at(
+					return O_A0_B->set_at(
 						new_net_level(I_A0_B->get_value_prev(time)),
 						time
 						);
-					return;
 				}
 			}
 
-
+			return false;
 		}
 
-		bool if_AND_d_ce_set_rst(
-			simtime_t time,
-			value_t d_val,
-			value_t ce_val,
-			value_t set_val,
-			value_t reset_val
-			) {
-			if (d_val >= 0) {
-				if (!I_A0_B->is_equal_at(d_val, time)) {
-					return false;
-				}
-			}
-			if (ce_val >= 0) {
-				if (!CE_A0_B->is_equal_at(ce_val, time)) {
-					return false;
-				}
-			}
-			if (set_val >= 0) {
-				if (!SET_A0_B->is_equal_at(set_val, time)) {
-					return false;
-				}
-			}
-			if (reset_val >= 0) {
-				if (!RST_A0_B->is_equal_at(reset_val, time)) {
-					return false;
-				}
-			}
-			return true;
-		}
 
 	};
 		

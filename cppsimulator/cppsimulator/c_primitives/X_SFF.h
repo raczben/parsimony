@@ -45,7 +45,7 @@ namespace CPrimitives {
 			NetFlow* SET_A0_B, // net ID: SET lsb: 0  msb: 0 INPUT
 			NetFlow* SRST_A0_B, // net ID: SRST lsb: 0  msb: 0 INPUT
 			NetFlow* SSET_A0_B // net ID: SSET lsb: 0  msb: 0 INPUT
-			):Primitive(name){
+			):Primitive(name, true){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
@@ -73,21 +73,19 @@ namespace CPrimitives {
 			SET_A0_B->register_event_reader(this);
 		}
 		
-		void calculate(simtime_t time){
+		bool calculate(simtime_t time){
 			if (RST_A0_B->is_equal_at(HIGH, time)) {
-				O_A0_B->set_at(
+				return O_A0_B->set_at(
 					LOW,
 					time
 					);
-				return;
 			}
 			// Async SET
 			if (SET_A0_B->is_equal_at(HIGH, time)) {
-				O_A0_B->set_at(
+				return O_A0_B->set_at(
 					HIGH,
 					time
 					);
-				return;
 			}
 
 			/**
@@ -98,26 +96,25 @@ namespace CPrimitives {
 			if (CLK_A0_B->posedge_at(time)) {
 				if (CE_A0_B->is_equal_prev(HIGH, time)) {
 					if (SRST_A0_B->is_equal_prev(HIGH, time)) {
-						O_A0_B->set_at(
+						return O_A0_B->set_at(
 							LOW,
 							time
 							);
-						return;
 					}
 					if (SSET_A0_B->is_equal_prev(HIGH, time)) {
-						O_A0_B->set_at(
+						return O_A0_B->set_at(
 							HIGH,
 							time
 							);
-						return;
 					}
-					O_A0_B->set_at(
+					return O_A0_B->set_at(
 						I_A0_B->get_value_prev(time),
 						time
 						);
-					return;
 				}
 			}
+
+			return false;
 		}
 
 		};

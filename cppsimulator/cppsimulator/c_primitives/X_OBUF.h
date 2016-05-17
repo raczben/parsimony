@@ -23,6 +23,7 @@ namespace CPrimitives {
 		NetFlow* O_A0_B; // net ID: O lsb: 0  msb: 0 OUTPUT
 		NetFlow* I_A0_B; // net ID: I lsb: 0  msb: 0 INPUT
 		
+		
 		public: X_OBUF(
 			const char * name,
 			//Verilog Parameters:
@@ -34,7 +35,7 @@ namespace CPrimitives {
 			//Verilog Ports in definition order:
 			NetFlow* O_A0_B, // net ID: O lsb: 0  msb: 0 OUTPUT
 			NetFlow* I_A0_B // net ID: I lsb: 0  msb: 0 INPUT
-			):Primitive(name){
+			):Primitive(name, true){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
@@ -55,8 +56,8 @@ namespace CPrimitives {
 			I_A0_B->register_event_reader(this);
 		}
 
-		void calculate(simtime_t time){
-			calculate_BUF(time, O_A0_B, I_A0_B);
+		bool  calculate(simtime_t time){
+			return calculate_BUF(time, O_A0_B, I_A0_B);
 		}
 
 	};

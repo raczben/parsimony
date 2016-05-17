@@ -25,7 +25,16 @@ class SimRunnerThread
 	Barrier *barrier;
 	unsigned int processPrimitivesFrom;	//inclusive
 	unsigned int processPrimitivesToPlusOne;	//exclusive
+	
+	/********************************
+	 * Syncronization objects:
+	 *******************************/
+	uint8_t localLoopCntr = 0;
+	static bool globalRerunFlag[2];
+
+	// DEPRECATED
 	static bool rerunFlag;
+
 public:
 	simtime_t runUntil;
 	//std::thread *my_worker_thread;
@@ -79,16 +88,24 @@ public:
 	*************************************************************************/
 	void process_primitives_thread(base::Vector<Primitive*>* my_primitives, simtime_t time);
 
-	void process_primitives(simtime_t time);
+	bool process_primitives(simtime_t time);
 
-	bool fetch_need_to_rerun_ts();
+	bool fetch_need_to_rerun_ts_ansi();
+
+	void set_global_rerun_flag(bool localFalg);
 
 	/**************************************************************************
 	* need_to_rerun_ts() go therew the nets and return true if the value has
 	* been changed of any critical net. Critical is all net which output is
 	* read as event.
 	*************************************************************************/
-	bool need_to_rerun_ts();
+	bool need_to_rerun_ts_ansi();
+
+
+	/**************************************************************************
+	* need_to_rerun_ts2()
+	*************************************************************************/
+	bool need_to_rerun_ts2();
 
 	/**************************************************************************
 	* step_delta() call all nets step delta function to clear the change flags.

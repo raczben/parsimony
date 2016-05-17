@@ -161,6 +161,8 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	new_element.level = level;
 	new_element.time = set_time;
 
+	bool this_set_change_in_this_delta = false;
+
 	/**
 	* Negative settime is illegal
 	*/
@@ -175,9 +177,9 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	if (data.empty()) {
 		this->data.push_back(new_element);
 		now_index = 0;
-		changed_in_this_delta = true;
+		this_set_change_in_this_delta = true;
 	//	m.unlock();
-		return changed_in_this_delta;
+		return this_set_change_in_this_delta;
 	}
 
 	/**
@@ -190,7 +192,7 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	else {
 		// If the value has to be changed, and we are at now, there must be some rerun...
 		if (set_time == engine->get_current_time()) {
-			changed_in_this_delta = true;
+			this_set_change_in_this_delta = true;
 		}
 	}
 
@@ -215,7 +217,7 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 			this->data.push_back(new_element);
 			now_index = 0;
 			//m.unlock();
-			return changed_in_this_delta;
+			return this_set_change_in_this_delta;
 		}
 		//size = data.size();
 	}
@@ -226,7 +228,7 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	}
 
 	//m.unlock();
-	return changed_in_this_delta;
+	return this_set_change_in_this_delta;
 }
 
 

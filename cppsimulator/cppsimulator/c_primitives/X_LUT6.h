@@ -38,7 +38,7 @@ namespace CPrimitives {
 		NetFlow* ADR3_A0_B,		// net ID: ADR3 lsb: 0  msb: 0 INPUT
 		NetFlow* ADR4_A0_B,		// net ID: ADR4 lsb: 0  msb: 0 INPUT
 		NetFlow* ADR5_A0_B		// net ID: ADR5 lsb: 0  msb: 0 INPUT
-		) :Primitive(name) {
+		) :Primitive(name, true) {
 
 		// Assign parameters and ports: 
 		//Verilog Parameters:
@@ -66,9 +66,9 @@ namespace CPrimitives {
 				ADR5_A0_B->register_event_reader(this);
 			}
 
-			void calculate(simtime_t time) {
+			bool calculate(simtime_t time) {
 
-				calculate_LUT(time,
+				return calculate_LUT(time,
 					INIT,
 					O_A0_B,
 					ADR0_A0_B,

@@ -221,7 +221,7 @@ namespace CPrimitives {
 		// TODO
 		}
 		
-		void calculate(simtime_t time){
+		bool calculate(simtime_t time){
 		// TODO
 		}
 		};

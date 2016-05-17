@@ -2,7 +2,7 @@
 
 
 
-Primitive::Primitive(const char* name)
+Primitive::Primitive(const char* name, bool calculateCodeDone): calculateCodeDone(calculateCodeDone)
 {
 	this->name = name;
 }

@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+bool SimRunnerThread::globalRerunFlag[2] = { false, false };
 bool SimRunnerThread::rerunFlag = false;
 
 SimRunnerThread::SimRunnerThread(int ID, Barrier* barrier): threadID(ID), barrier(barrier)
@@ -14,9 +15,11 @@ SimRunnerThread::~SimRunnerThread()
 }
 
 void SimRunnerThread::stepAllNets() {
-	for (unsigned i = 0; i < engine->get_net_count(); i++) {
-		NetFlow* net = engine->get_net(i);
-		net->step_time(engine->get_current_time());
+	if (threadID == 0) {
+		for (unsigned i = 0; i < engine->get_net_count(); i++) {
+			NetFlow* net = engine->get_net(i);
+			net->step_time(engine->get_current_time());
+		}
 	}
 }
 
@@ -26,27 +29,31 @@ void SimRunnerThread::synch_threads() {
 
 void SimRunnerThread::step_time()
 {
-	if (threadID == 0) {
-		stepAllNets();
+	stepAllNets();
+	
+	if (!need_to_rerun_ts_ansi()) {
+		return;
 	}
 
-	while (need_to_rerun_ts()) {
+	bool localNeedToRerun;
+	
+	
+	do{
 #if VERBOSE > 0
 		printf("Running TS: %ld", engine->__time__);
 		fflush(stdout);
 #endif
-		if (threadID == 0) {		// Only MASTER-thread enter...
-			step_delta();			// Stepping delta (MASTER-thread only) (clear rerun flags in nets.)
-		}
+		
+		localNeedToRerun = process_primitives(engine->get_current_time());
+		set_global_rerun_flag(localNeedToRerun);
+		synch_threads();			
 
-		synch_threads();			// Other threads wait the MASTER-thread
-		process_primitives(engine->get_current_time());
 #if VERBOSE > 0
 		printf("   [  OK  ]\n");
 		fflush(stdout);
 #endif
 
-	}
+	}while (need_to_rerun_ts2());
 
 	if (threadID == 0) {
 		engine->__time__++;
@@ -131,17 +138,21 @@ void SimRunnerThread::step_delta() {
 //}
 
 
-void SimRunnerThread::process_primitives(simtime_t time) {
+bool SimRunnerThread::process_primitives(simtime_t time) {
 #if VERBOSE == 1
 	printf("processing primitives from %u to %u /n", processPrimitivesFrom, processPrimitivesToPlusOne);
 #endif
+	bool rerunDeltaFlag = false;
 	for (unsigned i = processPrimitivesFrom; i < processPrimitivesToPlusOne; i++) {
-		engine->get_primitive(i)->calculate(time);
+		if (engine->get_primitive(i)->calculate(time) ){
+			rerunDeltaFlag = true;
+		}
 	}
+	return rerunDeltaFlag;
 }
 
 
-bool SimRunnerThread::fetch_need_to_rerun_ts() {
+bool SimRunnerThread::fetch_need_to_rerun_ts_ansi() {
 	for (unsigned i = 0; i < engine->get_net_count(); i++) {
 		if (engine->get_net(i)->get_use_in_event()) {
 			if (engine->get_net(i)->get_change_flag()) {
@@ -155,11 +166,43 @@ bool SimRunnerThread::fetch_need_to_rerun_ts() {
 	return false;
 }
 
-bool SimRunnerThread::need_to_rerun_ts() {
+void SimRunnerThread::set_global_rerun_flag(bool localFalg) {
+	if (localFalg) {
+		rerunFlag = true;
+	}
+}
+
+
+bool SimRunnerThread::need_to_rerun_ts_ansi() {
 	synch_threads();
 	if (threadID == 0) {
-		rerunFlag = fetch_need_to_rerun_ts();
+		rerunFlag = fetch_need_to_rerun_ts_ansi();
 	}
 	synch_threads();
 	return rerunFlag;
+}
+
+bool SimRunnerThread::need_to_rerun_ts2() {
+	/***********************
+	 * clear_next_flag();
+	 **********************/
+	globalRerunFlag[localLoopCntr] = false;
+
+	/************************
+	 * step_loop_counter();
+	 ***********************/
+	if (1 == localLoopCntr) {
+		 localLoopCntr = 0;
+	}
+	else if (0 == localLoopCntr) {
+		localLoopCntr = 1;
+	}
+	else {
+		throw "localLoopCntr must be 0 or 1";
+	}
+
+	/***********************
+	 * return_current_flag();
+	 **********************/
+	return globalRerunFlag[localLoopCntr];
 }

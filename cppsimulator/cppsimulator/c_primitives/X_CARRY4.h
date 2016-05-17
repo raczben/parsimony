@@ -60,7 +60,7 @@ namespace CPrimitives {
 		NetFlow* S_A2_B, // net ID: S lsb: 0  msb: 3 INPUT
 		NetFlow* S_A1_B, // net ID: S lsb: 0  msb: 3 INPUT
 		NetFlow* S_A0_B // net ID: S lsb: 0  msb: 3 INPUT
-		):Primitive(name) {
+		):Primitive(name, true) {
 
 		// Assign parameters and ports: 
 		//Verilog Parameters:
@@ -102,7 +102,7 @@ namespace CPrimitives {
 			S_A3_B->register_event_reader(this);
 		}
 
-		void calculate(simtime_t time){
+		bool calculate(simtime_t time){
 			value_t ci_or_cyinit;
 			value_t di_in_0, di_in_1, di_in_2, di_in_3;
 			value_t s_in_0, s_in_1, s_in_2, s_in_3;
@@ -149,14 +149,16 @@ namespace CPrimitives {
 
 
 			//Set net levels
-			O_A0_B->set_at(new_net_level(o_out_0), time);
-			O_A1_B->set_at(new_net_level(o_out_1), time);
-			O_A2_B->set_at(new_net_level(o_out_2), time);
-			O_A3_B->set_at(new_net_level(o_out_3), time);
-			CO_A0_B->set_at(new_net_level(co_out_0), time);
-			CO_A1_B->set_at(new_net_level(co_out_1), time);
-			CO_A2_B->set_at(new_net_level(co_out_2), time);
-			CO_A3_B->set_at(new_net_level(co_out_3), time);
+			bool r1 = O_A0_B->set_at(new_net_level(o_out_0), time);
+			bool r2 = O_A1_B->set_at(new_net_level(o_out_1), time);
+			bool r3 = O_A2_B->set_at(new_net_level(o_out_2), time);
+			bool r4 = O_A3_B->set_at(new_net_level(o_out_3), time);
+			bool r5 = CO_A0_B->set_at(new_net_level(co_out_0), time);
+			bool r6 = CO_A1_B->set_at(new_net_level(co_out_1), time);
+			bool r7 = CO_A2_B->set_at(new_net_level(co_out_2), time);
+			bool r8 = CO_A3_B->set_at(new_net_level(co_out_3), time);
+
+			return r1 | r2 | r3 | r4 | r5 | r6 | r7 | r8;
 			 
 		}
 

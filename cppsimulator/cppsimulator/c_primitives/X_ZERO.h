@@ -24,7 +24,7 @@ namespace CPrimitives {
 			parameter_string_t LOC, // Default: "UNPLACED"
 			//Verilog Ports in definition order:
 			NetFlow* O_A0_B // net ID: O lsb: 0  msb: 0 OUTPUT
-			):Primitive(name){
+			):Primitive(name, true){
 			
 			// Assign parameters and ports: 
 			//Verilog Parameters:
@@ -39,8 +39,8 @@ namespace CPrimitives {
 		void register_wait_on_event_nets(){
 			O_A0_B->register_event_reader(this);
 		}
-		void calculate(simtime_t time){
-			O_A0_B->set_at(new_net_level(LOW), time);
+		bool calculate(simtime_t time){
+			return O_A0_B->set_at(new_net_level(LOW), time);
 		}
 		};
 		
