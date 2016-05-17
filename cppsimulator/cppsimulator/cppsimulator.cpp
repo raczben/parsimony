@@ -27,7 +27,7 @@
 #define TEST_TEST_CASE TEST_DUT_TEST
 
 
-#define NUMBER_OF_THREADS   ( 1 ) 
+#define NUMBER_OF_THREADS   ( 4 ) 
 
 
 

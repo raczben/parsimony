@@ -53,11 +53,19 @@ void SimulatorEngine::register_primitive(Primitive * primitive)
 void SimulatorEngine::prepare_for_running() {
 	int primitivesPerThread;
 	int from, toPlusOne = 0;
+
+	int netsPerThread;
+	int netFrom, netToPlusOne = 0;
 	for (unsigned i = 0; i < workers.size(); i++) {
 		primitivesPerThread = (primitives.size()-toPlusOne) / (workers.size()-i);
 		from = toPlusOne;
 		toPlusOne = primitivesPerThread + from;
-		workers.get(i)->set_processing_range(from, toPlusOne);
+
+		netsPerThread = (nets.size() - netToPlusOne) / (workers.size() - i);
+		netFrom = netToPlusOne;
+		netToPlusOne = netsPerThread + netFrom;
+
+		workers.get(i)->set_processing_range(from, toPlusOne, netFrom, netToPlusOne);
 	}
 }
 

@@ -17,11 +17,17 @@ SimRunnerThread::~SimRunnerThread()
 
 bool SimRunnerThread::stepAllNets() {
 	bool localChangeFlag = false;
-	if (threadID == 0) {
+	/*if (threadID == 0) {
 		for (unsigned i = 0; i < engine->get_net_count(); i++) {
 			if (engine->get_net(i)->step_time(engine->get_current_time())) {
 				localChangeFlag = true;
 			}
+		}
+	}*/
+
+	for (unsigned i = stepNetsFrom; i < stepNetsToPlusOne; i++) {
+		if (engine->get_net(i)->step_time(engine->get_current_time())) {
+			localChangeFlag = true;
 		}
 	}
 	return localChangeFlag;

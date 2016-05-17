@@ -25,6 +25,8 @@ class SimRunnerThread
 	Barrier *barrier;
 	unsigned int processPrimitivesFrom;	//inclusive
 	unsigned int processPrimitivesToPlusOne;	//exclusive
+	unsigned int stepNetsFrom;	//inclusive
+	unsigned int stepNetsToPlusOne;	//exclusive
 	
 	/********************************
 	 * Syncronization objects:
@@ -48,10 +50,18 @@ public:
 
 	void synch_threads();
 
-	void set_processing_range(int from, int toPlusOne) {
-		processPrimitivesFrom = from;
-		processPrimitivesToPlusOne = toPlusOne;
+	void set_processing_range(int primFrom, int primToPlusOne, int netFrom, int netToPlusOne) {
+		processPrimitivesFrom = primFrom;
+		processPrimitivesToPlusOne = primToPlusOne;
+		
+		stepNetsFrom = netFrom;
+		stepNetsToPlusOne = netToPlusOne;
 	}
+
+	/*void set_net_processing_range(int primFrom, int primToPlusOne) {
+		processPrimitivesFrom = primFrom;
+		processPrimitivesToPlusOne = primToPlusOne;
+	}*/
 
 
 	/**************************************************************************
