@@ -232,9 +232,9 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 }
 
 
-void NetFlow::step_delta() {
+/*void NetFlow::step_delta() {
 	clear_change_flag();
-}
+}*/
 
 
 void NetFlow::clear_change_flag() {
@@ -331,25 +331,28 @@ void NetFlow::register_driver(const driver_t & driver_primitive) {
 	this->drivers->push_back(driver_primitive);
 }
 
-void NetFlow::step_time(const simtime_t time_to_step)
+bool NetFlow::step_time(const simtime_t time_to_step)
 {
+	bool changed_in_this_ts = false;
+
 	if (data.size() == 1) {
 		now_index = 0;
 		if (time_to_step == now_index) {
-			changed_in_this_delta = true;
+			changed_in_this_ts = true;
 		}
-		return;
+		return changed_in_this_ts;
 	}
 	while (true) {
 		if (now_index + 1 >= (signed)data.size())
-			return;
+			return changed_in_this_ts;
 		if (data.get(now_index + 1).time > time_to_step)
-			return;
+			return changed_in_this_ts;
 		now_index++;
 		if (time_to_step == data.get(now_index).time ) {
-			changed_in_this_delta = true;
+			changed_in_this_ts = true;
 		}
 	}
+	//return changed_in_this_ts;
 }
 
 
@@ -406,7 +409,7 @@ void NetFlow::print_flow(int numOfChange) const {
 	for (int i = 0; i < numOfChange; i++) {
 		net_change_t change = data.get(i);
 		to_string(change.level, charBuff);
-		printf("   %lld: %s", change.time, charBuff);
+		printf("   %llu: %s", change.time, charBuff);
 	}
 	printf("\n");
 }
@@ -431,6 +434,7 @@ void NetFlow::generate_clock(simtime_t half_period, simtime_t from, simtime_t un
 		catch (exception_code_t ex) {
 			if (NET_FLOW_VECTOR_IS_FULL == ex) {
 				engine->expand_all_nets();
+				set_at(new_net_level(start_value), from);
 			}
 		}
 

@@ -70,7 +70,7 @@ public:
 	* returns the name of net_flow's net
 	*****************************************************************************/
 	//net_flow_t* new_net_flow(const char* name, net_level_t initial_level, bool monitor_change = false);
-	NetFlow(const char * name, unsigned lengthOfData = 16, net_level_t initial_level = new_net_level(UNDEFINED), bool monitor_change = false);
+	NetFlow(const char * name, unsigned lengthOfData = 256, net_level_t initial_level = new_net_level(UNDEFINED), bool monitor_change = false);
 
 	/******************************************************************************
 	* initialize the net_flow. Use new_net_flow instead.
@@ -99,7 +99,7 @@ public:
 	/******************************************************************************
 	*
 	*****************************************************************************/
-	void step_delta();
+	//void step_delta();
 
 	/******************************************************************************
 	*
@@ -133,7 +133,7 @@ public:
 	/******************************************************************************
 	*
 	*****************************************************************************/
-	void step_time(const simtime_t time_to_step);
+	bool step_time(const simtime_t time_to_step);
 
 	/******************************************************************************
 	*

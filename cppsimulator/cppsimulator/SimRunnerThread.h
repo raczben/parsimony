@@ -31,6 +31,7 @@ class SimRunnerThread
 	 *******************************/
 	uint8_t localLoopCntr = 0;
 	static bool globalRerunFlag[2];
+	static bool globalRunFlag[2];
 
 	// DEPRECATED
 	static bool rerunFlag;
@@ -43,7 +44,7 @@ public:
 	SimRunnerThread(int iD, Barrier* barrier);
 	~SimRunnerThread();
 
-	void stepAllNets();
+	bool stepAllNets();
 
 	void synch_threads();
 
@@ -94,6 +95,8 @@ public:
 
 	void set_global_rerun_flag(bool localFalg);
 
+	void set_global_run_flag(bool localFalg);
+
 	/**************************************************************************
 	* need_to_rerun_ts() go therew the nets and return true if the value has
 	* been changed of any critical net. Critical is all net which output is
@@ -106,6 +109,8 @@ public:
 	* need_to_rerun_ts2()
 	*************************************************************************/
 	bool need_to_rerun_ts2();
+
+	bool need_to_run_ts();
 
 	/**************************************************************************
 	* step_delta() call all nets step delta function to clear the change flags.

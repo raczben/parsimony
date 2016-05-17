@@ -131,11 +131,11 @@ void SimulatorEngine::run_to(simtime_t time) {
 	}
 }
 
-void SimulatorEngine::step_delta() {
+/*void SimulatorEngine::step_delta() {
 	for (unsigned i = 0; i < nets.size(); i++) {
 		nets.get(i)->step_delta();
 	}
-}
+}*/
 
 
 void SimulatorEngine::process_primitives_thread(base::Vector<Primitive*>* my_primitives , simtime_t time) {
@@ -183,6 +183,6 @@ void SimulatorEngine::writeWarning(char* message) {
 
 
 void SimulatorEngine::_writeMessage_(char* const pref, char* message) {
-	printf("%lld : %s: %s", get_current_time(), pref, message);
+	printf("%llu : %s: %s", get_current_time(), pref, message);
 	fflush(stdout);
 }

@@ -27,7 +27,7 @@
 #define TEST_TEST_CASE TEST_DUT_TEST
 
 
-#define NUMBER_OF_THREADS   ( 4 ) 
+#define NUMBER_OF_THREADS   ( 1 ) 
 
 
 
@@ -121,6 +121,7 @@ void run_TEST_DUT_test_stimulus() {
 	engine->run(15);
 	engine->get_net(NET_INDEX_RST_A0_B)->set_now(LOW);
 
+	//net->print_flow();
 
 	printf("run to 10 \n");
 	fflush(stdout);

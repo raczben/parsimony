@@ -3,7 +3,8 @@
 #include <iostream>
 
 bool SimRunnerThread::globalRerunFlag[2] = { false, false };
-bool SimRunnerThread::rerunFlag = false;
+bool SimRunnerThread::globalRunFlag[2] = { false, false };
+//bool SimRunnerThread::rerunFlag = false;
 
 SimRunnerThread::SimRunnerThread(int ID, Barrier* barrier): threadID(ID), barrier(barrier)
 {
@@ -14,13 +15,16 @@ SimRunnerThread::~SimRunnerThread()
 {
 }
 
-void SimRunnerThread::stepAllNets() {
+bool SimRunnerThread::stepAllNets() {
+	bool localChangeFlag = false;
 	if (threadID == 0) {
 		for (unsigned i = 0; i < engine->get_net_count(); i++) {
-			NetFlow* net = engine->get_net(i);
-			net->step_time(engine->get_current_time());
+			if (engine->get_net(i)->step_time(engine->get_current_time())) {
+				localChangeFlag = true;
+			}
 		}
 	}
+	return localChangeFlag;
 }
 
 void SimRunnerThread::synch_threads() {
@@ -29,32 +33,35 @@ void SimRunnerThread::synch_threads() {
 
 void SimRunnerThread::step_time()
 {
-	stepAllNets();
+	bool localNeedToRun;
+	localNeedToRun = stepAllNets();
+
+	set_global_run_flag(localNeedToRun);
+	synch_threads();
+
 	
-	if (!need_to_rerun_ts_ansi()) {
-		return;
+	if (need_to_run_ts()) {
+
+		bool localNeedToRerun;
+
+
+		do {
+#if VERBOSE > 0
+			printf("Running TS: %ld", engine->__time__);
+			fflush(stdout);
+#endif
+
+			localNeedToRerun = process_primitives(engine->get_current_time());
+			set_global_rerun_flag(localNeedToRerun);
+			synch_threads();
+
+#if VERBOSE > 0
+			printf("   [  OK  ]\n");
+			fflush(stdout);
+#endif
+
+		} while (need_to_rerun_ts2());
 	}
-
-	bool localNeedToRerun;
-	
-	
-	do{
-#if VERBOSE > 0
-		printf("Running TS: %ld", engine->__time__);
-		fflush(stdout);
-#endif
-		
-		localNeedToRerun = process_primitives(engine->get_current_time());
-		set_global_rerun_flag(localNeedToRerun);
-		synch_threads();			
-
-#if VERBOSE > 0
-		printf("   [  OK  ]\n");
-		fflush(stdout);
-#endif
-
-	}while (need_to_rerun_ts2());
-
 	if (threadID == 0) {
 		engine->__time__++;
 	}
@@ -71,7 +78,7 @@ void SimRunnerThread::step_time()
 //}
 
 void SimRunnerThread::__run__() {
-	bool expandNets;
+	bool expandNets = false;
 	try {
 		while (runUntil > engine->get_current_time()) {
 			try {
@@ -124,11 +131,11 @@ void SimRunnerThread::run_to(simtime_t time) {
 	}
 }
 
-void SimRunnerThread::step_delta() {
+/*void SimRunnerThread::step_delta() {
 	for (unsigned i = 0; i < engine->get_net_count(); i++) {
 		engine->get_net(i)->step_delta();
 	}
-}
+}*/
 
 
 //void SimRunnerThread::process_primitives_thread(base::Vector<Primitive*>* my_primitives, simtime_t time) {
@@ -168,11 +175,17 @@ bool SimRunnerThread::fetch_need_to_rerun_ts_ansi() {
 
 void SimRunnerThread::set_global_rerun_flag(bool localFalg) {
 	if (localFalg) {
-		rerunFlag = true;
+		globalRerunFlag[localLoopCntr] = true;
 	}
 }
 
+void SimRunnerThread::set_global_run_flag(bool localFalg) {
+	if (localFalg) {
+		globalRunFlag[localLoopCntr] = true;
+	}
+}
 
+/*
 bool SimRunnerThread::need_to_rerun_ts_ansi() {
 	synch_threads();
 	if (threadID == 0) {
@@ -180,13 +193,13 @@ bool SimRunnerThread::need_to_rerun_ts_ansi() {
 	}
 	synch_threads();
 	return rerunFlag;
-}
+}*/
 
 bool SimRunnerThread::need_to_rerun_ts2() {
 	/***********************
-	 * clear_next_flag();
-	 **********************/
-	globalRerunFlag[localLoopCntr] = false;
+	* return_current_flag();
+	**********************/
+	bool retFlag = globalRerunFlag[localLoopCntr];
 
 	/************************
 	 * step_loop_counter();
@@ -202,7 +215,32 @@ bool SimRunnerThread::need_to_rerun_ts2() {
 	}
 
 	/***********************
-	 * return_current_flag();
+	 * clear_next_flag();
 	 **********************/
-	return globalRerunFlag[localLoopCntr];
+	globalRerunFlag[localLoopCntr] = false;
+
+	return retFlag;
+}
+
+
+bool SimRunnerThread::need_to_run_ts() {
+	/***********************
+	* return_current_flag();
+	**********************/
+	bool retFlag = globalRunFlag[localLoopCntr];
+
+	/************************
+	***********************/
+	if (1 == localLoopCntr) {
+		globalRunFlag[0] = false;
+	}
+	else if (0 == localLoopCntr) {
+		globalRunFlag[1] = false;
+	}
+	else {
+		throw "localLoopCntr must be 0 or 1";
+	}
+
+
+	return retFlag;
 }
