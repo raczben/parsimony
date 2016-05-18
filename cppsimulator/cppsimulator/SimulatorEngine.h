@@ -27,6 +27,8 @@ class SimulatorEngine
 {
 
 	base::Vector<NetFlow*> nets;
+	base::Vector<char*> nameOfNets;
+
 
 	base::Vector< SimRunnerThread* > workers;
 	base::Vector< std::thread* > threads;
@@ -38,6 +40,7 @@ public:
 	simtime_t __time__;
 
 	base::Vector<Primitive*> primitives;
+	base::Vector<char*> nameOfPrimitives;
 
 public:
 	SimulatorEngine(int numOfThreads = 4);

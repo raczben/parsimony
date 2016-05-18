@@ -418,6 +418,7 @@
     <ClInclude Include="c_primitives\X_XOR7.h" />
     <ClInclude Include="c_primitives\X_XOR8.h" />
     <ClInclude Include="c_primitives\X_ZERO.h" />
+    <ClInclude Include="HostEngine.h" />
     <ClInclude Include="NetFlow.h" />
     <ClInclude Include="netFlowVector.h" />
     <ClInclude Include="netinstatiation.h" />
@@ -434,6 +435,7 @@
     <ClCompile Include="builtin_primitives.cpp" />
     <ClCompile Include="cppsimulator.cpp" />
     <ClCompile Include="cppTemplate.cpp" />
+    <ClCompile Include="HostEngine.cpp" />
     <ClCompile Include="NetFlow.cpp" />
     <ClCompile Include="netinstatiation.cpp" />
     <ClCompile Include="Primitive.cpp" />

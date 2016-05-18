@@ -27,7 +27,7 @@
 #define TEST_TEST_CASE TEST_DUT_TEST
 
 
-#define NUMBER_OF_THREADS   ( 4 ) 
+#define NUMBER_OF_THREADS   ( 1 ) 
 
 
 
@@ -38,9 +38,6 @@ SimulatorEngine *engine;
 
 void instance_primitives(SimulatorEngine* engine);
 void instance_nets(SimulatorEngine* engine);
-
-
-
 
 
 #if (TEST_TEST_CASE == LUT6_TEST)
@@ -98,6 +95,7 @@ void run_CARRY4_test_stumulus() {
 }
 #endif //(TEST_TEST_CASE == CARRY4_TEST)
 
+
 #if (TEST_TEST_CASE == TEST_DUT_TEST)
 void run_TEST_DUT_test_stimulus() {
 
@@ -131,6 +129,7 @@ void run_TEST_DUT_test_stimulus() {
 
 }
 #endif
+
 
 void start_simulation() {
 	printf("Im started!\n");

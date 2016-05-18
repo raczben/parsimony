@@ -33,18 +33,49 @@ VCDWiter::~VCDWiter()
 void VCDWiter::fillVCDData(){
 	NetFlow * net;
 	char id = '!';
+	/**
+	 * For all nets...
+	 */
 	for (unsigned netIndex = 0; netIndex < engine->get_net_count(); netIndex++) {
 		net = engine->get_net(netIndex);
 		netIDToName.insert(std::pair<const char*, char>(net->get_name(), id));
 		
 		base::netFlowVector data = net->get_data();
+		char previousVal;	// for some check and assertion.... = net_change.level.value;
+		/**
+		 * ... for all change structure ...
+		 */
 		for (unsigned i = 0; i < data.size(); i++) {
 			net_change_t net_change = data.get(i);
-			const char* val = to_string(net_change.level.value);
+			//const char* val = to_string(net_change.level.value);
 
+			/**
+			 * Create a "node" which contains the net ID and the value....
+			 */
 			vcd_node node;
 			node.net_id = id;
 			node.value = net_value2vcd_char(net_change.level.value);
+
+			/**
+			 * Simple check based on a BUG
+			 */
+			if (i != 0) {
+				if (previousVal == node.value) {
+					printf("CRITICAL warning during VCD generation: previousVal: %c  current val: %c  time: %u  netName: %s\n", previousVal, node.value, net_change.time, net->get_name());
+				}
+			}
+			previousVal = node.value;
+
+			/**
+			 * NOT a general check, just form my design
+			 */
+			if (net_change.time % 5) {
+					printf("CRITICAL warning during VCD generation:  time: %u  netName: %s\n", net_change.time, net->get_name());
+			}
+
+			/**
+			 * Store the node in the data vector indexed by the change time.
+			 */
 			std::map<simtime_t, std::vector<vcd_node> >::iterator it = vcdData.find(net_change.time);
 			if (it == vcdData.end()) {
 				std::vector<vcd_node> vec;// = new std::vector<vcd_node>();

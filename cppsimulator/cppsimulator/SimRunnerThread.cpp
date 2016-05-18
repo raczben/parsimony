@@ -2,8 +2,11 @@
 
 #include <iostream>
 
-bool SimRunnerThread::globalRerunFlag[2] = { false, false };
-bool SimRunnerThread::globalRunFlag[2] = { false, false };
+bool SimRunnerThread::globalRerunFlag[3] = { false, false, false };
+bool SimRunnerThread::globalRunFlag[3] = { false, false, false };
+
+const loop_cntr_t SimRunnerThread::loop_cntr_step_table[3] = {1, 2, 0};
+const loop_cntr_t SimRunnerThread::loop_cntr_step_back_table[3] = {2, 0, 1};
 //bool SimRunnerThread::rerunFlag = false;
 
 SimRunnerThread::SimRunnerThread(int ID, Barrier* barrier): threadID(ID), barrier(barrier)
@@ -181,13 +184,13 @@ bool SimRunnerThread::fetch_need_to_rerun_ts_ansi() {
 
 void SimRunnerThread::set_global_rerun_flag(bool localFalg) {
 	if (localFalg) {
-		globalRerunFlag[localLoopCntr] = true;
+		globalRerunFlag[get_set_get_ptr()] = true;
 	}
 }
 
 void SimRunnerThread::set_global_run_flag(bool localFalg) {
 	if (localFalg) {
-		globalRunFlag[localLoopCntr] = true;
+		globalRunFlag[get_set_get_ptr2()] = true;
 	}
 }
 
@@ -205,11 +208,18 @@ bool SimRunnerThread::need_to_rerun_ts2() {
 	/***********************
 	* return_current_flag();
 	**********************/
-	bool retFlag = globalRerunFlag[localLoopCntr];
+	bool retFlag = globalRerunFlag[get_set_get_ptr()];
+
+	/***********************
+	 * clear_next_flag();
+	 **********************/
+	globalRerunFlag[get_clear_ptr()] = false;
 
 	/************************
 	 * step_loop_counter();
 	 ***********************/
+	step_loop_counter();
+	/*
 	if (1 == localLoopCntr) {
 		 localLoopCntr = 0;
 	}
@@ -220,11 +230,8 @@ bool SimRunnerThread::need_to_rerun_ts2() {
 		throw "localLoopCntr must be 0 or 1";
 	}
 
-	/***********************
-	 * clear_next_flag();
-	 **********************/
 	globalRerunFlag[localLoopCntr] = false;
-
+*/
 	return retFlag;
 }
 
@@ -233,11 +240,16 @@ bool SimRunnerThread::need_to_run_ts() {
 	/***********************
 	* return_current_flag();
 	**********************/
-	bool retFlag = globalRunFlag[localLoopCntr];
+	bool retFlag = globalRunFlag[get_set_get_ptr2()];
+	globalRunFlag[get_clear_ptr2()] = false;
+	/************************
+	* step_loop_counter();
+	***********************/
+	step_loop_counter2();
 
 	/************************
 	***********************/
-	if (1 == localLoopCntr) {
+	/*if (1 == localLoopCntr) {
 		globalRunFlag[0] = false;
 	}
 	else if (0 == localLoopCntr) {
@@ -245,8 +257,8 @@ bool SimRunnerThread::need_to_run_ts() {
 	}
 	else {
 		throw "localLoopCntr must be 0 or 1";
-	}
-
+	}*/
 
 	return retFlag;
 }
+

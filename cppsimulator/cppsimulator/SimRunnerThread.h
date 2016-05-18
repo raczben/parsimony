@@ -17,6 +17,11 @@
 //#include "RunnerWorker.h"
 #include "Barrier.h"
 
+typedef uint8_t loop_cntr_t;
+
+//#define 
+
+
 class SimRunnerThread
 {
 	//static simtime_t time;
@@ -31,16 +36,57 @@ class SimRunnerThread
 	/********************************
 	 * Syncronization objects:
 	 *******************************/
-	uint8_t localLoopCntr = 0;
-	static bool globalRerunFlag[2];
-	static bool globalRunFlag[2];
+	loop_cntr_t localLoopCntr = 0;
+	loop_cntr_t localLoopCntr2 = 0;
+	static bool globalRerunFlag[3];
+	static bool globalRunFlag[3];
 
 	// DEPRECATED
 	static bool rerunFlag;
 
+	static const loop_cntr_t loop_cntr_step_table[3];
+	static const loop_cntr_t loop_cntr_step_back_table[3];
+
 public:
 	simtime_t runUntil;
 	//std::thread *my_worker_thread;
+
+private:
+
+	void step_loop_counter() {
+		localLoopCntr = step_loop_counter(localLoopCntr);
+	}
+
+	void step_loop_counter2() {
+		localLoopCntr2 = step_loop_counter(localLoopCntr2);
+	}
+
+	loop_cntr_t step_loop_counter(loop_cntr_t _localLoopCntr) {
+		return loop_cntr_step_table[_localLoopCntr];
+		/*_localLoopCntr++;
+		if (3 == _localLoopCntr) {
+			_localLoopCntr = 0;
+		}*/
+	}
+
+	loop_cntr_t get_set_get_ptr() {
+		return localLoopCntr;
+	}
+
+
+	loop_cntr_t get_clear_ptr() {
+		return loop_cntr_step_back_table[localLoopCntr];
+	}
+
+	loop_cntr_t get_set_get_ptr2() {
+		return localLoopCntr2;
+	}
+
+
+	loop_cntr_t get_clear_ptr2() {
+		return loop_cntr_step_back_table[localLoopCntr2];
+	}
+
 
 public:
 	SimRunnerThread(int iD, Barrier* barrier);
@@ -51,6 +97,7 @@ public:
 	void synch_threads();
 
 	void set_processing_range(int primFrom, int primToPlusOne, int netFrom, int netToPlusOne) {
+		printf("primFrom: %d  primToPlusOne: %d  netFrom: %d  netToPlusOne: %d\n", primFrom, primToPlusOne, netFrom, netToPlusOne);
 		processPrimitivesFrom = primFrom;
 		processPrimitivesToPlusOne = primToPlusOne;
 		

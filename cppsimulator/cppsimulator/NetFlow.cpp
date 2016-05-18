@@ -161,6 +161,10 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	new_element.level = level;
 	new_element.time = set_time;
 
+	/*if (strcmp(name, "clk[0]")) {
+		assert(set_time == engine->get_current_time());
+	}*/
+
 	bool this_set_change_in_this_delta = false;
 
 	/**
@@ -168,34 +172,21 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	*/
 	assert(set_time >= 0);
 
-	//std::unique_lock<std::mutex>(m);
-	//m.lock();
-
 	/**
 	* If the data vector is empty then push the new element
 	*/
 	if (data.empty()) {
 		this->data.push_back(new_element);
 		now_index = 0;
-		this_set_change_in_this_delta = true;
-	//	m.unlock();
-		return this_set_change_in_this_delta;
+		return true;
 	}
 
 	/**
 	* If the new value is equal the previous, there is no change in value => we dont do anythink.
 	*/
 	if (is_equal_at(level, set_time)) {
-		//m.unlock();
-		return false;	
+		return false;
 	}
-	else {
-		// If the value has to be changed, and we are at now, there must be some rerun...
-		if (set_time == engine->get_current_time()) {
-			this_set_change_in_this_delta = true;
-		}
-	}
-
 
 	/**
 	* If we want to set a future time point just push back
@@ -210,31 +201,42 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	* Erease mod: remove all later event on the net than set_time:
 	*/
 	//unsigned size = data.size();
-	while (data.get_last().time >= set_time) {
-		this->data.remove_last();
+	net_change_struct ncs;
+	while (true) {
+		ncs = data.get_last();
+		if (ncs.time >= set_time) {
+			if (ncs.time == set_time) {
+				now_index--;
+			}
+			this->data.remove_last();
 
-		if (data.empty()) {
-			this->data.push_back(new_element);
-			now_index = 0;
-			//m.unlock();
-			return this_set_change_in_this_delta;
+			if (data.empty()) {
+				this->data.push_back(new_element);
+				now_index = 0;
+				return true;
+			}
 		}
-		//size = data.size();
+		else {
+			if (is_equal_at(level, set_time)) {
+				if (set_time <= engine->get_current_time()) {
+					now_index = data.size() - 1;
+				}
+				return false;
+			}
+			else {
+				this->data.push_back(new_element);
+				if (set_time<=engine->get_current_time()) {
+					now_index = data.size() - 1;
+					// If the value has to be changed, and we are at now, there must be some rerun...
+					if (set_time == engine->get_current_time()) {
+						return true;
+					}
+				}
+				return false;
+			}
+		}
 	}
-
-	this->data.push_back(new_element);
-	if (set_time<=engine->get_current_time()) {
-		now_index = data.size() - 1;
-	}
-
-	//m.unlock();
-	return this_set_change_in_this_delta;
 }
-
-
-/*void NetFlow::step_delta() {
-	clear_change_flag();
-}*/
 
 
 void NetFlow::clear_change_flag() {
