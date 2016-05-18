@@ -34,7 +34,7 @@ bool SimRunnerThread::stepAllNets() {
 }
 
 void SimRunnerThread::synch_threads() {
-	barrier->synch_threads();
+	barrier->synch_threads(threadID);
 }
 
 void SimRunnerThread::step_time()

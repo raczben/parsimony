@@ -199,6 +199,7 @@ int main()
 		VCDWiter vcdWriter("parsimony.vcd");
 		vcdWriter.write_vcd();
 
+		delete engine;
 		printf("Exiting... \n By");
 		fflush(stdout);
 

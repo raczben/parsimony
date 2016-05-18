@@ -20,6 +20,7 @@ SimulatorEngine::SimulatorEngine(int numOfThreads): __time__(0)
 
 SimulatorEngine::~SimulatorEngine()
 {
+	barrier->printHistogram();
 }
 
 void SimulatorEngine::step_time()

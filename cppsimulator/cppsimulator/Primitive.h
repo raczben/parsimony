@@ -3,10 +3,14 @@
 
 #include "sim_types.h"
 
+#define DEBUG 1
+
 class Primitive
 {
 private:
+#if DEBUG == 1
 	const char * name;
+#endif
 public:
 	/*
 	calculateCodeDone:
@@ -15,7 +19,13 @@ public:
 	*/
 	const bool calculateCodeDone = false;
 public:
+
+#if DEBUG == 1
 	Primitive(const char*, bool calculateCodeDone = false);
+#endif
+
+	Primitive( bool calculateCodeDone = false);
+
 	~Primitive();
 
 	/*
