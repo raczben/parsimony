@@ -105,6 +105,9 @@ namespace base {
 
 		net_change_struct get_last() const
 		{
+			if (0 == size_) {
+				return NET_CHANGE_DUMMY_VAL2;
+			}
 			return get(size_ - 1);
 		}
 		

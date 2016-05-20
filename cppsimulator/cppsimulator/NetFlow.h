@@ -60,6 +60,10 @@ class NetFlow {
 
 	mutable std::recursive_mutex m;
 
+#if DEBUG > 0
+	int threadIDOfThisNet = INT_MAX;
+#endif
+
 	//
 public:
 	//NetFlow(const NetFlow& other);

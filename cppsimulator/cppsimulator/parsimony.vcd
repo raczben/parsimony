@@ -40,6 +40,7 @@ $var wire 1 . \NLW_N0_3.A5LUT_O_UNCONNECTED[0] $end
 $var wire 1 / \ProtoComp1.CYINITGND.0[0] $end
 $var wire 1 2 \NlwBufferSignal_out_5_OBUF/I[0] $end
 $var wire 1 5 \NlwBufferSignal_out_3_OBUF/I[0] $end
+$var wire 1 6 \NlwBufferSignal_out_7_OBUF/I[0] $end
 $var wire 1 0 rst_IBUF_76[0] $end
 $var wire 1 1 enable[0] $end
 $var wire 1 3 out_0_OBUF_99[0] $end
@@ -49,7 +50,6 @@ $var wire 1 ? out_5_OBUF_0[0] $end
 $var wire 1 @ CONST_ONE[0] $end
 $var wire 1 C out_4_OBUF_143[0] $end
 $var wire 1 G out_1_OBUF_128[0] $end
-$var wire 1 6 \NlwBufferSignal_out_7_OBUF/I[0] $end
 $var wire 1 7 \NlwBufferSignal_out_0_OBUF/I[0] $end
 $var wire 1 8 \NlwBufferSignal_out_4_OBUF/I[0] $end
 $var wire 1 9 \NlwBufferSignal_out_6_OBUF/I[0] $end
@@ -75,6 +75,11 @@ $var wire 1 [ \gray_inst/Result[3] $end
 $var wire 1 \ \gray_inst/Result[2] $end
 $var wire 1 ] \gray_inst/Result[1] $end
 $var wire 1 ^ \gray_inst/Result[0] $end
+$var wire 1 a out[7] $end
+$var wire 1 b out[6] $end
+$var wire 1 c out[5] $end
+$var wire 1 d out[4] $end
+$var wire 1 e out[3] $end
 $var wire 1 _ \gray_inst/count<6>_rt_41[0] $end
 $var wire 1 i \cntr_inst/cntr_INV_1_o[0] $end
 $var wire 1 j \gray_inst/count<5>_rt_45[0] $end
@@ -84,11 +89,7 @@ $var wire 1 s \gray_inst/count<7>_rt_31[0] $end
 $var wire 1 t \NlwBufferSignal_q_OBUF/I[0] $end
 $var wire 1 v \gray_inst/count<4>_rt_49[0] $end
 $var wire 1 w \NLW_N0_4.D5LUT_O_UNCONNECTED[0] $end
-$var wire 1 a out[7] $end
-$var wire 1 b out[6] $end
-$var wire 1 c out[5] $end
-$var wire 1 d out[4] $end
-$var wire 1 e out[3] $end
+$var wire 1 z \NlwBufferSignal_cntr_inst/cntr/CLK[0] $end
 $var wire 1 k \clk_BUFGP/IBUFG_58[0] $end
 $var wire 1 n out_5_OBUF_88[0] $end
 $var wire 1 r \clk_BUFGP/IBUFG_0[0] $end
@@ -99,7 +100,6 @@ $var wire 1 g out[1] $end
 $var wire 1 h out[0] $end
 $var wire 1 l rst[0] $end
 $var wire 1 y q[0] $end
-$var wire 1 z \NlwBufferSignal_cntr_inst/cntr/CLK[0] $end
 $var wire 1 { \gray_inst/count<3>_rt_2[0] $end
 $var wire 1 ~ \NlwBufferSignal_clk_BUFGP/BUFG/IN[0] $end
 $var wire 1  \gray_inst/Mcount_count_cy[3] $end

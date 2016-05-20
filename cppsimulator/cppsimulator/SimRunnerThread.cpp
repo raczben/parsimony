@@ -1,5 +1,6 @@
 #include "SimRunnerThread.h"
 
+#include "netinstatiation.h"
 #include <iostream>
 
 bool SimRunnerThread::globalRerunFlag[3] = { false, false, false };
@@ -53,10 +54,10 @@ void SimRunnerThread::step_time()
 
 		bool localNeedToRerun;
 
-
+		unsigned delta = 0;
 		do {
 #if VERBOSE > 0
-			printf("Running TS: %ld", engine->__time__);
+			printf("Running TS: %ld", engine->get_current_time());
 			fflush(stdout);
 #endif
 
@@ -67,13 +68,69 @@ void SimRunnerThread::step_time()
 #if VERBOSE > 0
 			printf("   [  OK  ]\n");
 			fflush(stdout);
+			synch_threads();
+			if (threadID == 0) {
+				if (!((engine->get_current_time() - 35) % 40)) {
+					printf("%d: NLWBUFFERSI: %d   out: %d,  time: %lld::%u--  \n", clock()
+						,
+						engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__OUT__0__OBUF_SI_A0_B)->get_from_now(0).value,
+						engine->get_net(NET_INDEX_OUT_A0_B)->get_from_now(0).value,
+						(engine->get_current_time()),
+						delta);
+				}
+			}
+			synch_threads();
 #endif
 
+			delta++;
 		} while (need_to_rerun_ts2());
 	}
+
+
+#if VERBOSE > 0
+	synch_threads();
 	if (threadID == 0) {
-		engine->__time__++;
+		if (!( (engine->get_current_time())  % 5 )) {
+			for (int tim = 35; tim <= engine->get_current_time(); tim += 40) {
+				if (engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__OUT__0__OBUF_SI_A0_B)->is_equal_at(LOW, tim)) {
+					printf("%d: NLWBUFFERSI tim: %d,   %lld --  \n", clock(), tim, (engine->get_current_time()));
+				}
+				if (engine->get_net(NET_INDEX_OUT_A0_B)->is_equal_at(LOW, tim)) {
+					printf("BAJ3 tim: %d,   %lld --   SIG: %d\n  ",
+						tim,
+						(engine->get_current_time()),
+						engine->get_net(NET_INDEX__BNLWBUFFERSIGNAL__OUT__0__OBUF_SI_A0_B)->get_at(tim).value
+						);
+					//assert(0);
+
+					// NET_INDEX__BNLWBUFFERSIGNAL__OUT__0__OBUF_SI_A0_B
+
+				}
+
+			}
+		}
+			
+		if (engine->get_current_time() > 305) {
+			if (engine->get_net(71)->is_equal_at(LOW, 315)) {
+				printf("BAJ2 %lld --  \n", (engine->get_current_time()));
+				assert(0);
+
+			}
+		}
+		if (! (( engine->get_current_time() - 35 ) % 40) ) {
+			printf("NOTE1 %lld --  \n", (engine->get_current_time()));
+			if (engine->get_net(NET_INDEX_OUT_A0_B)->is_equal_now(LOW)) {
+				printf("BAJ1 %lld --  \n", (engine->get_current_time()));
+				assert(0);
+			}
+		}
 	}
+#endif // VERBOSE
+
+	if (threadID == 0) {
+		engine->add_time();
+	}
+	synch_threads();
 	return;
 
 
@@ -110,8 +167,8 @@ void SimRunnerThread::__run__() {
 					engine->expand_all_nets();
 					expandNets = false;
 				}
+				synch_threads();
 			}
-			synch_threads();
 		}
 	}
 	catch (exception_code_t code)
@@ -160,6 +217,9 @@ bool SimRunnerThread::process_primitives(simtime_t time) {
 #endif
 	bool rerunDeltaFlag = false;
 	for (unsigned i = processPrimitivesFrom; i < processPrimitivesToPlusOne; i++) {
+#if DEBUG > 1
+		engine->get_primitive(i)->threadTouch(threadID);
+#endif
 		if (engine->get_primitive(i)->calculate(time) ){
 			rerunDeltaFlag = true;
 		}

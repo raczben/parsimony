@@ -57,6 +57,10 @@ namespace CPrimitives {
 		}
 
 		bool  calculate(simtime_t time){
+			bool flag = false;
+			if (!strcmp(name, "out_0_OBUF")) {
+				flag = true;
+			}
 			return calculate_BUF(time, O_A0_B, I_A0_B);
 		}
 

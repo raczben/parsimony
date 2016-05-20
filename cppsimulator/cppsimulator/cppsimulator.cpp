@@ -22,18 +22,19 @@
 #define CARRY4_TEST   ( 2 ) 
 
  /********************************************
- * Choose the current testcase:
- ********************************************/
+  * Choose the current testcase:
+  ********************************************/
 #define TEST_TEST_CASE TEST_DUT_TEST
 
 
-#define NUMBER_OF_THREADS   ( 1 ) 
+#define NUMBER_OF_THREADS   ( 8 ) 
+#define RUN_UNTIL   ( 40000 ) 
 
 
 
 /**
-*Global engine of simulation.
-*/
+ * Global engine of simulation.
+ */
 SimulatorEngine *engine;
 
 void instance_primitives(SimulatorEngine* engine);
@@ -105,7 +106,7 @@ void run_TEST_DUT_test_stimulus() {
 	printf("Start generating clock ... \n");
 	fflush(stdout);
 	net = (engine->get_net(NET_INDEX_CLK_A0_B));
-	net->generate_clock(5, 0, 40000);
+	net->generate_clock(5, 0, RUN_UNTIL);
 
 	printf("run to 5 \n");
 	fflush(stdout);
@@ -123,7 +124,7 @@ void run_TEST_DUT_test_stimulus() {
 
 	printf("run to 10 \n");
 	fflush(stdout);
-	engine->run(40000);
+	engine->run(RUN_UNTIL);
 	printf("RUN done\n");
 	fflush(stdout);
 

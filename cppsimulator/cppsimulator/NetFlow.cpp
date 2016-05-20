@@ -27,8 +27,12 @@ void NetFlow::init(const char* name, net_level_t initial_level, bool monitor_cha
 	this->readers = new base::Vector<reader_t>();
 	this->drivers = new base::Vector<driver_t>();
 	
-
-	set_at(initial_level, 0);
+	// set_at(initial_level, 0);
+	net_change_struct new_element;
+	new_element.level = initial_level;
+	new_element.time = 0;
+	this->data.push_back(new_element);
+	now_index = 0;
 
 }
 
@@ -65,11 +69,12 @@ bool NetFlow::get_use_in_event() const {
 *****************************************************************************/
 bool NetFlow::is_equal_at(value_t val, simtime_t time) const {
 	net_level_t net_level;
-	value_t net_value = UNDEFINED;
-	if (time >= 0) {
-		net_level = get_at(time);
-		net_value = net_level.value;
-	}
+	value_t net_value;// = UNDEFINED;
+	assert(time >= 0);
+	//if (time >= 0) {
+	net_level = get_at(time);
+	net_value = net_level.value;
+	//}
 	return net_value == val;
 }
 
@@ -92,14 +97,10 @@ net_level_t NetFlow::get_at(simtime_t serach_time) const {
 
 	net_change_t tmp_net_value_change;
 
-	//m.lock();
-	//std::unique_lock<std::mutex>(m);
-	//m.lock();
 	int index = __find_nearest_earlier_index__(serach_time);
 
 	tmp_net_value_change = data.get(index);
 
-	//m.unlock();
 	return tmp_net_value_change.level;
 
 }
@@ -161,12 +162,6 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	new_element.level = level;
 	new_element.time = set_time;
 
-	/*if (strcmp(name, "clk[0]")) {
-		assert(set_time == engine->get_current_time());
-	}*/
-
-	bool this_set_change_in_this_delta = false;
-
 	/**
 	* Negative settime is illegal
 	*/
@@ -175,11 +170,7 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 	/**
 	* If the data vector is empty then push the new element
 	*/
-	if (data.empty()) {
-		this->data.push_back(new_element);
-		now_index = 0;
-		return true;
-	}
+	assert(!data.empty());
 
 	/**
 	* If the new value is equal the previous, there is no change in value => we dont do anythink.
@@ -188,22 +179,20 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 		return false;
 	}
 
-	/**
-	* If we want to set a future time point just push back
-	Note that now_pointer should not be refreshed.
-	*/
-	/*if (data.get_last()->time < set_time) {
-		this->data.push_back(new_element);
-		return;
-	}*/
 
 	/**
 	* Erease mod: remove all later event on the net than set_time:
 	*/
 	//unsigned size = data.size();
 	net_change_struct ncs;
+	bool mustret = false;
 	while (true) {
 		ncs = data.get_last();
+
+		/**
+		 * If the last change is in the future ... 
+		 * Remove it (consider the last index, and the emty list...)
+		 */
 		if (ncs.time >= set_time) {
 			if (ncs.time == set_time) {
 				now_index--;
@@ -217,11 +206,14 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 			}
 		}
 		else {
+			assert(mustret == false);
+			mustret = true;
+			/// Here the last change (in the data) happened in the past.
 			if (is_equal_at(level, set_time)) {
 				if (set_time <= engine->get_current_time()) {
 					now_index = data.size() - 1;
 				}
-				return false;
+				return true;
 			}
 			else {
 				this->data.push_back(new_element);
@@ -234,8 +226,10 @@ bool NetFlow::set_at(const net_level_t level, const simtime_t set_time) {
 				}
 				return false;
 			}
+			assert(0);
 		}
 	}
+	assert(0);
 }
 
 

@@ -2,14 +2,18 @@
 #define PRIMITIVE_H
 
 #include "sim_types.h"
+#include <limits.h>
+#include <assert.h>
 
 #define DEBUG 1
 
+
 class Primitive
 {
-private:
-#if DEBUG == 1
+protected:
+#if DEBUG > 0
 	const char * name;
+	int threadID = INT_MAX;
 #endif
 public:
 	/*
@@ -32,6 +36,18 @@ public:
 	Returns true if any output net of this primitive has been changed in the current simtime.
 	*/
 	virtual bool calculate(simtime_t time) = 0;
+
+	void threadTouch(int newThreadID) {
+		if (INT_MAX == threadID) {
+			threadID = newThreadID;
+			return;
+		}
+		assert(threadID == newThreadID);
+	}
+
+	const char* getName() const  {
+		return name;
+	}
 	
 };
 

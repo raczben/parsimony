@@ -36,8 +36,8 @@ class SimulatorEngine
 	int new_prim_to_this_TH = 0;
 
 	Barrier* barrier;
-public:
 	simtime_t __time__;
+public:
 
 	base::Vector<Primitive*> primitives;
 	base::Vector<char*> nameOfPrimitives;
@@ -103,6 +103,8 @@ public:
 	 *
 	 * Functions below helps/control  the running of the simulation.
 	 **************************************************/
+
+	void add_time(int add = 1) { __time__ += add; }
 
 	/**************************************************************************
 	 * run() runs the simulation for a given time. If we are at the 30th TS

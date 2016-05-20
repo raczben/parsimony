@@ -65,8 +65,9 @@ bool calculate_BUF(simtime_t time,
 	NetFlow* out,
 	const NetFlow* const in
 	) {
+	net_level_t level = in->get_at(time);
 	return out->set_at(
-		in->get_at(time),
+		level,
 		time
 		);
 }
