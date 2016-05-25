@@ -27,8 +27,8 @@
 #define TEST_TEST_CASE TEST_DUT_TEST
 
 
-#define NUMBER_OF_THREADS   ( 8 ) 
-#define RUN_UNTIL   ( 40000 ) 
+#define NUMBER_OF_THREADS   ( 6 ) 
+#define RUN_UNTIL   ( 1*1000*1000 ) 
 
 
 

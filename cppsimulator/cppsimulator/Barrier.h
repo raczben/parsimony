@@ -17,7 +17,9 @@ private:
 	const std::size_t mThreshold;
 	std::size_t mCount;
 	bool mGeneration;
+#if DEBUG > 2
 	size_t histogram[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+#endif
 
 public:
 	explicit Barrier(std::size_t iCount) :
@@ -30,7 +32,9 @@ public:
 	void synch_threads(int id) {
 		bool lGen = mGeneration;
 		std::unique_lock<std::mutex> lLock{ mMutex };
+#if DEBUG > 2
 		histogram[id] += mCount;
+#endif
 		if (!--mCount) {
 			mGeneration = !mGeneration;
 			mCount = mThreshold;
@@ -42,12 +46,14 @@ public:
 	}
 
 	void printHistogram() {
+#if DEBUG > 2
 		printf("Barrier hist:");
 		for (int i = 0; i < 8; i++) {
 			printf(" %llu ", histogram[i]);
 		}
 
 		printf("\n");
+#endif
 	}
 
 };

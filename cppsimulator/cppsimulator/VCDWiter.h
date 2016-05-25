@@ -5,10 +5,11 @@
 #include <vector>
 #include "NetFlow.h"
 #include "sim_types.h"
+#include <string>
 
 
 typedef struct {
-	char net_id;
+	std::string net_id;
 	char value;
 }vcd_node;
 
@@ -18,7 +19,7 @@ class VCDWiter
 private:
 	char* filename = nullptr;
 
-	std::map <const char*, char> netIDToName;
+	std::map <const std::string, const char*> netIDToName;
 	std::map <simtime_t, std::vector<vcd_node> > vcdData;
 
 public:

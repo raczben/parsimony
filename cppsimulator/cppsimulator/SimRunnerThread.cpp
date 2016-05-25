@@ -61,7 +61,7 @@ void SimRunnerThread::step_time()
 			fflush(stdout);
 #endif
 
-			localNeedToRerun = process_primitives(engine->get_current_time());
+			localNeedToRerun = process_primitives(local_time);
 			set_global_rerun_flag(localNeedToRerun);
 			synch_threads();
 
@@ -128,9 +128,10 @@ void SimRunnerThread::step_time()
 #endif // VERBOSE
 
 	if (threadID == 0) {
-		engine->add_time();
+		engine->add_time(5);
 	}
-	synch_threads();
+	local_time += 5;
+	//synch_threads();
 	return;
 
 
@@ -144,9 +145,10 @@ void SimRunnerThread::step_time()
 //}
 
 void SimRunnerThread::__run__() {
+	local_time = engine->get_current_time();
 	bool expandNets = false;
 	try {
-		while (runUntil > engine->get_current_time()) {
+		while (runUntil > local_time) {
 			try {
 				step_time();
 			}
@@ -160,8 +162,9 @@ void SimRunnerThread::__run__() {
 				std::cerr << "SimRunnerThread::__run__() exception code: " << code << std::endl;
 				exit(-1);
 			}
-			synch_threads();
+			//synch_threads();
 			if (true == expandNets) {
+				assert(0);
 				if (threadID == 0) {
 					printf("Expanding nets during running...\n");
 					engine->expand_all_nets();
@@ -191,11 +194,11 @@ void SimRunnerThread::__run__() {
 	}
 }
 
-void SimRunnerThread::run_to(simtime_t time) {
+/*void SimRunnerThread::run_to(simtime_t time) {
 	while (time > engine->get_current_time()) {
 		step_time();
 	}
-}
+}*/
 
 /*void SimRunnerThread::step_delta() {
 	for (unsigned i = 0; i < engine->get_net_count(); i++) {
@@ -297,6 +300,7 @@ bool SimRunnerThread::need_to_rerun_ts2() {
 
 
 bool SimRunnerThread::need_to_run_ts() {
+
 	/***********************
 	* return_current_flag();
 	**********************/

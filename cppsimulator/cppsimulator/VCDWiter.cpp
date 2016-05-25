@@ -32,13 +32,18 @@ VCDWiter::~VCDWiter()
 
 void VCDWiter::fillVCDData(){
 	NetFlow * net;
-	char id = '!';
+//	std::string netID;
+	//int id = 0
+	//char id = '!';
 	/**
 	 * For all nets...
 	 */
 	for (unsigned netIndex = 0; netIndex < engine->get_net_count(); netIndex++) {
+		std::string netID = std::to_string(netIndex+1000);
 		net = engine->get_net(netIndex);
-		netIDToName.insert(std::pair<const char*, char>(net->get_name(), id));
+		//char netId[5];
+		//itoa(net->get_name(), netId);
+		netIDToName.insert(std::pair<const std::string, const char*>(netID, net->get_name()));
 		
 		base::netFlowVector data = net->get_data();
 		char previousVal;	// for some check and assertion.... = net_change.level.value;
@@ -53,7 +58,9 @@ void VCDWiter::fillVCDData(){
 			 * Create a "node" which contains the net ID and the value....
 			 */
 			vcd_node node;
-			node.net_id = id;
+			node.net_id = netID;
+			//strcpy(node.net_id, netId);
+			// = id;
 			node.value = net_value2vcd_char(net_change.level.value);
 
 			/**
@@ -89,7 +96,7 @@ void VCDWiter::fillVCDData(){
 		}
 		
 
-		id++;
+		//id++;
 	}
 }
 
@@ -136,8 +143,8 @@ void VCDWiter::write_vcd(char* filename_ ) {
 
 	myfile << "$scope module top $end" << std::endl;
 
-	for (std::map<const char* const, char >::iterator it = netIDToName.begin(); it != netIDToName.end(); it++) {
-		myfile << "$var wire 1 " << it->second << " " << it->first << " $end" << std::endl;
+	for (std::map<const std::string, const char*>::iterator it = netIDToName.begin(); it != netIDToName.end(); it++) {
+		myfile << "$var wire 1 " << it->first << " " << it->second << " $end" << std::endl;
 	}
 
 	myfile << "" << std::endl;

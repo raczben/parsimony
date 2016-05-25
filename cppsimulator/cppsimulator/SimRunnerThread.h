@@ -47,6 +47,8 @@ class SimRunnerThread
 	static const loop_cntr_t loop_cntr_step_table[3];
 	static const loop_cntr_t loop_cntr_step_back_table[3];
 
+	simtime_t local_time;
+
 public:
 	simtime_t runUntil;
 	//std::thread *my_worker_thread;
